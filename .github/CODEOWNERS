@@ -1,0 +1,15 @@
+# Default reviewers for the repository.
+* @kordyaczny
+
+# Governance and CI
+/.github/ @kordyaczny
+
+# Product surfaces
+/app/ @kordyaczny
+/framework/ @kordyaczny
+/packages/ @kordyaczny
+/tools/ @kordyaczny
+/ui/ @kordyaczny
+
+# Documentation
+/documentation/ @kordyaczny

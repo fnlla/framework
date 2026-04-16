@@ -1,0 +1,21 @@
+name: OSV Scan
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 4 * * 1'
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
+jobs:
+  osv:
+    uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@v2.3.5
+    with:
+      scan-args: |-
+        -r
+        ./
+      upload-sarif: false # requires Code scanning enabled in repo settings

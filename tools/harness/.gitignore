@@ -1,0 +1,10 @@
+/vendor/
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+/storage/logs/*
+/storage/cache/*
+/storage/sessions/*
+/bootstrap/cache/*.php
+.env

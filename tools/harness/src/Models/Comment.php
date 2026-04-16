@@ -1,0 +1,29 @@
+<?php
+/**
+ * Finella - AI-assisted PHP framework.
+ * (c) TechAyo.co.uk
+ * Proprietary License
+ */
+
+
+declare(strict_types=1);
+
+namespace App\Models;
+
+use Finella\Orm\Model;
+use Finella\Orm\Relations\BelongsTo;
+
+final class Comment extends Model
+{
+    protected string $table = 'comments';
+
+    protected array $fillable = [
+        'post_id',
+        'body',
+    ];
+
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class, 'post_id');
+    }
+}

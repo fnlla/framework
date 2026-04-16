@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en" data-auth-base="/auth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finella UI · Sign In</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="elements.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="f-container fx-page">
+    <div class="element-intro">
+      <div class="element-intro-eyebrow">Element: Sign in</div>
+      <div class="element-intro-subtitle">Sign-in and sign-up flows with a shared layout system.</div>
+    </div>
+    <div class="signin-shell">
+      <div class="auth-block auth-block--signin">
+        <section class="auth-section auth-section--signin">
+          <div class="auth-side">
+            <div class="auth-brand">
+              <span class="auth-brand-icon">F</span>
+              <span class="auth-brand-name">Finella</span>
+            </div>
+            <div class="auth-panel" data-auth-carousel="signin" data-auth-skip-focus="signin-email">
+              <div class="auth-illustration auth-illustration--signin">
+                <img src="assets/signin-slide-1.svg" alt="Finella approvals illustration" loading="lazy">
+              </div>
+              <h2>Welcome to Finella</h2>
+              <p class="auth-panel-copy">Ship approvals, track execution, and keep every delivery signal in one place.</p>
+              <div class="auth-dots" role="tablist" aria-label="Feature slides">
+                <button class="auth-dot is-active" type="button" aria-label="Slide 1"></button>
+                <button class="auth-dot" type="button" aria-label="Slide 2"></button>
+                <button class="auth-dot" type="button" aria-label="Slide 3"></button>
+              </div>
+              <div class="auth-panel-actions">
+                <button class="f-btn f-btn-primary auth-next" type="button">Next</button>
+                <button class="auth-panel-skip auth-skip" type="button">Skip</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-card auth-card--flip" data-auth-card="signin">
+            <div class="auth-card-inner">
+              <div class="auth-card-face auth-card-front">
+                <h3>Sign In</h3>
+                <p class="auth-subtitle">Hi, welcome back</p>
+                <form class="auth-form">
+                  <label class="f-label" for="signin-email">Email</label>
+                  <input class="f-input" type="email" id="signin-email" placeholder="team@finella.dev" required>
+                  <label class="f-label" for="signin-password">Password</label>
+                  <div class="auth-input-row">
+                    <input class="f-input" type="password" id="signin-password" placeholder="????????" required>
+                    <button class="auth-icon-btn" type="button" data-toggle-password="signin-password" aria-pressed="false">Show</button>
+                  </div>
+                  <div class="auth-meta">
+                    <span></span>
+                    <button class="auth-link auth-link-btn auth-forgot" type="button" data-auth-forgot>Forgot Password?</button>
+                  </div>
+                  <button class="f-btn f-btn-primary" type="submit">Sign In</button>
+                  <div class="auth-divider"><span>or sign in with</span></div>
+                  <div class="auth-provider-row auth-provider-row--icons" aria-label="Sign in with">
+                    <button class="auth-provider-icon-btn" type="button" data-auth-provider="google" aria-label="Sign in with Google">
+                      <span class="auth-provider-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path d="M23.52 12.273c0-.77-.07-1.51-.2-2.23H12v4.21h6.48a5.54 5.54 0 0 1-2.4 3.64v3.02h3.88c2.27-2.09 3.56-5.16 3.56-8.64Z" fill="#4285F4"/>
+                          <path d="M12 24c3.24 0 5.96-1.07 7.95-2.9l-3.88-3.02c-1.08.73-2.47 1.17-4.07 1.17-3.12 0-5.76-2.1-6.7-4.94H1.3v3.1A12 12 0 0 0 12 24Z" fill="#34A853"/>
+                          <path d="M5.3 14.31A7.2 7.2 0 0 1 4.92 12c0-.8.14-1.57.38-2.31V6.6H1.3A12 12 0 0 0 0 12c0 1.92.46 3.74 1.3 5.4l4-3.09Z" fill="#FBBC05"/>
+                          <path d="M12 4.77c1.76 0 3.34.6 4.59 1.8l3.44-3.44C17.95 1.2 15.24 0 12 0 7.3 0 3.25 2.69 1.3 6.6l4 3.09C6.24 6.87 8.88 4.77 12 4.77Z" fill="#EA4335"/>
+                        </svg>
+                      </span>
+                    </button>
+                    <button class="auth-provider-icon-btn" type="button" data-auth-provider="apple" aria-label="Sign in with Apple">
+                      <span class="auth-provider-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M16.55 12.4c0-2.15 1.76-3.17 1.84-3.22-1-1.46-2.55-1.66-3.1-1.68-1.32-.14-2.57.77-3.24.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.5 2.14-1.5 2.6-.38 6.44 1.07 8.55.71 1.03 1.55 2.18 2.66 2.14 1.06-.04 1.46-.69 2.74-.69s1.64.69 2.76.67c1.14-.02 1.86-1.03 2.56-2.07.81-1.18 1.15-2.33 1.17-2.39-.03-.01-2.25-.86-2.26-3.49ZM14.4 5.7c.58-.7.97-1.67.86-2.64-.83.03-1.83.55-2.42 1.25-.53.61-.99 1.6-.87 2.53.93.07 1.84-.47 2.43-1.14Z"/>
+                        </svg>
+                      </span>
+                    </button>
+                    <button class="auth-provider-icon-btn" type="button" data-auth-provider="microsoft" aria-label="Sign in with Microsoft">
+                      <span class="auth-provider-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                          <rect x="3" y="3" width="8" height="8" fill="#F25022"/>
+                          <rect x="13" y="3" width="8" height="8" fill="#7FBA00"/>
+                          <rect x="3" y="13" width="8" height="8" fill="#00A4EF"/>
+                          <rect x="13" y="13" width="8" height="8" fill="#FFB900"/>
+                        </svg>
+                      </span>
+                    </button>
+                    <button class="auth-provider-icon-btn" type="button" data-auth-provider="github" aria-label="Sign in with GitHub">
+                      <span class="auth-provider-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.73-4.04-1.62-4.04-1.62-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.09-.74.09-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.84 1.32 3.53 1.01.11-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.3 5.66 19.3 5.98 19.3 5.98c.66 1.64.24 2.86.12 3.16.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.12.82 2.26 0 1.63-.02 2.95-.02 3.35 0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0Z"/>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                  <p class="auth-switch">Don't have an account? <a class="auth-link" href="#">Sign up</a></p>
+                </form>
+              </div>
+              <div class="auth-card-face auth-card-back" aria-hidden="true">
+                <h3>Reset Password</h3>
+                <p class="auth-subtitle">We'll send a reset link to your email.</p>
+                <form class="auth-form">
+                  <label class="f-label" for="recover-email">Email</label>
+                  <input class="f-input" type="email" id="recover-email" placeholder="team@finella.dev" required>
+                  <button class="f-btn f-btn-primary" type="submit">Send reset link</button>
+                  <button class="f-btn f-btn-outline auth-back" type="button" data-auth-back>Back to sign in</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="element-section element-section--signin">
+          <h2>Sign-in code</h2>
+          <p class="element-section-lead">Clean, ready-to-ship markup with provider icons, flip reset, and quality defaults.</p>
+          <div class="fx-code">
+            <div class="fx-code-header">
+              <div>HTML - Sign-in card</div>
+              <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-signin-html">Copy</button>
+            </div>
+            <pre><code id="code-signin-html">&lt;div class=&quot;auth-card&quot;&gt;
+  &lt;h3&gt;Sign In&lt;/h3&gt;
+  &lt;p class=&quot;auth-subtitle&quot;&gt;Hi, welcome back&lt;/p&gt;
+  &lt;form class=&quot;auth-form&quot;&gt;
+    &lt;label class=&quot;f-label&quot;&gt;Email&lt;/label&gt;
+    &lt;input class=&quot;f-input&quot; type=&quot;email&quot; placeholder=&quot;team@finella.dev&quot;&gt;
+
+    &lt;label class=&quot;f-label&quot;&gt;Password&lt;/label&gt;
+    &lt;div class=&quot;auth-input-row&quot;&gt;
+      &lt;input class=&quot;f-input&quot; type=&quot;password&quot; placeholder=&quot;????????&quot;&gt;
+      &lt;button class=&quot;auth-icon-btn&quot; type=&quot;button&quot;&gt;Show&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Remove this block for email-only sign-in --&gt;
+    &lt;div class=&quot;auth-provider-row auth-provider-row--icons&quot;&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;google&quot; aria-label=&quot;Sign in with Google&quot;&gt;...&lt;/button&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;apple&quot; aria-label=&quot;Sign in with Apple&quot;&gt;...&lt;/button&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;microsoft&quot; aria-label=&quot;Sign in with Microsoft&quot;&gt;...&lt;/button&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;github&quot; aria-label=&quot;Sign in with GitHub&quot;&gt;...&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;button class=&quot;f-btn f-btn-primary&quot;&gt;Sign In&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <div class="fx-code">
+            <div class="fx-code-header">
+              <div>JS - Providers + flip + show password</div>
+              <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-signin-js">Copy</button>
+            </div>
+            <pre><code id="code-signin-js">// Optional: limit providers via data-auth-providers on <html>
+// <html data-auth-providers="google,apple">
+var base = document.documentElement.getAttribute('data-auth-base') || '/auth';
+var allowed = document.documentElement.getAttribute('data-auth-providers');
+var icons = document.documentElement.getAttribute('data-auth-icons');
+var list = allowed ? allowed.split(',').map(function (p) { return p.trim().toLowerCase(); }) : null;
+
+if (icons === 'false') {
+  Array.from(document.querySelectorAll('.auth-provider-row--icons')).forEach(function (row) {
+    row.style.display = 'none';
+  });
+}
+
+Array.from(document.querySelectorAll('[data-auth-provider]')).forEach(function (btn) {
+  var provider = btn.getAttribute('data-auth-provider');
+  if (list && list.indexOf(provider) === -1) {
+    btn.style.display = 'none';
+    return;
+  }
+  btn.addEventListener('click', function () {
+    window.location.href = base.replace(/\/$/, '') + '/' + provider;
+  });
+});
+
+// Flip reset (Sign-in card)
+var authCard = document.querySelector('[data-auth-card="signin"]');
+if (authCard) {
+  authCard.querySelector('[data-auth-forgot]').addEventListener('click', function () {
+    authCard.classList.add('is-flipped');
+  });
+  authCard.querySelector('[data-auth-back]').addEventListener('click', function () {
+    authCard.classList.remove('is-flipped');
+  });
+}
+
+// Show / hide password
+Array.from(document.querySelectorAll('[data-toggle-password]')).forEach(function (toggle) {
+  var input = document.getElementById(toggle.getAttribute('data-toggle-password'));
+  toggle.addEventListener('click', function () {
+    var isPassword = input.type === 'password';
+    input.type = isPassword ? 'text' : 'password';
+    toggle.textContent = isPassword ? 'Hide' : 'Show';
+  });
+});</code></pre>
+          </div>
+          <div class="fx-code">
+            <div class="fx-code-header">
+              <div>CSS - Providers + flip layout</div>
+              <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-signin-css">Copy</button>
+            </div>
+            <pre><code id="code-signin-css">/* Provider icons */
+.auth-provider-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.auth-provider-icon-btn {
+  width: 42px;
+  height: 42px;
+}
+
+@media (max-width: 560px) {
+  .auth-provider-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+
+
+/* Flip card */
+.auth-card--flip { perspective: 1200px; }
+.auth-card-inner { transform-style: preserve-3d; }
+.auth-card-face { backface-visibility: hidden; }
+.auth-card-back { transform: rotateY(180deg); }
+.auth-card--flip.is-flipped .auth-card-inner { transform: rotateY(180deg); }</code></pre>
+          </div>
+          <div class="auth-instructions">
+            <div class="auth-instructions-title">Quick notes</div>
+            <ul class="auth-instructions-list">
+              <li>Set <code>data-auth-base</code> on <code>&lt;html&gt;</code> to change the provider URL base.</li>
+              <li>Limit providers with <code>data-auth-providers="google,apple"</code> on <code>&lt;html&gt;</code>.</li>
+              <li>The icon-only row is optional; hide it with <code>data-auth-icons="false"</code>.</li>
+              <li>Replace the slide images in <code>assets/</code> to customise the illustration.</li>
+              <li>Use <code>data-auth-static="true"</code> on the panel to disable carousel animation.</li>
+            </ul>
+            <a class="auth-link" href="../../../documentation/" target="_blank" rel="noreferrer">Open full Finella UI docs</a>
+          </div>
+        </section>
+      </div>
+
+      <div class="auth-block-divider"></div>
+
+      <div class="auth-block auth-block--signup">
+        <section class="auth-section auth-section--signup">
+          <div class="auth-side">
+            <div class="auth-brand">
+              <span class="auth-brand-icon">F</span>
+              <span class="auth-brand-name">Finella</span>
+            </div>
+            <div class="auth-panel" data-auth-carousel="signup" data-auth-skip-focus="signup-name">
+              <div class="auth-illustration auth-illustration--signup">
+                <img src="assets/signup-slide-1.svg" alt="Finella onboarding illustration" loading="lazy">
+              </div>
+              <h2>Built for faster decisions</h2>
+              <p class="auth-panel-copy">A smarter way to manage approvals and documentation from one hub.</p>
+              <div class="auth-dots" role="tablist" aria-label="Feature slides">
+                <button class="auth-dot is-active" type="button" aria-label="Slide 1"></button>
+                <button class="auth-dot" type="button" aria-label="Slide 2"></button>
+                <button class="auth-dot" type="button" aria-label="Slide 3"></button>
+              </div>
+              <div class="auth-panel-actions">
+                <button class="f-btn f-btn-primary auth-next" type="button">Next</button>
+                <button class="auth-panel-skip auth-skip" type="button">Skip</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-card">
+            <h3>Create Account</h3>
+            <p class="auth-subtitle">Fill in your details or register with a social account</p>
+            <form class="auth-form">
+              <label class="f-label" for="signup-name">Name</label>
+              <input class="f-input" type="text" id="signup-name" placeholder="Alex Morgan" required>
+              <label class="f-label" for="signup-email">Email</label>
+              <input class="f-input" type="email" id="signup-email" placeholder="alex@finella.dev" required>
+              <label class="f-label" for="signup-password">Password</label>
+              <div class="auth-input-row">
+                <input class="f-input" type="password" id="signup-password" placeholder="????????" required>
+                <button class="auth-icon-btn" type="button" data-toggle-password="signup-password" aria-pressed="false">Show</button>
+              </div>
+              <label class="auth-check">
+                <input type="checkbox" checked>
+                <span>I agree with <a class="auth-link" href="#">Terms &amp; Conditions</a></span>
+              </label>
+              <button class="f-btn f-btn-primary" type="submit">Create Account</button>
+              <div class="auth-divider"><span>or sign up with</span></div>
+              <div class="auth-provider-row auth-provider-row--icons" aria-label="Sign up with">
+                <button class="auth-provider-icon-btn" type="button" data-auth-provider="google" aria-label="Sign up with Google">
+                  <span class="auth-provider-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M23.52 12.273c0-.77-.07-1.51-.2-2.23H12v4.21h6.48a5.54 5.54 0 0 1-2.4 3.64v3.02h3.88c2.27-2.09 3.56-5.16 3.56-8.64Z" fill="#4285F4"/>
+                      <path d="M12 24c3.24 0 5.96-1.07 7.95-2.9l-3.88-3.02c-1.08.73-2.47 1.17-4.07 1.17-3.12 0-5.76-2.1-6.7-4.94H1.3v3.1A12 12 0 0 0 12 24Z" fill="#34A853"/>
+                      <path d="M5.3 14.31A7.2 7.2 0 0 1 4.92 12c0-.8.14-1.57.38-2.31V6.6H1.3A12 12 0 0 0 0 12c0 1.92.46 3.74 1.3 5.4l4-3.09Z" fill="#FBBC05"/>
+                      <path d="M12 4.77c1.76 0 3.34.6 4.59 1.8l3.44-3.44C17.95 1.2 15.24 0 12 0 7.3 0 3.25 2.69 1.3 6.6l4 3.09C6.24 6.87 8.88 4.77 12 4.77Z" fill="#EA4335"/>
+                    </svg>
+                  </span>
+                </button>
+                <button class="auth-provider-icon-btn" type="button" data-auth-provider="apple" aria-label="Sign up with Apple">
+                  <span class="auth-provider-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16.55 12.4c0-2.15 1.76-3.17 1.84-3.22-1-1.46-2.55-1.66-3.1-1.68-1.32-.14-2.57.77-3.24.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.5 2.14-1.5 2.6-.38 6.44 1.07 8.55.71 1.03 1.55 2.18 2.66 2.14 1.06-.04 1.46-.69 2.74-.69s1.64.69 2.76.67c1.14-.02 1.86-1.03 2.56-2.07.81-1.18 1.15-2.33 1.17-2.39-.03-.01-2.25-.86-2.26-3.49ZM14.4 5.7c.58-.7.97-1.67.86-2.64-.83.03-1.83.55-2.42 1.25-.53.61-.99 1.6-.87 2.53.93.07 1.84-.47 2.43-1.14Z"/>
+                    </svg>
+                  </span>
+                </button>
+                <button class="auth-provider-icon-btn" type="button" data-auth-provider="microsoft" aria-label="Sign up with Microsoft">
+                  <span class="auth-provider-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="3" width="8" height="8" fill="#F25022"/>
+                      <rect x="13" y="3" width="8" height="8" fill="#7FBA00"/>
+                      <rect x="3" y="13" width="8" height="8" fill="#00A4EF"/>
+                      <rect x="13" y="13" width="8" height="8" fill="#FFB900"/>
+                    </svg>
+                  </span>
+                </button>
+                <button class="auth-provider-icon-btn" type="button" data-auth-provider="github" aria-label="Sign up with GitHub">
+                  <span class="auth-provider-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.73-4.04-1.62-4.04-1.62-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.09-.74.09-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.84 1.32 3.53 1.01.11-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C18.3 5.66 19.3 5.98 19.3 5.98c.66 1.64.24 2.86.12 3.16.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.38.82 1.12.82 2.26 0 1.63-.02 2.95-.02 3.35 0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0Z"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <p class="auth-switch">Already have an account? <a class="auth-link" href="#">Log in</a></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="element-section element-section--signup">
+          <h2>Sign-up code</h2>
+          <p class="element-section-lead">Registration markup with provider options, consistent spacing, and shared hooks.</p>
+          <div class="fx-code">
+            <div class="fx-code-header">
+              <div>HTML - Sign-up card</div>
+              <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-signup-html">Copy</button>
+            </div>
+            <pre><code id="code-signup-html">&lt;div class=&quot;auth-card&quot;&gt;
+  &lt;h3&gt;Create Account&lt;/h3&gt;
+  &lt;p class=&quot;auth-subtitle&quot;&gt;Fill in your details&lt;/p&gt;
+  &lt;form class=&quot;auth-form&quot;&gt;
+    &lt;label class=&quot;f-label&quot;&gt;Name&lt;/label&gt;
+    &lt;input class=&quot;f-input&quot; type=&quot;text&quot; placeholder=&quot;Alex Morgan&quot;&gt;
+
+    &lt;label class=&quot;f-label&quot;&gt;Email&lt;/label&gt;
+    &lt;input class=&quot;f-input&quot; type=&quot;email&quot; placeholder=&quot;alex@finella.dev&quot;&gt;
+
+    &lt;label class=&quot;f-label&quot;&gt;Password&lt;/label&gt;
+    &lt;div class=&quot;auth-input-row&quot;&gt;
+      &lt;input class=&quot;f-input&quot; type=&quot;password&quot; placeholder=&quot;????????&quot;&gt;
+      &lt;button class=&quot;auth-icon-btn&quot; type=&quot;button&quot;&gt;Show&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Remove this block for email-only sign-up --&gt;
+    &lt;div class=&quot;auth-provider-row auth-provider-row--icons&quot;&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;google&quot; aria-label=&quot;Sign up with Google&quot;&gt;...&lt;/button&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;apple&quot; aria-label=&quot;Sign up with Apple&quot;&gt;...&lt;/button&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;microsoft&quot; aria-label=&quot;Sign up with Microsoft&quot;&gt;...&lt;/button&gt;
+      &lt;button class=&quot;auth-provider-icon-btn&quot; data-auth-provider=&quot;github&quot; aria-label=&quot;Sign up with GitHub&quot;&gt;...&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;button class=&quot;f-btn f-btn-primary&quot;&gt;Create Account&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <div class="fx-code">
+            <div class="fx-code-header">
+              <div>JS - Provider redirect + shared hooks</div>
+              <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-signup-js">Copy</button>
+            </div>
+            <pre><code id="code-signup-js">// Providers use the same redirect hook as sign-in
+var base = document.documentElement.getAttribute('data-auth-base') || '/auth';
+var allowed = document.documentElement.getAttribute('data-auth-providers');
+var icons = document.documentElement.getAttribute('data-auth-icons');
+var list = allowed ? allowed.split(',').map(function (p) { return p.trim().toLowerCase(); }) : null;
+
+if (icons === 'false') {
+  Array.from(document.querySelectorAll('.auth-provider-row--icons')).forEach(function (row) {
+    row.style.display = 'none';
+  });
+}
+
+Array.from(document.querySelectorAll('[data-auth-provider]')).forEach(function (btn) {
+  var provider = btn.getAttribute('data-auth-provider');
+  if (list && list.indexOf(provider) === -1) {
+    btn.style.display = 'none';
+    return;
+  }
+  btn.addEventListener('click', function () {
+    window.location.href = base.replace(/\/$/, '') + '/' + provider;
+  });
+});</code></pre>
+          </div>
+          <div class="fx-code">
+            <div class="fx-code-header">
+              <div>CSS - Shared provider styling</div>
+              <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-signup-css">Copy</button>
+            </div>
+            <pre><code id="code-signup-css">.auth-provider-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.auth-provider-icon-btn {
+  width: 42px;
+  height: 42px;
+}
+
+@media (max-width: 560px) {
+  .auth-provider-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}</code></pre>
+          </div>
+          <div class="auth-instructions">
+            <div class="auth-instructions-title">Quick notes</div>
+            <ul class="auth-instructions-list">
+              <li>Providers share the same backend endpoints as sign-in.</li>
+              <li>Limit providers with <code>data-auth-providers</code> to keep only selected ones.</li>
+              <li>Remove the provider rows for email-only sign-up (or hide icons with <code>data-auth-icons="false"</code>).</li>
+              <li>Keep the same CSS tokens for consistent button sizing.</li>
+            </ul>
+            <a class="auth-link" href="../../../documentation/" target="_blank" rel="noreferrer">Open full Finella UI docs</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="elements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{
+  "name": "finella/deploy",
+  "description": "Deployment utilities for Finella",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5"
+  },
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Finella\\Deploy\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    }
+  },
+  "scripts": {
+    "test": "php tests/smoke.php"
+  }
+}
+

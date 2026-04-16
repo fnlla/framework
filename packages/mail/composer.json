@@ -1,0 +1,39 @@
+{
+  "name": "finella/mail",
+  "description": "Finella mail module (Symfony Mailer adapter)",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5",
+    "symfony/mailer": "^7",
+    "symfony/mime": "^7"
+  },
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Finella\\Mail\\": "src/"
+    }
+  },
+  "extra": {
+    "finella": {
+      "providers": [
+        "Finella\\Mail\\MailServiceProvider"
+      ]
+    },
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    }
+  },
+  "scripts": {
+    "test": "php tests/smoke.php"
+  }
+}
+

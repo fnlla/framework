@@ -1,0 +1,27 @@
+{
+  "name": "finella/ui",
+  "description": "Finella UI (CSS grid, components, and templates)",
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Finella\\Ui\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    },
+    "finella": {
+      "providers": [
+        "Finella\\Ui\\UiServiceProvider"
+      ]
+    }
+  }
+}
+

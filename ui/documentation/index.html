@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finella UI Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../elements/assets/ui.css">
+  <link rel="stylesheet" href="../elements/assets/elements.css">
+  <link rel="stylesheet" href="assets/documentation.css">
+</head>
+<body class="fx-body fx-docs-body">
+  <header class="fx-topbar">
+    <div class="f-container fx-topbar-inner">
+      <div class="fx-brand">
+        <div class="fx-brand-mark">Finella UI</div>
+        <span class="fx-brand-pill">Documentation</span>
+      </div>
+      <nav class="fx-nav">
+        <a class="fx-nav-link" href="../elements/">Home</a>
+        <a class="fx-nav-link" href="../elements/#elements">Elements</a>
+        <a class="fx-nav-link is-active" href="index.html">Documentation</a>
+      </nav>
+      <div class="fx-topbar-actions">
+        <a class="f-btn f-btn-outline" href="../elements/#elements">Browse elements</a>
+        <a class="f-btn f-btn-primary" href="../elements/">Finella UI</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="fx-docs-layout">
+    <aside class="fx-docs-sidebar">
+      <div class="fx-docs-sidebar-title">Documentation</div>
+      <ul class="fx-docs-nav"><li><a class="fx-docs-link is-active" href="index.html">Finella UI</a></li></ul>
+      <div class="fx-docs-sidebar-note">
+        Docs source lives in <code>ui/index.md</code>.
+      </div>
+    </aside>
+    <article class="fx-docs-content">
+      <div class="fx-docs-eyebrow">Finella UI</div>
+      <h1>Finella UI</h1>
+      <div class="fx-docs-markdown">
+        <h1 id="finella-ui">Finella UI</h1><p>Finella UI is a no-build CSS framework and Elements library for shipping product UIs fast. It includes a grid system, utilities, form styles, and ready-to-use layouts. For the static HTML version of these docs, open <code>ui/documentation/</code>.</p><p><strong>Quick links</strong></p><ul><li><a href="../elements/">Browse the Elements library</a></li><li><a href="../elements/">Open Finella UI site</a></li><li><a href="../CHANGELOG.md">View UI changelog</a></li></ul><h2 id="install">Install</h2><pre><code class="language-bash">composer require finella/ui</code></pre><h2 id="publish-assets-and-templates">Publish assets and templates</h2><pre><code class="language-bash">php bin/finella ui:publish --app=.</code></pre><p>This copies:</p><ul><li><code>public/assets/ui.css</code></li><li><code>resources/views/ui/*</code></li></ul><h2 id="publish-elements-optional">Publish Elements (optional)</h2><pre><code class="language-bash">php bin/finella ui:elements:publish --app=.</code></pre><p>This copies the gallery into <code>public/ui-elements/</code>. Elements are production-ready building blocks - copy the parts you need into your app and customise locally.</p><h2 id="auth-providers-sign-in-sign-up">Auth providers (Sign in / Sign up)</h2><p>The Sign-in Element supports provider buttons via a lightweight, framework-agnostic hook.</p><h3 id="frontend-hook">Frontend hook</h3><p>Each provider button uses <code>data-auth-provider</code>:</p><pre><code class="language-html">&lt;button data-auth-provider=&quot;google&quot;&gt;Continue with Google&lt;/button&gt;
+&lt;button data-auth-provider=&quot;apple&quot;&gt;Continue with Apple&lt;/button&gt;
+&lt;button data-auth-provider=&quot;microsoft&quot;&gt;Continue with Microsoft&lt;/button&gt;
+&lt;button data-auth-provider=&quot;github&quot;&gt;Continue with GitHub&lt;/button&gt;</code></pre><p>The Element JS redirects to:</p><pre><code>/auth/{provider}</code></pre><p>You can change the base path by setting:</p><pre><code class="language-html">&lt;html data-auth-base=&quot;/auth&quot;&gt;</code></pre><p>Limit providers with:</p><pre><code class="language-html">&lt;html data-auth-providers=&quot;google,apple&quot;&gt;</code></pre><p>Only the listed providers will remain visible.</p><p>Hide icon-only rows with:</p><pre><code class="language-html">&lt;html data-auth-icons=&quot;false&quot;&gt;</code></pre><h3 id="backend-wiring-finella-auth">Backend wiring (Finella Auth)</h3><p>If you use Finella Auth, register the built-in routes once:</p><pre><code class="language-php">use Finella\Auth\AuthRoutes;
+
+AuthRoutes::register($router, [
+    &#039;prefix&#039; =&gt; &#039;/auth&#039;,
+    &#039;middleware&#039; =&gt; [&#039;web&#039;],
+]);</code></pre><p>Then configure provider credentials in your app as required by your OAuth/OIDC setup. The UI buttons simply redirect to <code>/auth/{provider}</code> so the backend can start the OAuth flow.</p><h3 id="remove-providers-email-only">Remove providers (email-only)</h3><p>To keep email-only sign-in/sign-up, remove the provider button group:</p><pre><code class="language-html">&lt;!-- Remove this block for email-only auth --&gt;
+&lt;div class=&quot;auth-provider-grid&quot;&gt;...&lt;/div&gt;</code></pre><p>Optional icon-only row:</p><pre><code class="language-html">&lt;div class=&quot;auth-provider-row auth-provider-row--icons&quot;&gt;...&lt;/div&gt;</code></pre><h2 id="carousel-controls">Carousel controls</h2><p>The Sign-in and Sign-up panels include an optional carousel.</p><h3 id="skip-behaviour">Skip behaviour</h3><p><code>Skip</code> stops the carousel and focuses the primary input (email or name). You can control the focus target per panel:</p><pre><code class="language-html">&lt;div class=&quot;auth-panel&quot; data-auth-carousel=&quot;signin&quot; data-auth-skip-focus=&quot;signin-email&quot;&gt;</code></pre><h3 id="static-mode-no-animation">Static mode (no animation)</h3><p>If you want a static panel, set:</p><pre><code class="language-html">&lt;div class=&quot;auth-panel&quot; data-auth-carousel=&quot;signin&quot; data-auth-static=&quot;true&quot;&gt;</code></pre><p>This disables auto-rotation and hides the dots/controls.</p><h2 id="theming">Theming</h2><p>Override CSS variables in <code>:root</code> to adjust colours, radius, and typography. Load your overrides after <code>ui.css</code> for safe customisation.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="fx-docs-footer">
+    <div class="f-container">
+      <span>© <span data-current-year></span> Finella</span>
+      <span>Docs generated from markdown in <code>ui/index.md</code>.</span>
+    </div>
+  </footer>
+  <script src="../elements/assets/elements.js"></script>
+</body>
+</html>

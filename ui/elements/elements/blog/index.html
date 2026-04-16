@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finella UI · Blog</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="elements.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="f-container fx-page">
+    <div class="element-intro">
+      <div class="element-intro-eyebrow">Element: Blog</div>
+      <div class="element-intro-subtitle">Editorial layout with featured story, list, and sidebar.</div>
+    </div>
+<div class="blog-hero">
+      <div>
+        <div class="fx-eyebrow">Journal</div>
+        <div class="blog-hero-actions">
+          <button class="f-btn f-btn-primary">Follow updates</button>
+          <button class="f-btn f-btn-outline">Browse all posts</button>
+        </div>
+        <div class="blog-filters" data-toggle-group>
+          <button class="f-btn f-btn-outline is-active" data-toggle-item>All</button>
+          <button class="f-btn f-btn-outline" data-toggle-item>AI</button>
+          <button class="f-btn f-btn-outline" data-toggle-item>Design</button>
+          <button class="f-btn f-btn-outline" data-toggle-item>Ops</button>
+        </div>
+      </div>
+      <div class="fx-surface">
+        <h3 style="margin-top: 0;">Featured story</h3>
+        <p class="fx-muted">How we shipped an AI-assisted changelog in 48 hours using Finella Platform.</p>
+        <button class="f-btn f-btn-outline">Read feature</button>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <main class="f-stack">
+        <article class="f-card blog-card">
+          <div class="blog-meta">
+            <span class="f-badge">Release</span>
+            <span class="blog-date">3 days ago</span>
+          </div>
+          <h3>Finella UI 1.2 ships with grid + cards</h3>
+          <p class="f-muted">A quick overview of the new layout tokens and how to adopt them without breaking your app.</p>
+          <div class="blog-actions">
+            <button class="f-btn f-btn-outline">Read post</button>
+            <button class="f-btn">Save</button>
+          </div>
+        </article>
+
+        <article class="f-card blog-card">
+          <div class="blog-meta">
+            <span class="f-badge">Guides</span>
+            <span class="blog-date">1 week ago</span>
+          </div>
+          <h3>Designing dashboards that stay readable</h3>
+          <p class="f-muted">Patterns for structuring operational screens with signal-heavy content.</p>
+          <div class="blog-actions">
+            <button class="f-btn f-btn-outline">Read post</button>
+            <button class="f-btn">Save</button>
+          </div>
+        </article>
+
+        <article class="f-card blog-card">
+          <div class="blog-meta">
+            <span class="f-badge">Team</span>
+            <span class="blog-date">2 weeks ago</span>
+          </div>
+          <h3>How we keep product & ops in sync</h3>
+          <p class="f-muted">A practical look at our docs and AI alignment workflow.</p>
+          <div class="blog-actions">
+            <button class="f-btn f-btn-outline">Read post</button>
+            <button class="f-btn">Save</button>
+          </div>
+        </article>
+
+        <div class="blog-pagination">
+          <button class="f-btn f-btn-outline">Previous</button>
+          <button class="f-btn f-btn-primary">Next</button>
+        </div>
+      </main>
+
+      <aside class="f-stack">
+        <div class="f-card">
+          <h3 class="f-card-title">Popular tags</h3>
+          <div class="blog-tags">
+            <span class="f-badge">Design</span>
+            <span class="f-badge">AI</span>
+            <span class="f-badge">Delivery</span>
+            <span class="f-badge">Governance</span>
+            <span class="f-badge">Docs</span>
+          </div>
+        </div>
+
+        <div class="f-card">
+          <h3 class="f-card-title">Newsletter</h3>
+          <p class="f-muted">Monthly drops of shipping notes and frameworks.</p>
+          <form class="f-stack">
+            <input class="f-input" type="email" placeholder="you@company.com">
+            <button class="f-btn f-btn-primary">Join</button>
+          </form>
+        </div>
+
+        <div class="f-card">
+          <h3 class="f-card-title">Trending topics</h3>
+          <ul class="blog-list">
+            <li>AI policy packs</li>
+            <li>Release automation</li>
+            <li>Quality gates</li>
+            <li>Docs drift fixes</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+<section class="element-section">
+      <h2>Code blocks</h2>
+      <div class="fx-code">
+        <div class="fx-code-header">
+          <div>Blog list</div>
+          <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-blog">Copy</button>
+        </div>
+        <pre><code id="code-blog">&lt;div class=&quot;blog-list&quot;&gt;
+  &lt;article class=&quot;blog-card&quot;&gt;
+    &lt;div class=&quot;fx-eyebrow&quot;&gt;Product&lt;/div&gt;
+    &lt;h3&gt;Announcing Finella Updates&lt;/h3&gt;
+    &lt;p class=&quot;fx-muted&quot;&gt;Prompt-to-site workflow for teams.&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class=&quot;blog-card&quot;&gt;...&lt;/article&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <script src="elements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

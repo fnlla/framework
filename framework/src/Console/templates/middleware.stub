@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{namespace}};
+
+use Finella\Support\Psr\Http\Message\ResponseInterface;
+use Finella\Support\Psr\Http\Message\ServerRequestInterface;
+use Finella\Support\Psr\Http\Server\MiddlewareInterface;
+use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+
+final class {{class}} implements MiddlewareInterface
+{
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    {
+        return $handler->handle($request);
+    }
+}

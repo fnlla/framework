@@ -1,0 +1,48 @@
+name: Feature request
+description: Propose an improvement or a new capability.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user or developer problem are we solving?
+      placeholder: "Today we cannot ..., which causes ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should change?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional, but helpful for design review.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Framework
+        - Packages
+        - Starter app
+        - UI
+        - Docs
+        - CI/Release tooling
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and rollout
+      description: Compatibility, migration, and release notes impact.

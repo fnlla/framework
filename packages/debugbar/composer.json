@@ -1,0 +1,26 @@
+{
+  "name": "finella/debugbar",
+  "description": "Finella debugbar module",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Finella\\Debugbar\\": "src/"
+    }
+  },
+  "license": "proprietary",
+  "extra": {
+    "finella": {
+      "providers": [
+        "Finella\\Debugbar\\DebugbarServiceProvider"
+      ]
+    },
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    }
+  }
+}
+

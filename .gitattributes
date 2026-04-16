@@ -1,0 +1,32 @@
+# Normalize common text files to LF to avoid CRLF drift on Windows.
+*.md text eol=lf
+*.php text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.env text eol=lf
+*.env.* text eol=lf
+*.txt text eol=lf
+*.sql text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+
+/scripts/*.sh text eol=lf
+/vendor/ export-ignore
+**/vendor/ export-ignore
+/apps/harness/vendor/ export-ignore
+/framework/vendor/ export-ignore
+/packages/*/vendor/ export-ignore
+/.composer-cache/ export-ignore
+/.composer-home/ export-ignore
+**/.composer-cache/ export-ignore
+**/.composer-home/ export-ignore
+/apps/harness/.composer-cache/ export-ignore
+/apps/harness/.composer-home/ export-ignore
+docs/api/ export-ignore
+/apps/harness/bootstrap/cache/*.php export-ignore
+/packages/app/bootstrap/cache/*.php export-ignore
+**/bootstrap/cache/*.php export-ignore

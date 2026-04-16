@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+use Finella\Database\MigrationInterface;
+use Finella\Database\Schema;
+use Finella\Database\Table;
+
+return new class implements MigrationInterface
+{
+    public function up(PDO $pdo): void
+    {
+        Schema::create('{{table}}', function (Table $t): void {
+            $t->id();
+            $t->string('name');
+            $t->timestamps();
+        });
+    }
+
+    public function down(PDO $pdo): void
+    {
+        Schema::dropIfExists('{{table}}');
+    }
+};

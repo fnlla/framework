@@ -1,0 +1,38 @@
+{
+  "name": "finella/pdf",
+  "description": "HTML-to-PDF rendering (Dompdf) with templates and API helpers",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5",
+    "dompdf/dompdf": "^3.1"
+  },
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Finella\\Pdf\\": "src/"
+    }
+  },
+  "extra": {
+    "finella": {
+      "providers": [
+        "Finella\\Pdf\\PdfServiceProvider"
+      ]
+    },
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    }
+  },
+  "scripts": {
+    "test": "php tests/smoke.php"
+  }
+}
+

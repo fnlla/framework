@@ -1,0 +1,24 @@
+{
+  "name": "finella/mail-preview",
+  "description": "Finella mail preview routes and templates",
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Finella\\MailPreview\\": "src/"
+    }
+  },
+  "extra": {
+    "finella": {
+      "providers": [
+        "Finella\\MailPreview\\MailPreviewServiceProvider"
+      ]
+    }
+  }
+}
+

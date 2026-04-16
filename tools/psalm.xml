@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="3"
+    resolveFromConfigFile="true"
+    phpVersion="8.4"
+    errorBaseline="psalm-baseline.xml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="../framework/src" />
+        <directory name="../packages" />
+        <directory name="harness/src" />
+        <directory name="harness/bootstrap" />
+        <ignoreFiles>
+            <directory name="../ui/stubs" />
+        </ignoreFiles>
+    </projectFiles>
+    <stubs>
+        <file name="stubs/redis.php" />
+        <file name="stubs/imap.php" />
+    </stubs>
+</psalm>

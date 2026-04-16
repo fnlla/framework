@@ -1,0 +1,49 @@
+{
+  "name": "finella/framework",
+  "description": "Finella - AI-assisted PHP framework",
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Maintainer"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=8.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Finella\\": "src/"
+    },
+    "files": [
+      "src/Support/global_helpers.php",
+      "src/Support/compat.php",
+      "src/Support/helpers.php"
+    ]
+  },
+  "bin": [
+    "bin/finella"
+  ],
+  "extra": {
+    "finella": {
+      "providers": [
+        "Finella\\Database\\DatabaseServiceProvider",
+        "Finella\\Cache\\CacheServiceProvider",
+        "Finella\\Log\\LogServiceProvider",
+        "Finella\\RequestLogging\\RequestLoggingServiceProvider",
+        "Finella\\Session\\SessionServiceProvider",
+        "Finella\\Cookie\\CookieServiceProvider",
+        "Finella\\Csrf\\CsrfServiceProvider",
+        "Finella\\Auth\\AuthServiceProvider",
+        "Finella\\Orm\\OrmServiceProvider"
+      ]
+    },
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    }
+  }
+}
+
