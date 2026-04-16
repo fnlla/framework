@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>or - Finella Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../ui/elements/assets/ui.css">
+  <link rel="stylesheet" href="../../../ui/elements/assets/elements.css">
+  <link rel="stylesheet" href="../../assets/documentation.css">
+</head>
+<body class="fx-body fx-docs-body">
+  <header class="fx-topbar">
+    <div class="f-container fx-topbar-inner">
+      <div class="fx-brand">
+        <div class="fx-brand-mark">Finella</div>
+        <span class="fx-brand-pill">Documentation</span>
+      </div>
+      <div class="fx-topbar-actions"></div>
+    </div>
+  </header>
+
+  <main class="fx-docs-layout">
+    <aside class="fx-docs-sidebar">
+      <div class="fx-docs-sidebar-title">Documentation</div>
+      <ul class="fx-docs-nav"><li><a class="fx-docs-link" href="../index.html">Index</a></li><li><a class="fx-docs-link is-active" href="getting-started.html">or</a></li><li><a class="fx-docs-link" href="framework.html">Framework</a></li><li><a class="fx-docs-link" href="ai-integrations.html">Ai Integrations</a></li><li><a class="fx-docs-link" href="operations.html">or all releases:</a></li><li><a class="fx-docs-link" href="packages.html">Packages</a></li><li><a class="fx-docs-link" href="developer-experience.html">Developer Experience</a></li></ul>
+      <div class="fx-docs-sidebar-note">
+        All docs live in the monorepo <code>documentation/src</code> folder.
+      </div>
+    </aside>
+    <article class="fx-docs-content">
+      <div class="fx-docs-eyebrow">Finella</div>
+      <h1>or</h1>
+      <div class="fx-docs-markdown">
+        <p><strong>GETTING STARTED</strong></p><p><strong>GETTING STARTED</strong></p><p>This page replaces the old Start Here, Onboarding, and Starter guides. It is the recommended entry point for new teams.</p><p><strong>REQUIREMENTS</strong> <strong>-</strong> PHP &gt;= 8.4 <strong>-</strong> Composer &gt;= 2 <strong>-</strong> A web server for production or the PHP built-in server for local dev</p><p><strong>QUICK START (5 MINUTES)</strong> <strong>-</strong> Install:</p><pre><code class="language-bash">git clone https://github.com/kordyaczny/finella.git finella
+cd finella/app
+copy .env.example .env
+composer install</code></pre><p><strong>-</strong> Bootstrap database + migrations:</p><pre><code class="language-bash">php bin/finella db:bootstrap</code></pre><p><strong>-</strong> Run the dev server:</p><pre><code class="language-bash">composer run dev</code></pre><p><strong>-</strong> Open the app: <strong>-</strong> Product App: <code>http://127.0.0.1:8000/</code></p><p>Docs tip (monorepo):</p><pre><code class="language-bash">php bin/finella docs:generate --publish --app=.</code></pre><p>The starter app is wired to local packages in this monorepo. If you want a standalone app repository, copy <code>app/</code> into a new repo and replace the path repositories in its <code>composer.json</code> with released package versions. The starter is intentionally minimal; add optional modules (AI, queue, mail, etc.) only when you need them.</p><p><strong>COMMON STACKS (RECOMMENDED)</strong> <strong>-</strong> Default web stack (recommended): <code>finella/standard</code> <strong>-</strong> Typical product app: standard + <code>finella/mail</code> + <code>finella/queue</code> + <code>finella/scheduler</code> <strong>-</strong> Content-heavy sites: standard + <code>finella/ops</code> (static cache) + <code>finella/seo</code> + <code>finella/content</code></p><p>Note: use <code>.env</code> for secrets and deploy-time settings, and <code>finella/settings</code> for runtime, admin-editable values.</p><p>Default stack: the starter uses <code>finella/standard</code> by default. Add optional modules in <code>composer.json</code> only when needed (ORM, queue, scheduler, mail, tenancy, webmail, notifications, PDF).</p><p>Example (read a runtime setting):</p><pre><code class="language-php">use Finella\Settings\SettingsStore;
+
+$settings = app()-&gt;make(SettingsStore::class);
+$siteTitle = $settings-&gt;get(&#039;site_title&#039;, &#039;Finella&#039;);</code></pre><p>Example (write a runtime setting):</p><pre><code class="language-php">use Finella\Settings\SettingsStore;
+
+$settings = app()-&gt;make(SettingsStore::class);
+$settings-&gt;set(&#039;site_title&#039;, &#039;New title&#039;);</code></pre><p><strong>15-MINUTE PATH</strong> <strong>-</strong> Verify liveness and readiness: <code>GET /health</code>, <code>GET /status</code>, <code>GET /ready</code>. <strong>-</strong> Add a simple route in <code>routes/web.php</code>:</p><pre><code class="language-php">use Finella\Http\Router;
+use Finella\Http\Response;
+
+return static function (Router $router): void {
+    $router-&gt;get(&#039;/ping&#039;, fn () =&gt; Response::json([&#039;pong&#039; =&gt; true]));
+};</code></pre><p><strong>-</strong> Add a controller:</p><pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+namespace App\Controllers;
+
+use Finella\Http\Response;
+
+final class PingController
+{
+    public function __invoke(): Response
+    {
+        return Response::json([&#039;pong&#039; =&gt; true]);
+    }
+}</code></pre><p>Register it in <code>routes/web.php</code>:</p><pre><code class="language-php">use App\Controllers\PingController;
+use Finella\Http\Router;
+
+return static function (Router $router): void {
+    $router-&gt;get(&#039;/ping&#039;, PingController::class);
+};</code></pre><p><strong>1-HOUR PATH (EXPANDED)</strong> <strong>-</strong> Controllers and views <strong>-</strong> Service layer (route -&gt; controller -&gt; service -&gt; response) <strong>-</strong> Config and environment <strong>-</strong> Database + migrations <strong>-</strong> Auth routes and middleware</p><p>Use the starter service example: <strong>-</strong> <code>app/src/Controllers/StatusController.php</code> <strong>-</strong> <code>app/src/Services/AppStatusService.php</code></p><p><strong>FIRST DAY PATH</strong> <strong>-</strong> Read <code>documentation/src/getting-started.md</code> (how the codebase is organised). <strong>-</strong> Read <code>documentation/src/operations.md</code> (logging, readiness, security, runbooks). <strong>-</strong> Read <code>documentation/src/operations.md</code> (standard + optional modules). <strong>-</strong> Read <code>documentation/src/framework.md</code> (HTTP, data, async, and utilities). <strong>-</strong> Check <code>documentation/src/developer-experience.md</code> for task-oriented entry points and discovery.</p><p><strong>STARTER MAINTENANCE (MONOREPO)</strong> Update the starter whenever the framework or official packages change in a way that affects: <strong>-</strong> bootstrapping (<code>bootstrap/app.php</code>) <strong>-</strong> routing defaults (<code>routes/web.php</code>) <strong>-</strong> config defaults (<code>config/**/*.php</code>) <strong>-</strong> required packages / versions</p><p>Steps: <strong>-</strong> Pull the latest framework changes. <strong>-</strong> Update <code>app/composer.json</code> if package requirements or PHP constraints changed. <strong>-</strong> Refresh the lock file:</p><pre><code class="language-bash">cd app
+composer update</code></pre><p><strong>-</strong> Verify the app boots:</p><pre><code class="language-bash">composer run dev
+# or
+php -S localhost:8000 -t public</code></pre><p><strong>STARTER OUTSIDE THE MONOREPO (OPTIONAL)</strong> If you want a standalone app repository: <strong>-</strong> Copy <code>app/</code> into a new repo. <strong>-</strong> Remove the path repositories that point to <code>../../framework</code>, <code>../../packages/*</code>, and <code>../../ui</code>. <strong>-</strong> Keep <code>finella/framework</code> and other packages in <code>require</code> and install from your package source.</p><p><strong>EXISTING PROJECT (MINIMAL)</strong> If you want to add the framework to your own project: <strong>-</strong> Add <code>finella/framework</code> to <code>composer.json</code> in <code>require</code>. <strong>-</strong> Create the minimal layout:</p><pre><code>public/
+  index.php
+bootstrap/
+  app.php
+config/
+routes/
+  web.php
+resources/
+  views/
+storage/</code></pre><p><strong>-</strong> Create your bootstrap and entry point (see <code>framework/docs/getting-started.md</code>).</p><p><strong>NEXT STEPS</strong> <strong>-</strong> <code>documentation/src/getting-started.md</code> for layout and naming <strong>-</strong> <code>documentation/src/framework.md</code> for routing, middleware, configuration, data, and async <strong>-</strong> <code>documentation/src/operations.md</code> for production readiness, observability, and governance</p><p><strong>ONBOARDING</strong></p><p>This guide standardises onboarding for new developers in the Finella monorepo. Follow it step by step to avoid drift between the framework, packages, and starter app.</p><p><strong>PREREQUISITES</strong> <strong>-</strong> PHP 8.4+ <strong>-</strong> Composer 2+ <strong>-</strong> Git</p><p><strong>SETUP (ONE-TIME)</strong> <strong>-</strong> Clone the monorepo:</p><pre><code class="language-bash">git clone https://github.com/kordyaczny/finella.git finella</code></pre><p><strong>-</strong> Install starter dependencies:</p><pre><code class="language-bash">cd finella/app
+copy .env.example .env
+composer install</code></pre><p><strong>-</strong> Bootstrap the database:</p><pre><code class="language-bash">php bin/finella db:bootstrap</code></pre><p><strong>-</strong> Run the dev server:</p><pre><code class="language-bash">composer run dev</code></pre><p>Open <code>http://127.0.0.1:8000</code>.</p><p><strong>DOCS SYNC (SOURCE OF TRUTH)</strong> <strong>-</strong> Treat <code>documentation/src/</code> as the canonical documentation. <strong>-</strong> Sync into the starter before editing docs inside the app:</p><pre><code class="language-bash">php scripts/ci/check-docs-sync.php --app=app</code></pre><p><strong>FIRST-DAY CHECKLIST</strong> <strong>-</strong> Read <code>documentation/src/getting-started.md</code>. <strong>-</strong> Read <code>documentation/src/operations.md</code> (CLI + testing).</p><p><strong>COMMON PITFALLS</strong> <strong>-</strong> Editing published docs directly (use sync or publish from <code>documentation/src/</code> instead). <strong>-</strong> Forgetting to run <code>db:bootstrap</code>. <strong>-</strong> Changing package versions without updating the starter lockfile.</p><p><strong>STANDARD UPDATE FLOW</strong> When you touch framework/packages: <strong>-</strong> Update package code and docs in <code>documentation/src/</code>. <strong>-</strong> Run <code>php scripts/ci/check-docs-sync.php --app=app</code>. <strong>-</strong> Update <code>app/composer.json</code> if package constraints changed. <strong>-</strong> Run <code>composer update</code> in <code>app</code>.</p><p><strong>SUPPORT</strong> If anything fails, check: <strong>-</strong> <code>documentation/src/operations.md</code></p><p><strong>STRUCTURE &amp; CONVENTIONS</strong></p><p>This document describes the recommended application layout for Finella projects and the conventions that keep codebases consistent across teams.</p><p><strong>RECOMMENDED APP LAYOUT (STARTER OR STANDALONE APP)</strong></p><pre><code>app/
+  Controllers/
+  Services/
+  Repositories/
+  Actions/
+  Models/
+  Requests/
+  Policies/
+  Jobs/
+  Commands/
+  Listeners/
+  Modules/
+bootstrap/
+  app.php
+  cache/
+config/
+database/
+  migrations/
+  factories/
+  seeders/
+public/
+  index.php
+resources/
+  views/
+routes/
+  web.php
+schedule.php
+storage/
+  cache/
+  docs/
+  logs/
+  sessions/</code></pre><p><strong>MONOREPO LAYOUT (THIS REPOSITORY)</strong></p><pre><code>app/          # starter app wired to local packages
+framework/
+packages/
+documentation/
+scripts/
+  ci/
+  dev/
+  docs/
+  release/
+  smoke/
+tests/
+tools/
+  harness/     # dev/test harness used by the monorepo</code></pre><p>Notes: <strong>-</strong> <code>tools/harness/</code> is not the public starter. It exists to run smoke/EC tests and dev workflows. <strong>-</strong> <code>app/</code> is the starter app. You can copy it out into a standalone repo if you want an app-only checkout.</p><p><strong>MODULE LAYOUT (FEATURE-ORIENTED)</strong> Use <code>app/src/Modules/&lt;ModuleName&gt;/</code> for large features.</p><pre><code>app/
+  Modules/
+    Billing/
+      Controllers/
+      Requests/
+      Policies/
+      Jobs/
+      Views/
+      routes.php</code></pre><p><strong>NAMING</strong> <strong>-</strong> Controllers: <code>*Controller.php</code> (e.g. <code>InvoiceController</code>). <strong>-</strong> Application services: <code>*Service.php</code> (e.g. <code>InvoiceService</code>). <strong>-</strong> Domain entities: nouns (<code>Invoice</code>, <code>Customer</code>). <strong>-</strong> Repositories: <code>*Repository.php</code>. <strong>-</strong> Middleware: <code>*Middleware.php</code>.</p><p><strong>LAYERS</strong> <strong>-</strong> <code>App\Http\*</code> - web layer: controllers, middleware. <strong>-</strong> <code>App\Application\*</code> - use cases and application services. <strong>-</strong> <code>App\Domain\*</code> - entities, value objects, domain services. <strong>-</strong> <code>App\Infrastructure\*</code> - integrations, repositories, adapters. <strong>-</strong> <code>App\Modules\*</code> - optional bounded contexts (feature modules).</p><p><strong>FILES AND FOLDERS</strong> <strong>-</strong> Keep config in <code>config/</code> and reference via <code>.env</code>. <strong>-</strong> Routes live in <code>routes/</code> and should stay small and declarative. <strong>-</strong> Views live in <code>resources/views/</code>. <strong>-</strong> Static assets live in <code>public/</code>.</p><p><strong>CODE STYLE</strong> <strong>-</strong> Prefer small, explicit methods. <strong>-</strong> Keep controllers thin (request -&gt; service -&gt; response). <strong>-</strong> Avoid putting business rules in controllers. <strong>-</strong> Use value objects for non-trivial primitives (money, dates, IDs).</p><p><strong>ROUTING CONVENTIONS</strong> Put global routes in <code>routes/web.php</code>. For modules, include them from the main router:</p><pre><code class="language-php">require __DIR__ . &#039;/../app/src/Modules/Billing/routes.php&#039;;</code></pre><p><strong>CONFIGURATION</strong> Configuration is file-based in <code>config/**/*.php</code> and uses <code>env()</code> for environment variables. For editable runtime settings (admin panels, non-secret flags), use <code>finella/settings</code> and store values in the database.</p><p><strong>STORAGE</strong> Runtime data belongs in <code>storage/</code> and is not committed:</p><pre><code>storage/
+  cache/
+  logs/
+  sessions/</code></pre>
+      </div>
+    </article>
+  </main>
+
+  <footer class="fx-docs-footer">
+    <div class="f-container">
+      <span>© <span data-current-year></span> Finella</span>
+      <span>Docs generated from markdown in <code>documentation/src</code>.</span>
+    </div>
+  </footer>
+  <script src="../../../ui/elements/assets/elements.js"></script>
+</body>
+</html>

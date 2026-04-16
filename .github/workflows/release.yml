@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version from CHANGELOG (for example 2.5.6 or v2.5.6)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - name: Commit subject policy check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-commit-subject-prefix.php
+
+      - name: Publish release notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_VERSION: ${{ github.event.inputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${RELEASE_VERSION:-}"
+          VERSION="${VERSION#v}"
+          if [ -z "$VERSION" ]; then
+            echo "ERROR: version input is required."
+            exit 1
+          fi
+          php scripts/release/publish-release.php --version "${VERSION}"

@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Finella
+ * (c) TechAyo.co.uk
+ * Proprietary License
+ */
+
+declare(strict_types=1);
+
+namespace Finella\Contracts\Http;
+
+use Finella\Http\Request;
+use Finella\Support\Psr\Http\Message\ResponseInterface;
+
+/**
+ * @api
+ */
+interface KernelInterface
+{
+    public function handle(Request $request): ResponseInterface;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finella UI · Header</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="elements.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="f-container fx-page">
+    <div class="element-intro">
+      <div class="element-intro-eyebrow">Element: Header</div>
+      <div class="element-intro-subtitle">Header and navigation layouts combined into one page.</div>
+    </div>
+
+    <div class="navbar-stack">
+      <div class="navbar-variant navbar-hero">
+        <div class="navbar-label">Header + hero</div>
+        <header class="header-bar">
+          <div class="header-brand">Finella</div>
+          <nav class="header-nav" data-nav-group>
+            <a class="is-active" href="#">Product</a>
+            <a href="#">Projects</a>
+            <a href="#">Docs</a>
+            <a href="#">Pricing</a>
+          </nav>
+          <div class="header-actions">
+            <button class="f-btn f-btn-outline">Sign in</button>
+            <button class="f-btn f-btn-primary">Get started</button>
+          </div>
+        </header>
+
+        <div class="header-hero">
+          <div>
+            <div class="fx-eyebrow">Header</div>
+            <h2 class="header-title">Navigation that keeps teams moving.</h2>
+            <p class="fx-subtitle">Blend primary navigation with search, status, and CTA actions.</p>
+          </div>
+          <div class="fx-surface">
+            <strong>Header patterns</strong>
+            <ul class="header-list">
+              <li>Primary navigation</li>
+              <li>Secondary actions</li>
+              <li>Mobile-first layout</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fx-code">
+          <div class="fx-code-header">
+            <div>Header bar</div>
+            <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-header">Copy</button>
+          </div>
+          <pre><code id="code-header">&lt;header class=&quot;header-bar&quot;&gt;
+  &lt;div class=&quot;header-brand&quot;&gt;Finella&lt;/div&gt;
+  &lt;nav class=&quot;header-nav&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Product&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Docs&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;div class=&quot;header-actions&quot;&gt;
+    &lt;button class=&quot;f-btn f-btn-outline&quot;&gt;Sign in&lt;/button&gt;
+    &lt;button class=&quot;f-btn f-btn-primary&quot;&gt;Get started&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="navbar-variant navbar-hero-minimal">
+        <div class="navbar-label">Header minimal (SaaS)</div>
+        <header class="header-bar header-bar-minimal">
+          <div class="header-brand">Finella Cloud</div>
+          <nav class="header-nav" data-nav-group>
+            <a class="is-active" href="#">Product</a>
+            <a href="#">Solutions</a>
+            <a href="#">Pricing</a>
+            <a href="#">Docs</a>
+          </nav>
+          <div class="header-actions">
+            <button class="f-btn f-btn-outline">Log in</button>
+            <button class="f-btn f-btn-primary">Start free</button>
+          </div>
+        </header>
+        <div class="header-caption">
+          <span class="fx-badge">New</span>
+          <span class="header-caption-text">Scale with SSO-ready project spaces and audit trails.</span>
+        </div>
+      </div>
+
+      <div class="navbar-variant navbar-hero-mega">
+        <div class="navbar-label">Header with mega menu</div>
+        <div class="mega-shell" data-mega-menu>
+          <header class="header-bar header-bar-mega">
+            <div class="header-brand">Finella Ops</div>
+            <nav class="header-nav header-nav-mega" data-nav-group>
+              <a class="is-active" href="#">Platform</a>
+              <button class="mega-trigger" type="button" data-mega-trigger aria-expanded="false" aria-controls="mega-menu-panel-1" aria-haspopup="true">
+                Solutions <span class="mega-caret">v</span>
+              </button>
+              <a href="#">Resources</a>
+              <a href="#">Partners</a>
+            </nav>
+            <div class="header-actions">
+              <button class="f-btn f-btn-outline">Contact sales</button>
+              <button class="f-btn f-btn-primary">Request demo</button>
+            </div>
+          </header>
+          <div class="mega-panel mega-panel--columns" id="mega-menu-panel-1" data-mega-panel role="menu" aria-label="Solutions menu" aria-hidden="true">
+            <div class="mega-col">
+              <div class="mega-title">Solutions</div>
+              <a class="mega-link" role="menuitem" href="#">Operations</a>
+              <a class="mega-link" role="menuitem" href="#">Finance</a>
+              <a class="mega-link" role="menuitem" href="#">Customer success</a>
+              <a class="mega-link" role="menuitem" href="#">Security</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-title">By team</div>
+              <a class="mega-link" role="menuitem" href="#">Platform engineers</a>
+              <a class="mega-link" role="menuitem" href="#">Revenue leaders</a>
+              <a class="mega-link" role="menuitem" href="#">Data ops</a>
+              <a class="mega-link" role="menuitem" href="#">IT managers</a>
+            </div>
+            <div class="mega-col mega-products">
+              <div class="mega-title">Products</div>
+              <div class="mega-card-grid">
+                <a class="mega-card" role="menuitem" href="#">
+                  <div class="mega-card-icon">AI</div>
+                  <div>
+                    <div class="mega-card-title">Ops Hub</div>
+                    <div class="mega-card-text">Workflow builder with approvals and audit trails.</div>
+                  </div>
+                </a>
+                <a class="mega-card" role="menuitem" href="#">
+                  <div class="mega-card-icon">DS</div>
+                  <div>
+                    <div class="mega-card-title">Design System</div>
+                    <div class="mega-card-text">Tokens, components, and production-ready Elements.</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="mega-col mega-resources">
+              <div class="mega-title">Resources</div>
+              <a class="mega-strip-link" role="menuitem" href="#">Implementation guide</a>
+              <a class="mega-strip-link" role="menuitem" href="#">Migration playbook</a>
+              <a class="mega-strip-link" role="menuitem" href="#">Security overview</a>
+              <div class="mega-strip-highlight">
+                <div class="fx-eyebrow">Featured</div>
+                <strong>Ops Playbook</strong>
+                <p class="fx-muted">Templates and runbooks ready to drop into your project hub.</p>
+                <div class="mega-tags">
+                  <span class="mega-tag">PDF</span>
+                  <span class="mega-tag">Templates</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-variant navbar-hero-secondary">
+        <div class="navbar-label">Header with secondary bar</div>
+        <div class="secondary-bar">
+          <span class="secondary-pill">Release 2.4</span>
+          <span class="secondary-text">New AI runbooks for incident response are live.</span>
+          <div class="secondary-actions">
+            <button class="f-btn f-btn-outline f-btn-sm">Changelog</button>
+            <button class="f-btn f-btn-primary f-btn-sm">Upgrade</button>
+          </div>
+        </div>
+        <header class="header-bar header-bar-secondary">
+          <div class="header-brand">Finella Cloud</div>
+          <nav class="header-nav" data-nav-group>
+            <a class="is-active" href="#">Overview</a>
+            <a href="#">Usage</a>
+            <a href="#">Billing</a>
+            <a href="#">Support</a>
+          </nav>
+          <div class="header-actions">
+            <input class="f-input" type="search" placeholder="Search">
+            <button class="f-btn f-btn-outline">Invite</button>
+          </div>
+        </header>
+      </div>
+
+      <div class="navbar-variant">
+        <div class="navbar-label">Classic + search</div>
+        <nav class="navbar navbar-classic">
+          <div class="navbar-brand">Finella</div>
+          <div class="navbar-links" data-nav-group>
+            <a class="is-active" href="#">Overview</a>
+            <a href="#">AI Insights</a>
+            <a href="#">Docs</a>
+            <a href="#">Settings</a>
+          </div>
+          <div class="navbar-actions">
+            <input class="f-input" type="search" placeholder="Search">
+            <button class="f-btn f-btn-outline">Sign in</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="navbar-variant">
+        <div class="navbar-label">Centered brand</div>
+        <nav class="navbar navbar-center">
+          <div class="navbar-left navbar-links" data-nav-group>
+            <a class="is-active" href="#">Projects</a>
+            <a href="#">Projects</a>
+            <a href="#">Reports</a>
+          </div>
+          <div class="navbar-brand">Finella</div>
+          <div class="navbar-actions navbar-right">
+            <button class="f-btn f-btn-outline">Support</button>
+            <button class="f-btn f-btn-primary">New request</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="navbar-variant">
+        <div class="navbar-label">App switcher</div>
+        <nav class="navbar navbar-app">
+          <div class="navbar-brand">Finella Projects</div>
+          <div class="navbar-links" data-nav-group>
+            <a class="is-active" href="#">Dashboard</a>
+            <a href="#">Tasks</a>
+            <a href="#">Team</a>
+            <a href="#">Settings</a>
+          </div>
+          <div class="navbar-actions">
+            <button class="f-btn f-btn-outline f-btn-sm">Switch app</button>
+            <div class="navbar-user">
+              <span class="navbar-user-avatar">EC</span>
+              <span class="navbar-user-name">Ember Crest</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="navbar-variant">
+        <div class="navbar-label">Marketing</div>
+        <nav class="navbar navbar-marketing">
+          <div class="navbar-brand">Finella UI</div>
+          <div class="navbar-links" data-nav-group>
+            <a class="is-active" href="#">Product</a>
+            <a href="#">Pricing</a>
+            <a href="#">Changelog</a>
+            <a href="#">Docs</a>
+          </div>
+          <div class="navbar-actions">
+            <button class="f-btn f-btn-outline">Sign in</button>
+            <button class="f-btn f-btn-primary">Get started</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="navbar-variant">
+        <div class="navbar-label">Right-aligned menu</div>
+        <nav class="navbar navbar-right-menu">
+          <div class="navbar-brand">Finella</div>
+          <div class="navbar-links navbar-links-right" data-nav-group>
+            <a class="is-active" href="#">Overview</a>
+            <a href="#">Product</a>
+            <a href="#">Customers</a>
+            <a href="#">Pricing</a>
+          </div>
+          <div class="navbar-actions">
+            <button class="f-btn f-btn-outline">Log in</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <script src="elements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

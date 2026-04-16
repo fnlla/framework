@@ -1,0 +1,49 @@
+{
+  "name": "finella/ops",
+  "description": "Finella ops middleware bundle (security headers, CORS, rate limiting, redirects, maintenance, static cache, forms)",
+  "type": "library",
+  "require": {
+    "php": ">=8.4",
+    "finella/framework": "^2.5"
+  },
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Finella\\SecurityHeaders\\": "src/SecurityHeaders/",
+      "Finella\\Cors\\": "src/Cors/",
+      "Finella\\RateLimit\\": "src/RateLimit/",
+      "Finella\\Redirects\\": "src/Redirects/",
+      "Finella\\Maintenance\\": "src/Maintenance/",
+      "Finella\\CacheStatic\\": "src/CacheStatic/",
+      "Finella\\Forms\\": "src/Forms/"
+    }
+  },
+  "extra": {
+    "finella": {
+      "providers": [
+        "Finella\\SecurityHeaders\\SecurityHeadersServiceProvider",
+        "Finella\\Cors\\CorsServiceProvider",
+        "Finella\\RateLimit\\RateLimitServiceProvider",
+        "Finella\\Redirects\\RedirectsServiceProvider",
+        "Finella\\Maintenance\\MaintenanceServiceProvider",
+        "Finella\\CacheStatic\\CacheStaticServiceProvider",
+        "Finella\\Forms\\FormsServiceProvider"
+      ]
+    },
+    "branch-alias": {
+      "dev-main": "2.5.x-dev"
+    }
+  },
+  "scripts": {
+    "test": "php tests/smoke-security-headers.php && php tests/smoke-cors.php && php tests/smoke-rate-limit.php && php tests/smoke-redirects.php && php tests/smoke-maintenance.php && php tests/smoke-cache-static.php && php tests/smoke-forms.php"
+  }
+}
+

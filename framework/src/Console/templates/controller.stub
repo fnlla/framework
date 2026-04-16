@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{namespace}};
+
+use Finella\Core\Controller;
+use Finella\Http\Request;
+use Finella\Http\Response;
+
+final class {{class}} extends Controller
+{
+    public function __invoke(Request $request): Response
+    {
+        return Response::text('{{class}}');
+    }
+}

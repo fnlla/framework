@@ -1,0 +1,25 @@
+Finella CLI
+
+Commands:
+  deploy:health - Run basic deploy health checks.
+  deploy:warmup - Warm up caches and provider discovery.
+  make:command - Create a CLI command class.
+  make:controller - Create a controller class.
+  make:job - Create a job class.
+  make:listener - Create an event listener class.
+  make:mail - Create a mail class.
+  make:middleware - Create a middleware class.
+  make:migration - Create a migration file.
+  make:model - Create a model class (optionally with migration and factory).
+  make:module - Create a module skeleton (Controllers/Requests/Policies/Jobs/Commands/Migrations/Views).
+  make:policy - Create a policy class.
+  make:request - Create a request validator class.
+  make:test - Create a test class.
+  migrate - Run database migrations.
+  migrate:rollback - Rollback the last migration batch.
+  migrate:status - Show migration status.
+  queue:work - Process queued jobs (database driver).
+  schedule:run - Run scheduled tasks once.
+  seed - Run database seeders.
+
+Use: finella <command> [args] [--options]

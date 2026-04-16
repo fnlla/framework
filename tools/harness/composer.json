@@ -1,0 +1,106 @@
+{
+  "name": "finella/harness",
+  "description": "Finella app harness",
+  "homepage": "https://techayo.co.uk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Maintainer"
+    }
+  ],
+  "type": "project",
+  "require": {
+    "php": ">=8.4",
+    "finella/standard": "^2.5",
+    "finella/ai": "^2.5",
+    "finella/debugbar": "^2.5",
+    "finella/mail": "^2.5",
+    "finella/docs": "^2.5",
+    "finella/ui": "^2.5",
+    "finella/pdf": "^2.5",
+    "finella/queue": "^2.5",
+    "egulias/email-validator": "^4.0"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../framework",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "../../packages/*",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "../../ui",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "require-dev": {
+    "aws/aws-sdk-php": "^3.0",
+    "finella/testing": "^2.5",
+    "league/oauth2-client": "^2.7",
+    "sentry/sentry": "^4.0",
+    "stripe/stripe-php": "^13.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": [
+      "bootstrap/helpers.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "serve": "php -S localhost:8000 -t public",
+    "smoke": [
+      "@php ../../scripts/smoke/run-smoke-tests.php",
+      "@php ../../scripts/smoke/smoke-aliases.php",
+      "@php ../../scripts/smoke/smoke-uploads.php",
+      "@php ../../scripts/smoke/smoke-validation.php",
+      "@php ../../scripts/smoke/smoke-auth.php",
+      "@php ../../scripts/smoke/smoke-authorization.php",
+      "@php ../../scripts/smoke/smoke-events.php",
+      "@php ../../scripts/smoke/smoke-observability.php",
+      "@php ../../scripts/smoke/smoke-providers.php",
+      "@php ../../scripts/smoke/smoke-views.php",
+      "@php scripts/http-smoke.php"
+    ],
+    "format:markdown": [
+      "@php ../../scripts/docs/format-markdown.php --profile project --scope all"
+    ],
+    "lint:markdown": [
+      "@php ../../scripts/docs/format-markdown.php --check --profile project --scope all"
+    ],
+    "format:github": [
+      "@php ../../scripts/docs/format-markdown.php --profile release --scope github"
+    ],
+    "lint:github": [
+      "@php ../../scripts/docs/format-markdown.php --check --profile release --scope github"
+    ],
+    "ec": [
+      "@php scripts/ec-tests.php"
+    ],
+    "finella:check": [
+      "@smoke"
+    ],
+    "post-install-cmd": [
+      "php bin/finella-discover"
+    ],
+    "post-update-cmd": [
+      "php bin/finella-discover"
+    ]
+  }
+}

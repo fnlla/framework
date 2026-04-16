@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finella UI · Carousel</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="elements.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="f-container fx-page">
+    <div class="element-intro">
+      <div class="element-intro-eyebrow">Element: Carousel</div>
+      <div class="element-intro-subtitle">Autoplay slider with captions and indicators.</div>
+    </div>
+<div class="carousel-header">
+      <div>
+        <div class="fx-eyebrow">Carousel</div>
+      </div>
+    </div>
+
+    <div class="carousel" data-carousel>
+      <div class="carousel-track" data-carousel-track>
+        <div class="carousel-slide">
+          <div class="carousel-card">
+            <div class="carousel-caption">
+              <h3 class="f-card-title">AI insights</h3>
+              <p class="f-muted">Deliver clear weekly briefs and release notes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-card carousel-card-alt">
+            <div class="carousel-caption">
+              <h3 class="f-card-title">Quality gate</h3>
+              <p class="f-muted">Automated checks before you ship.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-card">
+            <div class="carousel-caption">
+              <h3 class="f-card-title">Docs sync</h3>
+              <p class="f-muted">Keep documentation aligned with code.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="f-btn f-btn-outline" data-carousel-prev>Prev</button>
+        <div class="carousel-dots" data-carousel-dots>
+          <button class="carousel-dot is-active" data-carousel-dot="0"></button>
+          <button class="carousel-dot" data-carousel-dot="1"></button>
+          <button class="carousel-dot" data-carousel-dot="2"></button>
+        </div>
+        <button class="f-btn f-btn-outline" data-carousel-next>Next</button>
+      </div>
+    </div>
+<section class="element-section">
+      <h2>Code blocks</h2>
+      <div class="fx-code">
+        <div class="fx-code-header">
+          <div>Carousel shell</div>
+          <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-carousel">Copy</button>
+        </div>
+        <pre><code id="code-carousel">&lt;div class=&quot;carousel&quot; data-carousel&gt;
+  &lt;div class=&quot;carousel-track&quot;&gt;
+    &lt;article class=&quot;carousel-slide is-active&quot;&gt;Slide 1&lt;/article&gt;
+    &lt;article class=&quot;carousel-slide&quot;&gt;Slide 2&lt;/article&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;carousel-btn&quot; data-carousel-prev&gt;Prev&lt;/button&gt;
+  &lt;button class=&quot;carousel-btn&quot; data-carousel-next&gt;Next&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <script src="elements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

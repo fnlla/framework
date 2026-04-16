@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{namespace}};
+
+use Finella\Mail\Address;
+use Finella\Mail\Message;
+
+final class {{class}}
+{
+    public function toMessage(string $toEmail, string $toName = ''): Message
+    {
+        $from = new Address('noreply@example.com', 'Finella');
+        $to = $toName === '' ? [new Address($toEmail)] : [new Address($toEmail, $toName)];
+
+        return new Message(
+            from: $from,
+            to: $to,
+            subject: '{{subject}}',
+            text: '{{text}}'
+        );
+    }
+}

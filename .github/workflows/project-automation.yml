@@ -1,0 +1,25 @@
+name: Project Automation
+
+on:
+  issues:
+    types: [opened, reopened]
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    env:
+      PROJECTS_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
+    steps:
+      - name: Add to Finella project
+        if: ${{ env.PROJECTS_TOKEN != '' }}
+        uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: https://github.com/users/kordyaczny/projects/3
+          github-token: ${{ env.PROJECTS_TOKEN }}

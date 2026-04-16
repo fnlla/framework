@@ -1,0 +1,2121 @@
+{
+    "generated_at": "2026-04-05T22:12:45+00:00",
+    "classes": {
+        "Finella\\Auth\\AuthManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "attempt",
+                "check",
+                "guard",
+                "id",
+                "login",
+                "logout",
+                "register",
+                "rememberCookie",
+                "user"
+            ]
+        },
+        "Finella\\Auth\\AuthResult": {
+            "type": "class",
+            "methods": [
+                "__construct"
+            ]
+        },
+        "Finella\\Auth\\AuthRoutes": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Auth\\AuthServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Auth\\CallableUserProvider": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "createUser",
+                "retrieveByCredentials",
+                "retrieveById",
+                "retrieveByToken",
+                "updatePassword",
+                "validateCredentials"
+            ]
+        },
+        "Finella\\Auth\\CredentialsUserProviderInterface": {
+            "type": "interface",
+            "methods": [
+                "retrieveByCredentials",
+                "validateCredentials"
+            ]
+        },
+        "Finella\\Auth\\Http\\AuthController": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "login",
+                "logout",
+                "register",
+                "showLogin",
+                "showRegister"
+            ]
+        },
+        "Finella\\Auth\\Http\\PasswordResetController": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "reset",
+                "sendLink",
+                "showRequest",
+                "showReset"
+            ]
+        },
+        "Finella\\Auth\\Middleware\\AuthMiddleware": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\Auth\\Middleware\\GuestMiddleware": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\Auth\\PasswordHasher": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "hash",
+                "needsRehash",
+                "verify"
+            ]
+        },
+        "Finella\\Auth\\PasswordResetManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "createToken",
+                "findUser",
+                "reset",
+                "validateToken"
+            ]
+        },
+        "Finella\\Auth\\PasswordResetStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "consume",
+                "forget",
+                "issue",
+                "validate"
+            ]
+        },
+        "Finella\\Auth\\PasswordResetUserProviderInterface": {
+            "type": "interface",
+            "methods": [
+                "updatePassword"
+            ]
+        },
+        "Finella\\Auth\\RegistrationUserProviderInterface": {
+            "type": "interface",
+            "methods": [
+                "createUser"
+            ]
+        },
+        "Finella\\Auth\\RememberCookie": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "forgetHeader",
+                "header",
+                "name"
+            ]
+        },
+        "Finella\\Auth\\RememberTokenStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "forget",
+                "issue",
+                "validate"
+            ]
+        },
+        "Finella\\Auth\\SessionGuard": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "check",
+                "id",
+                "login",
+                "logout",
+                "user"
+            ]
+        },
+        "Finella\\Auth\\TokenGuard": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "check",
+                "user"
+            ]
+        },
+        "Finella\\Auth\\UserProviderInterface": {
+            "type": "interface",
+            "methods": [
+                "retrieveById",
+                "retrieveByToken"
+            ]
+        },
+        "Finella\\Authorization\\AuthorizationException": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "status"
+            ]
+        },
+        "Finella\\Authorization\\Gate": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "allows",
+                "authorize",
+                "define",
+                "policy"
+            ]
+        },
+        "Finella\\Authorization\\PolicyRegistry": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "enableGuessing",
+                "register",
+                "registerMany",
+                "resolvePolicyFor"
+            ]
+        },
+        "Finella\\Cache\\ArrayCacheStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "delete",
+                "get",
+                "getPayload",
+                "has",
+                "set"
+            ]
+        },
+        "Finella\\Cache\\CacheLock": {
+            "type": "class",
+            "methods": [
+                "acquireFile",
+                "acquireMemory",
+                "acquireRedis",
+                "release"
+            ]
+        },
+        "Finella\\Cache\\CacheManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "delete",
+                "get",
+                "has",
+                "invalidateTag",
+                "remember",
+                "set",
+                "store",
+                "taggedKey",
+                "tags"
+            ]
+        },
+        "Finella\\Cache\\CacheServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Cache\\FileCacheStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "basePath",
+                "clear",
+                "delete",
+                "get",
+                "getPayload",
+                "has",
+                "set"
+            ]
+        },
+        "Finella\\Cache\\RedisCacheStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "connection",
+                "delete",
+                "get",
+                "getPayload",
+                "has",
+                "lockPrefix",
+                "set"
+            ]
+        },
+        "Finella\\Cache\\TaggedCache": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "delete",
+                "get",
+                "invalidateTag",
+                "remember",
+                "set",
+                "tags"
+            ]
+        },
+        "Finella\\Console\\CommandInterface": {
+            "type": "interface",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AbstractMakeCommand": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Console\\Commands\\AiConfigAdvisorCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiDocsSyncCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiDoctorCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiObservabilityCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiReleaseNotesCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiRoadmapBalanceCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiScaffoldCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiSecurityLintCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\AiTestPlanCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\DatabaseBootstrapCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\DatabaseCommandTrait": {
+            "type": "trait",
+            "methods": []
+        },
+        "Finella\\Console\\Commands\\MakeBlueprintCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeCommandCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeCommandHelpers": {
+            "type": "trait",
+            "methods": []
+        },
+        "Finella\\Console\\Commands\\MakeControllerCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeCrudCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeJobCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeListenerCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeMailCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeMiddlewareCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeMigrationCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeModelCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeModuleCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakePolicyCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeRepositoryCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeRequestCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeSeederCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeServiceCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MakeTestCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MigrateCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MigrateRollbackCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\MigrateStatusCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\QueueWorkCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\RoutesCacheCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\RoutesClearCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\ScheduleRunCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\Commands\\SeedCommand": {
+            "type": "class",
+            "methods": [
+                "getDescription",
+                "getName",
+                "run"
+            ]
+        },
+        "Finella\\Console\\ConsoleApplication": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "run"
+            ]
+        },
+        "Finella\\Console\\ConsoleIO": {
+            "type": "class",
+            "methods": [
+                "info",
+                "line",
+                "warn"
+            ]
+        },
+        "Finella\\Console\\SeederInterface": {
+            "type": "interface",
+            "methods": [
+                "run"
+            ]
+        },
+        "Finella\\Contracts\\Cache\\CacheStoreInterface": {
+            "type": "interface",
+            "methods": [
+                "clear",
+                "forget",
+                "get",
+                "put"
+            ]
+        },
+        "Finella\\Contracts\\Events\\EventDispatcherInterface": {
+            "type": "interface",
+            "methods": [
+                "dispatch",
+                "dispatchAfterCommit",
+                "listen"
+            ]
+        },
+        "Finella\\Contracts\\Http\\KernelInterface": {
+            "type": "interface",
+            "methods": [
+                "handle"
+            ]
+        },
+        "Finella\\Contracts\\Log\\ErrorReporterInterface": {
+            "type": "interface",
+            "methods": [
+                "report"
+            ]
+        },
+        "Finella\\Contracts\\Log\\LoggerInterface": {
+            "type": "interface",
+            "methods": []
+        },
+        "Finella\\Contracts\\Queue\\JobInterface": {
+            "type": "interface",
+            "methods": [
+                "handle"
+            ]
+        },
+        "Finella\\Contracts\\Queue\\QueueInterface": {
+            "type": "interface",
+            "methods": [
+                "push"
+            ]
+        },
+        "Finella\\Contracts\\Runtime\\RuntimeInterface": {
+            "type": "interface",
+            "methods": [
+                "run"
+            ]
+        },
+        "Finella\\Contracts\\Support\\ServiceProviderInterface": {
+            "type": "interface",
+            "methods": [
+                "boot",
+                "manifest",
+                "register"
+            ]
+        },
+        "Finella\\Cookie\\Cookie": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "toHeader"
+            ]
+        },
+        "Finella\\Cookie\\CookieJar": {
+            "type": "class",
+            "methods": [
+                "attachToResponse",
+                "make",
+                "queue",
+                "setRequest"
+            ]
+        },
+        "Finella\\Cookie\\CookieMiddleware": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\Cookie\\CookieServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Core\\Application": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "basePath",
+                "bootProviders",
+                "config",
+                "configRepository",
+                "registerProvider",
+                "registerProviders",
+                "version"
+            ]
+        },
+        "Finella\\Core\\ConfigRepository": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "all",
+                "forget",
+                "fromDirectory",
+                "fromRoot",
+                "get",
+                "resolveAppRoot",
+                "set"
+            ]
+        },
+        "Finella\\Core\\Container": {
+            "type": "class",
+            "methods": [
+                "bind",
+                "call",
+                "config",
+                "configRepository",
+                "get",
+                "has",
+                "instance",
+                "make",
+                "registerResetter",
+                "reset",
+                "resetters",
+                "scoped",
+                "scopedInstance",
+                "singleton"
+            ]
+        },
+        "Finella\\Core\\ContainerException": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Core\\Controller": {
+            "type": "class",
+            "methods": [
+                "__construct"
+            ]
+        },
+        "Finella\\Core\\ExceptionHandler": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "handleError",
+                "handleException",
+                "handleShutdown",
+                "register",
+                "render",
+                "report"
+            ]
+        },
+        "Finella\\Core\\NotFoundException": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Core\\ServiceProvider": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "boot",
+                "register"
+            ]
+        },
+        "Finella\\Csrf\\CsrfMiddleware": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\Csrf\\CsrfServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Csrf\\CsrfTokenManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "token",
+                "validate"
+            ]
+        },
+        "Finella\\Database\\ColumnDefinition": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "autoIncrement",
+                "getDefault",
+                "getLength",
+                "getName",
+                "getType",
+                "hasDefault",
+                "index",
+                "isAutoIncrement",
+                "isNullable",
+                "isPrimary",
+                "nullable",
+                "primary",
+                "references",
+                "unique"
+            ]
+        },
+        "Finella\\Database\\ConnectionManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "connection"
+            ]
+        },
+        "Finella\\Database\\DatabaseServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Database\\ForeignKeyDefinition": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "onDelete",
+                "onUpdate",
+                "references"
+            ]
+        },
+        "Finella\\Database\\Grammar": {
+            "type": "class",
+            "methods": [
+                "compileDelete",
+                "compileInsert",
+                "compileSelect",
+                "compileUpdate"
+            ]
+        },
+        "Finella\\Database\\MigrationInterface": {
+            "type": "interface",
+            "methods": [
+                "down",
+                "up"
+            ]
+        },
+        "Finella\\Database\\MigrationRunner": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "migrate",
+                "rollback",
+                "status"
+            ]
+        },
+        "Finella\\Database\\Query": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "delete",
+                "first",
+                "get",
+                "insert",
+                "limit",
+                "offset",
+                "orderBy",
+                "select",
+                "table",
+                "update",
+                "where",
+                "whereIn",
+                "whereNull"
+            ]
+        },
+        "Finella\\Database\\Schema": {
+            "type": "class",
+            "methods": [
+                "create",
+                "dropIfExists",
+                "hasIndex",
+                "hasTable",
+                "setConnection"
+            ]
+        },
+        "Finella\\Database\\Table": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "boolean",
+                "columns",
+                "datetime",
+                "foreign",
+                "foreignId",
+                "foreignKeys",
+                "getForeignKey",
+                "getName",
+                "id",
+                "index",
+                "indexes",
+                "integer",
+                "json",
+                "string",
+                "text",
+                "timestamps",
+                "unique",
+                "updateForeignKey"
+            ]
+        },
+        "Finella\\Database\\TransactionManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "afterCommit",
+                "begin",
+                "commit",
+                "inTransaction",
+                "rollBack",
+                "transaction"
+            ]
+        },
+        "Finella\\Http\\HttpFactory": {
+            "type": "class",
+            "methods": [
+                "createRequest",
+                "createResponse",
+                "createServerRequest",
+                "createStream",
+                "createStreamFromFile",
+                "createStreamFromResource",
+                "createUploadedFile",
+                "createUri"
+            ]
+        },
+        "Finella\\Http\\HttpKernel": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "boot",
+                "handle",
+                "isBooted"
+            ]
+        },
+        "Finella\\Http\\Middleware\\TrustedProxyMiddleware": {
+            "type": "class",
+            "methods": [
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\Http\\RedirectTarget": {
+            "type": "class",
+            "methods": [
+                "fromReferer"
+            ]
+        },
+        "Finella\\Http\\Request": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "all",
+                "allInput",
+                "clientIp",
+                "file",
+                "fromGlobals",
+                "fromPsr",
+                "getAttribute",
+                "getAttributes",
+                "getBody",
+                "getCookieParams",
+                "getHeader",
+                "getHeaderLine",
+                "getHeaders",
+                "getMethod",
+                "getParsedBody",
+                "getProtocolVersion",
+                "getQueryParams",
+                "getRequestTarget",
+                "getServerParams",
+                "getUploadedFiles",
+                "getUri",
+                "hasHeader",
+                "header",
+                "input",
+                "isSecure",
+                "validate",
+                "wantsJson",
+                "withAddedHeader",
+                "withAttribute",
+                "withBody",
+                "withCookieParams",
+                "withHeader",
+                "withMethod",
+                "withParams",
+                "withParsedBody",
+                "withProtocolVersion",
+                "withQueryParams",
+                "withRequestTarget",
+                "withUploadedFiles",
+                "withUri",
+                "withoutAttribute",
+                "withoutHeader"
+            ]
+        },
+        "Finella\\Http\\RequestHandler": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "handle"
+            ]
+        },
+        "Finella\\Http\\Response": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "download",
+                "file",
+                "getBody",
+                "getHeader",
+                "getHeaderLine",
+                "getHeaders",
+                "getProtocolVersion",
+                "getReasonPhrase",
+                "getStatusCode",
+                "hasHeader",
+                "html",
+                "json",
+                "redirect",
+                "send",
+                "stream",
+                "text",
+                "withAddedHeader",
+                "withBasePath",
+                "withBody",
+                "withErrors",
+                "withHeader",
+                "withHeaders",
+                "withInput",
+                "withProtocolVersion",
+                "withStatus",
+                "withoutHeader",
+                "xml"
+            ]
+        },
+        "Finella\\Http\\RouteCacheCompiler": {
+            "type": "class",
+            "methods": [
+                "compile"
+            ]
+        },
+        "Finella\\Http\\Router": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "add",
+                "cacheIssues",
+                "dispatch",
+                "dumpRoutes",
+                "get",
+                "group",
+                "isValidRoutesCache",
+                "loadRoutes",
+                "middlewareAlias",
+                "middlewareAliases",
+                "middlewareGroup",
+                "patch",
+                "post",
+                "url"
+            ]
+        },
+        "Finella\\Http\\Stream": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__toString",
+                "close",
+                "detach",
+                "eof",
+                "fromString",
+                "getContents",
+                "getMetadata",
+                "getSize",
+                "hasCallback",
+                "invokeCallback",
+                "isReadable",
+                "isSeekable",
+                "isWritable",
+                "read",
+                "rewind",
+                "seek",
+                "tell",
+                "withCallback",
+                "write"
+            ]
+        },
+        "Finella\\Http\\UploadedFile": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "extension",
+                "getClientFilename",
+                "getClientMediaType",
+                "getError",
+                "getSize",
+                "getStream",
+                "isValid",
+                "moveTo",
+                "store"
+            ]
+        },
+        "Finella\\Http\\Uri": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__toString",
+                "getAuthority",
+                "getFragment",
+                "getHost",
+                "getPath",
+                "getPort",
+                "getQuery",
+                "getScheme",
+                "getUserInfo",
+                "withFragment",
+                "withHost",
+                "withPath",
+                "withPort",
+                "withQuery",
+                "withScheme",
+                "withUserInfo"
+            ]
+        },
+        "Finella\\Log\\LogServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Log\\Logger": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "alert",
+                "critical",
+                "debug",
+                "emergency",
+                "error",
+                "info",
+                "log",
+                "notice",
+                "warning"
+            ]
+        },
+        "Finella\\Log\\LoggerFactory": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "make"
+            ]
+        },
+        "Finella\\Log\\Processor\\RequestIdProcessor": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke"
+            ]
+        },
+        "Finella\\Log\\Processor\\StaticContextProcessor": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke"
+            ]
+        },
+        "Finella\\Orm\\Factory": {
+            "type": "class",
+            "methods": [
+                "create",
+                "definition",
+                "make",
+                "state"
+            ]
+        },
+        "Finella\\Orm\\Model": {
+            "type": "class",
+            "methods": [
+                "__callStatic",
+                "__construct",
+                "__get",
+                "__set",
+                "addGlobalScope",
+                "all",
+                "create",
+                "decrement",
+                "delete",
+                "exists",
+                "fill",
+                "find",
+                "findOrFail",
+                "firstOrCreate",
+                "firstOrNew",
+                "firstWhere",
+                "forceFill",
+                "fromDatabase",
+                "getAttribute",
+                "getAttributes",
+                "getDeletedAtColumn",
+                "getKeyName",
+                "getRelation",
+                "getTable",
+                "increment",
+                "load",
+                "onlyTrashed",
+                "query",
+                "refresh",
+                "save",
+                "setAttribute",
+                "setConnectionManager",
+                "setContainer",
+                "setRawAttributes",
+                "setRelation",
+                "toArray",
+                "update",
+                "updateOrCreate",
+                "usesSoftDeletes",
+                "withTrashed",
+                "withoutGlobalScope",
+                "withoutGlobalScopes"
+            ]
+        },
+        "Finella\\Orm\\ModelNotFoundException": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Orm\\OrmServiceProvider": {
+            "type": "class",
+            "methods": [
+                "boot",
+                "register"
+            ]
+        },
+        "Finella\\Orm\\Paginator": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "currentPage",
+                "items",
+                "lastPage",
+                "perPage",
+                "toArray",
+                "total"
+            ]
+        },
+        "Finella\\Orm\\QueryBuilder": {
+            "type": "class",
+            "methods": [
+                "__call",
+                "__construct",
+                "addGlobalScope",
+                "avg",
+                "count",
+                "delete",
+                "distinct",
+                "doesntExist",
+                "doesntHave",
+                "exists",
+                "first",
+                "firstOrFail",
+                "get",
+                "getModelClass",
+                "getTable",
+                "getWhereSql",
+                "has",
+                "latest",
+                "limit",
+                "max",
+                "min",
+                "offset",
+                "oldest",
+                "onlyTrashed",
+                "orDoesntHave",
+                "orHas",
+                "orWhere",
+                "orWhereBetween",
+                "orWhereDoesntHave",
+                "orWhereExists",
+                "orWhereHas",
+                "orWhereIn",
+                "orWhereLike",
+                "orWhereNotBetween",
+                "orWhereNotExists",
+                "orWhereNotIn",
+                "orWhereNotLike",
+                "orWhereNotNull",
+                "orWhereNull",
+                "orWhereRaw",
+                "orderBy",
+                "orderByDesc",
+                "paginate",
+                "pluck",
+                "select",
+                "setSoftDeleteColumn",
+                "skip",
+                "sum",
+                "take",
+                "tap",
+                "update",
+                "value",
+                "when",
+                "where",
+                "whereBetween",
+                "whereDoesntHave",
+                "whereExists",
+                "whereHas",
+                "whereIn",
+                "whereLike",
+                "whereNotBetween",
+                "whereNotExists",
+                "whereNotIn",
+                "whereNotLike",
+                "whereNotNull",
+                "whereNull",
+                "whereRaw",
+                "with",
+                "withAggregate",
+                "withAvg",
+                "withCount",
+                "withMax",
+                "withMin",
+                "withSum",
+                "withTrashed",
+                "withoutGlobalScope",
+                "withoutGlobalScopes",
+                "withoutTrashed"
+            ]
+        },
+        "Finella\\Orm\\Relations\\BelongsTo": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "associate",
+                "dissociate",
+                "eagerLoad",
+                "getForeignKey",
+                "getOwnerKey",
+                "getRelatedTable",
+                "getResults"
+            ]
+        },
+        "Finella\\Orm\\Relations\\BelongsToMany": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "attach",
+                "detach",
+                "eagerLoad",
+                "first",
+                "get",
+                "getForeignKey",
+                "getParentKey",
+                "getPivotTable",
+                "getRelatedKey",
+                "getRelatedPrimaryKey",
+                "getRelatedTable",
+                "getResults",
+                "sync",
+                "withPivot",
+                "withTimestamps"
+            ]
+        },
+        "Finella\\Orm\\Relations\\HasMany": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "create",
+                "eagerLoad",
+                "getForeignKey",
+                "getLocalKey",
+                "getRelatedTable",
+                "getResults",
+                "make",
+                "save",
+                "saveMany"
+            ]
+        },
+        "Finella\\Orm\\Relations\\HasOne": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "create",
+                "eagerLoad",
+                "getForeignKey",
+                "getLocalKey",
+                "getRelatedTable",
+                "getResults",
+                "make",
+                "save"
+            ]
+        },
+        "Finella\\Orm\\Relations\\Relation": {
+            "type": "class",
+            "methods": [
+                "__call",
+                "__construct",
+                "builder",
+                "eagerLoad",
+                "first",
+                "get",
+                "getRelatedClass",
+                "getResults"
+            ]
+        },
+        "Finella\\Orm\\SoftDeletes": {
+            "type": "trait",
+            "methods": [
+                "forceDelete",
+                "restore",
+                "softDelete",
+                "trashed"
+            ]
+        },
+        "Finella\\Plugin\\PluginInterface": {
+            "type": "interface",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Plugin\\PluginManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "all",
+                "app",
+                "boot",
+                "config",
+                "load"
+            ]
+        },
+        "Finella\\RequestLogging\\RequestLoggerMiddleware": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\RequestLogging\\RequestLoggingServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Runtime\\FpmRuntime": {
+            "type": "class",
+            "methods": [
+                "run"
+            ]
+        },
+        "Finella\\Runtime\\Profiler": {
+            "type": "class",
+            "methods": [
+                "current",
+                "recordCacheHit",
+                "recordCacheMiss",
+                "recordDbTime",
+                "start",
+                "stats",
+                "stop"
+            ]
+        },
+        "Finella\\Runtime\\RequestContext": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "begin",
+                "cspNonce",
+                "current",
+                "end",
+                "includeRequestIdHeader",
+                "includeSpanIdHeader",
+                "includeTraceIdHeader",
+                "locale",
+                "requestId",
+                "setCspNonce",
+                "setHeaderFlags",
+                "setLocale",
+                "spanId",
+                "startedAt",
+                "traceId"
+            ]
+        },
+        "Finella\\Runtime\\ResetManager": {
+            "type": "class",
+            "methods": [
+                "register",
+                "reset"
+            ]
+        },
+        "Finella\\Runtime\\Resetter": {
+            "type": "interface",
+            "methods": [
+                "reset"
+            ]
+        },
+        "Finella\\Runtime\\RoadRunnerRuntime": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "run"
+            ]
+        },
+        "Finella\\Session\\FileSessionStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "all",
+                "applyRequestContext",
+                "cookieHeader",
+                "cookieName",
+                "flash",
+                "forget",
+                "get",
+                "getFlash",
+                "id",
+                "put",
+                "regenerateId",
+                "save",
+                "start"
+            ]
+        },
+        "Finella\\Session\\SessionInterface": {
+            "type": "interface",
+            "methods": [
+                "all",
+                "flash",
+                "forget",
+                "get",
+                "getFlash",
+                "put",
+                "regenerateId"
+            ]
+        },
+        "Finella\\Session\\SessionManager": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "all",
+                "flash",
+                "forget",
+                "get",
+                "getFlash",
+                "put",
+                "regenerate",
+                "regenerateId",
+                "start"
+            ]
+        },
+        "Finella\\Session\\SessionMiddleware": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "__invoke",
+                "process"
+            ]
+        },
+        "Finella\\Session\\SessionServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Support\\ArrayCacheStore": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Support\\ArrayStore": {
+            "type": "class",
+            "methods": [
+                "clear",
+                "forget",
+                "get",
+                "put"
+            ]
+        },
+        "Finella\\Support\\Cache": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "forget",
+                "get",
+                "put",
+                "remember",
+                "store"
+            ]
+        },
+        "Finella\\Support\\CacheItem": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "expirationTimestamp",
+                "expiresAfter",
+                "expiresAt",
+                "get",
+                "getKey",
+                "isHit",
+                "markHit",
+                "set"
+            ]
+        },
+        "Finella\\Support\\CacheItemPool": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "commit",
+                "deleteItem",
+                "deleteItems",
+                "getItem",
+                "getItems",
+                "hasItem",
+                "save",
+                "saveDeferred"
+            ]
+        },
+        "Finella\\Support\\CacheServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Support\\CacheStoreInterface": {
+            "type": "interface",
+            "methods": []
+        },
+        "Finella\\Support\\ComposerProviderDiscovery": {
+            "type": "class",
+            "methods": [
+                "discover"
+            ]
+        },
+        "Finella\\Support\\Dotenv": {
+            "type": "class",
+            "methods": [
+                "bootEnv",
+                "load",
+                "loadEnv",
+                "usePutenv"
+            ]
+        },
+        "Finella\\Support\\Env": {
+            "type": "class",
+            "methods": [
+                "get"
+            ]
+        },
+        "Finella\\Support\\ErrorBag": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "all",
+                "bag",
+                "count",
+                "first",
+                "get",
+                "getIterator",
+                "has",
+                "toArray"
+            ]
+        },
+        "Finella\\Support\\EventDispatcher": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "dispatch",
+                "dispatchAfterCommit",
+                "listen",
+                "setAfterCommitHandler"
+            ]
+        },
+        "Finella\\Support\\EventsServiceProvider": {
+            "type": "class",
+            "methods": [
+                "boot",
+                "register"
+            ]
+        },
+        "Finella\\Support\\FallbackLogger": {
+            "type": "class",
+            "methods": [
+                "critical",
+                "error",
+                "info",
+                "write"
+            ]
+        },
+        "Finella\\Support\\FileCacheStore": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Support\\FileStore": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "forget",
+                "get",
+                "put"
+            ]
+        },
+        "Finella\\Support\\HealthChecker": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "fromConfig",
+                "run"
+            ]
+        },
+        "Finella\\Support\\HttpClient": {
+            "type": "class",
+            "methods": [
+                "getJson",
+                "postForm",
+                "postFormJson",
+                "postJson",
+                "postJsonJson"
+            ]
+        },
+        "Finella\\Support\\ProviderCache": {
+            "type": "class",
+            "methods": [
+                "write"
+            ]
+        },
+        "Finella\\Support\\ProviderCapability": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Support\\ProviderManifest": {
+            "type": "class",
+            "methods": [
+                "__construct"
+            ]
+        },
+        "Finella\\Support\\ProviderReport": {
+            "type": "class",
+            "methods": [
+                "addEntry",
+                "toArray",
+                "toText"
+            ]
+        },
+        "Finella\\Support\\ProviderRepository": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "add",
+                "bootAll",
+                "registerAll"
+            ]
+        },
+        "Finella\\Support\\ProviderValidator": {
+            "type": "class",
+            "methods": [
+                "validate"
+            ]
+        },
+        "Finella\\Support\\Psr\\Cache\\CacheItemInterface": {
+            "type": "interface",
+            "methods": [
+                "expiresAfter",
+                "expiresAt",
+                "get",
+                "getKey",
+                "isHit",
+                "set"
+            ]
+        },
+        "Finella\\Support\\Psr\\Cache\\CacheItemPoolInterface": {
+            "type": "interface",
+            "methods": [
+                "clear",
+                "commit",
+                "deleteItem",
+                "deleteItems",
+                "getItem",
+                "getItems",
+                "hasItem",
+                "save",
+                "saveDeferred"
+            ]
+        },
+        "Finella\\Support\\Psr\\Cache\\InvalidArgumentException": {
+            "type": "interface",
+            "methods": []
+        },
+        "Finella\\Support\\Psr\\Container\\ContainerExceptionInterface": {
+            "type": "interface",
+            "methods": []
+        },
+        "Finella\\Support\\Psr\\Container\\ContainerInterface": {
+            "type": "interface",
+            "methods": [
+                "get",
+                "has"
+            ]
+        },
+        "Finella\\Support\\Psr\\Container\\NotFoundExceptionInterface": {
+            "type": "interface",
+            "methods": []
+        },
+        "Finella\\Support\\Psr\\Http\\Factory\\RequestFactoryInterface": {
+            "type": "interface",
+            "methods": [
+                "createRequest"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Factory\\ResponseFactoryInterface": {
+            "type": "interface",
+            "methods": [
+                "createResponse"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Factory\\ServerRequestFactoryInterface": {
+            "type": "interface",
+            "methods": [
+                "createServerRequest"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Factory\\StreamFactoryInterface": {
+            "type": "interface",
+            "methods": [
+                "createStream",
+                "createStreamFromFile",
+                "createStreamFromResource"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Factory\\UploadedFileFactoryInterface": {
+            "type": "interface",
+            "methods": [
+                "createUploadedFile"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Factory\\UriFactoryInterface": {
+            "type": "interface",
+            "methods": [
+                "createUri"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\MessageInterface": {
+            "type": "interface",
+            "methods": [
+                "getBody",
+                "getHeader",
+                "getHeaderLine",
+                "getHeaders",
+                "getProtocolVersion",
+                "hasHeader",
+                "withAddedHeader",
+                "withBody",
+                "withHeader",
+                "withProtocolVersion",
+                "withoutHeader"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\RequestInterface": {
+            "type": "interface",
+            "methods": [
+                "getMethod",
+                "getRequestTarget",
+                "getUri",
+                "withMethod",
+                "withRequestTarget",
+                "withUri"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\ResponseInterface": {
+            "type": "interface",
+            "methods": [
+                "getReasonPhrase",
+                "getStatusCode",
+                "withStatus"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\ServerRequestInterface": {
+            "type": "interface",
+            "methods": [
+                "getAttribute",
+                "getAttributes",
+                "getCookieParams",
+                "getParsedBody",
+                "getQueryParams",
+                "getServerParams",
+                "getUploadedFiles",
+                "withAttribute",
+                "withCookieParams",
+                "withParsedBody",
+                "withQueryParams",
+                "withUploadedFiles",
+                "withoutAttribute"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\StreamInterface": {
+            "type": "interface",
+            "methods": [
+                "__toString",
+                "close",
+                "detach",
+                "eof",
+                "getContents",
+                "getMetadata",
+                "getSize",
+                "isReadable",
+                "isSeekable",
+                "isWritable",
+                "read",
+                "rewind",
+                "seek",
+                "tell",
+                "write"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\UploadedFileInterface": {
+            "type": "interface",
+            "methods": [
+                "getClientFilename",
+                "getClientMediaType",
+                "getError",
+                "getSize",
+                "getStream",
+                "moveTo"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Message\\UriInterface": {
+            "type": "interface",
+            "methods": [
+                "__toString",
+                "getAuthority",
+                "getFragment",
+                "getHost",
+                "getPath",
+                "getPort",
+                "getQuery",
+                "getScheme",
+                "getUserInfo",
+                "withFragment",
+                "withHost",
+                "withPath",
+                "withPort",
+                "withQuery",
+                "withScheme",
+                "withUserInfo"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Server\\MiddlewareInterface": {
+            "type": "interface",
+            "methods": [
+                "process"
+            ]
+        },
+        "Finella\\Support\\Psr\\Http\\Server\\RequestHandlerInterface": {
+            "type": "interface",
+            "methods": [
+                "handle"
+            ]
+        },
+        "Finella\\Support\\Psr\\Log\\LogLevel": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Support\\Psr\\Log\\LoggerInterface": {
+            "type": "interface",
+            "methods": [
+                "alert",
+                "critical",
+                "debug",
+                "emergency",
+                "error",
+                "info",
+                "log",
+                "notice",
+                "warning"
+            ]
+        },
+        "Finella\\Support\\Psr\\SimpleCache\\CacheInterface": {
+            "type": "interface",
+            "methods": [
+                "clear",
+                "delete",
+                "deleteMultiple",
+                "get",
+                "getMultiple",
+                "has",
+                "set",
+                "setMultiple"
+            ]
+        },
+        "Finella\\Support\\Psr\\SimpleCache\\InvalidArgumentException": {
+            "type": "interface",
+            "methods": []
+        },
+        "Finella\\Support\\Queue": {
+            "type": "class",
+            "methods": []
+        },
+        "Finella\\Support\\QueueServiceProvider": {
+            "type": "class",
+            "methods": [
+                "register"
+            ]
+        },
+        "Finella\\Support\\RedisConnector": {
+            "type": "class",
+            "methods": [
+                "connect"
+            ]
+        },
+        "Finella\\Support\\ReportPaginator": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "count",
+                "currentPage",
+                "getIterator",
+                "hasMorePages",
+                "hasPages",
+                "items",
+                "lastPage",
+                "links",
+                "nextPageUrl",
+                "onFirstPage",
+                "perPage",
+                "previousPageUrl",
+                "total",
+                "url"
+            ]
+        },
+        "Finella\\Support\\ServiceProvider": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "boot",
+                "manifest",
+                "register"
+            ]
+        },
+        "Finella\\Support\\SimpleCacheAdapter": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "clear",
+                "delete",
+                "deleteMultiple",
+                "get",
+                "getMultiple",
+                "has",
+                "set",
+                "setMultiple"
+            ]
+        },
+        "Finella\\Support\\SyncQueue": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "push"
+            ]
+        },
+        "Finella\\Support\\UploadPolicy": {
+            "type": "class",
+            "methods": [
+                "sanitizeFilename",
+                "validate"
+            ]
+        },
+        "Finella\\Support\\ValidationException": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "bag",
+                "errors",
+                "oldInput",
+                "status"
+            ]
+        },
+        "Finella\\Support\\ValidationHelper": {
+            "type": "class",
+            "methods": [
+                "errors",
+                "errorsFromInput",
+                "formatAsHtmlList"
+            ]
+        },
+        "Finella\\Support\\Validator": {
+            "type": "class",
+            "methods": [
+                "__construct",
+                "errors",
+                "extend",
+                "make",
+                "passes",
+                "validated"
+            ]
+        },
+        "Finella\\View\\View": {
+            "type": "class",
+            "methods": [
+                "hasShared",
+                "render",
+                "share"
+            ]
+        }
+    }
+}

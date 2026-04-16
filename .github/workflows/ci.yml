@@ -1,0 +1,476 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  commit-subject-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Commit subject policy check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-commit-subject-prefix.php
+
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      monorepo: ${{ steps.filter.outputs.monorepo }}
+      starter: ${{ steps.filter.outputs.starter }}
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Detect changes
+        id: filter
+        uses: dorny/paths-filter@v4
+        with:
+          filters: |
+            monorepo:
+              - 'framework/**'
+              - 'packages/**'
+              - 'tests/**'
+              - 'tools/**'
+              - 'tools/harness/**'
+              - 'scripts/**'
+              - '.github/workflows/ci.yml'
+              - 'README.md'
+              - 'CHANGELOG.md'
+              - 'LICENSE'
+              - 'LICENSE.md'
+              - 'NOTICE'
+              - 'THIRD_PARTY_NOTICES.md'
+              - 'CODE_OF_CONDUCT.md'
+              - 'CONTRIBUTING.md'
+              - 'SECURITY.md'
+              - 'composer.json'
+              - 'packages/**/composer.json'
+            starter:
+              - 'app/**'
+              - 'README.md'
+              - 'CHANGELOG.md'
+            docs:
+              - 'docs/**'
+              - 'app/resources/docs/**'
+
+  monorepo-gate:
+    needs: changes
+    if: needs.changes.outputs.monorepo == 'true'
+    runs-on: ubuntu-latest
+    env:
+      COMPOSER_CACHE_DIR: ${{ github.workspace }}/.composer-cache
+      COMPOSER_HOME: ${{ github.workspace }}/.composer-home
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ "8.4" ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          extensions: zip
+
+      - name: Release hygiene check (tracked-only)
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        shell: bash
+        run: |
+          set -e
+          bash scripts/release/check-release-hygiene.sh
+
+      - name: Release hygiene check (strict, tags)
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          set -e
+          bash scripts/release/check-release-hygiene.sh --strict
+
+      # Keep hygiene checks before Composer cache directories to avoid tag failures.
+      - name: Prepare composer dirs
+        shell: bash
+        run: |
+          set -e
+          mkdir -p "$COMPOSER_CACHE_DIR" "$COMPOSER_HOME" docs/artifacts .artifacts
+
+      - name: Cache composer (monorepo)
+        uses: actions/cache@v5
+        with:
+          path: |
+            .composer-cache
+            .composer-home
+          key: ${{ runner.os }}-composer-${{ hashFiles('framework/composer.json', 'packages/**/composer.json', 'tools/harness/composer.json', 'tools/composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Composer validate (framework + packages + harness)
+        shell: bash
+        run: |
+          set -e
+          echo "Composer version: $(composer --version)"
+          echo "==> composer validate in app (stable profile, lock-agnostic)"
+          (cd app && composer validate --no-interaction --no-check-lock)
+          echo "==> composer validate in app (dev profile + lock)"
+          (cd app && COMPOSER=composer.dev.json composer validate --no-interaction)
+          for dir in framework packages/* tools/harness; do
+            if [ -f "$dir/composer.json" ]; then
+              if [ "$(basename "$dir")" = "_package-template" ]; then
+                continue
+              fi
+              echo "==> composer validate in $dir"
+              (cd "$dir" && composer validate --no-interaction)
+            fi
+          done
+
+      - name: License header check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-license-headers.php
+
+      - name: Markdown format check (project)
+        shell: bash
+        run: |
+          set -e
+          php scripts/docs/format-markdown.php --check --scope all --profile project
+
+      - name: GitHub docs style check (release profile)
+        shell: bash
+        run: |
+          set -e
+          php scripts/docs/format-markdown.php --check --scope github --profile release
+
+      - name: Deprecations registry check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-deprecations.php
+
+      - name: Support policy check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-support-policy.php
+
+      - name: Release notes format check
+        shell: bash
+        run: |
+          set -e
+          php scripts/release/check-release-notes-format.php
+
+      - name: Third-party notices check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/generate-third-party-notices.php --check
+
+      - name: Composer audit (lockfiles)
+        shell: bash
+        run: |
+          set -e
+          bash scripts/ci/run-composer-audit.sh
+
+      - name: Baseline drift check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-baseline-drift.php
+
+      - name: App template sync check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-app-template-sync.php
+      - name: App template strict sync check
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-app-template-strict-sync.php
+
+      - name: PHPStan (static analysis)
+        shell: bash
+        run: |
+          set -e
+          bash scripts/ci/run-phpstan.sh
+
+      - name: PHPUnit (core + packages)
+        shell: bash
+        run: |
+          set -e
+          bash scripts/ci/run-phpunit.sh
+
+      - name: Release gate (monorepo)
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "==> Running release gate (monorepo)"
+          bash scripts/release/release-gate.sh --mode=monorepo | tee .artifacts/release-gate-monorepo.log
+
+      - name: Optional integrations smoke (strict)
+        shell: bash
+        run: |
+          set -euo pipefail
+          php scripts/ci/optional-integrations-smoke.php | tee .artifacts/optional-integrations-smoke.log
+
+      - name: Performance baseline (bench)
+        shell: bash
+        run: |
+          set -euo pipefail
+          php scripts/ci/perf-baseline.php --runs=7 --output=.artifacts/perf-baseline.json
+
+      - name: Capture CLI help (monorepo)
+        shell: bash
+        run: |
+          set -e
+          mkdir -p docs/artifacts
+          cd tools/harness
+          if [ ! -f vendor/autoload.php ]; then
+            composer install --no-interaction --prefer-dist
+          fi
+          php bin/finella --help > ../../docs/artifacts/cli-help.txt
+
+      - name: Upload CI artifacts (monorepo)
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: monorepo-artifacts-php-${{ matrix.php }}
+          path: |
+            docs/artifacts/cli-help.txt
+            .artifacts/release-gate-monorepo.log
+            .artifacts/optional-integrations-smoke.log
+            .artifacts/perf-baseline.json
+
+  windows-hygiene:
+    needs: changes
+    if: needs.changes.outputs.monorepo == 'true' || needs.changes.outputs.starter == 'true' || needs.changes.outputs.docs == 'true'
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Release hygiene check (tracked-only)
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        shell: pwsh
+        run: |
+          scripts\\release\\check-release-hygiene.ps1
+
+      - name: Release hygiene check (strict, tags)
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        run: |
+          scripts\\release\\check-release-hygiene.ps1 -Strict
+
+  starter-fresh-install:
+    needs: changes
+    if: needs.changes.outputs.starter == 'true' || needs.changes.outputs.monorepo == 'true'
+    runs-on: ubuntu-latest
+    env:
+      COMPOSER_CACHE_DIR: ${{ github.workspace }}/.composer-cache
+      COMPOSER_HOME: ${{ github.workspace }}/.composer-home
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ "8.4" ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          extensions: zip
+
+      - name: Prepare composer dirs
+        shell: bash
+        run: |
+          set -e
+          mkdir -p "$COMPOSER_CACHE_DIR" "$COMPOSER_HOME" .artifacts
+
+      - name: Prepare starter app
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Using app/"
+          rm -rf app/vendor
+
+      - name: Composer install (starter)
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd app
+          COMPOSER=composer.dev.json composer install --no-interaction --prefer-dist | tee ../.artifacts/starter-composer-install.log
+
+      - name: Starter smoke/EC
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd app
+          if php -r '$c=json_decode(file_get_contents("composer.json"), true); exit(isset($c["scripts"]["ec"]) ? 0 : 1);'; then
+            composer run ec --no-interaction
+          elif php -r '$c=json_decode(file_get_contents("composer.json"), true); exit(isset($c["scripts"]["smoke"]) ? 0 : 1);'; then
+            composer run smoke --no-interaction
+          else
+            php -r 'require "vendor/autoload.php"; $kernel = require "bootstrap/app.php"; if (!($kernel instanceof \Finella\Contracts\Http\KernelInterface)) { fwrite(STDERR, "Kernel bootstrap failed\n"); exit(1);} echo "Starter boot OK\n";'
+          fi
+
+      - name: Starter ops-check (prod, strict)
+        shell: bash
+        env:
+          APP_ENV: prod
+          APP_DEBUG: "0"
+          APP_WARM_KERNEL: "0"
+          FINELLA_OPS_CHECK_STRICT: "1"
+          DOCS_ENABLED: "1"
+          DOCS_PUBLIC: "0"
+          DOCS_ACCESS_TOKEN: ci-token
+        run: |
+          set -euo pipefail
+          cd app
+          php scripts/ops-check.php
+
+      - name: Starter production profile check
+        shell: bash
+        env:
+          APP_ENV: prod
+          APP_DEBUG: "0"
+          APP_WARM_KERNEL: "1"
+          DOCS_ENABLED: "1"
+          DOCS_PUBLIC: "0"
+          DOCS_ACCESS_TOKEN: ci-token
+          ADMIN_ENABLED: "0"
+          ADMIN_DEV_ENABLED: "0"
+          ADMIN_LOGIN_REQUIRED: "1"
+          ADMIN_AUTH_ALLOW_AUTH: "0"
+        run: |
+          set -euo pipefail
+          cd app
+          php scripts/production-profile-check.php
+
+      - name: Upload starter artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: starter-artifacts-php-${{ matrix.php }}
+          path: |
+            .artifacts/starter-composer-install.log
+
+  coverage:
+    needs: changes
+    if: needs.changes.outputs.monorepo == 'true'
+    runs-on: ubuntu-latest
+    env:
+      COMPOSER_CACHE_DIR: ${{ github.workspace }}/.composer-cache
+      COMPOSER_HOME: ${{ github.workspace }}/.composer-home
+      COVERAGE_MIN_LINES: 7.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: xdebug
+          extensions: zip
+
+      - name: Prepare composer dirs
+        shell: bash
+        run: |
+          set -e
+          mkdir -p "$COMPOSER_CACHE_DIR" "$COMPOSER_HOME" .artifacts
+
+      - name: PHPUnit coverage
+        shell: bash
+        run: |
+          set -e
+          bash scripts/ci/run-phpunit-coverage.sh
+
+      - name: Coverage gate
+        shell: bash
+        run: |
+          set -e
+          php scripts/ci/check-coverage.php --path=.artifacts/coverage.xml
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: phpunit-coverage
+          path: |
+            .artifacts/coverage.xml
+
+  hardening:
+    needs: changes
+    if: needs.changes.outputs.monorepo == 'true'
+    runs-on: ubuntu-latest
+    env:
+      COMPOSER_CACHE_DIR: ${{ github.workspace }}/.composer-cache
+      COMPOSER_HOME: ${{ github.workspace }}/.composer-home
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+          extensions: zip
+
+      - name: Prepare composer dirs
+        shell: bash
+        run: |
+          set -e
+          mkdir -p "$COMPOSER_CACHE_DIR" "$COMPOSER_HOME"
+
+      - name: Cache tools vendor
+        uses: actions/cache@v5
+        with:
+          path: |
+            .composer-cache
+            tools/vendor
+          key: ${{ runner.os }}-tools-${{ hashFiles('tools/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-tools-
+
+      - name: Hardening (PHPStan enterprise + Psalm)
+        shell: bash
+        run: |
+          set -e
+          cd tools
+          composer install --no-interaction --prefer-dist --no-progress
+          vendor/bin/phpstan analyse -c phpstan.enterprise.neon

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/bootstrap.php"
+         colors="true"
+         failOnWarning="true"
+         failOnRisky="true">
+    <source>
+        <include>
+            <directory suffix=".php">../framework/src</directory>
+            <directory suffix=".php">../packages</directory>
+        </include>
+    </source>
+    <php>
+        <env name="APP_ROOT" value="tools/harness"/>
+    </php>
+    <testsuites>
+        <testsuite name="Finella Core">
+            <directory>../tests</directory>
+        </testsuite>
+        <testsuite name="Finella Packages">
+            <directory suffix="Test.php">../packages</directory>
+            <exclude>../packages/_package-template</exclude>
+        </testsuite>
+    </testsuites>
+</phpunit>

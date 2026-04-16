@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finella UI · Grid</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="elements.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="f-container fx-page">
+    <div class="grid-intro">
+      <div class="grid-intro-eyebrow">Element: Grid system</div>
+      <div class="grid-intro-subtitle">Grid demo with nesting and responsive spans.</div>
+    </div>
+
+    <div class="f-stack">
+      <section class="f-stack">
+        <h3 class="f-card-title">Equal columns</h3>
+        <div class="f-grid grid-demo">
+          <div class="f-col-12 f-md-col-4"><div class="grid-cell">.f-col-4</div></div>
+          <div class="f-col-12 f-md-col-4"><div class="grid-cell">.f-col-4</div></div>
+          <div class="f-col-12 f-md-col-4"><div class="grid-cell">.f-col-4</div></div>
+        </div>
+      </section>
+
+      <section class="f-stack">
+        <h3 class="f-card-title">Two columns with sidebar</h3>
+        <div class="f-grid grid-demo">
+          <div class="f-col-12 f-md-col-8"><div class="grid-cell">.f-md-col-8</div></div>
+          <div class="f-col-12 f-md-col-4"><div class="grid-cell">.f-md-col-4</div></div>
+        </div>
+      </section>
+
+      <section class="f-stack">
+        <h3 class="f-card-title">Mixed widths</h3>
+        <div class="f-grid grid-demo">
+          <div class="f-col-12 f-md-col-6"><div class="grid-cell">.f-md-col-6</div></div>
+          <div class="f-col-12 f-md-col-3"><div class="grid-cell">.f-md-col-3</div></div>
+          <div class="f-col-12 f-md-col-3"><div class="grid-cell">.f-md-col-3</div></div>
+        </div>
+      </section>
+
+      <section class="f-stack">
+        <h3 class="f-card-title">Nested grid</h3>
+        <div class="f-grid grid-demo">
+          <div class="f-col-12 f-md-col-8">
+            <div class="grid-cell">
+              Parent .f-md-col-8
+              <div class="f-grid grid-nested">
+                <div class="f-col-12 f-md-col-6"><div class="grid-cell grid-cell-nested">Nested .f-md-col-6</div></div>
+                <div class="f-col-12 f-md-col-6"><div class="grid-cell grid-cell-nested">Nested .f-md-col-6</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="f-col-12 f-md-col-4"><div class="grid-cell">Sidebar .f-md-col-4</div></div>
+        </div>
+      </section>
+
+      <section class="f-stack">
+        <h3 class="f-card-title">Responsive stacking</h3>
+        <div class="f-grid grid-demo">
+          <div class="f-col-12 f-md-col-6"><div class="grid-cell">Stacks on mobile</div></div>
+          <div class="f-col-12 f-md-col-6"><div class="grid-cell">Side by side on desktop</div></div>
+        </div>
+      </section>
+    </div>
+<section class="element-section">
+      <h2>Code blocks</h2>
+      <div class="fx-code">
+        <div class="fx-code-header">
+          <div>Grid row</div>
+          <button class="f-btn f-btn-outline f-btn-sm" data-copy-target="code-grid-row">Copy</button>
+        </div>
+        <pre><code id="code-grid-row">&lt;div class=&quot;f-grid&quot;&gt;
+  &lt;div class=&quot;f-col-12 f-md-col-4&quot;&gt;
+    &lt;div class=&quot;grid-cell&quot;&gt;.f-col-4&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;f-col-12 f-md-col-4&quot;&gt;
+    &lt;div class=&quot;grid-cell&quot;&gt;.f-col-4&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;f-col-12 f-md-col-4&quot;&gt;
+    &lt;div class=&quot;grid-cell&quot;&gt;.f-col-4&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <script src="elements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+parameters:
+  bootstrapFiles:
+    - vendor/autoload.php
+  scanFiles:
+    - stubs/phpunit-framework.php
+    - stubs/finella-testing-testcase.php
+  level: 6
+  phpVersion: 80300
+  treatPhpDocTypesAsCertain: false
+  paths:
+    - ../framework/src
+    - ../packages
+    - harness/src
+    - harness/bootstrap
+  excludePaths:
+    - **/vendor/**
+    - ../packages/_package-template/**
+    - ../packages/*/resources/views/**
+    - ../packages/*/tests/**
+    - ../packages/testing/src/TestCase.php
+  ignoreErrors:
+    - '#Unsafe usage of new static\(\)#'
+    - identifier: missingType.iterableValue

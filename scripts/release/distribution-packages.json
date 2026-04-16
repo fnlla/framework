@@ -1,0 +1,33 @@
+{
+  "public_core": [
+    "finella/framework",
+    "finella/standard",
+    "finella/queue",
+    "finella/scheduler",
+    "finella/mail",
+    "finella/ops",
+    "finella/rbac",
+    "finella/settings",
+    "finella/docs",
+    "finella/testing",
+    "finella/debugbar"
+  ],
+  "private_pro": [
+    "finella/ai",
+    "finella/ui",
+    "finella/analytics",
+    "finella/content",
+    "finella/seo",
+    "finella/notifications",
+    "finella/webmail",
+    "finella/storage-s3",
+    "finella/search",
+    "finella/oauth",
+    "finella/monitoring",
+    "finella/stripe",
+    "finella/sentry",
+    "finella/pdf",
+    "finella/deploy",
+    "finella/tenancy"
+  ]
+}
