@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -eu
+
+php "scripts/ci/check-commit-message-file.php" "$1"
