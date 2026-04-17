@@ -10,13 +10,17 @@ Set-Location $root
 $mode = if ($Strict) { 'strict' } else { 'tracked' }
 
 if (-not (Get-Command php -ErrorAction SilentlyContinue)) {
-    Write-Host 'ERROR: php is required to build Finella UI docs.'
+    Write-Host 'ERROR: php is required to run release hygiene checks.'
     exit 1
 }
-php scripts\\docs\\build-ui-docs.php
-if ($LASTEXITCODE -ne 0) {
-    Write-Host 'ERROR: failed to build Finella UI docs.'
-    exit $LASTEXITCODE
+if (Test-Path ui\\index.md) {
+    php scripts\\docs\\build-ui-docs.php
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host 'ERROR: failed to build Finella UI docs.'
+        exit $LASTEXITCODE
+    }
+} else {
+    Write-Host 'UI docs source not found (ui/index.md). Skipping UI docs build.'
 }
 
 $gitAvailable = $false
@@ -139,4 +143,3 @@ if ($fail) {
 }
 
 Write-Host 'Release hygiene check passed.'
-

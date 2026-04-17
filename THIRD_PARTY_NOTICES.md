@@ -3,8 +3,8 @@
 Finella includes third-party open-source components. The list below is generated from Composer lock files and is provided for attribution and compliance purposes.
 Licenses are reported by each package; consult the upstream project for full license texts.
 
-Last updated: 2026-04-16.
-Lock files scanned: `app/composer.lock`, `tools/composer.lock`, `tools/harness/composer.lock`.
+Last updated: 2026-04-17.
+Lock files scanned: `tools/composer.lock`, `tools/harness/composer.lock`.
 First-party `finella/*` packages are excluded.
 
 | Package | Version | License |
@@ -22,6 +22,7 @@ First-party `finella/*` packages are excluded.
 | amphp/sync | v2.3.0 | MIT |
 | aws/aws-crt-php | v1.2.7 | Apache-2.0 |
 | aws/aws-sdk-php | 3.379.0 | Apache-2.0 |
+| aws/aws-sdk-php | 3.379.2 | Apache-2.0 |
 | composer/pcre | 3.3.2 | MIT |
 | composer/semver | 3.4.4 | MIT |
 | composer/xdebug-handler | 3.0.5 | MIT |
@@ -59,17 +60,11 @@ First-party `finella/*` packages are excluded.
 | phpstan/phpstan | 1.12.33 | MIT |
 | phpstan/phpstan-deprecation-rules | 1.2.1 | MIT |
 | phpstan/phpstan-strict-rules | 1.6.2 | MIT |
-| phpunit/php-code-coverage | 10.1.16 | BSD-3-Clause |
 | phpunit/php-code-coverage | 14.1.1 | BSD-3-Clause |
-| phpunit/php-file-iterator | 4.1.0 | BSD-3-Clause |
 | phpunit/php-file-iterator | 7.0.0 | BSD-3-Clause |
-| phpunit/php-invoker | 4.0.0 | BSD-3-Clause |
 | phpunit/php-invoker | 7.0.0 | BSD-3-Clause |
-| phpunit/php-text-template | 3.0.1 | BSD-3-Clause |
 | phpunit/php-text-template | 6.0.0 | BSD-3-Clause |
-| phpunit/php-timer | 6.0.0 | BSD-3-Clause |
 | phpunit/php-timer | 9.0.0 | BSD-3-Clause |
-| phpunit/phpunit | 10.5.63 | BSD-3-Clause |
 | phpunit/phpunit | 13.1.3 | BSD-3-Clause |
 | psr/container | 2.0.2 | MIT |
 | psr/event-dispatcher | 1.0.0 | MIT |
@@ -81,34 +76,19 @@ First-party `finella/*` packages are excluded.
 | rector/rector | 1.2.10 | MIT |
 | revolt/event-loop | v1.0.8 | MIT |
 | sabberworm/php-css-parser | v9.3.0 | MIT |
-| sebastian/cli-parser | 2.0.1 | BSD-3-Clause |
 | sebastian/cli-parser | 5.0.0 | BSD-3-Clause |
-| sebastian/code-unit | 2.0.0 | BSD-3-Clause |
-| sebastian/code-unit-reverse-lookup | 3.0.0 | BSD-3-Clause |
-| sebastian/comparator | 5.0.5 | BSD-3-Clause |
 | sebastian/comparator | 8.1.2 | BSD-3-Clause |
-| sebastian/complexity | 3.2.0 | BSD-3-Clause |
 | sebastian/complexity | 6.0.0 | BSD-3-Clause |
-| sebastian/diff | 5.1.1 | BSD-3-Clause |
 | sebastian/diff | 8.1.0 | BSD-3-Clause |
-| sebastian/environment | 6.1.0 | BSD-3-Clause |
 | sebastian/environment | 9.2.0 | BSD-3-Clause |
-| sebastian/exporter | 5.1.4 | BSD-3-Clause |
 | sebastian/exporter | 8.0.1 | BSD-3-Clause |
 | sebastian/git-state | 1.0.0 | BSD-3-Clause |
-| sebastian/global-state | 6.0.2 | BSD-3-Clause |
 | sebastian/global-state | 9.0.0 | BSD-3-Clause |
-| sebastian/lines-of-code | 2.0.2 | BSD-3-Clause |
 | sebastian/lines-of-code | 5.0.0 | BSD-3-Clause |
-| sebastian/object-enumerator | 5.0.0 | BSD-3-Clause |
 | sebastian/object-enumerator | 8.0.0 | BSD-3-Clause |
-| sebastian/object-reflector | 3.0.0 | BSD-3-Clause |
 | sebastian/object-reflector | 6.0.0 | BSD-3-Clause |
-| sebastian/recursion-context | 5.0.1 | BSD-3-Clause |
 | sebastian/recursion-context | 8.0.0 | BSD-3-Clause |
-| sebastian/type | 4.0.0 | BSD-3-Clause |
 | sebastian/type | 7.0.0 | BSD-3-Clause |
-| sebastian/version | 4.0.1 | BSD-3-Clause |
 | sebastian/version | 7.0.0 | BSD-3-Clause |
 | sentry/sentry | 4.24.0 | MIT |
 | spatie/array-to-xml | 3.4.4 | MIT |
@@ -138,7 +118,6 @@ First-party `finella/*` packages are excluded.
 | symfony/service-contracts | v3.6.1 | MIT |
 | symfony/string | v8.0.8 | MIT |
 | thecodingmachine/safe | v3.4.0 | MIT |
-| theseer/tokenizer | 1.3.1 | BSD-3-Clause |
 | theseer/tokenizer | 2.0.1 | BSD-3-Clause |
 | vimeo/psalm | 6.16.1 | MIT |
 | webmozart/assert | 2.3.0 | MIT |

@@ -4,8 +4,6 @@ This document defines how we work across two repositories:
 **-** `fnlla/framework` (this repository)
 **-** `fnlla/fnlla` (starter application repository)
 
-The goal is simple: product and domain focus stays with the maintainer, while technical implementation and delivery mechanics stay with Codex.
-
 **REPOSITORY RESPONSIBILITIES**
 
 **-** `fnlla/framework`:
@@ -23,7 +21,7 @@ The goal is simple: product and domain focus stays with the maintainer, while te
 **-** Request prefixed with `framework:` means changes only in `fnlla/framework`.
 **-** Request prefixed with `fnlla:` means changes only in `fnlla/fnlla`.
 **-** Request prefixed with `cross-repo:` means coordinated changes in both repositories.
-**-** If no prefix is provided, Codex selects the smallest safe scope and explains assumptions in the delivery summary.
+**-** If no prefix is provided, the implementation workflow selects the smallest safe scope and explains assumptions in the delivery summary.
 
 Default behavior is not to modify both repositories unless needed.
 
@@ -52,10 +50,5 @@ A task is done only when all are true for touched repositories:
 **-** No unintended local diff remains.
 **-** Documentation and release notes are updated when behavior changes.
 **-** Dependency/version relationships are consistent between repositories.
-
-**RESPONSIBILITY SPLIT**
-
-**-** Maintainer focus: product direction, prompts, and domain decisions.
-**-** Codex focus: implementation, refactors, CI fixes, dependency wiring, release mechanics, and technical guardrails.
 
 This split is intentional and is the default collaboration model for this project.

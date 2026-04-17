@@ -9,8 +9,14 @@ $requiredFiles = [
     [$root . '/framework/src/Console/Commands/AiDoctorCommand.php'],
     [$root . '/framework/src/Console/Commands/AiConfigAdvisorCommand.php'],
     [$root . '/framework/src/Console/Commands/AiSecurityLintCommand.php'],
-    [$root . '/app/config/ai/ai.php', $root . '/app/config/ai.php'],
-    [$root . '/app/config/ai/policy.php', $root . '/app/config/ai_policy.php'],
+    [
+        $root . '/tools/harness/config/ai/ai.php',
+        $root . '/tools/harness/config/ai.php',
+    ],
+    [
+        $root . '/tools/harness/config/ai/policy.php',
+        $root . '/tools/harness/config/ai_policy.php',
+    ],
 ];
 
 $missing = [];
@@ -33,4 +39,3 @@ if ($missing !== []) {
 }
 
 echo "AI smoke tests OK\n";
-

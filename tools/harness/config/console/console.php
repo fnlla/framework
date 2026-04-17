@@ -5,8 +5,6 @@ declare(strict_types=1);
 $commands = [
     \Finella\Deploy\Commands\DeployHealthCommand::class,
     \Finella\Deploy\Commands\DeployWarmupCommand::class,
-    \Finella\Ui\Commands\UiPublishCommand::class,
-    \Finella\Ui\Commands\UiAdminPublishCommand::class,
     \Finella\Docs\Commands\DocsGenerateCommand::class,
     \Finella\Docs\Commands\DocsSyncCommand::class,
     \Finella\MailPreview\Commands\MailPreviewPublishCommand::class,

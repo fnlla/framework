@@ -14,7 +14,12 @@ $parseOption = static function (string $name, array $argv): ?string {
 };
 
 $argv = $_SERVER['argv'] ?? [];
-$appRoot = $parseOption('--app', $argv) ?? $parseOption('-a', $argv) ?? ($root . DIRECTORY_SEPARATOR . 'app');
+$defaultAppRoot = $root . DIRECTORY_SEPARATOR . 'app';
+if (!is_dir($defaultAppRoot)) {
+    $defaultAppRoot = $root . DIRECTORY_SEPARATOR . 'tools' . DIRECTORY_SEPARATOR . 'harness';
+}
+
+$appRoot = $parseOption('--app', $argv) ?? $parseOption('-a', $argv) ?? $defaultAppRoot;
 $appRoot = rtrim((string) $appRoot, '/\\');
 
 if (!is_dir($appRoot)) {
@@ -59,4 +64,3 @@ if (!$hasMarkdown) {
 }
 
 echo "Docs build check OK\n";
-

@@ -8,6 +8,8 @@ use Finella\Queue\QueueWorker;
 use Finella\Queue\SyncQueue;
 
 $root = dirname(__DIR__, 2);
+$appRoot = $root . '/tools/harness';
+$appRoot = is_dir($appRoot) ? $appRoot : $root;
 $autoloadCandidates = [
     $root . '/vendor/autoload.php',
     $root . '/tools/harness/vendor/autoload.php',
@@ -29,12 +31,12 @@ if ($autoload === null) {
 require $autoload;
 
 if (getenv('APP_ROOT') === false) {
-    putenv('APP_ROOT=' . $root);
-    $_ENV['APP_ROOT'] = $root;
-    $_SERVER['APP_ROOT'] = $root;
+    putenv('APP_ROOT=' . $appRoot);
+    $_ENV['APP_ROOT'] = $appRoot;
+    $_SERVER['APP_ROOT'] = $appRoot;
 }
 
-$bootstrap = $root . '/app/bootstrap/app.php';
+$bootstrap = $appRoot . '/bootstrap/app.php';
 if (is_file($bootstrap)) {
     require $bootstrap;
 }
@@ -117,5 +119,3 @@ $worker = new QueueWorker($queue, $app, $maxAttempts, $backoff, $retryAfter);
 $processed = $worker->work($maxJobs, $sleepSeconds);
 
 echo "Processed {$processed} jobs.\n";
-
-

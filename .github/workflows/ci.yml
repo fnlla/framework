@@ -33,7 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       monorepo: ${{ steps.filter.outputs.monorepo }}
-      starter: ${{ steps.filter.outputs.starter }}
       docs: ${{ steps.filter.outputs.docs }}
     steps:
       - name: Checkout
@@ -48,9 +47,9 @@ jobs:
             monorepo:
               - 'framework/**'
               - 'packages/**'
+              - 'tools/harness/**'
               - 'tests/**'
               - 'tools/**'
-              - 'tools/harness/**'
               - 'scripts/**'
               - '.github/workflows/ci.yml'
               - 'README.md'
@@ -64,13 +63,8 @@ jobs:
               - 'SECURITY.md'
               - 'composer.json'
               - 'packages/**/composer.json'
-            starter:
-              - 'app/**'
-              - 'README.md'
-              - 'CHANGELOG.md'
             docs:
-              - 'docs/**'
-              - 'app/resources/docs/**'
+              - 'documentation/**'
 
   monorepo-gate:
     needs: changes
@@ -132,10 +126,6 @@ jobs:
         run: |
           set -e
           echo "Composer version: $(composer --version)"
-          echo "==> composer validate in app (stable profile, lock-agnostic)"
-          (cd app && composer validate --no-interaction --no-check-lock)
-          echo "==> composer validate in app (dev profile + lock)"
-          (cd app && COMPOSER=composer.dev.json composer validate --no-interaction)
           for dir in framework packages/* tools/harness; do
             if [ -f "$dir/composer.json" ]; then
               if [ "$(basename "$dir")" = "_package-template" ]; then
@@ -200,17 +190,6 @@ jobs:
           set -e
           php scripts/ci/check-baseline-drift.php
 
-      - name: App template sync check
-        shell: bash
-        run: |
-          set -e
-          php scripts/ci/check-app-template-sync.php
-      - name: App template strict sync check
-        shell: bash
-        run: |
-          set -e
-          php scripts/ci/check-app-template-strict-sync.php
-
       - name: PHPStan (static analysis)
         shell: bash
         run: |
@@ -266,7 +245,7 @@ jobs:
 
   windows-hygiene:
     needs: changes
-    if: needs.changes.outputs.monorepo == 'true' || needs.changes.outputs.starter == 'true' || needs.changes.outputs.docs == 'true'
+    if: needs.changes.outputs.monorepo == 'true' || needs.changes.outputs.docs == 'true'
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -285,104 +264,6 @@ jobs:
         shell: pwsh
         run: |
           scripts\\release\\check-release-hygiene.ps1 -Strict
-
-  starter-fresh-install:
-    needs: changes
-    if: needs.changes.outputs.starter == 'true' || needs.changes.outputs.monorepo == 'true'
-    runs-on: ubuntu-latest
-    env:
-      COMPOSER_CACHE_DIR: ${{ github.workspace }}/.composer-cache
-      COMPOSER_HOME: ${{ github.workspace }}/.composer-home
-    strategy:
-      fail-fast: false
-      matrix:
-        php: [ "8.4" ]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          coverage: none
-          extensions: zip
-
-      - name: Prepare composer dirs
-        shell: bash
-        run: |
-          set -e
-          mkdir -p "$COMPOSER_CACHE_DIR" "$COMPOSER_HOME" .artifacts
-
-      - name: Prepare starter app
-        shell: bash
-        run: |
-          set -euo pipefail
-          echo "Using app/"
-          rm -rf app/vendor
-
-      - name: Composer install (starter)
-        shell: bash
-        run: |
-          set -euo pipefail
-          cd app
-          COMPOSER=composer.dev.json composer install --no-interaction --prefer-dist | tee ../.artifacts/starter-composer-install.log
-
-      - name: Starter smoke/EC
-        shell: bash
-        run: |
-          set -euo pipefail
-          cd app
-          if php -r '$c=json_decode(file_get_contents("composer.json"), true); exit(isset($c["scripts"]["ec"]) ? 0 : 1);'; then
-            composer run ec --no-interaction
-          elif php -r '$c=json_decode(file_get_contents("composer.json"), true); exit(isset($c["scripts"]["smoke"]) ? 0 : 1);'; then
-            composer run smoke --no-interaction
-          else
-            php -r 'require "vendor/autoload.php"; $kernel = require "bootstrap/app.php"; if (!($kernel instanceof \Finella\Contracts\Http\KernelInterface)) { fwrite(STDERR, "Kernel bootstrap failed\n"); exit(1);} echo "Starter boot OK\n";'
-          fi
-
-      - name: Starter ops-check (prod, strict)
-        shell: bash
-        env:
-          APP_ENV: prod
-          APP_DEBUG: "0"
-          APP_WARM_KERNEL: "0"
-          FINELLA_OPS_CHECK_STRICT: "1"
-          DOCS_ENABLED: "1"
-          DOCS_PUBLIC: "0"
-          DOCS_ACCESS_TOKEN: ci-token
-        run: |
-          set -euo pipefail
-          cd app
-          php scripts/ops-check.php
-
-      - name: Starter production profile check
-        shell: bash
-        env:
-          APP_ENV: prod
-          APP_DEBUG: "0"
-          APP_WARM_KERNEL: "1"
-          DOCS_ENABLED: "1"
-          DOCS_PUBLIC: "0"
-          DOCS_ACCESS_TOKEN: ci-token
-          ADMIN_ENABLED: "0"
-          ADMIN_DEV_ENABLED: "0"
-          ADMIN_LOGIN_REQUIRED: "1"
-          ADMIN_AUTH_ALLOW_AUTH: "0"
-        run: |
-          set -euo pipefail
-          cd app
-          php scripts/production-profile-check.php
-
-      - name: Upload starter artifacts
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: starter-artifacts-php-${{ matrix.php }}
-          path: |
-            .artifacts/starter-composer-install.log
 
   coverage:
     needs: changes

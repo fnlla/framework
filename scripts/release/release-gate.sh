@@ -59,15 +59,6 @@ run_hygiene() {
   bash scripts/release/check-release-hygiene.sh
 }
 
-check_app_template_sync() {
-  if [ -f "scripts/ci/check-app-template-strict-sync.php" ]; then
-    php scripts/ci/check-app-template-strict-sync.php
-    return 0
-  fi
-
-  php scripts/ci/check-app-template-sync.php
-}
-
 check_third_party_notices() {
   php scripts/ci/generate-third-party-notices.php --check
 }
@@ -82,14 +73,6 @@ check_markdown_format() {
 }
 
 validate_composer() {
-  if [ -f "app/composer.json" ]; then
-    echo "==> composer validate in app (stable profile, lock-agnostic)"
-    (cd app && composer validate --no-interaction --no-check-publish --no-check-lock)
-  fi
-  if [ -f "app/composer.dev.json" ]; then
-    echo "==> composer validate in app (dev profile + lock)"
-    (cd app && COMPOSER=composer.dev.json composer validate --no-interaction --no-check-publish)
-  fi
   for dir in framework packages/* tools/harness; do
     if [ ! -f "$dir/composer.json" ]; then
       continue
@@ -161,64 +144,14 @@ run_api_snapshot() {
 run_monorepo_tests() {
   local cleanup_dirs=()
   ensure_install "framework"
-  ensure_install "app"
   ensure_install "tools/harness"
   if [ -f "tools/harness/vendor/autoload.php" ] && [ ! -d "tools/harness/vendor/.git" ]; then
     cleanup_dirs+=("tools/harness/vendor")
   fi
 
-  echo "==> composer install in app (monorepo path repos, temp)"
-  local tmp_home tmp_cache composer_json composer_backup status tmp_dir
-  tmp_home="$(mktemp -d)"
-  tmp_cache="${ROOT_DIR}/.composer-cache"
-  tmp_dir="${ROOT_DIR}/tmp-app"
-  rm -rf "$tmp_dir" || true
-  mkdir -p "$tmp_dir"
-  cp -R app/. "$tmp_dir"
-  rm -f "${tmp_dir}/composer.lock"
-  composer_json="${tmp_dir}/composer.json"
-  composer_backup="$(mktemp)"
-  mkdir -p "$tmp_cache"
-  cp "$composer_json" "$composer_backup"
-  (cd "$tmp_dir" && COMPOSER_HOME="$tmp_home" COMPOSER_CACHE_DIR="$tmp_cache" \
-    composer config repositories.framework path "${ROOT_DIR}/framework")
-  if [ -f "${ROOT_DIR}/ui/composer.json" ]; then
-    (cd "$tmp_dir" && COMPOSER_HOME="$tmp_home" COMPOSER_CACHE_DIR="$tmp_cache" \
-      composer config repositories.ui path "${ROOT_DIR}/ui")
-  fi
-  (cd "$tmp_dir" && for dir in "$ROOT_DIR"/packages/*; do
-    if [ -f "$dir/composer.json" ]; then
-      name="$(basename "$dir")"
-      if [ "$name" = "_package-template" ]; then
-        continue
-      fi
-      COMPOSER_HOME="$tmp_home" COMPOSER_CACHE_DIR="$tmp_cache" \
-        composer config "repositories.${name}" path "$dir"
-    fi
-  done)
-  (cd "$tmp_dir" && COMPOSER_HOME="$tmp_home" COMPOSER_CACHE_DIR="$tmp_cache" \
-    composer config minimum-stability dev)
-  (cd "$tmp_dir" && COMPOSER_HOME="$tmp_home" COMPOSER_CACHE_DIR="$tmp_cache" \
-    composer config prefer-stable true)
-  set +e
-  (cd "$tmp_dir" && COMPOSER_HOME="$tmp_home" COMPOSER_CACHE_DIR="$tmp_cache" \
-    composer install --no-interaction --prefer-dist)
-  status=$?
-  mv "$composer_backup" "$composer_json"
-  rm -f "${tmp_dir}/composer.lock"
-  rm -rf "$tmp_home"
-  set -e
-  if [ $status -ne 0 ]; then
-    rm -rf "$tmp_dir"
-    exit $status
-  fi
-
   php scripts/smoke/run-smoke-tests.php
-  php scripts/ci/check-docs-sync.php --app=app
-  php scripts/docs/build-ui-docs.php
+  php scripts/ci/check-docs-sync.php --app=tools/harness
   (cd tools/harness && composer run smoke --no-interaction)
-  (cd "$tmp_dir" && composer run smoke --no-interaction)
-  rm -rf "$tmp_dir"
 
   if [ "${#cleanup_dirs[@]}" -gt 0 ]; then
     for dir in "${cleanup_dirs[@]}"; do
@@ -230,7 +163,6 @@ run_monorepo_tests() {
 verify_environment
 require_clean_git "pre"
 run_hygiene
-check_app_template_sync
 check_third_party_notices
 check_release_notes_format
 check_markdown_format

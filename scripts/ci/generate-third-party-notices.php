@@ -4,11 +4,23 @@ declare(strict_types=1);
 
 $root = dirname(__DIR__, 2);
 $defaultOutput = $root . DIRECTORY_SEPARATOR . 'THIRD_PARTY_NOTICES.md';
-$lockFiles = [
-    'app/composer.lock',
+$lockFileCandidates = [
+    'framework/composer.lock',
     'tools/composer.lock',
     'tools/harness/composer.lock',
 ];
+$lockFiles = array_values(array_filter(
+    $lockFileCandidates,
+    static function (string $relative) use ($root): bool {
+        $path = $root . DIRECTORY_SEPARATOR . str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $relative);
+        return is_file($path);
+    }
+));
+
+if ($lockFiles === []) {
+    fwrite(STDERR, "No supported lock files found.\n");
+    exit(1);
+}
 
 /** @var list<string> $argv */
 $argv = $_SERVER['argv'] ?? [];
@@ -185,7 +197,10 @@ $lines = [
     'Licenses are reported by each package; consult the upstream project for full license texts.',
     '',
     "Last updated: {$generatedDate}.",
-    'Lock files scanned: `app/composer.lock`, `tools/composer.lock`, `tools/harness/composer.lock`.',
+    'Lock files scanned: ' . implode(', ', array_map(
+        static fn (string $path): string => '`' . $path . '`',
+        $lockFiles
+    )) . '.',
     'First-party `finella/*` packages are excluded.',
     '',
     '| Package | Version | License |',

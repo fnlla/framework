@@ -1,7 +1,7 @@
 **FINELLA APP HARNESS**
 
 This `tools/harness/` directory is a **development and test harness** used inside the monorepo.
-It is **not** the public starter skeleton. The starter app lives in `app/`.
+It is **not** the public starter skeleton. The starter app lives in `fnlla/fnlla`.
 
 **REQUIREMENTS**
 **-** PHP >= 8.4
@@ -50,7 +50,6 @@ Routes are defined in `routes/web.php`.
 **-** `finella/rbac` - roles and permissions with gate integration.
 **-** `finella/settings` - key/value runtime settings store.
 **-** `finella/audit` - audit logging helpers.
-**-** `finella/ui` - UI system with admin presets (`ui:admin:publish`).
 **-** `finella/debugbar` - debug tooling (dev only).
 
 **MAINTENANCE COMMANDS (HARNESS)**

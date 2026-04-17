@@ -175,10 +175,28 @@ if (is_file($docsSyncScript)) {
 }
 
 $securityCheck = function () use ($root, $autoload, $addResult): void {
-    $helpers = $root . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'bootstrap' . DIRECTORY_SEPARATOR . 'helpers.php';
-    $configPath = $root . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'http' . DIRECTORY_SEPARATOR . 'http.php';
+    $appCandidates = [
+        $root . DIRECTORY_SEPARATOR . 'app',
+        $root . DIRECTORY_SEPARATOR . 'tools' . DIRECTORY_SEPARATOR . 'harness',
+    ];
+
+    $appRoot = null;
+    foreach ($appCandidates as $candidate) {
+        if (is_dir($candidate)) {
+            $appRoot = $candidate;
+            break;
+        }
+    }
+
+    if (!is_string($appRoot)) {
+        $addResult('security-sanity', 'SKIP', 'missing app config');
+        return;
+    }
+
+    $helpers = $appRoot . DIRECTORY_SEPARATOR . 'bootstrap' . DIRECTORY_SEPARATOR . 'helpers.php';
+    $configPath = $appRoot . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'http' . DIRECTORY_SEPARATOR . 'http.php';
     if (!is_file($configPath)) {
-        $legacyPath = $root . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'http.php';
+        $legacyPath = $appRoot . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'http.php';
         if (is_file($legacyPath)) {
             $configPath = $legacyPath;
         }

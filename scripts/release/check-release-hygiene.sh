@@ -9,11 +9,15 @@ if [[ "${1:-}" == "--strict" ]]; then
   MODE="strict"
 fi
 
-if command -v php >/dev/null 2>&1; then
+if ! command -v php >/dev/null 2>&1; then
+  echo "ERROR: php is required to run release hygiene checks."
+  exit 1
+fi
+
+if [ -f "ui/index.md" ]; then
   php scripts/docs/build-ui-docs.php
 else
-  echo "ERROR: php is required to build Finella UI docs."
-  exit 1
+  echo "UI docs source not found (ui/index.md). Skipping UI docs build."
 fi
 
 git_available=0

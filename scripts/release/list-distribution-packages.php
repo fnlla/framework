@@ -37,17 +37,11 @@ function listPackages(string $title, array $packages): void
 listPackages('Public core packages', $core);
 listPackages('Private pro packages', $pro);
 
-// Basic existence check (framework, ui, and packages/*).
+// Basic existence check (framework and packages/*).
 $missing = [];
 foreach (array_merge($core, $pro) as $name) {
     if ($name === 'finella/framework') {
         if (!is_dir($root . DIRECTORY_SEPARATOR . 'framework')) {
-            $missing[] = $name;
-        }
-        continue;
-    }
-    if ($name === 'finella/ui') {
-        if (!is_dir($root . DIRECTORY_SEPARATOR . 'ui')) {
             $missing[] = $name;
         }
         continue;

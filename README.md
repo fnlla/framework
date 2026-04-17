@@ -8,15 +8,15 @@ Finella is an AI-assisted (optional), modular PHP framework by TechAyo LTD, with
 
 **Status:** Public release (proprietary license).
 
-**Core idea:** Finella Framework + Finella UI
-Finella UI lives in `ui/` at the repo root.
-Release notes are summarised in `CHANGELOG.md` with dedicated logs for `framework/` and `ui/`.
+**Core idea:** Finella Framework + companion starter/UI repositories
+Starter application and Finella UI live in the `fnlla/fnlla` repository.
+Release notes for framework changes are summarised in `CHANGELOG.md`.
 
 **WHAT IS FINELLA?**
 **-** **Finella Framework**: minimal, modern PHP core focused on HTTP, routing, container, config, and error handling.
-**-** **Finella UI**: no-build design system + Elements for fast product UIs.
+**-** **Finella UI**: companion no-build design system + Elements for fast product UIs.
 **-** Modular ecosystem of optional packages (auth, database, ORM, cache, queue, mail, docs, etc.).
-**-** Starter app in `app/` that stays minimal by default; add modules when needed.
+**-** Starter app distributed in a separate repository (`fnlla/fnlla`).
 **-** Optional AI stack with RAG, governance, and deterministic autonomous insights.
 
 **AI POSITIONING**
@@ -64,14 +64,14 @@ $active = User::whereHas('posts', fn ($q) => $q->where('status', 'published'))
     ->get();
 ```
 
-**QUICK START (STARTER APP)**
+**QUICK START (HARNESS)**
 ```bash
-git clone https://github.com/kordyaczny/finella.git finella
-cd finella/app
+git clone https://github.com/fnlla/framework.git framework
+cd framework/tools/harness
 copy .env.example .env
-composer run deps:dev:install
+composer install
 php bin/finella db:bootstrap
-composer run dev
+php -S 127.0.0.1:8000 -t public
 ```
 
 For production/stable installs (outside monorepo dev), use:
@@ -82,33 +82,9 @@ composer install --no-dev --prefer-dist --optimize-autoloader
 Open:
 **-** Product App: `http://127.0.0.1:8000/`
 
-**STARTER APP GUIDE**
-
-Optional env presets (apply on top of `.env.example`):
-**-** `.env.local.example`
-
-Auth scaffold is built-in:
-**-** `/auth/login`, `/auth/register`, `/auth/logout`
-**-** `/auth/password/forgot`, `/auth/password/reset/{token}`
-**-** First-run onboarding: `/onboarding`
-
-Default package stack:
-**-** `finella/standard` (default web stack)
-**-** Optional packages as needed (`ai`, `queue`, `scheduler`, `mail`, `tenancy`, `webmail`, `notifications`, `pdf`, `storage-s3`, `stripe`, `sentry`)
-**-** `finella/debugbar` in `require-dev`
-
-UI assets (optional):
-**-** `public/assets/ui.css`
-**-** `resources/views/layouts/ui.php`
-
-Admin presets (from UI package):
-```bash
-php bin/finella ui:admin:publish --app=.
-```
-Monorepo helper script:
-```bash
-php scripts/release/publish-ui-admin.php --app=app
-```
+**STARTER + UI**
+**-** Starter application repository: `https://github.com/fnlla/fnlla`
+**-** Finella UI package source lives in that repository under `ui/`
 
 Docs UI and docs generation:
 **-** Docs home: `GET /docs`
@@ -126,7 +102,7 @@ composer run test
 
 **HELLO WORLD ROUTE**
 **-** Route: `routes/web.php`
-**-** Controller: `app/src/Controllers/HomeController.php`
+**-** Controller: `tools/harness/src/Controllers/HomeController.php`
 **-** View: `resources/views/pages/home.php`
 
 ```php
@@ -135,8 +111,8 @@ $router->get('/', [HomeController::class, 'index']);
 
 **READINESS ENDPOINT**
 **-** Route: `GET /ready`
-**-** Controller: `app/src/Controllers/ReadinessController.php`
-**-** Service: `app/src/Services/AppReadinessService.php`
+**-** Controller: `tools/harness/src/Controllers/HealthController.php`
+**-** Service: `tools/harness/src/Services/AppReadinessService.php`
 
 Returns `200` when dependencies are ready, and `503` otherwise.
 
@@ -151,7 +127,6 @@ Returns `200` when dependencies are ready, and `503` otherwise.
 
 **THIRD-PARTY NOTICES WORKFLOW**
 `THIRD_PARTY_NOTICES.md` is generated from Composer lock files:
-**-** `app/composer.lock`
 **-** `tools/composer.lock`
 **-** `tools/harness/composer.lock`
 
