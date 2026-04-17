@@ -90,12 +90,12 @@ function detectRange(): ?string
     $event = loadGitHubEvent();
     if (is_array($event)) {
         $pullRequestBase = trim((string) ($event['pull_request']['base']['sha'] ?? ''));
-        if ($pullRequestBase !== '' && !isZeroSha($pullRequestBase)) {
+        if ($pullRequestBase !== '' && !isZeroSha($pullRequestBase) && gitCommitExists($pullRequestBase)) {
             return $pullRequestBase . '..HEAD';
         }
 
         $before = trim((string) ($event['before'] ?? ''));
-        if ($before !== '' && !isZeroSha($before)) {
+        if ($before !== '' && !isZeroSha($before) && gitCommitExists($before)) {
             return $before . '..HEAD';
         }
     }
@@ -132,6 +132,12 @@ function loadGitHubEvent(): ?array
 function isZeroSha(string $value): bool
 {
     return preg_match('/^0{40}$/', $value) === 1;
+}
+
+function gitCommitExists(string $sha): bool
+{
+    [$ok, ] = run('git cat-file -e ' . escapeshellarg($sha . '^{commit}'));
+    return $ok;
 }
 
 function commandAvailable(string $command): bool
