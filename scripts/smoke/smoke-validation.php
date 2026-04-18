@@ -94,9 +94,13 @@ try {
 } catch (ValidationException $e) {
     $response = $handler->render($e, $jsonRequest);
     ok($response->getStatusCode() === 422, 'JSON validation returns 422');
-    ok(str_contains($response->getHeaderLine('Content-Type'), 'application/json'), 'JSON response content-type');
+    ok(str_contains($response->getHeaderLine('Content-Type'), 'application/problem+json'), 'JSON response content-type');
     $payload = json_decode((string) $response->getBody(), true);
     ok(is_array($payload), 'JSON payload is array');
+    ok(($payload['type'] ?? '') !== '', 'JSON payload has problem type');
+    ok(($payload['title'] ?? '') !== '', 'JSON payload has title');
+    ok(($payload['status'] ?? 0) === 422, 'JSON payload has status');
+    ok(($payload['detail'] ?? '') !== '', 'JSON payload has detail');
     ok(isset($payload['errors']) && is_array($payload['errors']), 'JSON payload has errors');
     ok(isset($payload['errors']['name']), 'JSON payload has name errors');
     ok(isset($payload['errors']['email']), 'JSON payload has email errors');
@@ -174,4 +178,3 @@ try {
 @unlink($tmpFile);
 
 echo "Validation smoke tests OK\n";
-

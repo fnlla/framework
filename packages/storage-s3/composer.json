@@ -3,10 +3,10 @@
   "description": "S3 storage driver for Finella storage",
   "type": "library",
   "require": {
-    "php": ">=8.4",
-    "finella/storage": "^2.5",
+    "php": ">=8.5",
+    "finella/storage": "^3.0",
     "aws/aws-sdk-php": "^3.0",
-    "finella/framework": "^2.5"
+    "finella/framework": "^3.0"
   },
   "homepage": "https://techayo.co.uk",
   "license": "proprietary",
@@ -24,7 +24,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-main": "2.5.x-dev"
+      "dev-main": "3.0.x-dev"
     }
   },
   "scripts": {

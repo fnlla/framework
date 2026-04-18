@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "788c05d59c74337f90db127386e6dc97",
+    "content-hash": "4efa9c173b14761b8809e751b5fa6173",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -311,11 +311,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ai",
-                "reference": "c06bb43866adcec0205c0a0d383a0eb465ada23e"
+                "reference": "b416a4abe85fb285ef4aaa07bd30658448e7b873"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -325,7 +325,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -361,11 +361,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/audit",
-                "reference": "09fc24906b55ce3a4dc12e45dbe40537aabee8e7"
+                "reference": "877b1d49f5d519b220b145f24d7cc5392321304a"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -375,7 +375,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -411,11 +411,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/debugbar",
-                "reference": "37dfd85e69bea45b0920280a9a1347b59105ada9"
+                "reference": "76e77dfbf92b8721e750afa80d8060074d205a22"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -425,7 +425,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -448,16 +448,16 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/deploy",
-                "reference": "4d9185d5d617cc9573fc197e6a21d6fcf7027ad4"
+                "reference": "44a03cf05a856ea1b77e6913342a252d2c438226"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -493,11 +493,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/docs",
-                "reference": "b8e307744caa21c7d66871eed9e66b8a4d14b95b"
+                "reference": "9a311d5f07aca3b179e8c75f782dfbf66c758ac9"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -507,7 +507,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -543,10 +543,10 @@
             "dist": {
                 "type": "path",
                 "url": "../../framework",
-                "reference": "ac82c1a3d3106e15bf8abdb993a6087a5fea2445"
+                "reference": "2165459ed29eb11f95c85673f777c2699b328ab7"
             },
             "require": {
-                "php": ">=8.4"
+                "php": ">=8.5"
             },
             "bin": [
                 "bin/finella"
@@ -567,7 +567,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -603,11 +603,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/mail",
-                "reference": "deaed9491b8383d66f7d630e35a9db941035a1c9"
+                "reference": "39ea4887f8454e40d3ce4e25c82d0de09be0964f"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4",
+                "finella/framework": "^3.0",
+                "php": ">=8.5",
                 "symfony/mailer": "^7",
                 "symfony/mime": "^7"
             },
@@ -619,7 +619,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -655,11 +655,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ops",
-                "reference": "b8de4274772334a0eef0821d2d52542debff92ea"
+                "reference": "a3336df0407661ac091ee15ce58a141ae2c0085b"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -675,7 +675,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -717,12 +717,12 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/pdf",
-                "reference": "ebcb59a1d888a4ca70cca2099860261c93db76f7"
+                "reference": "c9ed827b158d9c126807623eafdd6c04e68ab9cc"
             },
             "require": {
                 "dompdf/dompdf": "^3.1",
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -732,7 +732,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -768,11 +768,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/queue",
-                "reference": "6e02c542b569c77bd7290f386c48ab9527b5a57d"
+                "reference": "20a8c0f02c1b77b02e94db7a977d3aab6b653a1b"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -782,7 +782,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -818,11 +818,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/rbac",
-                "reference": "88780388887581ba150f1234d8b11ffdcc189d67"
+                "reference": "e175e33a23676425c74ae4c3948733d1e028aa24"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -832,7 +832,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -868,11 +868,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/settings",
-                "reference": "7c7537db5ca866e02c0edc69b0a55aceb2c0b408"
+                "reference": "6e52fab29270bd83110ebc75b5c378c1b5842afe"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "type": "library",
             "extra": {
@@ -882,7 +882,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -918,25 +918,25 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/standard",
-                "reference": "0542022e8748b0140efba1de6c53d1208bd3ec69"
+                "reference": "1ba0213d934bc35e3c3dd809bd4b4343553efcce"
             },
             "require": {
-                "finella/audit": "^2.5",
-                "finella/deploy": "^2.5",
-                "finella/framework": "^2.5",
-                "finella/ops": "^2.5",
-                "finella/rbac": "^2.5",
-                "finella/settings": "^2.5",
-                "php": ">=8.4"
+                "finella/audit": "^3.0",
+                "finella/deploy": "^3.0",
+                "finella/framework": "^3.0",
+                "finella/ops": "^3.0",
+                "finella/rbac": "^3.0",
+                "finella/settings": "^3.0",
+                "php": ">=8.5"
             },
             "require-dev": {
-                "finella/debugbar": "^2.5",
-                "finella/testing": "^2.5"
+                "finella/debugbar": "^3.0",
+                "finella/testing": "^3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "license": [
@@ -2303,11 +2303,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/testing",
-                "reference": "8a709319aa380ddf7ff1418c55eb667b75942243"
+                "reference": "46c219ec10920fb8fc0a1a5973faab2317acb6a6"
             },
             "require": {
-                "finella/framework": "^2.5",
-                "php": ">=8.4"
+                "finella/framework": "^3.0",
+                "php": ">=8.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.5"
@@ -2318,7 +2318,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -3447,7 +3447,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.4"
+        "php": ">=8.5"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

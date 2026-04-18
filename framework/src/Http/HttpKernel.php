@@ -152,7 +152,7 @@ final class HttpKernel implements KernelInterface
                     }
                 }
 
-                $aliases = $httpConfig['middleware_aliases'] ?? ($httpConfig['aliases'] ?? []);
+                $aliases = $httpConfig['middleware_aliases'] ?? [];
                 if (is_array($aliases) && $aliases !== []) {
                     $router->middlewareAliases($aliases);
                 }
@@ -233,10 +233,8 @@ final class HttpKernel implements KernelInterface
                     $router->loadRoutes($cached);
                 }
             } else {
-                $loadRoutesFile($appRoot . '/config/routes.php');
+                $loadRoutesFile($appRoot . '/routes/web.php');
             }
-
-            $loadRoutesFile($appRoot . '/routes/web.php');
 
             $response = $router->dispatch($request);
             $response = $response->withBasePath($basePath);
@@ -317,8 +315,6 @@ final class HttpKernel implements KernelInterface
         }
     }
 }
-
-
 
 
 

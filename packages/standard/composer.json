@@ -3,17 +3,17 @@
   "description": "Finella standard web stack (meta-package)",
   "type": "library",
   "require": {
-    "php": ">=8.4",
-    "finella/audit": "^2.5",
-    "finella/deploy": "^2.5",
-    "finella/framework": "^2.5",
-    "finella/ops": "^2.5",
-    "finella/rbac": "^2.5",
-    "finella/settings": "^2.5"
+    "php": ">=8.5",
+    "finella/audit": "^3.0",
+    "finella/deploy": "^3.0",
+    "finella/framework": "^3.0",
+    "finella/ops": "^3.0",
+    "finella/rbac": "^3.0",
+    "finella/settings": "^3.0"
   },
   "require-dev": {
-    "finella/debugbar": "^2.5",
-    "finella/testing": "^2.5"
+    "finella/debugbar": "^3.0",
+    "finella/testing": "^3.0"
   },
   "homepage": "https://techayo.co.uk",
   "license": "proprietary",
@@ -26,7 +26,7 @@
   ],
   "extra": {
     "branch-alias": {
-      "dev-main": "2.5.x-dev"
+      "dev-main": "3.0.x-dev"
     }
   }
 }

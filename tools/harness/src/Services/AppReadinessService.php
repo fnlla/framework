@@ -169,22 +169,10 @@ final class AppReadinessService
 
     private function checkAdminAuth(): array
     {
-        $envValue = strtolower((string) getenv('APP_ENV'));
-        if ($envValue === '') {
-            $envValue = 'prod';
-        }
-        $debugValue = strtolower((string) getenv('APP_DEBUG'));
-        $debugEnabled = in_array($debugValue, ['1', 'true', 'yes', 'on'], true);
-        $isDev = in_array($envValue, ['local', 'dev', 'development', 'test'], true) || $debugEnabled;
-
-        $adminEnabled = $this->toBool(getenv('ADMIN_ENABLED'), false);
-        $adminDevEnabled = $this->toBool(getenv('ADMIN_DEV_ENABLED'), false);
-        $adminRoutesEnabled = $adminEnabled || ($isDev && $adminDevEnabled);
-        $adminLoginRequired = $this->toBool(getenv('ADMIN_LOGIN_REQUIRED'), true);
-        $adminAuthAllow = $this->toBool(getenv('ADMIN_AUTH_ALLOW_AUTH'), false);
-        $adminPassword = trim((string) getenv('ADMIN_LOGIN_PASSWORD'));
-        $adminHash = trim((string) getenv('ADMIN_LOGIN_PASSWORD_HASH'));
-        $requiresHash = !$isDev && !$debugEnabled;
+        $adminRoutesEnabled = $this->toBool(getenv('FINELLA_ADMIN_ENABLED'), false);
+        $adminLoginRequired = $this->toBool(getenv('FINELLA_ADMIN_LOGIN_REQUIRED'), true);
+        $adminAuthAllow = $this->toBool(getenv('FINELLA_ADMIN_AUTH_ALLOW_AUTH'), false);
+        $adminHash = trim((string) getenv('FINELLA_ADMIN_LOGIN_PASSWORD_HASH'));
 
         if (!$adminRoutesEnabled) {
             return [
@@ -195,83 +183,54 @@ final class AppReadinessService
 
         if (!$adminLoginRequired) {
             return [
-                'status' => 'skipped',
-                'detail' => 'ADMIN_LOGIN_REQUIRED=0',
+                'status' => 'warn',
+                'detail' => 'FINELLA_ADMIN_LOGIN_REQUIRED=0',
             ];
         }
 
-        if ($requiresHash && $adminHash === '') {
+        if ($adminHash === '') {
+            return [
+                'status' => 'fail',
+                'detail' => 'FINELLA_ADMIN_LOGIN_PASSWORD_HASH is required',
+            ];
+        }
+
+        if ($adminAuthAllow) {
             return [
                 'status' => 'warn',
-                'detail' => 'ADMIN_LOGIN_PASSWORD_HASH required for non-dev',
-            ];
-        }
-
-        if ($adminHash === '' && $adminPassword === '' && !$adminAuthAllow) {
-            return [
-                'status' => 'warn',
-                'detail' => 'admin auth not configured',
-            ];
-        }
-
-        if ($adminHash !== '') {
-            return [
-                'status' => 'ok',
-                'detail' => 'hash configured',
-            ];
-        }
-
-        if ($adminPassword !== '') {
-            return [
-                'status' => 'warn',
-                'detail' => 'plain password configured',
+                'detail' => 'FINELLA_ADMIN_AUTH_ALLOW_AUTH=1',
             ];
         }
 
         return [
-            'status' => 'warn',
-            'detail' => 'admin auth not configured',
+            'status' => 'ok',
+            'detail' => 'hash configured',
         ];
     }
 
     private function checkDocsAccess(): array
     {
-        $envValue = strtolower((string) getenv('APP_ENV'));
-        if ($envValue === '') {
-            $envValue = 'prod';
-        }
-        $debugValue = strtolower((string) getenv('APP_DEBUG'));
-        $debugEnabled = in_array($debugValue, ['1', 'true', 'yes', 'on'], true);
-        $isDev = in_array($envValue, ['local', 'dev', 'development', 'test'], true) || $debugEnabled;
-
-        $docsEnabled = $this->toBool(getenv('DOCS_ENABLED'), true);
+        $docsEnabled = $this->toBool(getenv('FINELLA_DOCS_ENABLED'), false);
         if (!$docsEnabled) {
             return [
                 'status' => 'skipped',
-                'detail' => 'DOCS_ENABLED=0',
+                'detail' => 'FINELLA_DOCS_ENABLED=0',
             ];
         }
 
-        if ($isDev) {
-            return [
-                'status' => 'ok',
-                'detail' => 'dev environment',
-            ];
-        }
-
-        $docsPublic = $this->toBool(getenv('DOCS_PUBLIC'), false);
+        $docsPublic = $this->toBool(getenv('FINELLA_DOCS_PUBLIC'), false);
         if ($docsPublic) {
             return [
-                'status' => 'ok',
-                'detail' => 'DOCS_PUBLIC=1',
+                'status' => 'warn',
+                'detail' => 'FINELLA_DOCS_PUBLIC=1',
             ];
         }
 
-        $docsToken = trim((string) getenv('DOCS_ACCESS_TOKEN'));
+        $docsToken = trim((string) getenv('FINELLA_DOCS_ACCESS_TOKEN'));
         if ($docsToken === '') {
             return [
-                'status' => 'warn',
-                'detail' => 'DOCS_ACCESS_TOKEN missing',
+                'status' => 'fail',
+                'detail' => 'FINELLA_DOCS_ACCESS_TOKEN missing',
             ];
         }
 
@@ -283,11 +242,11 @@ final class AppReadinessService
 
     private function checkWarmKernel(): array
     {
-        $warmKernel = $this->toBool(getenv('APP_WARM_KERNEL'), false);
+        $warmKernel = $this->toBool(getenv('FINELLA_WARM_KERNEL'), false);
         if (!$warmKernel) {
             return [
                 'status' => 'skipped',
-                'detail' => 'APP_WARM_KERNEL=0',
+                'detail' => 'FINELLA_WARM_KERNEL=0',
             ];
         }
 
@@ -365,7 +324,7 @@ final class AppReadinessService
             return true;
         }
 
-        foreach (['DB_CONNECTION', 'DB_DRIVER', 'DB_DATABASE', 'DB_PATH'] as $key) {
+        foreach (['DB_CONNECTION', 'DB_DATABASE', 'DB_PATH'] as $key) {
             $value = getenv($key);
             if ($value !== false && trim((string) $value) !== '') {
                 return true;

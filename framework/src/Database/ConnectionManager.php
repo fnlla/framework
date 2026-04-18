@@ -51,7 +51,7 @@ final class ConnectionManager
 
         $driver = strtolower((string) ($config['driver']
             ?? $config['connection']
-            ?? $this->env('DB_CONNECTION', $this->env('DB_DRIVER', 'mysql'))));
+            ?? $this->env('DB_CONNECTION', 'mysql')));
 
         if ($driver === '') {
             throw new RuntimeException('Database driver is not configured.');

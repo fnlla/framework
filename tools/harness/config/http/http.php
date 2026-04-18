@@ -59,7 +59,7 @@ $tenancyEnabled = $toBool(env('TENANCY_ENABLED', false), false);
 $requestIdHeaderEnabled = $toBool(env('REQUEST_ID_HEADER', true), true);
 $traceIdHeaderEnabled = $toBool(env('TRACE_ID_HEADER', true), true);
 $spanIdHeaderEnabled = $toBool(env('SPAN_ID_HEADER', true), true);
-$monitoringEnabled = $toBool(env('MONITORING_ENABLED', false), false);
+$monitoringEnabled = $toBool(env('FINELLA_MONITORING_ENABLED', false), false);
 
 $rateEnabled = $toBool(env('RATE_LIMIT_ENABLED', $env === 'prod'), $env === 'prod');
 $rateMax = (int) env('RATE_LIMIT_MAX', 120);

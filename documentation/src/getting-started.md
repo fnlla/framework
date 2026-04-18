@@ -141,7 +141,7 @@ Steps:
 **-** Refresh the lock file:
 ```bash
 cd app
-COMPOSER=composer.dev.json composer update
+composer update
 ```
 **-** Verify the app boots:
 ```bash
@@ -154,8 +154,7 @@ php -S localhost:8000 -t public
 If you want a standalone app repository:
 **-** Copy `app/` into a new repo.
 **-** Use `composer.json` (stable profile) for production package sources.
-**-** Keep `composer.dev.json` only for local monorepo development.
-**-** In monorepo workflows, `app/composer.lock` is generated from `composer.dev.json`.
+**-** Keep `composer.lock` committed and in sync with `composer.json`.
 
 **EXISTING PROJECT (MINIMAL)**
 If you want to add the framework to your own project:

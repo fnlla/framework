@@ -39,7 +39,7 @@ final class HealthChecker
                 $checkName = (string) ($definition['name'] ?? $name);
 
                 if ($type === 'php') {
-                    $min = (string) ($definition['min'] ?? '8.4.0');
+                    $min = (string) ($definition['min'] ?? '8.5.0');
                     $checks[] = [
                         'name' => $checkName,
                         'check' => fn (): array => [
@@ -123,5 +123,4 @@ final class HealthChecker
         ];
     }
 }
-
 

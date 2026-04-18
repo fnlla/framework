@@ -18,9 +18,10 @@ use Finella\Support\Psr\Http\Message\ResponseInterface;
  */
 interface KernelInterface
 {
+    public function boot(?string $appRoot = null): void;
+
     public function handle(Request $request): ResponseInterface;
 }
-
 
 
 

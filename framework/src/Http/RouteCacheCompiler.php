@@ -44,13 +44,12 @@ final class RouteCacheCompiler
                 }
             }
 
-            $aliases = $httpConfig['middleware_aliases'] ?? ($httpConfig['aliases'] ?? []);
+            $aliases = $httpConfig['middleware_aliases'] ?? [];
             if (is_array($aliases) && $aliases !== []) {
                 $router->middlewareAliases($aliases);
             }
         }
 
-        $this->loadRoutesFile($router, $root . '/config/routes.php');
         $this->loadRoutesFile($router, $root . '/routes/web.php');
 
         $path = $cachePath ?? (string) ($config['routes_cache'] ?? '');

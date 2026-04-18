@@ -3,8 +3,8 @@
   "description": "HTML-to-PDF rendering (Dompdf) with templates and API helpers",
   "type": "library",
   "require": {
-    "php": ">=8.4",
-    "finella/framework": "^2.5",
+    "php": ">=8.5",
+    "finella/framework": "^3.0",
     "dompdf/dompdf": "^3.1"
   },
   "homepage": "https://techayo.co.uk",
@@ -28,7 +28,7 @@
       ]
     },
     "branch-alias": {
-      "dev-main": "2.5.x-dev"
+      "dev-main": "3.0.x-dev"
     }
   },
   "scripts": {

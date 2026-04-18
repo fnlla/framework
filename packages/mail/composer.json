@@ -3,8 +3,8 @@
   "description": "Finella mail module (Symfony Mailer adapter)",
   "type": "library",
   "require": {
-    "php": ">=8.4",
-    "finella/framework": "^2.5",
+    "php": ">=8.5",
+    "finella/framework": "^3.0",
     "symfony/mailer": "^7",
     "symfony/mime": "^7"
   },
@@ -29,7 +29,7 @@
       ]
     },
     "branch-alias": {
-      "dev-main": "2.5.x-dev"
+      "dev-main": "3.0.x-dev"
     }
   },
   "scripts": {

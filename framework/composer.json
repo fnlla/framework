@@ -12,7 +12,7 @@
   ],
   "type": "library",
   "require": {
-    "php": ">=8.4"
+    "php": ">=8.5"
   },
   "autoload": {
     "psr-4": {
@@ -42,7 +42,7 @@
       ]
     },
     "branch-alias": {
-      "dev-main": "2.5.x-dev"
+      "dev-main": "3.0.x-dev"
     }
   }
 }

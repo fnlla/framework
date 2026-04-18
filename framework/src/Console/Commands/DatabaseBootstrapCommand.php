@@ -153,10 +153,6 @@ final class DatabaseBootstrapCommand implements CommandInterface
             $driver = $envDriver !== false ? (string) $envDriver : '';
         }
         if ($driver === '') {
-            $envDriver = getenv('DB_DRIVER');
-            $driver = $envDriver !== false ? (string) $envDriver : '';
-        }
-        if ($driver === '') {
             $driver = 'mysql';
         }
         $driver = strtolower($driver);

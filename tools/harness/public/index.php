@@ -16,20 +16,15 @@ if (!$kernel instanceof KernelInterface) {
     exit(1);
 }
 
-$warmKernelValue = getenv('APP_WARM_KERNEL');
+$warmKernelValue = getenv('FINELLA_WARM_KERNEL');
 $warmKernel = is_string($warmKernelValue) && in_array(strtolower(trim($warmKernelValue)), ['1', 'true', 'yes', 'on'], true);
-if ($warmKernel && method_exists($kernel, 'boot')) {
+if ($warmKernel) {
     $kernel->boot();
 }
 
 $request = Request::fromGlobals();
 try {
     $response = $kernel->handle($request);
-    if (is_object($response) && method_exists($response, 'send')) {
-        $response->send();
-        exit(0);
-    }
-
     if ($response instanceof ResponseInterface) {
         http_response_code($response->getStatusCode());
         foreach ($response->getHeaders() as $name => $values) {

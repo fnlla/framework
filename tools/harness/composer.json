@@ -12,14 +12,19 @@
   ],
   "type": "project",
   "require": {
-    "php": ">=8.4",
-    "finella/standard": "^2.5",
-    "finella/ai": "^2.5",
-    "finella/debugbar": "^2.5",
-    "finella/mail": "^2.5",
-    "finella/docs": "^2.5",
-    "finella/pdf": "^2.5",
-    "finella/queue": "^2.5",
+    "php": ">=8.5",
+    "finella/framework": "^3.0",
+    "finella/ops": "^3.0",
+    "finella/rbac": "^3.0",
+    "finella/settings": "^3.0",
+    "finella/audit": "^3.0",
+    "finella/deploy": "^3.0",
+    "finella/ai": "^3.0",
+    "finella/debugbar": "^3.0",
+    "finella/mail": "^3.0",
+    "finella/docs": "^3.0",
+    "finella/pdf": "^3.0",
+    "finella/queue": "^3.0",
     "egulias/email-validator": "^4.0"
   },
   "repositories": [
@@ -40,7 +45,7 @@
   ],
   "require-dev": {
     "aws/aws-sdk-php": "^3.0",
-    "finella/testing": "^2.5",
+    "finella/testing": "^3.0",
     "league/oauth2-client": "^2.7",
     "sentry/sentry": "^4.0",
     "stripe/stripe-php": "^13.0"

@@ -14,8 +14,8 @@ echo "Release gate mode: monorepo"
 verify_environment() {
   echo "==> Environment check"
   echo "PHP: $(php -r 'echo PHP_VERSION;')"
-if ! php -r "exit(version_compare(PHP_VERSION, '8.4.0', '>=') ? 0 : 1);"; then
-  echo "ERROR: PHP >= 8.4.0 is required."
+if ! php -r "exit(version_compare(PHP_VERSION, '8.5.0', '>=') ? 0 : 1);"; then
+  echo "ERROR: PHP >= 8.5.0 is required."
   exit 1
 fi
   if ! command -v composer >/dev/null 2>&1; then

@@ -648,12 +648,7 @@ final class Router
 
         if (is_string($handler)) {
             if (str_contains($handler, '@')) {
-                [$controllerClass, $methodName] = explode('@', $handler, 2);
-                $controller = $this->resolveClass($controllerClass);
-                if (!method_exists($controller, $methodName)) {
-                    throw new RuntimeException('Controller method not found: ' . $methodName);
-                }
-                return [$controller, $methodName];
+                throw new RuntimeException('Legacy route handler syntax "Class@method" is not supported in 3.x. Use [ClassName::class, \'method\'].');
             }
 
             if (class_exists($handler)) {
@@ -665,7 +660,7 @@ final class Router
             }
 
             if (function_exists($handler)) {
-                return $handler;
+                throw new RuntimeException('Global function route handlers are not supported in 3.x. Use a closure or controller class.');
             }
         }
 
@@ -863,7 +858,6 @@ final class Router
         throw new RuntimeException('Invalid middleware alias target for [' . $name . '].');
     }
 }
-
 
 
 

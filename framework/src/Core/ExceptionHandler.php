@@ -118,28 +118,21 @@ final class ExceptionHandler
     public function render(Throwable $exception, ?Request $request = null): Response
     {
         $status = 500;
-        $payload = ['message' => 'Server Error'];
+        $title = 'Internal Server Error';
+        $detail = 'Server Error';
+        $extensions = [];
+
         $errorId = $this->resolveRequestId();
         if ($errorId !== '') {
-            $payload['error_id'] = $errorId;
+            $extensions['error_id'] = $errorId;
         }
 
         if ($exception instanceof ValidationException) {
             $status = $exception->status();
-            $payload = [
-                'message' => $exception->getMessage(),
-                'errors' => $exception->errors(),
-                'old' => $exception->oldInput(),
-                'bag' => $exception->bag(),
-            ];
-
-            if ($request !== null && $request->wantsJson()) {
-                $summary = $this->firstValidationMessage($payload['errors']);
-                $payload['notification'] = [
-                    'type' => 'error',
-                    'value' => $summary !== '' ? $summary : $payload['message'],
-                ];
-            }
+            $title = 'Validation Failed';
+            $detail = $exception->getMessage();
+            $extensions['errors'] = $exception->errors();
+            $extensions['bag'] = $exception->bag();
 
             if ($request !== null && !$request->wantsJson()) {
                 $redirectTo = RedirectTarget::fromReferer($request, '/');
@@ -150,27 +143,35 @@ final class ExceptionHandler
         }
         if ($exception instanceof AuthorizationException) {
             $status = $exception->status();
-            $payload = [
-                'message' => $exception->getMessage(),
-            ];
-            if ($request !== null && $request->wantsJson()) {
-                $payload['notification'] = [
-                    'type' => 'error',
-                    'value' => $payload['message'],
-                ];
-            }
+            $title = $status === 401 ? 'Unauthorized' : 'Forbidden';
+            $detail = $exception->getMessage();
         }
 
         if ($this->debug) {
-            $payload['exception'] = get_class($exception);
-            $payload['exception_message'] = $exception->getMessage();
-            $payload['file'] = $exception->getFile();
-            $payload['line'] = $exception->getLine();
-            $payload['trace'] = explode("\n", $exception->getTraceAsString());
+            $extensions['debug'] = [
+                'exception' => get_class($exception),
+                'message' => $exception->getMessage(),
+                'file' => $exception->getFile(),
+                'line' => $exception->getLine(),
+                'trace' => explode("\n", $exception->getTraceAsString()),
+            ];
         }
 
         if ($request !== null && $request->wantsJson()) {
-            return Response::json($payload, $status);
+            return $this->problemResponse($status, $title, $detail, $request, $extensions);
+        }
+
+        $payload = [
+            'message' => $detail,
+            'error_id' => $extensions['error_id'] ?? '',
+            'errors' => $extensions['errors'] ?? [],
+        ];
+        if (isset($extensions['debug']) && is_array($extensions['debug'])) {
+            $payload['exception'] = $extensions['debug']['exception'] ?? '';
+            $payload['exception_message'] = $extensions['debug']['message'] ?? '';
+            $payload['file'] = $extensions['debug']['file'] ?? '';
+            $payload['line'] = $extensions['debug']['line'] ?? '';
+            $payload['trace'] = $extensions['debug']['trace'] ?? [];
         }
 
         return Response::html($this->renderHtml($payload, $status), $status);
@@ -336,25 +337,6 @@ final class ExceptionHandler
         }
     }
 
-    private function firstValidationMessage(array $errors): string
-    {
-        foreach ($errors as $value) {
-            if (is_array($value)) {
-                foreach ($value as $message) {
-                    if (is_string($message) && trim($message) !== '') {
-                        return trim($message);
-                    }
-                }
-                continue;
-            }
-            if (is_string($value) && trim($value) !== '') {
-                return trim($value);
-            }
-        }
-
-        return '';
-    }
-
     private function resolveRequestId(): string
     {
         if ($this->context instanceof RequestContext) {
@@ -375,9 +357,56 @@ final class ExceptionHandler
         return '';
     }
 
+    private function problemResponse(int $status, string $title, string $detail, ?Request $request, array $extensions = []): Response
+    {
+        $payload = [
+            'type' => $this->problemType($status),
+            'title' => $title,
+            'status' => $status,
+            'detail' => $detail,
+        ];
+
+        if ($request instanceof Request) {
+            $uri = $request->getUri();
+            $instance = $uri->getPath();
+            $query = $uri->getQuery();
+            if ($query !== '') {
+                $instance .= '?' . $query;
+            }
+            if ($instance !== '') {
+                $payload['instance'] = $instance;
+            }
+        }
+
+        foreach ($extensions as $key => $value) {
+            if (is_string($key) && $key !== '' && !array_key_exists($key, $payload)) {
+                $payload[$key] = $value;
+            }
+        }
+
+        return Response::json(
+            $payload,
+            $status,
+            ['Content-Type' => 'application/problem+json; charset=utf-8']
+        );
+    }
+
+    private function problemType(int $status): string
+    {
+        return match ($status) {
+            400 => 'https://errors.finella.dev/http/bad-request',
+            401 => 'https://errors.finella.dev/http/unauthorized',
+            403 => 'https://errors.finella.dev/http/forbidden',
+            404 => 'https://errors.finella.dev/http/not-found',
+            405 => 'https://errors.finella.dev/http/method-not-allowed',
+            409 => 'https://errors.finella.dev/http/conflict',
+            422 => 'https://errors.finella.dev/http/validation',
+            429 => 'https://errors.finella.dev/http/rate-limit',
+            default => 'https://errors.finella.dev/http/internal-server-error',
+        };
+    }
+
 }
-
-
 
 
 

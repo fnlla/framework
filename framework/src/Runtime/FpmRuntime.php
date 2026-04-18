@@ -19,14 +19,9 @@ final class FpmRuntime implements RuntimeInterface
 {
     public function run(KernelInterface $kernel): void
     {
+        $kernel->boot();
         $request = Request::fromGlobals();
         $response = $kernel->handle($request);
-
-        if (is_object($response) && method_exists($response, 'send')) {
-            $response->send();
-            return;
-        }
-
         $this->emit($response);
     }
 
@@ -44,7 +39,6 @@ final class FpmRuntime implements RuntimeInterface
         echo (string) $response->getBody();
     }
 }
-
 
 
 

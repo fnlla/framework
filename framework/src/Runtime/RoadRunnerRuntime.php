@@ -28,6 +28,8 @@ final class RoadRunnerRuntime implements RuntimeInterface
             throw new RuntimeException('RoadRunner packages are not installed.');
         }
 
+        $kernel->boot();
+
         $worker = $this->worker;
         if ($worker === null) {
             $worker = new \Spiral\RoadRunner\Http\PSR7Worker(\Spiral\RoadRunner\Worker::create());
@@ -49,7 +51,6 @@ final class RoadRunnerRuntime implements RuntimeInterface
         }
     }
 }
-
 
 
 
