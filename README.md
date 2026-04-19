@@ -6,6 +6,10 @@ Finella is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.
 
 **Status:** Public release (proprietary license).
 
+**OWNERSHIP**
+**-** Author: [TechAyo](https://techayo.co.uk)
+**-** Project Manager: Marcin Kordyaczny
+
 **ABOUT**
 Finella Framework is a production-focused PHP platform for teams that want a clear core architecture, optional modular capabilities, predictable operations at scale, and AI capabilities that remain opt-in by design.
 
@@ -101,18 +105,19 @@ CLI and testing:
 ```bash
 php bin/finella list
 php bin/finella routes:cache
-composer run test
+composer run smoke
 ```
 
 CLI/runtime note:
-**-** Framework smoke scripts and harness CLI auto-reexec to PHP 8.5.5 when started with any other PHP binary.
+**-** In local/dev environments, framework smoke scripts and harness CLI auto-reexec to PHP 8.5.5 when started with any other PHP binary.
+**-** In CI, any PHP 8.5.x runtime is accepted.
 **-** Override the preferred binary with `FINELLA_PHP_BIN` (or `FINELLA_PHP85_BIN`) pointing to PHP 8.5.5.
 **-** `composer run serve` in `tools/harness` uses the same guard; bind can be changed with `FINELLA_DEV_HOST` / `FINELLA_DEV_PORT`.
 
 **HELLO WORLD ROUTE**
-**-** Route: `routes/web.php`
+**-** Route: `tools/harness/routes/web.php`
 **-** Controller: `tools/harness/src/Controllers/HomeController.php`
-**-** View: `resources/views/pages/home.php`
+**-** View: `tools/harness/resources/views/pages/home.php`
 
 ```php
 $router->get('/', [HomeController::class, 'index']);
@@ -135,9 +140,8 @@ Returns `200` when dependencies are ready, and `503` otherwise.
 **-** Full index: `documentation/src/index.md`
 
 **THIRD-PARTY NOTICES WORKFLOW**
-`THIRD_PARTY_NOTICES.md` is generated from Composer lock files:
-**-** `tools/composer.lock`
-**-** `tools/harness/composer.lock`
+`THIRD_PARTY_NOTICES.md` is generated from available Composer lock files discovered by
+`scripts/ci/generate-third-party-notices.php` (currently sourced from `tools/harness/composer.lock`).
 
 Use:
 ```bash

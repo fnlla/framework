@@ -160,8 +160,8 @@ return [
 **-** Major releases (4.0.0+) may include breaking changes with upgrade notes.
 
 **CREDITS**
-**-** Author / Organisation: TechAyo (techayo.co.uk)
-**-** Maintainer: Marcin Kordyaczny
+**-** Author / Organisation: [TechAyo](https://techayo.co.uk)
+**-** Project Manager: Marcin Kordyaczny
 
 **LICENCE**
 Proprietary (see LICENSE.md).

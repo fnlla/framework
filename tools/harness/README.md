@@ -62,5 +62,5 @@ Routes are defined in `routes/web.php`.
 
 **CREDITS**
 **-** Framework: Finella
-**-** Author / Organisation: TechAyo (techayo.co.uk)
-**-** Maintainer: Marcin Kordyaczny
+**-** Author / Organisation: [TechAyo](https://techayo.co.uk)
+**-** Project Manager: Marcin Kordyaczny
