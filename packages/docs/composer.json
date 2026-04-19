@@ -10,9 +10,14 @@
   "license": "proprietary",
   "authors": [
     {
-      "name": "Marcin Kordyaczny",
+      "name": "TechAyo",
       "homepage": "https://techayo.co.uk",
       "role": "Maintainer"
+    },
+    {
+      "name": "Marcin Kordyaczny",
+      "homepage": "https://techayo.co.uk",
+      "role": "Project Manager"
     }
   ],
   "autoload": {
@@ -34,4 +39,3 @@
     "test": "php tests/smoke.php"
   }
 }
-
