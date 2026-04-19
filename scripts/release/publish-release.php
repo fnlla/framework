@@ -66,7 +66,7 @@ if ($normalizedVersion === '') {
 }
 
 $tag = $tag !== null && $tag !== '' ? $tag : 'v' . $normalizedVersion;
-$title = $title !== null && $title !== '' ? $title : $tag;
+$title = $title !== null && $title !== '' ? $title : defaultReleaseTitle($normalizedVersion);
 
 if (!is_file($changelogPath)) {
     fwrite(STDERR, "Changelog file not found: {$changelogPath}\n");
@@ -136,7 +136,7 @@ Usage:
 
 Options:
   --tag <tag>          Release tag (default: v<version>)
-  --title <title>      Release title (default: tag)
+  --title <title>      Release title (default: <version> - <product>)
   --target <ref>       Target commit/branch when creating release
   --changelog <path>   Changelog path (default: CHANGELOG.md)
   --draft              Create release as draft
@@ -322,6 +322,34 @@ function commandSucceeds(string $command): bool
     return $exitCode === 0;
 }
 
+function defaultReleaseTitle(string $version): string
+{
+    $slug = detectRepositorySlug();
+    if ($slug === 'fnlla/framework') {
+        return $version . ' - Finella Framework';
+    }
+    if ($slug === 'fnlla/fnlla') {
+        return $version . ' - FNLLA Starter';
+    }
+
+    return $version;
+}
+
+function detectRepositorySlug(): string
+{
+    $remote = trim(runCapture('git config --get remote.origin.url'));
+    if ($remote === '') {
+        return '';
+    }
+
+    if (preg_match('/github\\.com[:\\/](?<slug>[^\\s]+?)(?:\\.git)?$/i', $remote, $match) === 1) {
+        $slug = trim((string) ($match['slug'] ?? ''), '/');
+        return strtolower($slug);
+    }
+
+    return '';
+}
+
 /**
  * @return list<array{version:string,body:string}>
  */
@@ -407,3 +435,32 @@ function runQuiet(string $command): int
     return (int) proc_close($process);
 }
 
+function runCapture(string $command): string
+{
+    $descriptors = [
+        1 => ['pipe', 'w'],
+        2 => ['pipe', 'w'],
+    ];
+
+    $process = proc_open($command, $descriptors, $pipes);
+    if (!is_resource($process)) {
+        return '';
+    }
+
+    $stdout = '';
+    if (isset($pipes[1]) && is_resource($pipes[1])) {
+        $stdout = (string) stream_get_contents($pipes[1]);
+        fclose($pipes[1]);
+    }
+    if (isset($pipes[2]) && is_resource($pipes[2])) {
+        stream_get_contents($pipes[2]);
+        fclose($pipes[2]);
+    }
+
+    $exitCode = (int) proc_close($process);
+    if ($exitCode !== 0) {
+        return '';
+    }
+
+    return trim($stdout);
+}
