@@ -1,6 +1,6 @@
 **TECHAYO PROPRIETARY LICENSE (TPL) V1.3**
 
-**COPYRIGHT (C) 2026 TechAyo (techayo.co.uk). ALL RIGHTS RESERVED.**
+**COPYRIGHT (C) 2026 TECHAYO (TECHAYO.CO.UK). ALL RIGHTS RESERVED.**
 
 This software and associated documentation files (the "Software") are
 proprietary to TechAyo (techayo.co.uk). By accessing or using the Software, you agree to the
