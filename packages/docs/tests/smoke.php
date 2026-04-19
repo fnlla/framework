@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require __DIR__ . '/../../_shared/tests/bootstrap.php';
+
 use Finella\Core\ConfigRepository;
 use Finella\Docs\DocsManager;
 use Finella\Docs\DocsMarkdownRenderer;
@@ -61,6 +63,17 @@ $renderer = new DocsMarkdownRenderer();
 $html = $renderer->toHtml("# Heading\n\n- one\n- two\n\n[Home](/docs)");
 if (!str_contains($html, '<h1') || !str_contains($html, '<ul>') || !str_contains($html, '<a href="/docs">')) {
     fwrite(STDERR, "FAIL: markdown renderer output unexpected\n");
+    exit(1);
+}
+
+$unsafe = $renderer->toHtml('[Bad](javascript:alert(1)) [Data](data:text/html;base64,WA==) [OK](https://example.com)');
+if (str_contains(strtolower($unsafe), 'javascript:') || str_contains(strtolower($unsafe), 'data:text/html')) {
+    fwrite(STDERR, "FAIL: unsafe markdown links should be stripped\n");
+    exit(1);
+}
+
+if (!str_contains($unsafe, '<a href="https://example.com" rel="noopener noreferrer">OK</a>')) {
+    fwrite(STDERR, "FAIL: safe external markdown link should be rendered\n");
     exit(1);
 }
 

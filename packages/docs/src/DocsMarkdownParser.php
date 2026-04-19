@@ -235,8 +235,14 @@ final class DocsMarkdownParser
 
         $escaped = preg_replace_callback('/\[(.+?)\]\((.+?)\)/', function (array $matches): string {
             $label = $this->escape($matches[1]);
-            $href = $this->escapeAttr($matches[2]);
-            return '<a href="' . $href . '">' . $label . '</a>';
+            $target = htmlspecialchars_decode($matches[2], ENT_QUOTES);
+            $href = $this->sanitizeLinkTarget($target);
+            if ($href === null) {
+                return $label;
+            }
+
+            $rel = $this->isExternalLink($href) ? ' rel="noopener noreferrer"' : '';
+            return '<a href="' . $this->escapeAttr($href) . '"' . $rel . '>' . $label . '</a>';
         }, $escaped) ?? $escaped;
 
         $escaped = preg_replace('/\*\*([^*]+)\*\*/', '<strong>$1</strong>', $escaped) ?? $escaped;
@@ -266,5 +272,52 @@ final class DocsMarkdownParser
     private function escapeAttr(string $value): string
     {
         return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    }
+
+    private function sanitizeLinkTarget(string $target): ?string
+    {
+        $target = trim($target);
+        if ($target === '') {
+            return null;
+        }
+
+        $target = preg_replace('/[\x00-\x1F\x7F]/', '', $target) ?? '';
+        if ($target === '') {
+            return null;
+        }
+
+        if (
+            str_starts_with($target, '#')
+            || str_starts_with($target, '/')
+            || str_starts_with($target, './')
+            || str_starts_with($target, '../')
+            || str_starts_with($target, '?')
+        ) {
+            return $target;
+        }
+
+        if (str_starts_with($target, '//')) {
+            return null;
+        }
+
+        if (preg_match('/^([a-z][a-z0-9+.-]*)\s*:/i', $target, $matches) === 1) {
+            $scheme = strtolower(trim((string) ($matches[1] ?? '')));
+            if (!in_array($scheme, ['http', 'https', 'mailto'], true)) {
+                return null;
+            }
+        }
+
+        $scheme = parse_url($target, PHP_URL_SCHEME);
+        if (!is_string($scheme) || $scheme === '') {
+            return $target;
+        }
+
+        return in_array(strtolower($scheme), ['http', 'https', 'mailto'], true) ? $target : null;
+    }
+
+    private function isExternalLink(string $href): bool
+    {
+        $href = strtolower($href);
+        return str_starts_with($href, 'http://') || str_starts_with($href, 'https://');
     }
 }
