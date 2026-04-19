@@ -1,6 +1,6 @@
 # Technical Overview
 
-Generated at: 2026-04-19 20:53:10 UTC
+Generated at: 2026-04-19 21:09:37 UTC
 
 ## Application
 - Name: finella
@@ -8,7 +8,7 @@ Generated at: 2026-04-19 20:53:10 UTC
 - Version: dev
 - Base path: -
 - Timezone: UTC
-- Root: C:\workspace\fnlla\framework\tools\harness
+- Root: c:\workspace\fnlla\framework\tools\harness
 
 ## Runtime
 - PHP: 8.5.5
