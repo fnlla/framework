@@ -148,14 +148,10 @@ run_monorepo_tests() {
   if [ -f "tools/harness/vendor/autoload.php" ] && [ ! -d "tools/harness/vendor/.git" ]; then
     cleanup_dirs+=("tools/harness/vendor")
   fi
-  cleanup_dirs+=(
-    "tools/harness/resources/docs"
-    "tools/harness/storage/docs"
-    "tools/harness/tools"
-  )
+  cleanup_dirs+=("tools/harness/tools")
 
   php scripts/smoke/run-smoke-tests.php
-  php scripts/ci/check-docs-sync.php --app=tools/harness
+  php scripts/ci/check-docs-sync.php --app="${ROOT_DIR}/tools/harness"
   (cd tools/harness && composer run smoke --no-interaction)
 
   if [ "${#cleanup_dirs[@]}" -gt 0 ]; then
