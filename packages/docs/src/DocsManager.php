@@ -130,6 +130,11 @@ final class DocsManager
         $basePath = (string) $this->config->get('app.base_path', '');
         $timezone = (string) $this->config->get('app.timezone', 'UTC');
         $url = getenv('APP_URL');
+        $root = str_replace('\\', '/', $this->root);
+        $rootLabel = basename(rtrim($root, '/'));
+        if ($rootLabel === '' || $rootLabel === '.' || $rootLabel === '..') {
+            $rootLabel = '[app-root]';
+        }
 
         return [
             'name' => $name,
@@ -138,14 +143,14 @@ final class DocsManager
             'base_path' => $basePath,
             'timezone' => $timezone,
             'url' => is_string($url) ? $url : '',
-            'root' => $this->root,
+            'root' => $rootLabel,
         ];
     }
 
     private function collectRuntimeInfo(): array
     {
         return [
-            'php' => PHP_VERSION,
+            'php' => PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION,
             'finella' => Application::VERSION,
         ];
     }
@@ -380,10 +385,15 @@ final class DocsManager
             return implode("\n", $lines) . "\n";
         }
 
-        foreach ($env as $group => $keys) {
+        $groups = array_keys($env);
+        $lastGroup = count($groups) - 1;
+        foreach ($groups as $index => $group) {
+            $keys = is_array($env[$group] ?? null) ? $env[$group] : [];
             $lines[] = '## ' . $group;
             $lines[] = $this->renderList($keys, '- (none)');
-            $lines[] = '';
+            if ($index < $lastGroup) {
+                $lines[] = '';
+            }
         }
 
         return implode("\n", $lines) . "\n";
@@ -454,7 +464,9 @@ final class DocsManager
         $path = rtrim($base, '/\\') . '/' . $slug . '.md';
         $dir = dirname($path);
         $this->ensureDir($dir);
-        file_put_contents($path, $content);
+        if (file_put_contents($path, $content) === false) {
+            throw new \RuntimeException('Unable to write docs file: ' . $path);
+        }
         return $path;
     }
 
@@ -547,4 +559,3 @@ final class DocsManager
         return $value === '' ? '-' : $value;
     }
 }
-
