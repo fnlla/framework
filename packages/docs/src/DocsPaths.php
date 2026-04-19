@@ -123,7 +123,7 @@ final class DocsPaths
         if (str_starts_with($path, '/') || str_starts_with($path, '\\')) {
             return true;
         }
-        return preg_match('/^[A-Za-z]:\\\\/', $path) === 1;
+        return preg_match('/^[A-Za-z]:[\\\\\\/]/', $path) === 1;
     }
 
     private function filePath(string $base, string $slug): string
@@ -148,5 +148,4 @@ final class DocsPaths
         return $result;
     }
 }
-
 

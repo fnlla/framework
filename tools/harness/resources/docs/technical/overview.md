@@ -6,10 +6,10 @@
 - Version: dev
 - Base path: -
 - Timezone: UTC
-- Root: c:\workspace\fnlla\framework\tools\harness
+- Root: harness
 
 ## Runtime
-- PHP: 8.5.5
+- PHP: 8.5
 - Finella: 3.0.0
 
 ## Finella Packages
