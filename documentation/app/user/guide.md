@@ -11,10 +11,12 @@ Describe what finella does for end users.
 
 **CORE FEATURES**
 **-** List the main workflows.
-**-** Include links to UI sections.
+**-** Include links to relevant interface sections.
 
 **TROUBLESHOOTING**
 **-** Common issues and resolutions.
 
 **SUPPORT**
 **-** Where users should report problems.
+
+

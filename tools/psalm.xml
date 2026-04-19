@@ -12,9 +12,6 @@
         <directory name="../packages" />
         <directory name="harness/src" />
         <directory name="harness/bootstrap" />
-        <ignoreFiles>
-            <directory name="../ui/stubs" />
-        </ignoreFiles>
     </projectFiles>
     <stubs>
         <file name="stubs/redis.php" />

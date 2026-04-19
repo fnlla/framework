@@ -9,7 +9,6 @@ use App\Controllers\ErrorController;
 use App\Controllers\FormController;
 use App\Controllers\HealthController;
 use App\Controllers\HomeController;
-use App\Controllers\OnboardingController;
 use App\Controllers\ProviderReportController;
 use App\Controllers\ReadinessController;
 use App\Controllers\StatusController;
@@ -104,11 +103,6 @@ return static function (Router $router): void {
     }
 
     $router->group(['middleware' => ['web']], function (Router $router): void {
-        if (class_exists(OnboardingController::class)) {
-            $router->get('/onboarding', [OnboardingController::class, 'show']);
-            $router->post('/onboarding', [OnboardingController::class, 'submit']);
-        }
-
         if (class_exists(HomeController::class)) {
             $router->get('/', [HomeController::class, 'index']);
         }

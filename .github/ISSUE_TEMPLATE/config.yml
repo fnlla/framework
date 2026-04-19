@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security report
-    url: https://github.com/kordyaczny/finella/security/policy
+    url: https://github.com/fnlla/framework/security/policy
     about: Report vulnerabilities through the security policy channel.
   - name: Documentation
-    url: https://github.com/kordyaczny/finella/tree/main/documentation/src
+    url: https://github.com/fnlla/framework/tree/main/documentation/src
     about: Check docs and operations guides before opening a support issue.

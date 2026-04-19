@@ -73,10 +73,16 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
         }
 
         $csp = $config['csp'] ?? null;
-        if ($csp !== null && !$response->hasHeader('Content-Security-Policy')) {
-            $nonce = $this->context->cspNonce();
-            $cspValue = str_contains((string) $csp, '%s') ? sprintf((string) $csp, $nonce) : (string) $csp;
-            $setHeaders['Content-Security-Policy'] = $cspValue;
+        $csp = is_string($csp) ? trim($csp) : $csp;
+        if (is_string($csp) && $csp !== '') {
+            $reportOnly = $this->toBool($config['csp_report_only'] ?? false, false);
+            $cspHeader = $reportOnly ? 'Content-Security-Policy-Report-Only' : 'Content-Security-Policy';
+            if ($response->hasHeader($cspHeader)) {
+                // keep existing CSP header from the response
+            } else {
+                $nonce = $this->context->cspNonce();
+                $setHeaders[$cspHeader] = $this->resolveCspValue($csp, $nonce);
+            }
         }
 
         if ($setHeaders === []) {
@@ -94,5 +100,35 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
             'Referrer-Policy' => 'strict-origin-when-cross-origin',
             'Permissions-Policy' => 'camera=(), microphone=(), geolocation=()',
         ];
+    }
+
+    private function resolveCspValue(string $policy, string $nonce): string
+    {
+        if (str_contains($policy, '%s')) {
+            return sprintf($policy, $nonce);
+        }
+
+        $policy = str_replace(['{nonce}', '{{nonce}}'], $nonce, $policy);
+        return $policy;
+    }
+
+    private function toBool(mixed $value, bool $default): bool
+    {
+        if (is_bool($value)) {
+            return $value;
+        }
+        if (is_int($value)) {
+            return $value === 1;
+        }
+        if (is_string($value)) {
+            $normalized = strtolower(trim($value));
+            if (in_array($normalized, ['1', 'true', 'yes', 'on'], true)) {
+                return true;
+            }
+            if (in_array($normalized, ['0', 'false', 'no', 'off'], true)) {
+                return false;
+            }
+        }
+        return $default;
     }
 }

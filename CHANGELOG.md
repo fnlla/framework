@@ -3,22 +3,26 @@
 All notable changes to the Finella monorepo will be documented in this file.
 This format follows Keep a Changelog and Semantic Versioning.
 
-## Release Summary (Framework + UI)
-Finella ships as one product with two coordinated release lines.
+## Release Summary (Framework)
+Finella ships the framework and official packages on one coordinated release line.
 
 **Framework**
 - Full changelog: `framework/CHANGELOG.md`
-
-**Finella UI**
-- Full changelog: `ui/CHANGELOG.md`
-
-If you are only interested in the core framework package, see `framework/CHANGELOG.md`.
 
 ## [Unreleased]
 ### Changed
 - Grouped configuration files into subdirectories for clarity (starter, template, harness).
 - Updated documentation and tooling to reference grouped config paths.
 - Added starter migration baseline templates under `app/database/migrations-baseline` and `tools/harness/database/migrations-baseline` with neutral `000001_...` naming for new app bootstraps.
+
+## [3.0.0] - 2026-04-18
+### Highlights
+- Version-line alignment release for the public 3.x framework line.
+- Runtime version constant, release metadata, and CI PHP baseline are now consistent.
+### Changed
+- Updated framework runtime version constant to `3.0.0`.
+- Aligned framework CI/release workflows to PHP 8.5 to match package requirements.
+- Aligned operations documentation environment variable names with the starter app (`FINELLA_*`).
 
 ## [2.5.6] - 2026-04-15
 ### Highlights
@@ -144,7 +148,6 @@ If you are only interested in the core framework package, see `framework/CHANGEL
 - Framework intelligence CLI commands (scaffold, config advisor, observability, security lint, docs sync).
 - AI readiness CLI command (`ai:doctor`) with configuration checks and suggestions.
 - Optional daily autonomous digest schedule hook in the app template (`WORKSPACE_AI_AUTONOMOUS_SCHEDULED`).
-- New `finella/ui` package with publishable CSS grid, components, and UI templates.
 - New `finella/storage` package with local storage and image pipeline helpers.
 - New `finella/mail-preview` package with preview routes and template stubs.
 - Added `view_path()` helper for rendering UI stubs directly from views.

@@ -4,7 +4,7 @@ This `tools/harness/` directory is a **development and test harness** used insid
 It is **not** the public starter skeleton. The starter app lives in `fnlla/fnlla`.
 
 **REQUIREMENTS**
-**-** PHP >= 8.4
+**-** PHP >= 8.5
 **-** Composer >= 2
 
 **LOCAL DEVELOPMENT (HARNESS)**
@@ -62,5 +62,5 @@ Routes are defined in `routes/web.php`.
 
 **CREDITS**
 **-** Framework: Finella
-**-** Author / Organisation: TechAyo.co.uk
+**-** Author / Organisation: TechAyo (techayo.co.uk)
 **-** Maintainer: Marcin Kordyaczny

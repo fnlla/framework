@@ -12,7 +12,7 @@ Generated at: 2026-04-05 22:22:39 UTC
 
 **RUNTIME**
 **-** PHP: 8.4.19
-**-** Finella: 2.5.3
+**-** Finella: 3.0.0
 
 **FINELLA PACKAGES**
 **-** finella/ai (dev-main)

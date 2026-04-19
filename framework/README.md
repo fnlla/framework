@@ -1,9 +1,10 @@
 **FINELLA FRAMEWORK**
 
-Finella is a lightweight PHP web framework focused on clarity, small surface area, and production-ready defaults. The core is intentionally minimal: kernel, router, container, configuration, and error handling.
+Finella is a lightweight, AI-assisted (optional) PHP web framework focused on clarity, small surface area, and production-ready defaults. The core is intentionally minimal: kernel, router, container, configuration, and error handling.
+AI capabilities are opt-in and sit on top of the core runtime via optional packages and governance controls.
 
 **REQUIREMENTS**
-**-** PHP >= 8.4
+**-** PHP >= 8.5
 
 **INSTALLATION**
 Offline install:
@@ -125,6 +126,7 @@ Optional packages add specialised capabilities.
 **-** `finella/queue` - queue manager (sync/database/redis drivers).
 **-** `finella/scheduler` - schedule registry and `schedule:run`.
 **-** `finella/mail` - Symfony Mailer adapter.
+**-** `finella/ai` - AI provider integration, policy controls, router, telemetry, and RAG helpers.
 **-** `finella/debugbar` - debug tooling for development.
 **-** `finella/tenancy` - multi-tenant context and model scoping.
 
@@ -147,19 +149,18 @@ return [
 ```
 
 **NOT INCLUDED BY DESIGN**
-**-** Admin UI presets (use `finella/ui` admin stubs)
 **-** Cron/daemon management (use system cron or supervisor)
 **-** CMS/editor experience (use `finella/content` or a dedicated CMS)
 
 **STABILITY & VERSIONING**
 **-** Finella follows Semantic Versioning (SemVer).
-**-** The 2.x line is the current stable core.
-**-** Patch releases (2.x.y) contain fixes only, no breaking changes.
-**-** Minor releases (2.x.0) add backward-compatible features.
-**-** Major releases (3.0.0) may include breaking changes with upgrade notes.
+**-** The 3.x line is the current stable core.
+**-** Patch releases (3.x.y) contain fixes only, no breaking changes.
+**-** Minor releases (3.x.0) add backward-compatible features.
+**-** Major releases (4.0.0+) may include breaking changes with upgrade notes.
 
 **CREDITS**
-**-** Author / Organisation: TechAyo.co.uk
+**-** Author / Organisation: TechAyo (techayo.co.uk)
 **-** Maintainer: Marcin Kordyaczny
 
 **LICENCE**

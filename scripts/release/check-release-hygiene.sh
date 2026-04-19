@@ -14,12 +14,6 @@ if ! command -v php >/dev/null 2>&1; then
   exit 1
 fi
 
-if [ -f "ui/index.md" ]; then
-  php scripts/docs/build-ui-docs.php
-else
-  echo "UI docs source not found (ui/index.md). Skipping UI docs build."
-fi
-
 git_available=0
 if command -v git >/dev/null 2>&1; then
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then

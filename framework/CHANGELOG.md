@@ -13,6 +13,15 @@ This format follows Keep a Changelog and Semantic Versioning.
 ### Fixed
 ### Security
 
+## [3.0.0] - 2026-04-18
+### Added
+### Changed
+- Application version constant updated to 3.0.0.
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [2.5.3] - 2026-04-04
 ### Added
 - Config loader support for grouped config subdirectories (e.g. `config/ai/*`).

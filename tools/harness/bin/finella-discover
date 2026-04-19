@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
+
 use Finella\Support\ComposerProviderDiscovery;
 use Finella\Support\ProviderCache;
 

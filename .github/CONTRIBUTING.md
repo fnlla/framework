@@ -1,6 +1,6 @@
 **CONTRIBUTING**
 
-Finella is a public, proprietary product by TechAyo LTD. Public contributions
+Finella is a public, proprietary product by TechAyo (techayo.co.uk). Public contributions
 are welcome via issues and pull requests. By contributing, you agree that your
 contribution may be used, modified, and distributed under the Finella license.
 
@@ -9,7 +9,7 @@ Finella requires an Attribution Notice in product source code or repository
 documentation when used in applications. Use `NOTICE` as the standard template.
 
 **REQUIREMENTS**
-**-** PHP 8.4+
+**-** PHP 8.5+
 **-** Composer 2
 **-** Git
 

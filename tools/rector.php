@@ -23,7 +23,6 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/../packages/_package-template',
         __DIR__ . '/../packages/*/resources',
         __DIR__ . '/../packages/*/tests',
-        __DIR__ . '/../ui/stubs',
     ]);
 
     $rectorConfig->sets([
@@ -39,4 +38,3 @@ return static function (RectorConfig $rectorConfig): void {
         ImportFullyQualifiedNamesRector::class,
     ]);
 };
-

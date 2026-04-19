@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <files psalm-version="6.16.1@f1f5de594dc76faf8784e02d3dc4716c91c6f6ac">
   <file src="../framework/src/Auth/AuthManager.php">
     <PossiblyUnusedMethod>
@@ -2112,13 +2112,6 @@
       <code><![CDATA[env('OAUTH_GOOGLE_TOKEN_URL', 'https://oauth2.googleapis.com/token')]]></code>
     </UndefinedFunction>
   </file>
-  <file src="../app/config/onboarding/onboarding.php">
-    <UndefinedFunction>
-      <code><![CDATA[env('ONBOARDING_ENABLED', true)]]></code>
-      <code><![CDATA[env('ONBOARDING_REDIRECT', '/')]]></code>
-      <code><![CDATA[env('ONBOARDING_ROLE', 'owner')]]></code>
-    </UndefinedFunction>
-  </file>
   <file src="../app/config/pdf/pdf.php">
     <UndefinedFunction>
       <code><![CDATA[env('PDF_DEFAULT_FONT', 'DejaVu Sans')]]></code>
@@ -2387,27 +2380,6 @@
     <PossiblyUnusedMethod>
       <code><![CDATA[index]]></code>
     </PossiblyUnusedMethod>
-  </file>
-  <file src="../app/src/Controllers/OnboardingController.php">
-    <PossiblyUnusedMethod>
-      <code><![CDATA[__construct]]></code>
-      <code><![CDATA[show]]></code>
-      <code><![CDATA[submit]]></code>
-    </PossiblyUnusedMethod>
-    <UnusedMethod>
-      <code><![CDATA[assignRole]]></code>
-      <code><![CDATA[enabled]]></code>
-      <code><![CDATA[hasUsers]]></code>
-    </UnusedMethod>
-    <UnusedParam>
-      <code><![CDATA[$request]]></code>
-    </UnusedParam>
-    <UnusedProperty>
-      <code><![CDATA[$auth]]></code>
-      <code><![CDATA[$config]]></code>
-      <code><![CDATA[$connections]]></code>
-      <code><![CDATA[$rbac]]></code>
-    </UnusedProperty>
   </file>
   <file src="../app/src/Controllers/ProviderReportController.php">
     <PossiblyUnusedMethod>
@@ -3327,59 +3299,6 @@
       <code><![CDATA[response]]></code>
     </PossiblyUnusedMethod>
   </file>
-  <file src="../ui/src/Commands/UiExamplesPublishCommand.php">
-    <MissingOverrideAttribute>
-      <code><![CDATA[public function getDescription(): string]]></code>
-      <code><![CDATA[public function getName(): string]]></code>
-      <code><![CDATA[public function run(array $args, array $options, ConsoleIO $io, string $root): int]]></code>
-    </MissingOverrideAttribute>
-    <UnusedClass>
-      <code><![CDATA[UiExamplesPublishCommand]]></code>
-    </UnusedClass>
-  </file>
-  <file src="../ui/src/Commands/UiPublishCommand.php">
-    <MissingOverrideAttribute>
-      <code><![CDATA[public function getDescription(): string]]></code>
-      <code><![CDATA[public function getName(): string]]></code>
-      <code><![CDATA[public function run(array $args, array $options, ConsoleIO $io, string $root): int]]></code>
-    </MissingOverrideAttribute>
-    <PossiblyInvalidArgument>
-      <code><![CDATA[$path]]></code>
-    </PossiblyInvalidArgument>
-    <PossiblyInvalidCast>
-      <code><![CDATA[$path]]></code>
-    </PossiblyInvalidCast>
-    <UnusedClass>
-      <code><![CDATA[UiPublishCommand]]></code>
-    </UnusedClass>
-  </file>
-  <file src="../ui/src/Commands/UiElementsPublishCommand.php">
-    <ArgumentTypeCoercion>
-      <code><![CDATA[$html]]></code>
-    </ArgumentTypeCoercion>
-    <MissingOverrideAttribute>
-      <code><![CDATA[public function getDescription(): string]]></code>
-      <code><![CDATA[public function getName(): string]]></code>
-      <code><![CDATA[public function run(array $args, array $options, ConsoleIO $io, string $root): int]]></code>
-    </MissingOverrideAttribute>
-    <PossiblyInvalidArgument>
-      <code><![CDATA[$path]]></code>
-    </PossiblyInvalidArgument>
-    <PossiblyInvalidCast>
-      <code><![CDATA[$path]]></code>
-    </PossiblyInvalidCast>
-    <RedundantFunctionCall>
-      <code><![CDATA[array_values]]></code>
-    </RedundantFunctionCall>
-  </file>
-  <file src="../ui/src/UiServiceProvider.php">
-    <MissingOverrideAttribute>
-      <code><![CDATA[public function register(Container $app): void]]></code>
-    </MissingOverrideAttribute>
-    <UnusedClass>
-      <code><![CDATA[UiServiceProvider]]></code>
-    </UnusedClass>
-  </file>
   <file src="../packages/webmail/src/Http/WebmailController.php">
     <PossiblyUnusedMethod>
       <code><![CDATA[__construct]]></code>
@@ -3512,11 +3431,6 @@
       <code><![CDATA[HomeController]]></code>
     </DuplicateClass>
   </file>
-  <file src="harness/src/Controllers/OnboardingController.php">
-    <DuplicateClass>
-      <code><![CDATA[OnboardingController]]></code>
-    </DuplicateClass>
-  </file>
   <file src="harness/src/Controllers/ProviderReportController.php">
     <DuplicateClass>
       <code><![CDATA[ProviderReportController]]></code>
@@ -3548,4 +3462,3 @@
     </DuplicateClass>
   </file>
 </files>
-

@@ -35,14 +35,8 @@ Starter shortcuts (from `app/`):
 **-** `composer run format:github`
 **-** `composer run lint:github`
 
-**UI AND MAIL PREVIEW**
-**-** `php bin/finella ui:publish --app=.`
-**-** `php bin/finella ui:admin:publish --app=.`
-**-** `php bin/finella ui:elements:publish --app=.`
-**-** Deprecated alias: `php bin/finella ui:examples:publish --app=.`
+**MAIL PREVIEW**
 **-** `php bin/finella mail-preview:publish --app=.`
-
-Tip: use `--only=login,pricing` or `--exclude=carousel,cheatsheet` for a smaller UI Elements gallery.
 
 **CACHE WORKFLOWS**
 **-** `php bin/finella routes:cache`
@@ -174,8 +168,7 @@ Use this index when you are looking for a capability rather than a package name.
 **-** Search adapter (Meilisearch): `packages/search/README.md`
 **-** OAuth/OIDC: `packages/oauth/README.md`
 
-**UI AND DOCS**
-**-** Finella UI: `ui/index.md`
+**DOCS**
 **-** Packages catalog: `documentation/src/packages.md`
 **-** Docs generation: `documentation/src/operations.md` and `packages/docs/README.md`
 

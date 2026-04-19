@@ -1,3 +1,34 @@
+:root {
+  --fx-accent: #f97316;
+  --fx-accent-soft: rgba(249, 115, 22, 0.12);
+  --fx-border: #e2e8f0;
+  --f-color-text: #0f172a;
+  --f-color-muted: #475569;
+  --f-font-sans: "Space Grotesk", "Segoe UI", sans-serif;
+  --f-font-mono: "JetBrains Mono", "Cascadia Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--f-color-text);
+  font-family: var(--f-font-sans);
+}
+
+.f-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .fx-docs-body {
   background: #f6f3ee;
 }
@@ -5,6 +36,41 @@
 .fx-topbar,
 .fx-docs-footer {
   background: #f6f3ee;
+}
+
+.fx-topbar {
+  border-bottom: 1px solid var(--fx-border);
+}
+
+.fx-topbar-inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.fx-brand {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.fx-brand-mark {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.fx-brand-pill {
+  background: var(--fx-accent-soft);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: 999px;
+  color: #9a3412;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  text-transform: uppercase;
 }
 
 .fx-docs-layout {
@@ -87,6 +153,14 @@
 
 .fx-docs-markdown p {
   line-height: 1.7;
+}
+
+.fx-docs-markdown a {
+  color: #0f766e;
+}
+
+.fx-docs-markdown a:hover {
+  color: #115e59;
 }
 
 .fx-docs-markdown ul,

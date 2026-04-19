@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__) . '/ensure-php85.php';
+
 $root = dirname(__DIR__, 2);
 
 $requiredFiles = [

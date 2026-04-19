@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__) . '/ensure-php85.php';
+
 use Finella\Http\UploadedFile;
 
 function ok(bool $cond, string $msg): void
@@ -96,4 +98,3 @@ foreach (glob($uploadDir . DIRECTORY_SEPARATOR . '*') ?: [] as $item) {
 @rmdir($baseDir);
 
 echo "Upload smoke tests OK\n";
-

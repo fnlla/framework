@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Finella\Seo;
 
+use Finella\Runtime\RequestContext;
+
 final class SeoManager
 {
     private ?string $title = null;
@@ -112,12 +114,13 @@ final class SeoManager
         }
 
         $lines = [];
+        $nonceAttr = $this->resolveScriptNonceAttribute();
         foreach ($this->jsonLd as $payload) {
             $json = json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             if (!is_string($json)) {
                 continue;
             }
-            $lines[] = '<script type="application/ld+json">' . $json . '</script>';
+            $lines[] = '<script type="application/ld+json"' . $nonceAttr . '>' . $json . '</script>';
         }
 
         return implode("\n", $lines);
@@ -136,6 +139,21 @@ final class SeoManager
     private function escape(string $value): string
     {
         return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    }
+
+    private function resolveScriptNonceAttribute(): string
+    {
+        $context = RequestContext::current();
+        if (!$context instanceof RequestContext) {
+            return '';
+        }
+
+        $nonce = trim($context->cspNonce());
+        if ($nonce === '') {
+            return '';
+        }
+
+        return ' nonce="' . $this->escape($nonce) . '"';
     }
 
     private function applyDefaults(array $defaults): void

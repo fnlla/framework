@@ -1,20 +1,20 @@
 **FINELLA**
 
-[![Release](https://img.shields.io/badge/release-v2.5.6-blue)](https://github.com/kordyaczny/finella/releases)
-[![Powered by Finella](https://img.shields.io/badge/powered%20by-Finella-0A66C2)](https://github.com/kordyaczny/finella)
-[![TechAyo LTD](https://img.shields.io/badge/TechAyo-LTD-111827)](https://github.com/kordyaczny/finella)
+[![Developed by TechAyo](https://img.shields.io/badge/Developed%20by-TechAyo-111827)](https://techayo.co.uk)
 
-Finella is an AI-assisted (optional), modular PHP framework by TechAyo LTD, with a companion product: Finella UI (design system + Elements). The core framework runs fully without AI. AI is a first-class, opt-in layer: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
+Finella is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.co.uk). The core framework runs fully without AI. AI is a first-class, opt-in layer: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
 
 **Status:** Public release (proprietary license).
 
-**Core idea:** Finella Framework + companion starter/UI repositories
-Starter application and Finella UI live in the `fnlla/fnlla` repository.
+**ABOUT**
+Finella Framework is a production-focused PHP platform for teams that want a clear core architecture, optional modular capabilities, predictable operations at scale, and AI capabilities that remain opt-in by design.
+
+**Core idea:** Finella Framework + companion starter repository
+Starter application lives in the `fnlla/fnlla` repository.
 Release notes for framework changes are summarised in `CHANGELOG.md`.
 
 **WHAT IS FINELLA?**
 **-** **Finella Framework**: minimal, modern PHP core focused on HTTP, routing, container, config, and error handling.
-**-** **Finella UI**: companion no-build design system + Elements for fast product UIs.
 **-** Modular ecosystem of optional packages (auth, database, ORM, cache, queue, mail, docs, etc.).
 **-** Starter app distributed in a separate repository (`fnlla/fnlla`).
 **-** Optional AI stack with RAG, governance, and deterministic autonomous insights.
@@ -42,9 +42,14 @@ Because it is the fastest path to reliable, enterprise web delivery with a low b
 
 **STABILITY AND SUPPORT**
 **-** Support policy: `documentation/src/operations.md`.
-**-** Current supported line: 2.5.x (active support until 5 April 2027, security-only until 5 October 2027).
+**-** Current supported line: 3.x.
 **-** SemVer + deprecation policy (breaking changes only in major versions).
 **-** Deprecations registry + migration notes: `documentation/src/operations.md`.
+
+**NAME ORIGIN AND TECHNICAL SLUG**
+**-** Product name: `Finella` (name origin: Finella Gardens, Dundee, UK).
+**-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
+**-** Why `fnlla`: short ASCII-only identifier, easy to type in CLI/paths, and stable across package/repository naming.
 
 **ROADMAP**
 **-** Public roadmap in `documentation/src/operations.md`.
@@ -82,9 +87,8 @@ composer install --no-dev --prefer-dist --optimize-autoloader
 Open:
 **-** Product App: `http://127.0.0.1:8000/`
 
-**STARTER + UI**
+**STARTER**
 **-** Starter application repository: `https://github.com/fnlla/fnlla`
-**-** Finella UI package source lives in that repository under `ui/`
 
 Docs UI and docs generation:
 **-** Docs home: `GET /docs`
@@ -99,6 +103,11 @@ php bin/finella list
 php bin/finella routes:cache
 composer run test
 ```
+
+CLI/runtime note:
+**-** Framework smoke scripts and harness CLI auto-reexec to PHP 8.5.5 when started with any other PHP binary.
+**-** Override the preferred binary with `FINELLA_PHP_BIN` (or `FINELLA_PHP85_BIN`) pointing to PHP 8.5.5.
+**-** `composer run serve` in `tools/harness` uses the same guard; bind can be changed with `FINELLA_DEV_HOST` / `FINELLA_DEV_PORT`.
 
 **HELLO WORLD ROUTE**
 **-** Route: `routes/web.php`
@@ -142,7 +151,7 @@ Finella requires an Attribution Notice in your product source code or repository
 **-** "Built with the Finella Framework and Finella Components."
 
 **REQUIREMENTS**
-**-** PHP >= 8.4
+**-** PHP >= 8.5
 **-** Composer >= 2
 
 **LICENSE**

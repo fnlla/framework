@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__) . '/ensure-php85.php';
+
 $root = dirname(__DIR__, 2);
 $appDir = $root . DIRECTORY_SEPARATOR . 'tools' . DIRECTORY_SEPARATOR . 'harness';
 $autoload = $appDir . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
@@ -133,4 +135,3 @@ ok($response->getStatusCode() === 302, 'can middleware redirects for HTML');
 ok($response->getHeaderLine('Location') !== '', 'redirect has Location');
 
 echo "Authorization smoke tests OK\n";
-

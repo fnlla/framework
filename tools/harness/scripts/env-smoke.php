@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
+
 require __DIR__ . '/../vendor/autoload.php';
 
 function ok(bool $cond, string $msg): void

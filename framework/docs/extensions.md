@@ -14,8 +14,8 @@ Example `composer.json`:
   "name": "finella/acme-example",
   "type": "library",
   "require": {
-    "php": ">=8.4",
-    "finella/framework": "^2.5"
+    "php": ">=8.5",
+    "finella/framework": "^3.0"
   },
   "autoload": {
     "psr-4": {

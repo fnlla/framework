@@ -4588,51 +4588,6 @@ parameters:
 			path: ../packages/testing/src/TestResponse.php
 
 		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiPublishCommand\\:\\:collectFiles\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiPublishCommand.php
-
-		-
-			message: "#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#"
-			count: 2
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiElementsPublishCommand\\:\\:buildLiteIndex\\(\\) has parameter \\$exclude with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiElementsPublishCommand\\:\\:buildLiteIndex\\(\\) has parameter \\$only with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiElementsPublishCommand\\:\\:collectFiles\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiElementsPublishCommand\\:\\:parseList\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiElementsPublishCommand\\:\\:shouldInclude\\(\\) has parameter \\$exclude with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Method Finella\\\\Ui\\\\Commands\\\\UiElementsPublishCommand\\:\\:shouldInclude\\(\\) has parameter \\$only with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
-			message: "#^Only booleans are allowed in an if condition, int\\|false given\\.$#"
-			count: 1
-			path: ../ui/src/Commands/UiElementsPublishCommand.php
-
-		-
 			message: "#^Casting to string something that's already string\\.$#"
 			count: 4
 			path: ../packages/webmail/src/Http/WebmailController.php

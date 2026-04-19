@@ -3,6 +3,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
+
 $root = getcwd();
 $autoload = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 if (!is_file($autoload)) {

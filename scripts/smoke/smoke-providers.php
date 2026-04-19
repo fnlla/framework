@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__) . '/ensure-php85.php';
+
 $root = dirname(__DIR__, 2);
 $appDir = $root . DIRECTORY_SEPARATOR . 'tools' . DIRECTORY_SEPARATOR . 'harness';
 $autoload = $appDir . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
@@ -58,4 +60,3 @@ foreach ($required as $provider) {
 }
 
 echo "Provider cache smoke tests OK\n";
-

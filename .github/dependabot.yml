@@ -26,11 +26,6 @@ updates:
       interval: "weekly"
 
   - package-ecosystem: "composer"
-    directory: "/ui"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "composer"
     directory: "/packages/ai"
     schedule:
       interval: "weekly"

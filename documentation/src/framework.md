@@ -44,13 +44,11 @@ return static function (Router $router): void {
 App (starter or custom)
   -> Framework Core (HTTP, container, config, errors)
   -> Core Modules (auth, database, ORM, cache, sessions, logging, console)
-  -> Optional Packages (queue, scheduler, mail, docs, ops, ui, ai, etc.)
-  -> UI Layer (finella/ui + optional admin presets)
+  -> Optional Packages (queue, scheduler, mail, docs, ops, ai, etc.)
 ```
 Notes:
 **-** The framework core is always required.
 **-** Optional packages are installed only when you need them.
-**-** Finella UI is no-build and can be used independently of AI.
 
 **WARM KERNEL (LONG-RUNNING)**
 For long-running servers, boot once and reuse the kernel:
@@ -92,7 +90,7 @@ Templates live in `resources/views`. Use `view('pages/home')` or `View::render()
 `ExceptionHandler` renders safe responses. Use the core logging module for PSR-3 logging. Responses include `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` by default (configurable in `config/http/http.php`).
 
 **PACKAGES**
-Core modules live in the framework (auth, database, ORM, sessions, cookies, CSRF, cache, logging, request logging, console). Optional packages provide queue, scheduler, mail, notifications, docs, monitoring, UI, storage adapters, and more.
+Core modules live in the framework (auth, database, ORM, sessions, cookies, CSRF, cache, logging, request logging, console). Optional packages provide queue, scheduler, mail, notifications, docs, monitoring, storage adapters, and more.
 
 **TESTING**
 **-** `php scripts/smoke/run-smoke-tests.php`
@@ -155,7 +153,7 @@ For action logs, enable `finella/audit`.
 The starter uses `Finella\Support\Dotenv` and loads `.env` when present.
 
 **SUPPORT POLICY**
-**-** PHP 8.4+ (CI: 8.4)
+**-** PHP 8.5+ (CI: 8.5)
 **-** Databases: SQLite, MySQL/MariaDB, PostgreSQL (PDO drivers)
 **-** Cache: filesystem (default), array (in-memory), Redis (ext-redis)
 **-** Queue: sync, database, Redis (ext-redis)
@@ -826,7 +824,7 @@ FallbackLogger::error('Invoice failed', ['invoice_id' => 123]);
 This document defines the ORM ergonomics standard for Finella. It lists
 what is already delivered and what remains on the roadmap.
 
-**DELIVERED (2.X)**
+**DELIVERED (3.X)**
 **-** Query helpers: `firstOrFail`, `count`, `exists`, `pluck`, `take`, `skip`.
 **-** Query aggregates: `sum`, `avg`, `min`, `max`.
 **-** Soft deletes: `withTrashed`, `onlyTrashed`, `restore`, `forceDelete`.

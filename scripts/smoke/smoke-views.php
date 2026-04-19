@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require dirname(__DIR__) . '/ensure-php85.php';
+
 $root = dirname(__DIR__, 2);
 $appDir = $root . DIRECTORY_SEPARATOR . 'tools' . DIRECTORY_SEPARATOR . 'harness';
 $autoload = $appDir . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
@@ -46,4 +48,3 @@ ok($response instanceof \Finella\Http\Response, 'view() returns Response');
 ok(str_contains($body, 'Product entry point'), 'home view renders expected content');
 
 echo "View smoke tests OK\n";
-

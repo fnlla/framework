@@ -1,7 +1,6 @@
 **FINELLA PACKAGES**
 
 The `packages/` directory contains optional modules for the Finella ecosystem. Each package is versioned independently and follows SemVer.
-Finella UI lives in `ui/` at the repo root and ships on its own release line.
 
 For the recommended public-core vs private-pro split, see `documentation/src/operations.md`.
 
@@ -53,10 +52,9 @@ composer require finella/queue
 ```
 
 **VERSIONING**
-**-** Packages are compatible with `finella/framework ^2.5`.
+**-** Packages are compatible with `finella/framework ^3.0`.
 **-** Minor and patch releases follow SemVer rules.
 **-** Official packages share the same release version as the framework (monorepo tag).
-**-** Finella UI ships on its own SemVer line with a dedicated changelog.
 
 **AUTO-DISCOVERY**
 Packages may expose service providers via `extra.finella.providers`. The starter app caches discovered providers in `bootstrap/cache/providers.php`.

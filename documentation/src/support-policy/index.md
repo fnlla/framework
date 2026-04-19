@@ -2,9 +2,8 @@
 
 This page defines the public support window for the current Finella release line.
 
-Current supported line: 2.5.x.
-Active support until 5 April 2027.
-Security-only support until 5 October 2027.
+Current supported line: 3.x.
+Active support and security windows are announced in release notes for each minor line.
 
 Finella follows SemVer:
 **-** Patch releases: bug fixes and security fixes.

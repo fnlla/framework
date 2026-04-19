@@ -13,15 +13,6 @@ if (-not (Get-Command php -ErrorAction SilentlyContinue)) {
     Write-Host 'ERROR: php is required to run release hygiene checks.'
     exit 1
 }
-if (Test-Path ui\\index.md) {
-    php scripts\\docs\\build-ui-docs.php
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host 'ERROR: failed to build Finella UI docs.'
-        exit $LASTEXITCODE
-    }
-} else {
-    Write-Host 'UI docs source not found (ui/index.md). Skipping UI docs build.'
-}
 
 $gitAvailable = $false
 try {

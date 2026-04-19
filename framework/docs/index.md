@@ -1,13 +1,13 @@
 # Finella Framework Documentation
 
-This documentation targets the `finella/framework` package. It is written in UK English and reflects the actual behaviour of the 2.x line.
+This documentation targets the `finella/framework` package. It is written in UK English and reflects the actual behaviour of the 3.x line.
 
 ## How to read this documentation
 Start with `getting-started.md`, then go through routing, middleware, and configuration. Use the monorepo docs (`documentation/src/getting-started.md`, `documentation/src/framework.md`, `documentation/src/operations.md`) for app-level guidance.
 
 ## Core vs Optional Modules
-The framework core is intentionally minimal (kernel, router, container, configuration, error handling, and HTTP primitives).
-Optional features such as auth, sessions, cookies, CSRF, rate limiting, security headers, and request logging live in separate packages.
+The framework core includes the full application foundation (kernel, router, container, configuration, error handling, HTTP, auth, sessions, cookies, CSRF, database, ORM, cache, logging, and console).
+Optional packages add specialised capabilities such as queue, scheduler, mail, ops middleware, monitoring, and external adapters.
 
 ## Highlights
 - Warm kernel support for long-running servers (`HttpKernel::boot()`).
@@ -34,4 +34,4 @@ Optional features such as auth, sessions, cookies, CSRF, rate limiting, security
 - `glossary.md`
 
 ## Version compatibility
-These docs target Finella v2.0 and later. If you are on a different major version, check the matching documentation.
+These docs target Finella v3.0 and later. If you are on a different major version, check the matching documentation.

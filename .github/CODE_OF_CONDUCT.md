@@ -1,6 +1,6 @@
 **CODE OF CONDUCT**
 
-Finella is a public, proprietary product by TechAyo LTD. This Code of Conduct
+Finella is a public, proprietary product by TechAyo (techayo.co.uk). This Code of Conduct
 applies to everyone participating in the Finella community (issues, discussions,
 code contributions, and reviews).
 

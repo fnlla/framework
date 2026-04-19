@@ -19,4 +19,4 @@ package/
 ```
 
 **VERSIONING**
-Follow SemVer and keep compatibility with `finella/framework ^2.5`.
+Follow SemVer and keep compatibility with `finella/framework ^3.0`.

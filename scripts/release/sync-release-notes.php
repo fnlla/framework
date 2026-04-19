@@ -5,7 +5,7 @@ $root = dirname(__DIR__, 2);
 $args = $_SERVER['argv'] ?? [];
 array_shift($args);
 
-$repo = 'kordyaczny/finella';
+$repo = 'fnlla/framework';
 $changelogPath = $root . DIRECTORY_SEPARATOR . 'CHANGELOG.md';
 $dryRun = false;
 $versionFilter = null;
@@ -124,7 +124,7 @@ Usage:
   php scripts/release/sync-release-notes.php [options]
 
 Options:
-  --repo <owner/repo>   GitHub repository (default: kordyaczny/finella)
+  --repo <owner/repo>   GitHub repository (default: fnlla/framework)
   --changelog <path>    Changelog path (default: CHANGELOG.md)
   --version <x.y.z>     Sync only one version
   --dry-run             Print notes instead of updating releases
@@ -331,5 +331,4 @@ function passthruWithExitCode(string $command): int
     passthru($command, $exitCode);
     return (int) $exitCode;
 }
-
 

@@ -61,7 +61,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
-    "serve": "php -S localhost:8000 -t public",
+    "serve": "@php scripts/dev-server.php",
     "smoke": [
       "@php ../../scripts/smoke/run-smoke-tests.php",
       "@php ../../scripts/smoke/smoke-aliases.php",
@@ -94,10 +94,10 @@
       "@smoke"
     ],
     "post-install-cmd": [
-      "php bin/finella-discover"
+      "@php bin/finella-discover"
     ],
     "post-update-cmd": [
-      "php bin/finella-discover"
+      "@php bin/finella-discover"
     ]
   }
 }

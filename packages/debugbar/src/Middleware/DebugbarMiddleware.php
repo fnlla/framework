@@ -21,8 +21,15 @@ use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class DebugbarMiddleware implements MiddlewareInterface
 {
+    private const JS_ASSET_PATH = '/_finella/debugbar.js';
+    private const ASSET_VERSION = '3.0.0';
+
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
+        if ($this->isAssetRequest($request)) {
+            return $this->serveAsset($request);
+        }
+
         DebugbarCollector::reset();
         DebugbarCollector::init();
         DebugbarCollector::mark('request.start', 0.0);
@@ -160,6 +167,10 @@ final class DebugbarMiddleware implements MiddlewareInterface
         $messagesHtml = $this->renderMessages($messages, $maxRows);
         $errorsHtml = $this->renderErrors($errors, $maxRows);
         $timelineHtml = $this->renderTimeline($timeline, $requestMs, $maxRows);
+        $headersHtml = $this->renderHeaders($request, $response);
+        $errorCount = count($errors);
+        $toggleClass = $errorCount > 0 ? ' fdbg-toggle-danger' : '';
+        $statusLabel = $errorCount > 0 ? 'issues detected' : 'healthy';
 
         $summaryCards = [
             $this->summaryCard('Request', sprintf('%.2f ms', $requestMs), $method . ' ' . $path),
@@ -174,16 +185,18 @@ final class DebugbarMiddleware implements MiddlewareInterface
 
         $summaryHtml = implode('', $summaryCards);
         $badge = sprintf(
-            'REQ %.1fms | SQL %d | ERR %d',
+            'REQ %.1fms | SQL %d | ERR %d | %s',
             $requestMs,
             count($queries),
-            count($errors)
+            $errorCount,
+            strtoupper($statusLabel)
         );
+        $debugbarJs = $this->e($this->assetUrl(self::JS_ASSET_PATH));
 
         return <<<HTML
 <style>
 :root {
-  --fdbg-bg: var(--f-color-bg, #f8fafc);
+  --fdbg-bg: var(--f-color-bg, #f1f5f9);
   --fdbg-panel: #ffffff;
   --fdbg-text: var(--f-color-text, #0f172a);
   --fdbg-muted: var(--f-color-muted, #64748b);
@@ -191,26 +204,60 @@ final class DebugbarMiddleware implements MiddlewareInterface
   --fdbg-accent: #0f172a;
   --fdbg-accent-contrast: #ffffff;
   --fdbg-danger: #dc2626;
+  --fdbg-warning: #d97706;
   --fdbg-success: #0f766e;
+  --fdbg-info: #1d4ed8;
 }
-.fdbg-root, .fdbg-root * { box-sizing: border-box; font-family: var(--f-font-sans, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif); }
+.fdbg-root, .fdbg-root * { box-sizing: border-box; font-family: var(--f-font-sans, ui-sans-serif, -apple-system, "Segoe UI", sans-serif); }
 .fdbg-root { position: fixed; right: 16px; bottom: 16px; z-index: 2147483640; color: var(--fdbg-text); }
 .fdbg-toggle {
-  border: 1px solid var(--fdbg-border); background: var(--fdbg-accent); color: var(--fdbg-accent-contrast);
-  border-radius: 999px; padding: 9px 14px; cursor: pointer; font-size: 12px; letter-spacing: 0.01em;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+  border: 1px solid var(--fdbg-border);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--fdbg-accent-contrast);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.24);
+}
+.fdbg-toggle-danger {
+  background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
 }
 .fdbg-panel {
-  margin-top: 10px; width: min(920px, calc(100vw - 32px)); max-height: min(70vh, 720px);
-  background: var(--fdbg-panel); border: 1px solid var(--fdbg-border); border-radius: 14px;
-  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.22); display: none; overflow: hidden;
+  margin-top: 10px;
+  width: min(1080px, calc(100vw - 32px));
+  max-height: min(76vh, 820px);
+  background: var(--fdbg-panel);
+  border: 1px solid var(--fdbg-border);
+  border-radius: 14px;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.28);
+  display: none;
+  overflow: hidden;
 }
 .fdbg-root[data-open=\"1\"] .fdbg-panel { display: flex; flex-direction: column; }
-.fdbg-head { padding: 12px 14px; border-bottom: 1px solid var(--fdbg-border); display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.fdbg-head {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--fdbg-border);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
 .fdbg-title { font-size: 14px; font-weight: 700; margin: 0; }
 .fdbg-sub { color: var(--fdbg-muted); font-size: 12px; }
+.fdbg-chip-row { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.fdbg-chip { border: 1px solid var(--fdbg-border); border-radius: 999px; padding: 2px 8px; font-size: 11px; background: #f8fafc; color: #0f172a; }
 .fdbg-close { border: 1px solid var(--fdbg-border); background: #fff; border-radius: 8px; padding: 6px 8px; cursor: pointer; }
-.fdbg-tabs { display: flex; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--fdbg-border); overflow-x: auto; }
+.fdbg-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--fdbg-border);
+  overflow-x: auto;
+  background: #fcfdff;
+}
 .fdbg-tab-btn { border: 1px solid var(--fdbg-border); background: #fff; border-radius: 999px; padding: 6px 10px; font-size: 12px; cursor: pointer; white-space: nowrap; }
 .fdbg-tab-btn[aria-selected=\"true\"] { background: var(--fdbg-accent); color: var(--fdbg-accent-contrast); border-color: var(--fdbg-accent); }
 .fdbg-body { padding: 12px; overflow: auto; background: var(--fdbg-bg); }
@@ -236,21 +283,31 @@ final class DebugbarMiddleware implements MiddlewareInterface
 .fdbg-progress { height: 6px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
 .fdbg-progress > span { display: block; height: 100%; background: var(--fdbg-success); }
 .fdbg-empty { border: 1px dashed var(--fdbg-border); border-radius: 10px; padding: 14px; background: #fff; color: var(--fdbg-muted); font-size: 12px; }
+.fdbg-copy { border: 1px solid var(--fdbg-border); background: #fff; border-radius: 7px; font-size: 11px; padding: 4px 7px; cursor: pointer; }
+.fdbg-copy:active { transform: translateY(1px); }
+.fdbg-kbd { font-family: var(--f-font-mono, ui-monospace, SFMono-Regular, Menlo, monospace); font-size: 11px; border: 1px solid var(--fdbg-border); border-bottom-width: 2px; border-radius: 6px; padding: 1px 5px; background: #fff; }
 </style>
 <div class="fdbg-root" id="fdbg-root" data-open="0">
-  <button type="button" class="fdbg-toggle" data-fdbg-toggle title="Toggle debugbar (Ctrl+Shift+D)">{$this->e($badge)}</button>
+  <button type="button" class="fdbg-toggle{$toggleClass}" data-fdbg-toggle title="Toggle debugbar (Ctrl+Shift+D)">{$this->e($badge)}</button>
   <section class="fdbg-panel" role="dialog" aria-label="Finella Debugbar">
     <header class="fdbg-head">
       <div>
         <p class="fdbg-title">Finella Debugbar</p>
         <div class="fdbg-sub">{$this->e($method)} {$this->e($path)} | HTTP {$status}</div>
+        <div class="fdbg-chip-row">
+          <span class="fdbg-chip">Request: {$this->e(sprintf('%.2f ms', $requestMs))}</span>
+          <span class="fdbg-chip">SQL: {$this->e((string) count($queries))}</span>
+          <span class="fdbg-chip">Errors: {$this->e((string) $errorCount)}</span>
+          <span class="fdbg-chip">State: {$this->e($statusLabel)}</span>
+        </div>
       </div>
-      <button type="button" class="fdbg-close" data-fdbg-close>Close</button>
+      <button type="button" class="fdbg-close" data-fdbg-close>Close <span class="fdbg-kbd">Esc</span></button>
     </header>
     <nav class="fdbg-tabs">
       <button type="button" class="fdbg-tab-btn" data-fdbg-tab="summary" aria-selected="true">Summary</button>
       <button type="button" class="fdbg-tab-btn" data-fdbg-tab="queries" aria-selected="false">Queries</button>
       <button type="button" class="fdbg-tab-btn" data-fdbg-tab="timeline" aria-selected="false">Timeline</button>
+      <button type="button" class="fdbg-tab-btn" data-fdbg-tab="headers" aria-selected="false">Headers</button>
       <button type="button" class="fdbg-tab-btn" data-fdbg-tab="messages" aria-selected="false">Messages</button>
       <button type="button" class="fdbg-tab-btn" data-fdbg-tab="errors" aria-selected="false">Errors</button>
     </nav>
@@ -264,6 +321,9 @@ final class DebugbarMiddleware implements MiddlewareInterface
       <section class="fdbg-pane" data-fdbg-pane="timeline">
         {$timelineHtml}
       </section>
+      <section class="fdbg-pane" data-fdbg-pane="headers">
+        {$headersHtml}
+      </section>
       <section class="fdbg-pane" data-fdbg-pane="messages">
         {$messagesHtml}
       </section>
@@ -273,56 +333,39 @@ final class DebugbarMiddleware implements MiddlewareInterface
     </div>
   </section>
 </div>
-<script>
-(function () {
-  var root = document.getElementById('fdbg-root');
-  if (!root) return;
-  var toggle = root.querySelector('[data-fdbg-toggle]');
-  var close = root.querySelector('[data-fdbg-close]');
-  var tabs = root.querySelectorAll('[data-fdbg-tab]');
-  var panes = root.querySelectorAll('[data-fdbg-pane]');
-  var queryInput = root.querySelector('[data-fdbg-query-filter]');
-  var queryRows = root.querySelectorAll('[data-fdbg-query-row]');
-
-  function setOpen(next) { root.setAttribute('data-open', next ? '1' : '0'); }
-  function setTab(name) {
-    tabs.forEach(function (btn) {
-      var active = btn.getAttribute('data-fdbg-tab') === name;
-      btn.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-    panes.forEach(function (pane) {
-      pane.classList.toggle('is-active', pane.getAttribute('data-fdbg-pane') === name);
-    });
-  }
-
-  if (toggle) toggle.addEventListener('click', function () { setOpen(root.getAttribute('data-open') !== '1'); });
-  if (close) close.addEventListener('click', function () { setOpen(false); });
-  tabs.forEach(function (btn) {
-    btn.addEventListener('click', function () { setTab(btn.getAttribute('data-fdbg-tab')); });
-  });
-
-  if (queryInput) {
-    queryInput.addEventListener('input', function () {
-      var term = queryInput.value.trim().toLowerCase();
-      queryRows.forEach(function (row) {
-        var hay = (row.getAttribute('data-fdbg-query-text') || '').toLowerCase();
-        row.style.display = term === '' || hay.indexOf(term) !== -1 ? '' : 'none';
-      });
-    });
-  }
-
-  document.addEventListener('keydown', function (event) {
-    if (event.ctrlKey && event.shiftKey && (event.key === 'D' || event.key === 'd')) {
-      event.preventDefault();
-      setOpen(root.getAttribute('data-open') !== '1');
-    }
-    if (event.key === 'Escape') {
-      setOpen(false);
-    }
-  });
-})();
-</script>
+<script src="{$debugbarJs}" defer></script>
 HTML;
+    }
+
+    private function isAssetRequest(ServerRequestInterface $request): bool
+    {
+        $path = strtolower($request->getUri()->getPath());
+        return str_ends_with($path, self::JS_ASSET_PATH);
+    }
+
+    private function serveAsset(ServerRequestInterface $request): ResponseInterface
+    {
+        $path = strtolower($request->getUri()->getPath());
+        if (!str_ends_with($path, self::JS_ASSET_PATH)) {
+            return Response::text('Not Found', 404);
+        }
+
+        $asset = dirname(__DIR__, 2) . '/resources/debugbar.js';
+        $payload = @file_get_contents($asset);
+        if (!is_string($payload) || $payload === '') {
+            return Response::text('Debugbar asset unavailable', 404);
+        }
+
+        return new Response(200, [
+            'Content-Type' => 'application/javascript; charset=utf-8',
+            'Cache-Control' => 'public, max-age=3600',
+            'X-Content-Type-Options' => 'nosniff',
+        ], Stream::fromString($payload));
+    }
+
+    private function assetUrl(string $path): string
+    {
+        return $path . '?v=' . self::ASSET_VERSION;
     }
 
     private function renderQueries(array $queries, float $slowQueryMs, int $maxRows): string
@@ -351,14 +394,15 @@ HTML;
 
             $paramsJson = $params === [] ? '-' : $this->e((string) json_encode($params, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
             $rows[] = sprintf(
-                '<tr data-fdbg-query-row data-fdbg-query-text="%s"><td><div class="fdbg-sql">%s</div></td><td>%s %s</td><td>%d</td><td>%s</td><td><span class="fdbg-badge">%s</span></td></tr>',
+                '<tr data-fdbg-query-row data-fdbg-query-text="%s"><td><div class="fdbg-sql">%s</div></td><td>%s %s</td><td>%d</td><td>%s</td><td><span class="fdbg-badge">%s</span></td><td><button type="button" class="fdbg-copy" data-fdbg-copy="%s">Copy SQL</button></td></tr>',
                 $this->e($sql . ' ' . $paramsJson . ' ' . $source),
                 $this->e($sql === '' ? '(empty query)' : $sql),
                 $this->e(sprintf('%.2f ms', $timeMs)),
                 $slowBadge,
                 $rowCount,
                 $paramsJson,
-                $this->e($source)
+                $this->e($source),
+                $this->e($sql)
             );
             $rendered++;
         }
@@ -369,7 +413,7 @@ HTML;
 
         return '<div class="fdbg-toolbar"><input class="fdbg-input" type="search" placeholder="Filter SQL / params..." data-fdbg-query-filter></div>'
             . $truncated
-            . '<table class="fdbg-table"><thead><tr><th>SQL</th><th>Time</th><th>Rows</th><th>Params</th><th>Source</th></tr></thead><tbody>'
+            . '<table class="fdbg-table"><thead><tr><th>SQL</th><th>Time</th><th>Rows</th><th>Params</th><th>Source</th><th>Actions</th></tr></thead><tbody>'
             . implode('', $rows)
             . '</tbody></table>';
     }
@@ -470,6 +514,40 @@ HTML;
         }
 
         return '<div class="fdbg-list">' . implode('', $items) . '</div>';
+    }
+
+    private function renderHeaders(ServerRequestInterface $request, Response $response): string
+    {
+        $requestRows = [];
+        foreach ($request->getHeaders() as $name => $values) {
+            if (!is_array($values)) {
+                continue;
+            }
+            $requestRows[] = '<tr><td>' . $this->e((string) $name) . '</td><td>' . $this->e(implode(', ', $values)) . '</td></tr>';
+        }
+        if ($requestRows === []) {
+            $requestRows[] = '<tr><td colspan="2" class="fdbg-sub">No request headers.</td></tr>';
+        }
+
+        $responseRows = [];
+        foreach ($response->getHeaders() as $name => $values) {
+            if (!is_array($values)) {
+                continue;
+            }
+            $responseRows[] = '<tr><td>' . $this->e((string) $name) . '</td><td>' . $this->e(implode(', ', $values)) . '</td></tr>';
+        }
+        if ($responseRows === []) {
+            $responseRows[] = '<tr><td colspan="2" class="fdbg-sub">No response headers.</td></tr>';
+        }
+
+        return '<div class="fdbg-grid">'
+            . '<div class="fdbg-card"><p class="fdbg-card-k">Request Headers</p><table class="fdbg-table"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody>'
+            . implode('', $requestRows)
+            . '</tbody></table></div>'
+            . '<div class="fdbg-card"><p class="fdbg-card-k">Response Headers</p><table class="fdbg-table"><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody>'
+            . implode('', $responseRows)
+            . '</tbody></table></div>'
+            . '</div>';
     }
 
     private function summaryCard(string $label, string $value, string $sub): string

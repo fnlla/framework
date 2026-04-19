@@ -22,8 +22,9 @@ use Finella\Core\ServiceProvider;
  */
 final class Application extends Container
 {
-    public const VERSION = '2.5.3';
+    public const VERSION = '3.0.0';
     public const NAME_ORIGIN = 'Finella Gardens, Dundee, UK.';
+    public const TECHNICAL_SLUG = 'fnlla';
 
     private array $providers = [];
     private ConfigRepository $config;
@@ -101,7 +102,5 @@ final class Application extends Container
         }
     }
 }
-
-
 
 

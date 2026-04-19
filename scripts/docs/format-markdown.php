@@ -161,7 +161,6 @@ function collectTargets(string $root, string $scope): array
         realpath($root . '/app/resources/docs'),
         realpath($root . '/app/storage/docs'),
         realpath($root . '/documentation/build'),
-        realpath($root . '/ui/documentation'),
     ];
     $skipRoots = array_filter($skipRoots, static fn ($path): bool => is_string($path));
 

@@ -19,9 +19,7 @@ final class HomeController
             ? (new AppReadinessService())->snapshot()
             : ['status' => 'ok'];
 
-        $root = defined('APP_ROOT') ? APP_ROOT : dirname(__DIR__, 3);
-        $layoutPath = $root . '/resources/views/layouts/ui.php';
-        $layout = is_file($layoutPath) ? 'layouts/ui' : null;
+        $layout = null;
 
         $payload = [
             'statusOk' => ($status['status'] ?? '') === 'ok',

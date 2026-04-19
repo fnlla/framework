@@ -1,8 +1,7 @@
 **FINELLA DOCUMENTATION**
 
 This documentation is written in UK English. It covers the framework, the starter app, and the official packages.
-Finella is an AI-assisted (optional), modular framework with two primary products: Finella Framework and Finella UI.
-Framework is the core runtime and packages; UI is the no-build design system + Elements.
+Finella is an AI-assisted (optional), modular framework focused on the framework runtime, starter app, and optional packages.
 AI is a first-class pillar: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
 Why "AI-assisted"? Because we are building the future of AI for product teams, but we keep the promise grounded:
 autonomous insights run without providers, AI integrations are optional, and guardrails keep outputs safe and predictable.
@@ -10,7 +9,11 @@ We continue to push boundaries toward an AI-focused future while keeping AI opti
 
 Note on dependencies: Finella uses a small set of infrastructure libraries (for example, `symfony/mailer`).
 Dotenv handling is implemented by Finella itself (see `Finella\Support\Dotenv`) as internal building blocks.
-This is not a reference to external frameworks or design decisions, just a reliable vendor dependency surface for specific low-level tasks.
+
+**NAME ORIGIN AND TECHNICAL SLUG**
+**-** Product name: `Finella` (name origin: Finella Gardens, Dundee, UK).
+**-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
+**-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 
 Note: `tools/harness/` inside the monorepo is a **dev/test harness** for framework development. The starter app lives in `app/` and is wired to local packages.
 
@@ -21,7 +24,6 @@ Start with `getting-started.md` and `framework.md`. Use the developer experience
 Documentation was consolidated into fewer pages. If you are looking for older paths:
 **-** Legacy AI index is now `documentation/src/ai-integrations.md`.
 **-** Legacy deprecations index is now the Deprecations Registry in `documentation/src/operations.md`.
-**-** Legacy Finella UI docs now live in `ui/index.md` (also exposed at `/docs/ui`).
 **-** Legacy HTTP/core docs are consolidated in `documentation/src/framework.md`.
 
 **CHANGELOG (DOCS)**
@@ -29,19 +31,14 @@ Documentation was consolidated into fewer pages. If you are looking for older pa
 **-** April 2026: moved deprecations registry into `documentation/src/operations.md` with inline migration sections.
 
 **GETTING STARTED**
-For a new application, use `app/` and follow the root `README.md`.
+For framework development, use `tools/harness/` and follow the root `README.md`.
 See `getting-started.md` for the fastest path and full setup notes.
 
-**RELEASE SUMMARY (V2.5.3)**
-**-** Ops checks for admin/docs/warm-kernel readiness and `/ready` signals.
-**-** Config loader support for grouped config subdirectories (for example `config/ai/*`).
-**-** AI config stubs and tooling aligned to the grouped `config/ai/` layout.
-See `CHANGELOG.md` for the full release details.
-
-**RELEASE NOTES HIGHLIGHTS (V2.5.3)**
-**-** Ops readiness checks added for admin/docs/warm-kernel and `/ready`.
-**-** AI configuration grouped under `config/ai/` in starter, template, and harness.
-**-** Config loader supports grouped subdirectories for clearer configuration layout.
+**RELEASE SUMMARY (3.X LINE)**
+**-** Framework and official packages ship on the 3.x line.
+**-** PHP baseline is 8.5+ across framework and starter workflows.
+**-** Docs and release governance are maintained from `documentation/src/*`.
+See `CHANGELOG.md` for release-specific details.
 
 **STABILITY AND ROADMAP**
 Finella publishes a clear support policy and a public roadmap.
@@ -74,17 +71,16 @@ Finella adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` to responses by defau
 For long-running servers, you can boot once and reuse the kernel (see `framework.md` and `operations.md`).
 
 **EXAMPLE (DOCS GENERATION)**
-Generate and publish technical + user docs in one step, then review in the local docs UI:
+Generate and publish technical + user docs in one step, then review at the /docs endpoint:
 ```bash
 php bin/finella docs:generate --publish
 ```
 Open `GET /docs` for published docs.
 
 **CONTENTS**
-**-** [Getting Started](getting-started.md) - onboarding, setup, and structure conventions.
+**-** [Getting Started](getting-started.md) - setup and structure conventions.
 **-** [Framework](framework.md) - framework guide, ORM ergonomics, and caching.
 **-** [AI & Integrations](ai-integrations.md) - AI provider setup and integrations.
-**-** [Finella UI](../../ui/documentation/index.html) - UI framework, Elements, and auth provider wiring (Markdown source: `ui/index.md`).
 **-** [Operations & Governance](operations.md) - operations, releases, support, enterprise readiness, roadmap, and migrations.
 **-** [Developer Experience](developer-experience.md) - CLI, task guides, and feature index.
 **-** [Packages](packages.md) - full package catalog and ownership notes.
@@ -94,3 +90,5 @@ Package metadata lives in each package `composer.json`. Use `packages.md` for th
 
 **LICENSING**
 Finella is proprietary. See the root `LICENSE.md` and per-package LICENSE files.
+
+

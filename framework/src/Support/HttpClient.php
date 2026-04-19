@@ -204,7 +204,6 @@ final class HttpClient
             $body = curl_exec($ch);
             $error = curl_error($ch);
             $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch);
 
             if ($body === false) {
                 return [
@@ -239,7 +238,9 @@ final class HttpClient
 
         $body = @file_get_contents($url, false, $context);
         $status = 0;
-        $httpResponseHeader = $http_response_header;
+        $httpResponseHeader = function_exists('http_get_last_response_headers')
+            ? http_get_last_response_headers()
+            : ($http_response_header ?? null);
         if (is_array($httpResponseHeader)) {
             foreach ($httpResponseHeader as $line) {
                 if (preg_match('/HTTP\\/\\d+\\.\\d+\\s+(\\d+)/', $line, $matches)) {

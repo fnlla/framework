@@ -6,6 +6,8 @@
  */
 declare(strict_types=1);
 
+require dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'scripts' . DIRECTORY_SEPARATOR . 'ensure-php85.php';
+
 $finellaRoot = dirname(__DIR__, 3);
 
 $autoloadCandidates = [

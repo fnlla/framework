@@ -33,7 +33,6 @@ Generated at: 2026-04-04 20:55:10 UTC
 **-** config/monitoring/monitoring.php
 **-** config/notifications/notifications.php
 **-** config/oauth/oauth.php
-**-** config/onboarding/onboarding.php
 **-** config/pdf/pdf.php
 **-** config/performance/performance.php
 **-** config/providers/providers.php
@@ -52,7 +51,7 @@ Generated at: 2026-04-04 20:55:10 UTC
 **-** config/webmail/webmail.php
 
 **ROUTE FILES**
-**-** routes/web.php (22 route statements)
+**-** routes/web.php (20 route statements)
 
 **THIRD-PARTY PACKAGES**
 Total: 59

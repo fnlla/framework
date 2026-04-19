@@ -1,7 +1,5 @@
 **OPERATIONS & GOVERNANCE**
 
-**OPERATIONS & GOVERNANCE**
-
 This document consolidates production readiness, logging, monitoring, runbooks,
 backups, and SLA targets for Finella apps.
 
@@ -40,7 +38,7 @@ Ensure request-scoped state uses scoped services or resetters.
 Performance defaults (recommended):
 **-** `ROUTES_CACHE_ENABLED=1`
 **-** `ROUTES_CACHE_ENVS=prod,staging`
-**-** `APP_WARM_KERNEL=1` for long-running servers
+**-** `FINELLA_WARM_KERNEL=1` for long-running servers
 
 **OPERATIONS**
 **-** Run `scripts/release/release-gate.sh` before tagging releases.
@@ -363,13 +361,22 @@ App -> Performance -> Docs -> Logging -> Request logging -> Security headers -> 
 **-** If you want automatic database creation, set `DB_BOOTSTRAP=1` and fill `DB_ROOT_*`.
 **-** Use Redis in production (`CACHE_DRIVER=redis`, `QUEUE_DRIVER=redis`) and fill `REDIS_*`.
 **-** Enable route caching in prod (`ROUTES_CACHE_ENABLED=1`, `ROUTES_CACHE_ENVS=prod,staging`).
-**-** For long-running servers, set `APP_WARM_KERNEL=1`.
-**-** Protect docs with `DOCS_PUBLIC=0` and `DOCS_ACCESS_TOKEN` (or disable `DOCS_ENABLED=0`).
-**-** Keep `ADMIN_DEV_ENABLED=0` and `ADMIN_ALLOW_UNCONFIGURED=0` unless you intentionally expose `/admin` in dev.
+**-** For long-running servers, set `FINELLA_WARM_KERNEL=1`.
+**-** Protect docs with `FINELLA_DOCS_PUBLIC=0` and `FINELLA_DOCS_ACCESS_TOKEN` (or disable `FINELLA_DOCS_ENABLED=0`).
 **-** Set `CORS_ALLOWED_ORIGINS` to a comma-separated allowlist (avoid `*`).
 **-** Turn on `LOG_FORMAT=json` in staging/prod for structured logs.
 **-** If AI is enabled, set `AI_DRIVER` and `OPENAI_API_KEY`.
-**-** If Admin is enabled, set `ADMIN_LOGIN_EMAIL` and `ADMIN_LOGIN_PASSWORD` (or `ADMIN_LOGIN_PASSWORD_HASH`) and keep `ADMIN_LOGIN_REQUIRED=1`.
+**-** If Admin is enabled, set `FINELLA_ADMIN_LOGIN_EMAIL` and `FINELLA_ADMIN_LOGIN_PASSWORD_HASH`, and keep `FINELLA_ADMIN_LOGIN_REQUIRED=1`.
+
+**ENV KEY MIGRATION (LEGACY -> CURRENT)**
+**-** `APP_WARM_KERNEL` -> `FINELLA_WARM_KERNEL`
+**-** `DOCS_ENABLED` -> `FINELLA_DOCS_ENABLED`
+**-** `DOCS_PUBLIC` -> `FINELLA_DOCS_PUBLIC`
+**-** `DOCS_ACCESS_TOKEN` -> `FINELLA_DOCS_ACCESS_TOKEN`
+**-** `ADMIN_LOGIN_REQUIRED` -> `FINELLA_ADMIN_LOGIN_REQUIRED`
+**-** `ADMIN_LOGIN_EMAIL` -> `FINELLA_ADMIN_LOGIN_EMAIL`
+**-** `ADMIN_LOGIN_PASSWORD_HASH` -> `FINELLA_ADMIN_LOGIN_PASSWORD_HASH`
+**-** Legacy admin dev switches (`ADMIN_DEV_ENABLED`, `ADMIN_ALLOW_UNCONFIGURED`) are no longer used in starter config.
 
 Example prod values (adjust to your infrastructure):
 **-** `APP_ENV=prod` and `APP_DEBUG=0`.
@@ -771,7 +778,6 @@ This document defines the minimum rules to keep the Finella monorepo fast, stabl
 Applies to:
 **-** `framework/`
 **-** `packages/`
-**-** `ui/`
 **-** `tools/harness/`
 **-** `app/`
 **-** `scripts/`
@@ -780,7 +786,6 @@ Applies to:
 **-** **No cross-boundary imports.**
    **-** `app` must not import from `tools/harness`.
    **-** `packages/*` must not import from `app/`.
-   **-** `ui/` must not import from `app/`.
 **-** **One public API per package.**
    **-** Add or change API only through documented package entrypoints.
 **-** **No undocumented side effects.**
@@ -792,14 +797,13 @@ Applies to:
 **-** **Single release train.**
    **-** All `finella/*` packages move in sync with the repo release.
 **-** **Branch aliases must match release line.**
-   **-** Example: `dev-main` = `2.5.x-dev`.
+   **-** Example: `dev-main` = `3.0.x-dev`.
 **-** **Composer constraints must be aligned.**
-   **-** Apps and packages must depend on `^2.5` (or current release line).
+   **-** Apps and packages must depend on `^3.0` (or current release line).
 
 **CODE OWNERSHIP**
 **-** `framework/` is core runtime and requires highest review bar.
 **-** `packages/` must not break `app` or `tools/harness`.
-**-** `ui/` must not break `app` or `tools/harness`.
 **-** `tools/harness` is for framework development only.
 
 **HYGIENE**
@@ -810,7 +814,7 @@ Applies to:
 
 **CI MODEL (FAST + SAFE)**
 We run CI based on change scope:
-**-** **Monorepo gate** runs only when `framework/`, `packages/`, `ui/`, `tools/harness/`, or `scripts/` change.
+**-** **Monorepo gate** runs only when `framework/`, `packages/`, `tools/harness/`, or `scripts/` change.
 **-** **Starter install tests** run when `app/` or core packages change.
 **-** **Windows hygiene** runs when any tracked documentation/starter/core change.
 
@@ -833,9 +837,9 @@ Finella ships with a docs automation package (`finella/docs`). The goal is to ke
 **STORAGE MODEL**
 **-** Generated docs: `storage/docs/generated`
 **-** Manual docs: `storage/docs/manual`
-**-** Published docs (served by the docs UI): `resources/docs`
+**-** Published docs (served by `GET /docs`): `resources/docs`
 
-The Docs UI reads in this order: manual -> generated -> published. Manual docs always override generated docs of the same slug.
+The docs endpoint reads in this order: manual -> generated -> published. Manual docs always override generated docs of the same slug.
 
 **SOURCE OF TRUTH (MONOREPO)**
 In the monorepo, `documentation/src/` is the single source of truth. The starter app reads
@@ -853,7 +857,7 @@ Or via the CLI (from the starter app):
 php bin/finella docs:generate --publish --app=.
 ```
 
-**DOCS UI**
+**DOCS ENDPOINT**
 **-** Docs home: `GET /docs`
 
 **RENDERING**
@@ -904,19 +908,19 @@ return [
 ```
 
 **SECURITY NOTES**
-**-** Disable docs entirely in production: `DOCS_ENABLED=0`.
+**-** Disable docs entirely in production: `FINELLA_DOCS_ENABLED=0`.
 
 **RELEASING**
 
-This repository is a monorepo. The framework and optional modules are published as separate Composer packages. Finella UI lives in `ui/`. The dev/test harness lives in `tools/harness/`. The starter app lives in `app/` (and can be split out into a separate repo if needed).
+This repository is a monorepo. The framework and optional modules are published as separate Composer packages. The dev/test harness lives in `tools/harness/`. The starter app lives in `app/` (and can be split out into a separate repo if needed).
 
 **PRE-RELEASE CHECKLIST**
 **-** Ensure your working tree is clean.
 **-** Update `CHANGELOG.md` (root and/or package-level, if used).
 **-** Run the full quality gate locally:
-   **-** `composer validate` in `framework`, `packages/*`, `ui`, `tools/harness`
+   **-** `composer validate` in `framework`, `packages/*`, and `tools/harness`
    **-** `composer install` in `framework` and `tools/harness`
-   **-** `php -l` for `framework/src`, `packages/*/src`, and `ui/src`
+   **-** `php -l` for `framework/src` and `packages/*/src`
    **-** `composer run smoke` in `tools/harness`
 **-** Generate and review the public API snapshot diff:
    **-** `php scripts/ci/public-api-snapshot.php`
@@ -964,21 +968,18 @@ CI note:
 **-** In CI, the strict hygiene check must run before Composer cache directories are created, otherwise tags will fail.
 
 **TAGGING**
-**-** Use Semantic Versioning (SemVer): `v2.5.0`, `v2.5.1`, `v2.6.0`, etc.
+**-** Use Semantic Versioning (SemVer): `v3.0.0`, `v3.0.1`, `v3.1.0`, etc.
 **-** Tag the monorepo after all checks pass:
-  **-** `git tag v2.5.0`
-  **-** `git push origin v2.5.0`
+  **-** `git tag v3.0.0`
+  **-** `git push origin v3.0.0`
 
 **PACKAGE RELEASE PIPELINE (STANDARD)**
 Finella publishes the framework and official packages together on the same version line.
 This keeps package compatibility predictable and simplifies dependency graphs.
 
-Exception: Finella UI has its own release line and changelog (`ui/CHANGELOG.md`)
-so UI iterations can ship independently of core framework releases.
-
 Standard steps:
 **-** Update `CHANGELOG.md` and package docs.
-**-** Ensure all packages require the same `finella/framework` version (e.g. `^2.5`).
+**-** Ensure all packages require the same `finella/framework` version (e.g. `^3.0`).
 **-** Run `php scripts/smoke/run-smoke-tests.php` and app smoke tests.
 **-** Tag the monorepo with `vX.Y.Z`.
 **-** If packages are mirrored to separate repositories, tag each with the same `vX.Y.Z`.
@@ -991,20 +992,20 @@ release notes manually from PowerShell.
 
 Use:
 ```bash
-php scripts/release/publish-release.php --version 2.5.0
+php scripts/release/publish-release.php --version 3.0.0
 ```
 
 Starter shortcut (from `app/`):
 ```bash
 composer run release:notes:check
-composer run release:notes:publish -- --version 2.5.0
+composer run release:notes:publish -- --version 3.0.0
 composer run release:notes:sync
 ```
 
 What it does:
-**-** extracts notes from `CHANGELOG.md` section `## [2.5.0]`
+**-** extracts notes from `CHANGELOG.md` section `## [3.0.0]`
 **-** validates notes for control/replacement characters
-**-** creates or updates GitHub release `v2.5.0` with a UTF-8 notes file
+**-** creates or updates GitHub release `v3.0.0` with a UTF-8 notes file
 
 Required release notes structure:
 **-** `### Highlights`
@@ -1027,7 +1028,7 @@ php scripts/release/check-release-notes-format.php
 
 Backfill/sync release descriptions on GitHub from `CHANGELOG.md`:
 ```bash
-php scripts/release/sync-release-notes.php --version 2.5.0
+php scripts/release/sync-release-notes.php --version 3.0.0
 # or all releases:
 php scripts/release/sync-release-notes.php
 ```
@@ -1055,22 +1056,22 @@ composer run lint:github
 If you split packages into separate release repositories (e.g. via subtree/subsplit), tag each package repository with the same version.
 
 **BRANCH ALIASES**
-For Composer compatibility during development, keep branch aliases aligned with the 2.x line:
+For Composer compatibility during development, keep branch aliases aligned with the 3.x line:
 **-** In each published `composer.json` add:
-  **-** `"extra": { "branch-alias": { "dev-main": "2.5.x-dev" } }`
-**-** This keeps `dev-main` compatible with `^2.5` constraints.
+  **-** `"extra": { "branch-alias": { "dev-main": "3.0.x-dev" } }`
+**-** This keeps `dev-main` compatible with `^3.0` constraints.
 
 **HOTFIXES**
-**-** Hotfix releases are patch versions: `v2.5.1`, `v2.5.2`, etc.
+**-** Hotfix releases are patch versions: `v3.0.1`, `v3.0.2`, etc.
 **-** Only bug fixes and security patches are allowed in hotfixes.
 **-** Process:
   **-** Cherry-pick fix onto the release branch (if used) or main.
   **-** Update `CHANGELOG.md` under the target version.
   **-** Run the full quality gate.
-  **-** Tag `v2.5.x` and publish.
+  **-** Tag `v3.0.x` and publish.
 
 **BACKWARDS COMPATIBILITY (BC) POLICY**
-**-** **2.x is stable.** Public API changes must be backwards compatible.
+**-** **3.x is stable.** Public API changes must be backwards compatible.
 **-** **Patch**: bug fixes only, no API changes.
 **-** **Minor**: new features and deprecations, no breaking changes.
 **-** **Major**: breaking changes (3.0+).
@@ -1112,29 +1113,29 @@ API packages and their docs.
 **-** Verify routes and configs load without errors.
 **-** Confirm docs appear in the starter docs index.
 
-**RELEASE CHECKLIST (2.X)**
+**RELEASE CHECKLIST (3.X)**
 **-** Confirm no build artefacts are tracked:
    **-** no `vendor/`
    **-** no `.composer-cache/` or `.composer-home/`
    **-** no generated caches committed
-**-** Ensure branch aliases match `2.5.x-dev` across packages.
+**-** Ensure branch aliases match `3.0.x-dev` across packages.
 **-** Update `CHANGELOG.md` and the release docs if needed.
 **-** Run CI-equivalent checks locally (validate, install, lint, smoke).
 **-** Tag and push `vX.Y.Z`.
 **-** Validate `app` install and boot the app locally.
 
-**V2.5.0 CHECKLIST**
-**-** Confirm all official packages require `finella/framework:^2.5`.
+**v3.0.0 CHECKLIST**
+**-** Confirm all official packages require `finella/framework:^3.0`.
 **-** Ensure `finella/standard` includes framework + ops + rbac + settings + audit + deploy and `debugbar` is dev-only.
 **-** Verify starter app boots with secure defaults (CSRF, headers, rate limit).
 **-** Verify ORM v1 docs + smoke tests cover migrations, relations, and seeding flow.
 **-** Run full quality gate locally (validate/install/lint/smoke).
 **-** Ensure no build artefacts are tracked (`vendor/`, caches).
-**-** Tag `v2.5.0` and push.
+**-** Tag `v3.0.0` and push.
 **-** Run `app` install and boot the app (`composer run dev` or `php -S localhost:8000 -t public`).
 
-**API SNAPSHOT GATE (REQUIRED FOR V2.X)**
-This repo uses a lightweight public API snapshot to prevent breaking changes in 2.x.
+**API SNAPSHOT GATE (REQUIRED FOR V3.X)**
+This repo uses a lightweight public API snapshot to prevent breaking changes in 3.x.
 
 **PRS (INFORMATIONAL)**
 On pull requests, CI generates the snapshot and prints a diff. It does **not** fail the build.
@@ -1163,15 +1164,13 @@ This document consolidates SemVer, API stability, and deprecation policy.
 Finella follows SemVer. Breaking changes only in major releases.
 
 **PACKAGE RELEASE LINES**
-Core packages follow the framework release cadence, but some products can ship
-independently. Finella UI has its own SemVer line and changelog so design
-changes can move faster without forcing framework upgrades.
+Core packages follow the framework release cadence to keep compatibility predictable.
 
 **API STABILITY**
-The 2.x line is stable. Public APIs are documented and maintained.
+The 3.x line is stable. Public APIs are documented and maintained.
 
 **STABILITY LEVELS**
-**-** **Stable**: documented in `documentation/src/`, backwards compatible within 2.x.
+**-** **Stable**: documented in `documentation/src/`, backwards compatible within 3.x.
 **-** **Experimental**: available but subject to change in minor releases.
 **-** **Internal**: not part of the public API, may change anytime.
 
@@ -1218,7 +1217,7 @@ This keeps the developer workflow simple:
 Private Packagist is the quickest way to host private Composer packages with
 access control.
 
-**-** Publish each package (`finella/ui`, `finella/ai`, etc.).
+**-** Publish each package (`finella/ai`, `finella/ops`, etc.).
 **-** Add the registry credentials to your environment.
 **-** Require packages as usual in `composer.json`.
 
@@ -1226,7 +1225,6 @@ Example `composer.json`:
 ```json
 {
   "require": {
-    "finella/ui": "^1.0",
     "finella/ai": "^1.0"
   }
 }
@@ -1246,7 +1244,6 @@ Example `satis.json`:
   "name": "Finella Registry",
   "homepage": "https://packages.example.com",
   "repositories": [
-    {"type": "vcs", "url": "git@github.com:techayo/ui.git"},
     {"type": "vcs", "url": "git@github.com:techayo/finella-ai.git"}
   ],
   "require-all": true
@@ -1276,7 +1273,7 @@ Example `composer.json`:
     {"type": "composer", "url": "https://composer.pkg.github.com/techayo"}
   ],
   "require": {
-    "finella/ui": "^1.0"
+    "finella/ai": "^1.0"
   }
 }
 ```
@@ -1302,7 +1299,7 @@ That will download the entire Finella package set without needing access to the
 monorepo root.
 
 **NOTES**
-**-** Keep package versions aligned (use tags like `v1.2.0`).
+**-** Keep package versions aligned (use tags like `v3.0.0`).
 
 **PACKAGES**
 
@@ -1317,7 +1314,6 @@ The `packages/` directory contains optional modules for the Finella ecosystem. E
 **-** `finella/webmail` - webmail backend API (IMAP/SMTP integration).
 **-** `finella/pdf` - HTML-to-PDF rendering (Dompdf) with template helpers.
 **-** `finella/docs` - docs automation helpers.
-**-** `finella/ui` - UI grid, components, and templates.
 **-** `finella/storage` - local storage and image pipeline helpers.
 **-** `finella/content` - content repository helpers (JSON/Markdown).
 **-** `finella/seo` - SEO helpers (meta, OpenGraph, JSON-LD).
@@ -1345,7 +1341,7 @@ as private Composer packages and point the starter app at your registry.
 See the Private Registry section below for the recommended setup.
 
 **VERSIONING**
-**-** Packages are compatible with `finella/framework ^2.5`.
+**-** Packages are compatible with `finella/framework ^3.0`.
 **-** Minor and patch releases follow SemVer rules.
 
 **AUTO-DISCOVERY**
@@ -1357,7 +1353,7 @@ This policy defines the support windows for Finella framework and official packa
 Effective date: 5 April 2026.
 
 **RELEASE LINES**
-**-** Standard line: regular minor releases (for example 2.6.x).
+**-** Standard line: regular minor releases (for example 3.1.x).
 **-** Finella does not designate an LTS line at this time.
 
 **SUPPORT WINDOWS**
@@ -1495,7 +1491,7 @@ This document defines the recommended distribution model for Finella when you wa
 **-** **Public core**: available to everyone via Packagist (or a public Composer registry).
 **-** **Private pro modules**: available only to licensed teams via a private registry.
 
-This keeps onboarding friction low while protecting the competitive advantage.
+This keeps adoption friction low while protecting the competitive advantage.
 
 **PUBLIC CORE PACKAGES (RECOMMENDED)**
 These packages are safe to expose publicly and form the base developer experience:
@@ -1516,7 +1512,6 @@ Starter app: shipped in the monorepo at `app/` (not a Composer package).
 **PRIVATE PRO MODULES (RECOMMENDED)**
 These are the differentiated, high-value modules you may want to keep private:
 **-** `finella/ai`
-**-** `finella/ui`
 **-** `finella/analytics`
 **-** `finella/content`
 **-** `finella/seo`
@@ -1564,8 +1559,7 @@ Example (private registry entry in app `composer.json`):
 **DEVELOPER WORKFLOW (FOR USERS)**
 Public core install:
 ```bash
-git clone https://github.com/kordyaczny/finella.git finella
-cp -R finella/app myapp
+git clone https://github.com/fnlla/fnlla.git myapp
 cd myapp
 composer install
 ```
@@ -1588,7 +1582,7 @@ If the core is public while pro modules are private, clearly state:
 
 **DEPRECATIONS REGISTRY**
 
-This registry tracks all deprecated APIs that remain available in the 2.x line.
+This registry tracks all deprecated APIs that remain available in the 3.x line.
 Each entry must match a PHPDoc tag in code: `@deprecated [DEP-YYYY-NN] ...`.
 
 **ACTIVE DEPRECATIONS**
@@ -1697,7 +1691,7 @@ This roadmap is directional and may evolve as feedback lands. Items are grouped 
 **-** Migration guides for Laravel and Symfony teams.
 **-** Improve the default "common stack" guidance for new apps.
 **-** Strengthen AI governance docs and boundaries (already in progress).
-**-** Debugbar v2 UI/UX aligned with Finella UI tokens (summary cards, query filters, timeline tab, slow-query highlighting).
+**-** Debugbar v2 UX polish (summary cards, query filters, timeline tab, slow-query highlighting).
 **-** Ship standard-stack integrations for S3, Stripe, and Sentry.
 **-** Certified integrations (P0): search, OAuth/SSO, monitoring, cache/CDN, Sentry, Stripe, S3.
 **-** Blueprint generators (P0): crm, school, crm-school, saas, commerce, marketplace, erp, healthcare, real-estate, logistics.
@@ -1770,3 +1764,4 @@ requirements, contracts, and the specific jurisdiction.
 **-** Change log maintained with release notes.
 **-** Deprecations documented with migration notes.
 **-** Support policy acknowledged for the deployment line.
+
