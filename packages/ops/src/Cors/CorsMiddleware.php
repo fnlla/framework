@@ -136,7 +136,7 @@ final class CorsMiddleware implements MiddlewareInterface
             $headers['Access-Control-Max-Age'] = (string) $maxAge;
         }
         if ($allowOrigin !== '*') {
-            $headers['Vary'] = $this->mergeVary($headers['Vary'] ?? '', ['Origin']);
+            $headers['Vary'] = $this->mergeVary('', ['Origin']);
         }
 
         return $headers;

@@ -90,5 +90,3 @@ Package metadata lives in each package `composer.json`. Use `packages.md` for th
 
 **LICENSING**
 Finella is proprietary. See the root `LICENSE.md` and per-package LICENSE files.
-
-
