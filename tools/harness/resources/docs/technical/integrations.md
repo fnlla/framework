@@ -1,7 +1,5 @@
 # Integrations & Environment
 
-Generated at: 2026-04-19 21:09:37 UTC
-
 ## ADMIN
 - ADMIN_ALLOW_UNCONFIGURED
 - ADMIN_AUTH_ALLOW_AUTH

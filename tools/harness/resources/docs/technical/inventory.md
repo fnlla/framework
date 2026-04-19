@@ -1,7 +1,5 @@
 # Technical Inventory
 
-Generated at: 2026-04-19 21:09:37 UTC
-
 ## Config Files
 - config/ai/ai.php
 - config/ai/policy.php

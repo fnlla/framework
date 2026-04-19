@@ -1,7 +1,5 @@
 # User Guide (Draft)
 
-Generated at: 2026-04-19 21:09:37 UTC
-
 ## Purpose
 Describe what finella does for end users.
 

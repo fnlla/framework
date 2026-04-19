@@ -316,8 +316,6 @@ final class DocsManager
         $lines = [];
         $lines[] = '# Technical Overview';
         $lines[] = '';
-        $lines[] = 'Generated at: ' . $timestamp;
-        $lines[] = '';
         $lines[] = '## Application';
         $lines[] = '- Name: ' . $this->value($app['name'] ?? '');
         $lines[] = '- Environment: ' . $this->value($app['env'] ?? '');
@@ -349,8 +347,6 @@ final class DocsManager
         $lines = [];
         $lines[] = '# Technical Inventory';
         $lines[] = '';
-        $lines[] = 'Generated at: ' . $timestamp;
-        $lines[] = '';
         $lines[] = '## Config Files';
         $lines[] = $this->renderList($config, '- No config files detected.');
         $lines[] = '';
@@ -379,8 +375,6 @@ final class DocsManager
         $lines = [];
         $lines[] = '# Integrations & Environment';
         $lines[] = '';
-        $lines[] = 'Generated at: ' . $timestamp;
-        $lines[] = '';
         if ($env === []) {
             $lines[] = 'No environment keys detected (missing `.env.example`).';
             return implode("\n", $lines) . "\n";
@@ -401,8 +395,6 @@ final class DocsManager
 
         $lines = [];
         $lines[] = '# User Guide (Draft)';
-        $lines[] = '';
-        $lines[] = 'Generated at: ' . $timestamp;
         $lines[] = '';
         $lines[] = '## Purpose';
         $lines[] = 'Describe what ' . $appName . ' does for end users.';
@@ -428,8 +420,6 @@ final class DocsManager
     {
         $lines = [];
         $lines[] = '# User FAQ (Draft)';
-        $lines[] = '';
-        $lines[] = 'Generated at: ' . $timestamp;
         $lines[] = '';
         $lines[] = '## Common Questions';
         $lines[] = '- How do I reset my password?';
@@ -557,5 +547,4 @@ final class DocsManager
         return $value === '' ? '-' : $value;
     }
 }
-
 

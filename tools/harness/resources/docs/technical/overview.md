@@ -1,7 +1,5 @@
 # Technical Overview
 
-Generated at: 2026-04-19 21:09:37 UTC
-
 ## Application
 - Name: finella
 - Environment: local
