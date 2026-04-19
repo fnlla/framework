@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-04-05T22:12:45+00:00",
+    "generated_at": "2026-04-19T21:05:49+00:00",
     "classes": {
         "Finella\\Auth\\AuthManager": {
             "type": "class",
@@ -625,6 +625,7 @@
         "Finella\\Contracts\\Http\\KernelInterface": {
             "type": "interface",
             "methods": [
+                "boot",
                 "handle"
             ]
         },
