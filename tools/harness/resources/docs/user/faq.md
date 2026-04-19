@@ -1,7 +1,5 @@
 # User FAQ (Draft)
 
-Generated at: 2026-04-19 21:09:37 UTC
-
 ## Common Questions
 - How do I reset my password?
 - Where do I find my invoices?
