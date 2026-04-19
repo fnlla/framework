@@ -136,6 +136,7 @@ Returns `200` when dependencies are ready, and `503` otherwise.
 **-** Framework guide: `documentation/src/framework.md`
 **-** Packages catalog: `documentation/src/packages.md`
 **-** Operations & governance: `documentation/src/operations.md`
+**-** Enterprise go-live checklist: `framework/docs/enterprise-go-live-checklist.md`
 **-** AI integrations: `documentation/src/ai-integrations.md`
 **-** Developer experience: `documentation/src/developer-experience.md`
 **-** Full index: `documentation/src/index.md`

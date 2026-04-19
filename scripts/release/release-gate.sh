@@ -72,6 +72,10 @@ check_markdown_format() {
   php scripts/docs/format-markdown.php --check --scope github --profile release
 }
 
+check_enterprise_readiness() {
+  php scripts/ci/check-enterprise-readiness.php --strict
+}
+
 validate_composer() {
   for dir in framework packages/* tools/harness; do
     if [ ! -f "$dir/composer.json" ]; then
@@ -167,6 +171,7 @@ run_hygiene
 check_third_party_notices
 check_release_notes_format
 check_markdown_format
+check_enterprise_readiness
 validate_composer
 audit_composer
 lint_php

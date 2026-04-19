@@ -28,6 +28,7 @@ Optional packages add specialised capabilities such as queue, scheduler, mail, o
 **-** `providers.md`
 **-** `extensions.md`
 **-** `deployment-vps.md`
+**-** `enterprise-go-live-checklist.md`
 **-** `directory-structure.md`
 **-** `upgrading.md`
 **-** `faq.md`

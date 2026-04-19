@@ -98,6 +98,9 @@
     "finella:check": [
       "@smoke"
     ],
+    "enterprise:check": [
+      "@php ../../scripts/ci/check-enterprise-readiness.php --strict"
+    ],
     "post-install-cmd": [
       "@php bin/finella-discover"
     ],
