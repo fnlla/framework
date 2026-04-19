@@ -301,7 +301,7 @@ final class DocsMarkdownParser
         }
 
         if (preg_match('/^([a-z][a-z0-9+.-]*)\s*:/i', $target, $matches) === 1) {
-            $scheme = strtolower(trim((string) ($matches[1] ?? '')));
+            $scheme = strtolower(trim($matches[1]));
             if (!in_array($scheme, ['http', 'https', 'mailto'], true)) {
                 return null;
             }

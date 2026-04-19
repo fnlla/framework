@@ -18,5 +18,3 @@ Describe what finella does for end users.
 
 **SUPPORT**
 **-** Where users should report problems.
-
-

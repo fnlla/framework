@@ -19,16 +19,12 @@ final class HomeController
             ? (new AppReadinessService())->snapshot()
             : ['status' => 'ok'];
 
-        $layout = null;
-
         $payload = [
             'statusOk' => ($status['status'] ?? '') === 'ok',
             'readyOk' => ($ready['status'] ?? '') === 'ok',
             'healthOk' => ($status['status'] ?? '') === 'ok',
         ];
 
-        return $layout === null
-            ? view('pages/home', $payload)
-            : view('pages/home', $payload, $layout);
+        return view('pages/home', $payload);
     }
 }

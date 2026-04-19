@@ -1,6 +1,6 @@
 # User FAQ (Draft)
 
-Generated at: 2026-04-19 20:11:47 UTC
+Generated at: 2026-04-19 20:53:10 UTC
 
 ## Common Questions
 - How do I reset my password?

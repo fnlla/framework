@@ -167,11 +167,11 @@ final class ExceptionHandler
             'errors' => $extensions['errors'] ?? [],
         ];
         if (isset($extensions['debug']) && is_array($extensions['debug'])) {
-            $payload['exception'] = $extensions['debug']['exception'] ?? '';
-            $payload['exception_message'] = $extensions['debug']['message'] ?? '';
-            $payload['file'] = $extensions['debug']['file'] ?? '';
-            $payload['line'] = $extensions['debug']['line'] ?? '';
-            $payload['trace'] = $extensions['debug']['trace'] ?? [];
+            $payload['exception'] = $extensions['debug']['exception'];
+            $payload['exception_message'] = $extensions['debug']['message'];
+            $payload['file'] = $extensions['debug']['file'];
+            $payload['line'] = $extensions['debug']['line'];
+            $payload['trace'] = $extensions['debug']['trace'];
         }
 
         return Response::html($this->renderHtml($payload, $status), $status);
@@ -407,7 +407,6 @@ final class ExceptionHandler
     }
 
 }
-
 
 
 

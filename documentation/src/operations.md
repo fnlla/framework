@@ -1124,7 +1124,7 @@ API packages and their docs.
 **-** Tag and push `vX.Y.Z`.
 **-** Validate `app` install and boot the app locally.
 
-**v3.0.0 CHECKLIST**
+**V3.0.0 CHECKLIST**
 **-** Confirm all official packages require `finella/framework:^3.0`.
 **-** Ensure `finella/standard` includes framework + ops + rbac + settings + audit + deploy and `debugbar` is dev-only.
 **-** Verify starter app boots with secure defaults (CSRF, headers, rate limit).
@@ -1764,4 +1764,3 @@ requirements, contracts, and the specific jurisdiction.
 **-** Change log maintained with release notes.
 **-** Deprecations documented with migration notes.
 **-** Support policy acknowledged for the deployment line.
-
