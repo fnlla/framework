@@ -16,6 +16,12 @@ if (!function_exists('finella_ensure_php85_runtime')) {
             return;
         }
 
+        // CI runners frequently provide latest patch-level PHP (8.5.x) rather than exactly 8.5.5.
+        // Keep local/dev strict pinning, but allow any 8.5.x runtime in CI pipelines.
+        if (finella_is_ci_environment() && PHP_VERSION_ID >= 80500 && PHP_VERSION_ID < 80600) {
+            return;
+        }
+
         if (PHP_VERSION_ID === FINELLA_REQUIRED_PHP_VERSION_ID) {
             return;
         }
@@ -181,6 +187,17 @@ if (!function_exists('finella_ensure_php85_runtime')) {
         }
 
         return (int) $output;
+    }
+
+    function finella_is_ci_environment(): bool
+    {
+        $ci = getenv('CI');
+        if (!is_string($ci) || $ci === '') {
+            return false;
+        }
+
+        $normalized = strtolower(trim($ci));
+        return $normalized === '1' || $normalized === 'true' || $normalized === 'yes';
     }
 
     function finella_php85_guard_fail(string $message): void
