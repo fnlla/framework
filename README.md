@@ -42,7 +42,7 @@ Because it is the fastest path to reliable, enterprise web delivery with a low b
 
 **STABILITY AND SUPPORT**
 **-** Support policy: `documentation/src/operations.md`.
-**-** Current supported line: 3.x.
+**-** Current supported line: 3.0.x (active support until 2027-04-30, security-only until 2028-04-30).
 **-** SemVer + deprecation policy (breaking changes only in major versions).
 **-** Deprecations registry + migration notes: `documentation/src/operations.md`.
 
