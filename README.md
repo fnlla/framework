@@ -1,7 +1,7 @@
 **FINELLA**
 
 [![Developed by TechAyo](https://img.shields.io/badge/Developed%20by-TechAyo-f59e0b?style=flat-square&labelColor=f97316&color=facc15)](https://techayo.co.uk)
-[![Latest Release](https://img.shields.io/github/v/release/fnlla/framework?display_name=release&sort=semver&style=flat-square&label=Latest%20Release&labelColor=0ea5e9&color=22c55e)](https://github.com/fnlla/framework/releases)
+[![Latest Release](https://img.shields.io/badge/Latest%20Release-3.0.2-22c55e?style=flat-square&labelColor=0ea5e9)](https://github.com/fnlla/framework/releases)
 
 Finella is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.co.uk). The core framework runs fully without AI. AI is a first-class, opt-in layer: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
 
