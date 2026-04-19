@@ -1,6 +1,6 @@
-# Routing
+**ROUTING**
 
-## Defining routes
+**DEFINING ROUTES**
 ```php
 use Finella\Http\Router;
 use Finella\Http\Response;
@@ -12,7 +12,7 @@ return static function (Router $router): void {
 };
 ```
 
-## Route parameters
+**ROUTE PARAMETERS**
 ```php
 $router->get('/users/{id}', function ($request): Response {
     return Response::text('User ' . $request->getAttribute('id'));
@@ -20,20 +20,20 @@ $router->get('/users/{id}', function ($request): Response {
 ```
 You can constrain parameters with regex: `{id:\\d+}`.
 
-## Named routes
+**NAMED ROUTES**
 ```php
 $router->get('/users/{id}', [UserController::class, 'show'], 'users.show');
 $url = $router->url('users.show', ['id' => 10]);
 ```
 
-## Controllers
+**CONTROLLERS**
 Handlers can be closures, arrays, or `Controller@method` strings:
 ```php
 $router->get('/dashboard', [DashboardController::class, 'index']);
 $router->get('/account', 'AccountController@index');
 ```
 
-## Middleware groups
+**MIDDLEWARE GROUPS**
 ```php
 $router->middlewareGroup('web', [
     \Finella\Csrf\CsrfMiddleware::class,
@@ -42,11 +42,11 @@ $router->middlewareGroup('web', [
 ```
 Requires the core CSRF module and `finella/ops`.
 
-## 404 / 405 behaviour
-- No matching path -> 404
-- Path matches but method does not -> 405
+**404 / 405 BEHAVIOUR**
+**-** No matching path -> 404
+**-** Path matches but method does not -> 405
 
-## DI in handlers
+**DI IN HANDLERS**
 If the container is available, handlers are called via `container->call()`:
 ```php
 use Finella\Http\Request;
@@ -57,7 +57,7 @@ $router->get('/agent', function (Request $request): Response {
 });
 ```
 
-## Route caching
+**ROUTE CACHING**
 Routes can be cached to `storage/cache/routes.php`. Only controller strings/arrays are cacheable; closures are not.
 Routes cache is intended for production and is skipped when `APP_DEBUG=true` or `APP_ENV=local`.
 Compile routes with `Finella\Http\RouteCacheCompiler` or `routes:cache`.

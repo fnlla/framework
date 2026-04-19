@@ -1,12 +1,12 @@
-# Extensions
+**EXTENSIONS**
 
 Extensions are Composer packages that integrate with Finella via service providers.
 
-## Creating a package
-1. Create a Composer package.
-2. Add PSR-4 autoloading for your namespace.
-3. Implement a service provider extending `Finella\Support\ServiceProvider`.
-4. Add providers to `extra.finella.providers`.
+**CREATING A PACKAGE**
+**-** Create a Composer package.
+**-** Add PSR-4 autoloading for your namespace.
+**-** Implement a service provider extending `Finella\Support\ServiceProvider`.
+**-** Add providers to `extra.finella.providers`.
 
 Example `composer.json`:
 ```json
@@ -32,5 +32,5 @@ Example `composer.json`:
 }
 ```
 
-## Versioning
+**VERSIONING**
 Follow SemVer and keep compatibility with the framework major version.

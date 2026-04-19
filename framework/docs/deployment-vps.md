@@ -1,19 +1,19 @@
-# Deployment (VPS)
+**DEPLOYMENT (VPS)**
 
-## DocumentRoot
+**DOCUMENTROOT**
 Set the web server DocumentRoot to `public/`.
 
-## Install dependencies
+**INSTALL DEPENDENCIES**
 ```bash
 composer install --no-dev --optimize-autoloader
 ```
 
-## Permissions
+**PERMISSIONS**
 Ensure the following directories are writable by the web server user:
-- `storage/`
-- `bootstrap/cache/`
+**-** `storage/`
+**-** `bootstrap/cache/`
 
-## Nginx example
+**NGINX EXAMPLE**
 ```nginx
 server {
     listen 80;
@@ -32,9 +32,9 @@ server {
 }
 ```
 
-## Environment
-- `APP_ENV=prod`
-- `APP_DEBUG=0`
+**ENVIRONMENT**
+**-** `APP_ENV=prod`
+**-** `APP_DEBUG=0`
 
-## Restart services
+**RESTART SERVICES**
 Restart PHP-FPM/Nginx after deploy if needed.

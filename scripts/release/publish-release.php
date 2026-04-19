@@ -159,13 +159,16 @@ function normalizeText(string $content): string
 
 function extractReleaseNotes(string $changelog, string $version): ?string
 {
-    $pattern = '/^## \[' . preg_quote($version, '/') . '\][^\n]*\n(?P<body>[\s\S]*?)(?=^## \[|\z)/m';
-    if (preg_match($pattern, $changelog, $matches) !== 1) {
-        return null;
+    $sections = parseReleaseSections($changelog);
+    foreach ($sections as $section) {
+        if (($section['version'] ?? '') !== $version) {
+            continue;
+        }
+        $body = trim((string) ($section['body'] ?? ''));
+        return $body !== '' ? $body : null;
     }
 
-    $body = trim((string) ($matches['body'] ?? ''));
-    return $body !== '' ? $body : null;
+    return null;
 }
 
 function validateReleaseNotes(string $notes): void
@@ -319,6 +322,61 @@ function commandSucceeds(string $command): bool
     return $exitCode === 0;
 }
 
+/**
+ * @return list<array{version:string,body:string}>
+ */
+function parseReleaseSections(string $changelog): array
+{
+    $sections = [];
+    $lines = explode("\n", normalizeText($changelog));
+    $currentVersion = null;
+    $currentBody = [];
+
+    foreach ($lines as $line) {
+        $version = extractReleaseVersion($line);
+        if ($version !== null) {
+            if ($currentVersion !== null) {
+                $sections[] = [
+                    'version' => ltrim($currentVersion, 'vV'),
+                    'body' => trim(implode("\n", $currentBody)),
+                ];
+            }
+            $currentVersion = $version;
+            $currentBody = [];
+            continue;
+        }
+
+        if ($currentVersion !== null) {
+            $currentBody[] = $line;
+        }
+    }
+
+    if ($currentVersion !== null) {
+        $sections[] = [
+            'version' => ltrim($currentVersion, 'vV'),
+            'body' => trim(implode("\n", $currentBody)),
+        ];
+    }
+
+    return $sections;
+}
+
+function extractReleaseVersion(string $line): ?string
+{
+    $trimmed = trim($line);
+    if (preg_match('/^##\s+\[([^\]]+)\][^\n]*$/', $trimmed, $match) === 1) {
+        $value = trim((string) ($match[1] ?? ''));
+        return $value !== '' ? $value : null;
+    }
+
+    if (preg_match('/^\*\*\[([^\]]+)\][^*]*\*\*$/', $trimmed, $match) === 1) {
+        $value = trim((string) ($match[1] ?? ''));
+        return $value !== '' ? $value : null;
+    }
+
+    return null;
+}
+
 function passthruWithExitCode(string $command): int
 {
     passthru($command, $exitCode);
@@ -348,5 +406,4 @@ function runQuiet(string $command): int
 
     return (int) proc_close($process);
 }
-
 

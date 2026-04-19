@@ -1,19 +1,19 @@
-# Requests and Responses
+**REQUESTS AND RESPONSES**
 
-## Request
+**REQUEST**
 Create a request from globals:
 ```php
 $request = \Finella\Http\Request::fromGlobals();
 ```
 
 Access data:
-- Query: `$request->getQueryParams()`
-- Post body: `$request->getParsedBody()`
-- Headers: `$request->getHeaderLine('User-Agent')`
-- Cookies: `$request->getCookieParams()`
-- Files: `$request->getUploadedFiles()`
+**-** Query: `$request->getQueryParams()`
+**-** Post body: `$request->getParsedBody()`
+**-** Headers: `$request->getHeaderLine('User-Agent')`
+**-** Cookies: `$request->getCookieParams()`
+**-** Files: `$request->getUploadedFiles()`
 
-## Response
+**RESPONSE**
 Create a response:
 ```php
 use Finella\Http\Response;
@@ -22,15 +22,15 @@ return Response::json(['ok' => true]);
 ```
 
 Helpers:
-- `Response::html($html, $status = 200)`
-- `Response::json($data, $status = 200)`
-- `Response::text($text, $status = 200)`
-- `Response::redirect($url, $status = 302)`
+**-** `Response::html($html, $status = 200)`
+**-** `Response::json($data, $status = 200)`
+**-** `Response::text($text, $status = 200)`
+**-** `Response::redirect($url, $status = 302)`
 
-## Streaming
+**STREAMING**
 Use `Response::stream()` or `Response::file()` for large payloads.
 
-## Headers and status
+**HEADERS AND STATUS**
 ```php
 $response = Response::html('OK')
     ->withHeader('X-App', 'Finella')

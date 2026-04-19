@@ -1,22 +1,23 @@
-## [X.Y.Z] - YYYY-MM-DD
-### Highlights
-- One-line summary of the release outcome.
-- One-line summary of the highest-impact change.
+**[X.Y.Z] - YYYY-MM-DD**
 
-### Added
-- New features, packages, commands, or docs added in this release.
+**HIGHLIGHTS**
+**-** One-line summary of the release outcome.
+**-** One-line summary of the highest-impact change.
 
-### Changed
-- Behavior, defaults, workflow, or compatibility changes.
+**ADDED**
+**-** New features, packages, commands, or docs added in this release.
 
-### Deprecated
-- Deprecated APIs/features and migration hints.
+**CHANGED**
+**-** Behavior, defaults, workflow, or compatibility changes.
 
-### Removed
-- Removed features/packages/paths.
+**DEPRECATED**
+**-** Deprecated APIs/features and migration hints.
 
-### Fixed
-- Bug fixes and regression fixes.
+**REMOVED**
+**-** Removed features/packages/paths.
 
-### Security
-- Security-relevant hardening, policy, or vulnerability fixes.
+**FIXED**
+**-** Bug fixes and regression fixes.
+
+**SECURITY**
+**-** Security-relevant hardening, policy, or vulnerability fixes.

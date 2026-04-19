@@ -145,21 +145,56 @@ function normalizeText(string $content): string
 function parseReleaseNotes(string $changelog): array
 {
     $notes = [];
-    $pattern = '/^## \[(?P<version>[^\]]+)\][^\n]*\n(?P<body>[\s\S]*?)(?=^## \[|\z)/m';
-    if (preg_match_all($pattern, $changelog, $matches, PREG_SET_ORDER) !== false) {
-        foreach ($matches as $match) {
-            $version = trim((string) ($match['version'] ?? ''));
-            if ($version === '' || strtolower($version) === 'unreleased') {
-                continue;
+
+    $lines = explode("\n", $changelog);
+    $currentVersion = null;
+    $currentBody = [];
+
+    foreach ($lines as $line) {
+        $version = extractReleaseVersion($line);
+        if ($version !== null) {
+            if ($currentVersion !== null) {
+                $normalizedVersion = ltrim($currentVersion, 'vV');
+                $body = trim(implode("\n", $currentBody));
+                if ($normalizedVersion !== '' && strtolower($normalizedVersion) !== 'unreleased' && $body !== '') {
+                    $notes[$normalizedVersion] = $body;
+                }
             }
-            $body = trim((string) ($match['body'] ?? ''));
-            if ($body === '') {
-                continue;
-            }
-            $notes[$version] = $body;
+            $currentVersion = $version;
+            $currentBody = [];
+            continue;
+        }
+
+        if ($currentVersion !== null) {
+            $currentBody[] = $line;
         }
     }
+
+    if ($currentVersion !== null) {
+        $normalizedVersion = ltrim($currentVersion, 'vV');
+        $body = trim(implode("\n", $currentBody));
+        if ($normalizedVersion !== '' && strtolower($normalizedVersion) !== 'unreleased' && $body !== '') {
+            $notes[$normalizedVersion] = $body;
+        }
+    }
+
     return $notes;
+}
+
+function extractReleaseVersion(string $line): ?string
+{
+    $trimmed = trim($line);
+    if (preg_match('/^##\s+\[([^\]]+)\][^\n]*$/', $trimmed, $match) === 1) {
+        $version = trim((string) ($match[1] ?? ''));
+        return $version !== '' ? $version : null;
+    }
+
+    if (preg_match('/^\*\*\[([^\]]+)\][^*]*\*\*$/', $trimmed, $match) === 1) {
+        $version = trim((string) ($match[1] ?? ''));
+        return $version !== '' ? $version : null;
+    }
+
+    return null;
 }
 
 function fetchReleaseTags(string $repo): array
@@ -331,4 +366,3 @@ function passthruWithExitCode(string $command): int
     passthru($command, $exitCode);
     return (int) $exitCode;
 }
-

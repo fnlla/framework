@@ -1,14 +1,14 @@
-# Getting Started
+**GETTING STARTED**
 
 This guide shows the minimal steps required to run a Finella application using the framework package.
 
-## 1) Install
+**1) INSTALL**
 Offline install:
-1) Add `finella/framework` to `composer.json` in `require`.
-2) Configure local path repositories (see `documentation/src/getting-started.md`).
-3) Run `composer install`.
+**-** Add `finella/framework` to `composer.json` in `require`.
+**-** Configure local path repositories (see `documentation/src/getting-started.md`).
+**-** Run `composer install`.
 
-## 2) Create the bootstrap
+**2) CREATE THE BOOTSTRAP**
 `bootstrap/app.php`
 ```php
 use Finella\Core\Application;
@@ -26,7 +26,7 @@ $app = new Application($root, $configRepo);
 return new HttpKernel($app);
 ```
 
-## 3) Create the entry point
+**3) CREATE THE ENTRY POINT**
 `public/index.php`
 ```php
 use Finella\Contracts\Http\KernelInterface;
@@ -46,7 +46,7 @@ $response = $kernel->handle($request);
 $response->send();
 ```
 
-## 4) Create the first route
+**4) CREATE THE FIRST ROUTE**
 `routes/web.php`
 ```php
 use Finella\Http\Router;
@@ -57,12 +57,12 @@ return static function (Router $router): void {
 };
 ```
 
-## 5) Run locally
+**5) RUN LOCALLY**
 ```bash
 php -S localhost:8000 -t public
 ```
 
-## Next steps
-- See `routing.md` and `middleware.md` for advanced routing.
-- Configure views with `config/app.php`.
-- Use packages for database, cache, queue, and mail.
+**NEXT STEPS**
+**-** See `routing.md` and `middleware.md` for advanced routing.
+**-** Configure views with `config/app.php`.
+**-** Use packages for database, cache, queue, and mail.

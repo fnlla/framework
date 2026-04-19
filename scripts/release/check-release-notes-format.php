@@ -65,7 +65,7 @@ foreach ($sections as $section) {
 
     $headers = extractSectionHeaders($section['body']);
     if ($headers === []) {
-        $errors[] = "Release [{$version}] has no subsection headers (expected ### Added/Changed/etc.).";
+        $errors[] = "Release [{$version}] has no subsection headers (expected Added/Changed/etc.).";
         continue;
     }
 
@@ -91,10 +91,10 @@ foreach ($sections as $section) {
 
     $requiresHighlights = ($latestReleaseVersion !== null && $version === $latestReleaseVersion);
     if ($requiresHighlights && $headers !== [] && strtoupper(trim($headers[0])) !== 'HIGHLIGHTS') {
-        $errors[] = "Latest release [{$version}] must start with ### Highlights.";
+        $errors[] = "Latest release [{$version}] must start with Highlights.";
     }
     if ($requiresHighlights && !$hasHighlights) {
-        $errors[] = "Latest release [{$version}] is missing ### Highlights.";
+        $errors[] = "Latest release [{$version}] is missing Highlights.";
     }
 
     $validated++;
@@ -149,18 +149,35 @@ function normalizeText(string $content): string
 function parseReleaseSections(string $changelog): array
 {
     $sections = [];
-    $pattern = '/^## \[(?P<version>[^\]]+)\][^\n]*\n(?P<body>[\s\S]*?)(?=^## \[|\z)/m';
-    if (preg_match_all($pattern, $changelog, $matches, PREG_SET_ORDER) !== false) {
-        foreach ($matches as $match) {
-            $version = trim((string) ($match['version'] ?? ''));
-            if ($version === '') {
-                continue;
+
+    $lines = explode("\n", $changelog);
+    $currentVersion = null;
+    $currentBody = [];
+
+    foreach ($lines as $line) {
+        $version = extractReleaseVersion($line);
+        if ($version !== null) {
+            if ($currentVersion !== null) {
+                $sections[] = [
+                    'version' => ltrim($currentVersion, 'vV'),
+                    'body' => trim(implode("\n", $currentBody)),
+                ];
             }
-            $sections[] = [
-                'version' => ltrim($version, 'vV'),
-                'body' => trim((string) ($match['body'] ?? '')),
-            ];
+            $currentVersion = $version;
+            $currentBody = [];
+            continue;
         }
+
+        if ($currentVersion !== null) {
+            $currentBody[] = $line;
+        }
+    }
+
+    if ($currentVersion !== null) {
+        $sections[] = [
+            'version' => ltrim($currentVersion, 'vV'),
+            'body' => trim(implode("\n", $currentBody)),
+        ];
     }
 
     return $sections;
@@ -174,10 +191,32 @@ function extractSectionHeaders(string $body): array
     $headers = [];
     $lines = explode("\n", $body);
     foreach ($lines as $line) {
-        if (preg_match('/^###\s+(.+?)\s*$/', trim($line), $match) === 1) {
+        $trimmed = trim($line);
+        if (preg_match('/^###\s+(.+?)\s*$/', $trimmed, $match) === 1) {
+            $headers[] = trim((string) ($match[1] ?? ''));
+            continue;
+        }
+
+        if (preg_match('/^\*\*([^*]+)\*\*\s*$/', $trimmed, $match) === 1) {
             $headers[] = trim((string) ($match[1] ?? ''));
         }
     }
 
     return $headers;
+}
+
+function extractReleaseVersion(string $line): ?string
+{
+    $trimmed = trim($line);
+    if (preg_match('/^##\s+\[([^\]]+)\][^\n]*$/', $trimmed, $match) === 1) {
+        $version = trim((string) ($match[1] ?? ''));
+        return $version !== '' ? $version : null;
+    }
+
+    if (preg_match('/^\*\*\[([^\]]+)\][^*]*\*\*$/', $trimmed, $match) === 1) {
+        $version = trim((string) ($match[1] ?? ''));
+        return $version !== '' ? $version : null;
+    }
+
+    return null;
 }

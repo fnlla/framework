@@ -1,9 +1,9 @@
-# Middleware
+**MIDDLEWARE**
 
-## Overview
+**OVERVIEW**
 Middleware wrap route handlers to perform cross-cutting tasks such as security headers, logging, or CSRF checks.
 
-## Global middleware
+**GLOBAL MIDDLEWARE**
 Defined in `config/http/http.php`:
 ```php
 return [
@@ -14,7 +14,7 @@ return [
 ```
 Requires `finella/ops`.
 
-## Per-route middleware
+**PER-ROUTE MIDDLEWARE**
 ```php
 $router->get('/account', [AccountController::class, 'index'], 'account', [
     \Finella\Auth\Middleware\AuthMiddleware::class,
@@ -22,7 +22,7 @@ $router->get('/account', [AccountController::class, 'index'], 'account', [
 ```
 Requires the core Auth module.
 
-## Middleware groups
+**MIDDLEWARE GROUPS**
 ```php
 $router->middlewareGroup('web', [
     \Finella\Csrf\CsrfMiddleware::class,
@@ -31,7 +31,7 @@ $router->middlewareGroup('web', [
 ```
 Requires the core CSRF module and `finella/ops`.
 
-## Middleware aliases
+**MIDDLEWARE ALIASES**
 Define aliases in `config/http/http.php`:
 ```php
 return [
@@ -46,23 +46,23 @@ Then use aliases in routes:
 $router->get('/account', [AccountController::class, 'index'], 'account', ['auth']);
 ```
 
-## Execution order
-1. Global middleware
-2. Group middleware
-3. Route-specific middleware
-4. Handler
+**EXECUTION ORDER**
+**-** Global middleware
+**-** Group middleware
+**-** Route-specific middleware
+**-** Handler
 
-## Writing middleware
+**WRITING MIDDLEWARE**
 A middleware can be:
-- a closure: `function (Request $request, callable $next): Response`
-- a class implementing `Finella\Support\Psr\Http\Server\MiddlewareInterface`
+**-** a closure: `function (Request $request, callable $next): Response`
+**-** a class implementing `Finella\Support\Psr\Http\Server\MiddlewareInterface`
 
-## Core middleware
+**CORE MIDDLEWARE**
 Core middleware ships in the framework:
-- Auth (`AuthMiddleware`)
-- CSRF (`CsrfMiddleware`)
-- Request logging (`RequestLoggerMiddleware`)
+**-** Auth (`AuthMiddleware`)
+**-** CSRF (`CsrfMiddleware`)
+**-** Request logging (`RequestLoggerMiddleware`)
 
-## Optional middleware
+**OPTIONAL MIDDLEWARE**
 Optional middleware is delivered as packages and only enabled when you install them:
-- `finella/ops` (SecurityHeadersMiddleware, RateLimitMiddleware, CorsMiddleware, RedirectsMiddleware, MaintenanceMiddleware, StaticCacheMiddleware, HoneypotMiddleware)
+**-** `finella/ops` (SecurityHeadersMiddleware, RateLimitMiddleware, CorsMiddleware, RedirectsMiddleware, MaintenanceMiddleware, StaticCacheMiddleware, HoneypotMiddleware)

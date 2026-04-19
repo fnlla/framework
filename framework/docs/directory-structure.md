@@ -1,6 +1,6 @@
-# Directory Structure
+**DIRECTORY STRUCTURE**
 
-## Framework package
+**FRAMEWORK PACKAGE**
 ```
 framework/
 |-- src/
@@ -11,7 +11,7 @@ framework/
 |-- composer.json
 ```
 
-## Typical application
+**TYPICAL APPLICATION**
 ```
 app/
 |-- public/
@@ -25,11 +25,11 @@ app/
 |-- .env
 ```
 
-## Public vs private
-- Public: `public/` only.
-- Private: `config/`, `storage/`, `vendor/`, `bootstrap/`.
+**PUBLIC VS PRIVATE**
+**-** Public: `public/` only.
+**-** Private: `config/`, `storage/`, `vendor/`, `bootstrap/`.
 
-## Deployable artefacts
-- Application code
-- Composer dependencies installed on the server
-- Config and environment variables
+**DEPLOYABLE ARTEFACTS**
+**-** Application code
+**-** Composer dependencies installed on the server
+**-** Config and environment variables
