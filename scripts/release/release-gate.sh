@@ -76,6 +76,10 @@ check_enterprise_readiness() {
   php scripts/ci/check-enterprise-readiness.php --strict
 }
 
+check_public_distribution() {
+  php scripts/release/check-public-distribution.php
+}
+
 validate_composer() {
   for dir in framework packages/* tools/harness; do
     if [ ! -f "$dir/composer.json" ]; then
@@ -172,6 +176,7 @@ check_third_party_notices
 check_release_notes_format
 check_markdown_format
 check_enterprise_readiness
+check_public_distribution
 validate_composer
 audit_composer
 lint_php

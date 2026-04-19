@@ -1,32 +1,51 @@
 {
   "public_core": [
     "finella/framework",
+    "finella/ai",
+    "finella/audit",
+    "finella/deploy",
+    "finella/monitoring",
+    "finella/oauth",
     "finella/standard",
     "finella/queue",
     "finella/scheduler",
     "finella/mail",
     "finella/ops",
+    "finella/pdf",
     "finella/rbac",
+    "finella/search",
     "finella/settings",
     "finella/docs",
     "finella/testing",
     "finella/debugbar"
   ],
-  "private_pro": [
+  "starter_required": [
+    "finella/framework",
+    "finella/ops",
+    "finella/rbac",
+    "finella/settings",
+    "finella/audit",
+    "finella/deploy",
+    "finella/search",
+    "finella/oauth",
+    "finella/monitoring"
+  ],
+  "starter_required_dev": [
     "finella/ai",
+    "finella/debugbar",
+    "finella/docs",
+    "finella/pdf",
+    "finella/testing"
+  ],
+  "private_pro": [
     "finella/analytics",
     "finella/content",
     "finella/seo",
     "finella/notifications",
     "finella/webmail",
     "finella/storage-s3",
-    "finella/search",
-    "finella/oauth",
-    "finella/monitoring",
     "finella/stripe",
     "finella/sentry",
-    "finella/pdf",
-    "finella/deploy",
     "finella/tenancy"
   ]
 }

@@ -94,6 +94,7 @@ Open:
 
 **STARTER**
 **-** Starter application repository: `https://github.com/fnlla/fnlla`
+**-** Public bootstrap command: `composer create-project finella/starter my-app`
 
 Docs UI and docs generation:
 **-** Docs home: `GET /docs`

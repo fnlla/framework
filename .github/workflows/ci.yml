@@ -172,6 +172,12 @@ jobs:
           set -e
           php scripts/ci/check-enterprise-readiness.php --strict
 
+      - name: Public distribution manifest check
+        shell: bash
+        run: |
+          set -e
+          php scripts/release/check-public-distribution.php
+
       - name: Release notes format check
         shell: bash
         run: |

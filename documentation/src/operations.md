@@ -1485,40 +1485,48 @@ To claim enterprise readiness, we recommend meeting at least:
 
 **DISTRIBUTION MODEL**
 
-This document defines the recommended distribution model for Finella when you want broad adoption without exposing proprietary modules. The core framework remains public, while the high-value modules ship through a private registry.
+This document defines the recommended distribution model for Finella when you want broad adoption through `composer create-project` and direct installs from Packagist.
 
 **SUMMARY**
-**-** **Public core**: available to everyone via Packagist (or a public Composer registry).
-**-** **Private pro modules**: available only to licensed teams via a private registry.
+**-** **Public core**: available to everyone via Packagist.
+**-** **Starter dependencies**: must be listed in `public_core` so `composer create-project finella/starter` works without extra registry auth.
+**-** **Private pro modules**: optional add-ons that are not required by starter.
 
-This keeps adoption friction low while protecting the competitive advantage.
+This keeps adoption friction low while preserving optional commercial modules.
 
 **PUBLIC CORE PACKAGES (RECOMMENDED)**
 These packages are safe to expose publicly and form the base developer experience:
 **-** `finella/framework`
+**-** `finella/ai`
+**-** `finella/audit`
+**-** `finella/deploy`
+**-** `finella/monitoring`
+**-** `finella/oauth`
 **-** `finella/standard`
 **-** `finella/queue`
 **-** `finella/scheduler`
 **-** `finella/mail`
 **-** `finella/ops`
+**-** `finella/pdf`
 **-** `finella/rbac`
+**-** `finella/search`
 **-** `finella/settings`
 **-** `finella/docs`
 **-** `finella/testing`
 **-** `finella/debugbar` (dev only)
 
-Starter app: shipped in the monorepo at `app/` (not a Composer package).
+Starter app package: `finella/starter` (create with `composer create-project finella/starter myapp`).
 
 **PRIVATE PRO MODULES (RECOMMENDED)**
-These are the differentiated, high-value modules you may want to keep private:
-**-** `finella/ai`
+These are differentiated add-on modules you may keep private:
 **-** `finella/analytics`
 **-** `finella/content`
 **-** `finella/seo`
 **-** `finella/notifications`
 **-** `finella/webmail`
-**-** `finella/pdf`
-**-** `finella/deploy`
+**-** `finella/storage-s3`
+**-** `finella/stripe`
+**-** `finella/sentry`
 **-** `finella/tenancy`
 
 Adjust the split to match your business model. A good rule: **public = enable adoption**, **private = protect advantage**.
@@ -1526,6 +1534,7 @@ Adjust the split to match your business model. A good rule: **public = enable ad
 The split is tracked in a machine-readable manifest:
 **-** `scripts/release/distribution-packages.json`
 **-** Use `php scripts/release/list-distribution-packages.php` to print and verify the list.
+**-** Use `php scripts/release/check-public-distribution.php` to enforce starter compatibility with the public package split.
 
 **PUBLIC REGISTRY SETUP (CORE)**
 **-** Create public repos for each core package (or automated split from monorepo).
@@ -1557,16 +1566,14 @@ Example (private registry entry in app `composer.json`):
 ```
 
 **DEVELOPER WORKFLOW (FOR USERS)**
-Public core install:
+Public starter install:
 ```bash
-git clone https://github.com/fnlla/fnlla.git myapp
-cd myapp
-composer install
+composer create-project finella/starter myapp
 ```
 
-Pro module install (after private registry auth):
+Optional pro module install (after private registry auth):
 ```bash
-composer require finella/ai
+composer require finella/analytics
 ```
 
 **RELEASE DISCIPLINE**

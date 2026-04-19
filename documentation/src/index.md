@@ -15,7 +15,7 @@ Dotenv handling is implemented by Finella itself (see `Finella\Support\Dotenv`) 
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
 **-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 
-Note: `tools/harness/` inside the monorepo is a **dev/test harness** for framework development. The starter app lives in `app/` and is wired to local packages.
+Note: `tools/harness/` inside the monorepo is a **dev/test harness** for framework development. The public starter app lives in `fnlla/fnlla` and is installed via `composer create-project finella/starter`.
 
 **HOW TO READ THIS DOCUMENTATION**
 Start with `getting-started.md` and `framework.md`. Use the developer experience guide if you enable optional modules.
@@ -45,6 +45,7 @@ Finella publishes a clear support policy and a public roadmap.
 See `documentation/src/operations.md` for support windows, roadmap, and release governance.
 Deprecations and migrations are tracked in `documentation/src/operations.md`.
 Third-party notices workflow is documented in `documentation/src/operations.md` under **Tooling -> Third-party notices**.
+Public distribution split is enforced via `scripts/release/check-public-distribution.php`.
 
 **DEVELOPER EXPERIENCE**
 Task-oriented entry points live in `documentation/src/developer-experience.md`, alongside the feature index and CLI notes.
