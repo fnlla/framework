@@ -58,7 +58,7 @@ final class WebmailSettingsController
         ];
 
         if (!$storeReady) {
-            $payload['store_error'] = 'Settings store is not available. Check the database and finella/settings migrations.';
+            $payload['store_error'] = 'Settings store is not available. Check the database and fnlla/settings migrations.';
         }
 
         return Response::json($payload);
@@ -72,7 +72,7 @@ final class WebmailSettingsController
         }
 
         if (!$this->storeReady()) {
-            return Response::json(['error' => 'Settings store is not available. Check the database and finella/settings migrations.'], 503);
+            return Response::json(['error' => 'Settings store is not available. Check the database and fnlla/settings migrations.'], 503);
         }
 
         $body = $request->getParsedBody();

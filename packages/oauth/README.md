@@ -1,10 +1,10 @@
-**FINELLA/OAUTH**
+**FNLLA/OAUTH**
 
 OAuth/OIDC adapter for fnlla (finella) using `league/oauth2-client`.
 
 **INSTALLATION**
 ```bash
-composer require finella/oauth
+composer require fnlla/oauth
 ```
 
 **CONFIGURATION**

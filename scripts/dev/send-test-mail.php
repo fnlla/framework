@@ -47,7 +47,7 @@ if (!$app instanceof Application) {
 }
 
 if (!interface_exists(MailerInterface::class) || !$app->has(MailerInterface::class)) {
-    fwrite(STDERR, "Mailer is not available. Install finella/mail and enable the provider.\n");
+    fwrite(STDERR, "Mailer is not available. Install fnlla/mail and enable the provider.\n");
     exit(1);
 }
 

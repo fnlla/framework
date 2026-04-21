@@ -1,10 +1,10 @@
-**FINELLA/AI**
+**FNLLA/AI**
 
 AI helpers for fnlla (finella) with a built-in OpenAI Responses API client.
 
 **INSTALLATION**
 ```bash
-composer require finella/ai
+composer require fnlla/ai
 ```
 The package registers `AiServiceProvider` via auto-discovery.
 
@@ -139,8 +139,8 @@ $embeddings = $ai->embeddings([
 ```
 
 **RAG (EMBEDDINGS + SEARCH)**
-`finella/ai` ships with a lightweight RAG store backed by your database.
-It requires the core Database module (bundled in `finella/framework`).
+`fnlla/ai` ships with a lightweight RAG store backed by your database.
+It requires the core Database module (bundled in `fnlla/framework`).
 
 Create `config/ai/rag.php`:
 ```php

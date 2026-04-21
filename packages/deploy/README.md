@@ -1,10 +1,10 @@
-**FINELLA/DEPLOY**
+**FNLLA/DEPLOY**
 
 Deployment utilities for Finella.
 
 **INSTALLATION**
 ```bash
-composer require finella/deploy
+composer require fnlla/deploy
 ```
 
 **COMMANDS**

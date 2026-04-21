@@ -4,20 +4,20 @@ fnlla (finella) Standard is a meta-package that installs the full default web st
 It contains no runtime code and only aggregates official packages.
 
 **INCLUDED PACKAGES**
-**-** `finella/framework`
-**-** `finella/ops`
-**-** `finella/rbac`
-**-** `finella/settings`
-**-** `finella/audit`
-**-** `finella/deploy`
+**-** `fnlla/framework`
+**-** `fnlla/ops`
+**-** `fnlla/rbac`
+**-** `fnlla/settings`
+**-** `fnlla/audit`
+**-** `fnlla/deploy`
 
 Development-only:
-**-** `finella/debugbar` (require-dev)
-**-** `finella/testing` (require-dev)
+**-** `fnlla/debugbar` (require-dev)
+**-** `fnlla/testing` (require-dev)
 
 **INSTALLATION**
 ```bash
-composer require finella/standard
+composer require fnlla/standard
 ```
 
 **PROVIDER DISCOVERY**

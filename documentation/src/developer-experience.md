@@ -82,7 +82,7 @@ Do not require or import it as an end-user package.
 **TASK GUIDES**
 
 **I WANT A WEB APP WITH AUTH**
-**-** Install standard: `composer require finella/standard`
+**-** Install standard: `composer require fnlla/standard`
 **-** Register auth middleware alias in `config/http/http.php`
 **-** Add login routes in `routes/web.php`
 **-** See `documentation/src/framework.md` for guard usage
@@ -99,25 +99,25 @@ Do not require or import it as an end-user package.
 **-** See `documentation/src/framework.md` (database + ORM)
 
 **I WANT A QUEUE WORKER**
-**-** `composer require finella/queue`
+**-** `composer require fnlla/queue`
 **-** Set `QUEUE_DRIVER=database` or `redis` in `.env`
 **-** Run `php bin/finella queue:work`
 **-** See `documentation/src/framework.md` (queue)
 
 **I WANT SCHEDULED JOBS**
-**-** `composer require finella/scheduler`
+**-** `composer require fnlla/scheduler`
 **-** Define jobs in `routes/schedule.php`
 **-** Run `php bin/finella schedule:run`
 **-** See `documentation/src/framework.md` (scheduler)
 
 **I WANT MAIL SENDING**
-**-** `composer require finella/mail`
+**-** `composer require fnlla/mail`
 **-** Configure `MAIL_*` env values
 **-** Send mail via `MailManager`
 **-** See `packages/mail/README.md`
 
 **I WANT PDF GENERATION**
-**-** `composer require finella/pdf`
+**-** `composer require fnlla/pdf`
 **-** Configure `PDF_*` env values
 **-** Use `PdfManager` and templates
 **-** See `documentation/src/framework.md` (PDF)

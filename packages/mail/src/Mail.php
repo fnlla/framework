@@ -77,7 +77,7 @@ final class Mail
             }
         }
 
-        throw new RuntimeException('Mailer is not available. Ensure finella/mail is installed and the provider is registered.');
+        throw new RuntimeException('Mailer is not available. Ensure fnlla/mail is installed and the provider is registered.');
     }
 
     private static function app(): ?Container

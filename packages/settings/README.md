@@ -1,10 +1,10 @@
-**FINELLA/SETTINGS**
+**FNLLA/SETTINGS**
 
 Key/value settings store for Finella. Useful for runtime configuration in admin panels or multi-tenant apps.
 
 **INSTALLATION**
 ```bash
-composer require finella/settings
+composer require fnlla/settings
 ```
 
 **SERVICE PROVIDER**

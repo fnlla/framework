@@ -1,11 +1,11 @@
-**FINELLA/NOTIFICATIONS**
+**FNLLA/NOTIFICATIONS**
 
 Notification delivery helpers with basic API endpoints. Supports email via
-`finella/mail` and SMS via a pluggable sender interface.
+`fnlla/mail` and SMS via a pluggable sender interface.
 
 **INSTALLATION**
 ```bash
-composer require finella/notifications
+composer require fnlla/notifications
 ```
 
 **SERVICE PROVIDER**

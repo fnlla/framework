@@ -5,7 +5,7 @@ The `packages/` directory contains optional modules for the fnlla (finella) ecos
 For the recommended public-core vs private-pro split, see `documentation/src/operations.md`.
 
 **CORE MODULES (BUILT INTO FRAMEWORK)**
-These capabilities are shipped inside `finella/framework` and are no longer separate packages.
+These capabilities are shipped inside `fnlla/framework` and are no longer separate packages.
 **-** Database
 **-** ORM
 **-** Auth
@@ -18,41 +18,41 @@ These capabilities are shipped inside `finella/framework` and are no longer sepa
 **-** Console CLI
 
 **OFFICIAL PACKAGES**
-**-** `finella/queue` - queue manager and worker (sync/database/redis).
-**-** `finella/scheduler` - schedule registry and `schedule:run`.
-**-** `finella/mail` - Symfony Mailer adapter.
-**-** `finella/notifications` - notification delivery (email/SMS) + API endpoints.
-**-** `finella/webmail` - webmail backend API (IMAP/SMTP integration).
-**-** `finella/pdf` - HTML-to-PDF rendering (Dompdf) with template helpers.
-**-** `finella/docs` - docs automation for fnlla (finella) apps.
-**-** `finella/storage-s3` - S3 storage adapter.
-**-** `finella/stripe` - Stripe payments adapter.
-**-** `finella/sentry` - Sentry error tracking adapter.
-**-** `finella/search` - Meilisearch adapter.
-**-** `finella/oauth` - OAuth/OIDC adapter.
-**-** `finella/monitoring` - lightweight monitoring utilities + metrics endpoint.
-**-** `finella/content` - content repository helpers (JSON/Markdown).
-**-** `finella/seo` - SEO helpers (meta, OpenGraph, JSON-LD).
-**-** `finella/standard` - default web stack meta-package (framework + ops + rbac + settings + audit + deploy).
-**-** `finella/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, forms.
-**-** `finella/analytics` - analytics event helpers.
-**-** `finella/ai` - OpenAI Responses API client and AI helpers.
-**-** `finella/tenancy` - multi-tenant request context and model scoping.
-**-** `finella/rbac` - roles and permissions with gate integration.
-**-** `finella/settings` - key/value runtime settings store.
-**-** `finella/audit` - audit logging helpers.
-**-** `finella/debugbar` - debug tooling for development (do not enable in production).
-**-** `finella/deploy` - deploy utilities (health + warmup commands).
-**-** `finella/testing` - lightweight HTTP feature testing helpers.
+**-** `fnlla/queue` - queue manager and worker (sync/database/redis).
+**-** `fnlla/scheduler` - schedule registry and `schedule:run`.
+**-** `fnlla/mail` - Symfony Mailer adapter.
+**-** `fnlla/notifications` - notification delivery (email/SMS) + API endpoints.
+**-** `fnlla/webmail` - webmail backend API (IMAP/SMTP integration).
+**-** `fnlla/pdf` - HTML-to-PDF rendering (Dompdf) with template helpers.
+**-** `fnlla/docs` - docs automation for fnlla (finella) apps.
+**-** `fnlla/storage-s3` - S3 storage adapter.
+**-** `fnlla/stripe` - Stripe payments adapter.
+**-** `fnlla/sentry` - Sentry error tracking adapter.
+**-** `fnlla/search` - Meilisearch adapter.
+**-** `fnlla/oauth` - OAuth/OIDC adapter.
+**-** `fnlla/monitoring` - lightweight monitoring utilities + metrics endpoint.
+**-** `fnlla/content` - content repository helpers (JSON/Markdown).
+**-** `fnlla/seo` - SEO helpers (meta, OpenGraph, JSON-LD).
+**-** `fnlla/standard` - default web stack meta-package (framework + ops + rbac + settings + audit + deploy).
+**-** `fnlla/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, forms.
+**-** `fnlla/analytics` - analytics event helpers.
+**-** `fnlla/ai` - OpenAI Responses API client and AI helpers.
+**-** `fnlla/tenancy` - multi-tenant request context and model scoping.
+**-** `fnlla/rbac` - roles and permissions with gate integration.
+**-** `fnlla/settings` - key/value runtime settings store.
+**-** `fnlla/audit` - audit logging helpers.
+**-** `fnlla/debugbar` - debug tooling for development (do not enable in production).
+**-** `fnlla/deploy` - deploy utilities (health + warmup commands).
+**-** `fnlla/testing` - lightweight HTTP feature testing helpers.
 
 **INSTALLATION**
 Install packages individually as needed:
 ```bash
-composer require finella/queue
+composer require fnlla/queue
 ```
 
 **VERSIONING**
-**-** Packages are compatible with `finella/framework ^3.0`.
+**-** Packages are compatible with `fnlla/framework ^3.0`.
 **-** Minor and patch releases follow SemVer rules.
 **-** Official packages share the same release version as the framework (monorepo tag).
 

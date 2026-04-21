@@ -9,7 +9,7 @@ Basic multi-tenant helpers for fnlla (finella) apps. This package provides:
 Included in the monorepo. Install the package and keep provider discovery
 enabled (or register the provider manually in `config/providers/providers.php`):
 ```bash
-composer require finella/tenancy
+composer require fnlla/tenancy
 ```
 
 **CONFIGURE**

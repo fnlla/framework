@@ -84,7 +84,7 @@ final class AppReadinessService
         if (!class_exists(\Finella\Queue\QueueManager::class)) {
             return [
                 'status' => 'skipped',
-                'detail' => 'finella/queue not installed',
+                'detail' => 'fnlla/queue not installed',
             ];
         }
 

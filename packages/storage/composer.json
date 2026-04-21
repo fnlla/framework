@@ -1,24 +1,26 @@
 {
-  "name": "finella/storage",
-  "description": "Finella storage and image pipeline helpers",
-  "homepage": "https://techayo.co.uk",
-  "license": "proprietary",
-  "type": "library",
-  "require": {
-    "php": ">=8.5",
-    "finella/framework": "^3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Finella\\Storage\\": "src/"
-    }
-  },
-  "extra": {
-    "finella": {
-      "providers": [
-        "Finella\\Storage\\StorageServiceProvider"
-      ]
-    }
-  }
+    "name":  "fnlla/storage",
+    "description":  "Finella storage and image pipeline helpers",
+    "homepage":  "https://techayo.co.uk",
+    "license":  "proprietary",
+    "type":  "library",
+    "require":  {
+                    "php":  "\u003e=8.5",
+                    "fnlla/framework":  "^3.0"
+                },
+    "autoload":  {
+                     "psr-4":  {
+                                   "Finella\\Storage\\":  "src/"
+                               }
+                 },
+    "extra":  {
+                  "fnlla":  {
+                                "providers":  [
+                                                  "Finella\\Storage\\StorageServiceProvider"
+                                              ]
+                            }
+              },
+    "replace":  {
+                    "finella/storage":  "self.version"
+                }
 }
-

@@ -1,10 +1,10 @@
-**FINELLA/SEARCH**
+**FNLLA/SEARCH**
 
 Search adapter for fnlla (finella) with a lightweight HTTP Meilisearch driver (no external SDK required).
 
 **INSTALLATION**
 ```bash
-composer require finella/search
+composer require fnlla/search
 ```
 
 **CONFIGURATION**

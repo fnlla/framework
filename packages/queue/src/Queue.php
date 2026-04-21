@@ -63,7 +63,7 @@ final class Queue
             }
         }
 
-        throw new RuntimeException('QueueManager is not available. Ensure finella/queue is installed and the provider is registered.');
+        throw new RuntimeException('QueueManager is not available. Ensure fnlla/queue is installed and the provider is registered.');
     }
 
     private static function app(): ?Container

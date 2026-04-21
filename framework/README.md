@@ -8,7 +8,7 @@ AI capabilities are opt-in and sit on top of the core runtime via optional packa
 
 **INSTALLATION**
 Offline install:
-**-** Add `finella/framework` to `composer.json` in `require`.
+**-** Add `fnlla/framework` to `composer.json` in `require`.
 **-** Configure local path repositories (see `documentation/src/getting-started.md`).
 **-** Run `composer install`.
 
@@ -108,7 +108,7 @@ return [
     ],
 ];
 ```
-Requires `finella/ops`.
+Requires `fnlla/ops`.
 
 **CONFIGURATION**
 fnlla (finella) loads configuration from `config/**/*.php`. See `documentation/src/framework.md` for the full reference.
@@ -122,13 +122,13 @@ logging, request tracing, sessions, auth, cookies, CSRF, database, cache, ORM, a
 Optional packages add specialised capabilities.
 
 **OPTIONAL PACKAGES**
-**-** `finella/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, and forms.
-**-** `finella/queue` - queue manager (sync/database/redis drivers).
-**-** `finella/scheduler` - schedule registry and `schedule:run`.
-**-** `finella/mail` - Symfony Mailer adapter.
-**-** `finella/ai` - AI provider integration, policy controls, router, telemetry, and RAG helpers.
-**-** `finella/debugbar` - debug tooling for development.
-**-** `finella/tenancy` - multi-tenant context and model scoping.
+**-** `fnlla/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, and forms.
+**-** `fnlla/queue` - queue manager (sync/database/redis drivers).
+**-** `fnlla/scheduler` - schedule registry and `schedule:run`.
+**-** `fnlla/mail` - Symfony Mailer adapter.
+**-** `fnlla/ai` - AI provider integration, policy controls, router, telemetry, and RAG helpers.
+**-** `fnlla/debugbar` - debug tooling for development.
+**-** `fnlla/tenancy` - multi-tenant context and model scoping.
 
 **ENABLING OPTIONAL MODULES**
 **-** Install the package with Composer.
@@ -136,7 +136,7 @@ Optional packages add specialised capabilities.
 **-** Add any middleware to your `config/http/http.php` pipeline.
 
 Example:
-**-** Add `finella/ops` to `composer.json` in `require`.
+**-** Add `fnlla/ops` to `composer.json` in `require`.
 **-** Run `composer install`.
 ```php
 use Finella\RateLimit\RateLimitMiddleware;
@@ -150,7 +150,7 @@ return [
 
 **NOT INCLUDED BY DESIGN**
 **-** Cron/daemon management (use system cron or supervisor)
-**-** CMS/editor experience (use `finella/content` or a dedicated CMS)
+**-** CMS/editor experience (use `fnlla/content` or a dedicated CMS)
 
 **STABILITY & VERSIONING**
 **-** fnlla (finella) follows Semantic Versioning (SemVer).

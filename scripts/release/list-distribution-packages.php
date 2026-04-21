@@ -60,7 +60,7 @@ if ($notPublic !== []) {
 $missing = [];
 $allManifestPackages = array_values(array_unique(array_merge($core, $starterRequired, $starterRequiredDev, $pro)));
 foreach ($allManifestPackages as $name) {
-    if ($name === 'finella/framework') {
+    if ($name === 'fnlla/framework') {
         if (!is_dir($root . DIRECTORY_SEPARATOR . 'framework')) {
             $missing[] = $name;
         }

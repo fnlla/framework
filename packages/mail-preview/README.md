@@ -1,10 +1,10 @@
-**FINELLA/MAIL-PREVIEW**
+**FNLLA/MAIL-PREVIEW**
 
 A tiny mail preview package for Finella. It provides a preview route and a publish command for templates.
 
 **INSTALLATION**
 ```bash
-composer require finella/mail-preview
+composer require fnlla/mail-preview
 ```
 
 **PUBLISH TEMPLATES**

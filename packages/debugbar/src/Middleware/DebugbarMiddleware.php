@@ -21,7 +21,7 @@ use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class DebugbarMiddleware implements MiddlewareInterface
 {
-    private const JS_ASSET_PATH = '/_finella/debugbar.js';
+    private const JS_ASSET_PATH = '/_fnlla/debugbar.js';
     private const ASSET_VERSION = '3.0.0';
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface

@@ -1,10 +1,10 @@
-**FINELLA/SENTRY**
+**FNLLA/SENTRY**
 
 Sentry error tracking adapter for Finella.
 
 **INSTALLATION**
 ```bash
-composer require finella/sentry
+composer require fnlla/sentry
 ```
 
 **CONFIGURATION**

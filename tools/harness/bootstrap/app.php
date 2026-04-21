@@ -118,7 +118,7 @@ $discoverMonorepo = static function (string $packagesDir): array {
         if (!is_array($data)) {
             continue;
         }
-        $extra = $data['extra']['finella']['providers'] ?? null;
+        $extra = $data['extra']['fnlla']['providers'] ?? $data['extra']['finella']['providers'] ?? null;
         if (!is_array($extra)) {
             continue;
         }

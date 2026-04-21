@@ -1,10 +1,10 @@
-**FINELLA/SEO**
+**FNLLA/SEO**
 
 SEO helpers for fnlla (finella) (meta tags, OpenGraph, JSON-LD).
 
 **INSTALLATION**
 ```bash
-composer require finella/seo
+composer require fnlla/seo
 ```
 The package registers `SeoServiceProvider` via auto-discovery.
 

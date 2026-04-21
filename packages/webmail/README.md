@@ -1,16 +1,16 @@
-**FINELLA/WEBMAIL**
+**FNLLA/WEBMAIL**
 
 Webmail backend API for IMAP/POP3 inbox access and SMTP sending. This package
 ships API endpoints and a pluggable mailbox client interface.
 
 **INSTALLATION**
 ```bash
-composer require finella/webmail
+composer require fnlla/webmail
 ```
 
 **REQUIREMENTS**
 **-** For IMAP access, enable PHP `ext-imap`.
-**-** For runtime IMAP/SMTP settings, install `finella/settings` and a database connection.
+**-** For runtime IMAP/SMTP settings, install `fnlla/settings` and a database connection.
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
@@ -74,13 +74,13 @@ Endpoints:
 **-** `POST /api/webmail/send`
 
 **SETTINGS API (OPTIONAL)**
-If `finella/settings` is installed, you can store IMAP/SMTP credentials at runtime
+If `fnlla/settings` is installed, you can store IMAP/SMTP credentials at runtime
 and build a UI for end users. Settings are stored in the `settings` table under keys:
 **-** `webmail.imap.*` (`host`, `port`, `flags`, `username`, `password`, `folder`)
 **-** `webmail.smtp.*` (`dsn`, `host`, `port`, `username`, `password`, `encryption`, `from_address`, `from_name`)
-Ensure the `settings` table exists (see `finella/settings` schema helper).
+Ensure the `settings` table exists (see `fnlla/settings` schema helper).
 Credentials are stored as strings in the settings table; secure the database at rest.
-If `webmail.tenant_scoped` is enabled, keys are prefixed with the tenant id (requires `finella/tenancy`).
+If `webmail.tenant_scoped` is enabled, keys are prefixed with the tenant id (requires `fnlla/tenancy`).
 
 Example update payload:
 ```json
@@ -129,7 +129,7 @@ If `imap`/`smtp` are omitted they default to `true`.
 **-** If multi-tenant, enable `webmail.tenant_scoped = true`.
 
 **ASYNC SEND**
-Enable `webmail.send_async = true` to enqueue outgoing messages (requires `finella/queue`).
+Enable `webmail.send_async = true` to enqueue outgoing messages (requires `fnlla/queue`).
 
 **CUSTOM MAILBOX CLIENT**
 Bind your own `MailboxClientInterface` if you do not want to use IMAP:

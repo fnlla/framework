@@ -1,37 +1,40 @@
 {
-  "name": "finella/standard",
-  "description": "Finella standard web stack (meta-package)",
-  "type": "library",
-  "require": {
-    "php": ">=8.5",
-    "finella/audit": "^3.0",
-    "finella/deploy": "^3.0",
-    "finella/framework": "^3.0",
-    "finella/ops": "^3.0",
-    "finella/rbac": "^3.0",
-    "finella/settings": "^3.0"
-  },
-  "require-dev": {
-    "finella/debugbar": "^3.0",
-    "finella/testing": "^3.0"
-  },
-  "homepage": "https://techayo.co.uk",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "TechAyo",
-      "homepage": "https://techayo.co.uk",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Marcin Kordyaczny",
-      "homepage": "https://techayo.co.uk",
-      "role": "Project Manager"
-    }
-  ],
-  "extra": {
-    "branch-alias": {
-      "dev-main": "3.0.x-dev"
-    }
-  }
+    "name":  "fnlla/standard",
+    "description":  "Finella standard web stack (meta-package)",
+    "type":  "library",
+    "require":  {
+                    "php":  "\u003e=8.5",
+                    "fnlla/audit":  "^3.0",
+                    "fnlla/deploy":  "^3.0",
+                    "fnlla/framework":  "^3.0",
+                    "fnlla/ops":  "^3.0",
+                    "fnlla/rbac":  "^3.0",
+                    "fnlla/settings":  "^3.0"
+                },
+    "require-dev":  {
+                        "fnlla/debugbar":  "^3.0",
+                        "fnlla/testing":  "^3.0"
+                    },
+    "homepage":  "https://techayo.co.uk",
+    "license":  "proprietary",
+    "authors":  [
+                    {
+                        "name":  "TechAyo",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Maintainer"
+                    },
+                    {
+                        "name":  "Marcin Kordyaczny",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Project Manager"
+                    }
+                ],
+    "extra":  {
+                  "branch-alias":  {
+                                       "dev-main":  "3.0.x-dev"
+                                   }
+              },
+    "replace":  {
+                    "finella/standard":  "self.version"
+                }
 }

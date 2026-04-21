@@ -15,7 +15,7 @@ Dotenv handling is implemented by fnlla (finella) itself (see `Finella\Support\D
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
 **-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 
-Note: `tools/harness/` inside the monorepo is a **dev/test harness** for framework development. The public starter app lives in `fnlla/fnlla` and is installed via `composer create-project finella/starter`.
+Note: `tools/harness/` inside the monorepo is a **dev/test harness** for framework development. The public starter app lives in `fnlla/fnlla` and is installed via `composer create-project fnlla/starter`.
 
 **HOW TO READ THIS DOCUMENTATION**
 Start with `getting-started.md` and `framework.md`. Use the developer experience guide if you enable optional modules.

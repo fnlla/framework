@@ -306,7 +306,7 @@
             "time": "2025-03-06T22:45:56+00:00"
         },
         {
-            "name": "finella/ai",
+            "name": "fnlla/ai",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -314,7 +314,7 @@
                 "reference": "b416a4abe85fb285ef4aaa07bd30658448e7b873"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -356,7 +356,7 @@
             }
         },
         {
-            "name": "finella/audit",
+            "name": "fnlla/audit",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -364,7 +364,7 @@
                 "reference": "877b1d49f5d519b220b145f24d7cc5392321304a"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -406,7 +406,7 @@
             }
         },
         {
-            "name": "finella/debugbar",
+            "name": "fnlla/debugbar",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -414,7 +414,7 @@
                 "reference": "76e77dfbf92b8721e750afa80d8060074d205a22"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -443,7 +443,7 @@
             }
         },
         {
-            "name": "finella/deploy",
+            "name": "fnlla/deploy",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -451,7 +451,7 @@
                 "reference": "44a03cf05a856ea1b77e6913342a252d2c438226"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -488,7 +488,7 @@
             }
         },
         {
-            "name": "finella/docs",
+            "name": "fnlla/docs",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -496,7 +496,7 @@
                 "reference": "9a311d5f07aca3b179e8c75f782dfbf66c758ac9"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -538,7 +538,7 @@
             }
         },
         {
-            "name": "finella/framework",
+            "name": "fnlla/framework",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -598,7 +598,7 @@
             }
         },
         {
-            "name": "finella/mail",
+            "name": "fnlla/mail",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -606,7 +606,7 @@
                 "reference": "39ea4887f8454e40d3ce4e25c82d0de09be0964f"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5",
                 "symfony/mailer": "^7",
                 "symfony/mime": "^7"
@@ -650,7 +650,7 @@
             }
         },
         {
-            "name": "finella/ops",
+            "name": "fnlla/ops",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -658,7 +658,7 @@
                 "reference": "a3336df0407661ac091ee15ce58a141ae2c0085b"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -712,7 +712,7 @@
             }
         },
         {
-            "name": "finella/pdf",
+            "name": "fnlla/pdf",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -721,7 +721,7 @@
             },
             "require": {
                 "dompdf/dompdf": "^3.1",
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -763,7 +763,7 @@
             }
         },
         {
-            "name": "finella/queue",
+            "name": "fnlla/queue",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -771,7 +771,7 @@
                 "reference": "20a8c0f02c1b77b02e94db7a977d3aab6b653a1b"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -813,7 +813,7 @@
             }
         },
         {
-            "name": "finella/rbac",
+            "name": "fnlla/rbac",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -821,7 +821,7 @@
                 "reference": "e175e33a23676425c74ae4c3948733d1e028aa24"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -863,7 +863,7 @@
             }
         },
         {
-            "name": "finella/settings",
+            "name": "fnlla/settings",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -871,7 +871,7 @@
                 "reference": "6e52fab29270bd83110ebc75b5c378c1b5842afe"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "type": "library",
@@ -913,7 +913,7 @@
             }
         },
         {
-            "name": "finella/standard",
+            "name": "fnlla/standard",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -921,17 +921,17 @@
                 "reference": "1ba0213d934bc35e3c3dd809bd4b4343553efcce"
             },
             "require": {
-                "finella/audit": "^3.0",
-                "finella/deploy": "^3.0",
-                "finella/framework": "^3.0",
-                "finella/ops": "^3.0",
-                "finella/rbac": "^3.0",
-                "finella/settings": "^3.0",
+                "fnlla/audit": "^3.0",
+                "fnlla/deploy": "^3.0",
+                "fnlla/framework": "^3.0",
+                "fnlla/ops": "^3.0",
+                "fnlla/rbac": "^3.0",
+                "fnlla/settings": "^3.0",
                 "php": ">=8.5"
             },
             "require-dev": {
-                "finella/debugbar": "^3.0",
-                "finella/testing": "^3.0"
+                "fnlla/debugbar": "^3.0",
+                "fnlla/testing": "^3.0"
             },
             "type": "library",
             "extra": {
@@ -2298,7 +2298,7 @@
             "time": "2026-04-17T18:05:27+00:00"
         },
         {
-            "name": "finella/testing",
+            "name": "fnlla/testing",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -2306,7 +2306,7 @@
                 "reference": "46c219ec10920fb8fc0a1a5973faab2317acb6a6"
             },
             "require": {
-                "finella/framework": "^3.0",
+                "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "require-dev": {

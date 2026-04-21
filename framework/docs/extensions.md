@@ -11,11 +11,11 @@ Extensions are Composer packages that integrate with fnlla (finella) via service
 Example `composer.json`:
 ```json
 {
-  "name": "finella/acme-example",
+  "name": "fnlla/acme-example",
   "type": "library",
   "require": {
     "php": ">=8.5",
-    "finella/framework": "^3.0"
+    "fnlla/framework": "^3.0"
   },
   "autoload": {
     "psr-4": {

@@ -1,53 +1,56 @@
 {
-  "name": "finella/framework",
-  "description": "Finella - AI-assisted PHP framework",
-  "homepage": "https://techayo.co.uk",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "TechAyo",
-      "homepage": "https://techayo.co.uk",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Marcin Kordyaczny",
-      "homepage": "https://techayo.co.uk",
-      "role": "Project Manager"
-    }
-  ],
-  "type": "library",
-  "require": {
-    "php": ">=8.5"
-  },
-  "autoload": {
-    "psr-4": {
-      "Finella\\": "src/"
-    },
-    "files": [
-      "src/Support/global_helpers.php",
-      "src/Support/compat.php",
-      "src/Support/helpers.php"
-    ]
-  },
-  "bin": [
-    "bin/finella"
-  ],
-  "extra": {
-    "finella": {
-      "providers": [
-        "Finella\\Database\\DatabaseServiceProvider",
-        "Finella\\Cache\\CacheServiceProvider",
-        "Finella\\Log\\LogServiceProvider",
-        "Finella\\RequestLogging\\RequestLoggingServiceProvider",
-        "Finella\\Session\\SessionServiceProvider",
-        "Finella\\Cookie\\CookieServiceProvider",
-        "Finella\\Csrf\\CsrfServiceProvider",
-        "Finella\\Auth\\AuthServiceProvider",
-        "Finella\\Orm\\OrmServiceProvider"
-      ]
-    },
-    "branch-alias": {
-      "dev-main": "3.0.x-dev"
-    }
-  }
+    "name":  "fnlla/framework",
+    "description":  "Finella - AI-assisted PHP framework",
+    "homepage":  "https://techayo.co.uk",
+    "license":  "proprietary",
+    "authors":  [
+                    {
+                        "name":  "TechAyo",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Maintainer"
+                    },
+                    {
+                        "name":  "Marcin Kordyaczny",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Project Manager"
+                    }
+                ],
+    "type":  "library",
+    "require":  {
+                    "php":  "\u003e=8.5"
+                },
+    "autoload":  {
+                     "psr-4":  {
+                                   "Finella\\":  "src/"
+                               },
+                     "files":  [
+                                   "src/Support/global_helpers.php",
+                                   "src/Support/compat.php",
+                                   "src/Support/helpers.php"
+                               ]
+                 },
+    "bin":  [
+                "bin/finella"
+            ],
+    "extra":  {
+                  "fnlla":  {
+                                "providers":  [
+                                                  "Finella\\Database\\DatabaseServiceProvider",
+                                                  "Finella\\Cache\\CacheServiceProvider",
+                                                  "Finella\\Log\\LogServiceProvider",
+                                                  "Finella\\RequestLogging\\RequestLoggingServiceProvider",
+                                                  "Finella\\Session\\SessionServiceProvider",
+                                                  "Finella\\Cookie\\CookieServiceProvider",
+                                                  "Finella\\Csrf\\CsrfServiceProvider",
+                                                  "Finella\\Auth\\AuthServiceProvider",
+                                                  "Finella\\Orm\\OrmServiceProvider"
+                                              ]
+                            },
+                  "branch-alias":  {
+                                       "dev-main":  "3.0.x-dev"
+                                   }
+              },
+    "replace":  {
+                    "finella/framework":  "self.version"
+                }
 }

@@ -42,7 +42,7 @@ final class QueueWorkCommand implements CommandInterface
         }
 
         if (!class_exists(QueueManager::class)) {
-            $io->error('QueueManager is not available. Require finella/queue.');
+            $io->error('QueueManager is not available. Require fnlla/queue.');
             return 1;
         }
 

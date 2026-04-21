@@ -1,10 +1,10 @@
-**FINELLA/RBAC**
+**FNLLA/RBAC**
 
 Roles and permissions for fnlla (finella) with gate integration.
 
 **INSTALLATION**
 ```bash
-composer require finella/rbac
+composer require fnlla/rbac
 ```
 
 **CONFIGURATION**

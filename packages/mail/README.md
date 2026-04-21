@@ -1,10 +1,10 @@
-**FINELLA/MAIL**
+**FNLLA/MAIL**
 
 Mail module using Symfony Mailer.
 
 **INSTALLATION**
 ```bash
-composer require finella/mail
+composer require fnlla/mail
 ```
 
 **SERVICE PROVIDER**

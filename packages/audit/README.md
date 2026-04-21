@@ -1,10 +1,10 @@
-**FINELLA/AUDIT**
+**FNLLA/AUDIT**
 
 Audit logging helpers for Finella. Stores simple change history (who/what/when).
 
 **INSTALLATION**
 ```bash
-composer require finella/audit
+composer require fnlla/audit
 ```
 
 **SERVICE PROVIDER**

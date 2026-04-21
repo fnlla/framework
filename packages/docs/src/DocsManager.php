@@ -176,7 +176,7 @@ final class DocsManager
             $version = (string) ($pkg['version'] ?? '');
             $label = $version !== '' ? $name . ' (' . $version . ')' : $name;
 
-            if (str_starts_with($name, 'finella/')) {
+            if (str_starts_with($name, 'fnlla/')) {
                 $finella[$name] = $label;
             } else {
                 $thirdParty[$name] = $label;

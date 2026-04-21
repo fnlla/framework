@@ -82,7 +82,7 @@ final class WebmailSettingsKeys
         }
 
         if (!class_exists(\Finella\Tenancy\TenantContext::class)) {
-            return 'Tenant-scoped webmail settings require finella/tenancy.';
+            return 'Tenant-scoped webmail settings require fnlla/tenancy.';
         }
 
         $id = \Finella\Tenancy\TenantContext::id();

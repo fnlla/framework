@@ -105,7 +105,7 @@ Register the provider in `config/providers/providers.php` under `manual`.
 **-** Rotate and archive logs in production.
 
 **OBSERVABILITY QUICKSTART (10 MINUTES)**
-**-** Ensure logging is enabled (core, included in `finella/standard`).
+**-** Ensure logging is enabled (core, included in `fnlla/standard`).
 **-** Set environment defaults:
    **-** `LOG_FORMAT=json`
    **-** `LOG_REQUEST_ID=1`
@@ -408,7 +408,7 @@ COOKIE_SECURE=1
 
 **NOTES**
 **-** Use `.env` for secrets and deploy-time configuration.
-**-** Use `finella/settings` for runtime, admin-editable values (e.g. SEO, limits, toggles).
+**-** Use `fnlla/settings` for runtime, admin-editable values (e.g. SEO, limits, toggles).
 **-** Never enable `APP_DEBUG=1` in production.
 **-** Use `LOG_REQUEST_ID=1` for traceability.
 **-** Tracing headers are enabled by default (`TRACE_ID_HEADER=1`, `SPAN_ID_HEADER=1`).
@@ -420,7 +420,7 @@ This document consolidates authentication, authorisation, and baseline security 
 
 **AUTHENTICATION**
 Auth routes and middleware live in core and are included in the
-default stack (`finella/standard`).
+default stack (`fnlla/standard`).
 
 Basic usage:
 ```php
@@ -441,7 +441,7 @@ $router->get('/dashboard', fn () => view('dashboard'), middleware: ['auth']);
 ```
 
 **AUTHORISATION**
-Policies and gates are provided by `finella/rbac`.
+Policies and gates are provided by `fnlla/rbac`.
 
 Use `can:` middleware:
 ```php
@@ -514,17 +514,17 @@ it can be shared or printed.
 
 **4) FNLLA (FINELLA) PACKAGE MAP**
 Tick required packages:
-**-** finella/standard + optional modules
+**-** fnlla/standard + optional modules
 **-** core database + ORM
-**-** finella/queue
-**-** finella/mail
+**-** fnlla/queue
+**-** fnlla/mail
 **-** core logging
-**-** finella/ops
+**-** fnlla/ops
 **-** core request logging
-**-** finella/scheduler
+**-** fnlla/scheduler
 **-** core cache
-**-** finella/tenancy
-**-** core auth / finella/rbac
+**-** fnlla/tenancy
+**-** core auth / fnlla/rbac
 
 **5) STARTER CUSTOMISATION**
 **-** Replace starter homepage? (Yes/No)
@@ -557,7 +557,7 @@ List commands:
 ```bash
 php bin/finella list
 ```
-Generate docs (requires `finella/docs`):
+Generate docs (requires `fnlla/docs`):
 ```bash
 php bin/finella docs:generate
 ```
@@ -795,7 +795,7 @@ Applies to:
 
 **VERSIONING RULES**
 **-** **Single release train.**
-   **-** All `finella/*` packages move in sync with the repo release.
+   **-** All `fnlla/*` packages move in sync with the repo release.
 **-** **Branch aliases must match release line.**
    **-** Example: `dev-main` = `3.0.x-dev`.
 **-** **Composer constraints must be aligned.**
@@ -828,7 +828,7 @@ Consider multi-repo if:
 
 **DOCS SYSTEM**
 
-fnlla (finella) ships with a docs automation package (`finella/docs`). The goal is to keep documentation easy to generate and easy to maintain via files and CLI.
+fnlla (finella) ships with a docs automation package (`fnlla/docs`). The goal is to keep documentation easy to generate and easy to maintain via files and CLI.
 
 **TWO TRACKS**
 **-** Automation: generate technical and user-guide Markdown skeletons from the app.
@@ -979,7 +979,7 @@ This keeps package compatibility predictable and simplifies dependency graphs.
 
 Standard steps:
 **-** Update `CHANGELOG.md` and package docs.
-**-** Ensure all packages require the same `finella/framework` version (e.g. `^3.0`).
+**-** Ensure all packages require the same `fnlla/framework` version (e.g. `^3.0`).
 **-** Run `php scripts/smoke/run-smoke-tests.php` and app smoke tests.
 **-** Tag the monorepo with `vX.Y.Z`.
 **-** If packages are mirrored to separate repositories, tag each with the same `vX.Y.Z`.
@@ -1084,8 +1084,8 @@ This checklist is intended for the milestone release that introduces the new
 API packages and their docs.
 
 **SCOPE**
-**-** `finella/webmail`
-**-** `finella/notifications`
+**-** `fnlla/webmail`
+**-** `fnlla/notifications`
 
 **PRE-RELEASE CHECKLIST**
 **-** Verify package `composer.json` metadata and version constraints.
@@ -1125,8 +1125,8 @@ API packages and their docs.
 **-** Validate `app` install and boot the app locally.
 
 **V3.0.0 CHECKLIST**
-**-** Confirm all official packages require `finella/framework:^3.0`.
-**-** Ensure `finella/standard` includes framework + ops + rbac + settings + audit + deploy and `debugbar` is dev-only.
+**-** Confirm all official packages require `fnlla/framework:^3.0`.
+**-** Ensure `fnlla/standard` includes framework + ops + rbac + settings + audit + deploy and `debugbar` is dev-only.
 **-** Verify starter app boots with secure defaults (CSRF, headers, rate limit).
 **-** Verify ORM v1 docs + smoke tests cover migrations, relations, and seeding flow.
 **-** Run full quality gate locally (validate/install/lint/smoke).
@@ -1200,7 +1200,7 @@ Release notes are tracked in `CHANGELOG.md`. Use this section to highlight the c
 **PRIVATE REGISTRY**
 
 If you want fnlla (finella) to be fully independent from the monorepo root, the best
-approach is to publish `finella/*` as private Composer packages and let the
+approach is to publish `fnlla/*` as private Composer packages and let the
 starter app pull them during install.
 
 For the recommended public-core vs private-pro split, see `documentation/src/operations.md`.
@@ -1217,7 +1217,7 @@ This keeps the developer workflow simple:
 Private Packagist is the quickest way to host private Composer packages with
 access control.
 
-**-** Publish each package (`finella/ai`, `finella/ops`, etc.).
+**-** Publish each package (`fnlla/ai`, `fnlla/ops`, etc.).
 **-** Add the registry credentials to your environment.
 **-** Require packages as usual in `composer.json`.
 
@@ -1225,7 +1225,7 @@ Example `composer.json`:
 ```json
 {
   "require": {
-    "finella/ai": "^1.0"
+    "fnlla/ai": "^1.0"
   }
 }
 ```
@@ -1273,7 +1273,7 @@ Example `composer.json`:
     {"type": "composer", "url": "https://composer.pkg.github.com/techayo"}
   ],
   "require": {
-    "finella/ai": "^1.0"
+    "fnlla/ai": "^1.0"
   }
 }
 ```
@@ -1306,42 +1306,42 @@ monorepo root.
 The `packages/` directory contains optional modules for the fnlla (finella) ecosystem. Each package is versioned independently and follows SemVer.
 
 **OFFICIAL PACKAGES**
-**-** `finella/queue` - queue manager and worker (sync/database/redis).
-**-** `finella/scheduler` - schedule registry and `schedule:run`.
-**-** `finella/mail` - Symfony Mailer adapter.
-**-** `finella/mail-preview` - mail preview routes and templates.
-**-** `finella/notifications` - notification delivery (email/SMS) + API endpoints.
-**-** `finella/webmail` - webmail backend API (IMAP/SMTP integration).
-**-** `finella/pdf` - HTML-to-PDF rendering (Dompdf) with template helpers.
-**-** `finella/docs` - docs automation helpers.
-**-** `finella/storage` - local storage and image pipeline helpers.
-**-** `finella/content` - content repository helpers (JSON/Markdown).
-**-** `finella/seo` - SEO helpers (meta, OpenGraph, JSON-LD).
-**-** `finella/standard` - default web stack meta-package (framework + ops + rbac + settings + audit + deploy).
-**-** `finella/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, forms.
-**-** `finella/analytics` - analytics event helpers.
-**-** `finella/ai` - OpenAI Responses API client and AI helpers.
-**-** `finella/tenancy` - multi-tenant request context and model scoping.
-**-** `finella/rbac` - roles and permissions with gate integration.
-**-** `finella/settings` - key/value runtime settings store.
-**-** `finella/audit` - audit logging helpers.
-**-** `finella/debugbar` - debug tooling for development (do not enable in production).
-**-** `finella/deploy` - deploy utilities (health + warmup commands).
-**-** `finella/testing` - lightweight HTTP feature testing helpers.
+**-** `fnlla/queue` - queue manager and worker (sync/database/redis).
+**-** `fnlla/scheduler` - schedule registry and `schedule:run`.
+**-** `fnlla/mail` - Symfony Mailer adapter.
+**-** `fnlla/mail-preview` - mail preview routes and templates.
+**-** `fnlla/notifications` - notification delivery (email/SMS) + API endpoints.
+**-** `fnlla/webmail` - webmail backend API (IMAP/SMTP integration).
+**-** `fnlla/pdf` - HTML-to-PDF rendering (Dompdf) with template helpers.
+**-** `fnlla/docs` - docs automation helpers.
+**-** `fnlla/storage` - local storage and image pipeline helpers.
+**-** `fnlla/content` - content repository helpers (JSON/Markdown).
+**-** `fnlla/seo` - SEO helpers (meta, OpenGraph, JSON-LD).
+**-** `fnlla/standard` - default web stack meta-package (framework + ops + rbac + settings + audit + deploy).
+**-** `fnlla/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, forms.
+**-** `fnlla/analytics` - analytics event helpers.
+**-** `fnlla/ai` - OpenAI Responses API client and AI helpers.
+**-** `fnlla/tenancy` - multi-tenant request context and model scoping.
+**-** `fnlla/rbac` - roles and permissions with gate integration.
+**-** `fnlla/settings` - key/value runtime settings store.
+**-** `fnlla/audit` - audit logging helpers.
+**-** `fnlla/debugbar` - debug tooling for development (do not enable in production).
+**-** `fnlla/deploy` - deploy utilities (health + warmup commands).
+**-** `fnlla/testing` - lightweight HTTP feature testing helpers.
 
 **INSTALLATION**
 Install packages individually as needed:
 ```bash
-composer require finella/queue
+composer require fnlla/queue
 ```
 
 **PRIVATE REGISTRY**
-If your team does not have access to the monorepo root, publish `finella/*`
+If your team does not have access to the monorepo root, publish `fnlla/*`
 as private Composer packages and point the starter app at your registry.
 See the Private Registry section below for the recommended setup.
 
 **VERSIONING**
-**-** Packages are compatible with `finella/framework ^3.0`.
+**-** Packages are compatible with `fnlla/framework ^3.0`.
 **-** Minor and patch releases follow SemVer rules.
 
 **AUTO-DISCOVERY**
@@ -1470,7 +1470,7 @@ Treat it as a living document: tick items as they become true in your delivery p
 **-** Incident response playbook defined and used.
 
 **7) ENTERPRISE INTEGRATION READINESS (OPTIONAL)**
-**-** OAuth/OIDC supported (finella/oauth).
+**-** OAuth/OIDC supported (fnlla/oauth).
 **-** SSO/SAML integration plan defined (if required).
 **-** SCIM/IdP provisioning plan defined (if required).
 **-** Audit trail and activity logging enabled where needed.
@@ -1489,45 +1489,45 @@ This document defines the recommended distribution model for fnlla (finella) whe
 
 **SUMMARY**
 **-** **Public core**: available to everyone via Packagist.
-**-** **Starter dependencies**: must be listed in `public_core` so `composer create-project finella/starter` works without extra registry auth.
+**-** **Starter dependencies**: must be listed in `public_core` so `composer create-project fnlla/starter` works without extra registry auth.
 **-** **Private pro modules**: optional add-ons that are not required by starter.
 
 This keeps adoption friction low while preserving optional commercial modules.
 
 **PUBLIC CORE PACKAGES (RECOMMENDED)**
 These packages are safe to expose publicly and form the base developer experience:
-**-** `finella/framework`
-**-** `finella/ai`
-**-** `finella/audit`
-**-** `finella/deploy`
-**-** `finella/monitoring`
-**-** `finella/oauth`
-**-** `finella/standard`
-**-** `finella/queue`
-**-** `finella/scheduler`
-**-** `finella/mail`
-**-** `finella/ops`
-**-** `finella/pdf`
-**-** `finella/rbac`
-**-** `finella/search`
-**-** `finella/settings`
-**-** `finella/docs`
-**-** `finella/testing`
-**-** `finella/debugbar` (dev only)
+**-** `fnlla/framework`
+**-** `fnlla/ai`
+**-** `fnlla/audit`
+**-** `fnlla/deploy`
+**-** `fnlla/monitoring`
+**-** `fnlla/oauth`
+**-** `fnlla/standard`
+**-** `fnlla/queue`
+**-** `fnlla/scheduler`
+**-** `fnlla/mail`
+**-** `fnlla/ops`
+**-** `fnlla/pdf`
+**-** `fnlla/rbac`
+**-** `fnlla/search`
+**-** `fnlla/settings`
+**-** `fnlla/docs`
+**-** `fnlla/testing`
+**-** `fnlla/debugbar` (dev only)
 
-Starter app package: `finella/starter` (create with `composer create-project finella/starter myapp`).
+Starter app package: `fnlla/starter` (create with `composer create-project fnlla/starter myapp`).
 
 **PRIVATE PRO MODULES (RECOMMENDED)**
 These are differentiated add-on modules you may keep private:
-**-** `finella/analytics`
-**-** `finella/content`
-**-** `finella/seo`
-**-** `finella/notifications`
-**-** `finella/webmail`
-**-** `finella/storage-s3`
-**-** `finella/stripe`
-**-** `finella/sentry`
-**-** `finella/tenancy`
+**-** `fnlla/analytics`
+**-** `fnlla/content`
+**-** `fnlla/seo`
+**-** `fnlla/notifications`
+**-** `fnlla/webmail`
+**-** `fnlla/storage-s3`
+**-** `fnlla/stripe`
+**-** `fnlla/sentry`
+**-** `fnlla/tenancy`
 
 Adjust the split to match your business model. A good rule: **public = enable adoption**, **private = protect advantage**.
 
@@ -1568,12 +1568,12 @@ Example (private registry entry in app `composer.json`):
 **DEVELOPER WORKFLOW (FOR USERS)**
 Public starter install:
 ```bash
-composer create-project finella/starter myapp
+composer create-project fnlla/starter myapp
 ```
 
 Optional pro module install (after private registry auth):
 ```bash
-composer require finella/analytics
+composer require fnlla/analytics
 ```
 
 **RELEASE DISCIPLINE**
@@ -1678,11 +1678,11 @@ use Finella\Cache\FileStore;
 **Replacement:** `Finella\Queue\SyncQueue`
 
 **WHAT CHANGED**
-The legacy queue helper was moved to the `finella/queue` package.
+The legacy queue helper was moved to the `fnlla/queue` package.
 
 **MIGRATION STEPS**
 **-** Update class references to `Finella\Queue\SyncQueue`.
-**-** Ensure `finella/queue` is installed and configured.
+**-** Ensure `fnlla/queue` is installed and configured.
 
 **EXAMPLE**
 ```php

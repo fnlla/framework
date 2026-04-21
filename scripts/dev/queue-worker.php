@@ -48,7 +48,7 @@ if (!$app instanceof Application) {
 }
 
 if (!class_exists(QueueManager::class)) {
-    fwrite(STDERR, "QueueManager not available. Install finella/queue.\n");
+    fwrite(STDERR, "QueueManager not available. Install fnlla/queue.\n");
     exit(1);
 }
 

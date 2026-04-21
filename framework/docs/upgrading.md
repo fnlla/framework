@@ -14,4 +14,4 @@ fnlla (finella) follows Semantic Versioning (SemVer).
 **-** Run smoke tests.
 
 **EXTENSIONS**
-Upgrade packages independently but keep compatibility with `finella/framework ^3.0`.
+Upgrade packages independently but keep compatibility with `fnlla/framework ^3.0`.

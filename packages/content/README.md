@@ -1,11 +1,11 @@
-**FINELLA/CONTENT**
+**FNLLA/CONTENT**
 
 Content repository helpers for Finella. Loads JSON or Markdown files from a
 content directory with optional front matter.
 
 **INSTALLATION**
 ```bash
-composer require finella/content
+composer require fnlla/content
 ```
 The package registers `ContentServiceProvider` via auto-discovery.
 

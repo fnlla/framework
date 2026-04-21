@@ -1,10 +1,10 @@
-**FINELLA/MONITORING**
+**FNLLA/MONITORING**
 
 Monitoring and observability utilities for Finella.
 
 **INSTALLATION**
 ```bash
-composer require finella/monitoring
+composer require fnlla/monitoring
 ```
 
 **CONFIGURATION**

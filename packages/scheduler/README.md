@@ -1,10 +1,10 @@
-**FINELLA/SCHEDULER**
+**FNLLA/SCHEDULER**
 
 Lightweight scheduler for running periodic tasks via `schedule:run`.
 
 **INSTALLATION**
 ```bash
-composer require finella/scheduler
+composer require fnlla/scheduler
 ```
 
 **SERVICE PROVIDER**
@@ -45,7 +45,7 @@ php bin/finella schedule:run
 **NOTES**
 Schedules support:
 **-** `everySeconds`, `everyMinute`, `hourly`, `daily`, `dailyAt('02:00')`
-**-** `runInBackground()` if `finella/queue` is available
+**-** `runInBackground()` if `fnlla/queue` is available
 
 Each run updates the last execution timestamp in the cache file.
 

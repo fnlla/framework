@@ -1,43 +1,46 @@
 {
-  "name": "finella/mail",
-  "description": "Finella mail module (Symfony Mailer adapter)",
-  "type": "library",
-  "require": {
-    "php": ">=8.5",
-    "finella/framework": "^3.0",
-    "symfony/mailer": "^7",
-    "symfony/mime": "^7"
-  },
-  "homepage": "https://techayo.co.uk",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "TechAyo",
-      "homepage": "https://techayo.co.uk",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Marcin Kordyaczny",
-      "homepage": "https://techayo.co.uk",
-      "role": "Project Manager"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Finella\\Mail\\": "src/"
-    }
-  },
-  "extra": {
-    "finella": {
-      "providers": [
-        "Finella\\Mail\\MailServiceProvider"
-      ]
-    },
-    "branch-alias": {
-      "dev-main": "3.0.x-dev"
-    }
-  },
-  "scripts": {
-    "test": "php tests/smoke.php"
-  }
+    "name":  "fnlla/mail",
+    "description":  "Finella mail module (Symfony Mailer adapter)",
+    "type":  "library",
+    "require":  {
+                    "php":  "\u003e=8.5",
+                    "fnlla/framework":  "^3.0",
+                    "symfony/mailer":  "^7",
+                    "symfony/mime":  "^7"
+                },
+    "homepage":  "https://techayo.co.uk",
+    "license":  "proprietary",
+    "authors":  [
+                    {
+                        "name":  "TechAyo",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Maintainer"
+                    },
+                    {
+                        "name":  "Marcin Kordyaczny",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Project Manager"
+                    }
+                ],
+    "autoload":  {
+                     "psr-4":  {
+                                   "Finella\\Mail\\":  "src/"
+                               }
+                 },
+    "extra":  {
+                  "fnlla":  {
+                                "providers":  [
+                                                  "Finella\\Mail\\MailServiceProvider"
+                                              ]
+                            },
+                  "branch-alias":  {
+                                       "dev-main":  "3.0.x-dev"
+                                   }
+              },
+    "scripts":  {
+                    "test":  "php tests/smoke.php"
+                },
+    "replace":  {
+                    "finella/mail":  "self.version"
+                }
 }

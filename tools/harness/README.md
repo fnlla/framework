@@ -37,20 +37,20 @@ Then run Composer normally.
 Routes are defined in `routes/web.php`.
 
 **MODULES INCLUDED**
-**-** `finella/framework` - core HTTP stack, routing, container, views.
+**-** `fnlla/framework` - core HTTP stack, routing, container, views.
 **-** Core modules (bundled in framework): database, ORM, cache, sessions, cookies, auth, CSRF, logging, request logging.
-**-** `finella/queue` - queue manager (sync + database).
-**-** `finella/scheduler` - schedule registry and `schedule:run`.
-**-** `finella/mail` - Symfony Mailer adapter.
-**-** `finella/seo` - SEO helpers (meta/OG/JSON-LD).
-**-** `finella/content` - content repository helpers.
-**-** `finella/analytics` - analytics event helpers.
-**-** `finella/deploy` - deploy utilities (health + warmup commands).
-**-** `finella/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, forms.
-**-** `finella/rbac` - roles and permissions with gate integration.
-**-** `finella/settings` - key/value runtime settings store.
-**-** `finella/audit` - audit logging helpers.
-**-** `finella/debugbar` - debug tooling (dev only).
+**-** `fnlla/queue` - queue manager (sync + database).
+**-** `fnlla/scheduler` - schedule registry and `schedule:run`.
+**-** `fnlla/mail` - Symfony Mailer adapter.
+**-** `fnlla/seo` - SEO helpers (meta/OG/JSON-LD).
+**-** `fnlla/content` - content repository helpers.
+**-** `fnlla/analytics` - analytics event helpers.
+**-** `fnlla/deploy` - deploy utilities (health + warmup commands).
+**-** `fnlla/ops` - security headers, CORS, rate limiting, redirects, maintenance, static cache, forms.
+**-** `fnlla/rbac` - roles and permissions with gate integration.
+**-** `fnlla/settings` - key/value runtime settings store.
+**-** `fnlla/audit` - audit logging helpers.
+**-** `fnlla/debugbar` - debug tooling (dev only).
 
 **MAINTENANCE COMMANDS (HARNESS)**
 **-** `composer update`

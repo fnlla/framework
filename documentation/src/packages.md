@@ -4,7 +4,7 @@ This document summarizes every module inside `packages/` with its purpose, curre
 For external services and adapters, see `documentation/src/ai-integrations.md`.
 
 **CORE MODULES (BUNDLED IN FRAMEWORK)**
-These capabilities ship inside `finella/framework` and do not appear in `packages/`.
+These capabilities ship inside `fnlla/framework` and do not appear in `packages/`.
 **-** auth (guards, middleware, providers)
 **-** database (connections, migrations, query builder)
 **-** orm (active record + query helpers)
@@ -199,7 +199,7 @@ These capabilities ship inside `finella/framework` and do not appear in `package
 **-** End-user problem: insecure or inconsistent file storage.
 
 **STORAGE-S3**
-**-** Purpose: S3 storage adapter for finella/storage.
+**-** Purpose: S3 storage adapter for fnlla/storage.
 **-** Current scope: basic S3 disk operations + URL helper.
 **-** Useful for: cloud uploads and media assets.
 **-** Improve: multipart uploads and streaming.

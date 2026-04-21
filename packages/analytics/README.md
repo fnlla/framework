@@ -1,10 +1,10 @@
-**FINELLA/ANALYTICS**
+**FNLLA/ANALYTICS**
 
 Analytics event helpers for Finella.
 
 **INSTALLATION**
 ```bash
-composer require finella/analytics
+composer require fnlla/analytics
 ```
 The package registers `AnalyticsServiceProvider` via auto-discovery.
 

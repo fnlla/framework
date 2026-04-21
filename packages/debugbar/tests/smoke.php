@@ -54,9 +54,9 @@ ok($response->getHeaderLine('X-Debug-Messages') === '1', 'X-Debug-Messages');
 ok($response->getHeaderLine('X-Debug-Errors') === '1', 'X-Debug-Errors');
 ok($response->getHeaderLine('X-Debug-Time-Ms') !== '', 'X-Debug-Time-Ms');
 ok(str_contains((string) $response->getBody(), 'Finella Debugbar'), 'debugbar panel injected');
-ok(str_contains((string) $response->getBody(), '<script src="/_finella/debugbar.js?v=3.0.0" defer></script>'), 'debugbar js asset injected');
+ok(str_contains((string) $response->getBody(), '<script src="/_fnlla/debugbar.js?v=3.0.0" defer></script>'), 'debugbar js asset injected');
 
-$assetRequest = new Request('GET', new Uri('https://app.example.test/_finella/debugbar.js'), [], Stream::fromString(''));
+$assetRequest = new Request('GET', new Uri('https://app.example.test/_fnlla/debugbar.js'), [], Stream::fromString(''));
 $assetResponse = $middleware->process($assetRequest, $handler);
 ok($assetResponse->getStatusCode() === 200, 'debugbar js asset endpoint returns 200');
 ok(str_contains($assetResponse->getHeaderLine('Content-Type'), 'application/javascript'), 'debugbar js content type set');

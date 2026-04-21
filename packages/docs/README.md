@@ -1,4 +1,4 @@
-**FINELLA/DOCS**
+**FNLLA/DOCS**
 
 Documentation automation for fnlla (finella) apps.
 
@@ -11,7 +11,7 @@ Documentation automation for fnlla (finella) apps.
 
 **INSTALLATION**
 ```bash
-composer require finella/docs
+composer require fnlla/docs
 ```
 
 **CONFIGURATION**

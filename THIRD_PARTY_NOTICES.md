@@ -5,7 +5,7 @@ Licenses are reported by each package; consult the upstream project for full lic
 
 Last updated: 2026-04-19.
 Lock files scanned: `tools/harness/composer.lock`.
-First-party `finella/*` packages are excluded.
+First-party `fnlla/*` packages are excluded.
 
 | Package | Version | License |
 | --- | --- | --- |

@@ -4,7 +4,7 @@ This guide shows the minimal steps required to run a fnlla (finella) application
 
 **1) INSTALL**
 Offline install:
-**-** Add `finella/framework` to `composer.json` in `require`.
+**-** Add `fnlla/framework` to `composer.json` in `require`.
 **-** Configure local path repositories (see `documentation/src/getting-started.md`).
 **-** Run `composer install`.
 

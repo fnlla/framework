@@ -1,10 +1,10 @@
-**FINELLA/QUEUE**
+**FNLLA/QUEUE**
 
 Queue module with synchronous, database, and Redis drivers.
 
 **INSTALLATION**
 ```bash
-composer require finella/queue
+composer require fnlla/queue
 ```
 
 **SERVICE PROVIDER**

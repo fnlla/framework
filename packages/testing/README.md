@@ -1,10 +1,10 @@
-**FINELLA/TESTING**
+**FNLLA/TESTING**
 
 Lightweight testing helpers for Finella. Provides a base `TestCase` for HTTP feature tests and a simple CLI runner.
 
 **INSTALLATION**
 ```bash
-composer require --dev finella/testing
+composer require --dev fnlla/testing
 ```
 
 **RUNNING TESTS**

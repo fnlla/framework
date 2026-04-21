@@ -12,7 +12,7 @@ return [
     ],
 ];
 ```
-Requires `finella/ops`.
+Requires `fnlla/ops`.
 
 **PER-ROUTE MIDDLEWARE**
 ```php
@@ -29,7 +29,7 @@ $router->middlewareGroup('web', [
     \Finella\SecurityHeaders\SecurityHeadersMiddleware::class,
 ]);
 ```
-Requires the core CSRF module and `finella/ops`.
+Requires the core CSRF module and `fnlla/ops`.
 
 **MIDDLEWARE ALIASES**
 Define aliases in `config/http/http.php`:
@@ -65,4 +65,4 @@ Core middleware ships in the framework:
 
 **OPTIONAL MIDDLEWARE**
 Optional middleware is delivered as packages and only enabled when you install them:
-**-** `finella/ops` (SecurityHeadersMiddleware, RateLimitMiddleware, CorsMiddleware, RedirectsMiddleware, MaintenanceMiddleware, StaticCacheMiddleware, HoneypotMiddleware)
+**-** `fnlla/ops` (SecurityHeadersMiddleware, RateLimitMiddleware, CorsMiddleware, RedirectsMiddleware, MaintenanceMiddleware, StaticCacheMiddleware, HoneypotMiddleware)

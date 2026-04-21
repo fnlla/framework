@@ -1,42 +1,45 @@
 {
-  "name": "finella/sentry",
-  "description": "Sentry error tracking adapter for Finella",
-  "type": "library",
-  "require": {
-    "php": ">=8.5",
-    "finella/framework": "^3.0",
-    "sentry/sentry": "^4.0"
-  },
-  "homepage": "https://techayo.co.uk",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "TechAyo",
-      "homepage": "https://techayo.co.uk",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Marcin Kordyaczny",
-      "homepage": "https://techayo.co.uk",
-      "role": "Project Manager"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Finella\\Sentry\\": "src/"
-    }
-  },
-  "extra": {
-    "finella": {
-      "providers": [
-        "Finella\\Sentry\\SentryServiceProvider"
-      ]
-    },
-    "branch-alias": {
-      "dev-main": "3.0.x-dev"
-    }
-  },
-  "scripts": {
-    "test": "php tests/smoke.php"
-  }
+    "name":  "fnlla/sentry",
+    "description":  "Sentry error tracking adapter for Finella",
+    "type":  "library",
+    "require":  {
+                    "php":  "\u003e=8.5",
+                    "fnlla/framework":  "^3.0",
+                    "sentry/sentry":  "^4.0"
+                },
+    "homepage":  "https://techayo.co.uk",
+    "license":  "proprietary",
+    "authors":  [
+                    {
+                        "name":  "TechAyo",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Maintainer"
+                    },
+                    {
+                        "name":  "Marcin Kordyaczny",
+                        "homepage":  "https://techayo.co.uk",
+                        "role":  "Project Manager"
+                    }
+                ],
+    "autoload":  {
+                     "psr-4":  {
+                                   "Finella\\Sentry\\":  "src/"
+                               }
+                 },
+    "extra":  {
+                  "fnlla":  {
+                                "providers":  [
+                                                  "Finella\\Sentry\\SentryServiceProvider"
+                                              ]
+                            },
+                  "branch-alias":  {
+                                       "dev-main":  "3.0.x-dev"
+                                   }
+              },
+    "scripts":  {
+                    "test":  "php tests/smoke.php"
+                },
+    "replace":  {
+                    "finella/sentry":  "self.version"
+                }
 }

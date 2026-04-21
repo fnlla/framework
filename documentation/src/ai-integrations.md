@@ -2,7 +2,7 @@
 
 **AI**
 
-fnlla (finella) includes an optional AI package (`finella/ai`) with a built-in OpenAI
+fnlla (finella) includes an optional AI package (`fnlla/ai`) with a built-in OpenAI
 Responses API client. This keeps AI integration consistent across apps while
 remaining provider-friendly for the future. Starter apps default to
 `AI_DRIVER=mock` for safe, offline demos.
@@ -24,7 +24,7 @@ What AI does not do:
 **-** replace engineering ownership or SDLC decision-making
 
 **QUICKSTART (5 MINUTES)**
-**-** Install AI: `composer require finella/ai`
+**-** Install AI: `composer require fnlla/ai`
 **-** In `.env` set `AI_DRIVER=openai` and `OPENAI_API_KEY=your-key` for live models (mock is default).
 **-** Review the governance settings in `config/ai/policy.php` and `config/ai/redaction.php`.
 
@@ -71,13 +71,13 @@ RAG is available for grounding answers in your own docs and data. Configure
 
 **INTEGRATIONS**
 fnlla (finella) supports first-class integrations through packages:
-**-** Search (`finella/search`)
-**-** OAuth/OIDC (`finella/oauth`)
-**-** Monitoring (`finella/monitoring`)
-**-** Webmail (`finella/webmail`)
-**-** PDF (`finella/pdf`)
-**-** SEO (`finella/seo`)
-**-** Storage (`finella/storage-s3`)
+**-** Search (`fnlla/search`)
+**-** OAuth/OIDC (`fnlla/oauth`)
+**-** Monitoring (`fnlla/monitoring`)
+**-** Webmail (`fnlla/webmail`)
+**-** PDF (`fnlla/pdf`)
+**-** SEO (`fnlla/seo`)
+**-** Storage (`fnlla/storage-s3`)
 
 For the current integration list and configuration guidance, see
 `documentation/src/operations.md`.

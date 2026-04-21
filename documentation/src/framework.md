@@ -146,8 +146,8 @@ return [
 ];
 ```
 
-Optional runtime configuration can be stored in the database with `finella/settings`.
-For action logs, enable `finella/audit`.
+Optional runtime configuration can be stored in the database with `fnlla/settings`.
+For action logs, enable `fnlla/audit`.
 
 **ENVIRONMENT**
 The starter uses `Finella\Support\Dotenv` and loads `.env` when present.
@@ -417,11 +417,11 @@ User::withSum('posts', 'score')->get();
 
 **RUNTIME SETTINGS & AUDIT**
 If you need runtime configuration or audit trails stored in the database:
-**-** `finella/settings` - simple key/value store for admin-configurable settings.
-**-** `finella/audit` - audit log for tracking who changed what.
+**-** `fnlla/settings` - simple key/value store for admin-configurable settings.
+**-** `fnlla/audit` - audit log for tracking who changed what.
 
 **MULTI-TENANCY**
-For tenant-scoped data, enable `finella/tenancy` and extend `TenantModel`:
+For tenant-scoped data, enable `fnlla/tenancy` and extend `TenantModel`:
 ```php
 use Finella\Tenancy\TenantModel;
 
@@ -616,8 +616,8 @@ $router->post('/form', function (Request $request): Response {
 
 **NOTIFICATIONS**
 
-`finella/notifications` provides backend notification delivery with basic API
-endpoints. Email uses `finella/mail`. SMS uses a pluggable sender interface.
+`fnlla/notifications` provides backend notification delivery with basic API
+endpoints. Email uses `fnlla/mail`. SMS uses a pluggable sender interface.
 
 **CONFIG**
 Create `config/notifications/notifications.php`:
@@ -648,11 +648,11 @@ Endpoints:
 
 **PDF**
 
-`finella/pdf` provides HTML-to-PDF rendering via Dompdf plus ready templates for invoices and pitch decks.
+`fnlla/pdf` provides HTML-to-PDF rendering via Dompdf plus ready templates for invoices and pitch decks.
 
 **INSTALL**
 ```bash
-composer require finella/pdf
+composer require fnlla/pdf
 ```
 
 **CONFIGURATION**
@@ -904,7 +904,7 @@ $cache->set('plan:starter', $data, 600);
 ```
 
 **3) STATIC CACHE (PUBLIC PAGES)**
-**-** Use `finella/ops` (static cache module) to cache HTML for public GET routes.
+**-** Use `fnlla/ops` (static cache module) to cache HTML for public GET routes.
 **-** Configure exclusions for admin/auth routes.
 
 Config:
@@ -928,4 +928,4 @@ CACHE_STATIC_EXCLUDE=/admin,/auth
 
 **REFERENCES**
 **-** core cache (framework)
-**-** `finella/ops` (static HTML cache + redirects)
+**-** `fnlla/ops` (static HTML cache + redirects)

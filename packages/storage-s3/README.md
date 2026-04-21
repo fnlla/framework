@@ -1,10 +1,10 @@
-**FINELLA/STORAGE-S3**
+**FNLLA/STORAGE-S3**
 
-S3 storage driver for fnlla (finella) storage. Requires `finella/storage` and AWS SDK v3.
+S3 storage driver for fnlla (finella) storage. Requires `fnlla/storage` and AWS SDK v3.
 
 **INSTALLATION**
 ```bash
-composer require finella/storage finella/storage-s3
+composer require fnlla/storage fnlla/storage-s3
 ```
 
 **CONFIGURATION**

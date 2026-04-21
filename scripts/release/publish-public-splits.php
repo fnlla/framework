@@ -111,11 +111,11 @@ function resolvePublicTargets(array $publicCore): array
     $targets = [];
     foreach ($publicCore as $package) {
         $package = (string) $package;
-        if (!str_starts_with($package, 'finella/')) {
+        if (!str_starts_with($package, 'fnlla/')) {
             fail("Invalid package in public_core: {$package}");
         }
 
-        $slug = substr($package, strlen('finella/'));
+        $slug = substr($package, strlen('fnlla/'));
         if ($slug === '') {
             fail("Invalid package slug in public_core: {$package}");
         }

@@ -40,7 +40,7 @@ $router->middlewareGroup('web', [
     \Finella\SecurityHeaders\SecurityHeadersMiddleware::class,
 ]);
 ```
-Requires the core CSRF module and `finella/ops`.
+Requires the core CSRF module and `fnlla/ops`.
 
 **404 / 405 BEHAVIOUR**
 **-** No matching path -> 404

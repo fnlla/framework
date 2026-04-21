@@ -52,7 +52,7 @@ final class DatabaseBootstrapCommand implements CommandInterface
         $this->bootEnv($appRoot);
 
         if (!class_exists(ConnectionManager::class)) {
-            $io->error('Database core module is not available. Ensure finella/framework is installed.');
+            $io->error('Database core module is not available. Ensure fnlla/framework is installed.');
             return 1;
         }
 

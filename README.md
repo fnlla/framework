@@ -94,7 +94,7 @@ Open:
 
 **STARTER**
 **-** Starter application repository: `https://github.com/fnlla/fnlla`
-**-** Public bootstrap command: `composer create-project finella/starter my-app`
+**-** Public bootstrap command: `composer create-project fnlla/starter my-app`
 
 Docs UI and docs generation:
 **-** Docs home: `GET /docs`
@@ -170,7 +170,7 @@ This section is the operational source for maintainers responsible for public pa
 **SOURCE OF TRUTH**
 **-** `fnlla/framework` stays private and is the only source of truth.
 **-** Public package repositories are split outputs only (do not edit them manually).
-**-** Starter repository is `fnlla/fnlla` and is public for `composer create-project finella/starter`.
+**-** Starter repository is `fnlla/fnlla` and is public for `composer create-project fnlla/starter`.
 
 **PACKAGE SPLIT (PUBLIC VS PRIVATE)**
 **-** Manifest file: `scripts/release/distribution-packages.json`
@@ -178,65 +178,65 @@ This section is the operational source for maintainers responsible for public pa
 **-** Guard check: `php scripts/release/check-public-distribution.php`
 
 Public core (`public_core`) currently includes:
-**-** `finella/framework`
-**-** `finella/ai`
-**-** `finella/audit`
-**-** `finella/deploy`
-**-** `finella/monitoring`
-**-** `finella/oauth`
-**-** `finella/standard`
-**-** `finella/queue`
-**-** `finella/scheduler`
-**-** `finella/mail`
-**-** `finella/ops`
-**-** `finella/pdf`
-**-** `finella/rbac`
-**-** `finella/search`
-**-** `finella/settings`
-**-** `finella/docs`
-**-** `finella/testing`
-**-** `finella/debugbar`
+**-** `fnlla/framework`
+**-** `fnlla/ai`
+**-** `fnlla/audit`
+**-** `fnlla/deploy`
+**-** `fnlla/monitoring`
+**-** `fnlla/oauth`
+**-** `fnlla/standard`
+**-** `fnlla/queue`
+**-** `fnlla/scheduler`
+**-** `fnlla/mail`
+**-** `fnlla/ops`
+**-** `fnlla/pdf`
+**-** `fnlla/rbac`
+**-** `fnlla/search`
+**-** `fnlla/settings`
+**-** `fnlla/docs`
+**-** `fnlla/testing`
+**-** `fnlla/debugbar`
 
 Private/pro (`private_pro`) currently includes optional modules not required by starter:
-**-** `finella/analytics`
-**-** `finella/content`
-**-** `finella/seo`
-**-** `finella/notifications`
-**-** `finella/webmail`
-**-** `finella/storage-s3`
-**-** `finella/stripe`
-**-** `finella/sentry`
-**-** `finella/tenancy`
+**-** `fnlla/analytics`
+**-** `fnlla/content`
+**-** `fnlla/seo`
+**-** `fnlla/notifications`
+**-** `fnlla/webmail`
+**-** `fnlla/storage-s3`
+**-** `fnlla/stripe`
+**-** `fnlla/sentry`
+**-** `fnlla/tenancy`
 
 Rule: packages required by starter (runtime and dev) must stay in `public_core`.
 Private registry is for optional pro add-ons only.
 
 **PUBLIC SPLIT REPOSITORIES**
 Public package repositories in GitHub org `fnlla`:
-**-** `fnlla/pkg-framework` (`finella/framework`)
-**-** `fnlla/pkg-ai` (`finella/ai`)
-**-** `fnlla/pkg-audit` (`finella/audit`)
-**-** `fnlla/pkg-deploy` (`finella/deploy`)
-**-** `fnlla/pkg-monitoring` (`finella/monitoring`)
-**-** `fnlla/pkg-oauth` (`finella/oauth`)
-**-** `fnlla/pkg-standard` (`finella/standard`)
-**-** `fnlla/pkg-queue` (`finella/queue`)
-**-** `fnlla/pkg-scheduler` (`finella/scheduler`)
-**-** `fnlla/pkg-mail` (`finella/mail`)
-**-** `fnlla/pkg-ops` (`finella/ops`)
-**-** `fnlla/pkg-pdf` (`finella/pdf`)
-**-** `fnlla/pkg-rbac` (`finella/rbac`)
-**-** `fnlla/pkg-search` (`finella/search`)
-**-** `fnlla/pkg-settings` (`finella/settings`)
-**-** `fnlla/pkg-docs` (`finella/docs`)
-**-** `fnlla/pkg-testing` (`finella/testing`)
-**-** `fnlla/pkg-debugbar` (`finella/debugbar`)
+**-** `fnlla/pkg-framework` (`fnlla/framework`)
+**-** `fnlla/pkg-ai` (`fnlla/ai`)
+**-** `fnlla/pkg-audit` (`fnlla/audit`)
+**-** `fnlla/pkg-deploy` (`fnlla/deploy`)
+**-** `fnlla/pkg-monitoring` (`fnlla/monitoring`)
+**-** `fnlla/pkg-oauth` (`fnlla/oauth`)
+**-** `fnlla/pkg-standard` (`fnlla/standard`)
+**-** `fnlla/pkg-queue` (`fnlla/queue`)
+**-** `fnlla/pkg-scheduler` (`fnlla/scheduler`)
+**-** `fnlla/pkg-mail` (`fnlla/mail`)
+**-** `fnlla/pkg-ops` (`fnlla/ops`)
+**-** `fnlla/pkg-pdf` (`fnlla/pdf`)
+**-** `fnlla/pkg-rbac` (`fnlla/rbac`)
+**-** `fnlla/pkg-search` (`fnlla/search`)
+**-** `fnlla/pkg-settings` (`fnlla/settings`)
+**-** `fnlla/pkg-docs` (`fnlla/docs`)
+**-** `fnlla/pkg-testing` (`fnlla/testing`)
+**-** `fnlla/pkg-debugbar` (`fnlla/debugbar`)
 
 **COMPOSER METADATA RULES (PUBLIC PACKAGE REPOS)**
-**-** Keep valid package `name` in each package `composer.json` (for example `finella/ops`).
+**-** Keep valid package `name` in each package `composer.json` (for example `fnlla/ops`).
 **-** Do not set a fixed `version` in `composer.json`; versions come from Git tags.
 **-** Keep `extra.branch-alias.dev-main` aligned with the current release line (for example `3.0.x-dev`).
-**-** Keep dependency constraints aligned to the release line (for example `finella/framework:^3.0`).
+**-** Keep dependency constraints aligned to the release line (for example `fnlla/framework:^3.0`).
 
 **ONE-TIME PACKAGIST PUBLISH (PUBLIC PACKAGES)**
 1. Open Packagist account with org access.
@@ -249,8 +249,8 @@ Public package repositories in GitHub org `fnlla`:
 **ONE-TIME PACKAGIST PUBLISH (STARTER)**
 1. Ensure starter repo `fnlla/fnlla` is public.
 2. Confirm starter `composer.json` contains only remote dependencies (no `path` repositories).
-3. Submit `https://github.com/fnlla/fnlla` to Packagist as `finella/starter`.
-4. Verify `composer create-project finella/starter my-app` resolves from Packagist.
+3. Submit `https://github.com/fnlla/fnlla` to Packagist as `fnlla/starter`.
+4. Verify `composer create-project fnlla/starter my-app` resolves from Packagist.
 
 **STARTER RULES (REQUIRED)**
 **-** In `fnlla/fnlla`, keep only remote dependencies in `composer.json`.
@@ -266,7 +266,7 @@ Public package repositories in GitHub org `fnlla`:
 3. Refresh Packagist package metadata (auto-hook or manual update).
 4. Release starter (`fnlla/fnlla`) with aligned dependency constraints.
 5. Validate public bootstrap:
-   `composer create-project finella/starter my-app`
+   `composer create-project fnlla/starter my-app`
 6. Validate install/boot in created app:
    `composer install && php bin/finella db:bootstrap`
 

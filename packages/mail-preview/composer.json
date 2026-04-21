@@ -1,24 +1,26 @@
 {
-  "name": "finella/mail-preview",
-  "description": "Finella mail preview routes and templates",
-  "homepage": "https://techayo.co.uk",
-  "license": "proprietary",
-  "type": "library",
-  "require": {
-    "php": ">=8.5",
-    "finella/framework": "^3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Finella\\MailPreview\\": "src/"
-    }
-  },
-  "extra": {
-    "finella": {
-      "providers": [
-        "Finella\\MailPreview\\MailPreviewServiceProvider"
-      ]
-    }
-  }
+    "name":  "fnlla/mail-preview",
+    "description":  "Finella mail preview routes and templates",
+    "homepage":  "https://techayo.co.uk",
+    "license":  "proprietary",
+    "type":  "library",
+    "require":  {
+                    "php":  "\u003e=8.5",
+                    "fnlla/framework":  "^3.0"
+                },
+    "autoload":  {
+                     "psr-4":  {
+                                   "Finella\\MailPreview\\":  "src/"
+                               }
+                 },
+    "extra":  {
+                  "fnlla":  {
+                                "providers":  [
+                                                  "Finella\\MailPreview\\MailPreviewServiceProvider"
+                                              ]
+                            }
+              },
+    "replace":  {
+                    "finella/mail-preview":  "self.version"
+                }
 }
-

@@ -1,6 +1,6 @@
 **CHANGELOG**
 
-All notable changes to finella/framework will be documented in this file.
+All notable changes to fnlla/framework will be documented in this file.
 For the monorepo-wide changes (packages, starter app, docs), see `CHANGELOG.md`.
 This format follows Keep a Changelog and Semantic Versioning.
 

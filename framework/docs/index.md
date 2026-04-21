@@ -1,6 +1,6 @@
 **FNLLA (FINELLA) FRAMEWORK DOCUMENTATION**
 
-This documentation targets the `finella/framework` package. It is written in UK English and reflects the actual behaviour of the 3.x line.
+This documentation targets the `fnlla/framework` package. It is written in UK English and reflects the actual behaviour of the 3.x line.
 
 **HOW TO READ THIS DOCUMENTATION**
 Start with `getting-started.md`, then go through routing, middleware, and configuration. Use the monorepo docs (`documentation/src/getting-started.md`, `documentation/src/framework.md`, `documentation/src/operations.md`) for app-level guidance.

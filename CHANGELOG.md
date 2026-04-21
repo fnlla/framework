@@ -114,7 +114,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **-** Dashboard preview index view added for quick browsing.
 
 **CHANGED**
-**-** Starter dev tooling now includes `finella/debugbar` in require-dev for first-run debugging.
+**-** Starter dev tooling now includes `fnlla/debugbar` in require-dev for first-run debugging.
 **-** Developer experience docs updated with DX showcase and ORM ergonomics links.
 **-** Database query builder now supports `whereIn` for internal pivot queries.
 **-** Starter now preloads search, OAuth/OIDC, and monitoring adapters for plug-and-play integrations.
@@ -153,7 +153,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **[2.5.0] - 2026-03-31**
 
 **ADDED**
-**-** `finella/ai` package with OpenAI Responses API client and provider wiring.
+**-** `fnlla/ai` package with OpenAI Responses API client and provider wiring.
 **-** AI configuration stubs and docs (`documentation/src/ai-integrations.md`) for starter and app templates.
 **-** RAG embeddings store and indexing helpers (`ai_rag` config + workspace reindex).
 **-** Workspace AI assistant UI with RAG-backed answers and realtime token minting.
@@ -174,8 +174,8 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **-** Framework intelligence CLI commands (scaffold, config advisor, observability, security lint, docs sync).
 **-** AI readiness CLI command (`ai:doctor`) with configuration checks and suggestions.
 **-** Optional daily autonomous digest schedule hook in the app template (`WORKSPACE_AI_AUTONOMOUS_SCHEDULED`).
-**-** New `finella/storage` package with local storage and image pipeline helpers.
-**-** New `finella/mail-preview` package with preview routes and template stubs.
+**-** New `fnlla/storage` package with local storage and image pipeline helpers.
+**-** New `fnlla/mail-preview` package with preview routes and template stubs.
 **-** Added `view_path()` helper for rendering UI stubs directly from views.
 **-** Admin login flow and access middleware for starter admin routes (with env-driven credentials).
 
@@ -254,11 +254,11 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **[1.3.8] - 2026-03-07**
 
 **ADDED**
-**-** `finella/docs` package for docs automation (technical/user skeletons + CLI).
+**-** `fnlla/docs` package for docs automation (technical/user skeletons + CLI).
 **-** Starter docs UI with manual editing and PDF export.
 **-** Docs publish action for copying compiled docs into `resources/docs`.
 **-** `docs:generate --publish` flag to publish docs after generation.
-**-** `finella/pdf` pitch-deck template and sample `/api/pdf/pitch-deck` route.
+**-** `fnlla/pdf` pitch-deck template and sample `/api/pdf/pitch-deck` route.
 
 **CHANGED**
 **-** `/docs` now renders Markdown as HTML for a cleaner reading experience.
@@ -266,13 +266,13 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **[1.3.7] - 2026-03-07**
 
 **ADDED**
-**-** `finella/pdf` package with Dompdf renderer, invoice HTML template, and documentation.
+**-** `fnlla/pdf` package with Dompdf renderer, invoice HTML template, and documentation.
 **-** Starter pre-flight workflow at `/pre-flight` with Markdown + PDF exports.
 **-** Admin kit publish command (`admin-kit:publish`) and publish docs.
 
 **CHANGED**
 **-** Docs consolidated into clearer core sections (`getting-started`, `security`, `forms-validation`, `structure-conventions`) and mirrored in starter.
-**-** `finella/standard` now tracks baseline + ops guidance after profile removal.
+**-** `fnlla/standard` now tracks baseline + ops guidance after profile removal.
 **-** Offline Composer artifacts are now opt-in; `third_party/dist` is no longer shipped by default.
 **-** `tools/harness` now includes PDF dependencies for smoke coverage.
 **-** App skeleton now includes ORM, queue/scheduler, and mail by default for end-to-end checks.
@@ -280,7 +280,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **-** PHPStan toolchain includes Dompdf to analyse PDF classes.
 
 **REMOVED**
-**-** Profile packages: `finella/profile-backoffice`, `finella/profile-commerce`, `finella/profile-saas`.
+**-** Profile packages: `fnlla/profile-backoffice`, `fnlla/profile-commerce`, `fnlla/profile-saas`.
 
 **FIXED**
 **-** PDF manager now accepts the app config wrapper used by the container.
@@ -290,7 +290,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 
 **ADDED**
 **-** `scripts/release/publish-release.php` to publish GitHub releases from `CHANGELOG.md` sections with encoding validation.
-**-** New backend/API packages: `finella/notifications`, `finella/webmail`.
+**-** New backend/API packages: `fnlla/notifications`, `fnlla/webmail`.
 **-** Docs for notifications and webmail APIs.
 **-** Webmail settings API to persist IMAP/SMTP credentials and drive runtime webmail configuration.
 **-** Webmail diagnostics endpoint and encrypted storage for webmail passwords.
@@ -359,7 +359,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 
 **ADDED**
 **-** Redis cache driver with locking support and Redis queue driver.
-**-** `finella/tenancy` package with middleware and tenant-scoped model base.
+**-** `fnlla/tenancy` package with middleware and tenant-scoped model base.
 **-** Readiness checks now validate Redis when cache/queue use it.
 **-** Beginner cheat sheets in PL and EN-GB.
 **-** Name origin documented (fnlla (finella) Gardens, Dundee, UK).
@@ -450,7 +450,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **[1.2.2] - 2026-02-22**
 
 **ADDED**
-**-** Add new optional packages to `finella/standard` for default starter installs.
+**-** Add new optional packages to `fnlla/standard` for default starter installs.
 
 **[1.2.1] - 2026-02-22**
 
@@ -463,8 +463,8 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **[1.2.0] - 2026-02-22**
 
 **ADDED**
-**-** New packages: `finella/seo`, `finella/content`, `finella/redirects`, `finella/forms`,
-  `finella/analytics`, `finella/cache-static`, `finella/deploy`.
+**-** New packages: `fnlla/seo`, `fnlla/content`, `fnlla/redirects`, `fnlla/forms`,
+  `fnlla/analytics`, `fnlla/cache-static`, `fnlla/deploy`.
 **-** New deploy commands: `deploy:health`, `deploy:warmup`.
 **-** Add `THIRD_PARTY_NOTICES.md` with Composer-based dependency list.
 **-** Starter config stubs for SEO, content, redirects, forms, analytics, and static cache.
@@ -488,11 +488,11 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 
 **ADDED**
 **-** New CLI generators: `make:middleware`, `make:mail`, `make:test`.
-**-** New packages: `finella/cors` and `finella/maintenance` (middleware).
+**-** New packages: `fnlla/cors` and `fnlla/maintenance` (middleware).
 **-** Starter app config set for standard stack (providers + HTTP middleware + base module configs).
 
 **CHANGED**
-**-** Starter app now uses `finella/standard` and includes dev tooling (core CLI + `finella/testing`).
+**-** Starter app now uses `fnlla/standard` and includes dev tooling (core CLI + `fnlla/testing`).
 **-** CLI now supports short flags (e.g. `-mf` for `make:model`).
 
 **FIXED**

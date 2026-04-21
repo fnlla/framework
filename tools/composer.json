@@ -1,23 +1,26 @@
 {
-  "name": "finella/tools",
-  "description": "Finella tooling (PHPStan)",
-  "type": "project",
-  "license": "proprietary",
-  "require-dev": {
-    "phpstan/phpstan": "^1.11",
-    "phpstan/phpstan-strict-rules": "^1.6",
-    "phpstan/phpstan-deprecation-rules": "^1.2",
-    "vimeo/psalm": "^6.0",
-    "rector/rector": "^1.0",
-    "phpunit/phpunit": "^13.1",
-    "psr/log": "^3.0",
-    "monolog/monolog": "^3.0",
-    "symfony/mailer": "^8.0",
-    "symfony/mime": "^8.0",
-    "dompdf/dompdf": "^3.1",
-    "league/oauth2-client": "^2.7",
-    "sentry/sentry": "^4.0",
-    "aws/aws-sdk-php": "^3.0",
-    "stripe/stripe-php": "^20.0"
-  }
+    "name":  "fnlla/tools",
+    "description":  "Finella tooling (PHPStan)",
+    "type":  "project",
+    "license":  "proprietary",
+    "require-dev":  {
+                        "phpstan/phpstan":  "^1.11",
+                        "phpstan/phpstan-strict-rules":  "^1.6",
+                        "phpstan/phpstan-deprecation-rules":  "^1.2",
+                        "vimeo/psalm":  "^6.0",
+                        "rector/rector":  "^1.0",
+                        "phpunit/phpunit":  "^13.1",
+                        "psr/log":  "^3.0",
+                        "monolog/monolog":  "^3.0",
+                        "symfony/mailer":  "^8.0",
+                        "symfony/mime":  "^8.0",
+                        "dompdf/dompdf":  "^3.1",
+                        "league/oauth2-client":  "^2.7",
+                        "sentry/sentry":  "^4.0",
+                        "aws/aws-sdk-php":  "^3.0",
+                        "stripe/stripe-php":  "^20.0"
+                    },
+    "replace":  {
+                    "finella/tools":  "self.version"
+                }
 }

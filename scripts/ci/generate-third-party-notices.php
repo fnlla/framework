@@ -131,7 +131,7 @@ $collectRows = static function (string $basePath, array $relativeLockFiles): arr
                 }
 
                 $name = trim((string) ($package['name'] ?? ''));
-                if ($name === '' || str_starts_with($name, 'finella/')) {
+                if ($name === '' || str_starts_with($name, 'fnlla/')) {
                     continue;
                 }
 
@@ -201,7 +201,7 @@ $lines = [
         static fn (string $path): string => '`' . $path . '`',
         $lockFiles
     )) . '.',
-    'First-party `finella/*` packages are excluded.',
+    'First-party `fnlla/*` packages are excluded.',
     '',
     '| Package | Version | License |',
     '| --- | --- | --- |',

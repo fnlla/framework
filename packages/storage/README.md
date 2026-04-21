@@ -1,10 +1,10 @@
-**FINELLA/STORAGE**
+**FNLLA/STORAGE**
 
 Local storage and a minimal image pipeline for Finella.
 
 **INSTALLATION**
 ```bash
-composer require finella/storage
+composer require fnlla/storage
 ```
 
 **CONFIGURATION**
@@ -26,7 +26,7 @@ $url = $disk->url('avatars/user.png');
 ```
 
 **S3 DRIVER**
-Install `finella/storage-s3` and add an S3 disk in `config/storage/storage.php`:
+Install `fnlla/storage-s3` and add an S3 disk in `config/storage/storage.php`:
 ```
 's3' => [
   'driver' => 's3',

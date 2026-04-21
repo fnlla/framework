@@ -1,4 +1,4 @@
-**FINELLA/OPS**
+**FNLLA/OPS**
 
 fnlla (finella) ops middleware bundle for security, routing hygiene, and baseline HTTP controls.
 
@@ -13,7 +13,7 @@ fnlla (finella) ops middleware bundle for security, routing hygiene, and baselin
 
 **INSTALL**
 ```
-composer require finella/ops
+composer require fnlla/ops
 ```
 
 The package registers all middleware service providers via auto-discovery.

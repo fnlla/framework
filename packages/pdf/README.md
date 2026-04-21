@@ -4,7 +4,7 @@ HTML-to-PDF rendering using Dompdf, plus ready invoice and pitch-deck templates 
 
 **INSTALL**
 ```bash
-composer require finella/pdf
+composer require fnlla/pdf
 ```
 
 **CONFIGURATION**

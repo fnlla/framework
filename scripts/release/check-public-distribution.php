@@ -127,14 +127,14 @@ function findDuplicates(array $items): array
 
 function resolveComposerPath(string $root, string $package): ?string
 {
-    if ($package === 'finella/framework') {
+    if ($package === 'fnlla/framework') {
         return $root . DIRECTORY_SEPARATOR . 'framework' . DIRECTORY_SEPARATOR . 'composer.json';
     }
-    if (!str_starts_with($package, 'finella/')) {
+    if (!str_starts_with($package, 'fnlla/')) {
         return null;
     }
 
-    $slug = substr($package, strlen('finella/'));
+    $slug = substr($package, strlen('fnlla/'));
     if ($slug === '') {
         return null;
     }

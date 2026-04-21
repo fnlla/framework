@@ -1,10 +1,10 @@
-**FINELLA/STRIPE**
+**FNLLA/STRIPE**
 
 Stripe payments adapter for Finella.
 
 **INSTALLATION**
 ```bash
-composer require finella/stripe
+composer require fnlla/stripe
 ```
 
 **CONFIGURATION**
