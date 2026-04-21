@@ -1,10 +1,10 @@
 **CHANGELOG**
 
-All notable changes to the Finella monorepo will be documented in this file.
+All notable changes to the fnlla (finella) monorepo will be documented in this file.
 This format follows Keep a Changelog and Semantic Versioning.
 
 **RELEASE SUMMARY (FRAMEWORK)**
-Finella ships the framework and official packages on one coordinated release line.
+fnlla (finella) ships the framework and official packages on one coordinated release line.
 
 **FRAMEWORK**
 **-** Full changelog: `framework/CHANGELOG.md`
@@ -241,7 +241,7 @@ Finella ships the framework and official packages on one coordinated release lin
 **[2.0.0] - 2026-03-08**
 
 **ADDED**
-**-** Finella Workspace subsystem for the starter app (`/workspace`) with separate routing and layout.
+**-** fnlla (finella) Workspace subsystem for the starter app (`/workspace`) with separate routing and layout.
 **-** Workspace metadata layer backed by `workspace_` tables and models namespace.
 **-** Workspace onboarding flow that creates the initial project + owner.
 **-** MVP modules: overview, progress, preÃ¢â¬âflight, roadmap, milestones, kanban, backlog, bugs,
@@ -362,7 +362,7 @@ Finella ships the framework and official packages on one coordinated release lin
 **-** `finella/tenancy` package with middleware and tenant-scoped model base.
 **-** Readiness checks now validate Redis when cache/queue use it.
 **-** Beginner cheat sheets in PL and EN-GB.
-**-** Name origin documented (Finella Gardens, Dundee, UK).
+**-** Name origin documented (fnlla (finella) Gardens, Dundee, UK).
 
 **CHANGED**
 **-** Support policy updated to include Redis cache/queue.
@@ -458,7 +458,7 @@ Finella ships the framework and official packages on one coordinated release lin
 **-** Wire redirects, static cache, and honeypot middleware in starter HTTP config.
 
 **CHANGED**
-**-** Bump Finella package constraints to `^1.2` and branch aliases to `1.2.x-dev`.
+**-** Bump fnlla (finella) package constraints to `^1.2` and branch aliases to `1.2.x-dev`.
 
 **[1.2.0] - 2026-02-22**
 

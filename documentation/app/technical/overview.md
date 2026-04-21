@@ -3,7 +3,7 @@
 Generated at: 2026-04-05 22:22:39 UTC
 
 **APPLICATION**
-**-** Name: finella
+**-** Name: fnlla (finella)
 **-** Environment: local
 **-** Version: dev
 **-** Base path: -
@@ -12,9 +12,9 @@ Generated at: 2026-04-05 22:22:39 UTC
 
 **RUNTIME**
 **-** PHP: 8.4.19
-**-** Finella: 3.0.0
+**-** fnlla (finella): 3.0.0
 
-**FINELLA PACKAGES**
+**FNLLA (FINELLA) PACKAGES**
 **-** finella/ai (dev-main)
 **-** finella/audit (dev-main)
 **-** finella/standard (dev-main)

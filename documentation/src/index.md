@@ -1,17 +1,17 @@
-**FINELLA DOCUMENTATION**
+**FNLLA (FINELLA) DOCUMENTATION**
 
 This documentation is written in UK English. It covers the framework, the starter app, and the official packages.
-Finella is an AI-assisted (optional), modular framework focused on the framework runtime, starter app, and optional packages.
+fnlla (finella) is an AI-assisted (optional), modular framework focused on the framework runtime, starter app, and optional packages.
 AI is a first-class pillar: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
 Why "AI-assisted"? Because we are building the future of AI for product teams, but we keep the promise grounded:
 autonomous insights run without providers, AI integrations are optional, and guardrails keep outputs safe and predictable.
 We continue to push boundaries toward an AI-focused future while keeping AI optional today (see `documentation/src/ai-integrations.md` for the current scope and boundaries).
 
-Note on dependencies: Finella uses a small set of infrastructure libraries (for example, `symfony/mailer`).
-Dotenv handling is implemented by Finella itself (see `Finella\Support\Dotenv`) as internal building blocks.
+Note on dependencies: fnlla (finella) uses a small set of infrastructure libraries (for example, `symfony/mailer`).
+Dotenv handling is implemented by fnlla (finella) itself (see `Finella\Support\Dotenv`) as internal building blocks.
 
 **NAME ORIGIN AND TECHNICAL SLUG**
-**-** Product name: `Finella` (name origin: Finella Gardens, Dundee, UK).
+**-** Product name: `fnlla (finella)` (name origin: fnlla (finella) Gardens, Dundee, UK).
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
 **-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 
@@ -41,7 +41,7 @@ See `getting-started.md` for the fastest path and full setup notes.
 See `CHANGELOG.md` for release-specific details.
 
 **STABILITY AND ROADMAP**
-Finella publishes a clear support policy and a public roadmap.
+fnlla (finella) publishes a clear support policy and a public roadmap.
 See `documentation/src/operations.md` for support windows, roadmap, and release governance.
 Deprecations and migrations are tracked in `documentation/src/operations.md`.
 Third-party notices workflow is documented in `documentation/src/operations.md` under **Tooling -> Third-party notices**.
@@ -52,7 +52,7 @@ Task-oriented entry points live in `documentation/src/developer-experience.md`, 
 Full package catalog lives in `documentation/src/packages.md`.
 
 **INDUSTRY BLUEPRINTS**
-Finella ships CLI blueprints for common product domains to speed up scaffolding:
+fnlla (finella) ships CLI blueprints for common product domains to speed up scaffolding:
 crm, school, crm-school, saas, commerce, marketplace, erp, healthcare, real-estate, logistics.
 Use `php bin/finella make:blueprint <name> --module --plan` to preview before generating files.
 
@@ -68,7 +68,7 @@ The current priority areas for AI are tracked in `documentation/src/operations.m
 **-** AI routing and RAG diagnostics.
 
 **OBSERVABILITY AND PERFORMANCE**
-Finella adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` to responses by default (see `framework.md`).
+fnlla (finella) adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` to responses by default (see `framework.md`).
 For long-running servers, you can boot once and reuse the kernel (see `framework.md` and `operations.md`).
 
 **EXAMPLE (DOCS GENERATION)**
@@ -90,4 +90,4 @@ Open `GET /docs` for published docs.
 Package metadata lives in each package `composer.json`. Use `packages.md` for the full catalog and `operations.md` for registry setup and release rules.
 
 **LICENSING**
-Finella is proprietary. See the root `LICENSE.md` and per-package LICENSE files.
+fnlla (finella) is proprietary. See the root `LICENSE.md` and per-package LICENSE files.

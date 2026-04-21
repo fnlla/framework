@@ -7,7 +7,7 @@
 In the starter app, `APP_DEBUG=1` allows a simple error message to be returned. In production, responses are generic.
 
 **LOGGING**
-If you provide a logger (PSR-3), errors can be reported to logs. Finella's core logging module provides Monolog integration.
+If you provide a logger (PSR-3), errors can be reported to logs. fnlla (finella)'s core logging module provides Monolog integration.
 
 **ERROR REPORTING**
 For external error tracking, bind `Finella\Contracts\Log\ErrorReporterInterface` in your container.

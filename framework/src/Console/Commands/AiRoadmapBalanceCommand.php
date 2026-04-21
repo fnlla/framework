@@ -1,6 +1,6 @@
 <?php
 /**
- * Finella
+ * fnlla (finella)
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -127,7 +127,7 @@ final class AiRoadmapBalanceCommand implements CommandInterface
         $index = 1;
         foreach ($scored as $item) {
             $owner = $item['owner'] !== '' ? ' (owner: ' . $item['owner'] . ')' : '';
-            $lines[] = $index . '. ' . $item['name'] . ' — risk ' . $this->riskLabel($item['risk']) . ', effort ' . $item['effort'] . $owner;
+            $lines[] = $index . '. ' . $item['name'] . ' ï¿½ risk ' . $this->riskLabel($item['risk']) . ', effort ' . $item['effort'] . $owner;
             $index++;
         }
         $lines[] = '';

@@ -1,7 +1,7 @@
 **OPERATIONS & GOVERNANCE**
 
 This document consolidates production readiness, logging, monitoring, runbooks,
-backups, and SLA targets for Finella apps.
+backups, and SLA targets for fnlla (finella) apps.
 
 **PRODUCTION READINESS CHECKLIST**
 
@@ -62,7 +62,7 @@ leaking stack traces in production.
 **-** `APP_DEBUG=0` returns a generic `Server error` message.
 
 **LOGGING**
-Finella is compatible with PSR-3. For production logging, use the official
+fnlla (finella) is compatible with PSR-3. For production logging, use the official
 core logging (framework). It provides a Monolog-backed logger and supports
 structured JSON logs with optional request ids.
 
@@ -395,8 +395,8 @@ LOG_LEVEL=info
 DB_CONNECTION=mysql
 DB_HOST=10.0.0.20
 DB_PORT=3306
-DB_DATABASE=finella
-DB_USERNAME=finella
+DB_DATABASE=fnlla
+DB_USERNAME=fnlla
 DB_PASSWORD=change-me
 CACHE_DRIVER=redis
 QUEUE_DRIVER=redis
@@ -512,7 +512,7 @@ it can be shared or printed.
 **-** Log storage (ELK/Loki/Datadog/none):
 **-** SLA/RTO/RPO defined? (Yes/No)
 
-**4) FINELLA PACKAGE MAP**
+**4) FNLLA (FINELLA) PACKAGE MAP**
 Tick required packages:
 **-** finella/standard + optional modules
 **-** core database + ORM
@@ -538,7 +538,7 @@ List any gaps that require new package or infra work:
 -
 
 **7) GO/NO-GO**
-**-** Is Finella sufficient for v2? (Yes/No)
+**-** Is fnlla (finella) sufficient for v2? (Yes/No)
 **-** If No, list blockers:
 -
 -
@@ -620,7 +620,7 @@ php scripts/ci/generate-third-party-notices.php --check
 ```
 
 **HARDENING KIT (ENTERPRISE PHP)**
-Finella ships a hardening kit under `tools/` with PHPStan (strict), Psalm, and Rector configs.
+fnlla (finella) ships a hardening kit under `tools/` with PHPStan (strict), Psalm, and Rector configs.
 
 Install tools:
 ```bash
@@ -648,7 +648,7 @@ Use fakes for mail and queue in tests to avoid real side effects.
 
 **ENTERPRISE PHP PRACTICES**
 
-This checklist defines the defaults we expect in enterprise-grade Finella codebases.
+This checklist defines the defaults we expect in enterprise-grade fnlla (finella) codebases.
 Treat it as a living policy: adopt the standard stack first, then iterate.
 
 **1) TYPE SAFETY AND STRICTNESS**
@@ -658,7 +658,7 @@ Treat it as a living policy: adopt the standard stack first, then iterate.
 **-** Use DTOs for request/response payloads.
 
 **2) STATIC ANALYSIS (HARDENING KIT)**
-Finella ships a Hardening Kit in `tools/`.
+fnlla (finella) ships a Hardening Kit in `tools/`.
 
 Install tooling:
 ```bash
@@ -772,7 +772,7 @@ Follow `documentation/src/operations.md` for tagging and publishing.
 
 **MONOREPO HEALTH**
 
-This document defines the minimum rules to keep the Finella monorepo fast, stable, and predictable.
+This document defines the minimum rules to keep the fnlla (finella) monorepo fast, stable, and predictable.
 
 **SCOPE**
 Applies to:
@@ -828,7 +828,7 @@ Consider multi-repo if:
 
 **DOCS SYSTEM**
 
-Finella ships with a docs automation package (`finella/docs`). The goal is to keep documentation easy to generate and easy to maintain via files and CLI.
+fnlla (finella) ships with a docs automation package (`finella/docs`). The goal is to keep documentation easy to generate and easy to maintain via files and CLI.
 
 **TWO TRACKS**
 **-** Automation: generate technical and user-guide Markdown skeletons from the app.
@@ -974,7 +974,7 @@ CI note:
   **-** `git push origin v3.0.0`
 
 **PACKAGE RELEASE PIPELINE (STANDARD)**
-Finella publishes the framework and official packages together on the same version line.
+fnlla (finella) publishes the framework and official packages together on the same version line.
 This keeps package compatibility predictable and simplifies dependency graphs.
 
 Standard steps:
@@ -1161,7 +1161,7 @@ This section consolidates release metadata, package strategy, and registry setup
 This document consolidates SemVer, API stability, and deprecation policy.
 
 **SEMANTIC VERSIONING**
-Finella follows SemVer. Breaking changes only in major releases.
+fnlla (finella) follows SemVer. Breaking changes only in major releases.
 
 **PACKAGE RELEASE LINES**
 Core packages follow the framework release cadence to keep compatibility predictable.
@@ -1199,7 +1199,7 @@ Release notes are tracked in `CHANGELOG.md`. Use this section to highlight the c
 
 **PRIVATE REGISTRY**
 
-If you want Finella to be fully independent from the monorepo root, the best
+If you want fnlla (finella) to be fully independent from the monorepo root, the best
 approach is to publish `finella/*` as private Composer packages and let the
 starter app pull them during install.
 
@@ -1241,7 +1241,7 @@ Satis lets you host a private Composer registry yourself.
 Example `satis.json`:
 ```json
 {
-  "name": "Finella Registry",
+  "name": "fnlla (finella) Registry",
   "homepage": "https://packages.example.com",
   "repositories": [
     {"type": "vcs", "url": "git@github.com:techayo/finella-ai.git"}
@@ -1295,7 +1295,7 @@ Once the registry is configured, developers only need to run:
 ```bash
 composer install
 ```
-That will download the entire Finella package set without needing access to the
+That will download the entire fnlla (finella) package set without needing access to the
 monorepo root.
 
 **NOTES**
@@ -1303,7 +1303,7 @@ monorepo root.
 
 **PACKAGES**
 
-The `packages/` directory contains optional modules for the Finella ecosystem. Each package is versioned independently and follows SemVer.
+The `packages/` directory contains optional modules for the fnlla (finella) ecosystem. Each package is versioned independently and follows SemVer.
 
 **OFFICIAL PACKAGES**
 **-** `finella/queue` - queue manager and worker (sync/database/redis).
@@ -1349,12 +1349,12 @@ Packages may expose service providers via `extra.finella.providers`. The starter
 
 **SUPPORT POLICY**
 
-This policy defines the support windows for Finella framework and official packages.
+This policy defines the support windows for fnlla (finella) framework and official packages.
 Effective date: 5 April 2026.
 
 **RELEASE LINES**
 **-** Standard line: regular minor releases (for example 3.1.x).
-**-** Finella does not designate an LTS line at this time.
+**-** fnlla (finella) does not designate an LTS line at this time.
 
 **SUPPORT WINDOWS**
 Active support includes bug fixes, security fixes, and compatibility updates.
@@ -1363,7 +1363,7 @@ Security-only support includes security fixes only.
 **-** Standard: 12 months active support + 6 months security-only.
 
 **RELEASE CADENCE (PUBLIC)**
-Finella aims to publish on a predictable cadence:
+fnlla (finella) aims to publish on a predictable cadence:
 **-** Patch releases: every 4-6 weeks (bug fixes and security fixes only).
 **-** Minor releases: quarterly (features + deprecations).
 
@@ -1393,7 +1393,7 @@ Once a line reaches end of security support, no further fixes are provided.
 **-** The current support matrix lives in this file.
 **-** The public roadmap lives in documentation/src/operations.md.
 
-**GITHUB STARTER PACK (FINELLA)**
+**GITHUB STARTER PACK (FNLLA (FINELLA))**
 This is the recommended rollout order for repository governance and release safety.
 
 **-** Baseline security and CI (already enabled in this repo):
@@ -1427,7 +1427,7 @@ This is the recommended rollout order for repository governance and release safe
 
 **ENTERPRISE READINESS**
 
-This checklist is a practical baseline for positioning Finella in enterprise environments.
+This checklist is a practical baseline for positioning fnlla (finella) in enterprise environments.
 Treat it as a living document: tick items as they become true in your delivery process.
 
 **1) SECURITY POSTURE**
@@ -1485,7 +1485,7 @@ To claim enterprise readiness, we recommend meeting at least:
 
 **DISTRIBUTION MODEL**
 
-This document defines the recommended distribution model for Finella when you want broad adoption through `composer create-project` and direct installs from Packagist.
+This document defines the recommended distribution model for fnlla (finella) when you want broad adoption through `composer create-project` and direct installs from Packagist.
 
 **SUMMARY**
 **-** **Public core**: available to everyone via Packagist.

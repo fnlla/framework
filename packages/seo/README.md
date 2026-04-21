@@ -1,6 +1,6 @@
 **FINELLA/SEO**
 
-SEO helpers for Finella (meta tags, OpenGraph, JSON-LD).
+SEO helpers for fnlla (finella) (meta tags, OpenGraph, JSON-LD).
 
 **INSTALLATION**
 ```bash

@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Finella</title>
+    <title>fnlla (finella)</title>
 </head>
 <body>
-    <h1>Hello Finella!</h1>
+    <h1>Hello fnlla (finella)!</h1>
 </body>
 </html>

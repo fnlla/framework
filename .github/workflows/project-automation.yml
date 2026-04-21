@@ -17,7 +17,7 @@ jobs:
     env:
       PROJECTS_TOKEN: ${{ secrets.PROJECTS_TOKEN }}
     steps:
-      - name: Add to Finella project
+      - name: Add to fnlla (finella) project
         if: ${{ env.PROJECTS_TOKEN != '' }}
         uses: actions/add-to-project@v1.0.2
         with:

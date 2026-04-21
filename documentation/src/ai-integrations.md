@@ -2,13 +2,13 @@
 
 **AI**
 
-Finella includes an optional AI package (`finella/ai`) with a built-in OpenAI
+fnlla (finella) includes an optional AI package (`finella/ai`) with a built-in OpenAI
 Responses API client. This keeps AI integration consistent across apps while
 remaining provider-friendly for the future. Starter apps default to
 `AI_DRIVER=mock` for safe, offline demos.
 
 **POSITIONING: AI-ASSISTED AND OPTIONAL**
-Finella is AI-assisted by design, but the core framework runs fully without AI.
+fnlla (finella) is AI-assisted by design, but the core framework runs fully without AI.
 The AI layer is opt-in and safe by default, intended to improve workflow,
 quality, and documentation without blocking delivery.
 
@@ -70,7 +70,7 @@ RAG is available for grounding answers in your own docs and data. Configure
 `ai:docs-sync` can help keep docs aligned.
 
 **INTEGRATIONS**
-Finella supports first-class integrations through packages:
+fnlla (finella) supports first-class integrations through packages:
 **-** Search (`finella/search`)
 **-** OAuth/OIDC (`finella/oauth`)
 **-** Monitoring (`finella/monitoring`)

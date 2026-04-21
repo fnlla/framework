@@ -1,9 +1,9 @@
-**FINELLA**
+**FNLLA (FINELLA)**
 
 [![Developed by TechAyo](https://img.shields.io/badge/Developed%20by-TechAyo-f59e0b?style=flat-square&labelColor=f97316&color=facc15)](https://techayo.co.uk)
 [![Latest Release](https://img.shields.io/badge/Latest%20Release-3.0.2-22c55e?style=flat-square&labelColor=0ea5e9)](https://github.com/fnlla/framework/releases)
 
-Finella is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.co.uk). The core framework runs fully without AI. AI is a first-class, opt-in layer: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
+fnlla (finella) is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.co.uk). The core framework runs fully without AI. AI is a first-class, opt-in layer: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
 
 **Status:** Public release (proprietary license).
 
@@ -12,20 +12,20 @@ Finella is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.
 **-** Project Manager: Marcin Kordyaczny
 
 **ABOUT**
-Finella Framework is a production-focused PHP platform for teams that want a clear core architecture, optional modular capabilities, predictable operations at scale, and AI capabilities that remain opt-in by design.
+fnlla (finella) Framework is a production-focused PHP platform for teams that want a clear core architecture, optional modular capabilities, predictable operations at scale, and AI capabilities that remain opt-in by design.
 
-**Core idea:** Finella Framework + companion starter repository
+**Core idea:** fnlla (finella) Framework + companion starter repository
 Starter application lives in the `fnlla/fnlla` repository.
 Release notes for framework changes are summarised in `CHANGELOG.md`.
 
-**WHAT IS FINELLA?**
-**-** **Finella Framework**: minimal, modern PHP core focused on HTTP, routing, container, config, and error handling.
+**WHAT IS FNLLA (FINELLA)?**
+**-** **fnlla (finella) Framework**: minimal, modern PHP core focused on HTTP, routing, container, config, and error handling.
 **-** Modular ecosystem of optional packages (auth, database, ORM, cache, queue, mail, docs, etc.).
 **-** Starter app distributed in a separate repository (`fnlla/fnlla`).
 **-** Optional AI stack with RAG, governance, and deterministic autonomous insights.
 
 **AI POSITIONING**
-**-** AI is optional and never required to boot, run, or deploy a Finella app.
+**-** AI is optional and never required to boot, run, or deploy a fnlla (finella) app.
 **-** The AI layer is designed to improve workflow, quality, and documentation without blocking delivery.
 
 **AI BOUNDARIES (DOES)**
@@ -38,7 +38,7 @@ Release notes for framework changes are summarised in `CHANGELOG.md`.
 **-** Require network calls or provider keys to operate the core framework.
 **-** Replace engineering ownership or the SDLC decision process.
 
-**WHY PHP FOR FINELLA?**
+**WHY PHP FOR FNLLA (FINELLA)?**
 Because it is the fastest path to reliable, enterprise web delivery with a low barrier to entry and predictable total cost of ownership.
 
 **PERFORMANCE AND OBSERVABILITY**
@@ -52,7 +52,7 @@ Because it is the fastest path to reliable, enterprise web delivery with a low b
 **-** Deprecations registry + migration notes: `documentation/src/operations.md`.
 
 **NAME ORIGIN AND TECHNICAL SLUG**
-**-** Product name: `Finella` (name origin: Finella Gardens, Dundee, UK).
+**-** Product name: `fnlla (finella)` (name origin: fnlla (finella) Gardens, Dundee, UK).
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
 **-** Why `fnlla`: short ASCII-only identifier, easy to type in CLI/paths, and stable across package/repository naming.
 
@@ -154,8 +154,8 @@ php scripts/ci/generate-third-party-notices.php --check
 `--check` is used in CI and release gate to ensure notices stay in sync.
 
 **ATTRIBUTION STANDARD**
-Finella requires an Attribution Notice in your product source code or repository documentation. Use `NOTICE` as a template, for example:
-**-** "Built with the Finella Framework and Finella Components."
+fnlla (finella) requires an Attribution Notice in your product source code or repository documentation. Use `NOTICE` as a template, for example:
+**-** "Built with the fnlla (finella) Framework and fnlla (finella) Components."
 
 **REQUIREMENTS**
 **-** PHP >= 8.5

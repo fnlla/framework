@@ -1,7 +1,7 @@
 **DEVELOPER EXPERIENCE**
 
 **CLI**
-Finella ships with a small CLI to generate docs, publish assets, and run project tooling. The command list depends on installed packages and entries in `config/console/console.php`.
+fnlla (finella) ships with a small CLI to generate docs, publish assets, and run project tooling. The command list depends on installed packages and entries in `config/console/console.php`.
 
 **QUICK START**
 **-** Run commands from your app root.

@@ -17,7 +17,7 @@ Auto-discovered provider:
 **-** `database.table` (default `queue_jobs`)
 **-** `database.failed_table` (default `queue_failed_jobs`)
 **-** `redis.queue` (default `default`)
-**-** `redis.prefix` (default `finella:queue:`)
+**-** `redis.prefix` (default `fnlla:queue:`)
 
 **USAGE**
 ```php

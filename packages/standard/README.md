@@ -1,6 +1,6 @@
-**FINELLA STANDARD**
+**FNLLA (FINELLA) STANDARD**
 
-Finella Standard is a meta-package that installs the full default web stack.
+fnlla (finella) Standard is a meta-package that installs the full default web stack.
 It contains no runtime code and only aggregates official packages.
 
 **INCLUDED PACKAGES**
@@ -22,7 +22,7 @@ composer require finella/standard
 
 **PROVIDER DISCOVERY**
 All included packages expose their providers via `extra.finella.providers`.
-Finella auto-discovery will register them automatically once the dependencies are installed.
+fnlla (finella) auto-discovery will register them automatically once the dependencies are installed.
 
 **LICENSE**
 Proprietary

@@ -33,8 +33,8 @@ Use `Response::stream()` or `Response::file()` for large payloads.
 **HEADERS AND STATUS**
 ```php
 $response = Response::html('OK')
-    ->withHeader('X-App', 'Finella')
+    ->withHeader('X-App', 'fnlla (finella)')
     ->withStatus(201);
 ```
 
-Finella also adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` by default. Disable via `config/http/http.php`.
+fnlla (finella) also adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` by default. Disable via `config/http/http.php`.

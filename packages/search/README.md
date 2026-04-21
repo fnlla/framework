@@ -1,6 +1,6 @@
 **FINELLA/SEARCH**
 
-Search adapter for Finella with a lightweight HTTP Meilisearch driver (no external SDK required).
+Search adapter for fnlla (finella) with a lightweight HTTP Meilisearch driver (no external SDK required).
 
 **INSTALLATION**
 ```bash

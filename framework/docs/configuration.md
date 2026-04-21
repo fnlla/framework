@@ -1,6 +1,6 @@
 **CONFIGURATION**
 
-Finella loads configuration from `config/**/*.php` at the application root.
+fnlla (finella) loads configuration from `config/**/*.php` at the application root.
 
 **LOADING RULES**
 **-** `config/app.php` is loaded first and merged into the root config.

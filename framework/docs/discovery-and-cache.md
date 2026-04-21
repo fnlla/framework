@@ -1,6 +1,6 @@
 **DISCOVERY AND CACHE**
 
-Finella can auto-discover service providers from Composer packages and cache the results.
+fnlla (finella) can auto-discover service providers from Composer packages and cache the results.
 
 **DISCOVERY**
 Discovery reads `vendor/composer/installed.json` and collects providers from:

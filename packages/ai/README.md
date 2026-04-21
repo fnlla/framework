@@ -1,6 +1,6 @@
 **FINELLA/AI**
 
-AI helpers for Finella with a built-in OpenAI Responses API client.
+AI helpers for fnlla (finella) with a built-in OpenAI Responses API client.
 
 **INSTALLATION**
 ```bash
@@ -29,7 +29,7 @@ return [
 ];
 ```
 
-You can group AI config files under `config/ai/` for readability. Finella maps
+You can group AI config files under `config/ai/` for readability. fnlla (finella) maps
 these to the existing underscore keys (for example `config/ai/rag.php` ->
 `ai_rag`). Flat `config/ai_*.php` files are still supported.
 
@@ -134,7 +134,7 @@ Create embeddings:
 ```php
 $embeddings = $ai->embeddings([
     'model' => 'text-embedding-3-small',
-    'input' => 'Finella makes PHP apps more approachable.',
+    'input' => 'fnlla (finella) makes PHP apps more approachable.',
 ]);
 ```
 

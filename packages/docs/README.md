@@ -1,6 +1,6 @@
 **FINELLA/DOCS**
 
-Documentation automation for Finella apps.
+Documentation automation for fnlla (finella) apps.
 
 **FEATURES**
 **-** Generates technical and user-guide Markdown skeletons from your app.

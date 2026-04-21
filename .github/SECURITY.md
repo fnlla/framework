@@ -1,6 +1,6 @@
 **SECURITY POLICY**
 
-Finella is a public, proprietary product by TechAyo (techayo.co.uk). Please report security
+fnlla (finella) is a public, proprietary product by TechAyo (techayo.co.uk). Please report security
 concerns privately and do not open public issues for vulnerabilities.
 
 **REPORTING A VULNERABILITY**

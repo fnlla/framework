@@ -3,7 +3,7 @@
 **RENDERING**
 Use the `view()` helper or `View::render()`.
 ```php
-return view('pages/home', ['name' => 'Finella']);
+return view('pages/home', ['name' => 'fnlla (finella)']);
 ```
 
 **VIEWS_PATH**
@@ -12,7 +12,7 @@ The framework reads `views_path` from `config/app.php`. If not set, it falls bac
 **LAYOUTS**
 You can pass an optional layout:
 ```php
-$html = \Finella\View\View::render($app, 'home', ['name' => 'Finella'], 'layouts/main');
+$html = \Finella\View\View::render($app, 'home', ['name' => 'fnlla (finella)'], 'layouts/main');
 ```
 
 **DATA**

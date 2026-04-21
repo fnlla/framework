@@ -1,6 +1,6 @@
 **FINELLA/OPS**
 
-Finella ops middleware bundle for security, routing hygiene, and baseline HTTP controls.
+fnlla (finella) ops middleware bundle for security, routing hygiene, and baseline HTTP controls.
 
 **INCLUDES**
 **-** Security headers (`Finella\SecurityHeaders\*`)

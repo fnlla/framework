@@ -1,6 +1,6 @@
-**FINELLA PACKAGES**
+**FNLLA (FINELLA) PACKAGES**
 
-The `packages/` directory contains optional modules for the Finella ecosystem. Each package is versioned independently and follows SemVer.
+The `packages/` directory contains optional modules for the fnlla (finella) ecosystem. Each package is versioned independently and follows SemVer.
 
 For the recommended public-core vs private-pro split, see `documentation/src/operations.md`.
 
@@ -24,7 +24,7 @@ These capabilities are shipped inside `finella/framework` and are no longer sepa
 **-** `finella/notifications` - notification delivery (email/SMS) + API endpoints.
 **-** `finella/webmail` - webmail backend API (IMAP/SMTP integration).
 **-** `finella/pdf` - HTML-to-PDF rendering (Dompdf) with template helpers.
-**-** `finella/docs` - docs automation for Finella apps.
+**-** `finella/docs` - docs automation for fnlla (finella) apps.
 **-** `finella/storage-s3` - S3 storage adapter.
 **-** `finella/stripe` - Stripe payments adapter.
 **-** `finella/sentry` - Sentry error tracking adapter.

@@ -57,7 +57,7 @@ If you work across both repositories, use side-by-side layout:
 Then in `fnlla/` use `composer.dev.json` for local package resolution.
 
 **NAME ORIGIN AND TECHNICAL SLUG**
-**-** Product name: `Finella` (name origin: Finella Gardens, Dundee, UK).
+**-** Product name: `fnlla (finella)` (name origin: fnlla (finella) Gardens, Dundee, UK).
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
 **-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 

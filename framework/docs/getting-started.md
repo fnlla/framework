@@ -1,6 +1,6 @@
 **GETTING STARTED**
 
-This guide shows the minimal steps required to run a Finella application using the framework package.
+This guide shows the minimal steps required to run a fnlla (finella) application using the framework package.
 
 **1) INSTALL**
 Offline install:
@@ -53,7 +53,7 @@ use Finella\Http\Router;
 use Finella\Http\Response;
 
 return static function (Router $router): void {
-    $router->get('/', fn () => Response::text('Hello Finella'));
+    $router->get('/', fn () => Response::text('Hello fnlla (finella)'));
 };
 ```
 

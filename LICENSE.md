@@ -9,10 +9,10 @@ terms below.
 **DEFINITIONS**
 **-** "Attribution Notice" means a clear statement in the source code (or
 repository documentation shipped with the code) indicating that the product is
-built with the Finella Framework and identifying the Finella Components used.
-Example: "Built with Finella Framework and Finella AI/ORM components."
-**-** "Finella Components" means any Finella-branded package, module, or
-component distributed with or for the Finella Framework.
+built with the fnlla (finella) Framework and identifying the fnlla (finella) Components used.
+Example: "Built with fnlla (finella) Framework and fnlla (finella) AI/ORM components."
+**-** "fnlla (finella) Components" means any Finella-branded package, module, or
+component distributed with or for the fnlla (finella) Framework.
 **-** "Product" means a software product or service (commercial or
 non-commercial) that incorporates the Software as part of its implementation.
 **-** "Permitted Use" means using, modifying, and incorporating the Software into
@@ -24,7 +24,7 @@ the Software.
 Subject to these terms, TechAyo (techayo.co.uk) grants you a worldwide, non-exclusive,
 non-transferable, revocable license to Use the Software for Permitted Use. You
 may modify the Software and create derivative works as needed to build and
-operate your Product. This grant applies equally to all Finella Components when
+operate your Product. This grant applies equally to all fnlla (finella) Components when
 used as part of a Product.
 
 **ATTRIBUTION AND NOTICE**
@@ -36,11 +36,11 @@ Attribution Notice must remain visible in any distribution of the Product.
 **RESTRICTIONS**
 You must not, and must not allow any third party to:
 **-** Distribute, sublicense, rent, lease, sell, or provide the Software or any
-Finella Components on a standalone basis.
+fnlla (finella) Components on a standalone basis.
 **-** Provide the Software itself as a hosted service or make it available to the
 public, except as part of a Product.
 **-** Remove or alter any proprietary notices or required Attribution Notice.
-**-** Use Finella trademarks, logos, or brand names except for reasonable and
+**-** Use fnlla (finella) trademarks, logos, or brand names except for reasonable and
 customary use to describe the origin of the Software.
 
 **THIRD-PARTY SOFTWARE**

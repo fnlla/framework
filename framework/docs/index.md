@@ -1,4 +1,4 @@
-**FINELLA FRAMEWORK DOCUMENTATION**
+**FNLLA (FINELLA) FRAMEWORK DOCUMENTATION**
 
 This documentation targets the `finella/framework` package. It is written in UK English and reflects the actual behaviour of the 3.x line.
 
@@ -35,4 +35,4 @@ Optional packages add specialised capabilities such as queue, scheduler, mail, o
 **-** `glossary.md`
 
 **VERSION COMPATIBILITY**
-These docs target Finella v3.0 and later. If you are on a different major version, check the matching documentation.
+These docs target fnlla (finella) v3.0 and later. If you are on a different major version, check the matching documentation.

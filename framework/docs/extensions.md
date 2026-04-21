@@ -1,6 +1,6 @@
 **EXTENSIONS**
 
-Extensions are Composer packages that integrate with Finella via service providers.
+Extensions are Composer packages that integrate with fnlla (finella) via service providers.
 
 **CREATING A PACKAGE**
 **-** Create a Composer package.
@@ -23,7 +23,7 @@ Example `composer.json`:
     }
   },
   "extra": {
-    "finella": {
+    "fnlla (finella)": {
       "providers": [
         "Finella\\Acme\\AcmeServiceProvider"
       ]

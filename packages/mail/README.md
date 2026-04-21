@@ -23,7 +23,7 @@ use Finella\Mail\MailerInterface;
 
 $mailer = $app->make(MailerInterface::class);
 $msg = new Message(
-    from: new \Finella\Mail\Address('noreply@example.com', 'Finella'),
+    from: new \Finella\Mail\Address('noreply@example.com', 'fnlla (finella)'),
     to: [new \Finella\Mail\Address('user@example.com')],
     subject: 'Welcome',
     text: 'Hello'

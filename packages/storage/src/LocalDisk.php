@@ -1,6 +1,6 @@
 <?php
 /**
- * Finella - AI-assisted PHP framework.
+ * fnlla (finella) - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */

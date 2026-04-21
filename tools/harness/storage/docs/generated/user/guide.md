@@ -1,7 +1,7 @@
 **USER GUIDE (DRAFT)**
 
 **PURPOSE**
-Describe what finella does for end users.
+Describe what fnlla (finella) does for end users.
 
 **GETTING STARTED**
 **-** How users sign in.

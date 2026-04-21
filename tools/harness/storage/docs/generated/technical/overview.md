@@ -1,7 +1,7 @@
 **TECHNICAL OVERVIEW**
 
 **APPLICATION**
-**-** Name: finella
+**-** Name: fnlla (finella)
 **-** Environment: local
 **-** Version: dev
 **-** Base path: -
@@ -10,9 +10,9 @@
 
 **RUNTIME**
 **-** PHP: 8.5
-**-** Finella: 3.0.0
+**-** fnlla (finella): 3.0.0
 
-**FINELLA PACKAGES**
+**FNLLA (FINELLA) PACKAGES**
 **-** finella/ai (dev-main)
 **-** finella/audit (dev-main)
 **-** finella/debugbar (dev-main)

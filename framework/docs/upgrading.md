@@ -1,6 +1,6 @@
 **UPGRADING**
 
-Finella follows Semantic Versioning (SemVer).
+fnlla (finella) follows Semantic Versioning (SemVer).
 
 **SEMVER RULES**
 **-** Patch releases (3.x.y) contain bug fixes only.

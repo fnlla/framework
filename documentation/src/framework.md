@@ -2,7 +2,7 @@
 
 **DEVELOPER GUIDE**
 
-This guide is a single-file overview of the Finella framework and its ecosystem. It is intentionally concise and keeps links to deeper docs in `documentation/src/`.
+This guide is a single-file overview of the fnlla (finella) framework and its ecosystem. It is intentionally concise and keeps links to deeper docs in `documentation/src/`.
 
 **CONTENTS**
 **-** Overview
@@ -21,7 +21,7 @@ This guide is a single-file overview of the Finella framework and its ecosystem.
 **-** Upgrade policy
 
 **OVERVIEW**
-Finella is an AI-assisted, modular PHP framework with a minimal core: kernel, router, container, configuration, and error handling. Optional features live in packages.
+fnlla (finella) is an AI-assisted, modular PHP framework with a minimal core: kernel, router, container, configuration, and error handling. Optional features live in packages.
 
 **QUICK START**
 ```php
@@ -103,7 +103,7 @@ Core modules live in the framework (auth, database, ORM, sessions, cookies, CSRF
 **-** Enable route cache for production
 
 **UPGRADE POLICY**
-Finella follows SemVer with clear patch/minor/major rules.
+fnlla (finella) follows SemVer with clear patch/minor/major rules.
 
 For detailed documentation, see the individual files in `documentation/src/`.
 
@@ -140,7 +140,7 @@ $debug = $config->get('debug', false);
 
 ```php
 return [
-    'name' => env('APP_NAME', 'Finella'),
+    'name' => env('APP_NAME', 'fnlla (finella)'),
     'env' => env('APP_ENV', 'local'),
     'debug' => env('APP_DEBUG', false),
 ];
@@ -178,7 +178,7 @@ HttpKernel::handle()
   |-- Register providers -> boot providers
   |-- Load plugins (optional)
   |
-  |-- Build Finella Request + Router
+  |-- Build fnlla (finella) Request + Router
   |-- Register middleware groups + aliases + global middleware
   |-- Load routes cache OR config/routes.php + routes/web.php
   |
@@ -222,7 +222,7 @@ use Finella\Http\Router;
 use Finella\Http\Response;
 
 return static function (Router $router): void {
-    $router->get('/', fn () => Response::text('Hello Finella'));
+    $router->get('/', fn () => Response::text('Hello fnlla (finella)'));
 };
 ```
 
@@ -298,7 +298,7 @@ Helpers:
 **-** `Response::json()`
 **-** `Response::xml()`
 
-Finella adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` to responses by default.
+fnlla (finella) adds `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` to responses by default.
 Disable with `http.request_id_header=false`, `http.trace_id_header=false`, or `http.span_id_header=false`.
 
 **DATABASE**
@@ -436,7 +436,7 @@ Set `TENANCY_ENABLED=1` and add the `TenantMiddleware` in `config/http/http.php`
 
 **FORMS & VALIDATION**
 
-Finella provides a lightweight HTML form flow built on top of validation, session flash, and response helpers.
+fnlla (finella) provides a lightweight HTML form flow built on top of validation, session flash, and response helpers.
 
 **VALIDATION QUICK USAGE**
 Validate inside a route or controller:
@@ -455,7 +455,7 @@ $router->post('/signup', function (Request $request) {
         // $data contains validated values.
         return \Finella\Http\Response::json(['ok' => true]);
     } catch (ValidationException $e) {
-        // For HTML requests, Finella flashes errors + old input to session
+        // For HTML requests, fnlla (finella) flashes errors + old input to session
         // and redirects back automatically (see below).
         return \Finella\Http\Response::redirect('/signup');
     }
@@ -562,7 +562,7 @@ $validator = Validator::make($input, $rules, $messages);
 Keys are either `field.rule` or just `rule` for global fallbacks.
 
 **HTML FORMS AND REDIRECTS**
-When a `ValidationException` is thrown during an HTML request, Finella automatically:
+When a `ValidationException` is thrown during an HTML request, fnlla (finella) automatically:
 **-** redirects back to the previous page
 **-** flashes validation errors
 **-** flashes old input
@@ -881,7 +881,7 @@ $user->roles()->withTimestamps()->attach([
 
 **CACHING**
 
-This guide summarises common caching patterns in Finella and how to apply them safely.
+This guide summarises common caching patterns in fnlla (finella) and how to apply them safely.
 
 **1) REQUEST-LEVEL CACHE**
 **-** Use `cache()` to store small computed results.

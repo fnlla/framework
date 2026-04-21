@@ -1,4 +1,4 @@
-Finella CLI
+fnlla (finella) CLI
 
 Commands:
   deploy:health - Run basic deploy health checks.
@@ -22,4 +22,4 @@ Commands:
   schedule:run - Run scheduled tasks once.
   seed - Run database seeders.
 
-Use: finella <command> [args] [--options]
+Use: fnlla (finella) <command> [args] [--options]

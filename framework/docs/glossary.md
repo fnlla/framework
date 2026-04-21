@@ -6,6 +6,6 @@
 **-** **Extension**: a Composer package integrating via a service provider.
 **-** **Request/Response lifecycle**: the flow from `public/index.php` to the handler and back to the response.
 **-** **Middleware**: a callable that wraps the handler and can modify the request or response.
-**-** **views_path**: configuration value that tells Finella where view templates are stored.
+**-** **views_path**: configuration value that tells fnlla (finella) where view templates are stored.
 **-** **Auto-discovery**: reading provider metadata from Composer packages.
 **-** **Provider cache**: cached provider list stored in `bootstrap/cache/providers.php`.

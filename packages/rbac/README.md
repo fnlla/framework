@@ -1,6 +1,6 @@
 **FINELLA/RBAC**
 
-Roles and permissions for Finella with gate integration.
+Roles and permissions for fnlla (finella) with gate integration.
 
 **INSTALLATION**
 ```bash

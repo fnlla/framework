@@ -1,4 +1,4 @@
-**FINELLA API INVENTORY**
+**FNLLA (FINELLA) API INVENTORY**
 
 > Generated from `framework/src` (public methods + global helpers).
 > Some items listed here are optional utilities and may be moved to packages over time.

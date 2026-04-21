@@ -1,6 +1,6 @@
-**FINELLA PACKAGE TEMPLATE**
+**FNLLA (FINELLA) PACKAGE TEMPLATE**
 
-This is a starter template for creating new Finella packages.
+This is a starter template for creating new fnlla (finella) packages.
 
 **WHAT TO UPDATE**
 **-** `composer.json` name and description

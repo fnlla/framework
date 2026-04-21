@@ -3,7 +3,7 @@
 Generated at: 2026-04-05 22:22:39 UTC
 
 **PURPOSE**
-Describe what finella does for end users.
+Describe what fnlla (finella) does for end users.
 
 **GETTING STARTED**
 **-** How users sign in.

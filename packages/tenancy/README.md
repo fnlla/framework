@@ -1,6 +1,6 @@
-**FINELLA TENANCY**
+**FNLLA (FINELLA) TENANCY**
 
-Basic multi-tenant helpers for Finella apps. This package provides:
+Basic multi-tenant helpers for fnlla (finella) apps. This package provides:
 **-** `TenantContext` for storing the current tenant id.
 **-** `TenantMiddleware` to resolve the tenant per request.
 **-** `TenantModel` base class that scopes queries by `tenant_id`.

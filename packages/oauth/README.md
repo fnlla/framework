@@ -1,6 +1,6 @@
 **FINELLA/OAUTH**
 
-OAuth/OIDC adapter for Finella using `league/oauth2-client`.
+OAuth/OIDC adapter for fnlla (finella) using `league/oauth2-client`.
 
 **INSTALLATION**
 ```bash

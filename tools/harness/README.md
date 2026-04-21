@@ -1,4 +1,4 @@
-**FINELLA APP HARNESS**
+**FNLLA (FINELLA) APP HARNESS**
 
 This `tools/harness/` directory is a **development and test harness** used inside the monorepo.
 It is **not** the public starter skeleton. The starter app lives in `fnlla/fnlla`.
@@ -61,6 +61,6 @@ Routes are defined in `routes/web.php`.
 **-** `bin/finella schedule:run`
 
 **CREDITS**
-**-** Framework: Finella
+**-** Framework: fnlla (finella)
 **-** Author / Organisation: [TechAyo](https://techayo.co.uk)
 **-** Project Manager: Marcin Kordyaczny

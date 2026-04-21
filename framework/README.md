@@ -1,6 +1,6 @@
-**FINELLA FRAMEWORK**
+**FNLLA (FINELLA) FRAMEWORK**
 
-Finella is a lightweight, AI-assisted (optional) PHP web framework focused on clarity, small surface area, and production-ready defaults. The core is intentionally minimal: kernel, router, container, configuration, and error handling.
+fnlla (finella) is a lightweight, AI-assisted (optional) PHP web framework focused on clarity, small surface area, and production-ready defaults. The core is intentionally minimal: kernel, router, container, configuration, and error handling.
 AI capabilities are opt-in and sit on top of the core runtime via optional packages and governance controls.
 
 **REQUIREMENTS**
@@ -72,7 +72,7 @@ $app->registerResetter(new \App\Support\MyResetter());
 ```
 
 **TRACING HEADERS**
-Finella includes `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` on responses by default.
+fnlla (finella) includes `X-Request-Id`, `X-Trace-Id`, and `X-Span-Id` on responses by default.
 Disable via `config/http/http.php` (`request_id_header`, `trace_id_header`, `span_id_header`).
 
 **ROUTES CACHE (COMPILE)**
@@ -90,7 +90,7 @@ use Finella\Http\Router;
 use Finella\Http\Response;
 
 return static function (Router $router): void {
-    $router->get('/', fn () => Response::text('Hello Finella'));
+    $router->get('/', fn () => Response::text('Hello fnlla (finella)'));
     $router->get('/users/{id}', function ($request): Response {
         return Response::text('User ' . $request->getAttribute('id'));
     });
@@ -111,7 +111,7 @@ return [
 Requires `finella/ops`.
 
 **CONFIGURATION**
-Finella loads configuration from `config/**/*.php`. See `documentation/src/framework.md` for the full reference.
+fnlla (finella) loads configuration from `config/**/*.php`. See `documentation/src/framework.md` for the full reference.
 
 **ENVIRONMENT**
 The framework does not load `.env` by itself. The starter app uses `Finella\Support\Dotenv` and provides an `env()` helper.
@@ -153,7 +153,7 @@ return [
 **-** CMS/editor experience (use `finella/content` or a dedicated CMS)
 
 **STABILITY & VERSIONING**
-**-** Finella follows Semantic Versioning (SemVer).
+**-** fnlla (finella) follows Semantic Versioning (SemVer).
 **-** The 3.x line is the current stable core.
 **-** Patch releases (3.x.y) contain fixes only, no breaking changes.
 **-** Minor releases (3.x.0) add backward-compatible features.

@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * Build static HTML docs from documentation/src into documentation/build.
  *
- * This generator intentionally does not depend on Finella UI assets.
+ * This generator intentionally does not depend on fnlla (finella) UI assets.
  */
 
 $root = dirname(__DIR__, 2);
