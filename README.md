@@ -163,3 +163,129 @@ Finella requires an Attribution Notice in your product source code or repository
 
 **LICENSE**
 See `LICENSE.md` at the repo root and per-package LICENSE files.
+
+**MAINTAINER DISTRIBUTION PLAYBOOK**
+This section is the operational source for maintainers responsible for public package distribution and `composer create-project`.
+
+**SOURCE OF TRUTH**
+**-** `fnlla/framework` stays private and is the only source of truth.
+**-** Public package repositories are split outputs only (do not edit them manually).
+**-** Starter repository is `fnlla/fnlla` and is public for `composer create-project finella/starter`.
+
+**PACKAGE SPLIT (PUBLIC VS PRIVATE)**
+**-** Manifest file: `scripts/release/distribution-packages.json`
+**-** Print current split: `php scripts/release/list-distribution-packages.php`
+**-** Guard check: `php scripts/release/check-public-distribution.php`
+
+Public core (`public_core`) currently includes:
+**-** `finella/framework`
+**-** `finella/ai`
+**-** `finella/audit`
+**-** `finella/deploy`
+**-** `finella/monitoring`
+**-** `finella/oauth`
+**-** `finella/standard`
+**-** `finella/queue`
+**-** `finella/scheduler`
+**-** `finella/mail`
+**-** `finella/ops`
+**-** `finella/pdf`
+**-** `finella/rbac`
+**-** `finella/search`
+**-** `finella/settings`
+**-** `finella/docs`
+**-** `finella/testing`
+**-** `finella/debugbar`
+
+Private/pro (`private_pro`) currently includes optional modules not required by starter:
+**-** `finella/analytics`
+**-** `finella/content`
+**-** `finella/seo`
+**-** `finella/notifications`
+**-** `finella/webmail`
+**-** `finella/storage-s3`
+**-** `finella/stripe`
+**-** `finella/sentry`
+**-** `finella/tenancy`
+
+Rule: packages required by starter (runtime and dev) must stay in `public_core`.
+Private registry is for optional pro add-ons only.
+
+**PUBLIC SPLIT REPOSITORIES**
+Public package repositories in GitHub org `fnlla`:
+**-** `fnlla/pkg-framework` (`finella/framework`)
+**-** `fnlla/pkg-ai` (`finella/ai`)
+**-** `fnlla/pkg-audit` (`finella/audit`)
+**-** `fnlla/pkg-deploy` (`finella/deploy`)
+**-** `fnlla/pkg-monitoring` (`finella/monitoring`)
+**-** `fnlla/pkg-oauth` (`finella/oauth`)
+**-** `fnlla/pkg-standard` (`finella/standard`)
+**-** `fnlla/pkg-queue` (`finella/queue`)
+**-** `fnlla/pkg-scheduler` (`finella/scheduler`)
+**-** `fnlla/pkg-mail` (`finella/mail`)
+**-** `fnlla/pkg-ops` (`finella/ops`)
+**-** `fnlla/pkg-pdf` (`finella/pdf`)
+**-** `fnlla/pkg-rbac` (`finella/rbac`)
+**-** `fnlla/pkg-search` (`finella/search`)
+**-** `fnlla/pkg-settings` (`finella/settings`)
+**-** `fnlla/pkg-docs` (`finella/docs`)
+**-** `fnlla/pkg-testing` (`finella/testing`)
+**-** `fnlla/pkg-debugbar` (`finella/debugbar`)
+
+**COMPOSER METADATA RULES (PUBLIC PACKAGE REPOS)**
+**-** Keep valid package `name` in each package `composer.json` (for example `finella/ops`).
+**-** Do not set a fixed `version` in `composer.json`; versions come from Git tags.
+**-** Keep `extra.branch-alias.dev-main` aligned with the current release line (for example `3.0.x-dev`).
+**-** Keep dependency constraints aligned to the release line (for example `finella/framework:^3.0`).
+
+**ONE-TIME PACKAGIST PUBLISH (PUBLIC PACKAGES)**
+1. Open Packagist account with org access.
+2. Click `Submit`.
+3. Submit each repo URL (`https://github.com/fnlla/pkg-...`).
+4. Confirm Packagist detects package name correctly.
+5. In each package on Packagist, enable auto-update via GitHub hook/service.
+6. Verify tags are visible in Packagist versions.
+
+**ONE-TIME PACKAGIST PUBLISH (STARTER)**
+1. Ensure starter repo `fnlla/fnlla` is public.
+2. Confirm starter `composer.json` contains only remote dependencies (no `path` repositories).
+3. Submit `https://github.com/fnlla/fnlla` to Packagist as `finella/starter`.
+4. Verify `composer create-project finella/starter my-app` resolves from Packagist.
+
+**STARTER RULES (REQUIRED)**
+**-** In `fnlla/fnlla`, keep only remote dependencies in `composer.json`.
+**-** Do not commit `composer.lock` in the starter template repo.
+**-** Local monorepo development may use `composer.dev.json` with `path` repositories, but this file is for maintainers only.
+**-** Use `composer run lock:check` in starter CI to reject local/path lock sources.
+
+**RELEASE FLOW (REQUIRED EVERY RELEASE)**
+1. Tag in private source-of-truth monorepo:
+   `git tag vX.Y.Z && git push origin vX.Y.Z`
+2. Split/publish package repos from monorepo main + release tag:
+   `php scripts/release/publish-public-splits.php --org=fnlla --tags=vX.Y.Z`
+3. Refresh Packagist package metadata (auto-hook or manual update).
+4. Release starter (`fnlla/fnlla`) with aligned dependency constraints.
+5. Validate public bootstrap:
+   `composer create-project finella/starter my-app`
+6. Validate install/boot in created app:
+   `composer install && php bin/finella db:bootstrap`
+
+**AUTOMATION COMMAND FOR SPLITS**
+Script: `scripts/release/publish-public-splits.php`
+
+Examples:
+```bash
+php scripts/release/publish-public-splits.php --org=fnlla
+php scripts/release/publish-public-splits.php --org=fnlla --tags=v3.0.1
+php scripts/release/publish-public-splits.php --org=fnlla --tags=v3.0.0,v3.0.1 --dry-run
+```
+
+**MAINTAINER CHECKLIST (SHORT)**
+1. Update code/docs in private `fnlla/framework`.
+2. Run release gate + distribution checks.
+3. Tag monorepo.
+4. Run public split publish script.
+5. Confirm tags in each `pkg-*` repo.
+6. Refresh/verify Packagist versions.
+7. Release `fnlla/fnlla`.
+8. Validate `composer create-project`.
