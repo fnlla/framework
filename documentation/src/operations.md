@@ -1489,7 +1489,7 @@ This document defines the recommended distribution model for fnlla (finella) whe
 
 **SUMMARY**
 **-** **Public core**: available to everyone via Packagist.
-**-** **Starter dependencies**: must be listed in `public_core` so `composer create-project fnlla/starter` works without extra registry auth.
+**-** **Starter dependencies**: must be listed in `public_core` so `composer create-project fnlla/fnlla` works without extra registry auth.
 **-** **Private pro modules**: optional add-ons that are not required by starter.
 
 This keeps adoption friction low while preserving optional commercial modules.
@@ -1515,7 +1515,7 @@ These packages are safe to expose publicly and form the base developer experienc
 **-** `fnlla/testing`
 **-** `fnlla/debugbar` (dev only)
 
-Starter app package: `fnlla/starter` (create with `composer create-project fnlla/starter myapp`).
+Starter app package: `fnlla/fnlla` (create with `composer create-project fnlla/fnlla myapp`).
 
 **PRIVATE PRO MODULES (RECOMMENDED)**
 These are differentiated add-on modules you may keep private:
@@ -1568,7 +1568,7 @@ Example (private registry entry in app `composer.json`):
 **DEVELOPER WORKFLOW (FOR USERS)**
 Public starter install:
 ```bash
-composer create-project fnlla/starter myapp
+composer create-project fnlla/fnlla myapp
 ```
 
 Optional pro module install (after private registry auth):

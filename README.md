@@ -94,7 +94,7 @@ Open:
 
 **STARTER**
 **-** Starter application repository: `https://github.com/fnlla/fnlla`
-**-** Public bootstrap command: `composer create-project fnlla/starter my-app`
+**-** Public bootstrap command: `composer create-project fnlla/fnlla my-app`
 
 Docs UI and docs generation:
 **-** Docs home: `GET /docs`
@@ -170,7 +170,7 @@ This section is the operational source for maintainers responsible for public pa
 **SOURCE OF TRUTH**
 **-** `fnlla/framework` stays private and is the only source of truth.
 **-** Public package repositories are split outputs only (do not edit them manually).
-**-** Starter repository is `fnlla/fnlla` and is public for `composer create-project fnlla/starter`.
+**-** Starter repository is `fnlla/fnlla` and is public for `composer create-project fnlla/fnlla`.
 
 **PACKAGE SPLIT (PUBLIC VS PRIVATE)**
 **-** Manifest file: `scripts/release/distribution-packages.json`
@@ -249,8 +249,8 @@ Public package repositories in GitHub org `fnlla (finella)`:
 **ONE-TIME PACKAGIST PUBLISH (STARTER)**
 1. Ensure starter repo `fnlla/fnlla` is public.
 2. Confirm starter `composer.json` contains only remote dependencies (no `path` repositories).
-3. Submit `https://github.com/fnlla/fnlla` to Packagist as `fnlla/starter`.
-4. Verify `composer create-project fnlla/starter my-app` resolves from Packagist.
+3. Submit `https://github.com/fnlla/fnlla` to Packagist as `fnlla/fnlla`.
+4. Verify `composer create-project fnlla/fnlla my-app` resolves from Packagist.
 
 **STARTER RULES (REQUIRED)**
 **-** In `fnlla/fnlla`, keep only remote dependencies in `composer.json`.
@@ -266,7 +266,7 @@ Public package repositories in GitHub org `fnlla (finella)`:
 3. Refresh Packagist package metadata (auto-hook or manual update).
 4. Release starter (`fnlla/fnlla`) with aligned dependency constraints.
 5. Validate public bootstrap:
-   `composer create-project fnlla/starter my-app`
+   `composer create-project fnlla/fnlla my-app`
 6. Validate install/boot in created app:
    `composer install && php bin/fnlla db:bootstrap`
 
