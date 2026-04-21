@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GETTING STARTED - Finella Docs</title>
+  <title>GETTING STARTED - fnlla (finella) Docs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   <header class="fx-topbar">
     <div class="f-container fx-topbar-inner">
       <div class="fx-brand">
-        <div class="fx-brand-mark">Finella</div>
+        <div class="fx-brand-mark">fnlla (finella)</div>
         <span class="fx-brand-pill">Documentation</span>
       </div>
       <div class="fx-topbar-actions"></div>
@@ -29,23 +29,23 @@
       </div>
     </aside>
     <article class="fx-docs-content">
-      <div class="fx-docs-eyebrow">Finella</div>
+      <div class="fx-docs-eyebrow">fnlla (finella)</div>
       <h1>GETTING STARTED</h1>
       <div class="fx-docs-markdown">
         <p><strong>GETTING STARTED</strong></p><p>This guide is the canonical setup path for the <code>fnlla/framework</code> repository.</p><p><strong>REQUIREMENTS</strong> <strong>-</strong> PHP &gt;= 8.5 <strong>-</strong> Composer &gt;= 2 <strong>-</strong> Git</p><p><strong>REPOSITORY SCOPE</strong> <code>fnlla/framework</code> contains: <strong>-</strong> <code>framework/</code> core runtime <strong>-</strong> <code>packages/</code> optional official packages <strong>-</strong> <code>tools/harness/</code> development and smoke-test harness <strong>-</strong> <code>documentation/src/</code> source-of-truth Markdown docs</p><p>The public starter application is in a separate repository: <code>fnlla/fnlla</code>.</p><p><strong>QUICK START (HARNESS)</strong></p><pre><code class="language-bash">git clone https://github.com/fnlla/framework.git framework
 cd framework/tools/harness
 copy .env.example .env
 composer install
-php bin/finella db:bootstrap
+php bin/fnlla db:bootstrap
 composer run dev</code></pre><p>Open <code>http://127.0.0.1:8000</code>.</p><p><strong>QUALITY GATE (MINIMAL)</strong> From <code>tools/harness/</code>:</p><pre><code class="language-bash">composer run smoke</code></pre><p>From repo root:</p><pre><code class="language-bash">bash scripts/release/check-release-hygiene.sh</code></pre><p>(Windows alternative: <code>scripts/release/check-release-hygiene.ps1</code>.)</p><p><strong>STATIC DOCS BUILD</strong> Rebuild static HTML docs from <code>documentation/src/*</code>:</p><pre><code class="language-bash">php scripts/docs/build-static-docs.php</code></pre><p>Output is written to <code>documentation/build/</code>.</p><p><strong>WORKING WITH STARTER (<code>fnlla/fnlla</code>)</strong> If you work across both repositories, use side-by-side layout:</p><pre><code class="language-text">&lt;repos&gt;/framework   # github.com/fnlla/framework
-&lt;repos&gt;/fnlla       # github.com/fnlla/fnlla</code></pre><p>Then in <code>fnlla/</code> use <code>composer.dev.json</code> for local package resolution.</p><p><strong>NAME ORIGIN AND TECHNICAL SLUG</strong> <strong>-</strong> Product name: <code>Finella</code> (name origin: Finella Gardens, Dundee, UK). <strong>-</strong> Technical slug: <code>fnlla</code> (<code>github.com/fnlla</code>, <code>fnlla.co.uk</code>). <strong>-</strong> Why <code>fnlla</code>: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.</p><p><strong>NEXT READING</strong> <strong>-</strong> <code>documentation/src/framework.md</code> <strong>-</strong> <code>documentation/src/operations.md</code> <strong>-</strong> <code>documentation/src/developer-experience.md</code> <strong>-</strong> <code>documentation/src/packages.md</code></p>
+&lt;repos&gt;/fnlla       # github.com/fnlla/fnlla</code></pre><p>Then in <code>fnlla/</code> use <code>composer.dev.json</code> for local package resolution.</p><p><strong>NAME ORIGIN AND TECHNICAL SLUG</strong> <strong>-</strong> Product name: <code>fnlla (finella)</code> (name origin: fnlla (finella) Gardens, Dundee, UK). <strong>-</strong> Technical slug: <code>fnlla (finella)</code> (<code>github.com/fnlla</code>, <code>fnlla.co.uk</code>). <strong>-</strong> Why <code>fnlla (finella)</code>: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.</p><p><strong>NEXT READING</strong> <strong>-</strong> <code>documentation/src/framework.md</code> <strong>-</strong> <code>documentation/src/operations.md</code> <strong>-</strong> <code>documentation/src/developer-experience.md</code> <strong>-</strong> <code>documentation/src/packages.md</code></p>
       </div>
     </article>
   </main>
 
   <footer class="fx-docs-footer">
     <div class="f-container">
-      <span>&copy; 2026 Finella</span>
+      <span>&copy; 2026 fnlla (finella)</span>
       <span>Generated from <code>documentation/src</code>.</span>
     </div>
   </footer>

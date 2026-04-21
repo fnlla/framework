@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Core\ConfigRepository;
-use Finella\Cors\CorsMiddleware;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Http\Uri;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Cors\CorsMiddleware;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\Uri;
 
 function ok(bool $cond, string $msg): void
 {

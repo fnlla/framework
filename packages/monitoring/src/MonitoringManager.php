@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Monitoring;
+namespace Fnlla\\Monitoring;
 
-use Finella\Cache\CacheManager;
-use Finella\Runtime\Profiler;
+use Fnlla\\Cache\CacheManager;
+use Fnlla\\Runtime\Profiler;
 
 final class MonitoringManager
 {

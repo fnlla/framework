@@ -1,6 +1,6 @@
 **FNLLA/TESTING**
 
-Lightweight testing helpers for Finella. Provides a base `TestCase` for HTTP feature tests and a simple CLI runner.
+Lightweight testing helpers for fnlla (finella). Provides a base `TestCase` for HTTP feature tests and a simple CLI runner.
 
 **INSTALLATION**
 ```bash
@@ -10,12 +10,12 @@ composer require --dev fnlla/testing
 **RUNNING TESTS**
 From your application:
 ```bash
-vendor/bin/finella-test
+vendor/bin/fnlla-test
 ```
 
 **EXAMPLE**
 ```php
-use Finella\Testing\TestCase;
+use Fnlla\\Testing\TestCase;
 
 final class HealthTest extends TestCase
 {

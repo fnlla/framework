@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Http\Request;
-use Finella\Support\Validator;
+use Fnlla\\Http\Request;
+use Fnlla\\Support\Validator;
 
 final class ValidationHelper
 {

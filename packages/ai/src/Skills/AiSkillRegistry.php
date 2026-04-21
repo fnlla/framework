@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Skills;
+namespace Fnlla\\Ai\Skills;
 
 final class AiSkillRegistry
 {

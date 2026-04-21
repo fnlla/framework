@@ -7,16 +7,16 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail\Http;
+namespace Fnlla\\Webmail\Http;
 
-use Finella\Core\ConfigRepository;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Mail\Address;
-use Finella\Mail\Message;
-use Finella\Webmail\ImapMailboxClient;
-use Finella\Webmail\WebmailSettings;
-use Finella\Webmail\WebmailSmtpClient;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\Message;
+use Fnlla\\Webmail\ImapMailboxClient;
+use Fnlla\\Webmail\WebmailSettings;
+use Fnlla\\Webmail\WebmailSmtpClient;
 
 final class WebmailTestController
 {
@@ -123,8 +123,8 @@ final class WebmailTestController
         $message = new Message(
             from: new Address($from),
             to: [new Address($to)],
-            subject: 'Finella webmail SMTP test',
-            text: 'Test email sent by Finella webmail diagnostics.'
+            subject: 'Fnlla webmail SMTP test',
+            text: 'Test email sent by Fnlla webmail diagnostics.'
         );
 
         if ($from === '' && $fromName !== '') {

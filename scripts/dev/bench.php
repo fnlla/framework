@@ -12,8 +12,8 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Finella\Core\Container;
-use Finella\Http\Response;
+use Fnlla\\Core\Container;
+use Fnlla\\Http\Response;
 
 final class BenchDep {}
 final class BenchOpt {}

@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Contracts\Http;
+namespace Fnlla\\Contracts\Http;
 
-use Finella\Http\Request;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
 
 /**
  * @api

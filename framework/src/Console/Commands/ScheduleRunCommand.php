@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
-use Finella\Core\Application;
-use Finella\Scheduler\ScheduleRegistry;
-use Finella\Scheduler\Schedule;
-use Finella\Support\Env;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
+use Fnlla\\Core\Application;
+use Fnlla\\Scheduler\ScheduleRegistry;
+use Fnlla\\Scheduler\Schedule;
+use Fnlla\\Support\Env;
 
 final class ScheduleRunCommand implements CommandInterface
 {
@@ -71,7 +71,7 @@ final class ScheduleRunCommand implements CommandInterface
             require $bootstrap;
         }
 
-        $app = $GLOBALS['finella_app'] ?? null;
+        $app = $GLOBALS['Fnlla_app'] ?? null;
         return $app instanceof Application ? $app : null;
     }
 

@@ -94,7 +94,7 @@ if ($dryRun) {
     exit(0);
 }
 
-$tmpFile = tempnam(sys_get_temp_dir(), 'finella-release-');
+$tmpFile = tempnam(sys_get_temp_dir(), 'fnlla-release-');
 if ($tmpFile === false) {
     fwrite(STDERR, "Unable to create temporary file for release notes.\n");
     exit(1);
@@ -326,7 +326,7 @@ function defaultReleaseTitle(string $version): string
 {
     $slug = detectRepositorySlug();
     if ($slug === 'fnlla/framework') {
-        return $version . ' - Finella Framework';
+        return $version . ' - Fnlla Framework';
     }
     if ($slug === 'fnlla/fnlla') {
         return $version . ' - FNLLA Starter';

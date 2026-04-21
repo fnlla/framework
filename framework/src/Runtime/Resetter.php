@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Runtime;
+namespace Fnlla\\Runtime;
 
 interface Resetter
 {

@@ -26,8 +26,8 @@ fnlla (finella) is an AI-assisted, modular PHP framework with a minimal core: ke
 **QUICK START**
 ```php
 // routes/web.php
-use Finella\Http\Router;
-use Finella\Http\Response;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
     $router->get('/', [\App\Controllers\HomeController::class, 'index']);
@@ -53,7 +53,7 @@ Notes:
 **WARM KERNEL (LONG-RUNNING)**
 For long-running servers, boot once and reuse the kernel:
 ```php
-$kernel = new \Finella\Http\HttpKernel();
+$kernel = new \Fnlla\\Http\HttpKernel();
 $kernel->boot();
 ```
 Register resetters for per-request cleanup:
@@ -131,7 +131,7 @@ $app->registerResetter(new \App\Support\MyResetter());
 
 **CONFIGURATION**
 Configuration is loaded from `config/**/*.php` and uses `env()`.
-Primary access is via `Finella\Core\ConfigRepository`.
+Primary access is via `Fnlla\\Core\ConfigRepository`.
 
 ```php
 $config = $app->configRepository();
@@ -150,7 +150,7 @@ Optional runtime configuration can be stored in the database with `fnlla/setting
 For action logs, enable `fnlla/audit`.
 
 **ENVIRONMENT**
-The starter uses `Finella\Support\Dotenv` and loads `.env` when present.
+The starter uses `Fnlla\\Support\Dotenv` and loads `.env` when present.
 
 **SUPPORT POLICY**
 **-** PHP 8.5+ (CI: 8.5)
@@ -160,7 +160,7 @@ The starter uses `Finella\Support\Dotenv` and loads `.env` when present.
 
 **HTTP**
 
-This document consolidates HTTP lifecycle, routing, and middleware in Finella.
+This document consolidates HTTP lifecycle, routing, and middleware in fnlla (finella).
 
 **REQUEST LIFECYCLE**
 `HttpKernel` wraps the request lifecycle and runs middleware + routing.
@@ -199,7 +199,7 @@ HTTP Response
 **WARM KERNEL (LONG-RUNNING)**
 For long-running servers you can boot once and reuse the kernel per request:
 ```php
-$kernel = new \Finella\Http\HttpKernel();
+$kernel = new \Fnlla\\Http\HttpKernel();
 $kernel->boot();
 // handle requests in a loop
 ```
@@ -218,8 +218,8 @@ Cached routes require string handlers and middleware, so closures are not cachea
 **BASIC ROUTE**
 `routes/web.php`
 ```php
-use Finella\Http\Router;
-use Finella\Http\Response;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
     $router->get('/', fn () => Response::text('Hello fnlla (finella)'));
@@ -228,8 +228,8 @@ return static function (Router $router): void {
 
 **ROUTE PARAMETERS**
 ```php
-use Finella\Http\Request;
-use Finella\Http\Response;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 $router->get('/users/{id}', function (Request $request): Response {
     return Response::json(['id' => $request->getAttribute('id')]);
@@ -267,7 +267,7 @@ Middleware can be global, grouped, or per-route.
 **GLOBAL MIDDLEWARE**
 `config/http/http.php`
 ```php
-use Finella\Http\Middleware\SecurityHeadersMiddleware;
+use Fnlla\\Http\Middleware\SecurityHeadersMiddleware;
 
 return [
     'global' => [
@@ -286,7 +286,7 @@ Aliases can shorten route middleware definitions:
 ```php
 return [
     'middleware_aliases' => [
-        'auth' => \Finella\Auth\AuthMiddleware::class,
+        'auth' => \Fnlla\\Auth\AuthMiddleware::class,
     ],
 ];
 ```
@@ -308,14 +308,14 @@ This document consolidates migrations and ORM usage.
 **MIGRATIONS**
 Create and run migrations with the CLI:
 ```bash
-php bin/finella make:migration create_users_table
-php bin/finella migrate
+php bin/fnlla make:migration create_users_table
+php bin/fnlla migrate
 ```
 
 **ORM BASICS**
 Define a model:
 ```php
-use Finella\Orm\Model;
+use Fnlla\\Orm\Model;
 
 final class User extends Model
 {
@@ -359,9 +359,9 @@ $role->users()->sync([$userId, $adminId]);
 ```
 
 **SOFT DELETES AND SCOPES**
-Models can opt into soft deletes by using `Finella\Orm\SoftDeletes`.
+Models can opt into soft deletes by using `Fnlla\\Orm\SoftDeletes`.
 ```php
-use Finella\Orm\SoftDeletes;
+use Fnlla\\Orm\SoftDeletes;
 
 final class User extends Model
 {
@@ -383,7 +383,7 @@ Local scopes:
 ```php
 final class User extends Model
 {
-    public function scopeActive(\Finella\Orm\QueryBuilder $query): void
+    public function scopeActive(\Fnlla\\Orm\QueryBuilder $query): void
     {
         $query->where('status', 'active');
     }
@@ -396,7 +396,7 @@ final class User extends Model
 {
     protected static array $globalScopes = ['active' => 'activeScope'];
 
-    public function activeScope(\Finella\Orm\QueryBuilder $query): void
+    public function activeScope(\Fnlla\\Orm\QueryBuilder $query): void
     {
         $query->where('status', 'active');
     }
@@ -423,7 +423,7 @@ If you need runtime configuration or audit trails stored in the database:
 **MULTI-TENANCY**
 For tenant-scoped data, enable `fnlla/tenancy` and extend `TenantModel`:
 ```php
-use Finella\Tenancy\TenantModel;
+use Fnlla\\Tenancy\TenantModel;
 
 final class Project extends TenantModel
 {
@@ -441,8 +441,8 @@ fnlla (finella) provides a lightweight HTML form flow built on top of validation
 **VALIDATION QUICK USAGE**
 Validate inside a route or controller:
 ```php
-use Finella\Http\Request;
-use Finella\Support\ValidationException;
+use Fnlla\\Http\Request;
+use Fnlla\\Support\ValidationException;
 
 $router->post('/signup', function (Request $request) {
     try {
@@ -453,11 +453,11 @@ $router->post('/signup', function (Request $request) {
         ], [], 'signup');
 
         // $data contains validated values.
-        return \Finella\Http\Response::json(['ok' => true]);
+        return \Fnlla\\Http\Response::json(['ok' => true]);
     } catch (ValidationException $e) {
         // For HTML requests, fnlla (finella) flashes errors + old input to session
         // and redirects back automatically (see below).
-        return \Finella\Http\Response::redirect('/signup');
+        return \Fnlla\\Http\Response::redirect('/signup');
     }
 });
 ```
@@ -537,7 +537,7 @@ $request->validate([
 
 Register reusable rules:
 ```php
-use Finella\Support\Validator;
+use Fnlla\\Support\Validator;
 
 Validator::extend('upper', function ($value): bool {
     return is_string($value) && strtoupper($value) === $value;
@@ -571,7 +571,7 @@ For JSON requests the response remains a `422` with `{"errors":{...}}`.
 
 **RESPONSE HELPERS**
 ```php
-use Finella\Http\Response;
+use Fnlla\\Http\Response;
 
 return Response::redirect('/form')
     ->withErrors(['name' => ['Required']], 'default')
@@ -631,7 +631,7 @@ return [
 
 **ROUTES**
 ```php
-use Finella\Notifications\NotificationsRoutes;
+use Fnlla\\Notifications\NotificationsRoutes;
 
 NotificationsRoutes::register($router, [
     'prefix' => '/api/notifications',
@@ -669,7 +669,7 @@ return [
 
 **ROUTES (OPTIONAL)**
 ```php
-use Finella\Pdf\PdfRoutes;
+use Fnlla\\Pdf\PdfRoutes;
 
 return static function (Router $router): void {
     PdfRoutes::register($router, ['prefix' => '/api/pdf']);
@@ -679,9 +679,9 @@ This adds `GET /api/pdf/invoice` (invoice) and `GET /api/pdf/pitch-deck` (pitch 
 
 **USAGE**
 ```php
-use Finella\Pdf\PdfManager;
-use Finella\Pdf\Templates\InvoiceTemplate;
-use Finella\Pdf\Templates\PitchDeckTemplate;
+use Fnlla\\Pdf\PdfManager;
+use Fnlla\\Pdf\Templates\InvoiceTemplate;
+use Fnlla\\Pdf\Templates\PitchDeckTemplate;
 
 public function invoice(PdfManager $pdf): Response
 {
@@ -728,7 +728,7 @@ Configure the queue driver in `config/queue/queue.php`.
 
 Use the worker:
 ```bash
-php bin/finella queue:work
+php bin/fnlla queue:work
 ```
 
 Redis driver:
@@ -744,17 +744,17 @@ The worker supports both `database` and `redis` drivers.
 **SCHEDULER**
 Define schedules in `routes/schedule.php` and run:
 ```bash
-php bin/finella schedule:run
+php bin/fnlla schedule:run
 ```
 
 **UTILITIES**
 
-This page lists utility helpers that are available out of the box in Finella.
+This page lists utility helpers that are available out of the box in fnlla (finella).
 
 **UPLOADPOLICY**
 Validate uploads and sanitize filenames:
 ```php
-use Finella\Support\UploadPolicy;
+use Fnlla\\Support\UploadPolicy;
 
 $errors = UploadPolicy::validate($file, [
     'max_bytes' => 10 * 1024 * 1024,
@@ -768,7 +768,7 @@ $safeName = UploadPolicy::sanitizeFilename($file->getClientFilename() ?? '');
 **SCHEMAINSPECTOR**
 Check for a column across SQLite/MySQL/Postgres:
 ```php
-use Finella\Database\SchemaInspector;
+use Fnlla\\Database\SchemaInspector;
 
 $inspector = new SchemaInspector();
 if ($inspector->hasColumn('users', 'last_seen')) {
@@ -779,7 +779,7 @@ if ($inspector->hasColumn('users', 'last_seen')) {
 **HTTPCLIENT**
 Simple HTTP wrapper with JSON helpers:
 ```php
-use Finella\Support\HttpClient;
+use Fnlla\\Support\HttpClient;
 
 $client = new HttpClient();
 $response = $client->getJson('https://example.com/api/status');
@@ -791,7 +791,7 @@ if ($response['ok']) {
 **REPORTPAGINATOR**
 Lightweight paginator for non-ORM datasets:
 ```php
-use Finella\Support\ReportPaginator;
+use Fnlla\\Support\ReportPaginator;
 
 $paginator = new ReportPaginator($rows, $total, 25, $page, '/reports');
 echo $paginator->links('partials.pagination');
@@ -800,7 +800,7 @@ echo $paginator->links('partials.pagination');
 **VALIDATIONHELPER**
 Flatten validation errors into a clean list:
 ```php
-use Finella\Support\ValidationHelper;
+use Fnlla\\Support\ValidationHelper;
 
 $errors = ValidationHelper::errors($request, [
     'email' => ['required', 'email'],
@@ -814,14 +814,14 @@ if ($errors !== []) {
 **FALLBACKLOGGER**
 Fallback logging to file when a PSR logger is unavailable:
 ```php
-use Finella\Support\FallbackLogger;
+use Fnlla\\Support\FallbackLogger;
 
 FallbackLogger::error('Invoice failed', ['invoice_id' => 123]);
 ```
 
 **ORM ERGONOMICS**
 
-This document defines the ORM ergonomics standard for Finella. It lists
+This document defines the ORM ergonomics standard for fnlla (finella). It lists
 what is already delivered and what remains on the roadmap.
 
 **DELIVERED (3.X)**

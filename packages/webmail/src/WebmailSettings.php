@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Core\ConfigRepository;
-use Finella\Settings\SettingsStore;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Settings\SettingsStore;
 
 final class WebmailSettings
 {

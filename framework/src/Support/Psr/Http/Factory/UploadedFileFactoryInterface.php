@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support\Psr\Http\Factory;
+namespace Fnlla\\Support\Psr\Http\Factory;
 
-use Finella\Support\Psr\Http\Message\StreamInterface;
-use Finella\Support\Psr\Http\Message\UploadedFileInterface;
+use Fnlla\\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\\Support\Psr\Http\Message\UploadedFileInterface;
 
 interface UploadedFileFactoryInterface
 {

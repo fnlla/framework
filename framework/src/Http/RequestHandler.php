@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
 
 /**
  * @api

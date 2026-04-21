@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-use Finella\Core\Application;
-use Finella\Mail\Address;
-use Finella\Mail\MailerInterface;
-use Finella\Mail\Message;
+use Fnlla\\Core\Application;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\MailerInterface;
+use Fnlla\\Mail\Message;
 
 $root = dirname(__DIR__, 2);
 $appRoot = $root . '/tools/harness';
@@ -40,9 +40,9 @@ if (is_file($bootstrap)) {
     require $bootstrap;
 }
 
-$app = $GLOBALS['finella_app'] ?? null;
+$app = $GLOBALS['Fnlla_app'] ?? null;
 if (!$app instanceof Application) {
-    fwrite(STDERR, "Unable to bootstrap Finella app.\n");
+    fwrite(STDERR, "Unable to bootstrap Fnlla app.\n");
     exit(1);
 }
 
@@ -56,8 +56,8 @@ array_shift($args);
 
 $options = [
     'to' => null,
-    'subject' => 'Finella test email',
-    'text' => 'Hello from Finella.',
+    'subject' => 'Fnlla test email',
+    'text' => 'Hello from Fnlla.',
     'html' => null,
 ];
 
@@ -99,7 +99,7 @@ if ($toParts === []) {
 
 $config = $app->config();
 $fromAddress = (string) $config->get('mail.from.address', 'noreply@example.test');
-$fromName = (string) $config->get('mail.from.name', 'Finella');
+$fromName = (string) $config->get('mail.from.name', 'Fnlla');
 
 $toAddresses = [];
 foreach ($toParts as $address) {

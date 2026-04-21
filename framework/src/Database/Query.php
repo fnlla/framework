@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Database;
+namespace Fnlla\\Database;
 
 use PDO;
 use RuntimeException;
-use Finella\Runtime\Profiler;
+use Fnlla\\Runtime\Profiler;
 
 final class Query
 {

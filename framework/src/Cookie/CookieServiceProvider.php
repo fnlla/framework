@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Cookie;
+namespace Fnlla\\Cookie;
 
-use Finella\Support\ServiceProvider;
+use Fnlla\\Support\ServiceProvider;
 
 final class CookieServiceProvider extends ServiceProvider
 {
-    public function register(\Finella\Core\Container $app): void
+    public function register(\Fnlla\\Core\Container $app): void
     {
         $app->singleton(CookieJar::class, fn (): CookieJar => new CookieJar());
     }

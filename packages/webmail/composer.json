@@ -24,13 +24,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Webmail\\":  "src/"
+                                   "Fnlla\\Webmail\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Webmail\\WebmailServiceProvider"
+                                                  "Fnlla\\Webmail\\WebmailServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -39,8 +39,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/webmail":  "self.version"
                 }
 }

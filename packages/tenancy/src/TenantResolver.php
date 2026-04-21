@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Tenancy;
+namespace Fnlla\\Tenancy;
 
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
 
 final class TenantResolver implements TenantResolverInterface
 {

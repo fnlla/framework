@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Plugin;
+namespace Fnlla\\Plugin;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Application;
 
 final class PluginManager
 {

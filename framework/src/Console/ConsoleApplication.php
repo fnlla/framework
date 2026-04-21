@@ -6,43 +6,43 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console;
+namespace Fnlla\\Console;
 
-use Finella\Console\Commands\MakeCommandCommand;
-use Finella\Console\Commands\MakeControllerCommand;
-use Finella\Console\Commands\MakeCrudCommand;
-use Finella\Console\Commands\MakeBlueprintCommand;
-use Finella\Console\Commands\MakeJobCommand;
-use Finella\Console\Commands\MakeListenerCommand;
-use Finella\Console\Commands\MakeMailCommand;
-use Finella\Console\Commands\MakeMiddlewareCommand;
-use Finella\Console\Commands\MakeModelCommand;
-use Finella\Console\Commands\MakeMigrationCommand;
-use Finella\Console\Commands\MakeModuleCommand;
-use Finella\Console\Commands\MakePolicyCommand;
-use Finella\Console\Commands\MakeRequestCommand;
-use Finella\Console\Commands\MakeRepositoryCommand;
-use Finella\Console\Commands\MakeSeederCommand;
-use Finella\Console\Commands\MakeServiceCommand;
-use Finella\Console\Commands\MakeTestCommand;
-use Finella\Console\Commands\MigrateCommand;
-use Finella\Console\Commands\MigrateRollbackCommand;
-use Finella\Console\Commands\MigrateStatusCommand;
-use Finella\Console\Commands\DatabaseBootstrapCommand;
-use Finella\Console\Commands\AiConfigAdvisorCommand;
-use Finella\Console\Commands\AiSecurityLintCommand;
-use Finella\Console\Commands\AiObservabilityCommand;
-use Finella\Console\Commands\AiDocsSyncCommand;
-use Finella\Console\Commands\AiScaffoldCommand;
-use Finella\Console\Commands\AiDoctorCommand;
-use Finella\Console\Commands\AiTestPlanCommand;
-use Finella\Console\Commands\AiRoadmapBalanceCommand;
-use Finella\Console\Commands\AiReleaseNotesCommand;
-use Finella\Console\Commands\QueueWorkCommand;
-use Finella\Console\Commands\RoutesCacheCommand;
-use Finella\Console\Commands\RoutesClearCommand;
-use Finella\Console\Commands\ScheduleRunCommand;
-use Finella\Console\Commands\SeedCommand;
+use Fnlla\\Console\Commands\MakeCommandCommand;
+use Fnlla\\Console\Commands\MakeControllerCommand;
+use Fnlla\\Console\Commands\MakeCrudCommand;
+use Fnlla\\Console\Commands\MakeBlueprintCommand;
+use Fnlla\\Console\Commands\MakeJobCommand;
+use Fnlla\\Console\Commands\MakeListenerCommand;
+use Fnlla\\Console\Commands\MakeMailCommand;
+use Fnlla\\Console\Commands\MakeMiddlewareCommand;
+use Fnlla\\Console\Commands\MakeModelCommand;
+use Fnlla\\Console\Commands\MakeMigrationCommand;
+use Fnlla\\Console\Commands\MakeModuleCommand;
+use Fnlla\\Console\Commands\MakePolicyCommand;
+use Fnlla\\Console\Commands\MakeRequestCommand;
+use Fnlla\\Console\Commands\MakeRepositoryCommand;
+use Fnlla\\Console\Commands\MakeSeederCommand;
+use Fnlla\\Console\Commands\MakeServiceCommand;
+use Fnlla\\Console\Commands\MakeTestCommand;
+use Fnlla\\Console\Commands\MigrateCommand;
+use Fnlla\\Console\Commands\MigrateRollbackCommand;
+use Fnlla\\Console\Commands\MigrateStatusCommand;
+use Fnlla\\Console\Commands\DatabaseBootstrapCommand;
+use Fnlla\\Console\Commands\AiConfigAdvisorCommand;
+use Fnlla\\Console\Commands\AiSecurityLintCommand;
+use Fnlla\\Console\Commands\AiObservabilityCommand;
+use Fnlla\\Console\Commands\AiDocsSyncCommand;
+use Fnlla\\Console\Commands\AiScaffoldCommand;
+use Fnlla\\Console\Commands\AiDoctorCommand;
+use Fnlla\\Console\Commands\AiTestPlanCommand;
+use Fnlla\\Console\Commands\AiRoadmapBalanceCommand;
+use Fnlla\\Console\Commands\AiReleaseNotesCommand;
+use Fnlla\\Console\Commands\QueueWorkCommand;
+use Fnlla\\Console\Commands\RoutesCacheCommand;
+use Fnlla\\Console\Commands\RoutesClearCommand;
+use Fnlla\\Console\Commands\ScheduleRunCommand;
+use Fnlla\\Console\Commands\SeedCommand;
 
 final class ConsoleApplication
 {
@@ -216,7 +216,7 @@ final class ConsoleApplication
 
     private function printHelp(): void
     {
-        $this->io->line('Finella CLI');
+        $this->io->line('Fnlla CLI');
         $this->io->line('');
         $this->io->line('Commands:');
 
@@ -226,6 +226,6 @@ final class ConsoleApplication
         }
 
         $this->io->line('');
-        $this->io->line('Use: finella <command> [args] [--options]');
+        $this->io->line('Use: Fnlla <command> [args] [--options]');
     }
 }

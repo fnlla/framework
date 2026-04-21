@@ -6,7 +6,7 @@ namespace App\Controllers;
 
 use App\Services\AppReadinessService;
 use App\Services\AppStatusService;
-use Finella\Http\Response;
+use Fnlla\\Http\Response;
 
 final class HomeController
 {

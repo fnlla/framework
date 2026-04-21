@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Database;
+namespace Fnlla\\Database;
 
 use PDO;
 use RuntimeException;
-use Finella\Support\Env;
+use Fnlla\\Support\Env;
 
 final class ConnectionManager
 {

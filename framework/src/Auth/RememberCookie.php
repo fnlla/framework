@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
-use Finella\Core\ConfigRepository;
-use Finella\Support\Env;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Support\Env;
 
 final class RememberCookie
 {

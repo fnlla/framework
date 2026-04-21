@@ -21,7 +21,7 @@ return [
         'username' => env('QUEUE_REDIS_USERNAME', ''),
         'password' => env('QUEUE_REDIS_PASSWORD', ''),
         'database' => (int) env('QUEUE_REDIS_DB', 0),
-        'prefix' => env('QUEUE_REDIS_PREFIX', 'finella:queue:'),
+        'prefix' => env('QUEUE_REDIS_PREFIX', 'Fnlla:queue:'),
         'queue' => env('QUEUE_NAME', 'default'),
         'timeout' => (float) env('QUEUE_REDIS_TIMEOUT', 1.5),
         'read_timeout' => (float) env('QUEUE_REDIS_READ_TIMEOUT', 1.5),

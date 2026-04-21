@@ -4,10 +4,10 @@
  * (c) TechAyo.co.uk
  * Proprietary License
  */
-namespace Finella\Http\Middleware;
+namespace Fnlla\\Http\Middleware;
 
-if (class_exists('\\Finella\\Csrf\\CsrfMiddleware') && !class_exists(__NAMESPACE__ . '\\CsrfMiddleware')) {
-    class_alias('\\Finella\\Csrf\\CsrfMiddleware', __NAMESPACE__ . '\\CsrfMiddleware');
+if (class_exists('\\Fnlla\\\Csrf\\CsrfMiddleware') && !class_exists(__NAMESPACE__ . '\\CsrfMiddleware')) {
+    class_alias('\\Fnlla\\\Csrf\\CsrfMiddleware', __NAMESPACE__ . '\\CsrfMiddleware');
 }
 
 

@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Contracts\Log;
+namespace Fnlla\\Contracts\Log;
 
-use Finella\Support\Psr\Log\LoggerInterface as PsrLoggerInterface;
+use Fnlla\\Support\Psr\Log\LoggerInterface as PsrLoggerInterface;
 
 /**
  * @api

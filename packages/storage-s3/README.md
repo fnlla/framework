@@ -27,7 +27,7 @@ Add an S3 disk to `config/storage/storage.php`:
 
 **USAGE**
 ```php
-use Finella\Storage\StorageManager;
+use Fnlla\\Storage\StorageManager;
 
 $storage = app()->make(StorageManager::class);
 $disk = $storage->disk('s3');

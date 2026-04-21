@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Pdf\Templates;
+namespace Fnlla\\Pdf\Templates;
 
 interface PdfTemplateInterface
 {

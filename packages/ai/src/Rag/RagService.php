@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Rag;
+namespace Fnlla\\Ai\Rag;
 
-use Finella\Ai\AiClientInterface;
+use Fnlla\\Ai\AiClientInterface;
 use RuntimeException;
 
 final class RagService

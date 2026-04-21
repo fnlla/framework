@@ -12,9 +12,9 @@ Generated at: 2026-04-05 22:22:39 UTC
 
 **RUNTIME**
 **-** PHP: 8.4.19
-**-** fnlla (finella): 3.0.0
+**-** fnlla: 3.0.0
 
-**FNLLA (FINELLA) PACKAGES**
+**fnlla (finella) PACKAGES**
 **-** fnlla/ai (dev-main)
 **-** fnlla/audit (dev-main)
 **-** fnlla/standard (dev-main)

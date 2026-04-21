@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 $commands = [
-    \Finella\Deploy\Commands\DeployHealthCommand::class,
-    \Finella\Deploy\Commands\DeployWarmupCommand::class,
-    \Finella\Docs\Commands\DocsGenerateCommand::class,
-    \Finella\Docs\Commands\DocsSyncCommand::class,
-    \Finella\MailPreview\Commands\MailPreviewPublishCommand::class,
+    \Fnlla\\Deploy\Commands\DeployHealthCommand::class,
+    \Fnlla\\Deploy\Commands\DeployWarmupCommand::class,
+    \Fnlla\\Docs\Commands\DocsGenerateCommand::class,
+    \Fnlla\\Docs\Commands\DocsSyncCommand::class,
+    \Fnlla\\MailPreview\Commands\MailPreviewPublishCommand::class,
 ];
 
 $commands = array_values(array_filter($commands, static fn (string $command): bool => class_exists($command)));

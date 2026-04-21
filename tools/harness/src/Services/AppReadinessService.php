@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
-use Finella\Support\RedisConnector;
+use Fnlla\\Support\RedisConnector;
 use Throwable;
 
 final class AppReadinessService
@@ -37,7 +37,7 @@ final class AppReadinessService
 
     private function checkDatabase(): array
     {
-        if (!class_exists(\Finella\Database\ConnectionManager::class)) {
+        if (!class_exists(\Fnlla\\Database\ConnectionManager::class)) {
             return [
                 'status' => 'skipped',
                 'detail' => 'database core module not available',
@@ -58,8 +58,8 @@ final class AppReadinessService
         }
 
         try {
-            $manager = $app->make(\Finella\Database\ConnectionManager::class);
-            if (!$manager instanceof \Finella\Database\ConnectionManager) {
+            $manager = $app->make(\Fnlla\\Database\ConnectionManager::class);
+            if (!$manager instanceof \Fnlla\\Database\ConnectionManager) {
                 return [
                     'status' => 'fail',
                     'detail' => 'ConnectionManager not available',
@@ -81,7 +81,7 @@ final class AppReadinessService
 
     private function checkQueue(): array
     {
-        if (!class_exists(\Finella\Queue\QueueManager::class)) {
+        if (!class_exists(\Fnlla\\Queue\QueueManager::class)) {
             return [
                 'status' => 'skipped',
                 'detail' => 'fnlla/queue not installed',
@@ -132,7 +132,7 @@ final class AppReadinessService
 
     private function checkCache(): array
     {
-        if (!class_exists(\Finella\Cache\CacheManager::class)) {
+        if (!class_exists(\Fnlla\\Cache\CacheManager::class)) {
             return [
                 'status' => 'skipped',
                 'detail' => 'cache core module not available',
@@ -169,10 +169,10 @@ final class AppReadinessService
 
     private function checkAdminAuth(): array
     {
-        $adminRoutesEnabled = $this->toBool(getenv('FINELLA_ADMIN_ENABLED'), false);
-        $adminLoginRequired = $this->toBool(getenv('FINELLA_ADMIN_LOGIN_REQUIRED'), true);
-        $adminAuthAllow = $this->toBool(getenv('FINELLA_ADMIN_AUTH_ALLOW_AUTH'), false);
-        $adminHash = trim((string) getenv('FINELLA_ADMIN_LOGIN_PASSWORD_HASH'));
+        $adminRoutesEnabled = $this->toBool(getenv('Fnlla_ADMIN_ENABLED'), false);
+        $adminLoginRequired = $this->toBool(getenv('Fnlla_ADMIN_LOGIN_REQUIRED'), true);
+        $adminAuthAllow = $this->toBool(getenv('Fnlla_ADMIN_AUTH_ALLOW_AUTH'), false);
+        $adminHash = trim((string) getenv('Fnlla_ADMIN_LOGIN_PASSWORD_HASH'));
 
         if (!$adminRoutesEnabled) {
             return [
@@ -184,21 +184,21 @@ final class AppReadinessService
         if (!$adminLoginRequired) {
             return [
                 'status' => 'warn',
-                'detail' => 'FINELLA_ADMIN_LOGIN_REQUIRED=0',
+                'detail' => 'Fnlla_ADMIN_LOGIN_REQUIRED=0',
             ];
         }
 
         if ($adminHash === '') {
             return [
                 'status' => 'fail',
-                'detail' => 'FINELLA_ADMIN_LOGIN_PASSWORD_HASH is required',
+                'detail' => 'Fnlla_ADMIN_LOGIN_PASSWORD_HASH is required',
             ];
         }
 
         if ($adminAuthAllow) {
             return [
                 'status' => 'warn',
-                'detail' => 'FINELLA_ADMIN_AUTH_ALLOW_AUTH=1',
+                'detail' => 'Fnlla_ADMIN_AUTH_ALLOW_AUTH=1',
             ];
         }
 
@@ -210,27 +210,27 @@ final class AppReadinessService
 
     private function checkDocsAccess(): array
     {
-        $docsEnabled = $this->toBool(getenv('FINELLA_DOCS_ENABLED'), false);
+        $docsEnabled = $this->toBool(getenv('Fnlla_DOCS_ENABLED'), false);
         if (!$docsEnabled) {
             return [
                 'status' => 'skipped',
-                'detail' => 'FINELLA_DOCS_ENABLED=0',
+                'detail' => 'Fnlla_DOCS_ENABLED=0',
             ];
         }
 
-        $docsPublic = $this->toBool(getenv('FINELLA_DOCS_PUBLIC'), false);
+        $docsPublic = $this->toBool(getenv('Fnlla_DOCS_PUBLIC'), false);
         if ($docsPublic) {
             return [
                 'status' => 'warn',
-                'detail' => 'FINELLA_DOCS_PUBLIC=1',
+                'detail' => 'Fnlla_DOCS_PUBLIC=1',
             ];
         }
 
-        $docsToken = trim((string) getenv('FINELLA_DOCS_ACCESS_TOKEN'));
+        $docsToken = trim((string) getenv('Fnlla_DOCS_ACCESS_TOKEN'));
         if ($docsToken === '') {
             return [
                 'status' => 'fail',
-                'detail' => 'FINELLA_DOCS_ACCESS_TOKEN missing',
+                'detail' => 'Fnlla_DOCS_ACCESS_TOKEN missing',
             ];
         }
 
@@ -242,11 +242,11 @@ final class AppReadinessService
 
     private function checkWarmKernel(): array
     {
-        $warmKernel = $this->toBool(getenv('FINELLA_WARM_KERNEL'), false);
+        $warmKernel = $this->toBool(getenv('Fnlla_WARM_KERNEL'), false);
         if (!$warmKernel) {
             return [
                 'status' => 'skipped',
-                'detail' => 'FINELLA_WARM_KERNEL=0',
+                'detail' => 'Fnlla_WARM_KERNEL=0',
             ];
         }
 

@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Notifications;
+namespace Fnlla\\Notifications;
 
 use DateTimeImmutable;
-use Finella\Database\ConnectionManager;
+use Fnlla\\Database\ConnectionManager;
 use PDO;
 
 final class NotificationRepository

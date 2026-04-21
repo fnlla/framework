@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\MailPreview;
+namespace Fnlla\\MailPreview;
 
-use Finella\Http\Router;
-use Finella\MailPreview\Http\MailPreviewController;
+use Fnlla\\Http\Router;
+use Fnlla\\MailPreview\Http\MailPreviewController;
 
 final class MailPreviewRoutes
 {

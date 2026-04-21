@@ -11,9 +11,9 @@ Offline install:
 **2) CREATE THE BOOTSTRAP**
 `bootstrap/app.php`
 ```php
-use Finella\Core\Application;
-use Finella\Core\ConfigRepository;
-use Finella\Http\HttpKernel;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\HttpKernel;
 
 $root = dirname(__DIR__);
 if (!defined('APP_ROOT')) {
@@ -29,8 +29,8 @@ return new HttpKernel($app);
 **3) CREATE THE ENTRY POINT**
 `public/index.php`
 ```php
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Http\Request;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Http\Request;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -49,8 +49,8 @@ $response->send();
 **4) CREATE THE FIRST ROUTE**
 `routes/web.php`
 ```php
-use Finella\Http\Router;
-use Finella\Http\Response;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
     $router->get('/', fn () => Response::text('Hello fnlla (finella)'));

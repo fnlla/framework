@@ -3,22 +3,22 @@
 declare(strict_types=1);
 
 use App\Middleware\DebugbarMiddleware as AppDebugbarMiddleware;
-use Finella\Auth\Middleware\AuthMiddleware;
-use Finella\Auth\Middleware\GuestMiddleware;
-use Finella\CacheStatic\StaticCacheMiddleware;
-use Finella\Cookie\CookieMiddleware;
-use Finella\Cors\CorsMiddleware;
-use Finella\Csrf\CsrfMiddleware;
-use Finella\Debugbar\DebugbarCollector;
-use Finella\Debugbar\Middleware\DebugbarMiddleware as FinellaDebugbarMiddleware;
-use Finella\Forms\HoneypotMiddleware;
-use Finella\Maintenance\MaintenanceMiddleware;
-use Finella\Monitoring\MonitoringMiddleware;
-use Finella\Redirects\RedirectsMiddleware;
-use Finella\RequestLogging\RequestLoggerMiddleware;
-use Finella\SecurityHeaders\SecurityHeadersMiddleware;
-use Finella\Session\SessionMiddleware;
-use Finella\Tenancy\TenantMiddleware;
+use Fnlla\\Auth\Middleware\AuthMiddleware;
+use Fnlla\\Auth\Middleware\GuestMiddleware;
+use Fnlla\\CacheStatic\StaticCacheMiddleware;
+use Fnlla\\Cookie\CookieMiddleware;
+use Fnlla\\Cors\CorsMiddleware;
+use Fnlla\\Csrf\CsrfMiddleware;
+use Fnlla\\Debugbar\DebugbarCollector;
+use Fnlla\\Debugbar\Middleware\DebugbarMiddleware as FnllaDebugbarMiddleware;
+use Fnlla\\Forms\HoneypotMiddleware;
+use Fnlla\\Maintenance\MaintenanceMiddleware;
+use Fnlla\\Monitoring\MonitoringMiddleware;
+use Fnlla\\Redirects\RedirectsMiddleware;
+use Fnlla\\RequestLogging\RequestLoggerMiddleware;
+use Fnlla\\SecurityHeaders\SecurityHeadersMiddleware;
+use Fnlla\\Session\SessionMiddleware;
+use Fnlla\\Tenancy\TenantMiddleware;
 
 $env = (string) env('APP_ENV', 'local');
 $debug = env('APP_DEBUG', false);
@@ -27,8 +27,8 @@ $debugEnabled = $debug === true || $debug === 1 || $debug === '1';
 $debugbarMiddleware = null;
 if (class_exists(AppDebugbarMiddleware::class)) {
     $debugbarMiddleware = AppDebugbarMiddleware::class;
-} elseif (class_exists(FinellaDebugbarMiddleware::class)) {
-    $debugbarMiddleware = FinellaDebugbarMiddleware::class;
+} elseif (class_exists(FnllaDebugbarMiddleware::class)) {
+    $debugbarMiddleware = FnllaDebugbarMiddleware::class;
 }
 
 $debugEnabled = $debugEnabled && $debugbarMiddleware !== null && class_exists(DebugbarCollector::class);
@@ -59,7 +59,7 @@ $tenancyEnabled = $toBool(env('TENANCY_ENABLED', false), false);
 $requestIdHeaderEnabled = $toBool(env('REQUEST_ID_HEADER', true), true);
 $traceIdHeaderEnabled = $toBool(env('TRACE_ID_HEADER', true), true);
 $spanIdHeaderEnabled = $toBool(env('SPAN_ID_HEADER', true), true);
-$monitoringEnabled = $toBool(env('FINELLA_MONITORING_ENABLED', false), false);
+$monitoringEnabled = $toBool(env('Fnlla_MONITORING_ENABLED', false), false);
 
 $rateEnabled = $toBool(env('RATE_LIMIT_ENABLED', $env === 'prod'), $env === 'prod');
 $rateMax = (int) env('RATE_LIMIT_MAX', 120);
@@ -103,7 +103,7 @@ $warnMissing($formsEnabled, HoneypotMiddleware::class, 'forms honeypot');
 $warnMissing($redirectsEnabled, RedirectsMiddleware::class, 'redirects');
 $warnMissing($staticCacheEnabled, StaticCacheMiddleware::class, 'static cache');
 $warnMissing($tenancyEnabled, TenantMiddleware::class, 'tenancy');
-$warnMissing($rateEnabled, \Finella\RateLimit\RateLimiter::class, 'rate limiting');
+$warnMissing($rateEnabled, \Fnlla\\RateLimit\RateLimiter::class, 'rate limiting');
 $warnMissing($debugEnabled, DebugbarCollector::class, 'debugbar');
 $warnMissing($monitoringEnabled, MonitoringMiddleware::class, 'monitoring');
 

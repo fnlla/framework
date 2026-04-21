@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
-use Finella\Http\Request;
+use Fnlla\\Http\Request;
 
 final class TokenGuard
 {

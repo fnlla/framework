@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
-use Finella\Auth\Http\AuthController;
-use Finella\Auth\Http\PasswordResetController;
-use Finella\Auth\Middleware\AuthMiddleware;
-use Finella\Auth\Middleware\GuestMiddleware;
-use Finella\Http\Router;
+use Fnlla\\Auth\Http\AuthController;
+use Fnlla\\Auth\Http\PasswordResetController;
+use Fnlla\\Auth\Middleware\AuthMiddleware;
+use Fnlla\\Auth\Middleware\GuestMiddleware;
+use Fnlla\\Http\Router;
 
 final class AuthRoutes
 {

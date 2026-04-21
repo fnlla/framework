@@ -250,7 +250,7 @@ if (!is_dir($root . DIRECTORY_SEPARATOR . '.git')) {
             $plan[] = '1. git fetch --tags --prune';
             $plan[] = '2. git checkout ' . $target;
             $plan[] = '3. cd app && composer install --no-dev --optimize-autoloader --prefer-dist';
-            $plan[] = '4. cd app && php bin/finella routes:cache';
+            $plan[] = '4. cd app && php bin/fnlla routes:cache';
             $plan[] = '5. cd app && php scripts/production-profile-check.php';
             $plan[] = '6. smoke / health probes: /health + /ready';
             $plan[] = '';

@@ -7,21 +7,21 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai;
+namespace Fnlla\\Ai;
 
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Ai\Policy\AiPolicy;
-use Finella\Ai\Policy\AiPolicyClient;
-use Finella\Ai\Rag\RagRepository;
-use Finella\Ai\Rag\RagService;
-use Finella\Ai\Redaction\AiRedactor;
-use Finella\Ai\Router\AiRouter;
-use Finella\Ai\Skills\AiSkillRegistry;
-use Finella\Ai\Telemetry\AiTelemetryRepository;
-use Finella\Ai\Telemetry\AiTelemetryService;
-use Finella\Support\HttpClient;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Ai\Policy\AiPolicy;
+use Fnlla\\Ai\Policy\AiPolicyClient;
+use Fnlla\\Ai\Rag\RagRepository;
+use Fnlla\\Ai\Rag\RagService;
+use Fnlla\\Ai\Redaction\AiRedactor;
+use Fnlla\\Ai\Router\AiRouter;
+use Fnlla\\Ai\Skills\AiSkillRegistry;
+use Fnlla\\Ai\Telemetry\AiTelemetryRepository;
+use Fnlla\\Ai\Telemetry\AiTelemetryService;
+use Fnlla\\Support\HttpClient;
+use Fnlla\\Support\ServiceProvider;
 use RuntimeException;
 
 final class AiServiceProvider extends ServiceProvider

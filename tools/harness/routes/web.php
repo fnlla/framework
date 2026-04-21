@@ -15,9 +15,9 @@ use App\Controllers\StatusController;
 use App\Controllers\TestController;
 use App\Middleware\AdminAccessMiddleware;
 use App\Middleware\DocsAccessMiddleware;
-use Finella\Auth\AuthRoutes;
-use Finella\Auth\Middleware\AuthMiddleware;
-use Finella\Http\Router;
+use Fnlla\\Auth\AuthRoutes;
+use Fnlla\\Auth\Middleware\AuthMiddleware;
+use Fnlla\\Http\Router;
 
 return static function (Router $router): void {
     if (class_exists(HealthController::class)) {
@@ -41,9 +41,9 @@ return static function (Router $router): void {
         $router->get('/_providers', [ProviderReportController::class, 'show']);
     }
 
-    if (class_exists(\Finella\Monitoring\MonitoringRoutes::class) && env('FINELLA_MONITORING_ENABLED', false)) {
-        \Finella\Monitoring\MonitoringRoutes::register($router, [
-            'path' => (string) env('FINELLA_MONITORING_PATH', '/metrics'),
+    if (class_exists(\Fnlla\\Monitoring\MonitoringRoutes::class) && env('Fnlla_MONITORING_ENABLED', false)) {
+        \Fnlla\\Monitoring\MonitoringRoutes::register($router, [
+            'path' => (string) env('Fnlla_MONITORING_PATH', '/metrics'),
         ]);
     }
 
@@ -54,7 +54,7 @@ return static function (Router $router): void {
         ]);
     }
 
-    $docsEnabled = (bool) env('FINELLA_DOCS_ENABLED', false);
+    $docsEnabled = (bool) env('Fnlla_DOCS_ENABLED', false);
     if ($docsEnabled && class_exists(DocsController::class)) {
         $docsMiddleware = ['web'];
         if (class_exists(DocsAccessMiddleware::class)) {
@@ -66,7 +66,7 @@ return static function (Router $router): void {
         });
     }
 
-    $adminRoutesEnabled = (bool) env('FINELLA_ADMIN_ENABLED', false);
+    $adminRoutesEnabled = (bool) env('Fnlla_ADMIN_ENABLED', false);
 
     if ($adminRoutesEnabled && class_exists(AdminAuthController::class)) {
         $router->group(['prefix' => '/admin', 'middleware' => ['web']], function (Router $router): void {

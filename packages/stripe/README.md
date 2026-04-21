@@ -1,6 +1,6 @@
 **FNLLA/STRIPE**
 
-Stripe payments adapter for Finella.
+Stripe payments adapter for fnlla (finella).
 
 **INSTALLATION**
 ```bash
@@ -17,7 +17,7 @@ STRIPE_WEBHOOK_SECRET=whsec_xxx
 
 **USAGE**
 ```php
-use Finella\Stripe\StripeManager;
+use Fnlla\\Stripe\StripeManager;
 
 $stripe = app()->make(StripeManager::class);
 $client = $stripe->client();
@@ -34,7 +34,7 @@ $session = $client->checkout->sessions->create([
 
 **WEBHOOK VALIDATION**
 ```php
-use Finella\Stripe\StripeManager;
+use Fnlla\\Stripe\StripeManager;
 
 $stripe = app()->make(StripeManager::class);
 $event = $stripe->constructWebhookEvent($payload, $sigHeader);

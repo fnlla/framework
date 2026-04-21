@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/queue",
-    "description":  "Finella queue module",
+    "description":  "Fnlla queue module",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Queue\\":  "src/"
+                                   "Fnlla\\Queue\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Queue\\QueueServiceProvider"
+                                                  "Fnlla\\Queue\\QueueServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/queue":  "self.version"
                 }
 }

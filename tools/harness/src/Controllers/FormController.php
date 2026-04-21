@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Finella\Http\Request;
-use Finella\Http\Response;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 final class FormController
 {

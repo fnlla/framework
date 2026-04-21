@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Monitoring;
+namespace Fnlla\\Monitoring;
 
-use Finella\Http\Router;
+use Fnlla\\Http\Router;
 
 final class MonitoringRoutes
 {

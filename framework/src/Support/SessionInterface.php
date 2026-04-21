@@ -4,10 +4,10 @@
  * (c) TechAyo.co.uk
  * Proprietary License
  */
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-if (interface_exists('\\Finella\\Session\\SessionInterface') && !interface_exists(__NAMESPACE__ . '\\SessionInterface')) {
-    class_alias('\\Finella\\Session\\SessionInterface', __NAMESPACE__ . '\\SessionInterface');
+if (interface_exists('\\Fnlla\\\Session\\SessionInterface') && !interface_exists(__NAMESPACE__ . '\\SessionInterface')) {
+    class_alias('\\Fnlla\\\Session\\SessionInterface', __NAMESPACE__ . '\\SessionInterface');
 }
 
 

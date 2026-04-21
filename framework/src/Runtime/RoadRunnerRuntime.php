@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Runtime;
+namespace Fnlla\\Runtime;
 
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Contracts\Runtime\RuntimeInterface;
-use Finella\Http\Request;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Contracts\Runtime\RuntimeInterface;
+use Fnlla\\Http\Request;
 use RuntimeException;
 use Throwable;
 

@@ -23,13 +23,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Pdf\\":  "src/"
+                                   "Fnlla\\Pdf\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Pdf\\PdfServiceProvider"
+                                                  "Fnlla\\Pdf\\PdfServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -38,8 +38,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/pdf":  "self.version"
                 }
 }

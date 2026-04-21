@@ -23,7 +23,7 @@ This package ships schema helpers. You can either:
 
 **USAGE**
 ```php
-$rbac = app()->make(\Finella\Rbac\RbacManager::class);
+$rbac = app()->make(\Fnlla\\Rbac\RbacManager::class);
 
 $rbac->assignRole($userId, 'admin');
 $rbac->grantPermissionToRole('admin', 'posts.update');
@@ -34,7 +34,7 @@ if (can('permission', 'posts.update')) {
 ```
 
 **USER HELPERS**
-If your user model uses the `Finella\Rbac\HasRoles` trait:
+If your user model uses the `Fnlla\\Rbac\HasRoles` trait:
 ```php
 if ($user->hasRole('admin')) {
     // ...

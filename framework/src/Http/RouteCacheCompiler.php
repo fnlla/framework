@@ -8,12 +8,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
-use Finella\Core\Application;
-use Finella\Core\ConfigRepository;
-use Finella\Core\ConfigValidator;
-use Finella\Plugin\PluginManager;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\ConfigValidator;
+use Fnlla\\Plugin\PluginManager;
 use RuntimeException;
 
 /**
@@ -172,7 +172,7 @@ final class RouteCacheCompiler
         }
 
         $payload = [
-            '__finella_routes_cache' => [
+            '__Fnlla_routes_cache' => [
                 'disabled' => true,
                 'reason' => $summary,
                 'issues' => array_slice($issues, 0, 10),

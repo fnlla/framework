@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
-use Finella\Core\ConfigRepository;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
+use Fnlla\\Core\ConfigRepository;
 
 final class AiObservabilityCommand implements CommandInterface
 {

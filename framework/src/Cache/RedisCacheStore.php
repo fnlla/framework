@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Cache;
+namespace Fnlla\\Cache;
 
-use Finella\Support\RedisConnector;
+use Fnlla\\Support\RedisConnector;
 
 final class RedisCacheStore
 {

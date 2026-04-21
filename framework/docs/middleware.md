@@ -8,7 +8,7 @@ Defined in `config/http/http.php`:
 ```php
 return [
     'global' => [
-        \Finella\SecurityHeaders\SecurityHeadersMiddleware::class,
+        \Fnlla\\SecurityHeaders\SecurityHeadersMiddleware::class,
     ],
 ];
 ```
@@ -17,7 +17,7 @@ Requires `fnlla/ops`.
 **PER-ROUTE MIDDLEWARE**
 ```php
 $router->get('/account', [AccountController::class, 'index'], 'account', [
-    \Finella\Auth\Middleware\AuthMiddleware::class,
+    \Fnlla\\Auth\Middleware\AuthMiddleware::class,
 ]);
 ```
 Requires the core Auth module.
@@ -25,8 +25,8 @@ Requires the core Auth module.
 **MIDDLEWARE GROUPS**
 ```php
 $router->middlewareGroup('web', [
-    \Finella\Csrf\CsrfMiddleware::class,
-    \Finella\SecurityHeaders\SecurityHeadersMiddleware::class,
+    \Fnlla\\Csrf\CsrfMiddleware::class,
+    \Fnlla\\SecurityHeaders\SecurityHeadersMiddleware::class,
 ]);
 ```
 Requires the core CSRF module and `fnlla/ops`.
@@ -36,8 +36,8 @@ Define aliases in `config/http/http.php`:
 ```php
 return [
     'middleware_aliases' => [
-        'auth' => \Finella\Auth\Middleware\AuthMiddleware::class,
-        'csrf' => \Finella\Csrf\CsrfMiddleware::class,
+        'auth' => \Fnlla\\Auth\Middleware\AuthMiddleware::class,
+        'csrf' => \Fnlla\\Csrf\CsrfMiddleware::class,
     ],
 ];
 ```
@@ -55,7 +55,7 @@ $router->get('/account', [AccountController::class, 'index'], 'account', ['auth'
 **WRITING MIDDLEWARE**
 A middleware can be:
 **-** a closure: `function (Request $request, callable $next): Response`
-**-** a class implementing `Finella\Support\Psr\Http\Server\MiddlewareInterface`
+**-** a class implementing `Fnlla\\Support\Psr\Http\Server\MiddlewareInterface`
 
 **CORE MIDDLEWARE**
 Core middleware ships in the framework:

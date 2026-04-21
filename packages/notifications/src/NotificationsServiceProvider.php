@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Notifications;
+namespace Fnlla\\Notifications;
 
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Mail\MailerInterface;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Mail\MailerInterface;
+use Fnlla\\Support\ServiceProvider;
 
 final class NotificationsServiceProvider extends ServiceProvider
 {

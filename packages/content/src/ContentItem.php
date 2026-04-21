@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Content;
+namespace Fnlla\\Content;
 
 final class ContentItem
 {

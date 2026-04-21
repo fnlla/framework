@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth\Http;
+namespace Fnlla\\Auth\Http;
 
-use Finella\Auth\PasswordResetManager;
-use Finella\Core\ConfigRepository;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Support\ValidationException;
+use Fnlla\\Auth\PasswordResetManager;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Support\ValidationException;
 
 final class PasswordResetController
 {

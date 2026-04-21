@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
-use Finella\Core\Application;
+use Fnlla\\Core\Application;
 
 abstract class ServiceProvider
 {

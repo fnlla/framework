@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-use Finella\Core\Application;
-use Finella\Core\ConfigRepository;
-use Finella\Http\HttpKernel;
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Support\ComposerProviderDiscovery;
-use Finella\Support\Dotenv;
-use Finella\Support\ProviderCache;
-use Finella\Support\ProviderRepository;
-use Finella\Support\ProviderReport;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\HttpKernel;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Support\ComposerProviderDiscovery;
+use Fnlla\\Support\Dotenv;
+use Fnlla\\Support\ProviderCache;
+use Fnlla\\Support\ProviderRepository;
+use Fnlla\\Support\ProviderReport;
 
 $root = getenv('APP_ROOT');
 if (!is_string($root) || trim($root) === '') {
@@ -85,7 +85,7 @@ foreach (['APP_ENV', 'APP_DEBUG'] as $key) {
 
 $configRepo = ConfigRepository::fromRoot($root);
 $app = new Application($root, $configRepo);
-$GLOBALS['finella_app'] = $app;
+$GLOBALS['Fnlla_app'] = $app;
 
 $providerConfig = $configRepo->get('providers', []);
 if (!is_array($providerConfig)) {
@@ -118,7 +118,7 @@ $discoverMonorepo = static function (string $packagesDir): array {
         if (!is_array($data)) {
             continue;
         }
-        $extra = $data['extra']['fnlla']['providers'] ?? $data['extra']['finella']['providers'] ?? null;
+        $extra = $data['extra']['fnlla']['providers'] ?? $data['extra']['Fnlla']['providers'] ?? null;
         if (!is_array($extra)) {
             continue;
         }
@@ -226,7 +226,7 @@ if ($debug && $app->has(ProviderReport::class)) {
         if (!is_dir($logDir)) {
             @mkdir($logDir, 0755, true);
         }
-        $logPath = $logDir . '/finella-providers.log';
+        $logPath = $logDir . '/fnlla-providers.log';
         @file_put_contents($logPath, $report->toText());
     }
 }

@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace Finella\RateLimit;
+namespace Fnlla\\RateLimit;
 
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\MiddlewareInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class RateLimitMiddleware implements MiddlewareInterface
 {

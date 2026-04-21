@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/mail-preview",
-    "description":  "Finella mail preview routes and templates",
+    "description":  "Fnlla mail preview routes and templates",
     "homepage":  "https://techayo.co.uk",
     "license":  "proprietary",
     "type":  "library",
@@ -10,17 +10,14 @@
                 },
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\MailPreview\\":  "src/"
+                                   "Fnlla\\MailPreview\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\MailPreview\\MailPreviewServiceProvider"
+                                                  "Fnlla\\MailPreview\\MailPreviewServiceProvider"
                                               ]
                             }
-              },
-    "replace":  {
-                    "finella/mail-preview":  "self.version"
-                }
+              }
 }

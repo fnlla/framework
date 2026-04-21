@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Analytics;
+namespace Fnlla\\Analytics;
 
-use Finella\Contracts\Log\LoggerInterface;
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Contracts\Log\LoggerInterface;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class AnalyticsServiceProvider extends ServiceProvider
 {

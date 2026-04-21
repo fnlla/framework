@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Debugbar\DebugbarCollector;
-use Finella\Debugbar\Middleware\DebugbarMiddleware;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Http\Uri;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Debugbar\DebugbarCollector;
+use Fnlla\\Debugbar\Middleware\DebugbarMiddleware;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\Uri;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
 
 function ok(bool $cond, string $msg): void
 {
@@ -53,7 +53,7 @@ ok($response->getHeaderLine('X-Debug-Queries') === '1', 'X-Debug-Queries');
 ok($response->getHeaderLine('X-Debug-Messages') === '1', 'X-Debug-Messages');
 ok($response->getHeaderLine('X-Debug-Errors') === '1', 'X-Debug-Errors');
 ok($response->getHeaderLine('X-Debug-Time-Ms') !== '', 'X-Debug-Time-Ms');
-ok(str_contains((string) $response->getBody(), 'Finella Debugbar'), 'debugbar panel injected');
+ok(str_contains((string) $response->getBody(), 'Fnlla Debugbar'), 'debugbar panel injected');
 ok(str_contains((string) $response->getBody(), '<script src="/_fnlla/debugbar.js?v=3.0.0" defer></script>'), 'debugbar js asset injected');
 
 $assetRequest = new Request('GET', new Uri('https://app.example.test/_fnlla/debugbar.js'), [], Stream::fromString(''));

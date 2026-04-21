@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) PACKAGE TEMPLATE**
+**fnlla (finella) PACKAGE TEMPLATE**
 
 This is a starter template for creating new fnlla (finella) packages.
 

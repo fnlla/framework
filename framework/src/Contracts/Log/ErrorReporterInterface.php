@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Contracts\Log;
+namespace Fnlla\\Contracts\Log;
 
 use Throwable;
 

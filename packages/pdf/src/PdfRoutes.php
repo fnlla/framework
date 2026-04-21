@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Pdf;
+namespace Fnlla\\Pdf;
 
-use Finella\Http\Router;
-use Finella\Pdf\Http\PdfController;
+use Fnlla\\Http\Router;
+use Fnlla\\Pdf\Http\PdfController;
 
 final class PdfRoutes
 {

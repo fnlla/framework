@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Contracts\Events\EventDispatcherInterface;
-use Finella\Core\Container;
+use Fnlla\\Contracts\Events\EventDispatcherInterface;
+use Fnlla\\Core\Container;
 
 final class EventsServiceProvider extends ServiceProvider
 {
@@ -40,12 +40,12 @@ final class EventsServiceProvider extends ServiceProvider
 
     private function attachAfterCommitHandler(EventDispatcher $dispatcher, Container $app): void
     {
-        if (!$app->has(\Finella\Database\TransactionManager::class)) {
+        if (!$app->has(\Fnlla\\Database\TransactionManager::class)) {
             return;
         }
 
-        $manager = $app->make(\Finella\Database\TransactionManager::class);
-        if ($manager instanceof \Finella\Database\TransactionManager) {
+        $manager = $app->make(\Fnlla\\Database\TransactionManager::class);
+        if ($manager instanceof \Fnlla\\Database\TransactionManager) {
             $dispatcher->setAfterCommitHandler([$manager, 'afterCommit']);
         }
     }

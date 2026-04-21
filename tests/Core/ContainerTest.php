@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Finella\Core\Container;
+use Fnlla\\Core\Container;
 use PHPUnit\Framework\TestCase;
 
 final class ContainerTest extends TestCase

@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Rbac;
+namespace Fnlla\\Rbac;
 
-use Finella\Database\ConnectionManager;
-use Finella\Cache\CacheManager;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Cache\CacheManager;
 use PDO;
 
 final class RbacManager

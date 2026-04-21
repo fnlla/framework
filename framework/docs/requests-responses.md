@@ -3,7 +3,7 @@
 **REQUEST**
 Create a request from globals:
 ```php
-$request = \Finella\Http\Request::fromGlobals();
+$request = \Fnlla\\Http\Request::fromGlobals();
 ```
 
 Access data:
@@ -16,7 +16,7 @@ Access data:
 **RESPONSE**
 Create a response:
 ```php
-use Finella\Http\Response;
+use Fnlla\\Http\Response;
 
 return Response::json(['ok' => true]);
 ```

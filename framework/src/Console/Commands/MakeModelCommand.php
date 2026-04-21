@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
 use RuntimeException;
 
 final class MakeModelCommand extends AbstractMakeCommand implements CommandInterface
@@ -39,7 +39,7 @@ final class MakeModelCommand extends AbstractMakeCommand implements CommandInter
         $modelsDir = $root . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Models';
         [$namespace, $class, $path] = $this->resolveClass($name, 'App\\Models', $modelsDir);
 
-        $template = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'finella' . DIRECTORY_SEPARATOR . 'console' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'model.stub';
+        $template = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'Fnlla' . DIRECTORY_SEPARATOR . 'console' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'model.stub';
         if (!is_file($template)) {
             $template = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'model.stub';
         }
@@ -73,7 +73,7 @@ final class MakeModelCommand extends AbstractMakeCommand implements CommandInter
         $factoriesDir = $root . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'factories';
         [$factoryNamespace, $class, $path] = $this->resolveClass($modelClass . 'Factory', 'Database\\Factories', $factoriesDir, 'Factory');
 
-        $template = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'finella' . DIRECTORY_SEPARATOR . 'console' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'factory.stub';
+        $template = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'Fnlla' . DIRECTORY_SEPARATOR . 'console' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'factory.stub';
         if (!is_file($template)) {
             $template = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'factory.stub';
         }

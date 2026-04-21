@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Tenancy;
+namespace Fnlla\\Tenancy;
 
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class TenancyServiceProvider extends ServiceProvider
 {

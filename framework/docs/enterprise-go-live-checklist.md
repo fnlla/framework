@@ -1,6 +1,6 @@
 **ENTERPRISE GO-LIVE CHECKLIST**
 
-This checklist is a fast pre-release gate for enterprise deployments built on Finella.
+This checklist is a fast pre-release gate for enterprise deployments built on fnlla (finella).
 Use it together with `documentation/src/operations.md` before each production cut.
 
 **1) RELEASE GOVERNANCE**

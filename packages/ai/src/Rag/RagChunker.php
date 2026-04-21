@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Rag;
+namespace Fnlla\\Ai\Rag;
 
 final class RagChunker
 {

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Audit;
+namespace Fnlla\\Audit;
 
-use Finella\Database\ConnectionManager;
+use Fnlla\\Database\ConnectionManager;
 use PDO;
 
 final class AuditRepository

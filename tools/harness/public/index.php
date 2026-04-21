@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Http\Request;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -16,7 +16,7 @@ if (!$kernel instanceof KernelInterface) {
     exit(1);
 }
 
-$warmKernelValue = getenv('FINELLA_WARM_KERNEL');
+$warmKernelValue = getenv('Fnlla_WARM_KERNEL');
 $warmKernel = is_string($warmKernelValue) && in_array(strtolower(trim($warmKernelValue)), ['1', 'true', 'yes', 'on'], true);
 if ($warmKernel) {
     $kernel->boot();

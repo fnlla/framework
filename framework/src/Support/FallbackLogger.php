@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 use Psr\Log\LoggerInterface;
-use Finella\Runtime\RequestContext;
+use Fnlla\\Runtime\RequestContext;
 
 final class FallbackLogger
 {
@@ -98,7 +98,7 @@ final class FallbackLogger
             return null;
         }
 
-        if (!$app instanceof \Finella\Core\Container) {
+        if (!$app instanceof \Fnlla\\Core\Container) {
             return null;
         }
 

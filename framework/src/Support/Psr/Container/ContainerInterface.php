@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support\Psr\Container;
+namespace Fnlla\\Support\Psr\Container;
 
 interface ContainerInterface
 {

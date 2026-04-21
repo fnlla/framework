@@ -1,6 +1,6 @@
 **FNLLA/ANALYTICS**
 
-Analytics event helpers for Finella.
+Analytics event helpers for fnlla (finella).
 
 **INSTALLATION**
 ```bash
@@ -10,7 +10,7 @@ The package registers `AnalyticsServiceProvider` via auto-discovery.
 
 **USAGE**
 ```php
-use Finella\Analytics\AnalyticsClient;
+use Fnlla\\Analytics\AnalyticsClient;
 
 $analytics = $app->make(AnalyticsClient::class);
 $analytics->track('lead_submitted', [

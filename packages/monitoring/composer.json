@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/monitoring",
-    "description":  "Monitoring utilities and metrics endpoint for Finella",
+    "description":  "Monitoring utilities and metrics endpoint for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Monitoring\\":  "src/"
+                                   "Fnlla\\Monitoring\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Monitoring\\MonitoringServiceProvider"
+                                                  "Fnlla\\Monitoring\\MonitoringServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/monitoring":  "self.version"
                 }
 }

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Log;
+namespace Fnlla\\Log;
 
-use Finella\Contracts\Log\LoggerInterface as FinellaLoggerInterface;
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Contracts\Log\LoggerInterface as FnllaLoggerInterface;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 use Psr\Log\LoggerInterface;
 
 final class LogServiceProvider extends ServiceProvider
@@ -31,7 +31,7 @@ final class LogServiceProvider extends ServiceProvider
             return $app->make(LoggerFactory::class)->make('app');
         });
 
-        $app->singleton(FinellaLoggerInterface::class, function () use ($app): LoggerInterface {
+        $app->singleton(FnllaLoggerInterface::class, function () use ($app): LoggerInterface {
             return $app->make(LoggerInterface::class);
         });
     }

@@ -15,24 +15,24 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-if (!class_exists(\Finella\Rbac\RbacServiceProvider::class)) {
+if (!class_exists(\Fnlla\\Rbac\RbacServiceProvider::class)) {
     $rbacBase = $root . DIRECTORY_SEPARATOR . 'packages' . DIRECTORY_SEPARATOR . 'rbac' . DIRECTORY_SEPARATOR . 'src';
     require_once $rbacBase . DIRECTORY_SEPARATOR . 'RbacSchema.php';
     require_once $rbacBase . DIRECTORY_SEPARATOR . 'RbacManager.php';
     require_once $rbacBase . DIRECTORY_SEPARATOR . 'RbacServiceProvider.php';
 }
 
-use Finella\Authorization\AuthorizationException;
-use Finella\Authorization\Gate;
-use Finella\Core\ConfigRepository;
-use Finella\Core\Application;
-use Finella\Database\ConnectionManager;
-use Finella\Rbac\RbacManager;
-use Finella\Rbac\RbacServiceProvider;
-use Finella\Http\Router;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Uri;
+use Fnlla\\Authorization\AuthorizationException;
+use Fnlla\\Authorization\Gate;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Application;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Rbac\RbacManager;
+use Fnlla\\Rbac\RbacServiceProvider;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Uri;
 
 function ok(bool $cond, string $msg): void
 {
@@ -81,7 +81,7 @@ ok($gate instanceof Gate, 'Gate resolved');
 
 // Gate define + can helper.
 $gate->define('public', fn () => true);
-$GLOBALS['finella_app'] = $app;
+$GLOBALS['Fnlla_app'] = $app;
 ok(can('public') === true, 'can() helper uses Gate defined ability');
 
 // Policy denies.

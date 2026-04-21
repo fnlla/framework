@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Queue;
+namespace Fnlla\\Queue;
 
 use Closure;
-use Finella\Support\RedisConnector;
+use Fnlla\\Support\RedisConnector;
 use Throwable;
 
 final class RedisQueue implements QueueDriverInterface
@@ -284,7 +284,7 @@ LUA;
 
     private function prefix(): string
     {
-        $prefix = (string) ($this->config['prefix'] ?? 'finella:queue:');
+        $prefix = (string) ($this->config['prefix'] ?? 'Fnlla:queue:');
         if ($prefix !== '' && !str_ends_with($prefix, ':')) {
             $prefix .= ':';
         }

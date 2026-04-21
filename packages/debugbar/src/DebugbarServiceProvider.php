@@ -8,13 +8,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Debugbar;
+namespace Fnlla\\Debugbar;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Debugbar\Middleware\DebugbarMiddleware;
-use Finella\Support\Env;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Debugbar\Middleware\DebugbarMiddleware;
+use Fnlla\\Support\Env;
+use Fnlla\\Support\ServiceProvider;
 
 final class DebugbarServiceProvider extends ServiceProvider
 {

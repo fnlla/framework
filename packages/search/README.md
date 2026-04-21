@@ -17,7 +17,7 @@ MEILISEARCH_KEY=
 
 **USAGE**
 ```php
-use Finella\Search\SearchManager;
+use Fnlla\\Search\SearchManager;
 
 $search = app()->make(SearchManager::class);
 $client = $search->client();

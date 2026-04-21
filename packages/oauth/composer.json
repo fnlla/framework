@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/oauth",
-    "description":  "OAuth/OIDC adapter for Finella",
+    "description":  "OAuth/OIDC adapter for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -23,13 +23,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\OAuth\\":  "src/"
+                                   "Fnlla\\OAuth\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\OAuth\\OAuthServiceProvider"
+                                                  "Fnlla\\OAuth\\OAuthServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -38,8 +38,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/oauth":  "self.version"
                 }
 }

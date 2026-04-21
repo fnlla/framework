@@ -24,7 +24,7 @@ function ok(bool $cond, string $msg): void
     }
 }
 
-$tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella_routes_cache_smoke_' . bin2hex(random_bytes(4));
+$tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'Fnlla_routes_cache_smoke_' . bin2hex(random_bytes(4));
 $configDir = $tmp . DIRECTORY_SEPARATOR . 'config';
 $routesDir = $tmp . DIRECTORY_SEPARATOR . 'routes';
 $cacheDir = $tmp . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'cache';
@@ -40,7 +40,7 @@ $configTemplate = <<<'PHP'
 declare(strict_types=1);
 
 return [
-    'name' => 'finella-smoke',
+    'name' => 'fnlla-smoke',
     'env' => 'test',
     'debug' => true,
     'routes_cache' => %s,
@@ -53,7 +53,7 @@ file_put_contents($configDir . DIRECTORY_SEPARATOR . 'app.php', sprintf($configT
 $routesTemplate = <<<'PHP'
 <?php
 
-use Finella\Http\Router;
+use Fnlla\\Http\Router;
 
 return function (Router $router): void {
     $router->get('/closure', function () {
@@ -79,8 +79,8 @@ if (!is_string($autoload) || $autoload === '' || !is_file($autoload)) {
 
 require $autoload;
 
-use Finella\Console\Commands\RoutesCacheCommand;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\Commands\RoutesCacheCommand;
+use Fnlla\\Console\ConsoleIO;
 
 $command = new RoutesCacheCommand();
 $io = new ConsoleIO();

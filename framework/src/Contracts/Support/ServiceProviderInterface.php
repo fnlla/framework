@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Contracts\Support;
+namespace Fnlla\\Contracts\Support;
 
-use Finella\Core\Container;
+use Fnlla\\Core\Container;
 
 /**
  * @api
@@ -21,6 +21,6 @@ interface ServiceProviderInterface
 
     public function boot(Container $app): void;
 
-    public static function manifest(): \Finella\Support\ProviderManifest;
+    public static function manifest(): \Fnlla\\Support\ProviderManifest;
 }
 

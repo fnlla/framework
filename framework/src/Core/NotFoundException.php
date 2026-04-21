@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
-use Finella\Support\Psr\Container\NotFoundExceptionInterface;
+use Fnlla\\Support\Psr\Container\NotFoundExceptionInterface;
 use RuntimeException;
 
 /**

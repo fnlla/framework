@@ -30,7 +30,7 @@ $syncMain = true;
 
 foreach (array_slice($argv, 1) as $arg) {
     if ($arg === '--help' || $arg === '-h') {
-        echo "Publish Finella public split repositories from monorepo.\n\n";
+        echo "Publish Fnlla public split repositories from monorepo.\n\n";
         echo "Usage:\n";
         echo "  php scripts/release/publish-public-splits.php [--org=fnlla] [--ref=main] [--tags=v3.0.1,v3.0.2] [--no-main] [--dry-run]\n\n";
         echo "Examples:\n";

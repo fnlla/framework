@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <files psalm-version="6.16.1@f1f5de594dc76faf8784e02d3dc4716c91c6f6ac">
   <file src="../framework/src/Auth/AuthManager.php">
     <PossiblyUnusedMethod>
@@ -450,7 +450,7 @@
   </file>
   <file src="../framework/src/Cookie/CookieServiceProvider.php">
     <MissingOverrideAttribute>
-      <code><![CDATA[public function register(\Finella\Core\Container $app): void]]></code>
+      <code><![CDATA[public function register(\Fnlla\\Core\Container $app): void]]></code>
     </MissingOverrideAttribute>
     <UnusedClass>
       <code><![CDATA[CookieServiceProvider]]></code>
@@ -806,8 +806,8 @@
       <code><![CDATA[public function moveTo(string $targetPath): void]]></code>
     </MissingOverrideAttribute>
     <UndefinedFunction>
-      <code><![CDATA[\Finella\Support\safe_mkdir($directory, 0755, true, 'uploads')]]></code>
-      <code><![CDATA[\Finella\Support\safe_mkdir(dirname($targetPath), 0755, true, 'uploads')]]></code>
+      <code><![CDATA[\Fnlla\\Support\safe_mkdir($directory, 0755, true, 'uploads')]]></code>
+      <code><![CDATA[\Fnlla\\Support\safe_mkdir(dirname($targetPath), 0755, true, 'uploads')]]></code>
     </UndefinedFunction>
   </file>
   <file src="../framework/src/Http/Uri.php">
@@ -856,8 +856,8 @@
       <code><![CDATA[json_encode($context, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)]]></code>
     </PossiblyFalseOperand>
     <UndefinedFunction>
-      <code><![CDATA[\Finella\Support\safe_mkdir($dir, 0755, true, 'logs')]]></code>
-      <code><![CDATA[\Finella\Support\safe_mkdir($dir, 0755, true, 'logs')]]></code>
+      <code><![CDATA[\Fnlla\\Support\safe_mkdir($dir, 0755, true, 'logs')]]></code>
+      <code><![CDATA[\Fnlla\\Support\safe_mkdir($dir, 0755, true, 'logs')]]></code>
     </UndefinedFunction>
     <UnusedClass>
       <code><![CDATA[Logger]]></code>
@@ -1179,8 +1179,8 @@
       <code><![CDATA[(string) sys_get_temp_dir()]]></code>
     </RedundantCast>
     <UndefinedFunction>
-      <code><![CDATA[\Finella\Support\safe_mkdir($fallback, 0755, true, 'session-fallback-path')]]></code>
-      <code><![CDATA[\Finella\Support\safe_mkdir($path, 0755, true, 'session-save-path')]]></code>
+      <code><![CDATA[\Fnlla\\Support\safe_mkdir($fallback, 0755, true, 'session-fallback-path')]]></code>
+      <code><![CDATA[\Fnlla\\Support\safe_mkdir($path, 0755, true, 'session-save-path')]]></code>
     </UndefinedFunction>
     <UnusedClass>
       <code><![CDATA[SessionManager]]></code>
@@ -1614,11 +1614,11 @@
       <code><![CDATA[getcwd()]]></code>
     </PossiblyFalseOperand>
     <UndefinedFunction>
-      <code><![CDATA[\Finella\Support\absolute_url($app, $path)]]></code>
-      <code><![CDATA[\Finella\Support\absolute_url(app(), $path)]]></code>
-      <code><![CDATA[\Finella\Support\absolute_url(app(), $path)]]></code>
-      <code><![CDATA[\Finella\Support\asset(app(), $path)]]></code>
-      <code><![CDATA[\Finella\Support\site_url(app())]]></code>
+      <code><![CDATA[\Fnlla\\Support\absolute_url($app, $path)]]></code>
+      <code><![CDATA[\Fnlla\\Support\absolute_url(app(), $path)]]></code>
+      <code><![CDATA[\Fnlla\\Support\absolute_url(app(), $path)]]></code>
+      <code><![CDATA[\Fnlla\\Support\asset(app(), $path)]]></code>
+      <code><![CDATA[\Fnlla\\Support\site_url(app())]]></code>
     </UndefinedFunction>
   </file>
   <file src="../framework/src/Support/helpers.php">
@@ -1626,9 +1626,9 @@
       <code><![CDATA[(string) $_SERVER['HTTPS']]]></code>
     </RedundantCast>
     <UndefinedClass>
-      <code><![CDATA[\Finella\Database\DatabaseManager]]></code>
-      <code><![CDATA[\Finella\Database\DatabaseManager]]></code>
-      <code><![CDATA[\Finella\Database\DatabaseManager]]></code>
+      <code><![CDATA[\Fnlla\\Database\DatabaseManager]]></code>
+      <code><![CDATA[\Fnlla\\Database\DatabaseManager]]></code>
+      <code><![CDATA[\Fnlla\\Database\DatabaseManager]]></code>
     </UndefinedClass>
     <UnusedParam>
       <code><![CDATA[$pdo]]></code>
@@ -1952,7 +1952,7 @@
       <code><![CDATA[env('APP_BASE_PATH', '')]]></code>
       <code><![CDATA[env('APP_DEBUG', false)]]></code>
       <code><![CDATA[env('APP_ENV', 'local')]]></code>
-      <code><![CDATA[env('APP_NAME', 'finella')]]></code>
+      <code><![CDATA[env('APP_NAME', 'Fnlla')]]></code>
       <code><![CDATA[env('APP_VERSION', 'dev')]]></code>
       <code><![CDATA[env('ASSET_URL', '')]]></code>
       <code><![CDATA[env('ROUTES_CACHE_PATH', '')]]></code>
@@ -1997,7 +1997,7 @@
       <code><![CDATA[env('CACHE_DRIVER', 'file')]]></code>
       <code><![CDATA[env('CACHE_LOCK_PREFIX', '')]]></code>
       <code><![CDATA[env('CACHE_PATH', $basePath . '/storage/cache')]]></code>
-      <code><![CDATA[env('CACHE_PREFIX', env('REDIS_PREFIX', 'finella:cache:'))]]></code>
+      <code><![CDATA[env('CACHE_PREFIX', env('REDIS_PREFIX', 'Fnlla:cache:'))]]></code>
       <code><![CDATA[env('CACHE_REDIS_DB', env('REDIS_DB', 0))]]></code>
       <code><![CDATA[env('CACHE_REDIS_HOST', env('REDIS_HOST', '127.0.0.1'))]]></code>
       <code><![CDATA[env('CACHE_REDIS_PASSWORD', env('REDIS_PASSWORD', ''))]]></code>
@@ -2015,7 +2015,7 @@
       <code><![CDATA[env('REDIS_PERSISTENT', false)]]></code>
       <code><![CDATA[env('REDIS_PERSISTENT_ID', '')]]></code>
       <code><![CDATA[env('REDIS_PORT', 6379)]]></code>
-      <code><![CDATA[env('REDIS_PREFIX', 'finella:cache:')]]></code>
+      <code><![CDATA[env('REDIS_PREFIX', 'Fnlla:cache:')]]></code>
       <code><![CDATA[env('REDIS_READ_TIMEOUT', 1.5)]]></code>
       <code><![CDATA[env('REDIS_TIMEOUT', 1.5)]]></code>
       <code><![CDATA[env('REDIS_URL', '')]]></code>
@@ -2035,8 +2035,8 @@
     <UndefinedFunction>
       <code><![CDATA[env('DB_CHARSET', 'utf8mb4')]]></code>
       <code><![CDATA[env('DB_CONNECTION', 'mysql')]]></code>
-      <code><![CDATA[env('DB_DATABASE', 'finella')]]></code>
-      <code><![CDATA[env('DB_DATABASE', 'finella')]]></code>
+      <code><![CDATA[env('DB_DATABASE', 'Fnlla')]]></code>
+      <code><![CDATA[env('DB_DATABASE', 'Fnlla')]]></code>
       <code><![CDATA[env('DB_HOST', '127.0.0.1')]]></code>
       <code><![CDATA[env('DB_HOST', '127.0.0.1')]]></code>
       <code><![CDATA[env('DB_PASSWORD', '')]]></code>
@@ -2066,7 +2066,7 @@
   <file src="../app/config/log/log.php">
     <UndefinedFunction>
       <code><![CDATA[env('APP_ENV', 'local')]]></code>
-      <code><![CDATA[env('APP_NAME', 'finella')]]></code>
+      <code><![CDATA[env('APP_NAME', 'Fnlla')]]></code>
       <code><![CDATA[env('APP_VERSION', '')]]></code>
       <code><![CDATA[env('LOG_FORMAT', 'line')]]></code>
       <code><![CDATA[env('LOG_LEVEL', 'info')]]></code>
@@ -2079,7 +2079,7 @@
       <code><![CDATA[env('MAIL_DSN', '')]]></code>
       <code><![CDATA[env('MAIL_ENCRYPTION', '')]]></code>
       <code><![CDATA[env('MAIL_FROM_ADDRESS', 'noreply@example.test')]]></code>
-      <code><![CDATA[env('MAIL_FROM_NAME', 'Finella')]]></code>
+      <code><![CDATA[env('MAIL_FROM_NAME', 'Fnlla')]]></code>
       <code><![CDATA[env('MAIL_HOST', 'localhost')]]></code>
       <code><![CDATA[env('MAIL_PASSWORD', '')]]></code>
       <code><![CDATA[env('MAIL_PORT', 1025)]]></code>
@@ -2145,7 +2145,7 @@
       <code><![CDATA[env('QUEUE_REDIS_PERSISTENT', env('REDIS_PERSISTENT', false))]]></code>
       <code><![CDATA[env('QUEUE_REDIS_PERSISTENT_ID', env('REDIS_PERSISTENT_ID', ''))]]></code>
       <code><![CDATA[env('QUEUE_REDIS_PORT', env('REDIS_PORT', 6379))]]></code>
-      <code><![CDATA[env('QUEUE_REDIS_PREFIX', env('REDIS_PREFIX', 'finella:queue:'))]]></code>
+      <code><![CDATA[env('QUEUE_REDIS_PREFIX', env('REDIS_PREFIX', 'Fnlla:queue:'))]]></code>
       <code><![CDATA[env('QUEUE_REDIS_READ_TIMEOUT', env('REDIS_READ_TIMEOUT', 1.5))]]></code>
       <code><![CDATA[env('QUEUE_REDIS_TIMEOUT', env('REDIS_TIMEOUT', 1.5))]]></code>
       <code><![CDATA[env('QUEUE_REDIS_URL', env('REDIS_URL', ''))]]></code>
@@ -2161,7 +2161,7 @@
       <code><![CDATA[env('REDIS_PERSISTENT', false)]]></code>
       <code><![CDATA[env('REDIS_PERSISTENT_ID', '')]]></code>
       <code><![CDATA[env('REDIS_PORT', 6379)]]></code>
-      <code><![CDATA[env('REDIS_PREFIX', 'finella:queue:')]]></code>
+      <code><![CDATA[env('REDIS_PREFIX', 'Fnlla:queue:')]]></code>
       <code><![CDATA[env('REDIS_READ_TIMEOUT', 1.5)]]></code>
       <code><![CDATA[env('REDIS_TIMEOUT', 1.5)]]></code>
       <code><![CDATA[env('REDIS_URL', '')]]></code>
@@ -2207,7 +2207,7 @@
       <code><![CDATA[env($key, $default)]]></code>
       <code><![CDATA[env('APP_ENV', 'local')]]></code>
       <code><![CDATA[env('COOKIE_PATH', '/')]]></code>
-      <code><![CDATA[env('SESSION_COOKIE', 'finella_session')]]></code>
+      <code><![CDATA[env('SESSION_COOKIE', 'Fnlla_session')]]></code>
       <code><![CDATA[env('SESSION_DOMAIN', '')]]></code>
       <code><![CDATA[env('SESSION_PATH', $basePath . '/storage/sessions')]]></code>
       <code><![CDATA[env('SESSION_SAMESITE', 'Lax')]]></code>
@@ -2659,7 +2659,7 @@
       <code><![CDATA[view($template, [
             'subject' => 'Mail preview',
             'preheader' => 'This is a sample preview email.',
-            'headline' => 'Welcome to Finella',
+            'headline' => 'Welcome to Fnlla',
             'body' => 'This is a placeholder email template for local preview.',
             'cta_label' => 'Open dashboard',
             'cta_url' => '/',

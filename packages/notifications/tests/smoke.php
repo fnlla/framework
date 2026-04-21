@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Core\ConfigRepository;
-use Finella\Database\ConnectionManager;
-use Finella\Mail\MailerInterface;
-use Finella\Mail\Message;
-use Finella\Notifications\NotificationManager;
-use Finella\Notifications\NotificationRepository;
-use Finella\Notifications\NotificationsSchema;
-use Finella\Notifications\NullSmsSender;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Mail\MailerInterface;
+use Fnlla\\Mail\Message;
+use Fnlla\\Notifications\NotificationManager;
+use Fnlla\\Notifications\NotificationRepository;
+use Fnlla\\Notifications\NotificationsSchema;
+use Fnlla\\Notifications\NullSmsSender;
 
 function ok(bool $cond, string $msg): void
 {
@@ -40,7 +40,7 @@ $mailer = new class implements MailerInterface {
 
 $config = new ConfigRepository([
     'notifications' => ['default_channel' => 'email'],
-    'mail' => ['from' => ['address' => 'noreply@example.test', 'name' => 'Finella']],
+    'mail' => ['from' => ['address' => 'noreply@example.test', 'name' => 'Fnlla']],
 ]);
 
 $manager = new NotificationManager($repo, $config, $mailer, new NullSmsSender());

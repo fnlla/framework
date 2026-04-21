@@ -8,25 +8,25 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Http\Uri;
-use Finella\Http\UploadedFile;
-use Finella\Support\Psr\Http\Factory\RequestFactoryInterface;
-use Finella\Support\Psr\Http\Factory\ResponseFactoryInterface;
-use Finella\Support\Psr\Http\Factory\ServerRequestFactoryInterface;
-use Finella\Support\Psr\Http\Factory\StreamFactoryInterface;
-use Finella\Support\Psr\Http\Factory\UriFactoryInterface;
-use Finella\Support\Psr\Http\Factory\UploadedFileFactoryInterface;
-use Finella\Support\Psr\Http\Message\RequestInterface;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Message\StreamInterface;
-use Finella\Support\Psr\Http\Message\UriInterface;
-use Finella\Support\Psr\Http\Message\UploadedFileInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\Uri;
+use Fnlla\\Http\UploadedFile;
+use Fnlla\\Support\Psr\Http\Factory\RequestFactoryInterface;
+use Fnlla\\Support\Psr\Http\Factory\ResponseFactoryInterface;
+use Fnlla\\Support\Psr\Http\Factory\ServerRequestFactoryInterface;
+use Fnlla\\Support\Psr\Http\Factory\StreamFactoryInterface;
+use Fnlla\\Support\Psr\Http\Factory\UriFactoryInterface;
+use Fnlla\\Support\Psr\Http\Factory\UploadedFileFactoryInterface;
+use Fnlla\\Support\Psr\Http\Message\RequestInterface;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\\Support\Psr\Http\Message\UriInterface;
+use Fnlla\\Support\Psr\Http\Message\UploadedFileInterface;
 use RuntimeException;
 
 /**

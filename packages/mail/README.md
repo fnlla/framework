@@ -9,7 +9,7 @@ composer require fnlla/mail
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Mail\MailServiceProvider`
+**-** `Fnlla\\Mail\MailServiceProvider`
 
 **CONFIGURATION**
 `config/mail/mail.php`
@@ -18,13 +18,13 @@ Auto-discovered provider:
 
 **USAGE**
 ```php
-use Finella\Mail\Message;
-use Finella\Mail\MailerInterface;
+use Fnlla\\Mail\Message;
+use Fnlla\\Mail\MailerInterface;
 
 $mailer = $app->make(MailerInterface::class);
 $msg = new Message(
-    from: new \Finella\Mail\Address('noreply@example.com', 'fnlla (finella)'),
-    to: [new \Finella\Mail\Address('user@example.com')],
+    from: new \Fnlla\\Mail\Address('noreply@example.com', 'fnlla (finella)'),
+    to: [new \Fnlla\\Mail\Address('user@example.com')],
     subject: 'Welcome',
     text: 'Hello'
 );

@@ -9,14 +9,14 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Finella\Core\Container;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Mail\Address;
-use Finella\Mail\Mail;
-use Finella\Mail\Message;
-use Finella\Queue\JobInterface;
-use Finella\Queue\Queue;
+use Fnlla\\Core\Container;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\Mail;
+use Fnlla\\Mail\Message;
+use Fnlla\\Queue\JobInterface;
+use Fnlla\\Queue\Queue;
 
 final class TestController
 {
@@ -37,10 +37,10 @@ final class TestController
     public function mail(): Response
     {
         $message = new Message(
-            new Address('from@example.test', 'Finella Test'),
+            new Address('from@example.test', 'Fnlla Test'),
             [new Address('to@example.test', 'Receiver')],
             'Test mail',
-            'Hello from Finella.'
+            'Hello from Fnlla.'
         );
         Mail::send($message);
 

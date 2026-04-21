@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Policy;
+namespace Fnlla\\Ai\Policy;
 
 final class AiPolicy
 {

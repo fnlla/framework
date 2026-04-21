@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/rbac",
-    "description":  "Finella RBAC module (roles, permissions, gate integration)",
+    "description":  "Fnlla RBAC module (roles, permissions, gate integration)",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Rbac\\":  "src/"
+                                   "Fnlla\\Rbac\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Rbac\\RbacServiceProvider"
+                                                  "Fnlla\\Rbac\\RbacServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/rbac":  "self.version"
                 }
 }

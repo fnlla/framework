@@ -9,4 +9,4 @@ if [ ! -f vendor/autoload.php ]; then
   composer install --no-interaction --prefer-dist
 fi
 
-php bin/finella --help >/dev/null
+php bin/fnlla --help >/dev/null

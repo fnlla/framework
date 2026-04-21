@@ -3,13 +3,13 @@
 fnlla (finella) ops middleware bundle for security, routing hygiene, and baseline HTTP controls.
 
 **INCLUDES**
-**-** Security headers (`Finella\SecurityHeaders\*`)
-**-** CORS (`Finella\Cors\*`)
-**-** Rate limiting (`Finella\RateLimit\*`)
-**-** Redirects (`Finella\Redirects\*`)
-**-** Maintenance mode (`Finella\Maintenance\*`)
-**-** Static cache (`Finella\CacheStatic\*`)
-**-** Forms honeypot (`Finella\Forms\*`)
+**-** Security headers (`Fnlla\\SecurityHeaders\*`)
+**-** CORS (`Fnlla\\Cors\*`)
+**-** Rate limiting (`Fnlla\\RateLimit\*`)
+**-** Redirects (`Fnlla\\Redirects\*`)
+**-** Maintenance mode (`Fnlla\\Maintenance\*`)
+**-** Static cache (`Fnlla\\CacheStatic\*`)
+**-** Forms honeypot (`Fnlla\\Forms\*`)
 
 **INSTALL**
 ```

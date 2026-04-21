@@ -9,7 +9,7 @@ composer require fnlla/debugbar
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Debugbar\DebugbarServiceProvider`
+**-** `Fnlla\\Debugbar\DebugbarServiceProvider`
 
 **WHAT YOU GET**
 **-** Response headers: `X-Debug-Queries`, `X-Debug-Messages`, `X-Debug-Errors`, `X-Debug-Time-Ms`, `X-Debug-Slow-Queries`, `X-Debug-Memory-Mb`
@@ -28,14 +28,14 @@ Auto-discovered provider:
 **CAPTURING SQL**
 Use `DebugPDO` instead of `PDO` in your database connection:
 ```php
-use Finella\Debugbar\DebugPDO;
+use Fnlla\\Debugbar\DebugPDO;
 
 $pdo = new DebugPDO($dsn, $user, $pass, $options);
 ```
 
 **COLLECTING EVENTS MANUALLY**
 ```php
-use Finella\Debugbar\DebugbarCollector;
+use Fnlla\\Debugbar\DebugbarCollector;
 
 DebugbarCollector::addMessage('info', 'Invoice generated', ['invoice_id' => 123]);
 DebugbarCollector::mark('billing.rendered');

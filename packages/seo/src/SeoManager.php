@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Seo;
+namespace Fnlla\\Seo;
 
-use Finella\Runtime\RequestContext;
+use Fnlla\\Runtime\RequestContext;
 
 final class SeoManager
 {

@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\MailPreview\Commands;
+namespace Fnlla\\MailPreview\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
 
 final class MailPreviewPublishCommand implements CommandInterface
 {

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
-use Finella\Core\ConfigRepository;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
+use Fnlla\\Core\ConfigRepository;
 
 final class AiSecurityLintCommand implements CommandInterface
 {
@@ -105,7 +105,7 @@ final class AiSecurityLintCommand implements CommandInterface
             return false;
         }
         foreach ($groups['web'] as $middleware) {
-            if ($middleware === 'Finella\\Csrf\\CsrfMiddleware') {
+            if ($middleware === 'Fnlla\\\Csrf\\CsrfMiddleware') {
                 return true;
             }
         }
@@ -122,7 +122,7 @@ final class AiSecurityLintCommand implements CommandInterface
             return false;
         }
         foreach ($global as $middleware) {
-            if ($middleware === 'Finella\\SecurityHeaders\\SecurityHeadersMiddleware') {
+            if ($middleware === 'Fnlla\\\SecurityHeaders\\SecurityHeadersMiddleware') {
                 return true;
             }
         }

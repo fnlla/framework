@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
 /**
  * Safe redirect target resolver.

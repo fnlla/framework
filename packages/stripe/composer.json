@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/stripe",
-    "description":  "Stripe payments adapter for Finella",
+    "description":  "Stripe payments adapter for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -23,13 +23,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Stripe\\":  "src/"
+                                   "Fnlla\\Stripe\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Stripe\\StripeServiceProvider"
+                                                  "Fnlla\\Stripe\\StripeServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -38,8 +38,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/stripe":  "self.version"
                 }
 }

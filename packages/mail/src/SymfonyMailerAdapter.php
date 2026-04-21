@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Mail;
+namespace Fnlla\\Mail;
 
 use Symfony\Component\Mailer\MailerInterface as SymfonyMailer;
 use Symfony\Component\Mime\Address as SymfonyAddress;

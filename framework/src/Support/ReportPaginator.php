@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 use ArrayIterator;
 use Countable;
-use Finella\Core\Container;
-use Finella\View\View;
+use Fnlla\\Core\Container;
+use Fnlla\\View\View;
 use IteratorAggregate;
 use Traversable;
 

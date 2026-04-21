@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/tenancy",
-    "description":  "Finella multi-tenancy helpers",
+    "description":  "Fnlla multi-tenancy helpers",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,20 +22,17 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Tenancy\\":  "src/"
+                                   "Fnlla\\Tenancy\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Tenancy\\TenancyServiceProvider"
+                                                  "Fnlla\\Tenancy\\TenancyServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
                                        "dev-main":  "3.0.x-dev"
                                    }
-              },
-    "replace":  {
-                    "finella/tenancy":  "self.version"
-                }
+              }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Finella\Support\ErrorBag;
+use Fnlla\\Support\ErrorBag;
 use PHPUnit\Framework\TestCase;
 
 final class ErrorBagTest extends TestCase

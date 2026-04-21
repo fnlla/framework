@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support\Psr\Cache;
+namespace Fnlla\\Support\Psr\Cache;
 
 interface InvalidArgumentException extends \Throwable
 {

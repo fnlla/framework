@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require dirname(__DIR__) . '/ensure-php85.php';
 
-use Finella\Http\UploadedFile;
+use Fnlla\\Http\UploadedFile;
 
 function ok(bool $cond, string $msg): void
 {
@@ -25,7 +25,7 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-$baseDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-upload-smoke-' . uniqid();
+$baseDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-upload-smoke-' . uniqid();
 $uploadDir = $baseDir . DIRECTORY_SEPARATOR . 'uploads';
 @mkdir($uploadDir, 0777, true);
 

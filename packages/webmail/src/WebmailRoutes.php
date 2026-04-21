@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Http\Router;
-use Finella\Webmail\Http\WebmailController;
-use Finella\Webmail\Http\WebmailSettingsController;
-use Finella\Webmail\Http\WebmailTestController;
+use Fnlla\\Http\Router;
+use Fnlla\\Webmail\Http\WebmailController;
+use Fnlla\\Webmail\Http\WebmailSettingsController;
+use Fnlla\\Webmail\Http\WebmailTestController;
 
 final class WebmailRoutes
 {

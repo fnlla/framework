@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/docs",
-    "description":  "Documentation automation for Finella apps",
+    "description":  "Documentation automation for fnlla apps",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Docs\\":  "src/"
+                                   "Fnlla\\Docs\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Docs\\DocsServiceProvider"
+                                                  "Fnlla\\Docs\\DocsServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/docs":  "self.version"
                 }
 }

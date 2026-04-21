@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Settings;
+namespace Fnlla\\Settings;
 
-use Finella\Database\ConnectionManager;
+use Fnlla\\Database\ConnectionManager;
 use PDO;
 
 final class SettingsRepository

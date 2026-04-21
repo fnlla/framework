@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Ai\\":  "src/"
+                                   "Fnlla\\Ai\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Ai\\AiServiceProvider"
+                                                  "Fnlla\\Ai\\AiServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/ai":  "self.version"
                 }
 }

@@ -3,7 +3,7 @@ parameters:
     - vendor/autoload.php
   scanFiles:
     - stubs/phpunit-framework.php
-    - stubs/finella-testing-testcase.php
+    - stubs/fnlla-testing-testcase.php
   level: 6
   phpVersion: 80300
   treatPhpDocTypesAsCertain: false

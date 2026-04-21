@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Contracts\Events\EventDispatcherInterface;
-use Finella\Core\Container;
+use Fnlla\\Contracts\Events\EventDispatcherInterface;
+use Fnlla\\Core\Container;
 use RuntimeException;
 use Throwable;
 

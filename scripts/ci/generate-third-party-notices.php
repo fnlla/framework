@@ -193,7 +193,7 @@ $generatedDate = $dateOverride ?? (new DateTimeImmutable('now', new DateTimeZone
 $lines = [
     '**THIRD-PARTY NOTICES**',
     '',
-    'Finella includes third-party open-source components. The list below is generated from Composer lock files and is provided for attribution and compliance purposes.',
+    'Fnlla includes third-party open-source components. The list below is generated from Composer lock files and is provided for attribution and compliance purposes.',
     'Licenses are reported by each package; consult the upstream project for full license texts.',
     '',
     "Last updated: {$generatedDate}.",

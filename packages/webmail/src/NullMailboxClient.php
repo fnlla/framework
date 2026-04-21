@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
 final class NullMailboxClient implements MailboxClientInterface
 {

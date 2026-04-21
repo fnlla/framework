@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Mail;
+namespace Fnlla\\Mail;
 
-use Finella\Core\Container;
+use Fnlla\\Core\Container;
 use RuntimeException;
 use Throwable;
 

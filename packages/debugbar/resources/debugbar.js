@@ -9,8 +9,8 @@
   var queryInput = root.querySelector('[data-fdbg-query-filter]');
   var queryRows = root.querySelectorAll('[data-fdbg-query-row]');
   var copyButtons = root.querySelectorAll('[data-fdbg-copy]');
-  var storageOpenKey = 'finella.debugbar.open';
-  var storageTabKey = 'finella.debugbar.tab';
+  var storageOpenKey = 'Fnlla.debugbar.open';
+  var storageTabKey = 'Fnlla.debugbar.tab';
 
   function setOpen(next) {
     root.setAttribute('data-open', next ? '1' : '0');

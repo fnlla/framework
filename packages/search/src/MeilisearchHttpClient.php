@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Search;
+namespace Fnlla\\Search;
 
-use Finella\Support\HttpClient;
+use Fnlla\\Support\HttpClient;
 use RuntimeException;
 
 final class MeilisearchHttpClient implements SearchClientInterface

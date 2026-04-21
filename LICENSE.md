@@ -11,7 +11,7 @@ terms below.
 repository documentation shipped with the code) indicating that the product is
 built with the fnlla (finella) Framework and identifying the fnlla (finella) Components used.
 Example: "Built with fnlla (finella) Framework and fnlla (finella) AI/ORM components."
-**-** "fnlla (finella) Components" means any Finella-branded package, module, or
+**-** "fnlla (finella) Components" means any fnlla-branded package, module, or
 component distributed with or for the fnlla (finella) Framework.
 **-** "Product" means a software product or service (commercial or
 non-commercial) that incorporates the Software as part of its implementation.

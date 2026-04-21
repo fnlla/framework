@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) APP HARNESS**
+**fnlla (finella) APP HARNESS**
 
 This `tools/harness/` directory is a **development and test harness** used inside the monorepo.
 It is **not** the public starter skeleton. The starter app lives in `fnlla/fnlla`.
@@ -55,10 +55,10 @@ Routes are defined in `routes/web.php`.
 **MAINTENANCE COMMANDS (HARNESS)**
 **-** `composer update`
 **-** `composer run smoke`
-**-** `bin/finella-migrate status`
-**-** `bin/finella make:controller ExampleController`
-**-** `bin/finella queue:work --once`
-**-** `bin/finella schedule:run`
+**-** `bin/fnlla-migrate status`
+**-** `bin/fnlla make:controller ExampleController`
+**-** `bin/fnlla queue:work --once`
+**-** `bin/fnlla schedule:run`
 
 **CREDITS**
 **-** Framework: fnlla (finella)

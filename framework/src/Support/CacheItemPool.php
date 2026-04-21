@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Contracts\Cache\CacheStoreInterface;
-use Finella\Support\Psr\Cache\CacheItemInterface;
-use Finella\Support\Psr\Cache\CacheItemPoolInterface;
+use Fnlla\\Contracts\Cache\CacheStoreInterface;
+use Fnlla\\Support\Psr\Cache\CacheItemInterface;
+use Fnlla\\Support\Psr\Cache\CacheItemPoolInterface;
 
 final class CacheItemPool implements CacheItemPoolInterface
 {

@@ -23,13 +23,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Notifications\\":  "src/"
+                                   "Fnlla\\Notifications\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Notifications\\NotificationsServiceProvider"
+                                                  "Fnlla\\Notifications\\NotificationsServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -38,8 +38,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/notifications":  "self.version"
                 }
 }

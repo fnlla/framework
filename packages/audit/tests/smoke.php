@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Audit\AuditLogger;
-use Finella\Audit\AuditRepository;
-use Finella\Audit\AuditSchema;
-use Finella\Database\ConnectionManager;
+use Fnlla\\Audit\AuditLogger;
+use Fnlla\\Audit\AuditRepository;
+use Fnlla\\Audit\AuditSchema;
+use Fnlla\\Database\ConnectionManager;
 
 function ok(bool $cond, string $msg): void
 {

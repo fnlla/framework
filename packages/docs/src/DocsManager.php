@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Finella\Docs;
+namespace Fnlla\\Docs;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Application;
 
 final class DocsManager
 {
@@ -124,7 +124,7 @@ final class DocsManager
 
     private function collectAppInfo(): array
     {
-        $name = (string) $this->config->get('app.name', 'finella');
+        $name = (string) $this->config->get('app.name', 'fnlla');
         $env = (string) $this->config->get('app.env', 'local');
         $version = (string) $this->config->get('app.version', 'dev');
         $basePath = (string) $this->config->get('app.base_path', '');
@@ -151,7 +151,7 @@ final class DocsManager
     {
         return [
             'php' => PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION,
-            'finella' => Application::VERSION,
+            'fnlla' => Application::VERSION,
         ];
     }
 
@@ -162,7 +162,7 @@ final class DocsManager
         $devPackages = is_array($lock['packages-dev'] ?? null) ? $lock['packages-dev'] : [];
         $all = array_merge($packages, $devPackages);
 
-        $finella = [];
+        $fnlla = [];
         $thirdParty = [];
 
         foreach ($all as $pkg) {
@@ -177,17 +177,17 @@ final class DocsManager
             $label = $version !== '' ? $name . ' (' . $version . ')' : $name;
 
             if (str_starts_with($name, 'fnlla/')) {
-                $finella[$name] = $label;
+                $fnlla[$name] = $label;
             } else {
                 $thirdParty[$name] = $label;
             }
         }
 
-        ksort($finella);
+        ksort($fnlla);
         ksort($thirdParty);
 
         return [
-            'finella' => array_values($finella),
+            'fnlla' => array_values($fnlla),
             'third_party' => array_values($thirdParty),
             'total' => count($all),
         ];
@@ -316,7 +316,7 @@ final class DocsManager
     {
         $app = $data['app'] ?? [];
         $runtime = $data['runtime'] ?? [];
-        $packages = $data['packages']['finella'] ?? [];
+        $packages = $data['packages']['fnlla'] ?? [];
 
         $lines = [];
         $lines[] = '# Technical Overview';
@@ -334,10 +334,10 @@ final class DocsManager
         $lines[] = '';
         $lines[] = '## Runtime';
         $lines[] = '- PHP: ' . $this->value($runtime['php'] ?? '');
-        $lines[] = '- Finella: ' . $this->value($runtime['finella'] ?? '');
+        $lines[] = '- fnlla: ' . $this->value($runtime['fnlla'] ?? '');
         $lines[] = '';
-        $lines[] = '## Finella Packages';
-        $lines[] = $this->renderList($packages, '- No Finella packages detected.');
+        $lines[] = '## fnlla Packages';
+        $lines[] = $this->renderList($packages, '- No fnlla packages detected.');
 
         return implode("\n", $lines) . "\n";
     }

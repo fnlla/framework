@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Orm\Relations;
+namespace Fnlla\\Orm\Relations;
 
-use Finella\Orm\Model;
+use Fnlla\\Orm\Model;
 
 final class BelongsTo extends Relation
 {
@@ -17,7 +17,7 @@ final class BelongsTo extends Relation
         string $relatedClass,
         private string $foreignKey,
         private string $ownerKey,
-        \Finella\Orm\QueryBuilder $builder
+        \Fnlla\\Orm\QueryBuilder $builder
     )
     {
         parent::__construct($parent, $relatedClass, $builder);

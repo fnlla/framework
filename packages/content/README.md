@@ -1,6 +1,6 @@
 **FNLLA/CONTENT**
 
-Content repository helpers for Finella. Loads JSON or Markdown files from a
+Content repository helpers for fnlla (finella). Loads JSON or Markdown files from a
 content directory with optional front matter.
 
 **INSTALLATION**
@@ -18,7 +18,7 @@ return [
 
 **USAGE**
 ```php
-use Finella\Content\ContentRepository;
+use Fnlla\\Content\ContentRepository;
 
 $repo = $app->make(ContentRepository::class);
 $item = $repo->get('services/development');

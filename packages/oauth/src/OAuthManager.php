@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\OAuth;
+namespace Fnlla\\OAuth;
 
 use League\OAuth2\Client\Provider\GenericProvider;
 use RuntimeException;

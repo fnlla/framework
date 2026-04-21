@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 final class ComposerProviderDiscovery
 {
@@ -57,11 +57,11 @@ final class ComposerProviderDiscovery
             if (!is_array($extra)) {
                 continue;
             }
-            $finella = $extra['finella'] ?? null;
-            if (!is_array($finella)) {
+            $Fnlla = $extra['Fnlla'] ?? null;
+            if (!is_array($Fnlla)) {
                 continue;
             }
-            $list = $finella['providers'] ?? null;
+            $list = $Fnlla['providers'] ?? null;
             if (!is_array($list)) {
                 continue;
             }

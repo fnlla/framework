@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Cache;
+namespace Fnlla\\Cache;
 
 use RuntimeException;
-use Finella\Support\Env;
-use Finella\Runtime\Profiler;
+use Fnlla\\Support\Env;
+use Fnlla\\Runtime\Profiler;
 
 final class CacheManager
 {

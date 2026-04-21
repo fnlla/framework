@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/content",
-    "description":  "Content repository helpers for Finella",
+    "description":  "Content repository helpers for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Content\\":  "src/"
+                                   "Fnlla\\Content\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Content\\ContentServiceProvider"
+                                                  "Fnlla\\Content\\ContentServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/content":  "self.version"
                 }
 }

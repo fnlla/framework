@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Pdf\Http;
+namespace Fnlla\\Pdf\Http;
 
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Pdf\PdfManager;
-use Finella\Pdf\Templates\InvoiceTemplate;
-use Finella\Pdf\Templates\PitchDeckTemplate;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Pdf\PdfManager;
+use Fnlla\\Pdf\Templates\InvoiceTemplate;
+use Fnlla\\Pdf\Templates\PitchDeckTemplate;
 
 final class PdfController
 {

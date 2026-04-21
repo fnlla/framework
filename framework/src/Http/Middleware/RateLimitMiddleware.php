@@ -4,10 +4,10 @@
  * (c) TechAyo.co.uk
  * Proprietary License
  */
-namespace Finella\Http\Middleware;
+namespace Fnlla\\Http\Middleware;
 
-if (class_exists('\\Finella\\RateLimit\\RateLimitMiddleware') && !class_exists(__NAMESPACE__ . '\\RateLimitMiddleware')) {
-    class_alias('\\Finella\\RateLimit\\RateLimitMiddleware', __NAMESPACE__ . '\\RateLimitMiddleware');
+if (class_exists('\\Fnlla\\\RateLimit\\RateLimitMiddleware') && !class_exists(__NAMESPACE__ . '\\RateLimitMiddleware')) {
+    class_alias('\\Fnlla\\\RateLimit\\RateLimitMiddleware', __NAMESPACE__ . '\\RateLimitMiddleware');
 }
 
 

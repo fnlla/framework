@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Finella\Http\Request;
-use Finella\Http\Stream;
-use Finella\Http\UploadedFile;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\UploadedFile;
 use PHPUnit\Framework\TestCase;
 
 final class UploadedFileTest extends TestCase
@@ -31,7 +31,7 @@ final class UploadedFileTest extends TestCase
 
     public function testStoreSanitizesAndEnforcesSize(): void
     {
-        $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-upload-' . uniqid();
+        $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-upload-' . uniqid();
         $stream = Stream::fromString('hello');
         $file = new UploadedFile([
             'name' => '../evil.php',

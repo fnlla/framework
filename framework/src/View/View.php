@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\View;
+namespace Fnlla\\View;
 
-use Finella\Core\Container;
+use Fnlla\\Core\Container;
 use RuntimeException;
 
 final class View

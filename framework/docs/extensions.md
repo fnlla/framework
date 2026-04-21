@@ -5,8 +5,8 @@ Extensions are Composer packages that integrate with fnlla (finella) via service
 **CREATING A PACKAGE**
 **-** Create a Composer package.
 **-** Add PSR-4 autoloading for your namespace.
-**-** Implement a service provider extending `Finella\Support\ServiceProvider`.
-**-** Add providers to `extra.finella.providers`.
+**-** Implement a service provider extending `Fnlla\\Support\ServiceProvider`.
+**-** Add providers to `extra.fnlla.providers`.
 
 Example `composer.json`:
 ```json
@@ -19,13 +19,13 @@ Example `composer.json`:
   },
   "autoload": {
     "psr-4": {
-      "Finella\\Acme\\": "src/"
+      "Fnlla\\\Acme\\": "src/"
     }
   },
   "extra": {
     "fnlla (finella)": {
       "providers": [
-        "Finella\\Acme\\AcmeServiceProvider"
+        "Fnlla\\\Acme\\AcmeServiceProvider"
       ]
     }
   }

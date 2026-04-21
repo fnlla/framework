@@ -15,7 +15,7 @@ return [
         'username' => env('CACHE_REDIS_USERNAME', ''),
         'password' => env('CACHE_REDIS_PASSWORD', ''),
         'database' => (int) env('CACHE_REDIS_DB', 0),
-        'prefix' => env('CACHE_PREFIX', 'finella:cache:'),
+        'prefix' => env('CACHE_PREFIX', 'Fnlla:cache:'),
         'lock_prefix' => env('CACHE_LOCK_PREFIX', ''),
         'timeout' => (float) env('CACHE_REDIS_TIMEOUT', 1.5),
         'read_timeout' => (float) env('CACHE_REDIS_READ_TIMEOUT', 1.5),

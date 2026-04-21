@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Finella\Support\Dotenv;
+use Fnlla\\Support\Dotenv;
 use PHPUnit\Framework\TestCase;
 
 final class DotenvTest extends TestCase
@@ -11,20 +11,20 @@ final class DotenvTest extends TestCase
     {
         $contents = <<<'ENV'
 # comment
-export FINELLA_TEST_APP="Finella"
-FINELLA_TEST_GREETING=Hello # inline comment
-FINELLA_TEST_INTERP=${FINELLA_TEST_APP}
-FINELLA_TEST_DEFAULT=${FINELLA_TEST_MISSING:-fallback}
-FINELLA_TEST_SINGLE='literal value'
+export Fnlla_TEST_APP="Fnlla"
+Fnlla_TEST_GREETING=Hello # inline comment
+Fnlla_TEST_INTERP=${Fnlla_TEST_APP}
+Fnlla_TEST_DEFAULT=${Fnlla_TEST_MISSING:-fallback}
+Fnlla_TEST_SINGLE='literal value'
 ENV;
 
         $keys = [
-            'FINELLA_TEST_APP',
-            'FINELLA_TEST_GREETING',
-            'FINELLA_TEST_INTERP',
-            'FINELLA_TEST_DEFAULT',
-            'FINELLA_TEST_SINGLE',
-            'FINELLA_TEST_MISSING',
+            'Fnlla_TEST_APP',
+            'Fnlla_TEST_GREETING',
+            'Fnlla_TEST_INTERP',
+            'Fnlla_TEST_DEFAULT',
+            'Fnlla_TEST_SINGLE',
+            'Fnlla_TEST_MISSING',
         ];
         $snapshot = $this->snapshotEnv($keys);
 
@@ -34,11 +34,11 @@ ENV;
         try {
             $dotenv->load($path);
 
-            $this->assertSame('Finella', $_ENV['FINELLA_TEST_APP'] ?? null);
-            $this->assertSame('Hello', $_ENV['FINELLA_TEST_GREETING'] ?? null);
-            $this->assertSame('Finella', $_ENV['FINELLA_TEST_INTERP'] ?? null);
-            $this->assertSame('fallback', $_ENV['FINELLA_TEST_DEFAULT'] ?? null);
-            $this->assertSame('literal value', $_ENV['FINELLA_TEST_SINGLE'] ?? null);
+            $this->assertSame('Fnlla', $_ENV['Fnlla_TEST_APP'] ?? null);
+            $this->assertSame('Hello', $_ENV['Fnlla_TEST_GREETING'] ?? null);
+            $this->assertSame('Fnlla', $_ENV['Fnlla_TEST_INTERP'] ?? null);
+            $this->assertSame('fallback', $_ENV['Fnlla_TEST_DEFAULT'] ?? null);
+            $this->assertSame('literal value', $_ENV['Fnlla_TEST_SINGLE'] ?? null);
         } finally {
             @unlink($path);
             $this->restoreEnv($snapshot);
@@ -48,11 +48,11 @@ ENV;
     public function testLoadsMultilineQuotedValues(): void
     {
         $contents = <<<'ENV'
-FINELLA_TEST_MULTI="first line
+Fnlla_TEST_MULTI="first line
 second line"
 ENV;
 
-        $keys = ['FINELLA_TEST_MULTI'];
+        $keys = ['Fnlla_TEST_MULTI'];
         $snapshot = $this->snapshotEnv($keys);
 
         $path = $this->writeTempFile($contents);
@@ -61,7 +61,7 @@ ENV;
         try {
             $dotenv->load($path);
 
-            $this->assertSame("first line\nsecond line", $_ENV['FINELLA_TEST_MULTI'] ?? null);
+            $this->assertSame("first line\nsecond line", $_ENV['Fnlla_TEST_MULTI'] ?? null);
         } finally {
             @unlink($path);
             $this->restoreEnv($snapshot);
@@ -70,7 +70,7 @@ ENV;
 
     private function writeTempFile(string $contents): string
     {
-        $path = tempnam(sys_get_temp_dir(), 'finella-env-');
+        $path = tempnam(sys_get_temp_dir(), 'fnlla-env-');
         if ($path === false) {
             $this->fail('Unable to create temp file for dotenv test.');
         }

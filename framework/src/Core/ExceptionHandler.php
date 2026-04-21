@@ -8,20 +8,20 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
-use Finella\Core\ConfigRepository;
+use Fnlla\\Core\ConfigRepository;
 use ErrorException;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\RedirectTarget;
-use Finella\Runtime\RequestContext;
-use Finella\Contracts\Log\ErrorReporterInterface;
-use Finella\Contracts\Log\LoggerInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\RedirectTarget;
+use Fnlla\\Runtime\RequestContext;
+use Fnlla\\Contracts\Log\ErrorReporterInterface;
+use Fnlla\\Contracts\Log\LoggerInterface;
 use Throwable;
-use Finella\Authorization\AuthorizationException;
-use Finella\Support\ValidationException;
-use Finella\View\View;
+use Fnlla\\Authorization\AuthorizationException;
+use Fnlla\\Support\ValidationException;
+use Fnlla\\View\View;
 
 /**
  * Exception handling and rendering for the HTTP kernel.
@@ -394,15 +394,15 @@ final class ExceptionHandler
     private function problemType(int $status): string
     {
         return match ($status) {
-            400 => 'https://errors.finella.dev/http/bad-request',
-            401 => 'https://errors.finella.dev/http/unauthorized',
-            403 => 'https://errors.finella.dev/http/forbidden',
-            404 => 'https://errors.finella.dev/http/not-found',
-            405 => 'https://errors.finella.dev/http/method-not-allowed',
-            409 => 'https://errors.finella.dev/http/conflict',
-            422 => 'https://errors.finella.dev/http/validation',
-            429 => 'https://errors.finella.dev/http/rate-limit',
-            default => 'https://errors.finella.dev/http/internal-server-error',
+            400 => 'https://errors.Fnlla.dev/http/bad-request',
+            401 => 'https://errors.Fnlla.dev/http/unauthorized',
+            403 => 'https://errors.Fnlla.dev/http/forbidden',
+            404 => 'https://errors.Fnlla.dev/http/not-found',
+            405 => 'https://errors.Fnlla.dev/http/method-not-allowed',
+            409 => 'https://errors.Fnlla.dev/http/conflict',
+            422 => 'https://errors.Fnlla.dev/http/validation',
+            429 => 'https://errors.Fnlla.dev/http/rate-limit',
+            default => 'https://errors.Fnlla.dev/http/internal-server-error',
         };
     }
 

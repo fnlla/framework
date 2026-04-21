@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Orm;
+namespace Fnlla\\Orm;
 
 use DateTimeImmutable;
 
@@ -49,7 +49,7 @@ trait SoftDeletes
         }
 
         $pdo = $this->connection();
-        $query = new \Finella\Database\Query($pdo);
+        $query = new \Fnlla\\Database\Query($pdo);
         $query->table($this->getTable())->where($primaryKey, $this->attributes[$primaryKey])->update($values);
         return true;
     }

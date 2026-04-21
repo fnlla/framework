@@ -13,10 +13,10 @@ final class AppStatusService
 
         return [
             'status' => 'ok',
-            'service' => (string) $config->get('name', 'finella'),
+            'service' => (string) $config->get('name', 'Fnlla'),
             'env' => (string) $config->get('env', 'local'),
             'version' => (string) $config->get('version', 'dev'),
-            'finella' => \Finella\Core\Application::VERSION,
+            'Fnlla' => \Fnlla\\Core\Application::VERSION,
             'php' => PHP_VERSION,
             'php_sapi' => PHP_SAPI,
             'os' => php_uname('s') . ' ' . php_uname('r'),

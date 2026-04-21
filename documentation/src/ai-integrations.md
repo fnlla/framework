@@ -30,15 +30,15 @@ What AI does not do:
 
 **QUICKSTART: AI CLI (NO API KEY)**
 Use these deterministic commands to make the core framework feel smarter without any provider.
-**-** Scaffold a feature: `php bin/finella ai:scaffold Invoice --resource --all`
-**-** Run a readiness check: `php bin/finella ai:doctor`
-**-** Check smart defaults: `php bin/finella ai:config-advisor`
-**-** Lint security risks: `php bin/finella ai:security-lint`
-**-** Summarise logs: `php bin/finella ai:observability --lines=2000`
-**-** Detect doc drift: `php bin/finella ai:docs-sync`
-**-** Generate a test plan: `php bin/finella ai:test-plan Checkout`
-**-** Balance a roadmap: `php bin/finella ai:roadmap-balance`
-**-** Draft release notes: `php bin/finella ai:release-notes --version=Unreleased`
+**-** Scaffold a feature: `php bin/fnlla ai:scaffold Invoice --resource --all`
+**-** Run a readiness check: `php bin/fnlla ai:doctor`
+**-** Check smart defaults: `php bin/fnlla ai:config-advisor`
+**-** Lint security risks: `php bin/fnlla ai:security-lint`
+**-** Summarise logs: `php bin/fnlla ai:observability --lines=2000`
+**-** Detect doc drift: `php bin/fnlla ai:docs-sync`
+**-** Generate a test plan: `php bin/fnlla ai:test-plan Checkout`
+**-** Balance a roadmap: `php bin/fnlla ai:roadmap-balance`
+**-** Draft release notes: `php bin/fnlla ai:release-notes --version=Unreleased`
 
 **GOVERNANCE AND POLICY**
 AI governance lives under `config/ai/`:

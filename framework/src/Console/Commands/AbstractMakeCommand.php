@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\ConsoleIO;
 use RuntimeException;
 
 abstract class AbstractMakeCommand

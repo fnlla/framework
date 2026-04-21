@@ -13,10 +13,10 @@
         <env name="APP_ROOT" value="tools/harness"/>
     </php>
     <testsuites>
-        <testsuite name="Finella Core">
+        <testsuite name="Fnlla Core">
             <directory>../tests</directory>
         </testsuite>
-        <testsuite name="Finella Packages">
+        <testsuite name="Fnlla Packages">
             <directory suffix="Test.php">../packages</directory>
             <exclude>../packages/_package-template</exclude>
         </testsuite>

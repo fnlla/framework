@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\StorageS3;
+namespace Fnlla\\StorageS3;
 
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 use RuntimeException;
 
-final class S3Disk implements \Finella\Storage\DiskInterface
+final class S3Disk implements \Fnlla\\Storage\DiskInterface
 {
     private S3Client $client;
     private string $bucket;

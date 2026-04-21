@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
 trait MakeCommandHelpers
 {
@@ -26,7 +26,7 @@ trait MakeCommandHelpers
     }
 
     /**
-     * @return array<string, \Finella\Console\CommandInterface>
+     * @return array<string, \Fnlla\\Console\CommandInterface>
      */
     protected function commandMap(): array
     {

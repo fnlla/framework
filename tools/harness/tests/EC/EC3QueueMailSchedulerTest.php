@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use Finella\Mail\Mail;
-use Finella\Queue\DatabaseQueue;
-use Finella\Queue\QueueManager;
-use Finella\Queue\QueueWorker;
-use Finella\Scheduler\Schedule;
-use Finella\Testing\TestCase;
-use Finella\RequestLogging\RequestLoggerMiddleware;
+use Fnlla\\Mail\Mail;
+use Fnlla\\Queue\DatabaseQueue;
+use Fnlla\\Queue\QueueManager;
+use Fnlla\\Queue\QueueWorker;
+use Fnlla\\Scheduler\Schedule;
+use Fnlla\\Testing\TestCase;
+use Fnlla\\RequestLogging\RequestLoggerMiddleware;
 
 final class EC3QueueMailSchedulerTest extends TestCase
 {

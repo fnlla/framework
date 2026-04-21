@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\RateLimit;
+namespace Fnlla\\RateLimit;
 
-use Finella\Cache\CacheManager;
+use Fnlla\\Cache\CacheManager;
 
 final class RateLimiter
 {

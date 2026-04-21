@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Rag;
+namespace Fnlla\\Ai\Rag;
 
-use Finella\Database\ConnectionManager;
-use Finella\Database\Query;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Database\Query;
 use PDO;
 
 final class RagRepository

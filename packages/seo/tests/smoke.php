@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Seo\SeoManager;
-use Finella\Runtime\RequestContext;
-use Finella\Runtime\ResetManager;
+use Fnlla\\Seo\SeoManager;
+use Fnlla\\Runtime\RequestContext;
+use Fnlla\\Runtime\ResetManager;
 
 function ok(bool $cond, string $msg): void
 {
@@ -26,7 +26,7 @@ $context = new RequestContext(new ResetManager(), 'req-1', microtime(true), null
 $context->begin();
 
 $jsonLd = (new SeoManager())
-    ->jsonLd(['@context' => 'https://schema.org', '@type' => 'Organization', 'name' => 'Finella'])
+    ->jsonLd(['@context' => 'https://schema.org', '@type' => 'Organization', 'name' => 'Fnlla'])
     ->renderJsonLd();
 
 $context->end();

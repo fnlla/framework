@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai;
+namespace Fnlla\\Ai;
 
-use Finella\Core\ConfigRepository;
-use Finella\Support\HttpClient;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Support\HttpClient;
 
 final class AiManager
 {

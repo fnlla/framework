@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace {{namespace}};
 
-use Finella\Console\SeederInterface;
+use Fnlla\\Console\SeederInterface;
 use PDO;
 
 final class {{class}} implements SeederInterface

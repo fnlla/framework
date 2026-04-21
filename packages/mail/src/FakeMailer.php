@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Mail;
+namespace Fnlla\\Mail;
 
 use RuntimeException;
 

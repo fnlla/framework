@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) FRAMEWORK DOCUMENTATION**
+**fnlla (finella) FRAMEWORK DOCUMENTATION**
 
 This documentation targets the `fnlla/framework` package. It is written in UK English and reflects the actual behaviour of the 3.x line.
 

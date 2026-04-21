@@ -10,7 +10,7 @@ return [
     'format' => env('LOG_FORMAT', 'line'),
     'include_request_id' => env('LOG_REQUEST_ID', true),
     'context' => array_filter([
-        'app' => env('APP_NAME', 'finella'),
+        'app' => env('APP_NAME', 'Fnlla'),
         'env' => env('APP_ENV', 'local'),
         'version' => env('APP_VERSION', ''),
     ], static fn ($value) => $value !== null && $value !== ''),

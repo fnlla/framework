@@ -8,13 +8,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
 use Closure;
-use Finella\Core\ContainerException;
-use Finella\Runtime\Resetter;
-use Finella\Core\NotFoundException;
-use Finella\Support\Psr\Container\ContainerInterface;
+use Fnlla\\Core\ContainerException;
+use Fnlla\\Runtime\Resetter;
+use Fnlla\\Core\NotFoundException;
+use Fnlla\\Support\Psr\Container\ContainerInterface;
 use ReflectionClass;
 use ReflectionFunction;
 use ReflectionMethod;

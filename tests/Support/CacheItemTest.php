@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Finella\Support\CacheItem;
+use Fnlla\\Support\CacheItem;
 use PHPUnit\Framework\TestCase;
 
 final class CacheItemTest extends TestCase

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Settings;
+namespace Fnlla\\Settings;
 
 use PDO;
 

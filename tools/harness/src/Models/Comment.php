@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use Finella\Orm\Model;
-use Finella\Orm\Relations\BelongsTo;
+use Fnlla\\Orm\Model;
+use Fnlla\\Orm\Relations\BelongsTo;
 
 final class Comment extends Model
 {

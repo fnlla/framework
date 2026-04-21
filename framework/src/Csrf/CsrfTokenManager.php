@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Csrf;
+namespace Fnlla\\Csrf;
 
-use Finella\Session\SessionInterface;
+use Fnlla\\Session\SessionInterface;
 
 final class CsrfTokenManager
 {

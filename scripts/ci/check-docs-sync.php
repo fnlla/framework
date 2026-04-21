@@ -27,9 +27,9 @@ if (!is_dir($appRoot)) {
     exit(1);
 }
 
-$bin = $appRoot . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'finella';
+$bin = $appRoot . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'Fnlla';
 if (!is_file($bin)) {
-    fwrite(STDERR, "Finella CLI not found at {$bin}. Run composer install in the app first.\n");
+    fwrite(STDERR, "Fnlla CLI not found at {$bin}. Run composer install in the app first.\n");
     exit(1);
 }
 

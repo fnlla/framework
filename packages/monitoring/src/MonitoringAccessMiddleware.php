@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Monitoring;
+namespace Fnlla\\Monitoring;
 
-use Finella\Core\ConfigRepository;
-use Finella\Http\Request;
-use Finella\Http\Response;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 final class MonitoringAccessMiddleware
 {

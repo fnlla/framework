@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Application;
-use Finella\Core\ServiceProvider;
-use Finella\Http\HttpKernel;
-use Finella\Http\Request;
-use Finella\Http\Uri;
-use Finella\Runtime\Resetter;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ServiceProvider;
+use Fnlla\\Http\HttpKernel;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Uri;
+use Fnlla\\Runtime\Resetter;
 use PHPUnit\Framework\TestCase;
 
 final class WarmKernelTest extends TestCase

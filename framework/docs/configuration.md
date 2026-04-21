@@ -44,9 +44,9 @@ Routes cache is intended for production and is skipped when `APP_DEBUG=true` or 
 Cached routes require string handlers and middleware, so closures are not cacheable.
 Set `routes_cache_strict=false` to allow `routes:cache` to write a disabled cache file instead of failing
 when non-cacheable handlers are present (the runtime will ignore it and load routes normally).
-Compile routes using `Finella\Http\RouteCacheCompiler`:
+Compile routes using `Fnlla\\Http\RouteCacheCompiler`:
 ```php
-use Finella\Http\RouteCacheCompiler;
+use Fnlla\\Http\RouteCacheCompiler;
 
 $compiler = new RouteCacheCompiler();
 $path = $compiler->compile();
@@ -64,4 +64,4 @@ $path = $compiler->compile();
 **-** `context` (array, e.g. `app`, `env`, `version`)
 
 **ENVIRONMENT**
-The framework does not load `.env` files. The starter app uses `Finella\Support\Dotenv` and an `env()` helper.
+The framework does not load `.env` files. The starter app uses `Fnlla\\Support\Dotenv` and an `env()` helper.

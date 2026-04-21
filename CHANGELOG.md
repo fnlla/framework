@@ -25,7 +25,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **CHANGED**
 **-** Updated framework runtime version constant to `3.0.0`.
 **-** Aligned framework CI/release workflows to PHP 8.5 to match package requirements.
-**-** Aligned operations documentation environment variable names with the starter app (`FINELLA_*`).
+**-** Aligned operations documentation environment variable names with the starter app (`Fnlla_*`).
 
 **[2.5.6] - 2026-04-15**
 
@@ -125,7 +125,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 
 **REMOVED**
 **-** Legacy core shim packages (auth, cache, console, cookie, csrf, database, log, ORM, request-logging, session) from `packages/` after moving their functionality into the framework.
-**-** Legacy Database public API classes removed from `Finella\Database\*` (e.g., `Database`, `DatabaseManager`, `Migrator`, `QueryBuilder`, `SchemaInspector`) after framework consolidation.
+**-** Legacy Database public API classes removed from `Fnlla\\Database\*` (e.g., `Database`, `DatabaseManager`, `Migrator`, `QueryBuilder`, `SchemaInspector`) after framework consolidation.
 
 **[2.5.1] - 2026-03-31**
 
@@ -196,7 +196,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **ADDED**
 **-** Warm kernel support for long-running servers (`HttpKernel::boot()`).
 **-** Response tracing headers by default: `X-Request-Id`, `X-Trace-Id`, `X-Span-Id` (configurable).
-**-** Routes cache compiler (`Finella\Http\RouteCacheCompiler`) and CLI commands (`routes:cache`, `routes:clear`).
+**-** Routes cache compiler (`Fnlla\\Http\RouteCacheCompiler`) and CLI commands (`routes:cache`, `routes:clear`).
 **-** ConfigRepository-first accessors (`Application::configRepository()`, `Container::configRepository()`).
 **-** `routes_cache_strict` to control whether route cache generation fails on non-cacheable handlers.
 **-** Resetter registry for per-request cleanup in long-running mode.
@@ -420,7 +420,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **[1.2.4] - 2026-02-23**
 
 **ADDED**
-**-** VS Code workspace (`finella.code-workspace`) with common tasks and recommendations.
+**-** VS Code workspace (`fnlla (finella).code-workspace`) with common tasks and recommendations.
 **-** Router test covering `ResponseInterface` normalization.
 
 **CHANGED**
@@ -496,7 +496,7 @@ fnlla (finella) ships the framework and official packages on one coordinated rel
 **-** CLI now supports short flags (e.g. `-mf` for `make:model`).
 
 **FIXED**
-**-** `finella-test` now constructs PHPUnit tests with method names for PHPUnit 10 compatibility.
+**-** `fnlla-test` now constructs PHPUnit tests with method names for PHPUnit 10 compatibility.
 
 **[1.0.4] - 2026-02-22**
 

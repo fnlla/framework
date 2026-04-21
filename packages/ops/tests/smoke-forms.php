@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Core\ConfigRepository;
-use Finella\Forms\HoneypotMiddleware;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Forms\HoneypotMiddleware;
 
 function ok(bool $cond, string $msg): void
 {

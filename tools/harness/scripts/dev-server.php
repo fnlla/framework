@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
 
-$host = getenv('FINELLA_DEV_HOST');
+$host = getenv('Fnlla_DEV_HOST');
 if (!is_string($host) || trim($host) === '') {
     $host = '127.0.0.1';
 }
 
-$port = getenv('FINELLA_DEV_PORT');
+$port = getenv('Fnlla_DEV_PORT');
 if (!is_string($port) || trim($port) === '' || !ctype_digit($port)) {
     $port = '8000';
 }

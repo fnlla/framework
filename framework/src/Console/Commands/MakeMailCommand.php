@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
 
 final class MakeMailCommand extends AbstractMakeCommand implements CommandInterface
 {
@@ -42,7 +42,7 @@ final class MakeMailCommand extends AbstractMakeCommand implements CommandInterf
             'Mail'
         );
 
-        $template = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'finella' . DIRECTORY_SEPARATOR . 'console' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'mail.stub';
+        $template = $root . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'Fnlla' . DIRECTORY_SEPARATOR . 'console' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'mail.stub';
         if (!is_file($template)) {
             $template = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'mail.stub';
         }
@@ -51,7 +51,7 @@ final class MakeMailCommand extends AbstractMakeCommand implements CommandInterf
             'namespace' => $namespace,
             'class' => $class,
             'subject' => $class,
-            'text' => 'Hello from Finella.',
+            'text' => 'Hello from Fnlla.',
         ]);
 
         try {

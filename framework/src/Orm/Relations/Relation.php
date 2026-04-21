@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Orm\Relations;
+namespace Fnlla\\Orm\Relations;
 
-use Finella\Orm\Model;
-use Finella\Orm\QueryBuilder;
+use Fnlla\\Orm\Model;
+use Fnlla\\Orm\QueryBuilder;
 
 abstract class Relation
 {

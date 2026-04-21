@@ -9,7 +9,7 @@ composer require fnlla/scheduler
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Scheduler\ScheduleServiceProvider`
+**-** `Fnlla\\Scheduler\ScheduleServiceProvider`
 
 **CONFIGURATION**
 `config/scheduler/scheduler.php`:
@@ -26,7 +26,7 @@ Example:
 ```php
 <?php
 
-use Finella\Scheduler\Schedule;
+use Fnlla\\Scheduler\Schedule;
 
 return function (Schedule $schedule): void {
     $schedule->call('prune-cache', function (): void {
@@ -39,7 +39,7 @@ return function (Schedule $schedule): void {
 
 **RUNNING THE SCHEDULER**
 ```bash
-php bin/finella schedule:run
+php bin/fnlla schedule:run
 ```
 
 **NOTES**

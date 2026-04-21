@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai;
+namespace Fnlla\\Ai;
 
 final class AiProviderRouterClient implements AiClientInterface
 {

@@ -22,7 +22,7 @@ git clone https://github.com/fnlla/framework.git framework
 cd framework/tools/harness
 copy .env.example .env
 composer install
-php bin/finella db:bootstrap
+php bin/fnlla db:bootstrap
 composer run dev
 ```
 
@@ -59,7 +59,7 @@ Then in `fnlla/` use `composer.dev.json` for local package resolution.
 **NAME ORIGIN AND TECHNICAL SLUG**
 **-** Product name: `fnlla (finella)` (name origin: fnlla (finella) Gardens, Dundee, UK).
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
-**-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
+**-** Why `fnlla (finella)`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 
 **NEXT READING**
 **-** `documentation/src/framework.md`

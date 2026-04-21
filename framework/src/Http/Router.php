@@ -8,15 +8,15 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
 use Closure;
-use Finella\Core\Container;
-use Finella\Authorization\Gate;
-use Finella\Authorization\PolicyRegistry;
-use Finella\Http\RedirectTarget;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\\Core\Container;
+use Fnlla\\Authorization\Gate;
+use Fnlla\\Authorization\PolicyRegistry;
+use Fnlla\\Http\RedirectTarget;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
 use ReflectionFunction;
 use ReflectionMethod;
 use RuntimeException;
@@ -576,7 +576,7 @@ final class Router
     private function denyAuthorization(Request $request): Response
     {
         if ($request->wantsJson()) {
-            throw new \Finella\Authorization\AuthorizationException('Forbidden', 403);
+            throw new \Fnlla\\Authorization\AuthorizationException('Forbidden', 403);
         }
 
         $redirectTo = RedirectTarget::fromReferer($request, '/');
@@ -596,16 +596,16 @@ final class Router
         $decay = $minutes * 60;
 
         return function (Request $request, callable $next) use ($max, $decay, $keySpec): ResponseInterface {
-            if (!class_exists(\Finella\RateLimit\RateLimiter::class)) {
+            if (!class_exists(\Fnlla\\RateLimit\RateLimiter::class)) {
                 throw new RuntimeException('Rate limiter is not installed.');
             }
 
             $limiter = $this->resolveRateLimiter();
-            if (!$limiter instanceof \Finella\RateLimit\RateLimiter) {
+            if (!$limiter instanceof \Fnlla\\RateLimit\RateLimiter) {
                 throw new RuntimeException('Rate limiter service is not available.');
             }
 
-            $middleware = new \Finella\RateLimit\RateLimitMiddleware($limiter, $max, $decay, $keySpec);
+            $middleware = new \Fnlla\\RateLimit\RateLimitMiddleware($limiter, $max, $decay, $keySpec);
             return $middleware($request, $next);
         };
     }
@@ -621,11 +621,11 @@ final class Router
         return new Gate($container, new PolicyRegistry());
     }
 
-    private function resolveRateLimiter(): ?\Finella\RateLimit\RateLimiter
+    private function resolveRateLimiter(): ?\Fnlla\\RateLimit\RateLimiter
     {
-        if ($this->container instanceof Container && $this->container->has(\Finella\RateLimit\RateLimiter::class)) {
-            $limiter = $this->container->make(\Finella\RateLimit\RateLimiter::class);
-            return $limiter instanceof \Finella\RateLimit\RateLimiter ? $limiter : null;
+        if ($this->container instanceof Container && $this->container->has(\Fnlla\\RateLimit\RateLimiter::class)) {
+            $limiter = $this->container->make(\Fnlla\\RateLimit\RateLimiter::class);
+            return $limiter instanceof \Fnlla\\RateLimit\RateLimiter ? $limiter : null;
         }
 
         return null;

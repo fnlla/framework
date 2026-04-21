@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace {{namespace}};
 
-use Finella\Http\Request;
-use Finella\Support\Validator;
-use Finella\Support\ValidationException;
+use Fnlla\\Http\Request;
+use Fnlla\\Support\Validator;
+use Fnlla\\Support\ValidationException;
 
 final class {{class}}
 {

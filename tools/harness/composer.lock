@@ -319,9 +319,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Ai\\AiServiceProvider"
+                        "Fnlla\\\Ai\\AiServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -330,7 +330,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Ai\\": "src/"
+                    "Fnlla\\\Ai\\": "src/"
                 }
             },
             "scripts": {
@@ -369,9 +369,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Audit\\AuditServiceProvider"
+                        "Fnlla\\\Audit\\AuditServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -380,7 +380,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Audit\\": "src/"
+                    "Fnlla\\\Audit\\": "src/"
                 }
             },
             "scripts": {
@@ -398,7 +398,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Audit logging helpers for Finella",
+            "description": "Audit logging helpers for Fnlla",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -419,9 +419,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Debugbar\\DebugbarServiceProvider"
+                        "Fnlla\\\Debugbar\\DebugbarServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -430,13 +430,13 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Debugbar\\": "src/"
+                    "Fnlla\\\Debugbar\\": "src/"
                 }
             },
             "license": [
                 "proprietary"
             ],
-            "description": "Finella debugbar module",
+            "description": "Fnlla debugbar module",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -462,7 +462,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Deploy\\": "src/"
+                    "Fnlla\\\Deploy\\": "src/"
                 }
             },
             "scripts": {
@@ -480,7 +480,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Deployment utilities for Finella",
+            "description": "Deployment utilities for Fnlla",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -501,9 +501,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Docs\\DocsServiceProvider"
+                        "Fnlla\\\Docs\\DocsServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -512,7 +512,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Docs\\": "src/"
+                    "Fnlla\\\Docs\\": "src/"
                 }
             },
             "scripts": {
@@ -530,7 +530,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Documentation automation for Finella apps",
+            "description": "Documentation automation for Fnlla apps",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -549,21 +549,21 @@
                 "php": ">=8.5"
             },
             "bin": [
-                "bin/finella"
+                "bin/fnlla"
             ],
             "type": "library",
             "extra": {
-                "finella": {
+                "fnlla": {
                     "providers": [
-                        "Finella\\Database\\DatabaseServiceProvider",
-                        "Finella\\Cache\\CacheServiceProvider",
-                        "Finella\\Log\\LogServiceProvider",
-                        "Finella\\RequestLogging\\RequestLoggingServiceProvider",
-                        "Finella\\Session\\SessionServiceProvider",
-                        "Finella\\Cookie\\CookieServiceProvider",
-                        "Finella\\Csrf\\CsrfServiceProvider",
-                        "Finella\\Auth\\AuthServiceProvider",
-                        "Finella\\Orm\\OrmServiceProvider"
+                        "Fnlla\\\Database\\DatabaseServiceProvider",
+                        "Fnlla\\\Cache\\CacheServiceProvider",
+                        "Fnlla\\\Log\\LogServiceProvider",
+                        "Fnlla\\\RequestLogging\\RequestLoggingServiceProvider",
+                        "Fnlla\\\Session\\SessionServiceProvider",
+                        "Fnlla\\\Cookie\\CookieServiceProvider",
+                        "Fnlla\\\Csrf\\CsrfServiceProvider",
+                        "Fnlla\\\Auth\\AuthServiceProvider",
+                        "Fnlla\\\Orm\\OrmServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -572,7 +572,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\": "src/"
+                    "Fnlla\\\": "src/"
                 },
                 "files": [
                     "src/Support/global_helpers.php",
@@ -590,7 +590,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella - AI-assisted PHP framework",
+            "description": "Fnlla - AI-assisted PHP framework",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -613,9 +613,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Mail\\MailServiceProvider"
+                        "Fnlla\\\Mail\\MailServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -624,7 +624,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Mail\\": "src/"
+                    "Fnlla\\\Mail\\": "src/"
                 }
             },
             "scripts": {
@@ -642,7 +642,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella mail module (Symfony Mailer adapter)",
+            "description": "Fnlla mail module (Symfony Mailer adapter)",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -663,15 +663,15 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\SecurityHeaders\\SecurityHeadersServiceProvider",
-                        "Finella\\Cors\\CorsServiceProvider",
-                        "Finella\\RateLimit\\RateLimitServiceProvider",
-                        "Finella\\Redirects\\RedirectsServiceProvider",
-                        "Finella\\Maintenance\\MaintenanceServiceProvider",
-                        "Finella\\CacheStatic\\CacheStaticServiceProvider",
-                        "Finella\\Forms\\FormsServiceProvider"
+                        "Fnlla\\\SecurityHeaders\\SecurityHeadersServiceProvider",
+                        "Fnlla\\\Cors\\CorsServiceProvider",
+                        "Fnlla\\\RateLimit\\RateLimitServiceProvider",
+                        "Fnlla\\\Redirects\\RedirectsServiceProvider",
+                        "Fnlla\\\Maintenance\\MaintenanceServiceProvider",
+                        "Fnlla\\\CacheStatic\\CacheStaticServiceProvider",
+                        "Fnlla\\\Forms\\FormsServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -680,13 +680,13 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\SecurityHeaders\\": "src/SecurityHeaders/",
-                    "Finella\\Cors\\": "src/Cors/",
-                    "Finella\\RateLimit\\": "src/RateLimit/",
-                    "Finella\\Redirects\\": "src/Redirects/",
-                    "Finella\\Maintenance\\": "src/Maintenance/",
-                    "Finella\\CacheStatic\\": "src/CacheStatic/",
-                    "Finella\\Forms\\": "src/Forms/"
+                    "Fnlla\\\SecurityHeaders\\": "src/SecurityHeaders/",
+                    "Fnlla\\\Cors\\": "src/Cors/",
+                    "Fnlla\\\RateLimit\\": "src/RateLimit/",
+                    "Fnlla\\\Redirects\\": "src/Redirects/",
+                    "Fnlla\\\Maintenance\\": "src/Maintenance/",
+                    "Fnlla\\\CacheStatic\\": "src/CacheStatic/",
+                    "Fnlla\\\Forms\\": "src/Forms/"
                 }
             },
             "scripts": {
@@ -704,7 +704,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella ops middleware bundle (security headers, CORS, rate limiting, redirects, maintenance, static cache, forms)",
+            "description": "Fnlla ops middleware bundle (security headers, CORS, rate limiting, redirects, maintenance, static cache, forms)",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -726,9 +726,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Pdf\\PdfServiceProvider"
+                        "Fnlla\\\Pdf\\PdfServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -737,7 +737,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Pdf\\": "src/"
+                    "Fnlla\\\Pdf\\": "src/"
                 }
             },
             "scripts": {
@@ -776,9 +776,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Queue\\QueueServiceProvider"
+                        "Fnlla\\\Queue\\QueueServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -787,7 +787,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Queue\\": "src/"
+                    "Fnlla\\\Queue\\": "src/"
                 }
             },
             "scripts": {
@@ -805,7 +805,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella queue module",
+            "description": "Fnlla queue module",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -826,9 +826,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Rbac\\RbacServiceProvider"
+                        "Fnlla\\\Rbac\\RbacServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -837,7 +837,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Rbac\\": "src/"
+                    "Fnlla\\\Rbac\\": "src/"
                 }
             },
             "scripts": {
@@ -855,7 +855,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella RBAC module (roles, permissions, gate integration)",
+            "description": "Fnlla RBAC module (roles, permissions, gate integration)",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -876,9 +876,9 @@
             },
             "type": "library",
             "extra": {
-                "finella": {
+                "Fnlla": {
                     "providers": [
-                        "Finella\\Settings\\SettingsServiceProvider"
+                        "Fnlla\\\Settings\\SettingsServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -887,7 +887,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Settings\\": "src/"
+                    "Fnlla\\\Settings\\": "src/"
                 }
             },
             "scripts": {
@@ -905,7 +905,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Key/value settings store for Finella",
+            "description": "Key/value settings store for Fnlla",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -949,7 +949,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella standard web stack (meta-package)",
+            "description": "Fnlla standard web stack (meta-package)",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -2313,7 +2313,7 @@
                 "phpunit/phpunit": "^10.5"
             },
             "bin": [
-                "bin/finella-test"
+                "bin/fnlla-test"
             ],
             "type": "library",
             "extra": {
@@ -2323,7 +2323,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Finella\\Testing\\": "src/"
+                    "Fnlla\\\Testing\\": "src/"
                 }
             },
             "license": [
@@ -2336,7 +2336,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Finella testing helpers (HTTP feature tests and assertions)",
+            "description": "Fnlla testing helpers (HTTP feature tests and assertions)",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,

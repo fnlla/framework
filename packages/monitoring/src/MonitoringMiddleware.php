@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Monitoring;
+namespace Fnlla\\Monitoring;
 
-use Finella\Debugbar\DebugbarCollector;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\MiddlewareInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Debugbar\DebugbarCollector;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class MonitoringMiddleware implements MiddlewareInterface
 {
@@ -41,7 +41,7 @@ final class MonitoringMiddleware implements MiddlewareInterface
         return $response;
     }
 
-    public function __invoke(\Finella\Http\Request $request, callable $next): ResponseInterface
+    public function __invoke(\Fnlla\\Http\Request $request, callable $next): ResponseInterface
     {
         $start = microtime(true);
         $response = $next($request);

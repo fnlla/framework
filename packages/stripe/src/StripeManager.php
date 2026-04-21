@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Stripe;
+namespace Fnlla\\Stripe;
 
 use RuntimeException;
 use Stripe\StripeClient;

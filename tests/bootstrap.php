@@ -21,7 +21,7 @@ foreach ($packageDirs as $dir) {
 }
 
 spl_autoload_register(static function (string $class) use ($roots): void {
-    $prefix = 'Finella\\';
+    $prefix = 'Fnlla\\\';
     if (!str_starts_with($class, $prefix)) {
         return;
     }

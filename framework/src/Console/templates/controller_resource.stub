@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace {{namespace}};
 
-use Finella\Core\Controller;
-use Finella\Http\Request;
-use Finella\Http\Response;
+use Fnlla\\Core\Controller;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 final class {{class}} extends Controller
 {

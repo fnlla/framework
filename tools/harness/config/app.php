@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'name' => env('APP_NAME', 'finella'),
+    'name' => env('APP_NAME', 'Fnlla'),
     'env' => env('APP_ENV', 'local'),
     'version' => env('APP_VERSION', 'dev'),
     'base_path' => env('APP_BASE_PATH', ''),

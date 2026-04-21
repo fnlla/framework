@@ -15,17 +15,17 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Finella\Core\ExceptionHandler;
-use Finella\Http\Request;
-use Finella\Http\Stream;
-use Finella\Http\UploadedFile;
-use Finella\Http\Uri;
-use Finella\Support\Validator;
-use Finella\Support\ValidationException;
-use Finella\Core\Application;
-use Finella\Core\ConfigRepository;
-use Finella\Session\FileSessionStore;
-use Finella\Session\SessionInterface;
+use Fnlla\\Core\ExceptionHandler;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\UploadedFile;
+use Fnlla\\Http\Uri;
+use Fnlla\\Support\Validator;
+use Fnlla\\Support\ValidationException;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Session\FileSessionStore;
+use Fnlla\\Session\SessionInterface;
 
 function ok(bool $cond, string $msg): void
 {
@@ -110,7 +110,7 @@ try {
 }
 
 // HTML validation + file rule case.
-$tmpFile = tempnam(sys_get_temp_dir(), 'finella_upload_');
+$tmpFile = tempnam(sys_get_temp_dir(), 'Fnlla_upload_');
 if ($tmpFile === false) {
     fwrite(STDERR, "FAIL: Unable to create temp file for upload\n");
     exit(1);
@@ -140,14 +140,14 @@ $validator = Validator::make([
 ]);
 ok($validator->passes(), 'mimes extension passes when MIME is missing');
 
-$sessionDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella_session_' . uniqid();
+$sessionDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'Fnlla_session_' . uniqid();
 @mkdir($sessionDir, 0755, true);
 $session = new FileSessionStore($sessionDir);
 $session->start();
 
 $app = new Application($root, new ConfigRepository([]));
 $app->instance(SessionInterface::class, $session);
-$GLOBALS['finella_app'] = $app;
+$GLOBALS['Fnlla_app'] = $app;
 
 $htmlHandler = new ExceptionHandler(false, $app);
 
@@ -173,8 +173,8 @@ try {
     $response = $htmlHandler->render($e, $htmlRequest);
     ok($response->getStatusCode() === 302, 'HTML validation redirects back');
     ok($response->getHeaderLine('Location') !== '', 'HTML redirect has Location header');
-    ok(is_array($session->get('_finella_errors')), 'session has flashed errors');
-    ok(is_array($session->get('_finella_old')), 'session has flashed old input');
+    ok(is_array($session->get('_Fnlla_errors')), 'session has flashed errors');
+    ok(is_array($session->get('_Fnlla_old')), 'session has flashed old input');
 }
 
 @unlink($tmpFile);

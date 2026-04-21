@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Testing;
+namespace Fnlla\\Testing;
 
-use Finella\Http\Response;
-use Finella\Session\SessionInterface;
+use Fnlla\\Http\Response;
+use Fnlla\\Session\SessionInterface;
 use PHPUnit\Framework\Assert;
 
 final class TestResponse
@@ -71,8 +71,8 @@ final class TestResponse
     {
         Assert::assertInstanceOf(SessionInterface::class, $this->session, 'Session is not available.');
 
-        $errors = $this->session->get('_finella_errors', []);
-        $bagName = $this->session->get('_finella_error_bag', 'default');
+        $errors = $this->session->get('_Fnlla_errors', []);
+        $bagName = $this->session->get('_Fnlla_error_bag', 'default');
 
         Assert::assertSame($bag, $bagName, 'Expected error bag ' . $bag . ', got ' . $bagName);
 
@@ -89,7 +89,7 @@ final class TestResponse
     {
         Assert::assertInstanceOf(SessionInterface::class, $this->session, 'Session is not available.');
 
-        $old = $this->session->get('_finella_old', []);
+        $old = $this->session->get('_Fnlla_old', []);
         Assert::assertIsArray($old, 'Old input is not available.');
 
         $keys = is_array($keys) ? $keys : [$keys];

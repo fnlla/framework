@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support\Psr\Http\Message;
+namespace Fnlla\\Support\Psr\Http\Message;
 
 interface RequestInterface extends MessageInterface
 {

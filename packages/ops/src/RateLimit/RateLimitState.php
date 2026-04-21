@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\RateLimit;
+namespace Fnlla\\RateLimit;
 
 final class RateLimitState
 {

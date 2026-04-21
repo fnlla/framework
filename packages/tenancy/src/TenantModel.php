@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Tenancy;
+namespace Fnlla\\Tenancy;
 
-use Finella\Orm\Model;
-use Finella\Orm\QueryBuilder;
+use Fnlla\\Orm\Model;
+use Fnlla\\Orm\QueryBuilder;
 use RuntimeException;
 
 abstract class TenantModel extends Model

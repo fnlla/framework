@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Redaction;
+namespace Fnlla\\Ai\Redaction;
 
 final class AiRedactor
 {

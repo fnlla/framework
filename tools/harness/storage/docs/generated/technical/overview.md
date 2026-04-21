@@ -10,9 +10,9 @@
 
 **RUNTIME**
 **-** PHP: 8.5
-**-** fnlla (finella): 3.0.0
+**-** fnlla: 3.0.0
 
-**FNLLA (FINELLA) PACKAGES**
+**fnlla (finella) PACKAGES**
 **-** fnlla/ai (dev-main)
 **-** fnlla/audit (dev-main)
 **-** fnlla/debugbar (dev-main)

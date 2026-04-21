@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/deploy",
-    "description":  "Deployment utilities for Finella",
+    "description":  "Deployment utilities for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,7 +22,7 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Deploy\\":  "src/"
+                                   "Fnlla\\Deploy\\":  "src/"
                                }
                  },
     "extra":  {
@@ -32,8 +32,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/deploy":  "self.version"
                 }
 }

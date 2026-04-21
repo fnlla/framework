@@ -8,16 +8,16 @@
 
 declare(strict_types=1);
 
-namespace Finella\Debugbar\Middleware;
+namespace Fnlla\\Debugbar\Middleware;
 
-use Finella\Debugbar\DebugbarCollector;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Support\Env;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\MiddlewareInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Debugbar\DebugbarCollector;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Support\Env;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class DebugbarMiddleware implements MiddlewareInterface
 {
@@ -289,10 +289,10 @@ final class DebugbarMiddleware implements MiddlewareInterface
 </style>
 <div class="fdbg-root" id="fdbg-root" data-open="0">
   <button type="button" class="fdbg-toggle{$toggleClass}" data-fdbg-toggle title="Toggle debugbar (Ctrl+Shift+D)">{$this->e($badge)}</button>
-  <section class="fdbg-panel" role="dialog" aria-label="Finella Debugbar">
+  <section class="fdbg-panel" role="dialog" aria-label="Fnlla Debugbar">
     <header class="fdbg-head">
       <div>
-        <p class="fdbg-title">Finella Debugbar</p>
+        <p class="fdbg-title">Fnlla Debugbar</p>
         <div class="fdbg-sub">{$this->e($method)} {$this->e($path)} | HTTP {$status}</div>
         <div class="fdbg-chip-row">
           <span class="fdbg-chip">Request: {$this->e(sprintf('%.2f ms', $requestMs))}</span>

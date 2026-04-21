@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
-use Finella\Core\Application;
-use Finella\Http\Response;
-use Finella\View\View;
+use Fnlla\\Core\Application;
+use Fnlla\\Http\Response;
+use Fnlla\\View\View;
 
 /**
  * @api

@@ -5,18 +5,18 @@ fnlla (finella) ships with a small CLI to generate docs, publish assets, and run
 
 **QUICK START**
 **-** Run commands from your app root.
-**-** `php bin/finella` shows available commands.
-**-** `php bin/finella list` prints the full command list.
+**-** `php bin/fnlla` shows available commands.
+**-** `php bin/fnlla list` prints the full command list.
 
 **REQUIRED `--app` FLAG**
 Most publish commands need the application root path. Use `--app=.` when you are already in the app directory.
 ```bash
-php bin/finella docs:generate --app=.
+php bin/fnlla docs:generate --app=.
 ```
 
 **DOCS WORKFLOWS**
-**-** `php bin/finella docs:generate --app=.`
-**-** `php bin/finella docs:generate --app=. --publish`
+**-** `php bin/fnlla docs:generate --app=.`
+**-** `php bin/fnlla docs:generate --app=. --publish`
 
 Docs are generated into `storage/docs/generated`. Publishing copies them into `resources/docs`.
 
@@ -36,25 +36,25 @@ Starter shortcuts (from `app/`):
 **-** `composer run lint:github`
 
 **MAIL PREVIEW**
-**-** `php bin/finella mail-preview:publish --app=.`
+**-** `php bin/fnlla mail-preview:publish --app=.`
 
 **CACHE WORKFLOWS**
-**-** `php bin/finella routes:cache`
-**-** `php bin/finella routes:clear`
+**-** `php bin/fnlla routes:cache`
+**-** `php bin/fnlla routes:clear`
 
 **SCAFFOLDING**
-**-** `php bin/finella make:controller UserController`
-**-** `php bin/finella make:request StoreUserRequest`
-**-** `php bin/finella make:model User --migration --factory`
-**-** `php bin/finella make:crud User`
-**-** `php bin/finella make:service BillingService`
-**-** `php bin/finella make:repository UserRepository`
-**-** `php bin/finella make:seeder UsersSeeder`
+**-** `php bin/fnlla make:controller UserController`
+**-** `php bin/fnlla make:request StoreUserRequest`
+**-** `php bin/fnlla make:model User --migration --factory`
+**-** `php bin/fnlla make:crud User`
+**-** `php bin/fnlla make:service BillingService`
+**-** `php bin/fnlla make:repository UserRepository`
+**-** `php bin/fnlla make:seeder UsersSeeder`
 
 **DATABASE BOOTSTRAP**
 Create the database (when missing) and run migrations:
-**-** `php bin/finella db:bootstrap`
-**-** `php bin/finella db:bootstrap --create --root-user=root --root-pass=secret`
+**-** `php bin/fnlla db:bootstrap`
+**-** `php bin/fnlla db:bootstrap --create --root-user=root --root-pass=secret`
 
 **TROUBLESHOOTING**
 **-** "Missing --app=PATH" means pass `--app=.` or an absolute path.
@@ -62,15 +62,15 @@ Create the database (when missing) and run migrations:
 
 **AI COMMANDS (CORE)**
 These commands are deterministic and run without any provider API key.
-**-** `php bin/finella ai:scaffold User --resource --all`
-**-** `php bin/finella ai:doctor`
-**-** `php bin/finella ai:config-advisor`
-**-** `php bin/finella ai:security-lint`
-**-** `php bin/finella ai:observability --lines=2000`
-**-** `php bin/finella ai:docs-sync`
-**-** `php bin/finella ai:test-plan Checkout`
-**-** `php bin/finella ai:roadmap-balance`
-**-** `php bin/finella ai:release-notes --version=Unreleased`
+**-** `php bin/fnlla ai:scaffold User --resource --all`
+**-** `php bin/fnlla ai:doctor`
+**-** `php bin/fnlla ai:config-advisor`
+**-** `php bin/fnlla ai:security-lint`
+**-** `php bin/fnlla ai:observability --lines=2000`
+**-** `php bin/fnlla ai:docs-sync`
+**-** `php bin/fnlla ai:test-plan Checkout`
+**-** `php bin/fnlla ai:roadmap-balance`
+**-** `php bin/fnlla ai:release-notes --version=Unreleased`
 
 **PACKAGES**
 Full package catalog lives in `documentation/src/packages.md`.
@@ -94,20 +94,20 @@ Do not require or import it as an end-user package.
 **-** See `documentation/src/framework.md` (HTTP + validation)
 
 **I WANT MIGRATIONS AND MODELS**
-**-** `php bin/finella make:migration create_users_table`
-**-** `php bin/finella migrate`
+**-** `php bin/fnlla make:migration create_users_table`
+**-** `php bin/fnlla migrate`
 **-** See `documentation/src/framework.md` (database + ORM)
 
 **I WANT A QUEUE WORKER**
 **-** `composer require fnlla/queue`
 **-** Set `QUEUE_DRIVER=database` or `redis` in `.env`
-**-** Run `php bin/finella queue:work`
+**-** Run `php bin/fnlla queue:work`
 **-** See `documentation/src/framework.md` (queue)
 
 **I WANT SCHEDULED JOBS**
 **-** `composer require fnlla/scheduler`
 **-** Define jobs in `routes/schedule.php`
-**-** Run `php bin/finella schedule:run`
+**-** Run `php bin/fnlla schedule:run`
 **-** See `documentation/src/framework.md` (scheduler)
 
 **I WANT MAIL SENDING**

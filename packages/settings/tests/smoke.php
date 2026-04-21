@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Database\ConnectionManager;
-use Finella\Settings\SettingsRepository;
-use Finella\Settings\SettingsSchema;
-use Finella\Settings\SettingsStore;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Settings\SettingsRepository;
+use Fnlla\\Settings\SettingsSchema;
+use Fnlla\\Settings\SettingsStore;
 
 function ok(bool $cond, string $msg): void
 {
@@ -28,8 +28,8 @@ SettingsSchema::ensure($pdo);
 $repo = new SettingsRepository($connections);
 $store = new SettingsStore($repo);
 
-$store->set('site_title', 'Finella');
-ok($store->get('site_title') === 'Finella', 'settings get');
+$store->set('site_title', 'Fnlla');
+ok($store->get('site_title') === 'Fnlla', 'settings get');
 
 $store->setMany(['foo' => 'bar', 'baz' => 'qux']);
 ok($store->get('foo') === 'bar', 'settings setMany');

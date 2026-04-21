@@ -4,10 +4,10 @@
  * (c) TechAyo.co.uk
  * Proprietary License
  */
-namespace Finella\Support\Auth;
+namespace Fnlla\\Support\Auth;
 
-if (class_exists('\\Finella\\Auth\\CallableUserProvider') && !class_exists(__NAMESPACE__ . '\\CallableUserProvider')) {
-    class_alias('\\Finella\\Auth\\CallableUserProvider', __NAMESPACE__ . '\\CallableUserProvider');
+if (class_exists('\\Fnlla\\\Auth\\CallableUserProvider') && !class_exists(__NAMESPACE__ . '\\CallableUserProvider')) {
+    class_alias('\\Fnlla\\\Auth\\CallableUserProvider', __NAMESPACE__ . '\\CallableUserProvider');
 }
 
 

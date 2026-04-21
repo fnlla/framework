@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
 
 final class MakeCommandCommand extends AbstractMakeCommand implements CommandInterface
 {

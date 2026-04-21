@@ -1,6 +1,6 @@
 **FNLLA/AUDIT**
 
-Audit logging helpers for Finella. Stores simple change history (who/what/when).
+Audit logging helpers for fnlla (finella). Stores simple change history (who/what/when).
 
 **INSTALLATION**
 ```bash
@@ -9,11 +9,11 @@ composer require fnlla/audit
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Audit\AuditServiceProvider`
+**-** `Fnlla\\Audit\AuditServiceProvider`
 
 **SCHEMA**
 ```php
-use Finella\Audit\AuditSchema;
+use Fnlla\\Audit\AuditSchema;
 
 AuditSchema::ensure($pdo);
 ```
@@ -22,7 +22,7 @@ Default table name: `audit_log`
 
 **USAGE**
 ```php
-use Finella\Audit\AuditLogger;
+use Fnlla\\Audit\AuditLogger;
 
 $logger = app()->make(AuditLogger::class);
 $logger->record('post.saved', 'post', 123, ['changed' => ['title']]);

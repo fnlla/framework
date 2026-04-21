@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRAMEWORK - Finella Docs</title>
+  <title>FRAMEWORK - fnlla (finella) Docs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   <header class="fx-topbar">
     <div class="f-container fx-topbar-inner">
       <div class="fx-brand">
-        <div class="fx-brand-mark">Finella</div>
+        <div class="fx-brand-mark">fnlla (finella)</div>
         <span class="fx-brand-pill">Documentation</span>
       </div>
       <div class="fx-topbar-actions"></div>
@@ -29,26 +29,26 @@
       </div>
     </aside>
     <article class="fx-docs-content">
-      <div class="fx-docs-eyebrow">Finella</div>
+      <div class="fx-docs-eyebrow">fnlla (finella)</div>
       <h1>FRAMEWORK</h1>
       <div class="fx-docs-markdown">
-        <p><strong>FRAMEWORK</strong></p><p><strong>DEVELOPER GUIDE</strong></p><p>This guide is a single-file overview of the Finella framework and its ecosystem. It is intentionally concise and keeps links to deeper docs in <code>documentation/src/</code>.</p><p><strong>CONTENTS</strong> <strong>-</strong> Overview <strong>-</strong> Quick start <strong>-</strong> Architecture <strong>-</strong> Routing <strong>-</strong> Middleware <strong>-</strong> Container and services <strong>-</strong> Configuration <strong>-</strong> Providers and discovery <strong>-</strong> Views <strong>-</strong> Error handling and logging <strong>-</strong> Packages <strong>-</strong> Testing <strong>-</strong> Deployment <strong>-</strong> Upgrade policy</p><p><strong>OVERVIEW</strong> Finella is an AI-assisted, modular PHP framework with a minimal core: kernel, router, container, configuration, and error handling. Optional features live in packages.</p><p><strong>QUICK START</strong></p><pre><code class="language-php">// routes/web.php
-use Finella\Http\Router;
-use Finella\Http\Response;
+        <p><strong>FRAMEWORK</strong></p><p><strong>DEVELOPER GUIDE</strong></p><p>This guide is a single-file overview of the fnlla (finella) framework and its ecosystem. It is intentionally concise and keeps links to deeper docs in <code>documentation/src/</code>.</p><p><strong>CONTENTS</strong> <strong>-</strong> Overview <strong>-</strong> Quick start <strong>-</strong> Architecture <strong>-</strong> Routing <strong>-</strong> Middleware <strong>-</strong> Container and services <strong>-</strong> Configuration <strong>-</strong> Providers and discovery <strong>-</strong> Views <strong>-</strong> Error handling and logging <strong>-</strong> Packages <strong>-</strong> Testing <strong>-</strong> Deployment <strong>-</strong> Upgrade policy</p><p><strong>OVERVIEW</strong> fnlla (finella) is an AI-assisted, modular PHP framework with a minimal core: kernel, router, container, configuration, and error handling. Optional features live in packages.</p><p><strong>QUICK START</strong></p><pre><code class="language-php">// routes/web.php
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
     $router-&gt;get(&#039;/&#039;, [\App\Controllers\HomeController::class, &#039;index&#039;]);
 };</code></pre><p><strong>ARCHITECTURE</strong> <strong>-</strong> <code>public/index.php</code> loads autoload and the kernel. <strong>-</strong> <code>bootstrap/app.php</code> builds the container and config. <strong>-</strong> <code>HttpKernel</code> sets up middleware and routing.</p><p><strong>COMPONENT MAP (HIGH-LEVEL)</strong></p><pre><code class="language-text">App (starter or custom)
   -&gt; Framework Core (HTTP, container, config, errors)
   -&gt; Core Modules (auth, database, ORM, cache, sessions, logging, console)
-  -&gt; Optional Packages (queue, scheduler, mail, docs, ops, ai, etc.)</code></pre><p>Notes: <strong>-</strong> The framework core is always required. <strong>-</strong> Optional packages are installed only when you need them.</p><p><strong>WARM KERNEL (LONG-RUNNING)</strong> For long-running servers, boot once and reuse the kernel:</p><pre><code class="language-php">$kernel = new \Finella\Http\HttpKernel();
-$kernel-&gt;boot();</code></pre><p>Register resetters for per-request cleanup:</p><pre><code class="language-php">$app-&gt;registerResetter(new \App\Support\MyResetter());</code></pre><p><strong>ROUTING</strong> <strong>-</strong> Supports parameters, named routes, and controller handlers. <strong>-</strong> Uses container DI when available. <strong>-</strong> Routes cache is intended for production and is skipped when <code>APP_DEBUG=1</code> or <code>APP_ENV=local</code>. <strong>-</strong> Cached routes require string handlers and middleware (closures are not cacheable).</p><p><strong>MIDDLEWARE</strong> <strong>-</strong> Global middleware in <code>config/http/http.php</code>. <strong>-</strong> Per-route middleware via router methods. <strong>-</strong> Group middleware via <code>middlewareGroup()</code>. <strong>-</strong> Built-ins include <code>rate:</code> throttling and <code>can:</code> authorization.</p><p><strong>CONTAINER AND SERVICES</strong> Use <code>bind</code>, <code>singleton</code>, <code>instance</code>, and <code>call</code> to register and resolve services. The container auto-resolves constructor dependencies when possible.</p><p><strong>CONFIGURATION</strong> Config is loaded from <code>config/**/*.php</code> via <code>ConfigRepository</code>. Most settings are environment driven through <code>env()</code> keys. You can add <code>config/schema.php</code> to validate critical configuration on boot.</p><p><strong>PROVIDERS AND DISCOVERY</strong> Providers register and boot services. Discovery reads Composer metadata and caches to <code>bootstrap/cache/providers.php</code>. App templates refresh the cache when Composer metadata changes.</p><p><strong>VIEWS</strong> Templates live in <code>resources/views</code>. Use <code>view(&#039;pages/home&#039;)</code> or <code>View::render()</code>.</p><p><strong>ERROR HANDLING AND LOGGING</strong> <code>ExceptionHandler</code> renders safe responses. Use the core logging module for PSR-3 logging. Responses include <code>X-Request-Id</code>, <code>X-Trace-Id</code>, and <code>X-Span-Id</code> by default (configurable in <code>config/http/http.php</code>).</p><p><strong>PACKAGES</strong> Core modules live in the framework (auth, database, ORM, sessions, cookies, CSRF, cache, logging, request logging, console). Optional packages provide queue, scheduler, mail, notifications, docs, monitoring, storage adapters, and more.</p><p><strong>TESTING</strong> <strong>-</strong> <code>php scripts/smoke/run-smoke-tests.php</code> <strong>-</strong> <code>php app/scripts/http-smoke.php</code> <strong>-</strong> <code>tools/vendor/bin/phpunit -c tools/phpunit.xml</code></p><p><strong>DEPLOYMENT</strong> <strong>-</strong> DocumentRoot <code>public/</code> <strong>-</strong> <code>composer install --no-dev --optimize-autoloader</code> <strong>-</strong> Enable route cache for production</p><p><strong>UPGRADE POLICY</strong> Finella follows SemVer with clear patch/minor/major rules.</p><p>For detailed documentation, see the individual files in <code>documentation/src/</code>.</p><p><strong>FRAMEWORK</strong></p><p>This guide consolidates the core framework docs (HTTP, data, storage, forms, async, and utilities) into one place. Use it as the single reference for building product apps.</p><p><strong>CORE</strong></p><p>This document consolidates container usage, configuration, and support policy.</p><p><strong>CONTAINER BASICS</strong> The container supports binding, singleton services, and callable invocation.</p><pre><code class="language-php">$app-&gt;singleton(Foo::class, fn () =&gt; new Foo());
-$foo = $app-&gt;make(Foo::class);</code></pre><p>For long-running servers, register per-request resetters:</p><pre><code class="language-php">$app-&gt;registerResetter(new \App\Support\MyResetter());</code></pre><p><strong>CONFIGURATION</strong> Configuration is loaded from <code>config/**/*.php</code> and uses <code>env()</code>. Primary access is via <code>Finella\Core\ConfigRepository</code>.</p><pre><code class="language-php">$config = $app-&gt;configRepository();
+  -&gt; Optional Packages (queue, scheduler, mail, docs, ops, ai, etc.)</code></pre><p>Notes: <strong>-</strong> The framework core is always required. <strong>-</strong> Optional packages are installed only when you need them.</p><p><strong>WARM KERNEL (LONG-RUNNING)</strong> For long-running servers, boot once and reuse the kernel:</p><pre><code class="language-php">$kernel = new \Fnlla\\Http\HttpKernel();
+$kernel-&gt;boot();</code></pre><p>Register resetters for per-request cleanup:</p><pre><code class="language-php">$app-&gt;registerResetter(new \App\Support\MyResetter());</code></pre><p><strong>ROUTING</strong> <strong>-</strong> Supports parameters, named routes, and controller handlers. <strong>-</strong> Uses container DI when available. <strong>-</strong> Routes cache is intended for production and is skipped when <code>APP_DEBUG=1</code> or <code>APP_ENV=local</code>. <strong>-</strong> Cached routes require string handlers and middleware (closures are not cacheable).</p><p><strong>MIDDLEWARE</strong> <strong>-</strong> Global middleware in <code>config/http/http.php</code>. <strong>-</strong> Per-route middleware via router methods. <strong>-</strong> Group middleware via <code>middlewareGroup()</code>. <strong>-</strong> Built-ins include <code>rate:</code> throttling and <code>can:</code> authorization.</p><p><strong>CONTAINER AND SERVICES</strong> Use <code>bind</code>, <code>singleton</code>, <code>instance</code>, and <code>call</code> to register and resolve services. The container auto-resolves constructor dependencies when possible.</p><p><strong>CONFIGURATION</strong> Config is loaded from <code>config/**/*.php</code> via <code>ConfigRepository</code>. Most settings are environment driven through <code>env()</code> keys. You can add <code>config/schema.php</code> to validate critical configuration on boot.</p><p><strong>PROVIDERS AND DISCOVERY</strong> Providers register and boot services. Discovery reads Composer metadata and caches to <code>bootstrap/cache/providers.php</code>. App templates refresh the cache when Composer metadata changes.</p><p><strong>VIEWS</strong> Templates live in <code>resources/views</code>. Use <code>view(&#039;pages/home&#039;)</code> or <code>View::render()</code>.</p><p><strong>ERROR HANDLING AND LOGGING</strong> <code>ExceptionHandler</code> renders safe responses. Use the core logging module for PSR-3 logging. Responses include <code>X-Request-Id</code>, <code>X-Trace-Id</code>, and <code>X-Span-Id</code> by default (configurable in <code>config/http/http.php</code>).</p><p><strong>PACKAGES</strong> Core modules live in the framework (auth, database, ORM, sessions, cookies, CSRF, cache, logging, request logging, console). Optional packages provide queue, scheduler, mail, notifications, docs, monitoring, storage adapters, and more.</p><p><strong>TESTING</strong> <strong>-</strong> <code>php scripts/smoke/run-smoke-tests.php</code> <strong>-</strong> <code>php app/scripts/http-smoke.php</code> <strong>-</strong> <code>tools/vendor/bin/phpunit -c tools/phpunit.xml</code></p><p><strong>DEPLOYMENT</strong> <strong>-</strong> DocumentRoot <code>public/</code> <strong>-</strong> <code>composer install --no-dev --optimize-autoloader</code> <strong>-</strong> Enable route cache for production</p><p><strong>UPGRADE POLICY</strong> fnlla (finella) follows SemVer with clear patch/minor/major rules.</p><p>For detailed documentation, see the individual files in <code>documentation/src/</code>.</p><p><strong>FRAMEWORK</strong></p><p>This guide consolidates the core framework docs (HTTP, data, storage, forms, async, and utilities) into one place. Use it as the single reference for building product apps.</p><p><strong>CORE</strong></p><p>This document consolidates container usage, configuration, and support policy.</p><p><strong>CONTAINER BASICS</strong> The container supports binding, singleton services, and callable invocation.</p><pre><code class="language-php">$app-&gt;singleton(Foo::class, fn () =&gt; new Foo());
+$foo = $app-&gt;make(Foo::class);</code></pre><p>For long-running servers, register per-request resetters:</p><pre><code class="language-php">$app-&gt;registerResetter(new \App\Support\MyResetter());</code></pre><p><strong>CONFIGURATION</strong> Configuration is loaded from <code>config/**/*.php</code> and uses <code>env()</code>. Primary access is via <code>Fnlla\\Core\ConfigRepository</code>.</p><pre><code class="language-php">$config = $app-&gt;configRepository();
 $debug = $config-&gt;get(&#039;debug&#039;, false);</code></pre><pre><code class="language-php">return [
-    &#039;name&#039; =&gt; env(&#039;APP_NAME&#039;, &#039;Finella&#039;),
+    &#039;name&#039; =&gt; env(&#039;APP_NAME&#039;, &#039;fnlla (finella)&#039;),
     &#039;env&#039; =&gt; env(&#039;APP_ENV&#039;, &#039;local&#039;),
     &#039;debug&#039; =&gt; env(&#039;APP_DEBUG&#039;, false),
-];</code></pre><p>Optional runtime configuration can be stored in the database with <code>fnlla/settings</code>. For action logs, enable <code>fnlla/audit</code>.</p><p><strong>ENVIRONMENT</strong> The starter uses <code>Finella\Support\Dotenv</code> and loads <code>.env</code> when present.</p><p><strong>SUPPORT POLICY</strong> <strong>-</strong> PHP 8.5+ (CI: 8.5) <strong>-</strong> Databases: SQLite, MySQL/MariaDB, PostgreSQL (PDO drivers) <strong>-</strong> Cache: filesystem (default), array (in-memory), Redis (ext-redis) <strong>-</strong> Queue: sync, database, Redis (ext-redis)</p><p><strong>HTTP</strong></p><p>This document consolidates HTTP lifecycle, routing, and middleware in Finella.</p><p><strong>REQUEST LIFECYCLE</strong> <code>HttpKernel</code> wraps the request lifecycle and runs middleware + routing.</p><p><strong>REQUEST/BOOT DIAGRAM (ASCII)</strong></p><pre><code class="language-text">PSR-7 Request
+];</code></pre><p>Optional runtime configuration can be stored in the database with <code>fnlla/settings</code>. For action logs, enable <code>fnlla/audit</code>.</p><p><strong>ENVIRONMENT</strong> The starter uses <code>Fnlla\\Support\Dotenv</code> and loads <code>.env</code> when present.</p><p><strong>SUPPORT POLICY</strong> <strong>-</strong> PHP 8.5+ (CI: 8.5) <strong>-</strong> Databases: SQLite, MySQL/MariaDB, PostgreSQL (PDO drivers) <strong>-</strong> Cache: filesystem (default), array (in-memory), Redis (ext-redis) <strong>-</strong> Queue: sync, database, Redis (ext-redis)</p><p><strong>HTTP</strong></p><p>This document consolidates HTTP lifecycle, routing, and middleware in fnlla (finella).</p><p><strong>REQUEST LIFECYCLE</strong> <code>HttpKernel</code> wraps the request lifecycle and runs middleware + routing.</p><p><strong>REQUEST/BOOT DIAGRAM (ASCII)</strong></p><pre><code class="language-text">PSR-7 Request
   |
   v
 HttpKernel::handle()
@@ -59,7 +59,7 @@ HttpKernel::handle()
   |-- Register providers -&gt; boot providers
   |-- Load plugins (optional)
   |
-  |-- Build Finella Request + Router
+  |-- Build fnlla (finella) Request + Router
   |-- Register middleware groups + aliases + global middleware
   |-- Load routes cache OR config/routes.php + routes/web.php
   |
@@ -74,15 +74,15 @@ Response
   |
   |-- ExceptionHandler on errors
   v
-HTTP Response</code></pre><p><strong>WARM KERNEL (LONG-RUNNING)</strong> For long-running servers you can boot once and reuse the kernel per request:</p><pre><code class="language-php">$kernel = new \Finella\Http\HttpKernel();
+HTTP Response</code></pre><p><strong>WARM KERNEL (LONG-RUNNING)</strong> For long-running servers you can boot once and reuse the kernel per request:</p><pre><code class="language-php">$kernel = new \Fnlla\\Http\HttpKernel();
 $kernel-&gt;boot();
-// handle requests in a loop</code></pre><p>This skips provider/plugin bootstrapping on each request. Use resetters for per-request cleanup:</p><pre><code class="language-php">$app-&gt;registerResetter(new \App\Support\MyResetter());</code></pre><p><strong>ROUTING</strong> Routes support parameters and DI when the container is available.</p><p><strong>ROUTES CACHE (PRODUCTION)</strong> Routes cache is intended for production and is skipped when <code>APP_DEBUG=true</code> or <code>APP_ENV=local</code>. Cached routes require string handlers and middleware, so closures are not cacheable.</p><p><strong>BASIC ROUTE</strong> <code>routes/web.php</code></p><pre><code class="language-php">use Finella\Http\Router;
-use Finella\Http\Response;
+// handle requests in a loop</code></pre><p>This skips provider/plugin bootstrapping on each request. Use resetters for per-request cleanup:</p><pre><code class="language-php">$app-&gt;registerResetter(new \App\Support\MyResetter());</code></pre><p><strong>ROUTING</strong> Routes support parameters and DI when the container is available.</p><p><strong>ROUTES CACHE (PRODUCTION)</strong> Routes cache is intended for production and is skipped when <code>APP_DEBUG=true</code> or <code>APP_ENV=local</code>. Cached routes require string handlers and middleware, so closures are not cacheable.</p><p><strong>BASIC ROUTE</strong> <code>routes/web.php</code></p><pre><code class="language-php">use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
-    $router-&gt;get(&#039;/&#039;, fn () =&gt; Response::text(&#039;Hello Finella&#039;));
-};</code></pre><p><strong>ROUTE PARAMETERS</strong></p><pre><code class="language-php">use Finella\Http\Request;
-use Finella\Http\Response;
+    $router-&gt;get(&#039;/&#039;, fn () =&gt; Response::text(&#039;Hello fnlla (finella)&#039;));
+};</code></pre><p><strong>ROUTE PARAMETERS</strong></p><pre><code class="language-php">use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 $router-&gt;get(&#039;/users/{id}&#039;, function (Request $request): Response {
     return Response::json([&#039;id&#039; =&gt; $request-&gt;getAttribute(&#039;id&#039;)]);
@@ -91,7 +91,7 @@ $router-&gt;get(&#039;/account&#039;, &#039;AccountController@index&#039;);</cod
 $router-&gt;add(&#039;DELETE&#039;, &#039;/cards/{id}&#039;, [CardsController::class, &#039;delete&#039;]);</code></pre><p><strong>NAMED ROUTES</strong></p><pre><code class="language-php">$router-&gt;get(&#039;/users/{id}&#039;, [UserController::class, &#039;show&#039;], name: &#039;users.show&#039;);
 route(&#039;users.show&#039;, [&#039;id&#039; =&gt; 123]);</code></pre><p><strong>GROUPING</strong></p><pre><code class="language-php">$router-&gt;group([&#039;prefix&#039; =&gt; &#039;/admin&#039;, &#039;middleware&#039; =&gt; [&#039;auth&#039;]], function (Router $router): void {
     $router-&gt;get(&#039;/users&#039;, [AdminUsersController::class, &#039;index&#039;]);
-});</code></pre><p><strong>MIDDLEWARE</strong> Middleware can be global, grouped, or per-route.</p><p><strong>GLOBAL MIDDLEWARE</strong> <code>config/http/http.php</code></p><pre><code class="language-php">use Finella\Http\Middleware\SecurityHeadersMiddleware;
+});</code></pre><p><strong>MIDDLEWARE</strong> Middleware can be global, grouped, or per-route.</p><p><strong>GLOBAL MIDDLEWARE</strong> <code>config/http/http.php</code></p><pre><code class="language-php">use Fnlla\\Http\Middleware\SecurityHeadersMiddleware;
 
 return [
     &#039;global&#039; =&gt; [
@@ -99,10 +99,10 @@ return [
     ],
 ];</code></pre><p><strong>PER-ROUTE MIDDLEWARE</strong></p><pre><code class="language-php">$router-&gt;get(&#039;/dashboard&#039;, fn () =&gt; view(&#039;dashboard&#039;), middleware: [&#039;auth&#039;]);</code></pre><p><strong>MIDDLEWARE ALIASES</strong> Aliases can shorten route middleware definitions:</p><pre><code class="language-php">return [
     &#039;middleware_aliases&#039; =&gt; [
-        &#039;auth&#039; =&gt; \Finella\Auth\AuthMiddleware::class,
+        &#039;auth&#039; =&gt; \Fnlla\\Auth\AuthMiddleware::class,
     ],
-];</code></pre><p><strong>RESPONSES</strong> Helpers: <strong>-</strong> <code>Response::text()</code> <strong>-</strong> <code>Response::html()</code> <strong>-</strong> <code>Response::json()</code> <strong>-</strong> <code>Response::xml()</code></p><p>Finella adds <code>X-Request-Id</code>, <code>X-Trace-Id</code>, and <code>X-Span-Id</code> to responses by default. Disable with <code>http.request_id_header=false</code>, <code>http.trace_id_header=false</code>, or <code>http.span_id_header=false</code>.</p><p><strong>DATABASE</strong></p><p>This document consolidates migrations and ORM usage.</p><p><strong>MIGRATIONS</strong> Create and run migrations with the CLI:</p><pre><code class="language-bash">php bin/finella make:migration create_users_table
-php bin/finella migrate</code></pre><p><strong>ORM BASICS</strong> Define a model:</p><pre><code class="language-php">use Finella\Orm\Model;
+];</code></pre><p><strong>RESPONSES</strong> Helpers: <strong>-</strong> <code>Response::text()</code> <strong>-</strong> <code>Response::html()</code> <strong>-</strong> <code>Response::json()</code> <strong>-</strong> <code>Response::xml()</code></p><p>fnlla (finella) adds <code>X-Request-Id</code>, <code>X-Trace-Id</code>, and <code>X-Span-Id</code> to responses by default. Disable with <code>http.request_id_header=false</code>, <code>http.trace_id_header=false</code>, or <code>http.span_id_header=false</code>.</p><p><strong>DATABASE</strong></p><p>This document consolidates migrations and ORM usage.</p><p><strong>MIGRATIONS</strong> Create and run migrations with the CLI:</p><pre><code class="language-bash">php bin/fnlla make:migration create_users_table
+php bin/fnlla migrate</code></pre><p><strong>ORM BASICS</strong> Define a model:</p><pre><code class="language-php">use Fnlla\\Orm\Model;
 
 final class User extends Model
 {
@@ -118,7 +118,7 @@ $names = User::orderBy(&#039;created_at&#039;)-&gt;pluck(&#039;name&#039;);</cod
     }
 }</code></pre><p><strong>RELATIONSHIPS</strong> Use model relations where applicable (see ORM docs in framework package for details). Supported relations: <code>belongsTo</code>, <code>hasMany</code>, <code>hasOne</code>, and <code>belongsToMany</code>.</p><p>Eager loading supports nested relations:</p><pre><code class="language-php">$users = User::query()-&gt;with([&#039;posts.comments&#039;])-&gt;get();</code></pre><p>Relation helpers:</p><pre><code class="language-php">$user-&gt;posts()-&gt;create([&#039;title&#039; =&gt; &#039;Hello&#039;]);
 $role-&gt;users()-&gt;attach($userId);
-$role-&gt;users()-&gt;sync([$userId, $adminId]);</code></pre><p><strong>SOFT DELETES AND SCOPES</strong> Models can opt into soft deletes by using <code>Finella\Orm\SoftDeletes</code>.</p><pre><code class="language-php">use Finella\Orm\SoftDeletes;
+$role-&gt;users()-&gt;sync([$userId, $adminId]);</code></pre><p><strong>SOFT DELETES AND SCOPES</strong> Models can opt into soft deletes by using <code>Fnlla\\Orm\SoftDeletes</code>.</p><pre><code class="language-php">use Fnlla\\Orm\SoftDeletes;
 
 final class User extends Model
 {
@@ -132,7 +132,7 @@ User::query()-&gt;avg(&#039;score&#039;);
 User::query()-&gt;min(&#039;created_at&#039;);
 User::query()-&gt;max(&#039;created_at&#039;);</code></pre><p>Local scopes:</p><pre><code class="language-php">final class User extends Model
 {
-    public function scopeActive(\Finella\Orm\QueryBuilder $query): void
+    public function scopeActive(\Fnlla\\Orm\QueryBuilder $query): void
     {
         $query-&gt;where(&#039;status&#039;, &#039;active&#039;);
     }
@@ -140,7 +140,7 @@ User::query()-&gt;max(&#039;created_at&#039;);</code></pre><p>Local scopes:</p><
 {
     protected static array $globalScopes = [&#039;active&#039; =&gt; &#039;activeScope&#039;];
 
-    public function activeScope(\Finella\Orm\QueryBuilder $query): void
+    public function activeScope(\Fnlla\\Orm\QueryBuilder $query): void
     {
         $query-&gt;where(&#039;status&#039;, &#039;active&#039;);
     }
@@ -151,13 +151,13 @@ $raw = User::withoutGlobalScopes()-&gt;get();</code></pre><p>Relation filters:</
 User::whereHas(&#039;posts.comments&#039;)-&gt;get();
 User::withCount(&#039;posts&#039;)-&gt;get();
 User::withCount(&#039;posts as published_posts&#039;)-&gt;get();
-User::withSum(&#039;posts&#039;, &#039;score&#039;)-&gt;get();</code></pre><p><strong>RUNTIME SETTINGS &amp; AUDIT</strong> If you need runtime configuration or audit trails stored in the database: <strong>-</strong> <code>fnlla/settings</code> - simple key/value store for admin-configurable settings. <strong>-</strong> <code>fnlla/audit</code> - audit log for tracking who changed what.</p><p><strong>MULTI-TENANCY</strong> For tenant-scoped data, enable <code>fnlla/tenancy</code> and extend <code>TenantModel</code>:</p><pre><code class="language-php">use Finella\Tenancy\TenantModel;
+User::withSum(&#039;posts&#039;, &#039;score&#039;)-&gt;get();</code></pre><p><strong>RUNTIME SETTINGS &amp; AUDIT</strong> If you need runtime configuration or audit trails stored in the database: <strong>-</strong> <code>fnlla/settings</code> - simple key/value store for admin-configurable settings. <strong>-</strong> <code>fnlla/audit</code> - audit log for tracking who changed what.</p><p><strong>MULTI-TENANCY</strong> For tenant-scoped data, enable <code>fnlla/tenancy</code> and extend <code>TenantModel</code>:</p><pre><code class="language-php">use Fnlla\\Tenancy\TenantModel;
 
 final class Project extends TenantModel
 {
     protected string $table = &#039;projects&#039;;
-}</code></pre><p>Set <code>TENANCY_ENABLED=1</code> and add the <code>TenantMiddleware</code> in <code>config/http/http.php</code>.</p><p><strong>STORAGE</strong></p><p><strong>FORMS &amp; VALIDATION</strong></p><p>Finella provides a lightweight HTML form flow built on top of validation, session flash, and response helpers.</p><p><strong>VALIDATION QUICK USAGE</strong> Validate inside a route or controller:</p><pre><code class="language-php">use Finella\Http\Request;
-use Finella\Support\ValidationException;
+}</code></pre><p>Set <code>TENANCY_ENABLED=1</code> and add the <code>TenantMiddleware</code> in <code>config/http/http.php</code>.</p><p><strong>STORAGE</strong></p><p><strong>FORMS &amp; VALIDATION</strong></p><p>fnlla (finella) provides a lightweight HTML form flow built on top of validation, session flash, and response helpers.</p><p><strong>VALIDATION QUICK USAGE</strong> Validate inside a route or controller:</p><pre><code class="language-php">use Fnlla\\Http\Request;
+use Fnlla\\Support\ValidationException;
 
 $router-&gt;post(&#039;/signup&#039;, function (Request $request) {
     try {
@@ -168,11 +168,11 @@ $router-&gt;post(&#039;/signup&#039;, function (Request $request) {
         ], [], &#039;signup&#039;);
 
         // $data contains validated values.
-        return \Finella\Http\Response::json([&#039;ok&#039; =&gt; true]);
+        return \Fnlla\\Http\Response::json([&#039;ok&#039; =&gt; true]);
     } catch (ValidationException $e) {
-        // For HTML requests, Finella flashes errors + old input to session
+        // For HTML requests, fnlla (finella) flashes errors + old input to session
         // and redirects back automatically (see below).
-        return \Finella\Http\Response::redirect(&#039;/signup&#039;);
+        return \Fnlla\\Http\Response::redirect(&#039;/signup&#039;);
     }
 });</code></pre><p>For JSON requests (<code>Accept: application/json</code> or <code>/api</code>), the exception handler returns:</p><pre><code class="language-json">{
   &quot;message&quot;: &quot;Validation failed.&quot;,
@@ -195,7 +195,7 @@ $router-&gt;post(&#039;/signup&#039;, function (Request $request) {
                 : &#039;Slug may only contain a-z, 0-9 and dashes.&#039;;
         },
     ],
-]);</code></pre><p>Register reusable rules:</p><pre><code class="language-php">use Finella\Support\Validator;
+]);</code></pre><p>Register reusable rules:</p><pre><code class="language-php">use Fnlla\\Support\Validator;
 
 Validator::extend(&#039;upper&#039;, function ($value): bool {
     return is_string($value) &amp;&amp; strtoupper($value) === $value;
@@ -209,7 +209,7 @@ $data = Validator::make($input, [
     &#039;required&#039; =&gt; &#039;This field is required.&#039;,
 ];
 
-$validator = Validator::make($input, $rules, $messages);</code></pre><p>Keys are either <code>field.rule</code> or just <code>rule</code> for global fallbacks.</p><p><strong>HTML FORMS AND REDIRECTS</strong> When a <code>ValidationException</code> is thrown during an HTML request, Finella automatically: <strong>-</strong> redirects back to the previous page <strong>-</strong> flashes validation errors <strong>-</strong> flashes old input</p><p>For JSON requests the response remains a <code>422</code> with <code>{&quot;errors&quot;:{...}}</code>.</p><p><strong>RESPONSE HELPERS</strong></p><pre><code class="language-php">use Finella\Http\Response;
+$validator = Validator::make($input, $rules, $messages);</code></pre><p>Keys are either <code>field.rule</code> or just <code>rule</code> for global fallbacks.</p><p><strong>HTML FORMS AND REDIRECTS</strong> When a <code>ValidationException</code> is thrown during an HTML request, fnlla (finella) automatically: <strong>-</strong> redirects back to the previous page <strong>-</strong> flashes validation errors <strong>-</strong> flashes old input</p><p>For JSON requests the response remains a <code>422</code> with <code>{&quot;errors&quot;:{...}}</code>.</p><p><strong>RESPONSE HELPERS</strong></p><pre><code class="language-php">use Fnlla\\Http\Response;
 
 return Response::redirect(&#039;/form&#039;)
     -&gt;withErrors([&#039;name&#039; =&gt; [&#039;Required&#039;]], &#039;default&#039;)
@@ -229,7 +229,7 @@ return back();</code></pre><p><strong>OLD INPUT</strong></p><pre><code class="la
     &#039;auto_migrate&#039; =&gt; false,
     &#039;table&#039; =&gt; &#039;notifications&#039;,
     &#039;default_channel&#039; =&gt; &#039;email&#039;,
-];</code></pre><p><strong>ROUTES</strong></p><pre><code class="language-php">use Finella\Notifications\NotificationsRoutes;
+];</code></pre><p><strong>ROUTES</strong></p><pre><code class="language-php">use Fnlla\\Notifications\NotificationsRoutes;
 
 NotificationsRoutes::register($router, [
     &#039;prefix&#039; =&gt; &#039;/api/notifications&#039;,
@@ -240,13 +240,13 @@ NotificationsRoutes::register($router, [
     &#039;default_font&#039; =&gt; env(&#039;PDF_DEFAULT_FONT&#039;, &#039;DejaVu Sans&#039;),
     &#039;remote_enabled&#039; =&gt; (bool) env(&#039;PDF_REMOTE_ENABLED&#039;, false),
     &#039;download_name&#039; =&gt; env(&#039;PDF_DOWNLOAD_NAME&#039;, &#039;document.pdf&#039;),
-];</code></pre><p><strong>ROUTES (OPTIONAL)</strong></p><pre><code class="language-php">use Finella\Pdf\PdfRoutes;
+];</code></pre><p><strong>ROUTES (OPTIONAL)</strong></p><pre><code class="language-php">use Fnlla\\Pdf\PdfRoutes;
 
 return static function (Router $router): void {
     PdfRoutes::register($router, [&#039;prefix&#039; =&gt; &#039;/api/pdf&#039;]);
-};</code></pre><p>This adds <code>GET /api/pdf/invoice</code> (invoice) and <code>GET /api/pdf/pitch-deck</code> (pitch deck sample).</p><p><strong>USAGE</strong></p><pre><code class="language-php">use Finella\Pdf\PdfManager;
-use Finella\Pdf\Templates\InvoiceTemplate;
-use Finella\Pdf\Templates\PitchDeckTemplate;
+};</code></pre><p>This adds <code>GET /api/pdf/invoice</code> (invoice) and <code>GET /api/pdf/pitch-deck</code> (pitch deck sample).</p><p><strong>USAGE</strong></p><pre><code class="language-php">use Fnlla\\Pdf\PdfManager;
+use Fnlla\\Pdf\Templates\InvoiceTemplate;
+use Fnlla\\Pdf\Templates\PitchDeckTemplate;
 
 public function invoice(PdfManager $pdf): Response
 {
@@ -269,10 +269,10 @@ $html = $template-&gt;render([
     &#039;company&#039; =&gt; [&#039;website&#039; =&gt; &#039;https://acme.test&#039;],
 ]);
 $binary = $pdf-&gt;render($html);
-return $pdf-&gt;download($binary, &#039;pitch-deck.pdf&#039;);</code></pre><p><strong>UI INTEGRATION</strong> A UI can call <code>/api/pdf/invoice?download=1</code> or <code>/api/pdf/pitch-deck?download=1</code> to trigger a file download. Use your own controller/template if you need custom layouts.</p><p><strong>ASYNC</strong></p><p>This document consolidates events, queues, and schedulers.</p><p><strong>EVENTS</strong> Register listeners and dispatch events for decoupled workflows.</p><p><strong>QUEUE</strong> Configure the queue driver in <code>config/queue/queue.php</code>.</p><p>Use the worker:</p><pre><code class="language-bash">php bin/finella queue:work</code></pre><p>Redis driver:</p><pre><code class="language-bash">QUEUE_DRIVER=redis
+return $pdf-&gt;download($binary, &#039;pitch-deck.pdf&#039;);</code></pre><p><strong>UI INTEGRATION</strong> A UI can call <code>/api/pdf/invoice?download=1</code> or <code>/api/pdf/pitch-deck?download=1</code> to trigger a file download. Use your own controller/template if you need custom layouts.</p><p><strong>ASYNC</strong></p><p>This document consolidates events, queues, and schedulers.</p><p><strong>EVENTS</strong> Register listeners and dispatch events for decoupled workflows.</p><p><strong>QUEUE</strong> Configure the queue driver in <code>config/queue/queue.php</code>.</p><p>Use the worker:</p><pre><code class="language-bash">php bin/fnlla queue:work</code></pre><p>Redis driver:</p><pre><code class="language-bash">QUEUE_DRIVER=redis
 QUEUE_NAME=default
 REDIS_HOST=127.0.0.1
-REDIS_PORT=6379</code></pre><p>Requires the <code>ext-redis</code> PHP extension. The worker supports both <code>database</code> and <code>redis</code> drivers.</p><p><strong>SCHEDULER</strong> Define schedules in <code>routes/schedule.php</code> and run:</p><pre><code class="language-bash">php bin/finella schedule:run</code></pre><p><strong>UTILITIES</strong></p><p>This page lists utility helpers that are available out of the box in Finella.</p><p><strong>UPLOADPOLICY</strong> Validate uploads and sanitize filenames:</p><pre><code class="language-php">use Finella\Support\UploadPolicy;
+REDIS_PORT=6379</code></pre><p>Requires the <code>ext-redis</code> PHP extension. The worker supports both <code>database</code> and <code>redis</code> drivers.</p><p><strong>SCHEDULER</strong> Define schedules in <code>routes/schedule.php</code> and run:</p><pre><code class="language-bash">php bin/fnlla schedule:run</code></pre><p><strong>UTILITIES</strong></p><p>This page lists utility helpers that are available out of the box in fnlla (finella).</p><p><strong>UPLOADPOLICY</strong> Validate uploads and sanitize filenames:</p><pre><code class="language-php">use Fnlla\\Support\UploadPolicy;
 
 $errors = UploadPolicy::validate($file, [
     &#039;max_bytes&#039; =&gt; 10 * 1024 * 1024,
@@ -280,21 +280,21 @@ $errors = UploadPolicy::validate($file, [
     &#039;blocked_extensions&#039; =&gt; [&#039;php&#039;, &#039;exe&#039;],
 ]);
 
-$safeName = UploadPolicy::sanitizeFilename($file-&gt;getClientFilename() ?? &#039;&#039;);</code></pre><p><strong>SCHEMAINSPECTOR</strong> Check for a column across SQLite/MySQL/Postgres:</p><pre><code class="language-php">use Finella\Database\SchemaInspector;
+$safeName = UploadPolicy::sanitizeFilename($file-&gt;getClientFilename() ?? &#039;&#039;);</code></pre><p><strong>SCHEMAINSPECTOR</strong> Check for a column across SQLite/MySQL/Postgres:</p><pre><code class="language-php">use Fnlla\\Database\SchemaInspector;
 
 $inspector = new SchemaInspector();
 if ($inspector-&gt;hasColumn(&#039;users&#039;, &#039;last_seen&#039;)) {
     // safe to read/write this column
-}</code></pre><p><strong>HTTPCLIENT</strong> Simple HTTP wrapper with JSON helpers:</p><pre><code class="language-php">use Finella\Support\HttpClient;
+}</code></pre><p><strong>HTTPCLIENT</strong> Simple HTTP wrapper with JSON helpers:</p><pre><code class="language-php">use Fnlla\\Support\HttpClient;
 
 $client = new HttpClient();
 $response = $client-&gt;getJson(&#039;https://example.com/api/status&#039;);
 if ($response[&#039;ok&#039;]) {
     $data = $response[&#039;data&#039;];
-}</code></pre><p><strong>REPORTPAGINATOR</strong> Lightweight paginator for non-ORM datasets:</p><pre><code class="language-php">use Finella\Support\ReportPaginator;
+}</code></pre><p><strong>REPORTPAGINATOR</strong> Lightweight paginator for non-ORM datasets:</p><pre><code class="language-php">use Fnlla\\Support\ReportPaginator;
 
 $paginator = new ReportPaginator($rows, $total, 25, $page, &#039;/reports&#039;);
-echo $paginator-&gt;links(&#039;partials.pagination&#039;);</code></pre><p><strong>VALIDATIONHELPER</strong> Flatten validation errors into a clean list:</p><pre><code class="language-php">use Finella\Support\ValidationHelper;
+echo $paginator-&gt;links(&#039;partials.pagination&#039;);</code></pre><p><strong>VALIDATIONHELPER</strong> Flatten validation errors into a clean list:</p><pre><code class="language-php">use Fnlla\\Support\ValidationHelper;
 
 $errors = ValidationHelper::errors($request, [
     &#039;email&#039; =&gt; [&#039;required&#039;, &#039;email&#039;],
@@ -302,9 +302,9 @@ $errors = ValidationHelper::errors($request, [
 
 if ($errors !== []) {
     $html = ValidationHelper::formatAsHtmlList($errors);
-}</code></pre><p><strong>FALLBACKLOGGER</strong> Fallback logging to file when a PSR logger is unavailable:</p><pre><code class="language-php">use Finella\Support\FallbackLogger;
+}</code></pre><p><strong>FALLBACKLOGGER</strong> Fallback logging to file when a PSR logger is unavailable:</p><pre><code class="language-php">use Fnlla\\Support\FallbackLogger;
 
-FallbackLogger::error(&#039;Invoice failed&#039;, [&#039;invoice_id&#039; =&gt; 123]);</code></pre><p><strong>ORM ERGONOMICS</strong></p><p>This document defines the ORM ergonomics standard for Finella. It lists what is already delivered and what remains on the roadmap.</p><p><strong>DELIVERED (3.X)</strong> <strong>-</strong> Query helpers: <code>firstOrFail</code>, <code>count</code>, <code>exists</code>, <code>pluck</code>, <code>take</code>, <code>skip</code>. <strong>-</strong> Query aggregates: <code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code>. <strong>-</strong> Soft deletes: <code>withTrashed</code>, <code>onlyTrashed</code>, <code>restore</code>, <code>forceDelete</code>. <strong>-</strong> Scopes: <code>scopeX</code> on models with <code>Model::query()-&gt;x()</code>. <strong>-</strong> Global scopes: automatic constraints applied to every query, named and toggleable. <strong>-</strong> Relations: <code>belongsTo</code>, <code>hasMany</code>, <code>hasOne</code>, <code>belongsToMany</code>. <strong>-</strong> Relation helpers: <code>create</code>, <code>save</code>, <code>saveMany</code>, <code>attach</code>, <code>detach</code>, <code>sync</code>. <strong>-</strong> Pivot metadata: <code>withPivot([...])</code>, <code>withTimestamps()</code>, and <code>pivot</code> relation on results. <strong>-</strong> Relation filters: <code>has</code> with operator/count, <code>whereHas</code>, <code>orWhereHas</code>, <code>whereDoesntHave</code>, nested <code>whereHas</code>, <code>withCount</code> (alias support). <strong>-</strong> Aggregates: <code>withSum</code>, <code>withAvg</code>, <code>withMin</code>, <code>withMax</code>. <strong>-</strong> Accessors/mutators: <code>getFooAttribute</code>, <code>setFooAttribute</code>. <strong>-</strong> Casts: <code>int</code>, <code>float</code>, <code>bool</code>, <code>datetime</code>, <code>json</code>.</p><p><strong>UX GUARANTEES (GOLDEN PATH)</strong> <strong>-</strong> Model API must support Eloquent-style statics: <strong>-</strong> <code>User::where(...)-&gt;get()</code> and <code>User::latest()-&gt;first()</code>. <strong>-</strong> Relation chaining must be fluent: <strong>-</strong> <code>$user-&gt;posts()-&gt;where(...)-&gt;latest()-&gt;get()</code>. <strong>-</strong> Soft deletes must be opt-in and safe by default. <strong>-</strong> Errors must be explicit (no silent failures for missing classes).</p><p><strong>ROADMAP (NEXT ERGONOMICS LAYER)</strong> <strong>-</strong> <code>firstOrNew</code>, <code>updateOrCreate</code> parity with additional options. <strong>-</strong> Pivot metadata helpers (timestamps, custom columns). <strong>-</strong> Lightweight query profiler for dev.</p><p><strong>3.0 MUST-HAVE CHECKLIST (PRIORITIES + TARGET DATES)</strong> P0 (target: 30 Sep 2026) <strong>-</strong> <code>withCount</code> for nested relations using deep aggregates.</p><p>P1 (target: 31 Mar 2027) <strong>-</strong> <code>belongsToMany</code> pivot model casting and mutators. <strong>-</strong> Polymorphic relations (<code>morphTo</code>, <code>morphMany</code>). <strong>-</strong> Query macros and fluent scopes registry.</p><p><strong>USAGE EXAMPLES</strong></p><pre><code class="language-php">$project = Project::firstOrCreate(
+FallbackLogger::error(&#039;Invoice failed&#039;, [&#039;invoice_id&#039; =&gt; 123]);</code></pre><p><strong>ORM ERGONOMICS</strong></p><p>This document defines the ORM ergonomics standard for fnlla (finella). It lists what is already delivered and what remains on the roadmap.</p><p><strong>DELIVERED (3.X)</strong> <strong>-</strong> Query helpers: <code>firstOrFail</code>, <code>count</code>, <code>exists</code>, <code>pluck</code>, <code>take</code>, <code>skip</code>. <strong>-</strong> Query aggregates: <code>sum</code>, <code>avg</code>, <code>min</code>, <code>max</code>. <strong>-</strong> Soft deletes: <code>withTrashed</code>, <code>onlyTrashed</code>, <code>restore</code>, <code>forceDelete</code>. <strong>-</strong> Scopes: <code>scopeX</code> on models with <code>Model::query()-&gt;x()</code>. <strong>-</strong> Global scopes: automatic constraints applied to every query, named and toggleable. <strong>-</strong> Relations: <code>belongsTo</code>, <code>hasMany</code>, <code>hasOne</code>, <code>belongsToMany</code>. <strong>-</strong> Relation helpers: <code>create</code>, <code>save</code>, <code>saveMany</code>, <code>attach</code>, <code>detach</code>, <code>sync</code>. <strong>-</strong> Pivot metadata: <code>withPivot([...])</code>, <code>withTimestamps()</code>, and <code>pivot</code> relation on results. <strong>-</strong> Relation filters: <code>has</code> with operator/count, <code>whereHas</code>, <code>orWhereHas</code>, <code>whereDoesntHave</code>, nested <code>whereHas</code>, <code>withCount</code> (alias support). <strong>-</strong> Aggregates: <code>withSum</code>, <code>withAvg</code>, <code>withMin</code>, <code>withMax</code>. <strong>-</strong> Accessors/mutators: <code>getFooAttribute</code>, <code>setFooAttribute</code>. <strong>-</strong> Casts: <code>int</code>, <code>float</code>, <code>bool</code>, <code>datetime</code>, <code>json</code>.</p><p><strong>UX GUARANTEES (GOLDEN PATH)</strong> <strong>-</strong> Model API must support Eloquent-style statics: <strong>-</strong> <code>User::where(...)-&gt;get()</code> and <code>User::latest()-&gt;first()</code>. <strong>-</strong> Relation chaining must be fluent: <strong>-</strong> <code>$user-&gt;posts()-&gt;where(...)-&gt;latest()-&gt;get()</code>. <strong>-</strong> Soft deletes must be opt-in and safe by default. <strong>-</strong> Errors must be explicit (no silent failures for missing classes).</p><p><strong>ROADMAP (NEXT ERGONOMICS LAYER)</strong> <strong>-</strong> <code>firstOrNew</code>, <code>updateOrCreate</code> parity with additional options. <strong>-</strong> Pivot metadata helpers (timestamps, custom columns). <strong>-</strong> Lightweight query profiler for dev.</p><p><strong>3.0 MUST-HAVE CHECKLIST (PRIORITIES + TARGET DATES)</strong> P0 (target: 30 Sep 2026) <strong>-</strong> <code>withCount</code> for nested relations using deep aggregates.</p><p>P1 (target: 31 Mar 2027) <strong>-</strong> <code>belongsToMany</code> pivot model casting and mutators. <strong>-</strong> Polymorphic relations (<code>morphTo</code>, <code>morphMany</code>). <strong>-</strong> Query macros and fluent scopes registry.</p><p><strong>USAGE EXAMPLES</strong></p><pre><code class="language-php">$project = Project::firstOrCreate(
     [&#039;name&#039; =&gt; &#039;Acme&#039;],
     [&#039;status&#039; =&gt; &#039;active&#039;]
 );
@@ -318,7 +318,7 @@ $teams = Team::has(&#039;members&#039;, &#039;&gt;=&#039;, 5)-&gt;withCount(&#03
 $user-&gt;roles()-&gt;withTimestamps()-&gt;attach([
     1 =&gt; [&#039;scope&#039; =&gt; &#039;admin&#039;],
     2 =&gt; [&#039;scope&#039; =&gt; &#039;editor&#039;],
-]);</code></pre><p><strong>CACHING</strong></p><p>This guide summarises common caching patterns in Finella and how to apply them safely.</p><p><strong>1) REQUEST-LEVEL CACHE</strong> <strong>-</strong> Use <code>cache()</code> to store small computed results. <strong>-</strong> Prefer short TTLs and explicit keys. <strong>-</strong> Keep values serialisable and stable.</p><p>Example:</p><pre><code class="language-php">$value = cache()-&gt;remember(&#039;pricing:v1&#039;, 300, fn () =&gt; computePricing());</code></pre><p><strong>2) TAGGED CACHE</strong> <strong>-</strong> Use tags for domain-level invalidation. <strong>-</strong> Works best with Redis or file cache drivers.</p><p>Example:</p><pre><code class="language-php">$cache = cache()-&gt;tags([&#039;products&#039;, &#039;pricing&#039;]);
+]);</code></pre><p><strong>CACHING</strong></p><p>This guide summarises common caching patterns in fnlla (finella) and how to apply them safely.</p><p><strong>1) REQUEST-LEVEL CACHE</strong> <strong>-</strong> Use <code>cache()</code> to store small computed results. <strong>-</strong> Prefer short TTLs and explicit keys. <strong>-</strong> Keep values serialisable and stable.</p><p>Example:</p><pre><code class="language-php">$value = cache()-&gt;remember(&#039;pricing:v1&#039;, 300, fn () =&gt; computePricing());</code></pre><p><strong>2) TAGGED CACHE</strong> <strong>-</strong> Use tags for domain-level invalidation. <strong>-</strong> Works best with Redis or file cache drivers.</p><p>Example:</p><pre><code class="language-php">$cache = cache()-&gt;tags([&#039;products&#039;, &#039;pricing&#039;]);
 $cache-&gt;set(&#039;plan:starter&#039;, $data, 600);</code></pre><p><strong>3) STATIC CACHE (PUBLIC PAGES)</strong> <strong>-</strong> Use <code>fnlla/ops</code> (static cache module) to cache HTML for public GET routes. <strong>-</strong> Configure exclusions for admin/auth routes.</p><p>Config:</p><pre><code>CACHE_STATIC_ENABLED=1
 CACHE_STATIC_TTL=3600
 CACHE_STATIC_EXCLUDE=/admin,/auth</code></pre><p><strong>4) STAMPEDE PROTECTION</strong> <strong>-</strong> Use <code>CacheManager::remember()</code> which includes a lightweight lock. <strong>-</strong> Keep TTLs reasonable to avoid long lock contention.</p><p><strong>5) CDN + ASSET CACHING</strong> <strong>-</strong> Set <code>ASSET_URL</code> to your CDN domain. <strong>-</strong> Keep cache-busting in asset names (<code>app.12345.css</code>).</p><p><strong>6) INVALIDATION STRATEGY</strong> <strong>-</strong> Prefer explicit invalidation on write paths. <strong>-</strong> Use tags for group invalidation (products, users, billing, docs).</p><p><strong>REFERENCES</strong> <strong>-</strong> core cache (framework) <strong>-</strong> <code>fnlla/ops</code> (static HTML cache + redirects)</p>
@@ -328,7 +328,7 @@ CACHE_STATIC_EXCLUDE=/admin,/auth</code></pre><p><strong>4) STAMPEDE PROTECTION<
 
   <footer class="fx-docs-footer">
     <div class="f-container">
-      <span>&copy; 2026 Finella</span>
+      <span>&copy; 2026 fnlla (finella)</span>
       <span>Generated from <code>documentation/src</code>.</span>
     </div>
   </footer>

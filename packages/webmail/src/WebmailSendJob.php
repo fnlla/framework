@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Core\Container;
-use Finella\Mail\Address;
-use Finella\Mail\Message;
-use Finella\Queue\JobInterface;
+use Fnlla\\Core\Container;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\Message;
+use Fnlla\\Queue\JobInterface;
 
 final class WebmailSendJob implements JobInterface
 {

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
-use Finella\Core\ConfigRepository;
-use Finella\Http\Request;
-use Finella\Session\SessionInterface;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\Request;
+use Fnlla\\Session\SessionInterface;
 use RuntimeException;
 
 final class AuthManager

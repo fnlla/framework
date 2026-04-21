@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Orm;
+namespace Fnlla\\Orm;
 
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Support\ServiceProvider;
 
 final class OrmServiceProvider extends ServiceProvider
 {

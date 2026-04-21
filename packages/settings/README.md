@@ -1,6 +1,6 @@
 **FNLLA/SETTINGS**
 
-Key/value settings store for Finella. Useful for runtime configuration in admin panels or multi-tenant apps.
+Key/value settings store for fnlla (finella). Useful for runtime configuration in admin panels or multi-tenant apps.
 
 **INSTALLATION**
 ```bash
@@ -9,12 +9,12 @@ composer require fnlla/settings
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Settings\SettingsServiceProvider`
+**-** `Fnlla\\Settings\SettingsServiceProvider`
 
 **SCHEMA**
 Use the schema helper or migrations:
 ```php
-use Finella\Settings\SettingsSchema;
+use Fnlla\\Settings\SettingsSchema;
 
 SettingsSchema::ensure($pdo);
 ```
@@ -23,7 +23,7 @@ Default table name: `settings`
 
 **USAGE**
 ```php
-use Finella\Settings\SettingsStore;
+use Fnlla\\Settings\SettingsStore;
 
 $store = app()->make(SettingsStore::class);
 $store->set('site_title', 'My Website');

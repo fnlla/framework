@@ -8,17 +8,17 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
-use Finella\Core\ConfigValidator;
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Core\Application;
-use Finella\Core\ConfigRepository;
-use Finella\Core\ExceptionHandler;
-use Finella\Runtime\RequestContext;
-use Finella\Runtime\ResetManager;
-use Finella\Runtime\Profiler;
-use Finella\Plugin\PluginManager;
+use Fnlla\\Core\ConfigValidator;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\ExceptionHandler;
+use Fnlla\\Runtime\RequestContext;
+use Fnlla\\Runtime\ResetManager;
+use Fnlla\\Runtime\Profiler;
+use Fnlla\\Plugin\PluginManager;
 use Throwable;
 
 /**
@@ -207,8 +207,8 @@ final class HttpKernel implements KernelInterface
 
             if ($useRoutesCache) {
                 $cached = require $routesCache;
-                if (is_array($cached) && array_key_exists('__finella_routes_cache', $cached)) {
-                    $meta = $cached['__finella_routes_cache'];
+                if (is_array($cached) && array_key_exists('__Fnlla_routes_cache', $cached)) {
+                    $meta = $cached['__Fnlla_routes_cache'];
                     $disabled = is_array($meta) && !empty($meta['disabled']);
                     if ($disabled) {
                         $reason = 'unknown';

@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Contracts\Queue\JobInterface;
-use Finella\Contracts\Queue\QueueInterface;
-use Finella\Core\Container;
+use Fnlla\\Contracts\Queue\JobInterface;
+use Fnlla\\Contracts\Queue\QueueInterface;
+use Fnlla\\Core\Container;
 use RuntimeException;
 use Throwable;
 

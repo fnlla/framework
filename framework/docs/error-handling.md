@@ -10,7 +10,7 @@ In the starter app, `APP_DEBUG=1` allows a simple error message to be returned. 
 If you provide a logger (PSR-3), errors can be reported to logs. fnlla (finella)'s core logging module provides Monolog integration.
 
 **ERROR REPORTING**
-For external error tracking, bind `Finella\Contracts\Log\ErrorReporterInterface` in your container.
+For external error tracking, bind `Fnlla\\Contracts\Log\ErrorReporterInterface` in your container.
 `ExceptionHandler` calls it alongside the logger.
 
 **RECOMMENDATIONS**

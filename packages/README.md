@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) PACKAGES**
+**fnlla (finella) PACKAGES**
 
 The `packages/` directory contains optional modules for the fnlla (finella) ecosystem. Each package is versioned independently and follows SemVer.
 
@@ -57,4 +57,4 @@ composer require fnlla/queue
 **-** Official packages share the same release version as the framework (monorepo tag).
 
 **AUTO-DISCOVERY**
-Packages may expose service providers via `extra.finella.providers`. The starter app caches discovered providers in `bootstrap/cache/providers.php`.
+Packages may expose service providers via `extra.fnlla.providers`. The starter app caches discovered providers in `bootstrap/cache/providers.php`.

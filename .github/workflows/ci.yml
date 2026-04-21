@@ -242,7 +242,7 @@ jobs:
           if [ ! -f vendor/autoload.php ]; then
             composer install --no-interaction --prefer-dist
           fi
-          php bin/finella --help > ../../docs/artifacts/cli-help.txt
+          php bin/fnlla --help > ../../docs/artifacts/cli-help.txt
 
       - name: Upload CI artifacts (monorepo)
         if: always()

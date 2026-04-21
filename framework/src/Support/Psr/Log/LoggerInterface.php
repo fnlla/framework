@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support\Psr\Log;
+namespace Fnlla\\Support\Psr\Log;
 
 interface LoggerInterface
 {

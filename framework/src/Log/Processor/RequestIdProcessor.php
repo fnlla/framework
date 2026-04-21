@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Log\Processor;
+namespace Fnlla\\Log\Processor;
 
-use Finella\Core\Container;
-use Finella\Runtime\RequestContext;
+use Fnlla\\Core\Container;
+use Fnlla\\Runtime\RequestContext;
 use Monolog\LogRecord;
 use Throwable;
 

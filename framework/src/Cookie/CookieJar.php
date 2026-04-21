@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Cookie;
+namespace Fnlla\\Cookie;
 
-use Finella\Http\Response;
-use Finella\Http\Request;
-use Finella\Support\Env;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Request;
+use Fnlla\\Support\Env;
 
 final class CookieJar
 {

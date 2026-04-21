@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) FRAMEWORK**
+**fnlla (finella) FRAMEWORK**
 
 fnlla (finella) is a lightweight, AI-assisted (optional) PHP web framework focused on clarity, small surface area, and production-ready defaults. The core is intentionally minimal: kernel, router, container, configuration, and error handling.
 AI capabilities are opt-in and sit on top of the core runtime via optional packages and governance controls.
@@ -20,9 +20,9 @@ Offline install:
 
 declare(strict_types=1);
 
-use Finella\Core\Application;
-use Finella\Core\ConfigRepository;
-use Finella\Http\HttpKernel;
+use Fnlla\\Core\Application;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\HttpKernel;
 
 $root = dirname(__DIR__);
 if (!defined('APP_ROOT')) {
@@ -41,8 +41,8 @@ return new HttpKernel($app);
 
 declare(strict_types=1);
 
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Http\Request;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Http\Request;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -61,7 +61,7 @@ $response->send();
 **WARM KERNEL (LONG-RUNNING)**
 For long-running servers, boot once and reuse the kernel per request:
 ```php
-use Finella\Http\HttpKernel;
+use Fnlla\\Http\HttpKernel;
 
 $kernel = new HttpKernel();
 $kernel->boot();
@@ -78,7 +78,7 @@ Disable via `config/http/http.php` (`request_id_header`, `trace_id_header`, `spa
 **ROUTES CACHE (COMPILE)**
 Generate a routes cache file for production deployments:
 ```php
-use Finella\Http\RouteCacheCompiler;
+use Fnlla\\Http\RouteCacheCompiler;
 
 $compiler = new RouteCacheCompiler();
 $path = $compiler->compile();
@@ -86,8 +86,8 @@ $path = $compiler->compile();
 
 **ROUTING EXAMPLE**
 ```php
-use Finella\Http\Router;
-use Finella\Http\Response;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
     $router->get('/', fn () => Response::text('Hello fnlla (finella)'));
@@ -100,7 +100,7 @@ return static function (Router $router): void {
 **MIDDLEWARE EXAMPLE (OPTIONAL MODULE)**
 `config/http/http.php`
 ```php
-use Finella\SecurityHeaders\SecurityHeadersMiddleware;
+use Fnlla\\SecurityHeaders\SecurityHeadersMiddleware;
 
 return [
     'global' => [
@@ -114,7 +114,7 @@ Requires `fnlla/ops`.
 fnlla (finella) loads configuration from `config/**/*.php`. See `documentation/src/framework.md` for the full reference.
 
 **ENVIRONMENT**
-The framework does not load `.env` by itself. The starter app uses `Finella\Support\Dotenv` and provides an `env()` helper.
+The framework does not load `.env` by itself. The starter app uses `Fnlla\\Support\Dotenv` and provides an `env()` helper.
 
 **CORE VS OPTIONAL MODULES**
 Framework core now includes the full app foundation: HTTP kernel, router, container, config, error handling,
@@ -139,7 +139,7 @@ Example:
 **-** Add `fnlla/ops` to `composer.json` in `require`.
 **-** Run `composer install`.
 ```php
-use Finella\RateLimit\RateLimitMiddleware;
+use Fnlla\\RateLimit\RateLimitMiddleware;
 
 return [
     'global' => [

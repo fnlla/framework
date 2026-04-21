@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Content;
+namespace Fnlla\\Content;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class ContentServiceProvider extends ServiceProvider
 {

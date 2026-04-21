@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
-use function Finella\Support\safe_mkdir;
+use function Fnlla\\Support\safe_mkdir;
 use RuntimeException;
 
 final class PasswordResetStore

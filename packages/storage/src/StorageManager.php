@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Storage;
+namespace Fnlla\\Storage;
 
 final class StorageManager
 {
@@ -39,8 +39,8 @@ final class StorageManager
             return new LocalDisk($root, $url);
         }
 
-        if ($driver === 's3' && class_exists(\Finella\StorageS3\S3Disk::class)) {
-            return new \Finella\StorageS3\S3Disk($disk);
+        if ($driver === 's3' && class_exists(\Fnlla\\StorageS3\S3Disk::class)) {
+            return new \Fnlla\\StorageS3\S3Disk($disk);
         }
 
         if ($driver !== '' && class_exists($driver)) {

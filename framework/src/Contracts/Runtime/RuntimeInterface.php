@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Contracts\Runtime;
+namespace Fnlla\\Contracts\Runtime;
 
-use Finella\Contracts\Http\KernelInterface;
+use Fnlla\\Contracts\Http\KernelInterface;
 
 /**
  * @api

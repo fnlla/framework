@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
-use Finella\Session\SessionInterface;
+use Fnlla\\Session\SessionInterface;
 use RuntimeException;
 
 final class SessionGuard

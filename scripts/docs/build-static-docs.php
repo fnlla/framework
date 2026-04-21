@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * Build static HTML docs from documentation/src into documentation/build.
  *
- * This generator intentionally does not depend on fnlla (finella) UI assets.
+ * This generator intentionally does not depend on fnlla UI assets.
  */
 
 $root = dirname(__DIR__, 2);
@@ -24,7 +24,7 @@ if (!is_dir($srcDir)) {
 ensureDir($buildDir);
 ensureDir($pagesDir);
 
-$renderer = new \Finella\Docs\DocsMarkdownRenderer();
+$renderer = new \Fnlla\\Docs\DocsMarkdownRenderer();
 
 $navigation = [
     ['slug' => 'index', 'label' => 'Index', 'source' => $srcDir . '/index.md', 'target' => $buildDir . '/index.html', 'href' => 'index.html', 'css' => '../assets/documentation.css'],
@@ -121,7 +121,7 @@ function renderDocument(string $title, string $content, string $activeSlug, arra
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{$safeTitle} - Finella Docs</title>
+  <title>{$safeTitle} - fnlla Docs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -131,7 +131,7 @@ function renderDocument(string $title, string $content, string $activeSlug, arra
   <header class="fx-topbar">
     <div class="f-container fx-topbar-inner">
       <div class="fx-brand">
-        <div class="fx-brand-mark">Finella</div>
+        <div class="fx-brand-mark">fnlla</div>
         <span class="fx-brand-pill">Documentation</span>
       </div>
       <div class="fx-topbar-actions"></div>
@@ -147,7 +147,7 @@ function renderDocument(string $title, string $content, string $activeSlug, arra
       </div>
     </aside>
     <article class="fx-docs-content">
-      <div class="fx-docs-eyebrow">Finella</div>
+      <div class="fx-docs-eyebrow">fnlla</div>
       <h1>{$safeTitle}</h1>
       <div class="fx-docs-markdown">
         {$content}
@@ -157,7 +157,7 @@ function renderDocument(string $title, string $content, string $activeSlug, arra
 
   <footer class="fx-docs-footer">
     <div class="f-container">
-      <span>&copy; {$year} Finella</span>
+      <span>&copy; {$year} fnlla</span>
       <span>Generated from <code>documentation/src</code>.</span>
     </div>
   </footer>

@@ -8,14 +8,14 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
-use Finella\Core\ConfigRepository;
-use Finella\Support\ProviderReport;
-use Finella\Authorization\Gate;
-use Finella\Authorization\PolicyRegistry;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Support\ProviderReport;
+use Fnlla\\Authorization\Gate;
+use Fnlla\\Authorization\PolicyRegistry;
 use RuntimeException;
-use Finella\Core\ServiceProvider;
+use Fnlla\\Core\ServiceProvider;
 
 /**
  * @api
@@ -23,7 +23,7 @@ use Finella\Core\ServiceProvider;
 final class Application extends Container
 {
     public const VERSION = '3.0.0';
-    public const NAME_ORIGIN = 'Finella Gardens, Dundee, UK.';
+    public const NAME_ORIGIN = 'Fnlla Gardens, Dundee, UK.';
     public const TECHNICAL_SLUG = 'fnlla';
 
     private array $providers = [];

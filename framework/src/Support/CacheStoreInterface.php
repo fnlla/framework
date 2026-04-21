@@ -8,12 +8,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Contracts\Cache\CacheStoreInterface as ContractCacheStoreInterface;
+use Fnlla\\Contracts\Cache\CacheStoreInterface as ContractCacheStoreInterface;
 
 /**
- * @deprecated [DEP-2026-01] Use Finella\Contracts\Cache\CacheStoreInterface instead.
+ * @deprecated [DEP-2026-01] Use Fnlla\\Contracts\Cache\CacheStoreInterface instead.
  */
 interface CacheStoreInterface extends ContractCacheStoreInterface
 {

@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Notifications;
+namespace Fnlla\\Notifications;
 
-use Finella\Http\Router;
-use Finella\Notifications\Http\NotificationsController;
+use Fnlla\\Http\Router;
+use Fnlla\\Notifications\Http\NotificationsController;
 
 final class NotificationsRoutes
 {

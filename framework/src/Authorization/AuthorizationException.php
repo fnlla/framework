@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Authorization;
+namespace Fnlla\\Authorization;
 
 use RuntimeException;
 

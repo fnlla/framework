@@ -7,19 +7,19 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail\Http;
+namespace Fnlla\\Webmail\Http;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Mail\Address;
-use Finella\Mail\Message;
-use Finella\Webmail\MailboxClientInterface;
-use Finella\Webmail\NullMailboxClient;
-use Finella\Webmail\WebmailSettings;
-use Finella\Webmail\WebmailSendJob;
-use Finella\Webmail\WebmailSmtpClient;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\Message;
+use Fnlla\\Webmail\MailboxClientInterface;
+use Fnlla\\Webmail\NullMailboxClient;
+use Fnlla\\Webmail\WebmailSettings;
+use Fnlla\\Webmail\WebmailSendJob;
+use Fnlla\\Webmail\WebmailSmtpClient;
 
 final class WebmailController
 {
@@ -236,16 +236,16 @@ final class WebmailController
             return false;
         }
 
-        if (!class_exists(\Finella\Queue\QueueManager::class)) {
+        if (!class_exists(\Fnlla\\Queue\QueueManager::class)) {
             return false;
         }
 
-        if (!$this->app->has(\Finella\Queue\QueueManager::class)) {
+        if (!$this->app->has(\Fnlla\\Queue\QueueManager::class)) {
             return false;
         }
 
-        $queue = $this->app->make(\Finella\Queue\QueueManager::class);
-        if (!$queue instanceof \Finella\Queue\QueueManager) {
+        $queue = $this->app->make(\Fnlla\\Queue\QueueManager::class);
+        if (!$queue instanceof \Fnlla\\Queue\QueueManager) {
             return false;
         }
 

@@ -51,7 +51,7 @@ This format follows Keep a Changelog and Semantic Versioning.
 
 **REMOVED**
 **-** Legacy `AppConfig` wrapper.
-**-** Legacy Database public API classes removed from `Finella\Database\*` (e.g., `Database`, `DatabaseManager`, `Migrator`, `QueryBuilder`, `SchemaInspector`) after framework consolidation.
+**-** Legacy Database public API classes removed from `Fnlla\\Database\*` (e.g., `Database`, `DatabaseManager`, `Migrator`, `QueryBuilder`, `SchemaInspector`) after framework consolidation.
 
 **[2.5.1] - 2026-03-31**
 
@@ -77,17 +77,17 @@ This format follows Keep a Changelog and Semantic Versioning.
 
 **ADDED**
 **-** Warm kernel support for long-running servers (`HttpKernel::boot()`).
-**-** Routes cache compiler (`Finella\Http\RouteCacheCompiler`) for production builds.
+**-** Routes cache compiler (`Fnlla\\Http\RouteCacheCompiler`) for production builds.
 **-** Response tracing headers by default: `X-Request-Id`, `X-Trace-Id`, `X-Span-Id` (configurable).
 **-** ConfigRepository-first accessors (`Application::configRepository()`, `Container::configRepository()`).
 **-** `routes_cache_strict` to allow non-fatal route cache generation when closures are present.
 **-** Resetter registry for per-request cleanup in long-running mode.
-**-** `Finella\Support\UploadPolicy` for upload validation and filename sanitization.
-**-** `Finella\Database\SchemaInspector` for cross-driver schema checks.
-**-** `Finella\Support\HttpClient` lightweight HTTP client with JSON helpers.
-**-** `Finella\Support\ReportPaginator` for simple pagination on report datasets.
-**-** `Finella\Support\ValidationHelper` to flatten validation errors.
-**-** `Finella\Support\FallbackLogger` for file-based logging when PSR logger is unavailable.
+**-** `Fnlla\\Support\UploadPolicy` for upload validation and filename sanitization.
+**-** `Fnlla\\Database\SchemaInspector` for cross-driver schema checks.
+**-** `Fnlla\\Support\HttpClient` lightweight HTTP client with JSON helpers.
+**-** `Fnlla\\Support\ReportPaginator` for simple pagination on report datasets.
+**-** `Fnlla\\Support\ValidationHelper` to flatten validation errors.
+**-** `Fnlla\\Support\FallbackLogger` for file-based logging when PSR logger is unavailable.
 
 **CHANGED**
 **-** `ReportPaginator::links()` now accepts an optional container and returns an empty string when unavailable.
@@ -155,13 +155,13 @@ This format follows Keep a Changelog and Semantic Versioning.
 **[1.2.9] - 2026-02-25**
 
 **ADDED**
-**-** `Finella\Support\RedisConnector` helper for Redis connections.
+**-** `Fnlla\\Support\RedisConnector` helper for Redis connections.
 **-** `Application::NAME_ORIGIN` constant for project name provenance.
 
 **[1.2.7] - 2026-02-24**
 
 **ADDED**
-**-** Error reporter hook (`Finella\Contracts\Log\ErrorReporterInterface`) in `ExceptionHandler`.
+**-** Error reporter hook (`Fnlla\\Contracts\Log\ErrorReporterInterface`) in `ExceptionHandler`.
 
 **CHANGED**
 **-** Document log configuration options in framework docs.

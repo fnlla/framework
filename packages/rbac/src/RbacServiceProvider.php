@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Rbac;
+namespace Fnlla\\Rbac;
 
-use Finella\Authorization\Gate;
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Support\ServiceProvider;
-use Finella\Cache\CacheManager;
+use Fnlla\\Authorization\Gate;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Support\ServiceProvider;
+use Fnlla\\Cache\CacheManager;
 
 final class RbacServiceProvider extends ServiceProvider
 {

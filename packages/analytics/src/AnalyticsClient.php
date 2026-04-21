@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Analytics;
+namespace Fnlla\\Analytics;
 
-use Finella\Contracts\Log\LoggerInterface;
+use Fnlla\\Contracts\Log\LoggerInterface;
 use Throwable;
 
 final class AnalyticsClient

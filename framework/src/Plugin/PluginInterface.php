@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Plugin;
+namespace Fnlla\\Plugin;
 
 interface PluginInterface
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Finella\Http\Request;
-use Finella\Http\Stream;
-use Finella\Http\Uri;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\Uri;
 use PHPUnit\Framework\TestCase;
 
 final class RequestParsingTest extends TestCase

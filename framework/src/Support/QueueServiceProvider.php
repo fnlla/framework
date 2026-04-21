@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 
-use Finella\Core\ServiceProvider;
-use Finella\Contracts\Queue\QueueInterface;
+use Fnlla\\Core\ServiceProvider;
+use Fnlla\\Contracts\Queue\QueueInterface;
 
 final class QueueServiceProvider extends ServiceProvider
 {

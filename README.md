@@ -1,4 +1,4 @@
-**FNLLA (FINELLA)**
+**fnlla (finella)**
 
 [![Developed by TechAyo](https://img.shields.io/badge/Developed%20by-TechAyo-f59e0b?style=flat-square&labelColor=f97316&color=facc15)](https://techayo.co.uk)
 [![Latest Release](https://img.shields.io/badge/Latest%20Release-3.0.2-22c55e?style=flat-square&labelColor=0ea5e9)](https://github.com/fnlla/framework/releases)
@@ -18,7 +18,7 @@ fnlla (finella) Framework is a production-focused PHP platform for teams that wa
 Starter application lives in the `fnlla/fnlla` repository.
 Release notes for framework changes are summarised in `CHANGELOG.md`.
 
-**WHAT IS FNLLA (FINELLA)?**
+**WHAT IS fnlla (finella)?**
 **-** **fnlla (finella) Framework**: minimal, modern PHP core focused on HTTP, routing, container, config, and error handling.
 **-** Modular ecosystem of optional packages (auth, database, ORM, cache, queue, mail, docs, etc.).
 **-** Starter app distributed in a separate repository (`fnlla/fnlla`).
@@ -38,7 +38,7 @@ Release notes for framework changes are summarised in `CHANGELOG.md`.
 **-** Require network calls or provider keys to operate the core framework.
 **-** Replace engineering ownership or the SDLC decision process.
 
-**WHY PHP FOR FNLLA (FINELLA)?**
+**WHY PHP FOR fnlla (finella)?**
 Because it is the fastest path to reliable, enterprise web delivery with a low barrier to entry and predictable total cost of ownership.
 
 **PERFORMANCE AND OBSERVABILITY**
@@ -54,7 +54,7 @@ Because it is the fastest path to reliable, enterprise web delivery with a low b
 **NAME ORIGIN AND TECHNICAL SLUG**
 **-** Product name: `fnlla (finella)` (name origin: fnlla (finella) Gardens, Dundee, UK).
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
-**-** Why `fnlla`: short ASCII-only identifier, easy to type in CLI/paths, and stable across package/repository naming.
+**-** Why `fnlla (finella)`: short ASCII-only identifier, easy to type in CLI/paths, and stable across package/repository naming.
 
 **ROADMAP**
 **-** Public roadmap in `documentation/src/operations.md`.
@@ -80,7 +80,7 @@ git clone https://github.com/fnlla/framework.git framework
 cd framework/tools/harness
 copy .env.example .env
 composer install
-php bin/finella db:bootstrap
+php bin/fnlla db:bootstrap
 php -S 127.0.0.1:8000 -t public
 ```
 
@@ -99,22 +99,22 @@ Open:
 Docs UI and docs generation:
 **-** Docs home: `GET /docs`
 ```bash
-php bin/finella docs:generate
-php bin/finella docs:generate --publish
+php bin/fnlla docs:generate
+php bin/fnlla docs:generate --publish
 ```
 
 CLI and testing:
 ```bash
-php bin/finella list
-php bin/finella routes:cache
+php bin/fnlla list
+php bin/fnlla routes:cache
 composer run smoke
 ```
 
 CLI/runtime note:
 **-** In local/dev environments, framework smoke scripts and harness CLI auto-reexec to PHP 8.5.5 when started with any other PHP binary.
 **-** In CI, any PHP 8.5.x runtime is accepted.
-**-** Override the preferred binary with `FINELLA_PHP_BIN` (or `FINELLA_PHP85_BIN`) pointing to PHP 8.5.5.
-**-** `composer run serve` in `tools/harness` uses the same guard; bind can be changed with `FINELLA_DEV_HOST` / `FINELLA_DEV_PORT`.
+**-** Override the preferred binary with `Fnlla_PHP_BIN` (or `Fnlla_PHP85_BIN`) pointing to PHP 8.5.5.
+**-** `composer run serve` in `tools/harness` uses the same guard; bind can be changed with `Fnlla_DEV_HOST` / `Fnlla_DEV_PORT`.
 
 **HELLO WORLD ROUTE**
 **-** Route: `tools/harness/routes/web.php`
@@ -212,7 +212,7 @@ Rule: packages required by starter (runtime and dev) must stay in `public_core`.
 Private registry is for optional pro add-ons only.
 
 **PUBLIC SPLIT REPOSITORIES**
-Public package repositories in GitHub org `fnlla`:
+Public package repositories in GitHub org `fnlla (finella)`:
 **-** `fnlla/pkg-framework` (`fnlla/framework`)
 **-** `fnlla/pkg-ai` (`fnlla/ai`)
 **-** `fnlla/pkg-audit` (`fnlla/audit`)
@@ -268,7 +268,7 @@ Public package repositories in GitHub org `fnlla`:
 5. Validate public bootstrap:
    `composer create-project fnlla/starter my-app`
 6. Validate install/boot in created app:
-   `composer install && php bin/finella db:bootstrap`
+   `composer install && php bin/fnlla db:bootstrap`
 
 **AUTOMATION COMMAND FOR SPLITS**
 Script: `scripts/release/publish-public-splits.php`

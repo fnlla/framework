@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Finella\Docs\Commands;
+namespace Fnlla\\Docs\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
 use RuntimeException;
 
 final class DocsSyncCommand implements CommandInterface

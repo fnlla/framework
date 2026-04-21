@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/sentry",
-    "description":  "Sentry error tracking adapter for Finella",
+    "description":  "Sentry error tracking adapter for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -23,13 +23,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Sentry\\":  "src/"
+                                   "Fnlla\\Sentry\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Sentry\\SentryServiceProvider"
+                                                  "Fnlla\\Sentry\\SentryServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -38,8 +38,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/sentry":  "self.version"
                 }
 }

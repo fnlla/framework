@@ -3,9 +3,11 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
-
-$root = dirname(__DIR__);
+$root = getenv('APP_ROOT');
+if (!is_string($root) || trim($root) === '') {
+    $root = dirname(__DIR__, 3);
+}
+$root = rtrim($root, '/\\');
 $autoload = $root . '/vendor/autoload.php';
 if (!is_file($autoload)) {
     fwrite(STDERR, "Autoload file not found: {$autoload}\n");
@@ -14,5 +16,5 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-$app = new \Finella\Console\ConsoleApplication($root);
+$app = new \Fnlla\\Console\ConsoleApplication($root);
 exit($app->run($argv));

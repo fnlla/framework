@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Mail\Address;
-use Finella\Mail\MailManager;
-use Finella\Mail\Message;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\MailManager;
+use Fnlla\\Mail\Message;
 
 final class WebmailSmtpClient
 {

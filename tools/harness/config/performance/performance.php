@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'warm_kernel' => env('FINELLA_WARM_KERNEL', false),
+    'warm_kernel' => env('Fnlla_WARM_KERNEL', false),
     'routes_cache_enabled' => env('ROUTES_CACHE_ENABLED', true),
     'routes_cache_envs' => (static function (): array {
         $value = env('ROUTES_CACHE_ENVS', 'prod,staging');

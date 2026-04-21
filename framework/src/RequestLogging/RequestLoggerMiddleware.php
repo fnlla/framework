@@ -6,17 +6,17 @@
  */
 declare(strict_types=1);
 
-namespace Finella\RequestLogging;
+namespace Fnlla\\RequestLogging;
 
-use Finella\Contracts\Log\LoggerInterface;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\MiddlewareInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
-use Finella\Runtime\Profiler;
-use Finella\Runtime\RequestContext;
+use Fnlla\\Contracts\Log\LoggerInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Runtime\Profiler;
+use Fnlla\\Runtime\RequestContext;
 use Throwable;
 
 final class RequestLoggerMiddleware implements MiddlewareInterface

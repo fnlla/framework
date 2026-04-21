@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Orm\Relations;
+namespace Fnlla\\Orm\Relations;
 
-use Finella\Database\Query as BaseQuery;
-use Finella\Orm\Model;
+use Fnlla\\Database\Query as BaseQuery;
+use Fnlla\\Orm\Model;
 
 final class BelongsToMany extends Relation
 {
@@ -21,7 +21,7 @@ final class BelongsToMany extends Relation
         private string $relatedKey,
         private string $parentKey,
         private string $relatedPrimaryKey,
-        \Finella\Orm\QueryBuilder $builder,
+        \Fnlla\\Orm\QueryBuilder $builder,
         private \PDO $pdo
     )
     {

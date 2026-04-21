@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Finella\Http\Response;
-use Finella\Support\ProviderReport;
+use Fnlla\\Http\Response;
+use Fnlla\\Support\ProviderReport;
 
 final class ProviderReportController
 {

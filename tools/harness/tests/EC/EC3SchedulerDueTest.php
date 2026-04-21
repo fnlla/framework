@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Finella\Scheduler\ScheduleTask;
-use Finella\Testing\TestCase;
+use Fnlla\\Scheduler\ScheduleTask;
+use Fnlla\\Testing\TestCase;
 use PHPUnit\Framework\Assert;
 
 final class EC3SchedulerDueTest extends TestCase

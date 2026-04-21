@@ -3,7 +3,7 @@
 This directory is an optional starter baseline for brand-new apps.
 
 Usage:
-**-** Run migrations from this path for first bootstrap: `php bin/finella migrate --path=database/migrations-baseline`
+**-** Run migrations from this path for first bootstrap: `php bin/fnlla migrate --path=database/migrations-baseline`
 **-** Or set `MIGRATIONS_PATH=database/migrations-baseline` in `.env`
 **-** Keep regular project migrations in `database/migrations`
 

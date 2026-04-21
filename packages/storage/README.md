@@ -1,6 +1,6 @@
 **FNLLA/STORAGE**
 
-Local storage and a minimal image pipeline for Finella.
+Local storage and a minimal image pipeline for fnlla (finella).
 
 **INSTALLATION**
 ```bash
@@ -17,7 +17,7 @@ STORAGE_LOCAL_URL=/uploads
 
 **USAGE**
 ```php
-use Finella\Storage\StorageManager;
+use Fnlla\\Storage\StorageManager;
 
 $storage = app()->make(StorageManager::class);
 $disk = $storage->disk();
@@ -42,7 +42,7 @@ Install `fnlla/storage-s3` and add an S3 disk in `config/storage/storage.php`:
 
 **IMAGE PIPELINE**
 ```php
-use Finella\Storage\ImagePipeline;
+use Fnlla\\Storage\ImagePipeline;
 
 $pipeline = new ImagePipeline();
 $pipeline->resize($sourcePath, $targetPath, 400, 400);

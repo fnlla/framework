@@ -1,4 +1,4 @@
-<h1>finellaPHP Documentation</h1>
+<h1>FnllaPHP Documentation</h1>
 <p>A minimal framework ready for commercial projects. The online documentation lives in the skeleton, while the core stays lightweight.</p>
 
 <h2>Quick start (after unpacking)</h2>
@@ -27,8 +27,8 @@
 <ul>
     <li>Files in <code>config/**/*.php</code></li>
     <li>Validation schema in <code>config/schema.php</code></li>
-    <li>Config cache: <code>php cli/finella.php config:cache</code></li>
-    <li>Route cache: <code>php cli/finella.php routes:cache</code></li>
+    <li>Config cache: <code>php cli/fnlla.php config:cache</code></li>
+    <li>Route cache: <code>php cli/fnlla.php routes:cache</code></li>
     <li><code>APP_BASE_PATH</code> and <code>APP_SITE_URL</code> for apps in a subdirectory</li>
 </ul>
 
@@ -125,16 +125,16 @@ queue($app)?->push(fn () => do_something());</code></pre>
     ->get();</code></pre>
 
 <h2>Migrations</h2>
-<pre><code class="language-bash">php cli/finella.php migrate
-php cli/finella.php migrate:status
-php cli/finella.php migrate:rollback 1</code></pre>
+<pre><code class="language-bash">php cli/fnlla.php migrate
+php cli/fnlla.php migrate:status
+php cli/fnlla.php migrate:rollback 1</code></pre>
 
 <h2>CLI</h2>
-<pre><code class="language-bash">php cli/finella.php config:cache
-php cli/finella.php config:clear
-php cli/finella.php routes:cache
-php cli/finella.php routes:clear
-php cli/finella.php health</code></pre>
+<pre><code class="language-bash">php cli/fnlla.php config:cache
+php cli/fnlla.php config:clear
+php cli/fnlla.php routes:cache
+php cli/fnlla.php routes:clear
+php cli/fnlla.php health</code></pre>
 
 <h2>Health check</h2>
 <p>HTTP: <code>/health</code> (optional token in <code>HEALTH_TOKEN</code>).</p>

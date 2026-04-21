@@ -7,12 +7,12 @@
 declare(strict_types=1);
 
 if (!function_exists('app')) {
-    function app(): \Finella\Core\Container
+    function app(): \Fnlla\\Core\Container
     {
-        $app = $GLOBALS['finella_app'] ?? null;
-        if (!$app instanceof \Finella\Core\Container) {
+        $app = $GLOBALS['Fnlla_app'] ?? null;
+        if (!$app instanceof \Fnlla\\Core\Container) {
             throw new RuntimeException(
-                'Finella application container not initialized. Ensure bootstrap/app.php sets $GLOBALS[\'finella_app\'].'
+                'Fnlla application container not initialized. Ensure bootstrap/app.php sets $GLOBALS[\'Fnlla_app\'].'
             );
         }
         return $app;
@@ -20,19 +20,19 @@ if (!function_exists('app')) {
 }
 
 if (!function_exists('view')) {
-    function view(string $template, array $data = [], ?string $layout = null): \Finella\Http\Response
+    function view(string $template, array $data = [], ?string $layout = null): \Fnlla\\Http\Response
     {
         $app = app();
         if (function_exists('view_render')) {
             $path = function_exists('view_path') ? view_path($template) : '';
             if ($path !== '' && is_file($path)) {
                 $html = view_render($template, $data, $layout);
-                return \Finella\Http\Response::html($html);
+                return \Fnlla\\Http\Response::html($html);
             }
         }
 
-        $html = \Finella\View\View::render($app, $template, $data, $layout);
-        return \Finella\Http\Response::html($html);
+        $html = \Fnlla\\View\View::render($app, $template, $data, $layout);
+        return \Fnlla\\Http\Response::html($html);
     }
 }
 
@@ -52,28 +52,28 @@ if (!function_exists('view_path')) {
 if (!function_exists('url')) {
     function url(string $path = ''): string
     {
-        return \Finella\Support\absolute_url(app(), $path);
+        return \Fnlla\\Support\absolute_url(app(), $path);
     }
 }
 
 if (!function_exists('site_url')) {
     function site_url(): string
     {
-        return \Finella\Support\site_url(app());
+        return \Fnlla\\Support\site_url(app());
     }
 }
 
 if (!function_exists('absolute_url')) {
     function absolute_url(string $path = ''): string
     {
-        return \Finella\Support\absolute_url(app(), $path);
+        return \Fnlla\\Support\absolute_url(app(), $path);
     }
 }
 
 if (!function_exists('asset')) {
     function asset(string $path): string
     {
-        return \Finella\Support\asset(app(), $path);
+        return \Fnlla\\Support\asset(app(), $path);
     }
 }
 
@@ -81,15 +81,15 @@ if (!function_exists('route')) {
     function route(string $name, array $params = [], bool $absolute = false): string
     {
         $app = app();
-        $router = $app->make(\Finella\Http\Router::class);
-        if (!$router instanceof \Finella\Http\Router) {
+        $router = $app->make(\Fnlla\\Http\Router::class);
+        if (!$router instanceof \Fnlla\\Http\Router) {
             return '';
         }
         $path = $router->url($name, $params);
         if (!$absolute) {
             return $path;
         }
-        return \Finella\Support\absolute_url($app, $path);
+        return \Fnlla\\Support\absolute_url($app, $path);
     }
 }
 
@@ -97,14 +97,14 @@ if (!function_exists('csrf_token')) {
     function csrf_token(): string
     {
         $app = app();
-        if (!class_exists(\Finella\Csrf\CsrfTokenManager::class) || !interface_exists(\Finella\Session\SessionInterface::class)) {
+        if (!class_exists(\Fnlla\\Csrf\CsrfTokenManager::class) || !interface_exists(\Fnlla\\Session\SessionInterface::class)) {
             throw new RuntimeException('CSRF support is not available. Ensure the core CSRF and Session modules are enabled.');
         }
-        $session = $app->make(\Finella\Session\SessionInterface::class);
-        if (!$session instanceof \Finella\Session\SessionInterface) {
+        $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+        if (!$session instanceof \Fnlla\\Session\SessionInterface) {
             throw new RuntimeException('Session service is not available.');
         }
-        $manager = new \Finella\Csrf\CsrfTokenManager($session);
+        $manager = new \Fnlla\\Csrf\CsrfTokenManager($session);
         return $manager->token();
     }
 }
@@ -118,35 +118,35 @@ if (!function_exists('csrf_field')) {
 }
 
 if (!function_exists('errors')) {
-    function errors(string $bag = 'default'): \Finella\Support\ErrorBag
+    function errors(string $bag = 'default'): \Fnlla\\Support\ErrorBag
     {
         static $cached = null;
         static $cachedBag = null;
 
         if ($cached === null) {
             $app = app();
-            if (!interface_exists(\Finella\Session\SessionInterface::class)) {
-                return new \Finella\Support\ErrorBag([], $bag);
+            if (!interface_exists(\Fnlla\\Session\SessionInterface::class)) {
+                return new \Fnlla\\Support\ErrorBag([], $bag);
             }
-            $session = $app->make(\Finella\Session\SessionInterface::class);
-            if (!$session instanceof \Finella\Session\SessionInterface) {
-                return new \Finella\Support\ErrorBag([], $bag);
+            $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+            if (!$session instanceof \Fnlla\\Session\SessionInterface) {
+                return new \Fnlla\\Support\ErrorBag([], $bag);
             }
             if (method_exists($session, 'getFlash')) {
-                $cached = $session->getFlash('_finella_errors', []);
-                $cachedBag = $session->getFlash('_finella_error_bag', 'default');
+                $cached = $session->getFlash('_Fnlla_errors', []);
+                $cachedBag = $session->getFlash('_Fnlla_error_bag', 'default');
             } else {
-                $cached = $session->get('_finella_errors', []);
-                $cachedBag = $session->get('_finella_error_bag', 'default');
+                $cached = $session->get('_Fnlla_errors', []);
+                $cachedBag = $session->get('_Fnlla_error_bag', 'default');
             }
         }
 
         if ($cachedBag !== $bag) {
-            return new \Finella\Support\ErrorBag([], $bag);
+            return new \Fnlla\\Support\ErrorBag([], $bag);
         }
 
         $errors = is_array($cached) ? $cached : [];
-        return new \Finella\Support\ErrorBag($errors, $bag);
+        return new \Fnlla\\Support\ErrorBag($errors, $bag);
     }
 }
 
@@ -157,17 +157,17 @@ if (!function_exists('old')) {
 
         if ($cached === null) {
             $app = app();
-            if (!interface_exists(\Finella\Session\SessionInterface::class)) {
+            if (!interface_exists(\Fnlla\\Session\SessionInterface::class)) {
                 return $default;
             }
-            $session = $app->make(\Finella\Session\SessionInterface::class);
-            if (!$session instanceof \Finella\Session\SessionInterface) {
+            $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+            if (!$session instanceof \Fnlla\\Session\SessionInterface) {
                 return $default;
             }
             if (method_exists($session, 'getFlash')) {
-                $cached = $session->getFlash('_finella_old', []);
+                $cached = $session->getFlash('_Fnlla_old', []);
             } else {
-                $cached = $session->get('_finella_old', []);
+                $cached = $session->get('_Fnlla_old', []);
             }
         }
 
@@ -184,47 +184,47 @@ if (!function_exists('old')) {
 }
 
 if (!function_exists('redirect')) {
-    function redirect(string $to, int $status = 302): \Finella\Http\Response
+    function redirect(string $to, int $status = 302): \Fnlla\\Http\Response
     {
-        return \Finella\Http\Response::redirect($to, $status);
+        return \Fnlla\\Http\Response::redirect($to, $status);
     }
 }
 
 if (!function_exists('back')) {
-    function back(int $status = 302): \Finella\Http\Response
+    function back(int $status = 302): \Fnlla\\Http\Response
     {
         $req = null;
-        if (isset($GLOBALS['finella_app']) && $GLOBALS['finella_app'] instanceof \Finella\Core\Container) {
-            $app = $GLOBALS['finella_app'];
-            if ($app->has(\Finella\Http\Request::class)) {
-                $resolved = $app->make(\Finella\Http\Request::class);
-                if ($resolved instanceof \Finella\Http\Request) {
+        if (isset($GLOBALS['Fnlla_app']) && $GLOBALS['Fnlla_app'] instanceof \Fnlla\\Core\Container) {
+            $app = $GLOBALS['Fnlla_app'];
+            if ($app->has(\Fnlla\\Http\Request::class)) {
+                $resolved = $app->make(\Fnlla\\Http\Request::class);
+                if ($resolved instanceof \Fnlla\\Http\Request) {
                     $req = $resolved;
                 }
             }
         }
-        if (!$req instanceof \Finella\Http\Request) {
+        if (!$req instanceof \Fnlla\\Http\Request) {
             $target = '/';
         } else {
-            $target = \Finella\Http\RedirectTarget::fromReferer($req, '/');
+            $target = \Fnlla\\Http\RedirectTarget::fromReferer($req, '/');
         }
-        return \Finella\Http\Response::redirect($target, $status);
+        return \Fnlla\\Http\Response::redirect($target, $status);
     }
 }
 
 if (!function_exists('can')) {
-    function can(string $ability, mixed $target = null, ?\Finella\Http\Request $request = null): bool
+    function can(string $ability, mixed $target = null, ?\Fnlla\\Http\Request $request = null): bool
     {
         $app = app();
-        if (!class_exists(\Finella\Authorization\Gate::class)) {
+        if (!class_exists(\Fnlla\\Authorization\Gate::class)) {
             return false;
         }
 
-        $gate = $app->has(\Finella\Authorization\Gate::class)
-            ? $app->make(\Finella\Authorization\Gate::class)
-            : new \Finella\Authorization\Gate($app, new \Finella\Authorization\PolicyRegistry());
+        $gate = $app->has(\Fnlla\\Authorization\Gate::class)
+            ? $app->make(\Fnlla\\Authorization\Gate::class)
+            : new \Fnlla\\Authorization\Gate($app, new \Fnlla\\Authorization\PolicyRegistry());
 
-        if (!$gate instanceof \Finella\Authorization\Gate) {
+        if (!$gate instanceof \Fnlla\\Authorization\Gate) {
             return false;
         }
 

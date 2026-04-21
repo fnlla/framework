@@ -6,19 +6,19 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Orm;
+namespace Fnlla\\Orm;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Database\Query;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Database\Query;
 use RuntimeException;
-use Finella\Orm\Relations\BelongsTo;
-use Finella\Orm\Relations\HasMany;
-use Finella\Orm\Relations\HasOne;
-use Finella\Orm\Relations\Relation;
-use Finella\Orm\Relations\BelongsToMany;
+use Fnlla\\Orm\Relations\BelongsTo;
+use Fnlla\\Orm\Relations\HasMany;
+use Fnlla\\Orm\Relations\HasOne;
+use Fnlla\\Orm\Relations\Relation;
+use Fnlla\\Orm\Relations\BelongsToMany;
 
 abstract class Model
 {

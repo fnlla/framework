@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 use ArrayIterator;
 use Countable;

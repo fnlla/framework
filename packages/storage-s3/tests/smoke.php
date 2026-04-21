@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\StorageS3\S3Disk;
+use Fnlla\\StorageS3\S3Disk;
 
 if (!class_exists(\Aws\S3\S3Client::class)) {
     echo "storage-s3 skip (aws sdk missing)\n";
@@ -12,7 +12,7 @@ if (!class_exists(\Aws\S3\S3Client::class)) {
 }
 
 $config = [
-    'bucket' => 'finella-test-bucket',
+    'bucket' => 'fnlla-test-bucket',
     'region' => 'eu-west-1',
     'key' => 'test',
     'secret' => 'test',

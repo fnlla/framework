@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Queue\DatabaseQueue;
-use Finella\Queue\JobInterface;
-use Finella\Queue\QueueWorker;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Queue\DatabaseQueue;
+use Fnlla\\Queue\JobInterface;
+use Fnlla\\Queue\QueueWorker;
 use PHPUnit\Framework\TestCase;
 
 final class DatabaseQueueNoopJob implements JobInterface

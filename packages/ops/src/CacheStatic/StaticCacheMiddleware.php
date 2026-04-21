@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace Finella\CacheStatic;
+namespace Fnlla\\CacheStatic;
 
-use Finella\Core\ConfigRepository;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Server\MiddlewareInterface;
-use Finella\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class StaticCacheMiddleware implements MiddlewareInterface
 {
@@ -27,7 +27,7 @@ final class StaticCacheMiddleware implements MiddlewareInterface
         return $this->handle($request, fn ($req): ResponseInterface => $handler->handle($req));
     }
 
-    public function __invoke(\Finella\Http\Request $request, callable $next): ResponseInterface
+    public function __invoke(\Fnlla\\Http\Request $request, callable $next): ResponseInterface
     {
         return $this->handle($request, $next);
     }

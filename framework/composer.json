@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/framework",
-    "description":  "Finella - AI-assisted PHP framework",
+    "description":  "Fnlla - AI-assisted PHP framework",
     "homepage":  "https://techayo.co.uk",
     "license":  "proprietary",
     "authors":  [
@@ -21,7 +21,7 @@
                 },
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\":  "src/"
+                                   "Fnlla\\":  "src/"
                                },
                      "files":  [
                                    "src/Support/global_helpers.php",
@@ -30,27 +30,24 @@
                                ]
                  },
     "bin":  [
-                "bin/finella"
+                "bin/fnlla"
             ],
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Database\\DatabaseServiceProvider",
-                                                  "Finella\\Cache\\CacheServiceProvider",
-                                                  "Finella\\Log\\LogServiceProvider",
-                                                  "Finella\\RequestLogging\\RequestLoggingServiceProvider",
-                                                  "Finella\\Session\\SessionServiceProvider",
-                                                  "Finella\\Cookie\\CookieServiceProvider",
-                                                  "Finella\\Csrf\\CsrfServiceProvider",
-                                                  "Finella\\Auth\\AuthServiceProvider",
-                                                  "Finella\\Orm\\OrmServiceProvider"
+                                                  "Fnlla\\Database\\DatabaseServiceProvider",
+                                                  "Fnlla\\Cache\\CacheServiceProvider",
+                                                  "Fnlla\\Log\\LogServiceProvider",
+                                                  "Fnlla\\RequestLogging\\RequestLoggingServiceProvider",
+                                                  "Fnlla\\Session\\SessionServiceProvider",
+                                                  "Fnlla\\Cookie\\CookieServiceProvider",
+                                                  "Fnlla\\Csrf\\CsrfServiceProvider",
+                                                  "Fnlla\\Auth\\AuthServiceProvider",
+                                                  "Fnlla\\Orm\\OrmServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
                                        "dev-main":  "3.0.x-dev"
                                    }
-              },
-    "replace":  {
-                    "finella/framework":  "self.version"
-                }
+              }
 }

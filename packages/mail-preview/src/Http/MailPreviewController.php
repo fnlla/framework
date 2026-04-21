@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\MailPreview\Http;
+namespace Fnlla\\MailPreview\Http;
 
-use Finella\Http\Request;
-use Finella\Http\Response;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 final class MailPreviewController
 {
@@ -31,7 +31,7 @@ final class MailPreviewController
         return view($template, [
             'subject' => 'Mail preview',
             'preheader' => 'This is a sample preview email.',
-            'headline' => 'Welcome to Finella',
+            'headline' => 'Welcome to Fnlla',
             'body' => 'This is a placeholder email template for local preview.',
             'cta_label' => 'Open dashboard',
             'cta_url' => '/',

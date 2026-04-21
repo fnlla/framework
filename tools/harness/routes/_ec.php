@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Finella\Auth\Middleware\AuthMiddleware;
-use Finella\Http\Router;
+use Fnlla\\Auth\Middleware\AuthMiddleware;
+use Fnlla\\Http\Router;
 use App\Controllers\EcController;
 
 return static function (Router $router): void {

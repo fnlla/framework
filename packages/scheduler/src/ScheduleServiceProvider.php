@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Scheduler;
+namespace Fnlla\\Scheduler;
 
-use Finella\Core\Container;
-use Finella\Support\Env;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\Env;
+use Fnlla\\Support\ServiceProvider;
 
 final class ScheduleServiceProvider extends ServiceProvider
 {

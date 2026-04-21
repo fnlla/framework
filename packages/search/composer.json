@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/search",
-    "description":  "Search adapter for Finella (Meilisearch driver)",
+    "description":  "Search adapter for Fnlla (Meilisearch driver)",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Search\\":  "src/"
+                                   "Fnlla\\Search\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Search\\SearchServiceProvider"
+                                                  "Fnlla\\Search\\SearchServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/search":  "self.version"
                 }
 }

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
-use Finella\Console\SeederInterface;
-use Finella\Database\ConnectionManager;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
+use Fnlla\\Console\SeederInterface;
+use Fnlla\\Database\ConnectionManager;
 use RuntimeException;
 
 final class SeedCommand implements CommandInterface
@@ -50,8 +50,8 @@ final class SeedCommand implements CommandInterface
 
             $manager = new ConnectionManager($config);
             $pdo = $manager->connection();
-            if (class_exists(\Finella\Orm\Model::class)) {
-                \Finella\Orm\Model::setConnectionManager($manager);
+            if (class_exists(\Fnlla\\Orm\Model::class)) {
+                \Fnlla\\Orm\Model::setConnectionManager($manager);
             }
 
             $seeder = require $seederPath;

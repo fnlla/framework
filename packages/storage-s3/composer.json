@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/storage-s3",
-    "description":  "S3 storage driver for Finella storage",
+    "description":  "S3 storage driver for Fnlla storage",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -24,7 +24,7 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\StorageS3\\":  "src/"
+                                   "Fnlla\\StorageS3\\":  "src/"
                                }
                  },
     "extra":  {
@@ -34,8 +34,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/storage-s3":  "self.version"
                 }
 }

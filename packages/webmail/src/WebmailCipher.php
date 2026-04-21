@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Support\Env;
+use Fnlla\\Support\Env;
 
 final class WebmailCipher
 {

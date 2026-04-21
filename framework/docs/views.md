@@ -12,7 +12,7 @@ The framework reads `views_path` from `config/app.php`. If not set, it falls bac
 **LAYOUTS**
 You can pass an optional layout:
 ```php
-$html = \Finella\View\View::render($app, 'home', ['name' => 'fnlla (finella)'], 'layouts/main');
+$html = \Fnlla\\View\View::render($app, 'home', ['name' => 'fnlla (finella)'], 'layouts/main');
 ```
 
 **DATA**

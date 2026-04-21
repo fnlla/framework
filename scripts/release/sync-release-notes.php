@@ -82,7 +82,7 @@ foreach ($releaseTags as $tag) {
         continue;
     }
 
-    $tmp = tempnam(sys_get_temp_dir(), 'finella-sync-');
+    $tmp = tempnam(sys_get_temp_dir(), 'fnlla-sync-');
     if ($tmp === false) {
         fwrite(STDERR, "Unable to create temporary file for {$tag}\n");
         exit(1);

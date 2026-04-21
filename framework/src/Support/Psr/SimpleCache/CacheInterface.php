@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support\Psr\SimpleCache;
+namespace Fnlla\\Support\Psr\SimpleCache;
 
 interface CacheInterface
 {

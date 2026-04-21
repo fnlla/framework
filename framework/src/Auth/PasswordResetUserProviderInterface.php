@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Auth;
+namespace Fnlla\\Auth;
 
 interface PasswordResetUserProviderInterface
 {

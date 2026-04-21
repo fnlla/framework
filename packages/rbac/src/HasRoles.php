@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Rbac;
+namespace Fnlla\\Rbac;
 
-use Finella\Authorization\Gate;
+use Fnlla\\Authorization\Gate;
 
 trait HasRoles
 {
@@ -29,7 +29,7 @@ trait HasRoles
         }
 
         $app = app();
-        if (!$app instanceof \Finella\Core\Container) {
+        if (!$app instanceof \Fnlla\\Core\Container) {
             return false;
         }
 
@@ -52,7 +52,7 @@ trait HasRoles
         }
 
         $app = app();
-        if (!$app instanceof \Finella\Core\Container) {
+        if (!$app instanceof \Fnlla\\Core\Container) {
             return null;
         }
 

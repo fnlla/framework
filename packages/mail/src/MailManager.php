@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Mail;
+namespace Fnlla\\Mail;
 
 use RuntimeException;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\TransportInterface;
-use Finella\Support\Env;
+use Fnlla\\Support\Env;
 
 final class MailManager
 {

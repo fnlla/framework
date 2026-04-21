@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Cache\ArrayCacheStore;
-use Finella\Cache\CacheManager;
-use Finella\Core\Container;
-use Finella\RateLimit\RateLimitServiceProvider;
-use Finella\RateLimit\RateLimiter;
-use Finella\RateLimit\RateLimitMiddleware;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Uri;
+use Fnlla\\Cache\ArrayCacheStore;
+use Fnlla\\Cache\CacheManager;
+use Fnlla\\Core\Container;
+use Fnlla\\RateLimit\RateLimitServiceProvider;
+use Fnlla\\RateLimit\RateLimiter;
+use Fnlla\\RateLimit\RateLimitMiddleware;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Uri;
 
 function ok(bool $cond, string $msg): void
 {

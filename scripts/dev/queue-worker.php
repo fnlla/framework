@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-use Finella\Core\Application;
-use Finella\Queue\DatabaseQueue;
-use Finella\Queue\QueueManager;
-use Finella\Queue\QueueWorker;
-use Finella\Queue\SyncQueue;
+use Fnlla\\Core\Application;
+use Fnlla\\Queue\DatabaseQueue;
+use Fnlla\\Queue\QueueManager;
+use Fnlla\\Queue\QueueWorker;
+use Fnlla\\Queue\SyncQueue;
 
 $root = dirname(__DIR__, 2);
 $appRoot = $root . '/tools/harness';
@@ -41,9 +41,9 @@ if (is_file($bootstrap)) {
     require $bootstrap;
 }
 
-$app = $GLOBALS['finella_app'] ?? null;
+$app = $GLOBALS['Fnlla_app'] ?? null;
 if (!$app instanceof Application) {
-    fwrite(STDERR, "Unable to bootstrap Finella app.\n");
+    fwrite(STDERR, "Unable to bootstrap Fnlla app.\n");
     exit(1);
 }
 

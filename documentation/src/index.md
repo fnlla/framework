@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) DOCUMENTATION**
+**fnlla (finella) DOCUMENTATION**
 
 This documentation is written in UK English. It covers the framework, the starter app, and the official packages.
 fnlla (finella) is an AI-assisted (optional), modular framework focused on the framework runtime, starter app, and optional packages.
@@ -8,12 +8,12 @@ autonomous insights run without providers, AI integrations are optional, and gua
 We continue to push boundaries toward an AI-focused future while keeping AI optional today (see `documentation/src/ai-integrations.md` for the current scope and boundaries).
 
 Note on dependencies: fnlla (finella) uses a small set of infrastructure libraries (for example, `symfony/mailer`).
-Dotenv handling is implemented by fnlla (finella) itself (see `Finella\Support\Dotenv`) as internal building blocks.
+Dotenv handling is implemented by fnlla (finella) itself (see `Fnlla\\Support\Dotenv`) as internal building blocks.
 
 **NAME ORIGIN AND TECHNICAL SLUG**
 **-** Product name: `fnlla (finella)` (name origin: fnlla (finella) Gardens, Dundee, UK).
 **-** Technical slug: `fnlla` (`github.com/fnlla`, `fnlla.co.uk`).
-**-** Why `fnlla`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
+**-** Why `fnlla (finella)`: short ASCII-only identifier for repositories, package/tooling paths, and domain naming.
 
 Note: `tools/harness/` inside the monorepo is a **dev/test harness** for framework development. The public starter app lives in `fnlla/fnlla` and is installed via `composer create-project fnlla/starter`.
 
@@ -54,7 +54,7 @@ Full package catalog lives in `documentation/src/packages.md`.
 **INDUSTRY BLUEPRINTS**
 fnlla (finella) ships CLI blueprints for common product domains to speed up scaffolding:
 crm, school, crm-school, saas, commerce, marketplace, erp, healthcare, real-estate, logistics.
-Use `php bin/finella make:blueprint <name> --module --plan` to preview before generating files.
+Use `php bin/fnlla make:blueprint <name> --module --plan` to preview before generating files.
 
 **PUBLIC SECTOR COMPLIANCE**
 We ship a public-sector compliance checklist template in `documentation/src/operations.md`.
@@ -74,7 +74,7 @@ For long-running servers, you can boot once and reuse the kernel (see `framework
 **EXAMPLE (DOCS GENERATION)**
 Generate and publish technical + user docs in one step, then review at the /docs endpoint:
 ```bash
-php bin/finella docs:generate --publish
+php bin/fnlla docs:generate --publish
 ```
 Open `GET /docs` for published docs.
 

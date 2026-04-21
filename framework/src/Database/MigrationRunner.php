@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Database;
+namespace Fnlla\\Database;
 
 use PDO;
 use RuntimeException;
-use Finella\Support\Env;
+use Fnlla\\Support\Env;
 
 final class MigrationRunner
 {
@@ -25,8 +25,8 @@ final class MigrationRunner
     public function migrate(): array
     {
         $pdo = $this->connections->connection();
-        if (class_exists(\Finella\Database\Schema::class)) {
-            \Finella\Database\Schema::setConnection($pdo);
+        if (class_exists(\Fnlla\\Database\Schema::class)) {
+            \Fnlla\\Database\Schema::setConnection($pdo);
         }
         $this->ensureRepository($pdo);
 
@@ -42,8 +42,8 @@ final class MigrationRunner
                 continue;
             }
             $migration = $this->resolveMigration($file);
-            if (class_exists(\Finella\Database\Schema::class)) {
-                \Finella\Database\Schema::setConnection($pdo);
+            if (class_exists(\Fnlla\\Database\Schema::class)) {
+                \Fnlla\\Database\Schema::setConnection($pdo);
             }
             $migration->up($pdo);
             $this->logMigration($pdo, $name, $batch);
@@ -56,8 +56,8 @@ final class MigrationRunner
     public function rollback(int $steps = 1): array
     {
         $pdo = $this->connections->connection();
-        if (class_exists(\Finella\Database\Schema::class)) {
-            \Finella\Database\Schema::setConnection($pdo);
+        if (class_exists(\Fnlla\\Database\Schema::class)) {
+            \Fnlla\\Database\Schema::setConnection($pdo);
         }
         $this->ensureRepository($pdo);
 
@@ -74,8 +74,8 @@ final class MigrationRunner
                 continue;
             }
             $instance = $this->resolveMigration($file);
-            if (class_exists(\Finella\Database\Schema::class)) {
-                \Finella\Database\Schema::setConnection($pdo);
+            if (class_exists(\Fnlla\\Database\Schema::class)) {
+                \Fnlla\\Database\Schema::setConnection($pdo);
             }
             $instance->down($pdo);
             $this->deleteMigration($pdo, $migration['migration']);

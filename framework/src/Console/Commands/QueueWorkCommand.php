@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Queue\QueueDriverInterface;
-use Finella\Queue\QueueManager;
-use Finella\Queue\QueueWorker;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Queue\QueueDriverInterface;
+use Fnlla\\Queue\QueueManager;
+use Fnlla\\Queue\QueueWorker;
 
 final class QueueWorkCommand implements CommandInterface
 {
@@ -106,7 +106,7 @@ final class QueueWorkCommand implements CommandInterface
             require $bootstrap;
         }
 
-        $app = $GLOBALS['finella_app'] ?? null;
+        $app = $GLOBALS['Fnlla_app'] ?? null;
         return $app instanceof Container ? $app : null;
     }
 

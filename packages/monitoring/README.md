@@ -1,6 +1,6 @@
 **FNLLA/MONITORING**
 
-Monitoring and observability utilities for Finella.
+Monitoring and observability utilities for fnlla (finella).
 
 **INSTALLATION**
 ```bash

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Content\ContentRepository;
+use Fnlla\\Content\ContentRepository;
 
 function ok(bool $cond, string $msg): void
 {
@@ -14,7 +14,7 @@ function ok(bool $cond, string $msg): void
     }
 }
 
-$tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-content-tests';
+$tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-content-tests';
 @mkdir($tmp, 0775, true);
 $file = $tmp . DIRECTORY_SEPARATOR . 'services.md';
 file_put_contents($file, "---\n{\"title\":\"Services\"}\n---\nHello");

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Maintenance\MaintenanceMiddleware;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Maintenance\MaintenanceMiddleware;
 
 function ok(bool $cond, string $msg): void
 {

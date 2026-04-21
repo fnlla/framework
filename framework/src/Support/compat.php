@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-if (!function_exists(__NAMESPACE__ . '\\finella_compat_enabled')) {
-    function finella_compat_enabled(): bool
+if (!function_exists(__NAMESPACE__ . '\\Fnlla_compat_enabled')) {
+    function Fnlla_compat_enabled(): bool
     {
         $env = getenv('APP_COMPAT');
         if ($env !== false && $env !== '') {
@@ -22,15 +22,15 @@ if (!function_exists(__NAMESPACE__ . '\\finella_compat_enabled')) {
 }
 
 spl_autoload_register(static function (string $class): void {
-    if (!finella_compat_enabled()) {
+    if (!Fnlla_compat_enabled()) {
         return;
     }
 
     $map = [
-        'Application' => \Finella\Core\Application::class,
-        'Router' => \Finella\Http\Router::class,
-        'Request' => \Finella\Http\Request::class,
-        'Response' => \Finella\Http\Response::class,
+        'Application' => \Fnlla\\Core\Application::class,
+        'Router' => \Fnlla\\Http\Router::class,
+        'Request' => \Fnlla\\Http\Request::class,
+        'Response' => \Fnlla\\Http\Response::class,
     ];
 
     if (!isset($map[$class])) {

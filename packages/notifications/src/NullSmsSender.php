@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Notifications;
+namespace Fnlla\\Notifications;
 
 use RuntimeException;
 

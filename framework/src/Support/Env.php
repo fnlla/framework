@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 final class Env
 {

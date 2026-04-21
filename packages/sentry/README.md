@@ -1,6 +1,6 @@
 **FNLLA/SENTRY**
 
-Sentry error tracking adapter for Finella.
+Sentry error tracking adapter for fnlla (finella).
 
 **INSTALLATION**
 ```bash
@@ -18,7 +18,7 @@ SENTRY_RELEASE=2.5.1
 
 **USAGE**
 ```php
-use Finella\Sentry\SentryManager;
+use Fnlla\\Sentry\SentryManager;
 
 $sentry = app()->make(SentryManager::class);
 $sentry->captureMessage('Payment failed', \Sentry\Severity::error());

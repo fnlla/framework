@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= e($title ?? 'finellaPHP') ?></title>
+    <title><?= e($title ?? 'FnllaPHP') ?></title>
     <style>
         :root { --bg: #f8fafc; --text: #0f172a; --card: #ffffff; --border: #e2e8f0; --accent: #0f766e; }
         body { font-family: Arial, sans-serif; margin: 0; padding: 40px; background: var(--bg); color: var(--text); }

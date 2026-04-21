@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Deploy\Commands;
+namespace Fnlla\\Deploy\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
 
 final class DeployWarmupCommand implements CommandInterface
 {
@@ -26,7 +26,7 @@ final class DeployWarmupCommand implements CommandInterface
     public function run(array $args, array $options, ConsoleIO $io, string $root): int
     {
         $root = rtrim($root, '/\\');
-        $bin = $root . '/bin/finella-discover';
+        $bin = $root . '/bin/fnlla-discover';
 
         if (is_file($bin)) {
             $io->line('Running provider discovery...');
@@ -35,7 +35,7 @@ final class DeployWarmupCommand implements CommandInterface
                 return $status;
             }
         } else {
-            $io->line('No finella-discover script found, skipping.');
+            $io->line('No fnlla-discover script found, skipping.');
         }
 
         $io->line('Warmup complete.');

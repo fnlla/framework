@@ -102,36 +102,36 @@ function ok(bool $cond, string $msg): void
 }
 
 $checks = [
-    ['package' => \Finella\Session\SessionMiddleware::class, 'alias' => \Finella\Http\Middleware\SessionMiddleware::class],
-    ['package' => \Finella\Cookie\CookieMiddleware::class, 'alias' => \Finella\Http\Middleware\CookieMiddleware::class],
-    ['package' => \Finella\Auth\Middleware\AuthMiddleware::class, 'alias' => \Finella\Http\Middleware\AuthMiddleware::class],
-    ['package' => \Finella\Csrf\CsrfMiddleware::class, 'alias' => \Finella\Http\Middleware\CsrfMiddleware::class],
-    ['package' => \Finella\RateLimit\RateLimitMiddleware::class, 'alias' => \Finella\Http\Middleware\RateLimitMiddleware::class],
-    ['package' => \Finella\RequestLogging\RequestLoggerMiddleware::class, 'alias' => \Finella\Http\Middleware\RequestLoggerMiddleware::class],
-    ['package' => \Finella\SecurityHeaders\SecurityHeadersMiddleware::class, 'alias' => \Finella\Http\Middleware\SecurityHeadersMiddleware::class],
+    ['package' => \Fnlla\\Session\SessionMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\SessionMiddleware::class],
+    ['package' => \Fnlla\\Cookie\CookieMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\CookieMiddleware::class],
+    ['package' => \Fnlla\\Auth\Middleware\AuthMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\AuthMiddleware::class],
+    ['package' => \Fnlla\\Csrf\CsrfMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\CsrfMiddleware::class],
+    ['package' => \Fnlla\\RateLimit\RateLimitMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\RateLimitMiddleware::class],
+    ['package' => \Fnlla\\RequestLogging\RequestLoggerMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\RequestLoggerMiddleware::class],
+    ['package' => \Fnlla\\SecurityHeaders\SecurityHeadersMiddleware::class, 'alias' => \Fnlla\\Http\Middleware\SecurityHeadersMiddleware::class],
 
-    ['package' => \Finella\Csrf\CsrfTokenManager::class, 'alias' => \Finella\Security\CsrfTokenManager::class],
+    ['package' => \Fnlla\\Csrf\CsrfTokenManager::class, 'alias' => \Fnlla\\Security\CsrfTokenManager::class],
 
-    ['package' => \Finella\Auth\AuthManager::class, 'alias' => \Finella\Support\Auth\AuthManager::class],
-    ['package' => \Finella\Auth\AuthServiceProvider::class, 'alias' => \Finella\Support\Auth\AuthServiceProvider::class],
-    ['package' => \Finella\Auth\CallableUserProvider::class, 'alias' => \Finella\Support\Auth\CallableUserProvider::class],
-    ['package' => \Finella\Auth\SessionGuard::class, 'alias' => \Finella\Support\Auth\SessionGuard::class],
-    ['package' => \Finella\Auth\TokenGuard::class, 'alias' => \Finella\Support\Auth\TokenGuard::class],
-    ['package' => \Finella\Auth\UserProviderInterface::class, 'alias' => \Finella\Support\Auth\UserProviderInterface::class],
+    ['package' => \Fnlla\\Auth\AuthManager::class, 'alias' => \Fnlla\\Support\Auth\AuthManager::class],
+    ['package' => \Fnlla\\Auth\AuthServiceProvider::class, 'alias' => \Fnlla\\Support\Auth\AuthServiceProvider::class],
+    ['package' => \Fnlla\\Auth\CallableUserProvider::class, 'alias' => \Fnlla\\Support\Auth\CallableUserProvider::class],
+    ['package' => \Fnlla\\Auth\SessionGuard::class, 'alias' => \Fnlla\\Support\Auth\SessionGuard::class],
+    ['package' => \Fnlla\\Auth\TokenGuard::class, 'alias' => \Fnlla\\Support\Auth\TokenGuard::class],
+    ['package' => \Fnlla\\Auth\UserProviderInterface::class, 'alias' => \Fnlla\\Support\Auth\UserProviderInterface::class],
 
-    ['package' => \Finella\Cookie\Cookie::class, 'alias' => \Finella\Support\Cookie::class],
-    ['package' => \Finella\Cookie\CookieJar::class, 'alias' => \Finella\Support\CookieJar::class],
-    ['package' => \Finella\Cookie\CookieServiceProvider::class, 'alias' => \Finella\Support\CookieServiceProvider::class],
+    ['package' => \Fnlla\\Cookie\Cookie::class, 'alias' => \Fnlla\\Support\Cookie::class],
+    ['package' => \Fnlla\\Cookie\CookieJar::class, 'alias' => \Fnlla\\Support\CookieJar::class],
+    ['package' => \Fnlla\\Cookie\CookieServiceProvider::class, 'alias' => \Fnlla\\Support\CookieServiceProvider::class],
 
-    ['package' => \Finella\Session\SessionInterface::class, 'alias' => \Finella\Support\SessionInterface::class],
-    ['package' => \Finella\Session\SessionManager::class, 'alias' => \Finella\Support\SessionManager::class],
-    ['package' => \Finella\Session\SessionServiceProvider::class, 'alias' => \Finella\Support\SessionServiceProvider::class],
+    ['package' => \Fnlla\\Session\SessionInterface::class, 'alias' => \Fnlla\\Support\SessionInterface::class],
+    ['package' => \Fnlla\\Session\SessionManager::class, 'alias' => \Fnlla\\Support\SessionManager::class],
+    ['package' => \Fnlla\\Session\SessionServiceProvider::class, 'alias' => \Fnlla\\Support\SessionServiceProvider::class],
 
-    ['package' => \Finella\RateLimit\RateLimiter::class, 'alias' => \Finella\Support\RateLimiter::class],
-    ['package' => \Finella\RateLimit\RateLimitServiceProvider::class, 'alias' => \Finella\Support\RateLimitServiceProvider::class],
+    ['package' => \Fnlla\\RateLimit\RateLimiter::class, 'alias' => \Fnlla\\Support\RateLimiter::class],
+    ['package' => \Fnlla\\RateLimit\RateLimitServiceProvider::class, 'alias' => \Fnlla\\Support\RateLimitServiceProvider::class],
 
-    ['package' => \Finella\Log\Logger::class, 'alias' => \Finella\Support\Logger::class],
-    ['package' => \Finella\Log\LogServiceProvider::class, 'alias' => \Finella\Support\LogServiceProvider::class],
+    ['package' => \Fnlla\\Log\Logger::class, 'alias' => \Fnlla\\Support\Logger::class],
+    ['package' => \Fnlla\\Log\LogServiceProvider::class, 'alias' => \Fnlla\\Support\LogServiceProvider::class],
 ];
 
 $checked = 0;

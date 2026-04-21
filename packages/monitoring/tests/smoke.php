@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Monitoring\MonitoringManager;
-use Finella\Cache\CacheManager;
+use Fnlla\\Monitoring\MonitoringManager;
+use Fnlla\\Cache\CacheManager;
 
 try {
     $cache = new CacheManager(['driver' => 'array']);

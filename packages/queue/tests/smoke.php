@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Queue\JobInterface;
-use Finella\Queue\QueueManager;
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Queue\DatabaseQueue;
-use Finella\Queue\QueueWorker;
+use Fnlla\\Queue\JobInterface;
+use Fnlla\\Queue\QueueManager;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Queue\DatabaseQueue;
+use Fnlla\\Queue\QueueWorker;
 
 function ok(bool $cond, string $msg): void
 {
@@ -52,7 +52,7 @@ $manager = new QueueManager([
     'driver' => 'sync',
 ], fn () => $container);
 
-$tempFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-queue-smoke-' . uniqid() . '.txt';
+$tempFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-queue-smoke-' . uniqid() . '.txt';
 
 $job = new FileJob($tempFile);
 
@@ -63,7 +63,7 @@ ok(is_file($tempFile) === true, 'job wrote file');
 @unlink($tempFile);
 
 // Database driver
-$dbPath = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-queue-db-' . uniqid() . '.sqlite';
+$dbPath = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-queue-db-' . uniqid() . '.sqlite';
 $connections = new ConnectionManager([
     'driver' => 'sqlite',
     'path' => $dbPath,
@@ -83,7 +83,7 @@ $dbManager = new QueueManager([
 $queue = $dbManager->queue();
 ok($queue instanceof DatabaseQueue, 'database driver resolved');
 
-$dbFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-queue-db-job-' . uniqid() . '.txt';
+$dbFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-queue-db-job-' . uniqid() . '.txt';
 $dbJob = new FileJob($dbFile);
 
 $dbManager->dispatch($dbJob);

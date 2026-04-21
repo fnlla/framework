@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/debugbar",
-    "description":  "Finella debugbar module",
+    "description":  "Fnlla debugbar module",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -8,21 +8,18 @@
                 },
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Debugbar\\":  "src/"
+                                   "Fnlla\\Debugbar\\":  "src/"
                                }
                  },
     "license":  "proprietary",
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Debugbar\\DebugbarServiceProvider"
+                                                  "Fnlla\\Debugbar\\DebugbarServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
                                        "dev-main":  "3.0.x-dev"
                                    }
-              },
-    "replace":  {
-                    "finella/debugbar":  "self.version"
-                }
+              }
 }

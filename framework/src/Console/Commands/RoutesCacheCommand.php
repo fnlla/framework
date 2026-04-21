@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Console\CommandInterface;
-use Finella\Console\ConsoleIO;
-use Finella\Http\RouteCacheCompiler;
+use Fnlla\\Console\CommandInterface;
+use Fnlla\\Console\ConsoleIO;
+use Fnlla\\Http\RouteCacheCompiler;
 use RuntimeException;
 
 final class RoutesCacheCommand implements CommandInterface
@@ -38,8 +38,8 @@ final class RoutesCacheCommand implements CommandInterface
             $compiler = new RouteCacheCompiler();
             $cachePath = $compiler->compile($root, null, $path);
             $payload = is_file($cachePath) ? require $cachePath : null;
-            if (is_array($payload) && isset($payload['__finella_routes_cache']) && is_array($payload['__finella_routes_cache'])) {
-                $meta = $payload['__finella_routes_cache'];
+            if (is_array($payload) && isset($payload['__Fnlla_routes_cache']) && is_array($payload['__Fnlla_routes_cache'])) {
+                $meta = $payload['__Fnlla_routes_cache'];
                 if (!empty($meta['disabled'])) {
                     $issues = isset($meta['issues']) && is_array($meta['issues']) ? $meta['issues'] : [];
                     $hasNonCacheable = false;

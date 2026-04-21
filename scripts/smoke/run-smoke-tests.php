@@ -239,8 +239,8 @@ $securityCheck = function () use ($root, $autoload, $addResult): void {
 
     $http = require $configPath;
     $global = $http['global'] ?? [];
-    $securityClass = 'Finella\\SecurityHeaders\\SecurityHeadersMiddleware';
-    $loggingClass = 'Finella\\RequestLogging\\RequestLoggerMiddleware';
+    $securityClass = 'Fnlla\\\SecurityHeaders\\SecurityHeadersMiddleware';
+    $loggingClass = 'Fnlla\\\RequestLogging\\RequestLoggerMiddleware';
 
     $hasSecurity = in_array($securityClass, $global, true);
     $hasLogging = in_array($loggingClass, $global, true);

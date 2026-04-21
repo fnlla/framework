@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/ops",
-    "description":  "Finella ops middleware bundle (security headers, CORS, rate limiting, redirects, maintenance, static cache, forms)",
+    "description":  "Fnlla ops middleware bundle (security headers, CORS, rate limiting, redirects, maintenance, static cache, forms)",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,25 +22,25 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\SecurityHeaders\\":  "src/SecurityHeaders/",
-                                   "Finella\\Cors\\":  "src/Cors/",
-                                   "Finella\\RateLimit\\":  "src/RateLimit/",
-                                   "Finella\\Redirects\\":  "src/Redirects/",
-                                   "Finella\\Maintenance\\":  "src/Maintenance/",
-                                   "Finella\\CacheStatic\\":  "src/CacheStatic/",
-                                   "Finella\\Forms\\":  "src/Forms/"
+                                   "Fnlla\\SecurityHeaders\\":  "src/SecurityHeaders/",
+                                   "Fnlla\\Cors\\":  "src/Cors/",
+                                   "Fnlla\\RateLimit\\":  "src/RateLimit/",
+                                   "Fnlla\\Redirects\\":  "src/Redirects/",
+                                   "Fnlla\\Maintenance\\":  "src/Maintenance/",
+                                   "Fnlla\\CacheStatic\\":  "src/CacheStatic/",
+                                   "Fnlla\\Forms\\":  "src/Forms/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\SecurityHeaders\\SecurityHeadersServiceProvider",
-                                                  "Finella\\Cors\\CorsServiceProvider",
-                                                  "Finella\\RateLimit\\RateLimitServiceProvider",
-                                                  "Finella\\Redirects\\RedirectsServiceProvider",
-                                                  "Finella\\Maintenance\\MaintenanceServiceProvider",
-                                                  "Finella\\CacheStatic\\CacheStaticServiceProvider",
-                                                  "Finella\\Forms\\FormsServiceProvider"
+                                                  "Fnlla\\SecurityHeaders\\SecurityHeadersServiceProvider",
+                                                  "Fnlla\\Cors\\CorsServiceProvider",
+                                                  "Fnlla\\RateLimit\\RateLimitServiceProvider",
+                                                  "Fnlla\\Redirects\\RedirectsServiceProvider",
+                                                  "Fnlla\\Maintenance\\MaintenanceServiceProvider",
+                                                  "Fnlla\\CacheStatic\\CacheStaticServiceProvider",
+                                                  "Fnlla\\Forms\\FormsServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -49,8 +49,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke-security-headers.php \u0026\u0026 php tests/smoke-cors.php \u0026\u0026 php tests/smoke-rate-limit.php \u0026\u0026 php tests/smoke-redirects.php \u0026\u0026 php tests/smoke-maintenance.php \u0026\u0026 php tests/smoke-cache-static.php \u0026\u0026 php tests/smoke-forms.php"
-                },
-    "replace":  {
-                    "finella/ops":  "self.version"
                 }
 }

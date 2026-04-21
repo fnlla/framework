@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\RateLimit;
+namespace Fnlla\\RateLimit;
 
-use Finella\Cache\CacheManager;
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Cache\CacheManager;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class RateLimitServiceProvider extends ServiceProvider
 {

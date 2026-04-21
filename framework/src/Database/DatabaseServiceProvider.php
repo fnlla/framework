@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Database;
+namespace Fnlla\\Database;
 
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class DatabaseServiceProvider extends ServiceProvider
 {

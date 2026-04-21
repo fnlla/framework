@@ -21,7 +21,7 @@ return [
     'ttl' => (int) env('SESSION_TTL', 7200),
     'path' => env('SESSION_PATH', $basePath . '/storage/sessions'),
     'cookie' => [
-        'name' => env('SESSION_COOKIE', 'finella_session'),
+        'name' => env('SESSION_COOKIE', 'Fnlla_session'),
         'path' => env('COOKIE_PATH', '/'),
         'domain' => env('SESSION_DOMAIN', ''),
         'secure' => $envBool('SESSION_SECURE', $secureDefault),

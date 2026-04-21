@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
 /**
  * Configuration repository loaded from `config/<group>/*.php` (with optional subdirectories).
@@ -61,7 +61,7 @@ final class ConfigRepository
         }
 
         $candidates = [
-            dirname(__DIR__, 4), // app repo when framework lives in /framework/finellaPHP/src/Core
+            dirname(__DIR__, 4), // app repo when framework lives in /framework/FnllaPHP/src/Core
             dirname(__DIR__, 2), // framework repo root if used standalone
             dirname(__DIR__, 3),
         ];

@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/settings",
-    "description":  "Key/value settings store for Finella",
+    "description":  "Key/value settings store for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Settings\\":  "src/"
+                                   "Fnlla\\Settings\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Settings\\SettingsServiceProvider"
+                                                  "Fnlla\\Settings\\SettingsServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/settings":  "self.version"
                 }
 }

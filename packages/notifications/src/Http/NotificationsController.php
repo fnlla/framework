@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Notifications\Http;
+namespace Fnlla\\Notifications\Http;
 
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Notifications\NotificationManager;
-use Finella\Notifications\NotificationRepository;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Notifications\NotificationManager;
+use Fnlla\\Notifications\NotificationRepository;
 
 final class NotificationsController
 {

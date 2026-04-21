@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Core;
+namespace Fnlla\\Core;
 
 use RuntimeException;
 

@@ -6,20 +6,20 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Testing;
+namespace Fnlla\\Testing;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
-use Finella\Contracts\Http\KernelInterface;
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Database\MigrationRunner;
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Http\Uri;
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Session\SessionInterface;
-use Finella\Auth\AuthManager;
+use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Database\MigrationRunner;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\Uri;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Session\SessionInterface;
+use Fnlla\\Auth\AuthManager;
 use RuntimeException;
 
 abstract class TestCase extends BaseTestCase
@@ -52,8 +52,8 @@ abstract class TestCase extends BaseTestCase
         if ($this->app instanceof Container) {
             return $this->app;
         }
-        if (isset($GLOBALS['finella_app']) && $GLOBALS['finella_app'] instanceof Container) {
-            return $GLOBALS['finella_app'];
+        if (isset($GLOBALS['Fnlla_app']) && $GLOBALS['Fnlla_app'] instanceof Container) {
+            return $GLOBALS['Fnlla_app'];
         }
         throw new RuntimeException('Application container is not available.');
     }
@@ -88,7 +88,7 @@ abstract class TestCase extends BaseTestCase
         }
 
         $this->kernel = $kernel;
-        $this->app = $GLOBALS['finella_app'] ?? null;
+        $this->app = $GLOBALS['Fnlla_app'] ?? null;
     }
 
     protected function refreshDatabase(): void
@@ -101,8 +101,8 @@ abstract class TestCase extends BaseTestCase
 
         $manager = new ConnectionManager($config);
         $app->instance(ConnectionManager::class, $manager);
-        if (class_exists(\Finella\Orm\Model::class)) {
-            \Finella\Orm\Model::setConnectionManager($manager);
+        if (class_exists(\Fnlla\\Orm\Model::class)) {
+            \Fnlla\\Orm\Model::setConnectionManager($manager);
         }
 
         $migrationsPath = $this->appRoot . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'migrations';
@@ -294,7 +294,7 @@ abstract class TestCase extends BaseTestCase
             return;
         }
         if (method_exists($session, 'start')) {
-            $cookieName = method_exists($session, 'cookieName') ? $session->cookieName() : 'finella_session';
+            $cookieName = method_exists($session, 'cookieName') ? $session->cookieName() : 'Fnlla_session';
             $sessionId = $this->cookies[$cookieName] ?? null;
             $session->start(is_string($sessionId) ? $sessionId : null);
         }

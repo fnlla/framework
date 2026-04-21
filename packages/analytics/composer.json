@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/analytics",
-    "description":  "Analytics event helpers for Finella",
+    "description":  "Analytics event helpers for Fnlla",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -22,13 +22,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Analytics\\":  "src/"
+                                   "Fnlla\\Analytics\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Analytics\\AnalyticsServiceProvider"
+                                                  "Fnlla\\Analytics\\AnalyticsServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -37,8 +37,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/analytics":  "self.version"
                 }
 }

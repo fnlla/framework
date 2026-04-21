@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Pdf;
+namespace Fnlla\\Pdf;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;

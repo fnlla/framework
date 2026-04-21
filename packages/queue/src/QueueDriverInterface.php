@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Queue;
+namespace Fnlla\\Queue;
 
 use Throwable;
 

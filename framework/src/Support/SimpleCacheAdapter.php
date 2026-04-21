@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 use DateTimeImmutable;
-use Finella\Contracts\Cache\CacheStoreInterface;
-use Finella\Support\Psr\SimpleCache\CacheInterface;
+use Fnlla\\Contracts\Cache\CacheStoreInterface;
+use Fnlla\\Support\Psr\SimpleCache\CacheInterface;
 
 final class SimpleCacheAdapter implements CacheInterface
 {

@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/mail",
-    "description":  "Finella mail module (Symfony Mailer adapter)",
+    "description":  "Fnlla mail module (Symfony Mailer adapter)",
     "type":  "library",
     "require":  {
                     "php":  "\u003e=8.5",
@@ -24,13 +24,13 @@
                 ],
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Mail\\":  "src/"
+                                   "Fnlla\\Mail\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Mail\\MailServiceProvider"
+                                                  "Fnlla\\Mail\\MailServiceProvider"
                                               ]
                             },
                   "branch-alias":  {
@@ -39,8 +39,5 @@
               },
     "scripts":  {
                     "test":  "php tests/smoke.php"
-                },
-    "replace":  {
-                    "finella/mail":  "self.version"
                 }
 }

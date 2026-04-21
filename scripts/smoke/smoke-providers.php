@@ -25,7 +25,7 @@ function ok(bool $cond, string $msg): void
 }
 
 if (!is_file($cacheFile)) {
-    fwrite(STDERR, "Provider cache missing. Run tools/harness/bin/finella-discover.\n");
+    fwrite(STDERR, "Provider cache missing. Run tools/harness/bin/fnlla-discover.\n");
     exit(1);
 }
 
@@ -40,19 +40,19 @@ if (is_array($cached)) {
 }
 
 $required = [
-    'Finella\\Database\\DatabaseServiceProvider',
-    'Finella\\Orm\\OrmServiceProvider',
-    'Finella\\Cache\\CacheServiceProvider',
-    'Finella\\Queue\\QueueServiceProvider',
-    'Finella\\Mail\\MailServiceProvider',
-    'Finella\\Session\\SessionServiceProvider',
-    'Finella\\Cookie\\CookieServiceProvider',
-    'Finella\\Auth\\AuthServiceProvider',
-    'Finella\\Csrf\\CsrfServiceProvider',
-    'Finella\\RateLimit\\RateLimitServiceProvider',
-    'Finella\\SecurityHeaders\\SecurityHeadersServiceProvider',
-    'Finella\\RequestLogging\\RequestLoggingServiceProvider',
-    'Finella\\Log\\LogServiceProvider',
+    'Fnlla\\\Database\\DatabaseServiceProvider',
+    'Fnlla\\\Orm\\OrmServiceProvider',
+    'Fnlla\\\Cache\\CacheServiceProvider',
+    'Fnlla\\\Queue\\QueueServiceProvider',
+    'Fnlla\\\Mail\\MailServiceProvider',
+    'Fnlla\\\Session\\SessionServiceProvider',
+    'Fnlla\\\Cookie\\CookieServiceProvider',
+    'Fnlla\\\Auth\\AuthServiceProvider',
+    'Fnlla\\\Csrf\\CsrfServiceProvider',
+    'Fnlla\\\RateLimit\\RateLimitServiceProvider',
+    'Fnlla\\\SecurityHeaders\\SecurityHeadersServiceProvider',
+    'Fnlla\\\RequestLogging\\RequestLoggingServiceProvider',
+    'Fnlla\\\Log\\LogServiceProvider',
 ];
 
 foreach ($required as $provider) {

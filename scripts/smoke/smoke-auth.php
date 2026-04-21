@@ -15,21 +15,21 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Finella\Auth\AuthManager;
-use Finella\Auth\CallableUserProvider;
-use Finella\Auth\PasswordHasher;
-use Finella\Auth\PasswordResetManager;
-use Finella\Auth\PasswordResetStore;
-use Finella\Auth\RememberCookie;
-use Finella\Auth\RememberTokenStore;
-use Finella\Core\ConfigRepository;
-use Finella\Csrf\CsrfMiddleware;
-use Finella\Csrf\CsrfTokenManager;
-use Finella\Http\Request;
-use Finella\Http\RequestHandler;
-use Finella\Http\Response;
-use Finella\Http\Uri;
-use Finella\Session\FileSessionStore;
+use Fnlla\\Auth\AuthManager;
+use Fnlla\\Auth\CallableUserProvider;
+use Fnlla\\Auth\PasswordHasher;
+use Fnlla\\Auth\PasswordResetManager;
+use Fnlla\\Auth\PasswordResetStore;
+use Fnlla\\Auth\RememberCookie;
+use Fnlla\\Auth\RememberTokenStore;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Csrf\CsrfMiddleware;
+use Fnlla\\Csrf\CsrfTokenManager;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\RequestHandler;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Uri;
+use Fnlla\\Session\FileSessionStore;
 
 function ok(bool $cond, string $msg): void
 {
@@ -39,7 +39,7 @@ function ok(bool $cond, string $msg): void
     }
 }
 
-$tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella_auth_smoke_' . bin2hex(random_bytes(4));
+$tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'Fnlla_auth_smoke_' . bin2hex(random_bytes(4));
 @mkdir($tmp, 0755, true);
 
 $sessionPath = $tmp . DIRECTORY_SEPARATOR . 'sessions';

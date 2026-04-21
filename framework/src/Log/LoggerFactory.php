@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Log;
+namespace Fnlla\\Log;
 
-use Finella\Core\Container;
-use Finella\Log\Processor\RequestIdProcessor;
-use Finella\Log\Processor\StaticContextProcessor;
-use Finella\Support\Env;
+use Fnlla\\Core\Container;
+use Fnlla\\Log\Processor\RequestIdProcessor;
+use Fnlla\\Log\Processor\StaticContextProcessor;
+use Fnlla\\Support\Env;
 use Monolog\Formatter\JsonFormatter;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;

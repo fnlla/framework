@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Core\Container;
-use Finella\Contracts\Support\ServiceProviderInterface;
-use Finella\Support\ProviderManifest;
+use Fnlla\\Core\Container;
+use Fnlla\\Contracts\Support\ServiceProviderInterface;
+use Fnlla\\Support\ProviderManifest;
 
 abstract class ServiceProvider implements ServiceProviderInterface
 {

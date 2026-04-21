@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
-use Finella\Support\Psr\Http\Message\ResponseInterface;
-use Finella\Support\Psr\Http\Message\StreamInterface;
-use Finella\Runtime\RequestContext;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\\Runtime\RequestContext;
 
 /**
  * HTTP response with header management and output helpers.
@@ -202,9 +202,9 @@ final class Response implements ResponseInterface
 
         $clean = $this->sanitizeInput($input);
         if (method_exists($session, 'flash')) {
-            $session->flash('_finella_old', $clean);
+            $session->flash('_Fnlla_old', $clean);
         } else {
-            $session->put('_finella_old', $clean);
+            $session->put('_Fnlla_old', $clean);
         }
 
         return $this;
@@ -218,11 +218,11 @@ final class Response implements ResponseInterface
         }
 
         if (method_exists($session, 'flash')) {
-            $session->flash('_finella_errors', $errors);
-            $session->flash('_finella_error_bag', $bag);
+            $session->flash('_Fnlla_errors', $errors);
+            $session->flash('_Fnlla_error_bag', $bag);
         } else {
-            $session->put('_finella_errors', $errors);
-            $session->put('_finella_error_bag', $bag);
+            $session->put('_Fnlla_errors', $errors);
+            $session->put('_Fnlla_error_bag', $bag);
         }
 
         return $this;
@@ -326,8 +326,8 @@ final class Response implements ResponseInterface
                     }
                 }
             }
-            if (!$this->hasHeader('X-Finella')) {
-                $this->setHeader('X-Finella', ['yes']);
+            if (!$this->hasHeader('X-Fnlla')) {
+                $this->setHeader('X-Fnlla', ['yes']);
             }
             foreach ($this->headers as $name => $values) {
                 $name = $this->sanitizeHeaderName($name);
@@ -412,35 +412,35 @@ final class Response implements ResponseInterface
         return str_replace(["\r", "\n"], '', $value);
     }
 
-    private function resolveSession(): ?\Finella\Session\SessionInterface
+    private function resolveSession(): ?\Fnlla\\Session\SessionInterface
     {
-        if (!interface_exists(\Finella\Session\SessionInterface::class)) {
+        if (!interface_exists(\Fnlla\\Session\SessionInterface::class)) {
             return null;
         }
 
-        $app = $GLOBALS['finella_app'] ?? null;
-        if (!$app instanceof \Finella\Core\Container) {
+        $app = $GLOBALS['Fnlla_app'] ?? null;
+        if (!$app instanceof \Fnlla\\Core\Container) {
             return null;
         }
 
-        if (!$app->has(\Finella\Session\SessionInterface::class)) {
+        if (!$app->has(\Fnlla\\Session\SessionInterface::class)) {
             return null;
         }
 
         try {
-            $session = $app->make(\Finella\Session\SessionInterface::class);
+            $session = $app->make(\Fnlla\\Session\SessionInterface::class);
         } catch (\Throwable) {
             return null;
         }
 
-        return $session instanceof \Finella\Session\SessionInterface ? $session : null;
+        return $session instanceof \Fnlla\\Session\SessionInterface ? $session : null;
     }
 
     private function sanitizeInput(array $input): array
     {
         $clean = [];
         foreach ($input as $key => $value) {
-            if ($value instanceof \Finella\Http\UploadedFile) {
+            if ($value instanceof \Fnlla\\Http\UploadedFile) {
                 continue;
             }
             if (is_object($value)) {

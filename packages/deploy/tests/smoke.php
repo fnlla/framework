@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Deploy\Commands\DeployHealthCommand;
-use Finella\Deploy\Commands\DeployWarmupCommand;
+use Fnlla\\Deploy\Commands\DeployHealthCommand;
+use Fnlla\\Deploy\Commands\DeployWarmupCommand;
 
 function ok(bool $cond, string $msg): void
 {

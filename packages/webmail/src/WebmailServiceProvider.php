@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Core\Container;
-use Finella\Settings\SettingsStore;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Settings\SettingsStore;
+use Fnlla\\Support\ServiceProvider;
 
 final class WebmailServiceProvider extends ServiceProvider
 {

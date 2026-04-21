@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Finella\Database\MigrationInterface;
-use Finella\Database\Schema;
-use Finella\Database\Table;
+use Fnlla\\Database\MigrationInterface;
+use Fnlla\\Database\Schema;
+use Fnlla\\Database\Table;
 
 return new class implements MigrationInterface
 {

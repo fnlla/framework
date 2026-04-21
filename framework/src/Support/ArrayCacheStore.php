@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 /**
  * @deprecated [DEP-2026-02] Use ArrayStore instead.

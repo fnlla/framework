@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Core\ConfigRepository;
-use Finella\Docs\DocsManager;
-use Finella\Docs\DocsMarkdownRenderer;
-use Finella\Docs\DocsPaths;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Docs\DocsManager;
+use Fnlla\\Docs\DocsMarkdownRenderer;
+use Fnlla\\Docs\DocsPaths;
 
-$root = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-docs-smoke-' . uniqid();
+$root = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-docs-smoke-' . uniqid();
 @mkdir($root, 0777, true);
 
 $config = new ConfigRepository([

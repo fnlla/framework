@@ -38,32 +38,32 @@ Register the command in `config/console/console.php`:
 ```php
 return [
     'commands' => [
-        Finella\Docs\Commands\DocsGenerateCommand::class,
-        Finella\Docs\Commands\DocsSyncCommand::class,
+        Fnlla\\Docs\Commands\DocsGenerateCommand::class,
+        Fnlla\\Docs\Commands\DocsSyncCommand::class,
     ],
 ];
 ```
 Run generation:
 ```bash
-php bin/finella docs:generate
+php bin/fnlla docs:generate
 ```
 Generate and publish in one step:
 ```bash
-php bin/finella docs:generate --publish
+php bin/fnlla docs:generate --publish
 ```
 Optional override:
 ```bash
-php bin/finella docs:generate --publish --publish-target=/path/to/published/docs
+php bin/fnlla docs:generate --publish --publish-target=/path/to/published/docs
 ```
 Sync monorepo docs into the app:
 ```bash
-php bin/finella docs:sync --app=.
+php bin/fnlla docs:sync --app=.
 ```
 
 **PUBLISHING**
 To ship compiled docs with your app, publish them into the configured `published` path:
 ```php
-$manager = app(Finella\Docs\DocsManager::class);
+$manager = app(Fnlla\\Docs\DocsManager::class);
 $report = $manager->publish();
 ```
 Publishing copies generated docs into `resources/docs` (by default) and overlays manual docs when they exist.

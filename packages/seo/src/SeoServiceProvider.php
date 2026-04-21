@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Seo;
+namespace Fnlla\\Seo;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class SeoServiceProvider extends ServiceProvider
 {

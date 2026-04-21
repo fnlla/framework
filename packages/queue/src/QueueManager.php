@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Queue;
+namespace Fnlla\\Queue;
 
 use Closure;
 use RuntimeException;
@@ -40,12 +40,12 @@ final class QueueManager
         if ($driver === 'database') {
             $container = $this->resolveContainer();
 
-            if (!class_exists(\Finella\Database\ConnectionManager::class)) {
+            if (!class_exists(\Fnlla\\Database\ConnectionManager::class)) {
                 throw new RuntimeException('Database queue driver requires the core Database module.');
             }
 
-            $connections = $container->make(\Finella\Database\ConnectionManager::class);
-            if (!$connections instanceof \Finella\Database\ConnectionManager) {
+            $connections = $container->make(\Fnlla\\Database\ConnectionManager::class);
+            if (!$connections instanceof \Fnlla\\Database\ConnectionManager) {
                 throw new RuntimeException('ConnectionManager is not available for database queue driver.');
             }
 
@@ -111,11 +111,11 @@ final class QueueManager
         $this->queue = $queue;
     }
 
-    private function resolveContainer(): \Finella\Core\Container
+    private function resolveContainer(): \Fnlla\\Core\Container
     {
         if ($this->containerResolver !== null) {
             $container = ($this->containerResolver)();
-            if ($container instanceof \Finella\Core\Container) {
+            if ($container instanceof \Fnlla\\Core\Container) {
                 return $container;
             }
         }

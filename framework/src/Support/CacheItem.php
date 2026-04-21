@@ -8,12 +8,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 use DateInterval;
 use DateTimeImmutable;
 use DateTimeInterface;
-use Finella\Support\Psr\Cache\CacheItemInterface;
+use Fnlla\\Support\Psr\Cache\CacheItemInterface;
 
 final class CacheItem implements CacheItemInterface
 {

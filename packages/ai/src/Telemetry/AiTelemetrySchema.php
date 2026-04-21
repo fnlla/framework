@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Telemetry;
+namespace Fnlla\\Ai\Telemetry;
 
 use PDO;
 

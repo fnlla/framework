@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Session;
+namespace Fnlla\\Session;
 
 final class SessionManager implements SessionInterface
 {
@@ -55,7 +55,7 @@ final class SessionManager implements SessionInterface
         $configured = $this->config['save_path'] ?? null;
         if (is_string($configured) && trim($configured) !== '') {
             $path = trim($configured);
-            if (\Finella\Support\safe_mkdir($path, 0755, true, 'session-save-path') && is_writable($path)) {
+            if (\Fnlla\\Support\safe_mkdir($path, 0755, true, 'session-save-path') && is_writable($path)) {
                 session_save_path($path);
                 return;
             }
@@ -68,9 +68,9 @@ final class SessionManager implements SessionInterface
 
         $fallback = rtrim((string) sys_get_temp_dir(), DIRECTORY_SEPARATOR)
             . DIRECTORY_SEPARATOR
-            . 'finella-sessions';
+            . 'fnlla-sessions';
 
-        if (\Finella\Support\safe_mkdir($fallback, 0755, true, 'session-fallback-path') && is_writable($fallback)) {
+        if (\Fnlla\\Support\safe_mkdir($fallback, 0755, true, 'session-fallback-path') && is_writable($fallback)) {
             session_save_path($fallback);
         }
     }

@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) TENANCY**
+**fnlla (finella) TENANCY**
 
 Basic multi-tenant helpers for fnlla (finella) apps. This package provides:
 **-** `TenantContext` for storing the current tenant id.
@@ -36,14 +36,14 @@ return [
 **MIDDLEWARE**
 Add the middleware in `config/http/http.php`:
 ```php
-$aliases['tenant'] = Finella\Tenancy\TenantMiddleware::class;
+$aliases['tenant'] = Fnlla\\Tenancy\TenantMiddleware::class;
 // Optionally enable globally when TENANCY_ENABLED=1
 ```
 
 **MODELS**
 Extend `TenantModel` to auto-scope by tenant id:
 ```php
-use Finella\Tenancy\TenantModel;
+use Fnlla\\Tenancy\TenantModel;
 
 final class Project extends TenantModel
 {

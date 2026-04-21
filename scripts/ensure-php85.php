@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-if (!function_exists('finella_ensure_php85_runtime')) {
-    define('FINELLA_REQUIRED_PHP_VERSION', '8.5.5');
-    define('FINELLA_REQUIRED_PHP_VERSION_ID', 80505);
+if (!function_exists('Fnlla_ensure_php85_runtime')) {
+    define('Fnlla_REQUIRED_PHP_VERSION', '8.5.5');
+    define('Fnlla_REQUIRED_PHP_VERSION_ID', 80505);
 
     /**
      * Ensure CLI scripts run on PHP 8.5.5.
      * If current runtime differs, re-exec the current script using a detected PHP 8.5.5 binary.
      */
-    function finella_ensure_php85_runtime(): void
+    function Fnlla_ensure_php85_runtime(): void
     {
         if (PHP_SAPI !== 'cli') {
             return;
@@ -18,21 +18,21 @@ if (!function_exists('finella_ensure_php85_runtime')) {
 
         // CI runners frequently provide latest patch-level PHP (8.5.x) rather than exactly 8.5.5.
         // Keep local/dev strict pinning, but allow any 8.5.x runtime in CI pipelines.
-        if (finella_is_ci_environment() && PHP_VERSION_ID >= 80500 && PHP_VERSION_ID < 80600) {
+        if (Fnlla_is_ci_environment() && PHP_VERSION_ID >= 80500 && PHP_VERSION_ID < 80600) {
             return;
         }
 
-        if (PHP_VERSION_ID === FINELLA_REQUIRED_PHP_VERSION_ID) {
+        if (PHP_VERSION_ID === Fnlla_REQUIRED_PHP_VERSION_ID) {
             return;
         }
 
-        if (getenv('FINELLA_PHP_GUARD_DISABLED') === '1') {
+        if (getenv('Fnlla_PHP_GUARD_DISABLED') === '1') {
             return;
         }
 
-        if (getenv('FINELLA_PHP_REEXEC') === '1') {
-            finella_php85_guard_fail(
-                'PHP ' . FINELLA_REQUIRED_PHP_VERSION . ' is required, and automatic re-exec failed. Current runtime: '
+        if (getenv('Fnlla_PHP_REEXEC') === '1') {
+            Fnlla_php85_guard_fail(
+                'PHP ' . Fnlla_REQUIRED_PHP_VERSION . ' is required, and automatic re-exec failed. Current runtime: '
                 . PHP_VERSION
             );
         }
@@ -40,21 +40,21 @@ if (!function_exists('finella_ensure_php85_runtime')) {
         $script = $_SERVER['SCRIPT_FILENAME'] ?? '';
         $argv = $_SERVER['argv'] ?? [];
         if (!is_string($script) || $script === '' || !is_array($argv)) {
-            finella_php85_guard_fail('Unable to determine script path/args for PHP 8.5 re-exec.');
+            Fnlla_php85_guard_fail('Unable to determine script path/args for PHP 8.5 re-exec.');
         }
 
-        $phpBinary = finella_find_php85_binary();
+        $phpBinary = Fnlla_find_php85_binary();
         if ($phpBinary === null) {
-            finella_php85_guard_fail(
-                'PHP ' . FINELLA_REQUIRED_PHP_VERSION . ' is required. Set FINELLA_PHP_BIN to a PHP '
-                . FINELLA_REQUIRED_PHP_VERSION
+            Fnlla_php85_guard_fail(
+                'PHP ' . Fnlla_REQUIRED_PHP_VERSION . ' is required. Set Fnlla_PHP_BIN to a PHP '
+                . Fnlla_REQUIRED_PHP_VERSION
                 . ' executable (example: C:\\laragon\\bin\\php\\php-8.5.5-Win32-vs17-x64\\php.exe).'
             );
         }
 
-        putenv('FINELLA_PHP_REEXEC=1');
-        $_ENV['FINELLA_PHP_REEXEC'] = '1';
-        $_SERVER['FINELLA_PHP_REEXEC'] = '1';
+        putenv('Fnlla_PHP_REEXEC=1');
+        $_ENV['Fnlla_PHP_REEXEC'] = '1';
+        $_SERVER['Fnlla_PHP_REEXEC'] = '1';
 
         $parts = [escapeshellarg($phpBinary), escapeshellarg($script)];
         foreach (array_slice($argv, 1) as $arg) {
@@ -66,11 +66,11 @@ if (!function_exists('finella_ensure_php85_runtime')) {
         exit(is_int($exitCode) ? $exitCode : 1);
     }
 
-    function finella_find_php85_binary(): ?string
+    function Fnlla_find_php85_binary(): ?string
     {
         $candidates = [];
 
-        foreach (['FINELLA_PHP_BIN', 'FINELLA_PHP85_BIN'] as $key) {
+        foreach (['Fnlla_PHP_BIN', 'Fnlla_PHP85_BIN'] as $key) {
             $value = getenv($key);
             if (is_string($value) && trim($value) !== '') {
                 $candidates[] = trim($value);
@@ -90,7 +90,7 @@ if (!function_exists('finella_ensure_php85_runtime')) {
             }
         }
 
-        foreach (finella_find_bins_on_path() as $bin) {
+        foreach (Fnlla_find_bins_on_path() as $bin) {
             $candidates[] = $bin;
         }
 
@@ -115,8 +115,8 @@ if (!function_exists('finella_ensure_php85_runtime')) {
                 continue;
             }
 
-            $versionId = finella_read_php_version_id($candidate);
-            if ($versionId !== null && $versionId === FINELLA_REQUIRED_PHP_VERSION_ID) {
+            $versionId = Fnlla_read_php_version_id($candidate);
+            if ($versionId !== null && $versionId === Fnlla_REQUIRED_PHP_VERSION_ID) {
                 return $candidate;
             }
         }
@@ -127,7 +127,7 @@ if (!function_exists('finella_ensure_php85_runtime')) {
     /**
      * @return string[]
      */
-    function finella_find_bins_on_path(): array
+    function Fnlla_find_bins_on_path(): array
     {
         $path = getenv('PATH');
         if (!is_string($path) || trim($path) === '') {
@@ -156,7 +156,7 @@ if (!function_exists('finella_ensure_php85_runtime')) {
         return $bins;
     }
 
-    function finella_read_php_version_id(string $binary): ?int
+    function Fnlla_read_php_version_id(string $binary): ?int
     {
         $command = escapeshellarg($binary) . ' -r ' . escapeshellarg('echo PHP_VERSION_ID;');
         $descriptors = [
@@ -189,7 +189,7 @@ if (!function_exists('finella_ensure_php85_runtime')) {
         return (int) $output;
     }
 
-    function finella_is_ci_environment(): bool
+    function Fnlla_is_ci_environment(): bool
     {
         $ci = getenv('CI');
         if (!is_string($ci) || $ci === '') {
@@ -200,11 +200,11 @@ if (!function_exists('finella_ensure_php85_runtime')) {
         return $normalized === '1' || $normalized === 'true' || $normalized === 'yes';
     }
 
-    function finella_php85_guard_fail(string $message): void
+    function Fnlla_php85_guard_fail(string $message): void
     {
         fwrite(STDERR, $message . PHP_EOL);
         exit(1);
     }
 }
 
-finella_ensure_php85_runtime();
+Fnlla_ensure_php85_runtime();

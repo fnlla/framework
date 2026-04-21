@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Log;
+namespace Fnlla\\Log;
 
-use Finella\Contracts\Log\LoggerInterface;
-use Finella\Core\Container;
-use Finella\Runtime\RequestContext;
-use Finella\Support\Psr\Log\LogLevel;
+use Fnlla\\Contracts\Log\LoggerInterface;
+use Fnlla\\Core\Container;
+use Fnlla\\Runtime\RequestContext;
+use Fnlla\\Support\Psr\Log\LogLevel;
 use Throwable;
 
 final class Logger implements LoggerInterface
@@ -42,11 +42,11 @@ final class Logger implements LoggerInterface
         $path = rtrim($path, DIRECTORY_SEPARATOR);
         if ($path === '' || str_ends_with($path, DIRECTORY_SEPARATOR) || !str_contains($path, '.log')) {
             $dir = $path === '' ? $this->defaultLogDir() : $path;
-            \Finella\Support\safe_mkdir($dir, 0755, true, 'logs');
+            \Fnlla\\Support\safe_mkdir($dir, 0755, true, 'logs');
             $this->filePath = $dir . DIRECTORY_SEPARATOR . 'app-' . date('Y-m-d') . '.log';
         } else {
             $dir = dirname($path);
-            \Finella\Support\safe_mkdir($dir, 0755, true, 'logs');
+            \Fnlla\\Support\safe_mkdir($dir, 0755, true, 'logs');
             $this->filePath = $path;
         }
     }

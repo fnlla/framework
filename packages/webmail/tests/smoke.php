@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Webmail\NullMailboxClient;
-use Finella\Webmail\WebmailCipher;
+use Fnlla\\Webmail\NullMailboxClient;
+use Fnlla\\Webmail\WebmailCipher;
 
 function ok(bool $cond, string $msg): void
 {

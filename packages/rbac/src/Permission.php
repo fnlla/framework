@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Rbac;
+namespace Fnlla\\Rbac;
 
 final class Permission
 {

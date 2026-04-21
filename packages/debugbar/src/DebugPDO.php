@@ -1,15 +1,15 @@
 <?php
 
 /**
- * FinellaPHP framework
+ * FnllaPHP framework
  * Licensed under the Proprietary License.
  */
 
 declare(strict_types=1);
 
-namespace Finella\Debugbar;
+namespace Fnlla\\Debugbar;
 
-use Finella\Support\Psr\Log\LoggerInterface;
+use Fnlla\\Support\Psr\Log\LoggerInterface;
 use PDO;
 use PDOStatement;
 use Throwable;

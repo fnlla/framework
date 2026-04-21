@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Finella\Core\ConfigRepository;
+use Fnlla\\Core\ConfigRepository;
 use PHPUnit\Framework\TestCase;
 
 final class ConfigRepositoryTest extends TestCase
@@ -23,9 +23,9 @@ final class ConfigRepositoryTest extends TestCase
 
     public function testGetSetForgetDotNotation(): void
     {
-        $repo = new ConfigRepository(['app' => ['name' => 'Finella']]);
+        $repo = new ConfigRepository(['app' => ['name' => 'Fnlla']]);
 
-        $this->assertSame('Finella', $repo->get('app.name'));
+        $this->assertSame('Fnlla', $repo->get('app.name'));
         $this->assertNull($repo->get('app.missing'));
 
         $repo->set('app.env', 'production');
@@ -39,7 +39,7 @@ final class ConfigRepositoryTest extends TestCase
     {
         $configDir = $this->makeConfigDir();
         $this->writeConfig($configDir . DIRECTORY_SEPARATOR . 'app.php', [
-            'name' => 'Finella',
+            'name' => 'Fnlla',
         ]);
         $this->writeConfig($configDir . DIRECTORY_SEPARATOR . 'database.php', [
             'default' => 'sqlite',
@@ -60,8 +60,8 @@ final class ConfigRepositoryTest extends TestCase
 
         $repo = ConfigRepository::fromDirectory($configDir);
 
-        $this->assertSame('Finella', $repo->get('app.name'));
-        $this->assertSame('Finella', $repo->get('name'));
+        $this->assertSame('Fnlla', $repo->get('app.name'));
+        $this->assertSame('Fnlla', $repo->get('name'));
         $this->assertSame('sqlite', $repo->get('database.default'));
         $this->assertSame('smtp', $repo->get('mail.driver'));
         $this->assertSame('noreply@example.test', $repo->get('mail_settings.from'));
@@ -85,7 +85,7 @@ final class ConfigRepositoryTest extends TestCase
 
     private function makeConfigDir(): string
     {
-        $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-config-' . bin2hex(random_bytes(6));
+        $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-config-' . bin2hex(random_bytes(6));
         mkdir($dir, 0777, true);
         $this->cleanup[] = $dir;
 

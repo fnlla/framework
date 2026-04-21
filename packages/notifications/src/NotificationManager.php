@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Notifications;
+namespace Fnlla\\Notifications;
 
 use DateTimeImmutable;
-use Finella\Core\ConfigRepository;
-use Finella\Mail\Address;
-use Finella\Mail\MailerInterface;
-use Finella\Mail\Message;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Mail\Address;
+use Fnlla\\Mail\MailerInterface;
+use Fnlla\\Mail\Message;
 use RuntimeException;
 
 final class NotificationManager
@@ -66,7 +66,7 @@ final class NotificationManager
     private function sendEmail(string $to, ?string $subject, string $text, ?string $html): void
     {
         $fromAddress = (string) $this->config->get('mail.from.address', 'noreply@example.test');
-        $fromName = (string) $this->config->get('mail.from.name', 'Finella');
+        $fromName = (string) $this->config->get('mail.from.name', 'Fnlla');
 
         $message = new Message(
             from: new Address($fromAddress, $fromName !== '' ? $fromName : null),

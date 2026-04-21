@@ -1,13 +1,13 @@
 <?php
 
 /**
- * FinellaPHP framework
+ * FnllaPHP framework
  * Licensed under the Proprietary License.
  */
 
 declare(strict_types=1);
 
-namespace Finella\Debugbar;
+namespace Fnlla\\Debugbar;
 
 final class DebugbarCollector
 {

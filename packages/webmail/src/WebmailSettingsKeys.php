@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Webmail;
+namespace Fnlla\\Webmail;
 
-use Finella\Core\ConfigRepository;
+use Fnlla\\Core\ConfigRepository;
 
 final class WebmailSettingsKeys
 {
@@ -62,11 +62,11 @@ final class WebmailSettingsKeys
 
     public function tenantId(): ?string
     {
-        if (!class_exists(\Finella\Tenancy\TenantContext::class)) {
+        if (!class_exists(\Fnlla\\Tenancy\TenantContext::class)) {
             return null;
         }
 
-        $id = \Finella\Tenancy\TenantContext::id();
+        $id = \Fnlla\\Tenancy\TenantContext::id();
         if (!is_string($id)) {
             return null;
         }
@@ -81,11 +81,11 @@ final class WebmailSettingsKeys
             return null;
         }
 
-        if (!class_exists(\Finella\Tenancy\TenantContext::class)) {
+        if (!class_exists(\Fnlla\\Tenancy\TenantContext::class)) {
             return 'Tenant-scoped webmail settings require fnlla/tenancy.';
         }
 
-        $id = \Finella\Tenancy\TenantContext::id();
+        $id = \Fnlla\\Tenancy\TenantContext::id();
         if (!is_string($id) || trim($id) === '') {
             return 'Tenant context is not available for webmail settings.';
         }

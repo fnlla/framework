@@ -2,8 +2,8 @@
 
 **DEFINING ROUTES**
 ```php
-use Finella\Http\Router;
-use Finella\Http\Response;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Response;
 
 return static function (Router $router): void {
     $router->get('/', fn () => Response::text('Home'));
@@ -36,8 +36,8 @@ $router->get('/account', 'AccountController@index');
 **MIDDLEWARE GROUPS**
 ```php
 $router->middlewareGroup('web', [
-    \Finella\Csrf\CsrfMiddleware::class,
-    \Finella\SecurityHeaders\SecurityHeadersMiddleware::class,
+    \Fnlla\\Csrf\CsrfMiddleware::class,
+    \Fnlla\\SecurityHeaders\SecurityHeadersMiddleware::class,
 ]);
 ```
 Requires the core CSRF module and `fnlla/ops`.
@@ -49,8 +49,8 @@ Requires the core CSRF module and `fnlla/ops`.
 **DI IN HANDLERS**
 If the container is available, handlers are called via `container->call()`:
 ```php
-use Finella\Http\Request;
-use Finella\Http\Response;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
 
 $router->get('/agent', function (Request $request): Response {
     return Response::text($request->getHeaderLine('User-Agent'));
@@ -60,4 +60,4 @@ $router->get('/agent', function (Request $request): Response {
 **ROUTE CACHING**
 Routes can be cached to `storage/cache/routes.php`. Only controller strings/arrays are cacheable; closures are not.
 Routes cache is intended for production and is skipped when `APP_DEBUG=true` or `APP_ENV=local`.
-Compile routes with `Finella\Http\RouteCacheCompiler` or `routes:cache`.
+Compile routes with `Fnlla\\Http\RouteCacheCompiler` or `routes:cache`.

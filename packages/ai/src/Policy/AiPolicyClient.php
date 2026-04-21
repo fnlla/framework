@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Policy;
+namespace Fnlla\\Ai\Policy;
 
-use Finella\Ai\AiClientInterface;
-use Finella\Ai\Redaction\AiRedactor;
-use Finella\Ai\Router\AiRouter;
-use Finella\Ai\Telemetry\AiTelemetryService;
+use Fnlla\\Ai\AiClientInterface;
+use Fnlla\\Ai\Redaction\AiRedactor;
+use Fnlla\\Ai\Router\AiRouter;
+use Fnlla\\Ai\Telemetry\AiTelemetryService;
 
 final class AiPolicyClient implements AiClientInterface
 {

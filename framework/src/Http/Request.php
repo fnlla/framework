@@ -8,13 +8,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
-use Finella\Support\Psr\Http\Message\ServerRequestInterface;
-use Finella\Support\Psr\Http\Message\StreamInterface;
-use Finella\Support\Psr\Http\Message\UriInterface;
-use Finella\Support\ValidationException;
-use Finella\Support\Validator;
+use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\\Support\Psr\Http\Message\UriInterface;
+use Fnlla\\Support\ValidationException;
+use Fnlla\\Support\Validator;
 
 /**
  * HTTP request wrapper with helpers for headers, input, and trusted proxies.

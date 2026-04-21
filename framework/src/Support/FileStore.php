@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Contracts\Cache\CacheStoreInterface;
+use Fnlla\\Contracts\Cache\CacheStoreInterface;
 
 class FileStore implements CacheStoreInterface
 {

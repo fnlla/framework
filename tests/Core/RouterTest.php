@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use Finella\Http\Request;
-use Finella\Http\Response;
-use Finella\Http\Router;
-use Finella\Http\Stream;
-use Finella\Http\Uri;
-use Finella\Support\Psr\Http\Message\ResponseInterface as PsrResponseInterface;
+use Fnlla\\Http\Request;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Router;
+use Fnlla\\Http\Stream;
+use Fnlla\\Http\Uri;
+use Fnlla\\Support\Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 use PHPUnit\Framework\TestCase;
 
 final class RouterTest extends TestCase
@@ -64,7 +64,7 @@ final class RouterTest extends TestCase
                 private string $reason = 'Created';
                 private string $protocol = '1.0';
                 private array $headers = ['X-Test' => ['yes']];
-                private \Finella\Support\Psr\Http\Message\StreamInterface $body;
+                private \Fnlla\\Support\Psr\Http\Message\StreamInterface $body;
 
                 public function __construct()
                 {
@@ -142,12 +142,12 @@ final class RouterTest extends TestCase
                     return $clone;
                 }
 
-                public function getBody(): \Finella\Support\Psr\Http\Message\StreamInterface
+                public function getBody(): \Fnlla\\Support\Psr\Http\Message\StreamInterface
                 {
                     return $this->body;
                 }
 
-                public function withBody(\Finella\Support\Psr\Http\Message\StreamInterface $body): self
+                public function withBody(\Fnlla\\Support\Psr\Http\Message\StreamInterface $body): self
                 {
                     $clone = clone $this;
                     $clone->body = $body;

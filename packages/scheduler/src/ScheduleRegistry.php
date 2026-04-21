@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Scheduler;
+namespace Fnlla\\Scheduler;
 
 use DateTimeImmutable;
 use DateTimeZone;
-use Finella\Core\Container;
+use Fnlla\\Core\Container;
 use RuntimeException;
 
 class ScheduleRegistry
@@ -39,14 +39,14 @@ class ScheduleRegistry
         $name = 'command:' . preg_replace('/\s+/', '_', $command);
 
         $handler = function () use ($command): int {
-            if (!class_exists(\Finella\Console\ConsoleApplication::class)) {
+            if (!class_exists(\Fnlla\\Console\ConsoleApplication::class)) {
                 throw new RuntimeException('Console package is required to run scheduled commands.');
             }
 
             $root = $this->resolveRoot();
-            $cli = new \Finella\Console\ConsoleApplication($root);
+            $cli = new \Fnlla\\Console\ConsoleApplication($root);
             $parts = preg_split('/\s+/', $command) ?: [];
-            $argv = array_merge(['finella'], array_values($parts));
+            $argv = array_merge(['Fnlla'], array_values($parts));
             return $cli->run($argv);
         };
 
@@ -96,13 +96,13 @@ class ScheduleRegistry
         $handler = $task->handler();
 
         if ($task->runsInBackground() && $this->app instanceof Container) {
-            if (class_exists(\Finella\Queue\QueueManager::class)
-                && interface_exists(\Finella\Queue\JobInterface::class)
-                && $this->app->has(\Finella\Queue\QueueManager::class)
+            if (class_exists(\Fnlla\\Queue\QueueManager::class)
+                && interface_exists(\Fnlla\\Queue\JobInterface::class)
+                && $this->app->has(\Fnlla\\Queue\QueueManager::class)
             ) {
-                $queue = $this->app->make(\Finella\Queue\QueueManager::class);
-                if ($queue instanceof \Finella\Queue\QueueManager) {
-                    $queue->dispatch(new class($handler) implements \Finella\Queue\JobInterface {
+                $queue = $this->app->make(\Fnlla\\Queue\QueueManager::class);
+                if ($queue instanceof \Fnlla\\Queue\QueueManager) {
+                    $queue->dispatch(new class($handler) implements \Fnlla\\Queue\JobInterface {
                         /** @var callable */
                         private $handler;
 

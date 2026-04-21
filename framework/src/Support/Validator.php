@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Http\UploadedFile;
+use Fnlla\\Http\UploadedFile;
 
 final class Validator
 {

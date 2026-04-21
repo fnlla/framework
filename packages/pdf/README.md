@@ -1,4 +1,4 @@
-**FNLLA (FINELLA) PDF**
+**fnlla (finella) PDF**
 
 HTML-to-PDF rendering using Dompdf, plus ready invoice and pitch-deck templates with a minimal API route helper.
 
@@ -21,7 +21,7 @@ return [
 
 **ROUTES (OPTIONAL)**
 ```php
-use Finella\Pdf\PdfRoutes;
+use Fnlla\\Pdf\PdfRoutes;
 
 return static function (Router $router): void {
     PdfRoutes::register($router, [
@@ -34,10 +34,10 @@ This enables sample endpoints: `GET /api/pdf/invoice` and `GET /api/pdf/pitch-de
 
 **USING PDFMANAGER**
 ```php
-use Finella\Pdf\PdfManager;
-use Finella\Pdf\Templates\InvoiceTemplate;
-use Finella\Pdf\Templates\PitchDeckTemplate;
-use Finella\Http\Response;
+use Fnlla\\Pdf\PdfManager;
+use Fnlla\\Pdf\Templates\InvoiceTemplate;
+use Fnlla\\Pdf\Templates\PitchDeckTemplate;
+use Fnlla\\Http\Response;
 
 public function invoice(PdfManager $pdf): Response
 {

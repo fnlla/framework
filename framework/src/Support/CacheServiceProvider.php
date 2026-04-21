@@ -8,13 +8,13 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
 
-use Finella\Core\ServiceProvider;
-use Finella\Contracts\Cache\CacheStoreInterface as CacheStoreContract;
-use Finella\Support\Psr\Cache\CacheItemPoolInterface;
-use Finella\Support\Psr\SimpleCache\CacheInterface;
+use Fnlla\\Core\ServiceProvider;
+use Fnlla\\Contracts\Cache\CacheStoreInterface as CacheStoreContract;
+use Fnlla\\Support\Psr\Cache\CacheItemPoolInterface;
+use Fnlla\\Support\Psr\SimpleCache\CacheInterface;
 
 final class CacheServiceProvider extends ServiceProvider
 {

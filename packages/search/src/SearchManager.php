@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Search;
+namespace Fnlla\\Search;
 
 final class SearchManager
 {

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Settings;
+namespace Fnlla\\Settings;
 
-use Finella\Core\Container;
-use Finella\Database\ConnectionManager;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Support\ServiceProvider;
 
 final class SettingsServiceProvider extends ServiceProvider
 {

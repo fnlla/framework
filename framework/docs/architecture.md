@@ -30,7 +30,7 @@ Response
 **WARM KERNEL (LONG-RUNNING)**
 You can boot once and reuse the kernel for long-running servers:
 ```php
-$kernel = new \Finella\Http\HttpKernel();
+$kernel = new \Fnlla\\Http\HttpKernel();
 $kernel->boot();
 ```
 This avoids reloading providers and plugins on each request. Register resetters for per-request cleanup:

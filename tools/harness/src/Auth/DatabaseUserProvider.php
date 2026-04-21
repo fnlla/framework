@@ -9,12 +9,12 @@ declare(strict_types=1);
 
 namespace App\Auth;
 
-use Finella\Auth\CredentialsUserProviderInterface;
-use Finella\Auth\PasswordResetUserProviderInterface;
-use Finella\Auth\RegistrationUserProviderInterface;
-use Finella\Auth\UserProviderInterface;
-use Finella\Database\ConnectionManager;
-use Finella\Database\Query;
+use Fnlla\\Auth\CredentialsUserProviderInterface;
+use Fnlla\\Auth\PasswordResetUserProviderInterface;
+use Fnlla\\Auth\RegistrationUserProviderInterface;
+use Fnlla\\Auth\UserProviderInterface;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Database\Query;
 
 final class DatabaseUserProvider implements UserProviderInterface, CredentialsUserProviderInterface, RegistrationUserProviderInterface, PasswordResetUserProviderInterface
 {

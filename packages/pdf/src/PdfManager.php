@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Finella\Pdf;
+namespace Fnlla\\Pdf;
 
-use Finella\Core\ConfigRepository;
-use Finella\Http\Response;
-use Finella\Http\Stream;
-use Finella\Pdf\Templates\PdfTemplateInterface;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Http\Response;
+use Fnlla\\Http\Stream;
+use Fnlla\\Pdf\Templates\PdfTemplateInterface;
 
 final class PdfManager
 {

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Cookie;
+namespace Fnlla\\Cookie;
 
 use InvalidArgumentException;
 

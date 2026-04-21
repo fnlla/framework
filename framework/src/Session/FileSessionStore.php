@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Session;
+namespace Fnlla\\Session;
 
 use RuntimeException;
-use Finella\Support\Env;
-use Finella\Http\Request;
+use Fnlla\\Support\Env;
+use Fnlla\\Http\Request;
 
 final class FileSessionStore implements SessionInterface
 {
@@ -35,7 +35,7 @@ final class FileSessionStore implements SessionInterface
         bool $lockFiles = true,
         int $gcProbability = 1
     ) {
-        $this->cookieName = (string) ($cookie['name'] ?? 'finella_session');
+        $this->cookieName = (string) ($cookie['name'] ?? 'Fnlla_session');
         $this->cookiePath = (string) ($cookie['path'] ?? '/');
         $this->cookieDomain = (string) ($cookie['domain'] ?? '');
         $this->cookieSecureExplicit = array_key_exists('secure', $cookie);
@@ -300,14 +300,14 @@ final class FileSessionStore implements SessionInterface
 
     private function flashKeys(string $bucket): array
     {
-        $key = $bucket === 'old' ? '_finella_flash_old' : '_finella_flash_new';
+        $key = $bucket === 'old' ? '_Fnlla_flash_old' : '_Fnlla_flash_new';
         $value = $this->data[$key] ?? [];
         return is_array($value) ? $value : [];
     }
 
     private function setFlashKeys(string $bucket, array $keys): void
     {
-        $key = $bucket === 'old' ? '_finella_flash_old' : '_finella_flash_new';
+        $key = $bucket === 'old' ? '_Fnlla_flash_old' : '_Fnlla_flash_new';
         $this->data[$key] = array_values(array_unique($keys));
     }
 
@@ -329,7 +329,7 @@ final class FileSessionStore implements SessionInterface
             return $callback();
         }
 
-        $lockPath = $this->path . DIRECTORY_SEPARATOR . '.finella_session.lock';
+        $lockPath = $this->path . DIRECTORY_SEPARATOR . '.Fnlla_session.lock';
         $handle = fopen($lockPath, 'c');
         if ($handle === false) {
             return $callback();

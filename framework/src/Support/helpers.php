@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Core\Container;
-use Finella\Http\Router;
-use Finella\Runtime\RequestContext;
+use Fnlla\\Core\Container;
+use Fnlla\\Http\Router;
+use Fnlla\\Runtime\RequestContext;
 use PDO;
 use RuntimeException;
 
@@ -68,16 +68,16 @@ function absolute_url(Container $app, string $path = ''): string
 
 function csrf_token(Container $app): string
 {
-    if (!class_exists(\Finella\Csrf\CsrfTokenManager::class) || !interface_exists(\Finella\Session\SessionInterface::class)) {
+    if (!class_exists(\Fnlla\\Csrf\CsrfTokenManager::class) || !interface_exists(\Fnlla\\Session\SessionInterface::class)) {
         throw new RuntimeException('CSRF support is not available. Ensure the core CSRF and Session modules are enabled.');
     }
 
-    $session = $app->make(\Finella\Session\SessionInterface::class);
-    if (!$session instanceof \Finella\Session\SessionInterface) {
+    $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+    if (!$session instanceof \Fnlla\\Session\SessionInterface) {
         throw new RuntimeException('Session service is not available.');
     }
 
-    $manager = new \Finella\Csrf\CsrfTokenManager($session);
+    $manager = new \Fnlla\\Csrf\CsrfTokenManager($session);
     return $manager->token();
 }
 
@@ -89,16 +89,16 @@ function csrf_field(Container $app): string
 
 function csrf_validate(Container $app, ?string $token): bool
 {
-    if (!class_exists(\Finella\Csrf\CsrfTokenManager::class) || !interface_exists(\Finella\Session\SessionInterface::class)) {
+    if (!class_exists(\Fnlla\\Csrf\CsrfTokenManager::class) || !interface_exists(\Fnlla\\Session\SessionInterface::class)) {
         return false;
     }
 
-    $session = $app->make(\Finella\Session\SessionInterface::class);
-    if (!$session instanceof \Finella\Session\SessionInterface) {
+    $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+    if (!$session instanceof \Fnlla\\Session\SessionInterface) {
         return false;
     }
 
-    $manager = new \Finella\Csrf\CsrfTokenManager($session);
+    $manager = new \Fnlla\\Csrf\CsrfTokenManager($session);
     return $manager->validate($token);
 }
 
@@ -216,19 +216,19 @@ if (!function_exists(__NAMESPACE__ . '\\route')) {
 if (!function_exists(__NAMESPACE__ . '\\cache')) {
     function cache(Container $app, ?string $key = null, mixed $default = null): mixed
     {
-        if (class_exists(\Finella\Support\Cache::class) && $app->has(\Finella\Support\Cache::class)) {
-            $cache = $app->make(\Finella\Support\Cache::class);
-            if ($cache instanceof \Finella\Support\Cache) {
+        if (class_exists(\Fnlla\\Support\Cache::class) && $app->has(\Fnlla\\Support\Cache::class)) {
+            $cache = $app->make(\Fnlla\\Support\Cache::class);
+            if ($cache instanceof \Fnlla\\Support\Cache) {
                 return $key === null ? $cache : $cache->get($key, $default);
             }
         }
 
-        if (!class_exists(\Finella\Cache\CacheManager::class) || !$app->has(\Finella\Cache\CacheManager::class)) {
+        if (!class_exists(\Fnlla\\Cache\CacheManager::class) || !$app->has(\Fnlla\\Cache\CacheManager::class)) {
             return $key === null ? null : $default;
         }
 
-        $cache = $app->make(\Finella\Cache\CacheManager::class);
-        if (!$cache instanceof \Finella\Cache\CacheManager) {
+        $cache = $app->make(\Fnlla\\Cache\CacheManager::class);
+        if (!$cache instanceof \Fnlla\\Cache\CacheManager) {
             return $key === null ? null : $default;
         }
 
@@ -254,18 +254,18 @@ if (!function_exists(__NAMESPACE__ . '\\event')) {
 if (!function_exists(__NAMESPACE__ . '\\queue')) {
     function queue(Container $app): mixed
     {
-        if (class_exists(\Finella\Support\Queue::class) && $app->has(\Finella\Support\Queue::class)) {
-            $queue = $app->make(\Finella\Support\Queue::class);
-            if ($queue instanceof \Finella\Support\Queue) {
+        if (class_exists(\Fnlla\\Support\Queue::class) && $app->has(\Fnlla\\Support\Queue::class)) {
+            $queue = $app->make(\Fnlla\\Support\Queue::class);
+            if ($queue instanceof \Fnlla\\Support\Queue) {
                 return $queue;
             }
         }
 
-        if (!class_exists(\Finella\Queue\QueueManager::class) || !$app->has(\Finella\Queue\QueueManager::class)) {
+        if (!class_exists(\Fnlla\\Queue\QueueManager::class) || !$app->has(\Fnlla\\Queue\QueueManager::class)) {
             return null;
         }
-        $queue = $app->make(\Finella\Queue\QueueManager::class);
-        return $queue instanceof \Finella\Queue\QueueManager ? $queue : null;
+        $queue = $app->make(\Fnlla\\Queue\QueueManager::class);
+        return $queue instanceof \Fnlla\\Queue\QueueManager ? $queue : null;
     }
 }
 
@@ -283,63 +283,63 @@ if (!function_exists(__NAMESPACE__ . '\\logger')) {
 if (!function_exists(__NAMESPACE__ . '\\session')) {
     function session(Container $app): mixed
     {
-        if (!interface_exists(\Finella\Session\SessionInterface::class) || !$app->has(\Finella\Session\SessionInterface::class)) {
+        if (!interface_exists(\Fnlla\\Session\SessionInterface::class) || !$app->has(\Fnlla\\Session\SessionInterface::class)) {
             return null;
         }
-        $session = $app->make(\Finella\Session\SessionInterface::class);
-        return $session instanceof \Finella\Session\SessionInterface ? $session : null;
+        $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+        return $session instanceof \Fnlla\\Session\SessionInterface ? $session : null;
     }
 }
 
 if (!function_exists(__NAMESPACE__ . '\\cookie')) {
     function cookie(Container $app): mixed
     {
-        if (!class_exists(\Finella\Cookie\CookieJar::class) || !$app->has(\Finella\Cookie\CookieJar::class)) {
+        if (!class_exists(\Fnlla\\Cookie\CookieJar::class) || !$app->has(\Fnlla\\Cookie\CookieJar::class)) {
             return null;
         }
-        $jar = $app->make(\Finella\Cookie\CookieJar::class);
-        return $jar instanceof \Finella\Cookie\CookieJar ? $jar : null;
+        $jar = $app->make(\Fnlla\\Cookie\CookieJar::class);
+        return $jar instanceof \Fnlla\\Cookie\CookieJar ? $jar : null;
     }
 }
 
 if (!function_exists(__NAMESPACE__ . '\\auth')) {
     function auth(Container $app): mixed
     {
-        if (!class_exists(\Finella\Auth\AuthManager::class) || !$app->has(\Finella\Auth\AuthManager::class)) {
+        if (!class_exists(\Fnlla\\Auth\AuthManager::class) || !$app->has(\Fnlla\\Auth\AuthManager::class)) {
             return null;
         }
-        $auth = $app->make(\Finella\Auth\AuthManager::class);
-        return $auth instanceof \Finella\Auth\AuthManager ? $auth : null;
+        $auth = $app->make(\Fnlla\\Auth\AuthManager::class);
+        return $auth instanceof \Fnlla\\Auth\AuthManager ? $auth : null;
     }
 }
 
 if (!function_exists(__NAMESPACE__ . '\\rate_limiter')) {
     function rate_limiter(Container $app): mixed
     {
-        if (!class_exists(\Finella\RateLimit\RateLimiter::class) || !$app->has(\Finella\RateLimit\RateLimiter::class)) {
+        if (!class_exists(\Fnlla\\RateLimit\RateLimiter::class) || !$app->has(\Fnlla\\RateLimit\RateLimiter::class)) {
             return null;
         }
-        $limiter = $app->make(\Finella\RateLimit\RateLimiter::class);
-        return $limiter instanceof \Finella\RateLimit\RateLimiter ? $limiter : null;
+        $limiter = $app->make(\Fnlla\\RateLimit\RateLimiter::class);
+        return $limiter instanceof \Fnlla\\RateLimit\RateLimiter ? $limiter : null;
     }
 }
 
 if (!function_exists(__NAMESPACE__ . '\\db')) {
     function db(Container $app, ?string $table = null): mixed
     {
-        if (class_exists(\Finella\Database\DatabaseManager::class) && $app->has(\Finella\Database\DatabaseManager::class)) {
-            $manager = $app->make(\Finella\Database\DatabaseManager::class);
-            if ($manager instanceof \Finella\Database\DatabaseManager) {
+        if (class_exists(\Fnlla\\Database\DatabaseManager::class) && $app->has(\Fnlla\\Database\DatabaseManager::class)) {
+            $manager = $app->make(\Fnlla\\Database\DatabaseManager::class);
+            if ($manager instanceof \Fnlla\\Database\DatabaseManager) {
                 return $table === null ? $manager : $manager->table($table);
             }
         }
 
-        if (!class_exists(\Finella\Database\ConnectionManager::class) || !$app->has(\Finella\Database\ConnectionManager::class)) {
+        if (!class_exists(\Fnlla\\Database\ConnectionManager::class) || !$app->has(\Fnlla\\Database\ConnectionManager::class)) {
             return null;
         }
 
-        $manager = $app->make(\Finella\Database\ConnectionManager::class);
-        if (!$manager instanceof \Finella\Database\ConnectionManager) {
+        $manager = $app->make(\Fnlla\\Database\ConnectionManager::class);
+        if (!$manager instanceof \Fnlla\\Database\ConnectionManager) {
             return null;
         }
 
@@ -347,11 +347,11 @@ if (!function_exists(__NAMESPACE__ . '\\db')) {
             return $manager;
         }
 
-        if (!class_exists(\Finella\Database\Query::class)) {
+        if (!class_exists(\Fnlla\\Database\Query::class)) {
             return null;
         }
 
-        $query = new \Finella\Database\Query($manager->connection());
+        $query = new \Fnlla\\Database\Query($manager->connection());
         return $query->table($table);
     }
 }

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Console\Commands;
+namespace Fnlla\\Console\Commands;
 
-use Finella\Database\ConnectionManager;
-use Finella\Database\MigrationRunner;
-use Finella\Core\ConfigRepository;
+use Fnlla\\Database\ConnectionManager;
+use Fnlla\\Database\MigrationRunner;
+use Fnlla\\Core\ConfigRepository;
 
 trait DatabaseCommandTrait
 {

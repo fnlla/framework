@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai\Router;
+namespace Fnlla\\Ai\Router;
 
 final class AiRouter
 {

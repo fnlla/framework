@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Log\Processor;
+namespace Fnlla\\Log\Processor;
 
 use Monolog\LogRecord;
 

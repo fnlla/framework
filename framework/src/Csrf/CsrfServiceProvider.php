@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Csrf;
+namespace Fnlla\\Csrf;
 
-use Finella\Core\Container;
-use Finella\Session\SessionInterface;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Session\SessionInterface;
+use Fnlla\\Support\ServiceProvider;
 
 final class CsrfServiceProvider extends ServiceProvider
 {

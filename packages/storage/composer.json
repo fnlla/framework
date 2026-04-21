@@ -1,6 +1,6 @@
 {
     "name":  "fnlla/storage",
-    "description":  "Finella storage and image pipeline helpers",
+    "description":  "Fnlla storage and image pipeline helpers",
     "homepage":  "https://techayo.co.uk",
     "license":  "proprietary",
     "type":  "library",
@@ -10,17 +10,14 @@
                 },
     "autoload":  {
                      "psr-4":  {
-                                   "Finella\\Storage\\":  "src/"
+                                   "Fnlla\\Storage\\":  "src/"
                                }
                  },
     "extra":  {
                   "fnlla":  {
                                 "providers":  [
-                                                  "Finella\\Storage\\StorageServiceProvider"
+                                                  "Fnlla\\Storage\\StorageServiceProvider"
                                               ]
                             }
-              },
-    "replace":  {
-                    "finella/storage":  "self.version"
-                }
+              }
 }

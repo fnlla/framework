@@ -109,7 +109,7 @@ Telemetry data is stored in the `ai_runs` table.
 
 **USAGE**
 ```php
-use Finella\Ai\AiClientInterface;
+use Fnlla\\Ai\AiClientInterface;
 
 $ai = $app->make(AiClientInterface::class);
 
@@ -161,7 +161,7 @@ return [
 
 Index and search:
 ```php
-use Finella\Ai\Rag\RagService;
+use Fnlla\\Ai\Rag\RagService;
 
 $rag = $app->make(RagService::class);
 $rag->indexText('docs', $markdown, ['path' => 'documentation/src/index.md'], 'file', 'documentation/src/index.md');

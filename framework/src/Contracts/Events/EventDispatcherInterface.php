@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Contracts\Events;
+namespace Fnlla\\Contracts\Events;
 
 /**
  * @api

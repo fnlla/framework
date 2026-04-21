@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Database;
+namespace Fnlla\\Database;
 
 final class Table
 {

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Cache;
+namespace Fnlla\\Cache;
 
 final class TaggedCache
 {

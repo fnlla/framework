@@ -11,6 +11,6 @@ return [
     'encryption' => env('MAIL_ENCRYPTION', ''),
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'noreply@example.test'),
-        'name' => env('MAIL_FROM_NAME', 'Finella'),
+        'name' => env('MAIL_FROM_NAME', 'Fnlla'),
     ],
 ];

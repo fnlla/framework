@@ -10,7 +10,7 @@ composer require fnlla/notifications
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Notifications\NotificationsServiceProvider`
+**-** `Fnlla\\Notifications\NotificationsServiceProvider`
 
 **CONFIGURATION**
 Create `config/notifications/notifications.php`:
@@ -24,14 +24,14 @@ return [
 
 **SCHEMA**
 ```php
-use Finella\Notifications\NotificationsSchema;
+use Fnlla\\Notifications\NotificationsSchema;
 
 NotificationsSchema::ensure($pdo);
 ```
 
 **API ROUTES**
 ```php
-use Finella\Notifications\NotificationsRoutes;
+use Fnlla\\Notifications\NotificationsRoutes;
 
 NotificationsRoutes::register($router, [
     'prefix' => '/api/notifications',
@@ -47,7 +47,7 @@ Endpoints:
 **SMS INTEGRATION**
 Bind your own SMS sender to the container:
 ```php
-use Finella\Notifications\SmsSenderInterface;
+use Fnlla\\Notifications\SmsSenderInterface;
 
 $app->singleton(SmsSenderInterface::class, fn () => new YourSmsSender());
 ```

@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Finella\Storage;
+namespace Fnlla\\Storage;
 
 interface DiskInterface
 {

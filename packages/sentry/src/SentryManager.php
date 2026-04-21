@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Sentry;
+namespace Fnlla\\Sentry;
 
 use Sentry\State\HubInterface;
 use Sentry\SentrySdk;

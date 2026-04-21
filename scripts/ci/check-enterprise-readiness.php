@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $root = dirname(__DIR__, 2);
 $strict = in_array('--strict', $_SERVER['argv'] ?? [], true)
-    || toBool(getenv('FINELLA_ENTERPRISE_CHECK_STRICT'), false)
+    || toBool(getenv('Fnlla_ENTERPRISE_CHECK_STRICT'), false)
     || toBool(getenv('CI'), false);
 
 $results = [];

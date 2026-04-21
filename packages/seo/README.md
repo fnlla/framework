@@ -10,7 +10,7 @@ The package registers `SeoServiceProvider` via auto-discovery.
 
 **USAGE**
 ```php
-use Finella\Seo\SeoManager;
+use Fnlla\\Seo\SeoManager;
 
 $seo = $app->make(SeoManager::class);
 $seo->title('TechAyo')

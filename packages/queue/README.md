@@ -9,7 +9,7 @@ composer require fnlla/queue
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Queue\QueueServiceProvider`
+**-** `Fnlla\\Queue\QueueServiceProvider`
 
 **CONFIGURATION**
 `config/queue/queue.php`
@@ -21,11 +21,11 @@ Auto-discovered provider:
 
 **USAGE**
 ```php
-use Finella\Queue\QueueManager;
+use Fnlla\\Queue\QueueManager;
 
 $queue = $app->make(QueueManager::class);
-$queue->dispatch(new class implements \Finella\Queue\JobInterface {
-    public function handle(\Finella\Core\Container $app): void
+$queue->dispatch(new class implements \Fnlla\\Queue\JobInterface {
+    public function handle(\Fnlla\\Core\Container $app): void
     {
         // do work
     }
@@ -34,7 +34,7 @@ $queue->dispatch(new class implements \Finella\Queue\JobInterface {
 
 **WORKER**
 ```php
-use Finella\Queue\QueueWorker;
+use Fnlla\\Queue\QueueWorker;
 
 $worker = new QueueWorker($queue, $app);
 $worker->work(1);
@@ -42,7 +42,7 @@ $worker->work(1);
 
 **NOTES**
 The sync driver executes jobs immediately. The database and Redis drivers store jobs and can be
-processed by `php bin/finella queue:work`.
+processed by `php bin/fnlla queue:work`.
 The Redis driver requires the `ext-redis` PHP extension.
 
 **TESTING**

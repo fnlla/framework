@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Finella\Scheduler\ScheduleRegistry;
-use Finella\Scheduler\ScheduleTask;
+use Fnlla\\Scheduler\ScheduleRegistry;
+use Fnlla\\Scheduler\ScheduleTask;
 
 function ok(bool $cond, string $msg): void
 {
@@ -15,7 +15,7 @@ function ok(bool $cond, string $msg): void
     }
 }
 
-$cache = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'finella-schedule-' . uniqid() . '.json';
+$cache = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'fnlla-schedule-' . uniqid() . '.json';
 
 $registry = new ScheduleRegistry(null, $cache, 'UTC');
 

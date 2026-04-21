@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Finella\Ai;
+namespace Fnlla\\Ai;
 
-use Finella\Support\HttpClient;
+use Fnlla\\Support\HttpClient;
 
 final class OpenAiClient implements AiClientInterface
 {

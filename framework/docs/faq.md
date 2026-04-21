@@ -13,11 +13,11 @@ Use `config/providers/providers.php`:
 
 **HOW DO I DEBUG PROVIDER DISCOVERY?**
 **-** Delete `bootstrap/cache/providers.php`.
-**-** Run `bin/finella-discover`.
-**-** Check `storage/logs/finella-providers.log` if `APP_DEBUG=1`.
+**-** Run `bin/fnlla-discover`.
+**-** Check `storage/logs/fnlla-providers.log` if `APP_DEBUG=1`.
 
 **HOW DO I ADD MIDDLEWARE?**
 Add it to `config/http/http.php` (global) or pass it to routes.
 
 **HOW DO I ADD A NEW PACKAGE?**
-Create a Composer package, expose a service provider, and add it to `extra.finella.providers`.
+Create a Composer package, expose a service provider, and add it to `extra.fnlla.providers`.

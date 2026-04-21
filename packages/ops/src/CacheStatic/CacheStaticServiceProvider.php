@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace Finella\CacheStatic;
+namespace Fnlla\\CacheStatic;
 
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class CacheStaticServiceProvider extends ServiceProvider
 {

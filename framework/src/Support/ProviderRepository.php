@@ -8,11 +8,11 @@
 
 declare(strict_types=1);
 
-namespace Finella\Support;
+namespace Fnlla\\Support;
 
-use Finella\Core\ConfigRepository;
-use Finella\Contracts\Support\ServiceProviderInterface;
-use Finella\Core\Container;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Contracts\Support\ServiceProviderInterface;
+use Fnlla\\Core\Container;
 use RuntimeException;
 
 final class ProviderRepository

@@ -1,6 +1,6 @@
 **FNLLA/DEPLOY**
 
-Deployment utilities for Finella.
+Deployment utilities for fnlla (finella).
 
 **INSTALLATION**
 ```bash
@@ -16,8 +16,8 @@ Add the commands to your `config/console/console.php`:
 ```php
 return [
     'commands' => [
-        Finella\Deploy\Commands\DeployHealthCommand::class,
-        Finella\Deploy\Commands\DeployWarmupCommand::class,
+        Fnlla\\Deploy\Commands\DeployHealthCommand::class,
+        Fnlla\\Deploy\Commands\DeployWarmupCommand::class,
     ],
 ];
 ```

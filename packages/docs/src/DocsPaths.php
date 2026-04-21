@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Finella\Docs;
+namespace Fnlla\\Docs;
 
-use Finella\Core\ConfigRepository;
+use Fnlla\\Core\ConfigRepository;
 
 final class DocsPaths
 {

@@ -1,17 +1,17 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Finella\Docs;
+namespace Fnlla\\Docs;
 
-use Finella\Core\ConfigRepository;
-use Finella\Core\Container;
-use Finella\Support\ServiceProvider;
+use Fnlla\\Core\ConfigRepository;
+use Fnlla\\Core\Container;
+use Fnlla\\Support\ServiceProvider;
 
 final class DocsServiceProvider extends ServiceProvider
 {

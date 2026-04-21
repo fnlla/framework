@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Finella\Orm;
+namespace Fnlla\\Orm;
 
 use RuntimeException;
 

@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace Finella\Http;
+namespace Fnlla\\Http;
 
 use InvalidArgumentException;
-use Finella\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\\Support\Psr\Http\Message\StreamInterface;
 use RuntimeException;
 use Throwable;
 

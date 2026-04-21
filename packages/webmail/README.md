@@ -14,7 +14,7 @@ composer require fnlla/webmail
 
 **SERVICE PROVIDER**
 Auto-discovered provider:
-**-** `Finella\Webmail\WebmailServiceProvider`
+**-** `Fnlla\\Webmail\WebmailServiceProvider`
 
 **CONFIGURATION**
 Create `config/webmail/webmail.php`:
@@ -54,7 +54,7 @@ SMTP defaults are resolved from `webmail.smtp` first, then `mail` config if not 
 
 **API ROUTES**
 ```php
-use Finella\Webmail\WebmailRoutes;
+use Fnlla\\Webmail\WebmailRoutes;
 
 WebmailRoutes::register($router, [
     'prefix' => '/api/webmail',
@@ -134,7 +134,7 @@ Enable `webmail.send_async = true` to enqueue outgoing messages (requires `fnlla
 **CUSTOM MAILBOX CLIENT**
 Bind your own `MailboxClientInterface` if you do not want to use IMAP:
 ```php
-use Finella\Webmail\MailboxClientInterface;
+use Fnlla\\Webmail\MailboxClientInterface;
 
 $app->singleton(MailboxClientInterface::class, fn () => new YourMailboxClient());
 ```
