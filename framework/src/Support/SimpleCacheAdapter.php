@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 use DateTimeImmutable;
-use Fnlla\\Contracts\Cache\CacheStoreInterface;
-use Fnlla\\Support\Psr\SimpleCache\CacheInterface;
+use Fnlla\Contracts\Cache\CacheStoreInterface;
+use Fnlla\Support\Psr\SimpleCache\CacheInterface;
 
 final class SimpleCacheAdapter implements CacheInterface
 {

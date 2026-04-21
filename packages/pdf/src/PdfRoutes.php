@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Pdf;
+namespace Fnlla\Pdf;
 
-use Fnlla\\Http\Router;
-use Fnlla\\Pdf\Http\PdfController;
+use Fnlla\Http\Router;
+use Fnlla\Pdf\Http\PdfController;
 
 final class PdfRoutes
 {

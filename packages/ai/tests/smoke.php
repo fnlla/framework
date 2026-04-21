@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Ai\AiClientInterface;
-use Fnlla\\Ai\AiManager;
-use Fnlla\\Ai\OpenAiClient;
-use Fnlla\\Ai\Policy\AiPolicyClient;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Support\HttpClient;
+use Fnlla\Ai\AiClientInterface;
+use Fnlla\Ai\AiManager;
+use Fnlla\Ai\OpenAiClient;
+use Fnlla\Ai\Policy\AiPolicyClient;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Support\HttpClient;
 
 function ok(bool $cond, string $msg): void
 {

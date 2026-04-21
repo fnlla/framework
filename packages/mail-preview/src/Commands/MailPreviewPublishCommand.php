@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\MailPreview\Commands;
+namespace Fnlla\MailPreview\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
 
 final class MailPreviewPublishCommand implements CommandInterface
 {

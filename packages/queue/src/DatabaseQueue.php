@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Queue;
+namespace Fnlla\Queue;
 
-use Fnlla\\Database\ConnectionManager;
+use Fnlla\Database\ConnectionManager;
 use Closure;
 use PDO;
 use Throwable;

@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -9,14 +9,14 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\Mail;
-use Fnlla\\Mail\Message;
-use Fnlla\\Queue\JobInterface;
-use Fnlla\\Queue\Queue;
+use Fnlla\Core\Container;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\Mail;
+use Fnlla\Mail\Message;
+use Fnlla\Queue\JobInterface;
+use Fnlla\Queue\Queue;
 
 final class TestController
 {

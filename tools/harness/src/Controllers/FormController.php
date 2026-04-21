@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
 
 final class FormController
 {

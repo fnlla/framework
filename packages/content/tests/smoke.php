@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Content\ContentRepository;
+use Fnlla\Content\ContentRepository;
 
 function ok(bool $cond, string $msg): void
 {

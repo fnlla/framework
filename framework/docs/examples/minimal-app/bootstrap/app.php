@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Core\Application;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\HttpKernel;
-use Fnlla\\Support\ComposerProviderDiscovery;
-use Fnlla\\Support\ProviderCache;
-use Fnlla\\Support\ProviderRepository;
+use Fnlla\Core\Application;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\HttpKernel;
+use Fnlla\Support\ComposerProviderDiscovery;
+use Fnlla\Support\ProviderCache;
+use Fnlla\Support\ProviderRepository;
 
 $root = dirname(__DIR__);
 if (!defined('APP_ROOT')) {

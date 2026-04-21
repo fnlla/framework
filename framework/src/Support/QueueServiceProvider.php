@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 
-use Fnlla\\Core\ServiceProvider;
-use Fnlla\\Contracts\Queue\QueueInterface;
+use Fnlla\Core\ServiceProvider;
+use Fnlla\Contracts\Queue\QueueInterface;
 
 final class QueueServiceProvider extends ServiceProvider
 {

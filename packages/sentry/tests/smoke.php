@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Sentry\SentryManager;
+use Fnlla\Sentry\SentryManager;
 
 if (!interface_exists(\Sentry\State\HubInterface::class)) {
     echo "sentry skip (sentry sdk missing)\n";

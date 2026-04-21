@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Settings\SettingsRepository;
-use Fnlla\\Settings\SettingsSchema;
-use Fnlla\\Settings\SettingsStore;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Settings\SettingsRepository;
+use Fnlla\Settings\SettingsSchema;
+use Fnlla\Settings\SettingsStore;
 
 function ok(bool $cond, string $msg): void
 {

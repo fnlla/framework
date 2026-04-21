@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Support\Env;
+use Fnlla\Support\Env;
 use PHPUnit\Framework\TestCase;
 
 final class EnvTest extends TestCase

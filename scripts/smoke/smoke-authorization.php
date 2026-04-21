@@ -15,24 +15,24 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-if (!class_exists(\Fnlla\\Rbac\RbacServiceProvider::class)) {
+if (!class_exists(\Fnlla\Rbac\RbacServiceProvider::class)) {
     $rbacBase = $root . DIRECTORY_SEPARATOR . 'packages' . DIRECTORY_SEPARATOR . 'rbac' . DIRECTORY_SEPARATOR . 'src';
     require_once $rbacBase . DIRECTORY_SEPARATOR . 'RbacSchema.php';
     require_once $rbacBase . DIRECTORY_SEPARATOR . 'RbacManager.php';
     require_once $rbacBase . DIRECTORY_SEPARATOR . 'RbacServiceProvider.php';
 }
 
-use Fnlla\\Authorization\AuthorizationException;
-use Fnlla\\Authorization\Gate;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\Application;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Rbac\RbacManager;
-use Fnlla\\Rbac\RbacServiceProvider;
-use Fnlla\\Http\Router;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Uri;
+use Fnlla\Authorization\AuthorizationException;
+use Fnlla\Authorization\Gate;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\Application;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Rbac\RbacManager;
+use Fnlla\Rbac\RbacServiceProvider;
+use Fnlla\Http\Router;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Http\Uri;
 
 function ok(bool $cond, string $msg): void
 {

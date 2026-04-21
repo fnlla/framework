@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Http;
+namespace Fnlla\Http;
 
 use InvalidArgumentException;
-use Fnlla\\Support\Psr\Http\Message\StreamInterface;
-use Fnlla\\Support\Psr\Http\Message\UploadedFileInterface;
+use Fnlla\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\Support\Psr\Http\Message\UploadedFileInterface;
 use RuntimeException;
 
 /**
@@ -75,7 +75,7 @@ final class UploadedFile implements UploadedFileInterface
             throw new RuntimeException('Upload failed with error code ' . $this->error . '.');
         }
 
-        \Fnlla\\Support\safe_mkdir(dirname($targetPath), 0755, true, 'uploads');
+        \Fnlla\Support\safe_mkdir(dirname($targetPath), 0755, true, 'uploads');
 
         if ($this->tmpName !== null && is_uploaded_file($this->tmpName)) {
             if (!move_uploaded_file($this->tmpName, $targetPath)) {
@@ -146,7 +146,7 @@ final class UploadedFile implements UploadedFileInterface
         }
 
         $directory = rtrim($directory, DIRECTORY_SEPARATOR);
-        \Fnlla\\Support\safe_mkdir($directory, 0755, true, 'uploads');
+        \Fnlla\Support\safe_mkdir($directory, 0755, true, 'uploads');
 
         $extension = $this->extension();
         $filename = $name !== null && $name !== '' ? $name : bin2hex(random_bytes(16));

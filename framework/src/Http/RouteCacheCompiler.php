@@ -1,19 +1,19 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Http;
+namespace Fnlla\Http;
 
-use Fnlla\\Core\Application;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\ConfigValidator;
-use Fnlla\\Plugin\PluginManager;
+use Fnlla\Core\Application;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\ConfigValidator;
+use Fnlla\Plugin\PluginManager;
 use RuntimeException;
 
 /**

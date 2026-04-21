@@ -1,19 +1,19 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Notifications;
+namespace Fnlla\Notifications;
 
 use DateTimeImmutable;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\MailerInterface;
-use Fnlla\\Mail\Message;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\MailerInterface;
+use Fnlla\Mail\Message;
 use RuntimeException;
 
 final class NotificationManager

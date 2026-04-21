@@ -1,12 +1,12 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Session;
+namespace Fnlla\Session;
 
 final class SessionManager implements SessionInterface
 {
@@ -55,7 +55,7 @@ final class SessionManager implements SessionInterface
         $configured = $this->config['save_path'] ?? null;
         if (is_string($configured) && trim($configured) !== '') {
             $path = trim($configured);
-            if (\Fnlla\\Support\safe_mkdir($path, 0755, true, 'session-save-path') && is_writable($path)) {
+            if (\Fnlla\Support\safe_mkdir($path, 0755, true, 'session-save-path') && is_writable($path)) {
                 session_save_path($path);
                 return;
             }
@@ -70,7 +70,7 @@ final class SessionManager implements SessionInterface
             . DIRECTORY_SEPARATOR
             . 'fnlla-sessions';
 
-        if (\Fnlla\\Support\safe_mkdir($fallback, 0755, true, 'session-fallback-path') && is_writable($fallback)) {
+        if (\Fnlla\Support\safe_mkdir($fallback, 0755, true, 'session-fallback-path') && is_writable($fallback)) {
             session_save_path($fallback);
         }
     }

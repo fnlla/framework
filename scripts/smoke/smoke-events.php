@@ -14,8 +14,8 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Support\EventDispatcher;
+use Fnlla\Core\Container;
+use Fnlla\Support\EventDispatcher;
 
 function ok(bool $cond, string $msg): void
 {

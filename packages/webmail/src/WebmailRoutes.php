@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail;
+namespace Fnlla\Webmail;
 
-use Fnlla\\Http\Router;
-use Fnlla\\Webmail\Http\WebmailController;
-use Fnlla\\Webmail\Http\WebmailSettingsController;
-use Fnlla\\Webmail\Http\WebmailTestController;
+use Fnlla\Http\Router;
+use Fnlla\Webmail\Http\WebmailController;
+use Fnlla\Webmail\Http\WebmailSettingsController;
+use Fnlla\Webmail\Http\WebmailTestController;
 
 final class WebmailRoutes
 {

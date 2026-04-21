@@ -1,17 +1,17 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail;
+namespace Fnlla\Webmail;
 
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\MailManager;
-use Fnlla\\Mail\Message;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\MailManager;
+use Fnlla\Mail\Message;
 
 final class WebmailSmtpClient
 {

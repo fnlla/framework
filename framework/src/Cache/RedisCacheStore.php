@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Cache;
+namespace Fnlla\Cache;
 
-use Fnlla\\Support\RedisConnector;
+use Fnlla\Support\RedisConnector;
 
 final class RedisCacheStore
 {

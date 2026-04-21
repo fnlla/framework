@@ -1,21 +1,21 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\SecurityHeaders;
+namespace Fnlla\SecurityHeaders;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Runtime\RequestContext;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
-use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Runtime\RequestContext;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class SecurityHeadersMiddleware implements MiddlewareInterface
 {
@@ -42,7 +42,7 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
             $response = new Response(
                 $response->getStatusCode(),
                 $response->getHeaders(),
-                \Fnlla\\Http\Stream::fromString((string) $response->getBody()),
+                \Fnlla\Http\Stream::fromString((string) $response->getBody()),
                 $response->getReasonPhrase()
             );
         } else {

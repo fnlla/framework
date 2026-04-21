@@ -12,7 +12,7 @@ $hasJs = is_file($root . '/public/js/app.js');
 $env = (string) getenv('APP_ENV');
 $env = $env !== '' ? $env : 'prod';
 $php = PHP_VERSION;
-$Fnlla = \Fnlla\\Core\Application::VERSION;
+$Fnlla = \Fnlla\Core\Application::VERSION;
 $appName = (string) env('APP_NAME', 'Product Application');
 
 ?>
@@ -32,7 +32,7 @@ $appName = (string) env('APP_NAME', 'Product Application');
 <body>
 <main class="wrap">
     <?php if ($hasTopbar): ?>
-        <?php $brand = 'fnlla (finella) Framework'; $active = 'home'; ?>
+        <?php $brand = 'fnlla Framework'; $active = 'home'; ?>
         <?php include $partialsDir . '/topbar.php'; ?>
     <?php endif; ?>
 
@@ -43,7 +43,7 @@ $appName = (string) env('APP_NAME', 'Product Application');
                 This is the user-facing application. Replace this view with your product UI.
             </p>
             <div class="pill-row">
-                <span class="pill">fnlla (finella) v<?= htmlspecialchars($Fnlla) ?></span>
+                <span class="pill">fnlla v<?= htmlspecialchars($Fnlla) ?></span>
                 <span class="pill">PHP <?= htmlspecialchars($php) ?></span>
                 <span class="pill">ENV <?= htmlspecialchars($env) ?></span>
             </div>

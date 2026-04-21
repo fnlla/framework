@@ -43,7 +43,7 @@ foreach ($composerFiles as $composerPath) {
     }
     $packageRoot = dirname($composerPath);
     foreach ($autoload as $prefix => $dir) {
-        if (!is_string($prefix) || !str_starts_with($prefix, 'Fnlla\\\')) {
+        if (!is_string($prefix) || !str_starts_with($prefix, 'Fnlla\\')) {
             continue;
         }
         $prefix = rtrim($prefix, '\\');
@@ -64,7 +64,7 @@ uksort($packageNamespaces, static fn (string $a, string $b): int => strlen($b) <
 spl_autoload_register(function (string $class) use ($root, $packageDirs, $appDirs, $packageNamespaces): void {
     $path = str_replace('\\', '/', $class) . '.php';
 
-    if (str_starts_with($class, 'Fnlla\\\')) {
+    if (str_starts_with($class, 'Fnlla\\')) {
         foreach ($packageNamespaces as $prefix => $baseDir) {
             if (str_starts_with($class, $prefix . '\\')) {
                 $relative = str_replace('\\', '/', substr($class, strlen($prefix) + 1)) . '.php';

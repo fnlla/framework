@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Stream;
-use Fnlla\\Http\UploadedFile;
+use Fnlla\Http\Request;
+use Fnlla\Http\Stream;
+use Fnlla\Http\UploadedFile;
 use PHPUnit\Framework\TestCase;
 
 final class UploadedFileTest extends TestCase

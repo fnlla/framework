@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Orm;
+namespace Fnlla\Orm;
 
 use PDO;
 use RuntimeException;
-use Fnlla\\Orm\ModelNotFoundException;
+use Fnlla\Orm\ModelNotFoundException;
 
 final class QueryBuilder
 {
@@ -965,7 +965,7 @@ final class QueryBuilder
                 continue;
             }
             $relation = $sample->{$name}();
-            if ($relation instanceof \Fnlla\\Orm\Relations\Relation) {
+            if ($relation instanceof \Fnlla\Orm\Relations\Relation) {
                 $relation->eagerLoad($models, $name);
             }
         }
@@ -1054,7 +1054,7 @@ final class QueryBuilder
             throw new RuntimeException('Relation not found: ' . $relation);
         }
         $relationObject = $model->{$relation}();
-        if (!$relationObject instanceof \Fnlla\\Orm\Relations\Relation) {
+        if (!$relationObject instanceof \Fnlla\Orm\Relations\Relation) {
             throw new RuntimeException('Relation method did not return a Relation: ' . $relation);
         }
 
@@ -1077,14 +1077,14 @@ final class QueryBuilder
             throw new RuntimeException('Relation not found: ' . $relation);
         }
         $relationObject = $model->{$relation}();
-        if (!$relationObject instanceof \Fnlla\\Orm\Relations\Relation) {
+        if (!$relationObject instanceof \Fnlla\Orm\Relations\Relation) {
             throw new RuntimeException('Relation method did not return a Relation: ' . $relation);
         }
 
         return $this->buildRelationCountSql($relationObject, $callback);
     }
 
-    private function buildRelationExistsSql(\Fnlla\\Orm\Relations\Relation $relation, ?callable $callback): array
+    private function buildRelationExistsSql(\Fnlla\Orm\Relations\Relation $relation, ?callable $callback): array
     {
         $parentTable = $this->table;
         $relatedTable = method_exists($relation, 'getRelatedTable') ? $relation->getRelatedTable() : '';
@@ -1093,7 +1093,7 @@ final class QueryBuilder
         $relatedBuilder = new self($this->pdo, $relatedTable, $relatedClass);
         if (class_exists($relatedClass)) {
             $instance = new $relatedClass();
-            if ($instance instanceof \Fnlla\\Orm\Model && method_exists($instance, 'usesSoftDeletes') && $instance->usesSoftDeletes()) {
+            if ($instance instanceof \Fnlla\Orm\Model && method_exists($instance, 'usesSoftDeletes') && $instance->usesSoftDeletes()) {
                 $relatedBuilder->setSoftDeleteColumn($instance->getDeletedAtColumn());
             }
         }
@@ -1102,7 +1102,7 @@ final class QueryBuilder
         }
         [$whereSql, $params] = $relatedBuilder->getWhereSql();
 
-        if ($relation instanceof \Fnlla\\Orm\Relations\HasMany || $relation instanceof \Fnlla\\Orm\Relations\HasOne) {
+        if ($relation instanceof \Fnlla\Orm\Relations\HasMany || $relation instanceof \Fnlla\Orm\Relations\HasOne) {
             $foreignKey = $relation->getForeignKey();
             $localKey = $relation->getLocalKey();
             $sql = 'SELECT 1 FROM ' . $relatedTable . ' WHERE ' . $relatedTable . '.' . $foreignKey . ' = ' . $parentTable . '.' . $localKey;
@@ -1112,7 +1112,7 @@ final class QueryBuilder
             return [$sql, $params];
         }
 
-        if ($relation instanceof \Fnlla\\Orm\Relations\BelongsTo) {
+        if ($relation instanceof \Fnlla\Orm\Relations\BelongsTo) {
             $ownerKey = $relation->getOwnerKey();
             $foreignKey = $relation->getForeignKey();
             $sql = 'SELECT 1 FROM ' . $relatedTable . ' WHERE ' . $relatedTable . '.' . $ownerKey . ' = ' . $parentTable . '.' . $foreignKey;
@@ -1122,7 +1122,7 @@ final class QueryBuilder
             return [$sql, $params];
         }
 
-        if ($relation instanceof \Fnlla\\Orm\Relations\BelongsToMany) {
+        if ($relation instanceof \Fnlla\Orm\Relations\BelongsToMany) {
             $pivot = $relation->getPivotTable();
             $foreignKey = $relation->getForeignKey();
             $relatedKey = $relation->getRelatedKey();
@@ -1140,7 +1140,7 @@ final class QueryBuilder
         throw new RuntimeException('Unsupported relation type: ' . get_class($relation));
     }
 
-    private function buildRelationCountSql(\Fnlla\\Orm\Relations\Relation $relation, ?callable $callback): array
+    private function buildRelationCountSql(\Fnlla\Orm\Relations\Relation $relation, ?callable $callback): array
     {
         [$sql, $params] = $this->buildRelationExistsSql($relation, $callback);
         $sql = preg_replace('/^SELECT 1/', 'SELECT COUNT(*)', (string) $sql) ?? $sql;
@@ -1163,7 +1163,7 @@ final class QueryBuilder
             throw new RuntimeException('Relation not found: ' . $relation);
         }
         $relationObject = $model->{$relation}();
-        if (!$relationObject instanceof \Fnlla\\Orm\Relations\Relation) {
+        if (!$relationObject instanceof \Fnlla\Orm\Relations\Relation) {
             throw new RuntimeException('Relation method did not return a Relation: ' . $relation);
         }
 
@@ -1171,7 +1171,7 @@ final class QueryBuilder
     }
 
     private function buildRelationAggregateSql(
-        \Fnlla\\Orm\Relations\Relation $relation,
+        \Fnlla\Orm\Relations\Relation $relation,
         string $column,
         string $function,
         ?callable $callback
@@ -1183,7 +1183,7 @@ final class QueryBuilder
         $relatedBuilder = new self($this->pdo, $relatedTable, $relatedClass);
         if (class_exists($relatedClass)) {
             $instance = new $relatedClass();
-            if ($instance instanceof \Fnlla\\Orm\Model && method_exists($instance, 'usesSoftDeletes') && $instance->usesSoftDeletes()) {
+            if ($instance instanceof \Fnlla\Orm\Model && method_exists($instance, 'usesSoftDeletes') && $instance->usesSoftDeletes()) {
                 $relatedBuilder->setSoftDeleteColumn($instance->getDeletedAtColumn());
             }
         }
@@ -1195,7 +1195,7 @@ final class QueryBuilder
         $columnRef = str_contains($column, '.') ? $column : ($relatedTable . '.' . $column);
         $function = strtoupper($function);
 
-        if ($relation instanceof \Fnlla\\Orm\Relations\HasMany || $relation instanceof \Fnlla\\Orm\Relations\HasOne) {
+        if ($relation instanceof \Fnlla\Orm\Relations\HasMany || $relation instanceof \Fnlla\Orm\Relations\HasOne) {
             $foreignKey = $relation->getForeignKey();
             $localKey = $relation->getLocalKey();
             $sql = 'SELECT ' . $function . '(' . $columnRef . ') FROM ' . $relatedTable
@@ -1206,7 +1206,7 @@ final class QueryBuilder
             return [$sql, $params];
         }
 
-        if ($relation instanceof \Fnlla\\Orm\Relations\BelongsTo) {
+        if ($relation instanceof \Fnlla\Orm\Relations\BelongsTo) {
             $ownerKey = $relation->getOwnerKey();
             $foreignKey = $relation->getForeignKey();
             $sql = 'SELECT ' . $function . '(' . $columnRef . ') FROM ' . $relatedTable
@@ -1217,7 +1217,7 @@ final class QueryBuilder
             return [$sql, $params];
         }
 
-        if ($relation instanceof \Fnlla\\Orm\Relations\BelongsToMany) {
+        if ($relation instanceof \Fnlla\Orm\Relations\BelongsToMany) {
             $pivot = $relation->getPivotTable();
             $foreignKey = $relation->getForeignKey();
             $relatedKey = $relation->getRelatedKey();

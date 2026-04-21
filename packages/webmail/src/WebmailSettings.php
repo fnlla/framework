@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail;
+namespace Fnlla\Webmail;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Settings\SettingsStore;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Settings\SettingsStore;
 
 final class WebmailSettings
 {

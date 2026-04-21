@@ -1,17 +1,17 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Authorization;
+namespace Fnlla\Authorization;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Http\Request;
+use Fnlla\Core\Container;
+use Fnlla\Http\Request;
 use Throwable;
 use ReflectionMethod;
 
@@ -82,10 +82,10 @@ final class Gate
 
     private function resolveUser(?Request $request): mixed
     {
-        if (class_exists(\Fnlla\\Auth\AuthManager::class) && $this->app->has(\Fnlla\\Auth\AuthManager::class)) {
+        if (class_exists(\Fnlla\Auth\AuthManager::class) && $this->app->has(\Fnlla\Auth\AuthManager::class)) {
             try {
-                $auth = $this->app->make(\Fnlla\\Auth\AuthManager::class);
-                if ($auth instanceof \Fnlla\\Auth\AuthManager) {
+                $auth = $this->app->make(\Fnlla\Auth\AuthManager::class);
+                if ($auth instanceof \Fnlla\Auth\AuthManager) {
                     return $auth->user($request);
                 }
             } catch (Throwable $e) {

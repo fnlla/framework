@@ -1,14 +1,14 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Contracts\Log;
+namespace Fnlla\Contracts\Log;
 
 use Throwable;
 

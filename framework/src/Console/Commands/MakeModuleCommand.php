@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
 
 final class MakeModuleCommand extends AbstractMakeCommand implements CommandInterface
 {

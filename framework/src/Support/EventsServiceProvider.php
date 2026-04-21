@@ -1,17 +1,17 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
-use Fnlla\\Contracts\Events\EventDispatcherInterface;
-use Fnlla\\Core\Container;
+use Fnlla\Contracts\Events\EventDispatcherInterface;
+use Fnlla\Core\Container;
 
 final class EventsServiceProvider extends ServiceProvider
 {
@@ -40,12 +40,12 @@ final class EventsServiceProvider extends ServiceProvider
 
     private function attachAfterCommitHandler(EventDispatcher $dispatcher, Container $app): void
     {
-        if (!$app->has(\Fnlla\\Database\TransactionManager::class)) {
+        if (!$app->has(\Fnlla\Database\TransactionManager::class)) {
             return;
         }
 
-        $manager = $app->make(\Fnlla\\Database\TransactionManager::class);
-        if ($manager instanceof \Fnlla\\Database\TransactionManager) {
+        $manager = $app->make(\Fnlla\Database\TransactionManager::class);
+        if ($manager instanceof \Fnlla\Database\TransactionManager) {
             $dispatcher->setAfterCommitHandler([$manager, 'afterCommit']);
         }
     }

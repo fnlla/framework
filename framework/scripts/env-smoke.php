@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Fnlla\\Support\Env;
+use Fnlla\Support\Env;
 
 function ok(bool $cond, string $msg): void
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Scheduler\ScheduleRegistry;
-use Fnlla\\Scheduler\ScheduleTask;
+use Fnlla\Scheduler\ScheduleRegistry;
+use Fnlla\Scheduler\ScheduleTask;
 
 function ok(bool $cond, string $msg): void
 {

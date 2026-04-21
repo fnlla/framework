@@ -1,13 +1,13 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Orm;
+namespace Fnlla\Orm;
 
 use DateTimeImmutable;
 
@@ -49,7 +49,7 @@ trait SoftDeletes
         }
 
         $pdo = $this->connection();
-        $query = new \Fnlla\\Database\Query($pdo);
+        $query = new \Fnlla\Database\Query($pdo);
         $query->table($this->getTable())->where($primaryKey, $this->attributes[$primaryKey])->update($values);
         return true;
     }

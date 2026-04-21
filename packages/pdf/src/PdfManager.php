@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Pdf;
+namespace Fnlla\Pdf;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Stream;
-use Fnlla\\Pdf\Templates\PdfTemplateInterface;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\Response;
+use Fnlla\Http\Stream;
+use Fnlla\Pdf\Templates\PdfTemplateInterface;
 
 final class PdfManager
 {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4efa9c173b14761b8809e751b5fa6173",
+    "content-hash": "ea0c965a59616734d6103d31032ff5f8",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -311,7 +311,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ai",
-                "reference": "b416a4abe85fb285ef4aaa07bd30658448e7b873"
+                "reference": "339275dd7e8132ad38bb33c6cf705b25e759aa5c"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -319,9 +319,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Ai\\AiServiceProvider"
+                        "Fnlla\\Ai\\AiServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -330,7 +330,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Ai\\": "src/"
+                    "Fnlla\\Ai\\": "src/"
                 }
             },
             "scripts": {
@@ -343,9 +343,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "AI client for OpenAI Responses API",
@@ -361,7 +366,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/audit",
-                "reference": "877b1d49f5d519b220b145f24d7cc5392321304a"
+                "reference": "877ac8e20b5305059a340d5f0bcf0e268ad35bfe"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -369,9 +374,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Audit\\AuditServiceProvider"
+                        "Fnlla\\Audit\\AuditServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -380,7 +385,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Audit\\": "src/"
+                    "Fnlla\\Audit\\": "src/"
                 }
             },
             "scripts": {
@@ -393,9 +398,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Audit logging helpers for Fnlla",
@@ -411,7 +421,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/debugbar",
-                "reference": "76e77dfbf92b8721e750afa80d8060074d205a22"
+                "reference": "54781c50abd8d54e2bf8cd31e821214e5f4cebc6"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -419,9 +429,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Debugbar\\DebugbarServiceProvider"
+                        "Fnlla\\Debugbar\\DebugbarServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -430,7 +440,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Debugbar\\": "src/"
+                    "Fnlla\\Debugbar\\": "src/"
                 }
             },
             "license": [
@@ -448,7 +458,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/deploy",
-                "reference": "44a03cf05a856ea1b77e6913342a252d2c438226"
+                "reference": "a129a1bab526174fd5e249e339501113df346486"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -462,7 +472,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Deploy\\": "src/"
+                    "Fnlla\\Deploy\\": "src/"
                 }
             },
             "scripts": {
@@ -475,9 +485,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Deployment utilities for Fnlla",
@@ -493,7 +508,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/docs",
-                "reference": "9a311d5f07aca3b179e8c75f782dfbf66c758ac9"
+                "reference": "d01d1794f8173ce2e066ba3cbb252ac14497fb52"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -501,9 +516,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Docs\\DocsServiceProvider"
+                        "Fnlla\\Docs\\DocsServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -512,7 +527,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Docs\\": "src/"
+                    "Fnlla\\Docs\\": "src/"
                 }
             },
             "scripts": {
@@ -525,12 +540,17 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
-            "description": "Documentation automation for Fnlla apps",
+            "description": "Documentation automation for fnlla apps",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -543,7 +563,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../framework",
-                "reference": "2165459ed29eb11f95c85673f777c2699b328ab7"
+                "reference": "6fe2b19cf6cc0c80892a2fba50560b669aba422a"
             },
             "require": {
                 "php": ">=8.5"
@@ -555,15 +575,15 @@
             "extra": {
                 "fnlla": {
                     "providers": [
-                        "Fnlla\\\Database\\DatabaseServiceProvider",
-                        "Fnlla\\\Cache\\CacheServiceProvider",
-                        "Fnlla\\\Log\\LogServiceProvider",
-                        "Fnlla\\\RequestLogging\\RequestLoggingServiceProvider",
-                        "Fnlla\\\Session\\SessionServiceProvider",
-                        "Fnlla\\\Cookie\\CookieServiceProvider",
-                        "Fnlla\\\Csrf\\CsrfServiceProvider",
-                        "Fnlla\\\Auth\\AuthServiceProvider",
-                        "Fnlla\\\Orm\\OrmServiceProvider"
+                        "Fnlla\\Database\\DatabaseServiceProvider",
+                        "Fnlla\\Cache\\CacheServiceProvider",
+                        "Fnlla\\Log\\LogServiceProvider",
+                        "Fnlla\\RequestLogging\\RequestLoggingServiceProvider",
+                        "Fnlla\\Session\\SessionServiceProvider",
+                        "Fnlla\\Cookie\\CookieServiceProvider",
+                        "Fnlla\\Csrf\\CsrfServiceProvider",
+                        "Fnlla\\Auth\\AuthServiceProvider",
+                        "Fnlla\\Orm\\OrmServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -572,7 +592,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\": "src/"
+                    "Fnlla\\": "src/"
                 },
                 "files": [
                     "src/Support/global_helpers.php",
@@ -585,9 +605,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla - AI-assisted PHP framework",
@@ -603,7 +628,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/mail",
-                "reference": "39ea4887f8454e40d3ce4e25c82d0de09be0964f"
+                "reference": "9ff3694cd8be70395f93c461e95eef574699c7ce"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -613,9 +638,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Mail\\MailServiceProvider"
+                        "Fnlla\\Mail\\MailServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -624,7 +649,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Mail\\": "src/"
+                    "Fnlla\\Mail\\": "src/"
                 }
             },
             "scripts": {
@@ -637,9 +662,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla mail module (Symfony Mailer adapter)",
@@ -655,7 +685,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ops",
-                "reference": "a3336df0407661ac091ee15ce58a141ae2c0085b"
+                "reference": "96563b4448e0125ebd00411b652a179ab9f8ffb6"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -663,15 +693,15 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\SecurityHeaders\\SecurityHeadersServiceProvider",
-                        "Fnlla\\\Cors\\CorsServiceProvider",
-                        "Fnlla\\\RateLimit\\RateLimitServiceProvider",
-                        "Fnlla\\\Redirects\\RedirectsServiceProvider",
-                        "Fnlla\\\Maintenance\\MaintenanceServiceProvider",
-                        "Fnlla\\\CacheStatic\\CacheStaticServiceProvider",
-                        "Fnlla\\\Forms\\FormsServiceProvider"
+                        "Fnlla\\SecurityHeaders\\SecurityHeadersServiceProvider",
+                        "Fnlla\\Cors\\CorsServiceProvider",
+                        "Fnlla\\RateLimit\\RateLimitServiceProvider",
+                        "Fnlla\\Redirects\\RedirectsServiceProvider",
+                        "Fnlla\\Maintenance\\MaintenanceServiceProvider",
+                        "Fnlla\\CacheStatic\\CacheStaticServiceProvider",
+                        "Fnlla\\Forms\\FormsServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -680,13 +710,13 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\SecurityHeaders\\": "src/SecurityHeaders/",
-                    "Fnlla\\\Cors\\": "src/Cors/",
-                    "Fnlla\\\RateLimit\\": "src/RateLimit/",
-                    "Fnlla\\\Redirects\\": "src/Redirects/",
-                    "Fnlla\\\Maintenance\\": "src/Maintenance/",
-                    "Fnlla\\\CacheStatic\\": "src/CacheStatic/",
-                    "Fnlla\\\Forms\\": "src/Forms/"
+                    "Fnlla\\SecurityHeaders\\": "src/SecurityHeaders/",
+                    "Fnlla\\Cors\\": "src/Cors/",
+                    "Fnlla\\RateLimit\\": "src/RateLimit/",
+                    "Fnlla\\Redirects\\": "src/Redirects/",
+                    "Fnlla\\Maintenance\\": "src/Maintenance/",
+                    "Fnlla\\CacheStatic\\": "src/CacheStatic/",
+                    "Fnlla\\Forms\\": "src/Forms/"
                 }
             },
             "scripts": {
@@ -699,9 +729,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla ops middleware bundle (security headers, CORS, rate limiting, redirects, maintenance, static cache, forms)",
@@ -717,7 +752,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/pdf",
-                "reference": "c9ed827b158d9c126807623eafdd6c04e68ab9cc"
+                "reference": "6435c13f6f75baa904ad12ed02d49b7596d0f261"
             },
             "require": {
                 "dompdf/dompdf": "^3.1",
@@ -726,9 +761,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Pdf\\PdfServiceProvider"
+                        "Fnlla\\Pdf\\PdfServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -737,7 +772,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Pdf\\": "src/"
+                    "Fnlla\\Pdf\\": "src/"
                 }
             },
             "scripts": {
@@ -750,9 +785,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "HTML-to-PDF rendering (Dompdf) with templates and API helpers",
@@ -768,7 +808,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/queue",
-                "reference": "20a8c0f02c1b77b02e94db7a977d3aab6b653a1b"
+                "reference": "6f950287ff70ec16daff2cd788dedeaaf2c480af"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -776,9 +816,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Queue\\QueueServiceProvider"
+                        "Fnlla\\Queue\\QueueServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -787,7 +827,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Queue\\": "src/"
+                    "Fnlla\\Queue\\": "src/"
                 }
             },
             "scripts": {
@@ -800,9 +840,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla queue module",
@@ -818,7 +863,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/rbac",
-                "reference": "e175e33a23676425c74ae4c3948733d1e028aa24"
+                "reference": "bd8a3b5b5b9556ccc98c2480c17368ca232e36d7"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -826,9 +871,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Rbac\\RbacServiceProvider"
+                        "Fnlla\\Rbac\\RbacServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -837,7 +882,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Rbac\\": "src/"
+                    "Fnlla\\Rbac\\": "src/"
                 }
             },
             "scripts": {
@@ -850,9 +895,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla RBAC module (roles, permissions, gate integration)",
@@ -868,7 +918,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/settings",
-                "reference": "6e52fab29270bd83110ebc75b5c378c1b5842afe"
+                "reference": "2da3c73d0a7737861459c52392045c833271da48"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -876,9 +926,9 @@
             },
             "type": "library",
             "extra": {
-                "Fnlla": {
+                "fnlla": {
                     "providers": [
-                        "Fnlla\\\Settings\\SettingsServiceProvider"
+                        "Fnlla\\Settings\\SettingsServiceProvider"
                     ]
                 },
                 "branch-alias": {
@@ -887,7 +937,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Settings\\": "src/"
+                    "Fnlla\\Settings\\": "src/"
                 }
             },
             "scripts": {
@@ -900,9 +950,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Key/value settings store for Fnlla",
@@ -918,7 +973,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/standard",
-                "reference": "1ba0213d934bc35e3c3dd809bd4b4343553efcce"
+                "reference": "f88c6cca58fe8db1de0693aee6e2d0f7538387c4"
             },
             "require": {
                 "fnlla/audit": "^3.0",
@@ -944,9 +999,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla standard web stack (meta-package)",
@@ -2303,14 +2363,14 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/testing",
-                "reference": "46c219ec10920fb8fc0a1a5973faab2317acb6a6"
+                "reference": "42d002381d7687929c5b4997fb1978dfd4306c44"
             },
             "require": {
                 "fnlla/framework": "^3.0",
                 "php": ">=8.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.5"
+                "phpunit/phpunit": "^12.5.22"
             },
             "bin": [
                 "bin/fnlla-test"
@@ -2323,7 +2383,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fnlla\\\Testing\\": "src/"
+                    "Fnlla\\Testing\\": "src/"
                 }
             },
             "license": [
@@ -2331,9 +2391,14 @@
             ],
             "authors": [
                 {
-                    "name": "Marcin Kordyaczny",
+                    "name": "TechAyo",
                     "homepage": "https://techayo.co.uk",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "Marcin Kordyaczny",
+                    "homepage": "https://techayo.co.uk",
+                    "role": "Project Manager"
                 }
             ],
             "description": "Fnlla testing helpers (HTTP feature tests and assertions)",
@@ -2427,7 +2492,7 @@
                     "homepage": "https://github.com/Nyholm"
                 },
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "MÃ¡rk SÃ¡gi-KazÃ¡r",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://github.com/sagikazarmark"
                 },
@@ -2623,7 +2688,7 @@
                     "homepage": "https://github.com/Nyholm"
                 },
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "MÃ¡rk SÃ¡gi-KazÃ¡r",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://github.com/sagikazarmark"
                 },
@@ -2633,7 +2698,7 @@
                     "homepage": "https://github.com/Tobion"
                 },
                 {
-                    "name": "Márk Sági-Kazár",
+                    "name": "MÃ¡rk SÃ¡gi-KazÃ¡r",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://sagikazarmark.hu"
                 }

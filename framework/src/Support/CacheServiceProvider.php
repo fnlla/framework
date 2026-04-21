@@ -1,20 +1,20 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 
-use Fnlla\\Core\ServiceProvider;
-use Fnlla\\Contracts\Cache\CacheStoreInterface as CacheStoreContract;
-use Fnlla\\Support\Psr\Cache\CacheItemPoolInterface;
-use Fnlla\\Support\Psr\SimpleCache\CacheInterface;
+use Fnlla\Core\ServiceProvider;
+use Fnlla\Contracts\Cache\CacheStoreInterface as CacheStoreContract;
+use Fnlla\Support\Psr\Cache\CacheItemPoolInterface;
+use Fnlla\Support\Psr\SimpleCache\CacheInterface;
 
 final class CacheServiceProvider extends ServiceProvider
 {

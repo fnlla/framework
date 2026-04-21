@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Settings;
+namespace Fnlla\Settings;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Support\ServiceProvider;
 
 final class SettingsServiceProvider extends ServiceProvider
 {

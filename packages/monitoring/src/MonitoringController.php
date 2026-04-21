@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Monitoring;
+namespace Fnlla\Monitoring;
 
-use Fnlla\\Http\Response;
+use Fnlla\Http\Response;
 
 final class MonitoringController
 {

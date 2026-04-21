@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require dirname(__DIR__) . '/ensure-php85.php';
 
-use Fnlla\\Http\UploadedFile;
+use Fnlla\Http\UploadedFile;
 
 function ok(bool $cond, string $msg): void
 {

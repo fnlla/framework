@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Stream;
-use Fnlla\\Http\Uri;
-use Fnlla\\Runtime\RequestContext;
-use Fnlla\\Runtime\ResetManager;
-use Fnlla\\SecurityHeaders\SecurityHeadersMiddleware;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Http\Stream;
+use Fnlla\Http\Uri;
+use Fnlla\Runtime\RequestContext;
+use Fnlla\Runtime\ResetManager;
+use Fnlla\SecurityHeaders\SecurityHeadersMiddleware;
 
 function ok(bool $cond, string $msg): void
 {

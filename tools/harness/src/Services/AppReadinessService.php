@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
-use Fnlla\\Support\RedisConnector;
+use Fnlla\Support\RedisConnector;
 use Throwable;
 
 final class AppReadinessService
@@ -37,7 +37,7 @@ final class AppReadinessService
 
     private function checkDatabase(): array
     {
-        if (!class_exists(\Fnlla\\Database\ConnectionManager::class)) {
+        if (!class_exists(\Fnlla\Database\ConnectionManager::class)) {
             return [
                 'status' => 'skipped',
                 'detail' => 'database core module not available',
@@ -58,8 +58,8 @@ final class AppReadinessService
         }
 
         try {
-            $manager = $app->make(\Fnlla\\Database\ConnectionManager::class);
-            if (!$manager instanceof \Fnlla\\Database\ConnectionManager) {
+            $manager = $app->make(\Fnlla\Database\ConnectionManager::class);
+            if (!$manager instanceof \Fnlla\Database\ConnectionManager) {
                 return [
                     'status' => 'fail',
                     'detail' => 'ConnectionManager not available',
@@ -81,7 +81,7 @@ final class AppReadinessService
 
     private function checkQueue(): array
     {
-        if (!class_exists(\Fnlla\\Queue\QueueManager::class)) {
+        if (!class_exists(\Fnlla\Queue\QueueManager::class)) {
             return [
                 'status' => 'skipped',
                 'detail' => 'fnlla/queue not installed',
@@ -132,7 +132,7 @@ final class AppReadinessService
 
     private function checkCache(): array
     {
-        if (!class_exists(\Fnlla\\Cache\CacheManager::class)) {
+        if (!class_exists(\Fnlla\Cache\CacheManager::class)) {
             return [
                 'status' => 'skipped',
                 'detail' => 'cache core module not available',

@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Ai;
+namespace Fnlla\Ai;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Support\HttpClient;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Support\HttpClient;
 
 final class AiManager
 {

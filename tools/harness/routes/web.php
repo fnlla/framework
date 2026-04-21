@@ -15,9 +15,9 @@ use App\Controllers\StatusController;
 use App\Controllers\TestController;
 use App\Middleware\AdminAccessMiddleware;
 use App\Middleware\DocsAccessMiddleware;
-use Fnlla\\Auth\AuthRoutes;
-use Fnlla\\Auth\Middleware\AuthMiddleware;
-use Fnlla\\Http\Router;
+use Fnlla\Auth\AuthRoutes;
+use Fnlla\Auth\Middleware\AuthMiddleware;
+use Fnlla\Http\Router;
 
 return static function (Router $router): void {
     if (class_exists(HealthController::class)) {
@@ -41,8 +41,8 @@ return static function (Router $router): void {
         $router->get('/_providers', [ProviderReportController::class, 'show']);
     }
 
-    if (class_exists(\Fnlla\\Monitoring\MonitoringRoutes::class) && env('Fnlla_MONITORING_ENABLED', false)) {
-        \Fnlla\\Monitoring\MonitoringRoutes::register($router, [
+    if (class_exists(\Fnlla\Monitoring\MonitoringRoutes::class) && env('Fnlla_MONITORING_ENABLED', false)) {
+        \Fnlla\Monitoring\MonitoringRoutes::register($router, [
             'path' => (string) env('Fnlla_MONITORING_PATH', '/metrics'),
         ]);
     }

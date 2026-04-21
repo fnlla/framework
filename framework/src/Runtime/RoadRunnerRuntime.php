@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Runtime;
+namespace Fnlla\Runtime;
 
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Contracts\Runtime\RuntimeInterface;
-use Fnlla\\Http\Request;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Contracts\Runtime\RuntimeInterface;
+use Fnlla\Http\Request;
 use RuntimeException;
 use Throwable;
 

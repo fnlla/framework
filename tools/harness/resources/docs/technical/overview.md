@@ -1,29 +1,29 @@
-**TECHNICAL OVERVIEW**
+# Technical Overview
 
-**APPLICATION**
-**-** Name: fnlla (finella)
-**-** Environment: local
-**-** Version: dev
-**-** Base path: -
-**-** Timezone: UTC
-**-** Root: harness
+## Application
+- Name: Fnlla
+- Environment: local
+- Version: dev
+- Base path: -
+- Timezone: UTC
+- Root: harness
 
-**RUNTIME**
-**-** PHP: 8.5
-**-** fnlla: 3.0.0
+## Runtime
+- PHP: 8.5
+- fnlla: 3.0.0
 
-**fnlla (finella) PACKAGES**
-**-** fnlla/ai (dev-main)
-**-** fnlla/audit (dev-main)
-**-** fnlla/debugbar (dev-main)
-**-** fnlla/deploy (dev-main)
-**-** fnlla/docs (dev-main)
-**-** fnlla/framework (dev-main)
-**-** fnlla/mail (dev-main)
-**-** fnlla/ops (dev-main)
-**-** fnlla/pdf (dev-main)
-**-** fnlla/queue (dev-main)
-**-** fnlla/rbac (dev-main)
-**-** fnlla/settings (dev-main)
-**-** fnlla/standard (dev-main)
-**-** fnlla/testing (dev-main)
+## fnlla Packages
+- fnlla/ai (dev-main)
+- fnlla/audit (dev-main)
+- fnlla/debugbar (dev-main)
+- fnlla/deploy (dev-main)
+- fnlla/docs (dev-main)
+- fnlla/framework (dev-main)
+- fnlla/mail (dev-main)
+- fnlla/ops (dev-main)
+- fnlla/pdf (dev-main)
+- fnlla/queue (dev-main)
+- fnlla/rbac (dev-main)
+- fnlla/settings (dev-main)
+- fnlla/standard (dev-main)
+- fnlla/testing (dev-main)

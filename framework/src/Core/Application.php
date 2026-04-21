@@ -1,21 +1,21 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Core;
+namespace Fnlla\Core;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Support\ProviderReport;
-use Fnlla\\Authorization\Gate;
-use Fnlla\\Authorization\PolicyRegistry;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Support\ProviderReport;
+use Fnlla\Authorization\Gate;
+use Fnlla\Authorization\PolicyRegistry;
 use RuntimeException;
-use Fnlla\\Core\ServiceProvider;
+use Fnlla\Core\ServiceProvider;
 
 /**
  * @api

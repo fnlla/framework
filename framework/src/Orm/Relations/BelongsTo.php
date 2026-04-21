@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Orm\Relations;
+namespace Fnlla\Orm\Relations;
 
-use Fnlla\\Orm\Model;
+use Fnlla\Orm\Model;
 
 final class BelongsTo extends Relation
 {
@@ -17,7 +17,7 @@ final class BelongsTo extends Relation
         string $relatedClass,
         private string $foreignKey,
         private string $ownerKey,
-        \Fnlla\\Orm\QueryBuilder $builder
+        \Fnlla\Orm\QueryBuilder $builder
     )
     {
         parent::__construct($parent, $relatedClass, $builder);

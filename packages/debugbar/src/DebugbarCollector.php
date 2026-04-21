@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Debugbar;
+namespace Fnlla\Debugbar;
 
 final class DebugbarCollector
 {

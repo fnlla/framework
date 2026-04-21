@@ -1,14 +1,14 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Core;
+namespace Fnlla\Core;
 
 /**
  * Configuration repository loaded from `config/<group>/*.php` (with optional subdirectories).

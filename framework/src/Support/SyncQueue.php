@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
-use Fnlla\\Contracts\Queue\JobInterface;
-use Fnlla\\Contracts\Queue\QueueInterface;
-use Fnlla\\Core\Container;
+use Fnlla\Contracts\Queue\JobInterface;
+use Fnlla\Contracts\Queue\QueueInterface;
+use Fnlla\Core\Container;
 use RuntimeException;
 use Throwable;
 

@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Content;
+namespace Fnlla\Content;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 
 final class ContentServiceProvider extends ServiceProvider
 {

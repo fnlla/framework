@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Queue\JobInterface;
-use Fnlla\\Queue\QueueManager;
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Queue\DatabaseQueue;
-use Fnlla\\Queue\QueueWorker;
+use Fnlla\Queue\JobInterface;
+use Fnlla\Queue\QueueManager;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Queue\DatabaseQueue;
+use Fnlla\Queue\QueueWorker;
 
 function ok(bool $cond, string $msg): void
 {

@@ -14,13 +14,13 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Fnlla\\Contracts\Log\LoggerInterface;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Uri;
-use Fnlla\\RequestLogging\RequestLoggerMiddleware;
-use Fnlla\\Runtime\RequestContext;
-use Fnlla\\Runtime\ResetManager;
+use Fnlla\Contracts\Log\LoggerInterface;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Http\Uri;
+use Fnlla\RequestLogging\RequestLoggerMiddleware;
+use Fnlla\Runtime\RequestContext;
+use Fnlla\Runtime\ResetManager;
 
 function ok(bool $cond, string $msg): void
 {

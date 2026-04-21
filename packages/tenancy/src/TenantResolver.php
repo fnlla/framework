@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Tenancy;
+namespace Fnlla\Tenancy;
 
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
 
 final class TenantResolver implements TenantResolverInterface
 {

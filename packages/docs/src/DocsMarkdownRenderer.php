@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Docs;
+namespace Fnlla\Docs;
 
 final class DocsMarkdownRenderer
 {

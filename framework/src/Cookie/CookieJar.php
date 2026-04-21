@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Cookie;
+namespace Fnlla\Cookie;
 
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Request;
-use Fnlla\\Support\Env;
+use Fnlla\Http\Response;
+use Fnlla\Http\Request;
+use Fnlla\Support\Env;
 
 final class CookieJar
 {

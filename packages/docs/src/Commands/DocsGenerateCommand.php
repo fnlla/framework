@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Docs\Commands;
+namespace Fnlla\Docs\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Docs\DocsManager;
-use Fnlla\\Docs\DocsPaths;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Docs\DocsManager;
+use Fnlla\Docs\DocsPaths;
 
 final class DocsGenerateCommand implements CommandInterface
 {

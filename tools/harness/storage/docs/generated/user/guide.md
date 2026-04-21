@@ -1,18 +1,18 @@
-**USER GUIDE (DRAFT)**
+# User Guide (Draft)
 
-**PURPOSE**
-Describe what fnlla (finella) does for end users.
+## Purpose
+Describe what Fnlla does for end users.
 
-**GETTING STARTED**
-**-** How users sign in.
-**-** First-time setup steps.
+## Getting Started
+- How users sign in.
+- First-time setup steps.
 
-**CORE FEATURES**
-**-** List the main workflows.
-**-** Include links to UI sections.
+## Core Features
+- List the main workflows.
+- Include links to UI sections.
 
-**TROUBLESHOOTING**
-**-** Common issues and resolutions.
+## Troubleshooting
+- Common issues and resolutions.
 
-**SUPPORT**
-**-** Where users should report problems.
+## Support
+- Where users should report problems.

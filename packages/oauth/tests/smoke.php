@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\OAuth\OAuthManager;
+use Fnlla\OAuth\OAuthManager;
 
 if (!class_exists(\League\OAuth2\Client\Provider\GenericProvider::class)) {
     echo "oauth skip (league/oauth2-client missing)\n";

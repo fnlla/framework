@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Contracts\Support\ServiceProviderInterface;
-use Fnlla\\Support\ProviderManifest;
+use Fnlla\Core\Container;
+use Fnlla\Contracts\Support\ServiceProviderInterface;
+use Fnlla\Support\ProviderManifest;
 
 abstract class ServiceProvider implements ServiceProviderInterface
 {

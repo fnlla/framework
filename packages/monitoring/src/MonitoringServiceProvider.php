@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Monitoring;
+namespace Fnlla\Monitoring;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 
 final class MonitoringServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,7 @@ final class MonitoringServiceProvider extends ServiceProvider
             if (!is_array($config)) {
                 $config = [];
             }
-            $cache = $app->make(\Fnlla\\Cache\CacheManager::class);
+            $cache = $app->make(\Fnlla\Cache\CacheManager::class);
             return new MonitoringManager($cache, $config);
         });
     }

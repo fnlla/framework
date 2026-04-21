@@ -1,20 +1,20 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Http;
+namespace Fnlla\Http;
 
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Message\StreamInterface;
-use Fnlla\\Support\Psr\Http\Message\UriInterface;
-use Fnlla\\Support\ValidationException;
-use Fnlla\\Support\Validator;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\Support\Psr\Http\Message\UriInterface;
+use Fnlla\Support\ValidationException;
+use Fnlla\Support\Validator;
 
 /**
  * HTTP request wrapper with helpers for headers, input, and trusted proxies.

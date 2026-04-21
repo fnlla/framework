@@ -1,9 +1,9 @@
-**USER FAQ (DRAFT)**
+# User FAQ (Draft)
 
-**COMMON QUESTIONS**
-**-** How do I reset my password?
-**-** Where do I find my invoices?
-**-** Who can I contact for help?
+## Common Questions
+- How do I reset my password?
+- Where do I find my invoices?
+- Who can I contact for help?
 
-**FEATURE NOTES**
-**-** Add clarifications for edge cases.
+## Feature Notes
+- Add clarifications for edge cases.

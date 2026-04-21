@@ -1,22 +1,22 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail\Http;
+namespace Fnlla\Webmail\Http;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\Message;
-use Fnlla\\Webmail\ImapMailboxClient;
-use Fnlla\\Webmail\WebmailSettings;
-use Fnlla\\Webmail\WebmailSmtpClient;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\Message;
+use Fnlla\Webmail\ImapMailboxClient;
+use Fnlla\Webmail\WebmailSettings;
+use Fnlla\Webmail\WebmailSmtpClient;
 
 final class WebmailTestController
 {

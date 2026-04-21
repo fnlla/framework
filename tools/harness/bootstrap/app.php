@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Core\Application;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\HttpKernel;
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Support\ComposerProviderDiscovery;
-use Fnlla\\Support\Dotenv;
-use Fnlla\\Support\ProviderCache;
-use Fnlla\\Support\ProviderRepository;
-use Fnlla\\Support\ProviderReport;
+use Fnlla\Core\Application;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\HttpKernel;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Support\ComposerProviderDiscovery;
+use Fnlla\Support\Dotenv;
+use Fnlla\Support\ProviderCache;
+use Fnlla\Support\ProviderRepository;
+use Fnlla\Support\ProviderReport;
 
 $root = getenv('APP_ROOT');
 if (!is_string($root) || trim($root) === '') {

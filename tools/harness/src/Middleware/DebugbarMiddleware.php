@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -9,11 +9,11 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
-use Fnlla\\Debugbar\Middleware\DebugbarMiddleware as PackageDebugbarMiddleware;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
-use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\Debugbar\Middleware\DebugbarMiddleware as PackageDebugbarMiddleware;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class DebugbarMiddleware implements MiddlewareInterface
 {

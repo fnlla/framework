@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Queue;
+namespace Fnlla\Queue;
 
 use Closure;
-use Fnlla\\Support\RedisConnector;
+use Fnlla\Support\RedisConnector;
 use Throwable;
 
 final class RedisQueue implements QueueDriverInterface

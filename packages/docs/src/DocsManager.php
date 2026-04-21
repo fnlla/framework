@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Docs;
+namespace Fnlla\Docs;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\Application;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\Application;
 
 final class DocsManager
 {

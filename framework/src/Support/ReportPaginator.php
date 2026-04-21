@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 use ArrayIterator;
 use Countable;
-use Fnlla\\Core\Container;
-use Fnlla\\View\View;
+use Fnlla\Core\Container;
+use Fnlla\View\View;
 use IteratorAggregate;
 use Traversable;
 

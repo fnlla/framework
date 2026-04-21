@@ -1,20 +1,20 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Debugbar;
+namespace Fnlla\Debugbar;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\Container;
-use Fnlla\\Debugbar\Middleware\DebugbarMiddleware;
-use Fnlla\\Support\Env;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\Container;
+use Fnlla\Debugbar\Middleware\DebugbarMiddleware;
+use Fnlla\Support\Env;
+use Fnlla\Support\ServiceProvider;
 
 final class DebugbarServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -26,7 +26,7 @@ foreach ($autoloadCandidates as $autoload) {
 }
 
 spl_autoload_register(function (string $class) use ($FnllaRoot): void {
-    $prefix = 'Fnlla\\\';
+    $prefix = 'Fnlla\\';
     if (!str_starts_with($class, $prefix)) {
         return;
     }

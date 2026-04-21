@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail;
+namespace Fnlla\Webmail;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\Message;
-use Fnlla\\Queue\JobInterface;
+use Fnlla\Core\Container;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\Message;
+use Fnlla\Queue\JobInterface;
 
 final class WebmailSendJob implements JobInterface
 {

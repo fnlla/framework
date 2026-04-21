@@ -1,83 +1,83 @@
-**TECHNICAL INVENTORY**
+# Technical Inventory
 
-**CONFIG FILES**
-**-** config/ai/ai.php
-**-** config/ai/policy.php
-**-** config/ai/policy_packs.php
-**-** config/ai/rag.php
-**-** config/ai/redaction.php
-**-** config/ai/router.php
-**-** config/ai/skills.php
-**-** config/ai/telemetry.php
-**-** config/app.php
-**-** config/audit/audit.php
-**-** config/auth/auth.php
-**-** config/authorization/authorization.php
-**-** config/cache/cache.php
-**-** config/console/console.php
-**-** config/cookie/cookie.php
-**-** config/database/database.php
-**-** config/events/events.php
-**-** config/http/http.php
-**-** config/log/log.php
-**-** config/mail/mail.php
-**-** config/monitoring/monitoring.php
-**-** config/notifications/notifications.php
-**-** config/oauth/oauth.php
-**-** config/pdf/pdf.php
-**-** config/performance/performance.php
-**-** config/providers/providers.php
-**-** config/queue/queue.php
-**-** config/rbac/rbac.php
-**-** config/scheduler/scheduler.php
-**-** config/search/search.php
-**-** config/sentry/sentry.php
-**-** config/session/session.php
-**-** config/settings/settings.php
-**-** config/storage/storage.php
-**-** config/stripe/stripe.php
-**-** config/webmail/webmail.php
+## Config Files
+- config/ai/ai.php
+- config/ai/policy.php
+- config/ai/policy_packs.php
+- config/ai/rag.php
+- config/ai/redaction.php
+- config/ai/router.php
+- config/ai/skills.php
+- config/ai/telemetry.php
+- config/app.php
+- config/audit/audit.php
+- config/auth/auth.php
+- config/authorization/authorization.php
+- config/cache/cache.php
+- config/console/console.php
+- config/cookie/cookie.php
+- config/database/database.php
+- config/events/events.php
+- config/http/http.php
+- config/log/log.php
+- config/mail/mail.php
+- config/monitoring/monitoring.php
+- config/notifications/notifications.php
+- config/oauth/oauth.php
+- config/pdf/pdf.php
+- config/performance/performance.php
+- config/providers/providers.php
+- config/queue/queue.php
+- config/rbac/rbac.php
+- config/scheduler/scheduler.php
+- config/search/search.php
+- config/sentry/sentry.php
+- config/session/session.php
+- config/settings/settings.php
+- config/storage/storage.php
+- config/stripe/stripe.php
+- config/webmail/webmail.php
 
-**ROUTE FILES**
-**-** routes/_ec.php (11 route statements)
-**-** routes/web.php (25 route statements)
+## Route Files
+- routes/_ec.php (11 route statements)
+- routes/web.php (25 route statements)
 
-**THIRD-PARTY PACKAGES**
+## Third-Party Packages
 Total: 51
-**-** aws/aws-crt-php (v1.2.7)
-**-** aws/aws-sdk-php (3.379.2)
-**-** doctrine/lexer (3.0.1)
-**-** dompdf/dompdf (v3.1.5)
-**-** dompdf/php-font-lib (1.0.2)
-**-** dompdf/php-svg-lib (1.0.2)
-**-** egulias/email-validator (4.0.4)
-**-** guzzlehttp/guzzle (7.10.0)
-**-** guzzlehttp/promises (2.3.0)
-**-** guzzlehttp/psr7 (2.9.0)
-**-** jean85/pretty-package-versions (2.1.1)
-**-** league/oauth2-client (2.9.0)
-**-** masterminds/html5 (2.10.0)
-**-** mtdowling/jmespath.php (2.8.0)
-**-** psr/container (2.0.2)
-**-** psr/event-dispatcher (1.0.0)
-**-** psr/http-client (1.0.3)
-**-** psr/http-factory (1.1.0)
-**-** psr/http-message (2.0)
-**-** psr/log (3.0.2)
-**-** ralouphie/getallheaders (3.0.3)
-**-** sabberworm/php-css-parser (v9.3.0)
-**-** sentry/sentry (4.24.0)
-**-** stripe/stripe-php (v13.18.0)
-**-** symfony/deprecation-contracts (v3.6.0)
-**-** symfony/event-dispatcher (v8.0.8)
-**-** symfony/event-dispatcher-contracts (v3.6.0)
-**-** symfony/filesystem (v8.0.8)
-**-** symfony/mailer (v7.4.8)
-**-** symfony/mime (v7.4.8)
-**-** symfony/options-resolver (v8.0.8)
-**-** symfony/polyfill-ctype (v1.36.0)
-**-** symfony/polyfill-intl-idn (v1.36.0)
-**-** symfony/polyfill-intl-normalizer (v1.36.0)
-**-** symfony/polyfill-mbstring (v1.36.0)
-**-** symfony/service-contracts (v3.6.1)
-**-** thecodingmachine/safe (v3.4.0)
+- aws/aws-crt-php (v1.2.7)
+- aws/aws-sdk-php (3.379.2)
+- doctrine/lexer (3.0.1)
+- dompdf/dompdf (v3.1.5)
+- dompdf/php-font-lib (1.0.2)
+- dompdf/php-svg-lib (1.0.2)
+- egulias/email-validator (4.0.4)
+- guzzlehttp/guzzle (7.10.0)
+- guzzlehttp/promises (2.3.0)
+- guzzlehttp/psr7 (2.9.0)
+- jean85/pretty-package-versions (2.1.1)
+- league/oauth2-client (2.9.0)
+- masterminds/html5 (2.10.0)
+- mtdowling/jmespath.php (2.8.0)
+- psr/container (2.0.2)
+- psr/event-dispatcher (1.0.0)
+- psr/http-client (1.0.3)
+- psr/http-factory (1.1.0)
+- psr/http-message (2.0)
+- psr/log (3.0.2)
+- ralouphie/getallheaders (3.0.3)
+- sabberworm/php-css-parser (v9.3.0)
+- sentry/sentry (4.24.0)
+- stripe/stripe-php (v13.18.0)
+- symfony/deprecation-contracts (v3.6.0)
+- symfony/event-dispatcher (v8.0.8)
+- symfony/event-dispatcher-contracts (v3.6.0)
+- symfony/filesystem (v8.0.8)
+- symfony/mailer (v7.4.8)
+- symfony/mime (v7.4.8)
+- symfony/options-resolver (v8.0.8)
+- symfony/polyfill-ctype (v1.36.0)
+- symfony/polyfill-intl-idn (v1.36.0)
+- symfony/polyfill-intl-normalizer (v1.36.0)
+- symfony/polyfill-mbstring (v1.36.0)
+- symfony/service-contracts (v3.6.1)
+- thecodingmachine/safe (v3.4.0)

@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
-use Fnlla\\Core\ConfigRepository;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
+use Fnlla\Core\ConfigRepository;
 
 final class AiSecurityLintCommand implements CommandInterface
 {
@@ -105,7 +105,7 @@ final class AiSecurityLintCommand implements CommandInterface
             return false;
         }
         foreach ($groups['web'] as $middleware) {
-            if ($middleware === 'Fnlla\\\Csrf\\CsrfMiddleware') {
+            if ($middleware === 'Fnlla\\Csrf\\CsrfMiddleware') {
                 return true;
             }
         }
@@ -122,7 +122,7 @@ final class AiSecurityLintCommand implements CommandInterface
             return false;
         }
         foreach ($global as $middleware) {
-            if ($middleware === 'Fnlla\\\SecurityHeaders\\SecurityHeadersMiddleware') {
+            if ($middleware === 'Fnlla\\SecurityHeaders\\SecurityHeadersMiddleware') {
                 return true;
             }
         }

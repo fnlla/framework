@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -10,11 +10,11 @@ declare(strict_types=1);
 
 namespace App\Jobs;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\Mail;
-use Fnlla\\Mail\Message;
-use Fnlla\\Queue\JobInterface;
+use Fnlla\Core\Container;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\Mail;
+use Fnlla\Mail\Message;
+use Fnlla\Queue\JobInterface;
 
 final class SendWelcomeEmailJob implements JobInterface
 {

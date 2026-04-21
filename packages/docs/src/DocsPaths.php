@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Docs;
+namespace Fnlla\Docs;
 
-use Fnlla\\Core\ConfigRepository;
+use Fnlla\Core\ConfigRepository;
 
 final class DocsPaths
 {

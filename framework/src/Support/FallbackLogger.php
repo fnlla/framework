@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 use Psr\Log\LoggerInterface;
-use Fnlla\\Runtime\RequestContext;
+use Fnlla\Runtime\RequestContext;
 
 final class FallbackLogger
 {
@@ -98,7 +98,7 @@ final class FallbackLogger
             return null;
         }
 
-        if (!$app instanceof \Fnlla\\Core\Container) {
+        if (!$app instanceof \Fnlla\Core\Container) {
             return null;
         }
 

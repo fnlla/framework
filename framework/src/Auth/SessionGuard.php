@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Auth;
+namespace Fnlla\Auth;
 
-use Fnlla\\Session\SessionInterface;
+use Fnlla\Session\SessionInterface;
 use RuntimeException;
 
 final class SessionGuard

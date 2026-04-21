@@ -40,19 +40,19 @@ if (is_array($cached)) {
 }
 
 $required = [
-    'Fnlla\\\Database\\DatabaseServiceProvider',
-    'Fnlla\\\Orm\\OrmServiceProvider',
-    'Fnlla\\\Cache\\CacheServiceProvider',
-    'Fnlla\\\Queue\\QueueServiceProvider',
-    'Fnlla\\\Mail\\MailServiceProvider',
-    'Fnlla\\\Session\\SessionServiceProvider',
-    'Fnlla\\\Cookie\\CookieServiceProvider',
-    'Fnlla\\\Auth\\AuthServiceProvider',
-    'Fnlla\\\Csrf\\CsrfServiceProvider',
-    'Fnlla\\\RateLimit\\RateLimitServiceProvider',
-    'Fnlla\\\SecurityHeaders\\SecurityHeadersServiceProvider',
-    'Fnlla\\\RequestLogging\\RequestLoggingServiceProvider',
-    'Fnlla\\\Log\\LogServiceProvider',
+    'Fnlla\\Database\\DatabaseServiceProvider',
+    'Fnlla\\Orm\\OrmServiceProvider',
+    'Fnlla\\Cache\\CacheServiceProvider',
+    'Fnlla\\Queue\\QueueServiceProvider',
+    'Fnlla\\Mail\\MailServiceProvider',
+    'Fnlla\\Session\\SessionServiceProvider',
+    'Fnlla\\Cookie\\CookieServiceProvider',
+    'Fnlla\\Auth\\AuthServiceProvider',
+    'Fnlla\\Csrf\\CsrfServiceProvider',
+    'Fnlla\\RateLimit\\RateLimitServiceProvider',
+    'Fnlla\\SecurityHeaders\\SecurityHeadersServiceProvider',
+    'Fnlla\\RequestLogging\\RequestLoggingServiceProvider',
+    'Fnlla\\Log\\LogServiceProvider',
 ];
 
 foreach ($required as $provider) {

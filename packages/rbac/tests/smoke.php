@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Rbac\RbacManager;
-use Fnlla\\Rbac\RbacSchema;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Rbac\RbacManager;
+use Fnlla\Rbac\RbacSchema;
 
 if (!class_exists(RbacManager::class)) {
     $base = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src';

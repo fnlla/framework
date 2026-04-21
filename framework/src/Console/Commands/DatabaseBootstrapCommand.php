@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Database\MigrationRunner;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Database\MigrationRunner;
 use RuntimeException;
 use PDO;
 use Throwable;
@@ -95,7 +95,7 @@ final class DatabaseBootstrapCommand implements CommandInterface
         }
 
         try {
-            $dotenv = new \Fnlla\\Support\Dotenv();
+            $dotenv = new \Fnlla\Support\Dotenv();
             if (method_exists($dotenv, 'usePutenv')) {
                 $dotenv->usePutenv(true);
             }

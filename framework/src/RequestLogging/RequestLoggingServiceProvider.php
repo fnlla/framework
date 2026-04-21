@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\RequestLogging;
+namespace Fnlla\RequestLogging;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 
 final class RequestLoggingServiceProvider extends ServiceProvider
 {

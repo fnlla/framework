@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Pdf;
+namespace Fnlla\Pdf;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 
 final class PdfServiceProvider extends ServiceProvider
 {

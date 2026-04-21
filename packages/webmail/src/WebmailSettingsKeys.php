@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail;
+namespace Fnlla\Webmail;
 
-use Fnlla\\Core\ConfigRepository;
+use Fnlla\Core\ConfigRepository;
 
 final class WebmailSettingsKeys
 {
@@ -62,11 +62,11 @@ final class WebmailSettingsKeys
 
     public function tenantId(): ?string
     {
-        if (!class_exists(\Fnlla\\Tenancy\TenantContext::class)) {
+        if (!class_exists(\Fnlla\Tenancy\TenantContext::class)) {
             return null;
         }
 
-        $id = \Fnlla\\Tenancy\TenantContext::id();
+        $id = \Fnlla\Tenancy\TenantContext::id();
         if (!is_string($id)) {
             return null;
         }
@@ -81,11 +81,11 @@ final class WebmailSettingsKeys
             return null;
         }
 
-        if (!class_exists(\Fnlla\\Tenancy\TenantContext::class)) {
+        if (!class_exists(\Fnlla\Tenancy\TenantContext::class)) {
             return 'Tenant-scoped webmail settings require fnlla/tenancy.';
         }
 
-        $id = \Fnlla\\Tenancy\TenantContext::id();
+        $id = \Fnlla\Tenancy\TenantContext::id();
         if (!is_string($id) || trim($id) === '') {
             return 'Tenant context is not available for webmail settings.';
         }

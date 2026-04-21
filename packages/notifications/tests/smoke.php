@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Mail\MailerInterface;
-use Fnlla\\Mail\Message;
-use Fnlla\\Notifications\NotificationManager;
-use Fnlla\\Notifications\NotificationRepository;
-use Fnlla\\Notifications\NotificationsSchema;
-use Fnlla\\Notifications\NullSmsSender;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Mail\MailerInterface;
+use Fnlla\Mail\Message;
+use Fnlla\Notifications\NotificationManager;
+use Fnlla\Notifications\NotificationRepository;
+use Fnlla\Notifications\NotificationsSchema;
+use Fnlla\Notifications\NullSmsSender;
 
 function ok(bool $cond, string $msg): void
 {

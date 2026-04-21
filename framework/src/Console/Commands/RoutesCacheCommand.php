@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
-use Fnlla\\Http\RouteCacheCompiler;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
+use Fnlla\Http\RouteCacheCompiler;
 use RuntimeException;
 
 final class RoutesCacheCommand implements CommandInterface

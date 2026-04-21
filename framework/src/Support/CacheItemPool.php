@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
-use Fnlla\\Contracts\Cache\CacheStoreInterface;
-use Fnlla\\Support\Psr\Cache\CacheItemInterface;
-use Fnlla\\Support\Psr\Cache\CacheItemPoolInterface;
+use Fnlla\Contracts\Cache\CacheStoreInterface;
+use Fnlla\Support\Psr\Cache\CacheItemInterface;
+use Fnlla\Support\Psr\Cache\CacheItemPoolInterface;
 
 final class CacheItemPool implements CacheItemPoolInterface
 {

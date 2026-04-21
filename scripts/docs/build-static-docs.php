@@ -24,7 +24,7 @@ if (!is_dir($srcDir)) {
 ensureDir($buildDir);
 ensureDir($pagesDir);
 
-$renderer = new \Fnlla\\Docs\DocsMarkdownRenderer();
+$renderer = new \Fnlla\Docs\DocsMarkdownRenderer();
 
 $navigation = [
     ['slug' => 'index', 'label' => 'Index', 'source' => $srcDir . '/index.md', 'target' => $buildDir . '/index.html', 'href' => 'index.html', 'css' => '../assets/documentation.css'],

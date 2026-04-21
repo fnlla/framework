@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-use Fnlla\\Core\Application;
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\MailerInterface;
-use Fnlla\\Mail\Message;
+use Fnlla\Core\Application;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\MailerInterface;
+use Fnlla\Mail\Message;
 
 $root = dirname(__DIR__, 2);
 $appRoot = $root . '/tools/harness';

@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Rbac;
+namespace Fnlla\Rbac;
 
-use Fnlla\\Authorization\Gate;
+use Fnlla\Authorization\Gate;
 
 trait HasRoles
 {
@@ -29,7 +29,7 @@ trait HasRoles
         }
 
         $app = app();
-        if (!$app instanceof \Fnlla\\Core\Container) {
+        if (!$app instanceof \Fnlla\Core\Container) {
             return false;
         }
 
@@ -52,7 +52,7 @@ trait HasRoles
         }
 
         $app = app();
-        if (!$app instanceof \Fnlla\\Core\Container) {
+        if (!$app instanceof \Fnlla\Core\Container) {
             return null;
         }
 

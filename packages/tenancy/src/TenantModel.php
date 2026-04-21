@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Tenancy;
+namespace Fnlla\Tenancy;
 
-use Fnlla\\Orm\Model;
-use Fnlla\\Orm\QueryBuilder;
+use Fnlla\Orm\Model;
+use Fnlla\Orm\QueryBuilder;
 use RuntimeException;
 
 abstract class TenantModel extends Model

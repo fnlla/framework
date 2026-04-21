@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Scheduler\Schedule;
+use Fnlla\Scheduler\Schedule;
 
 return function (Schedule $schedule): void {
     // Example task kept intentionally lightweight for local validation.

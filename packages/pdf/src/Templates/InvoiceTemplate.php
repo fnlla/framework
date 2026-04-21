@@ -1,13 +1,13 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Pdf\Templates;
+namespace Fnlla\Pdf\Templates;
 
 final class InvoiceTemplate implements PdfTemplateInterface
 {

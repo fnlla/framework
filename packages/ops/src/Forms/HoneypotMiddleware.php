@@ -1,20 +1,20 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Forms;
+namespace Fnlla\Forms;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
-use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class HoneypotMiddleware implements MiddlewareInterface
 {

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 if (!function_exists(__NAMESPACE__ . '\\Fnlla_compat_enabled')) {
     function Fnlla_compat_enabled(): bool
@@ -27,10 +27,10 @@ spl_autoload_register(static function (string $class): void {
     }
 
     $map = [
-        'Application' => \Fnlla\\Core\Application::class,
-        'Router' => \Fnlla\\Http\Router::class,
-        'Request' => \Fnlla\\Http\Request::class,
-        'Response' => \Fnlla\\Http\Response::class,
+        'Application' => \Fnlla\Core\Application::class,
+        'Router' => \Fnlla\Http\Router::class,
+        'Request' => \Fnlla\Http\Request::class,
+        'Response' => \Fnlla\Http\Response::class,
     ];
 
     if (!isset($map[$class])) {

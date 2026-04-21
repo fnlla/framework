@@ -1,48 +1,48 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console;
+namespace Fnlla\Console;
 
-use Fnlla\\Console\Commands\MakeCommandCommand;
-use Fnlla\\Console\Commands\MakeControllerCommand;
-use Fnlla\\Console\Commands\MakeCrudCommand;
-use Fnlla\\Console\Commands\MakeBlueprintCommand;
-use Fnlla\\Console\Commands\MakeJobCommand;
-use Fnlla\\Console\Commands\MakeListenerCommand;
-use Fnlla\\Console\Commands\MakeMailCommand;
-use Fnlla\\Console\Commands\MakeMiddlewareCommand;
-use Fnlla\\Console\Commands\MakeModelCommand;
-use Fnlla\\Console\Commands\MakeMigrationCommand;
-use Fnlla\\Console\Commands\MakeModuleCommand;
-use Fnlla\\Console\Commands\MakePolicyCommand;
-use Fnlla\\Console\Commands\MakeRequestCommand;
-use Fnlla\\Console\Commands\MakeRepositoryCommand;
-use Fnlla\\Console\Commands\MakeSeederCommand;
-use Fnlla\\Console\Commands\MakeServiceCommand;
-use Fnlla\\Console\Commands\MakeTestCommand;
-use Fnlla\\Console\Commands\MigrateCommand;
-use Fnlla\\Console\Commands\MigrateRollbackCommand;
-use Fnlla\\Console\Commands\MigrateStatusCommand;
-use Fnlla\\Console\Commands\DatabaseBootstrapCommand;
-use Fnlla\\Console\Commands\AiConfigAdvisorCommand;
-use Fnlla\\Console\Commands\AiSecurityLintCommand;
-use Fnlla\\Console\Commands\AiObservabilityCommand;
-use Fnlla\\Console\Commands\AiDocsSyncCommand;
-use Fnlla\\Console\Commands\AiScaffoldCommand;
-use Fnlla\\Console\Commands\AiDoctorCommand;
-use Fnlla\\Console\Commands\AiTestPlanCommand;
-use Fnlla\\Console\Commands\AiRoadmapBalanceCommand;
-use Fnlla\\Console\Commands\AiReleaseNotesCommand;
-use Fnlla\\Console\Commands\QueueWorkCommand;
-use Fnlla\\Console\Commands\RoutesCacheCommand;
-use Fnlla\\Console\Commands\RoutesClearCommand;
-use Fnlla\\Console\Commands\ScheduleRunCommand;
-use Fnlla\\Console\Commands\SeedCommand;
+use Fnlla\Console\Commands\MakeCommandCommand;
+use Fnlla\Console\Commands\MakeControllerCommand;
+use Fnlla\Console\Commands\MakeCrudCommand;
+use Fnlla\Console\Commands\MakeBlueprintCommand;
+use Fnlla\Console\Commands\MakeJobCommand;
+use Fnlla\Console\Commands\MakeListenerCommand;
+use Fnlla\Console\Commands\MakeMailCommand;
+use Fnlla\Console\Commands\MakeMiddlewareCommand;
+use Fnlla\Console\Commands\MakeModelCommand;
+use Fnlla\Console\Commands\MakeMigrationCommand;
+use Fnlla\Console\Commands\MakeModuleCommand;
+use Fnlla\Console\Commands\MakePolicyCommand;
+use Fnlla\Console\Commands\MakeRequestCommand;
+use Fnlla\Console\Commands\MakeRepositoryCommand;
+use Fnlla\Console\Commands\MakeSeederCommand;
+use Fnlla\Console\Commands\MakeServiceCommand;
+use Fnlla\Console\Commands\MakeTestCommand;
+use Fnlla\Console\Commands\MigrateCommand;
+use Fnlla\Console\Commands\MigrateRollbackCommand;
+use Fnlla\Console\Commands\MigrateStatusCommand;
+use Fnlla\Console\Commands\DatabaseBootstrapCommand;
+use Fnlla\Console\Commands\AiConfigAdvisorCommand;
+use Fnlla\Console\Commands\AiSecurityLintCommand;
+use Fnlla\Console\Commands\AiObservabilityCommand;
+use Fnlla\Console\Commands\AiDocsSyncCommand;
+use Fnlla\Console\Commands\AiScaffoldCommand;
+use Fnlla\Console\Commands\AiDoctorCommand;
+use Fnlla\Console\Commands\AiTestPlanCommand;
+use Fnlla\Console\Commands\AiRoadmapBalanceCommand;
+use Fnlla\Console\Commands\AiReleaseNotesCommand;
+use Fnlla\Console\Commands\QueueWorkCommand;
+use Fnlla\Console\Commands\RoutesCacheCommand;
+use Fnlla\Console\Commands\RoutesClearCommand;
+use Fnlla\Console\Commands\ScheduleRunCommand;
+use Fnlla\Console\Commands\SeedCommand;
 
 final class ConsoleApplication
 {

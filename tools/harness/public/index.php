@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Http\Request;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Http\Request;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
 
 require __DIR__ . '/../vendor/autoload.php';
 

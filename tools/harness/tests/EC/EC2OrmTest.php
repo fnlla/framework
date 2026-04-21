@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use App\Models\Post;
 use App\Models\Comment;
-use Fnlla\\Testing\TestCase;
+use Fnlla\Testing\TestCase;
 
 final class EC2OrmTest extends TestCase
 {

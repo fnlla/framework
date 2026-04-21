@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Search;
+namespace Fnlla\Search;
 
-use Fnlla\\Support\HttpClient;
+use Fnlla\Support\HttpClient;
 use RuntimeException;
 
 final class MeilisearchHttpClient implements SearchClientInterface
@@ -142,7 +142,10 @@ final class MeilisearchHttpClient implements SearchClientInterface
         ]);
         $result = @file_get_contents($url, false, $context);
         $status = 0;
-        foreach ($http_response_header as $line) {
+        $httpResponseHeader = function_exists('http_get_last_response_headers')
+            ? http_get_last_response_headers()
+            : [];
+        foreach ($httpResponseHeader as $line) {
             if (preg_match('/HTTP\/\d+\.\d+\s+(\d+)/', $line, $matches) === 1) {
                 $status = (int) $matches[1];
                 break;

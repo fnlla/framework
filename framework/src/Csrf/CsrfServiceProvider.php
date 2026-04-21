@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Csrf;
+namespace Fnlla\Csrf;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Session\SessionInterface;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Session\SessionInterface;
+use Fnlla\Support\ServiceProvider;
 
 final class CsrfServiceProvider extends ServiceProvider
 {

@@ -1,17 +1,17 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Auth;
+namespace Fnlla\Auth;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Session\SessionInterface;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Session\SessionInterface;
+use Fnlla\Support\ServiceProvider;
 
 final class AuthServiceProvider extends ServiceProvider
 {

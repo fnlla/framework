@@ -1,27 +1,27 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Core;
+namespace Fnlla\Core;
 
-use Fnlla\\Core\ConfigRepository;
+use Fnlla\Core\ConfigRepository;
 use ErrorException;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\RedirectTarget;
-use Fnlla\\Runtime\RequestContext;
-use Fnlla\\Contracts\Log\ErrorReporterInterface;
-use Fnlla\\Contracts\Log\LoggerInterface;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Http\RedirectTarget;
+use Fnlla\Runtime\RequestContext;
+use Fnlla\Contracts\Log\ErrorReporterInterface;
+use Fnlla\Contracts\Log\LoggerInterface;
 use Throwable;
-use Fnlla\\Authorization\AuthorizationException;
-use Fnlla\\Support\ValidationException;
-use Fnlla\\View\View;
+use Fnlla\Authorization\AuthorizationException;
+use Fnlla\Support\ValidationException;
+use Fnlla\View\View;
 
 /**
  * Exception handling and rendering for the HTTP kernel.

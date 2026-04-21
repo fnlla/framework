@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\RateLimit;
+namespace Fnlla\RateLimit;
 
-use Fnlla\\Cache\CacheManager;
+use Fnlla\Cache\CacheManager;
 
 final class RateLimiter
 {

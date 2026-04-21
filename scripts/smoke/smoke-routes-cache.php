@@ -53,7 +53,7 @@ file_put_contents($configDir . DIRECTORY_SEPARATOR . 'app.php', sprintf($configT
 $routesTemplate = <<<'PHP'
 <?php
 
-use Fnlla\\Http\Router;
+use Fnlla\Http\Router;
 
 return function (Router $router): void {
     $router->get('/closure', function () {
@@ -79,8 +79,8 @@ if (!is_string($autoload) || $autoload === '' || !is_file($autoload)) {
 
 require $autoload;
 
-use Fnlla\\Console\Commands\RoutesCacheCommand;
-use Fnlla\\Console\ConsoleIO;
+use Fnlla\Console\Commands\RoutesCacheCommand;
+use Fnlla\Console\ConsoleIO;
 
 $command = new RoutesCacheCommand();
 $io = new ConsoleIO();

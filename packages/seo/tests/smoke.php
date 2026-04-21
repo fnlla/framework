@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Seo\SeoManager;
-use Fnlla\\Runtime\RequestContext;
-use Fnlla\\Runtime\ResetManager;
+use Fnlla\Seo\SeoManager;
+use Fnlla\Runtime\RequestContext;
+use Fnlla\Runtime\ResetManager;
 
 function ok(bool $cond, string $msg): void
 {

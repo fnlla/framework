@@ -1,27 +1,27 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Ai;
+namespace Fnlla\Ai;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Ai\Policy\AiPolicy;
-use Fnlla\\Ai\Policy\AiPolicyClient;
-use Fnlla\\Ai\Rag\RagRepository;
-use Fnlla\\Ai\Rag\RagService;
-use Fnlla\\Ai\Redaction\AiRedactor;
-use Fnlla\\Ai\Router\AiRouter;
-use Fnlla\\Ai\Skills\AiSkillRegistry;
-use Fnlla\\Ai\Telemetry\AiTelemetryRepository;
-use Fnlla\\Ai\Telemetry\AiTelemetryService;
-use Fnlla\\Support\HttpClient;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Ai\Policy\AiPolicy;
+use Fnlla\Ai\Policy\AiPolicyClient;
+use Fnlla\Ai\Rag\RagRepository;
+use Fnlla\Ai\Rag\RagService;
+use Fnlla\Ai\Redaction\AiRedactor;
+use Fnlla\Ai\Router\AiRouter;
+use Fnlla\Ai\Skills\AiSkillRegistry;
+use Fnlla\Ai\Telemetry\AiTelemetryRepository;
+use Fnlla\Ai\Telemetry\AiTelemetryService;
+use Fnlla\Support\HttpClient;
+use Fnlla\Support\ServiceProvider;
 use RuntimeException;
 
 final class AiServiceProvider extends ServiceProvider

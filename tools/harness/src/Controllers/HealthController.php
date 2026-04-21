@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Services\AppStatusService;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
 
 final class HealthController
 {

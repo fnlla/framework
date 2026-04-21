@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\ConsoleIO;
+use Fnlla\Console\ConsoleIO;
 use RuntimeException;
 
 abstract class AbstractMakeCommand

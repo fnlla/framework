@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Cors;
+namespace Fnlla\Cors;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 
 final class CorsServiceProvider extends ServiceProvider
 {

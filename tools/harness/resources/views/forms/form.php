@@ -9,7 +9,7 @@ $errors = errors();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>fnlla (finella) Form</title>
+    <title>fnlla Form</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 40px; }
         .card { max-width: 640px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; }

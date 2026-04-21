@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Mail\Mail;
-use Fnlla\\Queue\DatabaseQueue;
-use Fnlla\\Queue\QueueManager;
-use Fnlla\\Queue\QueueWorker;
-use Fnlla\\Scheduler\Schedule;
-use Fnlla\\Testing\TestCase;
-use Fnlla\\RequestLogging\RequestLoggerMiddleware;
+use Fnlla\Mail\Mail;
+use Fnlla\Queue\DatabaseQueue;
+use Fnlla\Queue\QueueManager;
+use Fnlla\Queue\QueueWorker;
+use Fnlla\Scheduler\Schedule;
+use Fnlla\Testing\TestCase;
+use Fnlla\RequestLogging\RequestLoggerMiddleware;
 
 final class EC3QueueMailSchedulerTest extends TestCase
 {

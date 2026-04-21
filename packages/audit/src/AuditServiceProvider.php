@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Audit;
+namespace Fnlla\Audit;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Support\ServiceProvider;
 
 final class AuditServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ final class AuditServiceProvider extends ServiceProvider
 
         $app->singleton(AuditLogger::class, function () use ($app): AuditLogger {
             $context = new ServerAuditContext();
-            $authClass = 'Fnlla\\\Auth\\AuthManager';
+            $authClass = 'Fnlla\\Auth\\AuthManager';
             if (class_exists($authClass) && $app->has($authClass)) {
                 $auth = $app->make($authClass);
                 if (is_object($auth)) {

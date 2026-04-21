@@ -1,12 +1,12 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
 trait MakeCommandHelpers
 {
@@ -26,7 +26,7 @@ trait MakeCommandHelpers
     }
 
     /**
-     * @return array<string, \Fnlla\\Console\CommandInterface>
+     * @return array<string, \Fnlla\Console\CommandInterface>
      */
     protected function commandMap(): array
     {

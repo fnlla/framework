@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Ai\Policy;
+namespace Fnlla\Ai\Policy;
 
-use Fnlla\\Ai\AiClientInterface;
-use Fnlla\\Ai\Redaction\AiRedactor;
-use Fnlla\\Ai\Router\AiRouter;
-use Fnlla\\Ai\Telemetry\AiTelemetryService;
+use Fnlla\Ai\AiClientInterface;
+use Fnlla\Ai\Redaction\AiRedactor;
+use Fnlla\Ai\Router\AiRouter;
+use Fnlla\Ai\Telemetry\AiTelemetryService;
 
 final class AiPolicyClient implements AiClientInterface
 {

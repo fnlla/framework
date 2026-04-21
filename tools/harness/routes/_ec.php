@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Auth\Middleware\AuthMiddleware;
-use Fnlla\\Http\Router;
+use Fnlla\Auth\Middleware\AuthMiddleware;
+use Fnlla\Http\Router;
 use App\Controllers\EcController;
 
 return static function (Router $router): void {

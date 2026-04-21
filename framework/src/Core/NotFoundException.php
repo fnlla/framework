@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Core;
+namespace Fnlla\Core;
 
-use Fnlla\\Support\Psr\Container\NotFoundExceptionInterface;
+use Fnlla\Support\Psr\Container\NotFoundExceptionInterface;
 use RuntimeException;
 
 /**

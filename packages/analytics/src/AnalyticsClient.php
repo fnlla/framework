@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Analytics;
+namespace Fnlla\Analytics;
 
-use Fnlla\\Contracts\Log\LoggerInterface;
+use Fnlla\Contracts\Log\LoggerInterface;
 use Throwable;
 
 final class AnalyticsClient

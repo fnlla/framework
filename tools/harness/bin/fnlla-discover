@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
 
-use Fnlla\\Support\ComposerProviderDiscovery;
-use Fnlla\\Support\ProviderCache;
+use Fnlla\Support\ComposerProviderDiscovery;
+use Fnlla\Support\ProviderCache;
 
 $root = dirname(__DIR__);
 $autoload = $root . '/vendor/autoload.php';

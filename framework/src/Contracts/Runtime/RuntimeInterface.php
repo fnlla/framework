@@ -1,16 +1,16 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Contracts\Runtime;
+namespace Fnlla\Contracts\Runtime;
 
-use Fnlla\\Contracts\Http\KernelInterface;
+use Fnlla\Contracts\Http\KernelInterface;
 
 /**
  * @api

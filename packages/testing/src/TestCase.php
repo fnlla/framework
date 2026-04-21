@@ -1,25 +1,25 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Testing;
+namespace Fnlla\Testing;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Database\MigrationRunner;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Stream;
-use Fnlla\\Http\Uri;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Session\SessionInterface;
-use Fnlla\\Auth\AuthManager;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Database\MigrationRunner;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Http\Stream;
+use Fnlla\Http\Uri;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Session\SessionInterface;
+use Fnlla\Auth\AuthManager;
 use RuntimeException;
 
 abstract class TestCase extends BaseTestCase
@@ -101,8 +101,8 @@ abstract class TestCase extends BaseTestCase
 
         $manager = new ConnectionManager($config);
         $app->instance(ConnectionManager::class, $manager);
-        if (class_exists(\Fnlla\\Orm\Model::class)) {
-            \Fnlla\\Orm\Model::setConnectionManager($manager);
+        if (class_exists(\Fnlla\Orm\Model::class)) {
+            \Fnlla\Orm\Model::setConnectionManager($manager);
         }
 
         $migrationsPath = $this->appRoot . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'migrations';

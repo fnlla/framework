@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Testing;
+namespace Fnlla\Testing;
 
-use Fnlla\\Http\Response;
-use Fnlla\\Session\SessionInterface;
+use Fnlla\Http\Response;
+use Fnlla\Session\SessionInterface;
 use PHPUnit\Framework\Assert;
 
 final class TestResponse

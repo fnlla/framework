@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Mail\Address;
-use Fnlla\\Mail\MailManager;
-use Fnlla\\Mail\Message;
-use Fnlla\\Mail\SymfonyMailerAdapter;
+use Fnlla\Mail\Address;
+use Fnlla\Mail\MailManager;
+use Fnlla\Mail\Message;
+use Fnlla\Mail\SymfonyMailerAdapter;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 

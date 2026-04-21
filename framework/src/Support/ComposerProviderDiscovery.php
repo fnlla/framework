@@ -1,14 +1,14 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 final class ComposerProviderDiscovery
 {
@@ -57,7 +57,7 @@ final class ComposerProviderDiscovery
             if (!is_array($extra)) {
                 continue;
             }
-            $Fnlla = $extra['Fnlla'] ?? null;
+            $Fnlla = $extra['fnlla'] ?? $extra['Fnlla'] ?? null;
             if (!is_array($Fnlla)) {
                 continue;
             }

@@ -15,21 +15,21 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Fnlla\\Auth\AuthManager;
-use Fnlla\\Auth\CallableUserProvider;
-use Fnlla\\Auth\PasswordHasher;
-use Fnlla\\Auth\PasswordResetManager;
-use Fnlla\\Auth\PasswordResetStore;
-use Fnlla\\Auth\RememberCookie;
-use Fnlla\\Auth\RememberTokenStore;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Csrf\CsrfMiddleware;
-use Fnlla\\Csrf\CsrfTokenManager;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\RequestHandler;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Uri;
-use Fnlla\\Session\FileSessionStore;
+use Fnlla\Auth\AuthManager;
+use Fnlla\Auth\CallableUserProvider;
+use Fnlla\Auth\PasswordHasher;
+use Fnlla\Auth\PasswordResetManager;
+use Fnlla\Auth\PasswordResetStore;
+use Fnlla\Auth\RememberCookie;
+use Fnlla\Auth\RememberTokenStore;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Csrf\CsrfMiddleware;
+use Fnlla\Csrf\CsrfTokenManager;
+use Fnlla\Http\Request;
+use Fnlla\Http\RequestHandler;
+use Fnlla\Http\Response;
+use Fnlla\Http\Uri;
+use Fnlla\Session\FileSessionStore;
 
 function ok(bool $cond, string $msg): void
 {

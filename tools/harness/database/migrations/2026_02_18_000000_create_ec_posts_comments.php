@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Database\MigrationInterface;
+use Fnlla\Database\MigrationInterface;
 
 return new class implements MigrationInterface {
     public function up(PDO $pdo): void

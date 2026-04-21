@@ -1,17 +1,17 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Contracts\Http;
+namespace Fnlla\Contracts\Http;
 
-use Fnlla\\Http\Request;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Http\Request;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
 
 /**
  * @api

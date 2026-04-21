@@ -1,23 +1,23 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Debugbar\Middleware;
+namespace Fnlla\Debugbar\Middleware;
 
-use Fnlla\\Debugbar\DebugbarCollector;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Stream;
-use Fnlla\\Support\Env;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
-use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\Debugbar\DebugbarCollector;
+use Fnlla\Http\Response;
+use Fnlla\Http\Stream;
+use Fnlla\Support\Env;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\Support\Psr\Http\Server\RequestHandlerInterface;
 
 final class DebugbarMiddleware implements MiddlewareInterface
 {

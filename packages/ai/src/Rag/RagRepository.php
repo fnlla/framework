@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Ai\Rag;
+namespace Fnlla\Ai\Rag;
 
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Database\Query;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Database\Query;
 use PDO;
 
 final class RagRepository

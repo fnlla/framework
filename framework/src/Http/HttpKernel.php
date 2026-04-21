@@ -1,24 +1,24 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Http;
+namespace Fnlla\Http;
 
-use Fnlla\\Core\ConfigValidator;
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Core\Application;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\ExceptionHandler;
-use Fnlla\\Runtime\RequestContext;
-use Fnlla\\Runtime\ResetManager;
-use Fnlla\\Runtime\Profiler;
-use Fnlla\\Plugin\PluginManager;
+use Fnlla\Core\ConfigValidator;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Core\Application;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\ExceptionHandler;
+use Fnlla\Runtime\RequestContext;
+use Fnlla\Runtime\ResetManager;
+use Fnlla\Runtime\Profiler;
+use Fnlla\Plugin\PluginManager;
 use Throwable;
 
 /**

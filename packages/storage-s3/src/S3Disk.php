@@ -1,19 +1,19 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\StorageS3;
+namespace Fnlla\StorageS3;
 
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 use RuntimeException;
 
-final class S3Disk implements \Fnlla\\Storage\DiskInterface
+final class S3Disk implements \Fnlla\Storage\DiskInterface
 {
     private S3Client $client;
     private string $bucket;

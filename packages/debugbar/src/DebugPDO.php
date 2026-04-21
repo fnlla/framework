@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Debugbar;
+namespace Fnlla\Debugbar;
 
-use Fnlla\\Support\Psr\Log\LoggerInterface;
+use Fnlla\Support\Psr\Log\LoggerInterface;
 use PDO;
 use PDOStatement;
 use Throwable;

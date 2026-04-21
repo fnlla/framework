@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use Fnlla\\Orm\Model;
-use Fnlla\\Orm\Relations\BelongsTo;
+use Fnlla\Orm\Model;
+use Fnlla\Orm\Relations\BelongsTo;
 
 final class Comment extends Model
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -9,12 +9,12 @@ declare(strict_types=1);
 
 namespace App\Auth;
 
-use Fnlla\\Auth\CredentialsUserProviderInterface;
-use Fnlla\\Auth\PasswordResetUserProviderInterface;
-use Fnlla\\Auth\RegistrationUserProviderInterface;
-use Fnlla\\Auth\UserProviderInterface;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Database\Query;
+use Fnlla\Auth\CredentialsUserProviderInterface;
+use Fnlla\Auth\PasswordResetUserProviderInterface;
+use Fnlla\Auth\RegistrationUserProviderInterface;
+use Fnlla\Auth\UserProviderInterface;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Database\Query;
 
 final class DatabaseUserProvider implements UserProviderInterface, CredentialsUserProviderInterface, RegistrationUserProviderInterface, PasswordResetUserProviderInterface
 {

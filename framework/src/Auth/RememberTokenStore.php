@@ -1,14 +1,14 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Auth;
+namespace Fnlla\Auth;
 
-use function Fnlla\\Support\safe_mkdir;
+use function Fnlla\Support\safe_mkdir;
 use RuntimeException;
 
 final class RememberTokenStore

@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Notifications;
+namespace Fnlla\Notifications;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Mail\MailerInterface;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Mail\MailerInterface;
+use Fnlla\Support\ServiceProvider;
 
 final class NotificationsServiceProvider extends ServiceProvider
 {

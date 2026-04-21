@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Search\MeilisearchIndexHttpClient;
-use Fnlla\\Search\SearchManager;
+use Fnlla\Search\MeilisearchIndexHttpClient;
+use Fnlla\Search\SearchManager;
 
 $manager = new SearchManager([
     'driver' => 'meilisearch',
@@ -17,7 +17,7 @@ $manager = new SearchManager([
 
 try {
     $client = $manager->client();
-    if (!$client instanceof \Fnlla\\Search\SearchClientInterface) {
+    if (!$client instanceof \Fnlla\Search\SearchClientInterface) {
         throw new RuntimeException('Search client not resolved.');
     }
     $index = $client->index('products');

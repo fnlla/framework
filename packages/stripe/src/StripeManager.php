@@ -1,12 +1,12 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Stripe;
+namespace Fnlla\Stripe;
 
 use RuntimeException;
 use Stripe\StripeClient;

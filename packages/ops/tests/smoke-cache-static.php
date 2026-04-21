@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\CacheStatic\StaticCacheMiddleware;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\CacheStatic\StaticCacheMiddleware;
 
 function ok(bool $cond, string $msg): void
 {

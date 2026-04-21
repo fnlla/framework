@@ -1,12 +1,12 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Audit;
+namespace Fnlla\Audit;
 
 interface AuditContextInterface
 {

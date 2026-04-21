@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Fnlla\\Http\Response;
-use Fnlla\\View\View;
+use Fnlla\Http\Response;
+use Fnlla\View\View;
 
 final class ErrorController
 {

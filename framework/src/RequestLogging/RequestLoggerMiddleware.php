@@ -1,22 +1,22 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\RequestLogging;
+namespace Fnlla\RequestLogging;
 
-use Fnlla\\Contracts\Log\LoggerInterface;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Server\MiddlewareInterface;
-use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
-use Fnlla\\Runtime\Profiler;
-use Fnlla\\Runtime\RequestContext;
+use Fnlla\Contracts\Log\LoggerInterface;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Server\MiddlewareInterface;
+use Fnlla\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\Runtime\Profiler;
+use Fnlla\Runtime\RequestContext;
 use Throwable;
 
 final class RequestLoggerMiddleware implements MiddlewareInterface

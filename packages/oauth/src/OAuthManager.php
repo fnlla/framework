@@ -1,13 +1,13 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\OAuth;
+namespace Fnlla\OAuth;
 
 use League\OAuth2\Client\Provider\GenericProvider;
 use RuntimeException;

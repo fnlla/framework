@@ -1,19 +1,19 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
-use Fnlla\\Core\Application;
-use Fnlla\\Scheduler\ScheduleRegistry;
-use Fnlla\\Scheduler\Schedule;
-use Fnlla\\Support\Env;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
+use Fnlla\Core\Application;
+use Fnlla\Scheduler\ScheduleRegistry;
+use Fnlla\Scheduler\Schedule;
+use Fnlla\Support\Env;
 
 final class ScheduleRunCommand implements CommandInterface
 {

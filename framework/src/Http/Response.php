@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Http;
+namespace Fnlla\Http;
 
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\StreamInterface;
-use Fnlla\\Runtime\RequestContext;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\Runtime\RequestContext;
 
 /**
  * HTTP response with header management and output helpers.
@@ -412,35 +412,35 @@ final class Response implements ResponseInterface
         return str_replace(["\r", "\n"], '', $value);
     }
 
-    private function resolveSession(): ?\Fnlla\\Session\SessionInterface
+    private function resolveSession(): ?\Fnlla\Session\SessionInterface
     {
-        if (!interface_exists(\Fnlla\\Session\SessionInterface::class)) {
+        if (!interface_exists(\Fnlla\Session\SessionInterface::class)) {
             return null;
         }
 
         $app = $GLOBALS['Fnlla_app'] ?? null;
-        if (!$app instanceof \Fnlla\\Core\Container) {
+        if (!$app instanceof \Fnlla\Core\Container) {
             return null;
         }
 
-        if (!$app->has(\Fnlla\\Session\SessionInterface::class)) {
+        if (!$app->has(\Fnlla\Session\SessionInterface::class)) {
             return null;
         }
 
         try {
-            $session = $app->make(\Fnlla\\Session\SessionInterface::class);
+            $session = $app->make(\Fnlla\Session\SessionInterface::class);
         } catch (\Throwable) {
             return null;
         }
 
-        return $session instanceof \Fnlla\\Session\SessionInterface ? $session : null;
+        return $session instanceof \Fnlla\Session\SessionInterface ? $session : null;
     }
 
     private function sanitizeInput(array $input): array
     {
         $clean = [];
         foreach ($input as $key => $value) {
-            if ($value instanceof \Fnlla\\Http\UploadedFile) {
+            if ($value instanceof \Fnlla\Http\UploadedFile) {
                 continue;
             }
             if (is_object($value)) {

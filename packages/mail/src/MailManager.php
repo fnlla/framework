@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Mail;
+namespace Fnlla\Mail;
 
 use RuntimeException;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\TransportInterface;
-use Fnlla\\Support\Env;
+use Fnlla\Support\Env;
 
 final class MailManager
 {

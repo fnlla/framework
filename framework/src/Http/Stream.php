@@ -1,17 +1,17 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Http;
+namespace Fnlla\Http;
 
 use InvalidArgumentException;
-use Fnlla\\Support\Psr\Http\Message\StreamInterface;
+use Fnlla\Support\Psr\Http\Message\StreamInterface;
 use RuntimeException;
 use Throwable;
 

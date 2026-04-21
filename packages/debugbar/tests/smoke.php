@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Debugbar\DebugbarCollector;
-use Fnlla\\Debugbar\Middleware\DebugbarMiddleware;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Http\Stream;
-use Fnlla\\Http\Uri;
-use Fnlla\\Support\Psr\Http\Message\ResponseInterface;
-use Fnlla\\Support\Psr\Http\Message\ServerRequestInterface;
-use Fnlla\\Support\Psr\Http\Server\RequestHandlerInterface;
+use Fnlla\Debugbar\DebugbarCollector;
+use Fnlla\Debugbar\Middleware\DebugbarMiddleware;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Http\Stream;
+use Fnlla\Http\Uri;
+use Fnlla\Support\Psr\Http\Message\ResponseInterface;
+use Fnlla\Support\Psr\Http\Message\ServerRequestInterface;
+use Fnlla\Support\Psr\Http\Server\RequestHandlerInterface;
 
 function ok(bool $cond, string $msg): void
 {

@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Http\Request;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Http\Request;
 
 require __DIR__ . '/../vendor/autoload.php';
 

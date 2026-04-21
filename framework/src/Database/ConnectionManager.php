@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Database;
+namespace Fnlla\Database;
 
 use PDO;
 use RuntimeException;
-use Fnlla\\Support\Env;
+use Fnlla\Support\Env;
 
 final class ConnectionManager
 {

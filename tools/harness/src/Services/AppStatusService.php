@@ -16,7 +16,7 @@ final class AppStatusService
             'service' => (string) $config->get('name', 'Fnlla'),
             'env' => (string) $config->get('env', 'local'),
             'version' => (string) $config->get('version', 'dev'),
-            'Fnlla' => \Fnlla\\Core\Application::VERSION,
+            'Fnlla' => \Fnlla\Core\Application::VERSION,
             'php' => PHP_VERSION,
             'php_sapi' => PHP_SAPI,
             'os' => php_uname('s') . ' ' . php_uname('r'),

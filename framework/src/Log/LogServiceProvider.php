@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Log;
+namespace Fnlla\Log;
 
-use Fnlla\\Contracts\Log\LoggerInterface as FnllaLoggerInterface;
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Contracts\Log\LoggerInterface as FnllaLoggerInterface;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 use Psr\Log\LoggerInterface;
 
 final class LogServiceProvider extends ServiceProvider

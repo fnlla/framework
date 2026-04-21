@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Pdf\DompdfRenderer;
-use Fnlla\\Pdf\PdfManager;
-use Fnlla\\Pdf\Templates\PitchDeckTemplate;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Pdf\DompdfRenderer;
+use Fnlla\Pdf\PdfManager;
+use Fnlla\Pdf\Templates\PitchDeckTemplate;
 
 if (!class_exists(DompdfRenderer::class)) {
     $candidates = [

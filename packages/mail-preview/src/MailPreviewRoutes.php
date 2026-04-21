@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\MailPreview;
+namespace Fnlla\MailPreview;
 
-use Fnlla\\Http\Router;
-use Fnlla\\MailPreview\Http\MailPreviewController;
+use Fnlla\Http\Router;
+use Fnlla\MailPreview\Http\MailPreviewController;
 
 final class MailPreviewRoutes
 {

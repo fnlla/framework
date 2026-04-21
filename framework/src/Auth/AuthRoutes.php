@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Auth;
+namespace Fnlla\Auth;
 
-use Fnlla\\Auth\Http\AuthController;
-use Fnlla\\Auth\Http\PasswordResetController;
-use Fnlla\\Auth\Middleware\AuthMiddleware;
-use Fnlla\\Auth\Middleware\GuestMiddleware;
-use Fnlla\\Http\Router;
+use Fnlla\Auth\Http\AuthController;
+use Fnlla\Auth\Http\PasswordResetController;
+use Fnlla\Auth\Middleware\AuthMiddleware;
+use Fnlla\Auth\Middleware\GuestMiddleware;
+use Fnlla\Http\Router;
 
 final class AuthRoutes
 {

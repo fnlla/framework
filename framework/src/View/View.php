@@ -1,16 +1,16 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\View;
+namespace Fnlla\View;
 
-use Fnlla\\Core\Container;
+use Fnlla\Core\Container;
 use RuntimeException;
 
 final class View

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Core\ConfigRepository;
+use Fnlla\Core\ConfigRepository;
 use PHPUnit\Framework\TestCase;
 
 final class ConfigRepositoryTest extends TestCase

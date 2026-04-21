@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Notifications\Http;
+namespace Fnlla\Notifications\Http;
 
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Notifications\NotificationManager;
-use Fnlla\\Notifications\NotificationRepository;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Notifications\NotificationManager;
+use Fnlla\Notifications\NotificationRepository;
 
 final class NotificationsController
 {

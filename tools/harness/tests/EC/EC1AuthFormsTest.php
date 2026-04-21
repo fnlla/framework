@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Testing\TestCase;
+use Fnlla\Testing\TestCase;
 
 final class EC1AuthFormsTest extends TestCase
 {

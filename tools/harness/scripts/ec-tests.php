@@ -14,7 +14,7 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Fnlla\\Testing\TestCase;
+use Fnlla\Testing\TestCase;
 
 $testsDir = $root . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'EC';
 if (!is_dir($testsDir)) {

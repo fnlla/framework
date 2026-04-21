@@ -1,24 +1,24 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Orm;
+namespace Fnlla\Orm;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Database\Query;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Database\Query;
 use RuntimeException;
-use Fnlla\\Orm\Relations\BelongsTo;
-use Fnlla\\Orm\Relations\HasMany;
-use Fnlla\\Orm\Relations\HasOne;
-use Fnlla\\Orm\Relations\Relation;
-use Fnlla\\Orm\Relations\BelongsToMany;
+use Fnlla\Orm\Relations\BelongsTo;
+use Fnlla\Orm\Relations\HasMany;
+use Fnlla\Orm\Relations\HasOne;
+use Fnlla\Orm\Relations\Relation;
+use Fnlla\Orm\Relations\BelongsToMany;
 
 abstract class Model
 {

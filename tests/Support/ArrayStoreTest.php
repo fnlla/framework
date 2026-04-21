@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Support\ArrayStore;
+use Fnlla\Support\ArrayStore;
 use PHPUnit\Framework\TestCase;
 
 final class ArrayStoreTest extends TestCase

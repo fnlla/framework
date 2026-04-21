@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Auth\Http;
+namespace Fnlla\Auth\Http;
 
-use Fnlla\\Auth\PasswordResetManager;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Support\ValidationException;
+use Fnlla\Auth\PasswordResetManager;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Support\ValidationException;
 
 final class PasswordResetController
 {

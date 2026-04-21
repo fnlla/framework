@@ -3,22 +3,22 @@
 declare(strict_types=1);
 
 use App\Middleware\DebugbarMiddleware as AppDebugbarMiddleware;
-use Fnlla\\Auth\Middleware\AuthMiddleware;
-use Fnlla\\Auth\Middleware\GuestMiddleware;
-use Fnlla\\CacheStatic\StaticCacheMiddleware;
-use Fnlla\\Cookie\CookieMiddleware;
-use Fnlla\\Cors\CorsMiddleware;
-use Fnlla\\Csrf\CsrfMiddleware;
-use Fnlla\\Debugbar\DebugbarCollector;
-use Fnlla\\Debugbar\Middleware\DebugbarMiddleware as FnllaDebugbarMiddleware;
-use Fnlla\\Forms\HoneypotMiddleware;
-use Fnlla\\Maintenance\MaintenanceMiddleware;
-use Fnlla\\Monitoring\MonitoringMiddleware;
-use Fnlla\\Redirects\RedirectsMiddleware;
-use Fnlla\\RequestLogging\RequestLoggerMiddleware;
-use Fnlla\\SecurityHeaders\SecurityHeadersMiddleware;
-use Fnlla\\Session\SessionMiddleware;
-use Fnlla\\Tenancy\TenantMiddleware;
+use Fnlla\Auth\Middleware\AuthMiddleware;
+use Fnlla\Auth\Middleware\GuestMiddleware;
+use Fnlla\CacheStatic\StaticCacheMiddleware;
+use Fnlla\Cookie\CookieMiddleware;
+use Fnlla\Cors\CorsMiddleware;
+use Fnlla\Csrf\CsrfMiddleware;
+use Fnlla\Debugbar\DebugbarCollector;
+use Fnlla\Debugbar\Middleware\DebugbarMiddleware as FnllaDebugbarMiddleware;
+use Fnlla\Forms\HoneypotMiddleware;
+use Fnlla\Maintenance\MaintenanceMiddleware;
+use Fnlla\Monitoring\MonitoringMiddleware;
+use Fnlla\Redirects\RedirectsMiddleware;
+use Fnlla\RequestLogging\RequestLoggerMiddleware;
+use Fnlla\SecurityHeaders\SecurityHeadersMiddleware;
+use Fnlla\Session\SessionMiddleware;
+use Fnlla\Tenancy\TenantMiddleware;
 
 $env = (string) env('APP_ENV', 'local');
 $debug = env('APP_DEBUG', false);
@@ -103,7 +103,7 @@ $warnMissing($formsEnabled, HoneypotMiddleware::class, 'forms honeypot');
 $warnMissing($redirectsEnabled, RedirectsMiddleware::class, 'redirects');
 $warnMissing($staticCacheEnabled, StaticCacheMiddleware::class, 'static cache');
 $warnMissing($tenancyEnabled, TenantMiddleware::class, 'tenancy');
-$warnMissing($rateEnabled, \Fnlla\\RateLimit\RateLimiter::class, 'rate limiting');
+$warnMissing($rateEnabled, \Fnlla\RateLimit\RateLimiter::class, 'rate limiting');
 $warnMissing($debugEnabled, DebugbarCollector::class, 'debugbar');
 $warnMissing($monitoringEnabled, MonitoringMiddleware::class, 'monitoring');
 

@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Cache;
+namespace Fnlla\Cache;
 
 use RuntimeException;
-use Fnlla\\Support\Env;
-use Fnlla\\Runtime\Profiler;
+use Fnlla\Support\Env;
+use Fnlla\Runtime\Profiler;
 
 final class CacheManager
 {

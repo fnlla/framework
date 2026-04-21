@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Log\Processor;
+namespace Fnlla\Log\Processor;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Runtime\RequestContext;
+use Fnlla\Core\Container;
+use Fnlla\Runtime\RequestContext;
 use Monolog\LogRecord;
 use Throwable;
 

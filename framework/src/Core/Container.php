@@ -1,20 +1,20 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Core;
+namespace Fnlla\Core;
 
 use Closure;
-use Fnlla\\Core\ContainerException;
-use Fnlla\\Runtime\Resetter;
-use Fnlla\\Core\NotFoundException;
-use Fnlla\\Support\Psr\Container\ContainerInterface;
+use Fnlla\Core\ContainerException;
+use Fnlla\Runtime\Resetter;
+use Fnlla\Core\NotFoundException;
+use Fnlla\Support\Psr\Container\ContainerInterface;
 use ReflectionClass;
 use ReflectionFunction;
 use ReflectionMethod;

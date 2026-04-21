@@ -1,16 +1,16 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Session;
+namespace Fnlla\Session;
 
 use RuntimeException;
-use Fnlla\\Support\Env;
-use Fnlla\\Http\Request;
+use Fnlla\Support\Env;
+use Fnlla\Http\Request;
 
 final class FileSessionStore implements SessionInterface
 {

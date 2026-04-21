@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
-use Fnlla\\Http\UploadedFile;
+use Fnlla\Http\UploadedFile;
 
 final class UploadPolicy
 {

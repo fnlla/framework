@@ -1,6 +1,6 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
@@ -11,10 +11,10 @@ namespace App\Controllers;
 
 use App\Jobs\SendWelcomeEmailJob;
 use App\Models\Post;
-use Fnlla\\Auth\AuthManager;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Queue\Queue;
+use Fnlla\Auth\AuthManager;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Queue\Queue;
 
 final class EcController
 {

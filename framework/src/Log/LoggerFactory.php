@@ -1,17 +1,17 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Log;
+namespace Fnlla\Log;
 
-use Fnlla\\Core\Container;
-use Fnlla\\Log\Processor\RequestIdProcessor;
-use Fnlla\\Log\Processor\StaticContextProcessor;
-use Fnlla\\Support\Env;
+use Fnlla\Core\Container;
+use Fnlla\Log\Processor\RequestIdProcessor;
+use Fnlla\Log\Processor\StaticContextProcessor;
+use Fnlla\Support\Env;
 use Monolog\Formatter\JsonFormatter;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;

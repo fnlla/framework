@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fnlla\\Support\Dotenv;
+use Fnlla\Support\Dotenv;
 use PHPUnit\Framework\TestCase;
 
 final class DotenvTest extends TestCase

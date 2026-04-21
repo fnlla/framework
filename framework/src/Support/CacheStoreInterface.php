@@ -1,19 +1,19 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
-use Fnlla\\Contracts\Cache\CacheStoreInterface as ContractCacheStoreInterface;
+use Fnlla\Contracts\Cache\CacheStoreInterface as ContractCacheStoreInterface;
 
 /**
- * @deprecated [DEP-2026-01] Use Fnlla\\Contracts\Cache\CacheStoreInterface instead.
+ * @deprecated [DEP-2026-01] Use Fnlla\Contracts\Cache\CacheStoreInterface instead.
  */
 interface CacheStoreInterface extends ContractCacheStoreInterface
 {

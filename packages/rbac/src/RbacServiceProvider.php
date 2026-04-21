@@ -1,18 +1,18 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Rbac;
+namespace Fnlla\Rbac;
 
-use Fnlla\\Authorization\Gate;
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Support\ServiceProvider;
-use Fnlla\\Cache\CacheManager;
+use Fnlla\Authorization\Gate;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Support\ServiceProvider;
+use Fnlla\Cache\CacheManager;
 
 final class RbacServiceProvider extends ServiceProvider
 {

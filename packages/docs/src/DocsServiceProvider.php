@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Docs;
+namespace Fnlla\Docs;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\Container;
-use Fnlla\\Support\ServiceProvider;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\Container;
+use Fnlla\Support\ServiceProvider;
 
 final class DocsServiceProvider extends ServiceProvider
 {

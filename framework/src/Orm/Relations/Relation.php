@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Orm\Relations;
+namespace Fnlla\Orm\Relations;
 
-use Fnlla\\Orm\Model;
-use Fnlla\\Orm\QueryBuilder;
+use Fnlla\Orm\Model;
+use Fnlla\Orm\QueryBuilder;
 
 abstract class Relation
 {

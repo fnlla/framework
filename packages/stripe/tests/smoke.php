@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../_shared/tests/bootstrap.php';
 
-use Fnlla\\Stripe\StripeManager;
+use Fnlla\Stripe\StripeManager;
 
 if (!class_exists(\Stripe\StripeClient::class)) {
     echo "stripe skip (stripe sdk missing)\n";

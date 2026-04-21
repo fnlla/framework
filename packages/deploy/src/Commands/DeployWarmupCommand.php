@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Deploy\Commands;
+namespace Fnlla\Deploy\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
 
 final class DeployWarmupCommand implements CommandInterface
 {

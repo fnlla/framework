@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/scripts/ensure-php85.php';
 
-use Fnlla\\Contracts\Http\KernelInterface;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Uri;
+use Fnlla\Contracts\Http\KernelInterface;
+use Fnlla\Http\Request;
+use Fnlla\Http\Uri;
 
 require __DIR__ . '/../vendor/autoload.php';
 

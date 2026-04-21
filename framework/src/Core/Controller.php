@@ -1,18 +1,18 @@
 <?php
 
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Core;
+namespace Fnlla\Core;
 
-use Fnlla\\Core\Application;
-use Fnlla\\Http\Response;
-use Fnlla\\View\View;
+use Fnlla\Core\Application;
+use Fnlla\Http\Response;
+use Fnlla\View\View;
 
 /**
  * @api

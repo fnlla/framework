@@ -1,22 +1,22 @@
 <?php
 /**
- * fnlla (finella) - AI-assisted PHP framework.
+ * fnlla - AI-assisted PHP framework.
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Webmail\Http;
+namespace Fnlla\Webmail\Http;
 
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Core\Container;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Response;
-use Fnlla\\Settings\SettingsStore;
-use Fnlla\\Webmail\WebmailCipher;
-use Fnlla\\Webmail\WebmailSettings;
-use Fnlla\\Webmail\WebmailSettingsKeys;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Core\Container;
+use Fnlla\Http\Request;
+use Fnlla\Http\Response;
+use Fnlla\Settings\SettingsStore;
+use Fnlla\Webmail\WebmailCipher;
+use Fnlla\Webmail\WebmailSettings;
+use Fnlla\Webmail\WebmailSettingsKeys;
 
 final class WebmailSettingsController
 {
@@ -418,22 +418,22 @@ final class WebmailSettingsController
      */
     private function auditUpdate(array $changedKeys): void
     {
-        if (!class_exists(\Fnlla\\Audit\AuditLogger::class)) {
+        if (!class_exists(\Fnlla\Audit\AuditLogger::class)) {
             return;
         }
 
-        if (!$this->app->has(\Fnlla\\Audit\AuditLogger::class)) {
+        if (!$this->app->has(\Fnlla\Audit\AuditLogger::class)) {
             return;
         }
 
-        $logger = $this->app->make(\Fnlla\\Audit\AuditLogger::class);
-        if (!$logger instanceof \Fnlla\\Audit\AuditLogger) {
+        $logger = $this->app->make(\Fnlla\Audit\AuditLogger::class);
+        if (!$logger instanceof \Fnlla\Audit\AuditLogger) {
             return;
         }
 
         $tenantId = null;
-        if (class_exists(\Fnlla\\Tenancy\TenantContext::class)) {
-            $tenantId = \Fnlla\\Tenancy\TenantContext::id();
+        if (class_exists(\Fnlla\Tenancy\TenantContext::class)) {
+            $tenantId = \Fnlla\Tenancy\TenantContext::id();
         }
 
         $logger->record(

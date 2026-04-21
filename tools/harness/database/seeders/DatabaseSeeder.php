@@ -18,7 +18,7 @@ return function (PDO $pdo): void {
             continue;
         }
         $instance = new $seeder();
-        if ($instance instanceof \Fnlla\\Console\SeederInterface) {
+        if ($instance instanceof \Fnlla\Console\SeederInterface) {
             $instance->run($pdo);
             continue;
         }

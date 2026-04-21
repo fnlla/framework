@@ -16,5 +16,5 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-$app = new \Fnlla\\Console\ConsoleApplication($root);
+$app = new \Fnlla\Console\ConsoleApplication($root);
 exit($app->run($argv));

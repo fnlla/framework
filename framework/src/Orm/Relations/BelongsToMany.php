@@ -1,15 +1,15 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Orm\Relations;
+namespace Fnlla\Orm\Relations;
 
-use Fnlla\\Database\Query as BaseQuery;
-use Fnlla\\Orm\Model;
+use Fnlla\Database\Query as BaseQuery;
+use Fnlla\Orm\Model;
 
 final class BelongsToMany extends Relation
 {
@@ -21,7 +21,7 @@ final class BelongsToMany extends Relation
         private string $relatedKey,
         private string $parentKey,
         private string $relatedPrimaryKey,
-        \Fnlla\\Orm\QueryBuilder $builder,
+        \Fnlla\Orm\QueryBuilder $builder,
         private \PDO $pdo
     )
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fnlla\\Testing;
+namespace Fnlla\Testing;
 
 class TestCase
 {

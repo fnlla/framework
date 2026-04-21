@@ -15,17 +15,17 @@ if (!is_file($autoload)) {
 
 require $autoload;
 
-use Fnlla\\Core\ExceptionHandler;
-use Fnlla\\Http\Request;
-use Fnlla\\Http\Stream;
-use Fnlla\\Http\UploadedFile;
-use Fnlla\\Http\Uri;
-use Fnlla\\Support\Validator;
-use Fnlla\\Support\ValidationException;
-use Fnlla\\Core\Application;
-use Fnlla\\Core\ConfigRepository;
-use Fnlla\\Session\FileSessionStore;
-use Fnlla\\Session\SessionInterface;
+use Fnlla\Core\ExceptionHandler;
+use Fnlla\Http\Request;
+use Fnlla\Http\Stream;
+use Fnlla\Http\UploadedFile;
+use Fnlla\Http\Uri;
+use Fnlla\Support\Validator;
+use Fnlla\Support\ValidationException;
+use Fnlla\Core\Application;
+use Fnlla\Core\ConfigRepository;
+use Fnlla\Session\FileSessionStore;
+use Fnlla\Session\SessionInterface;
 
 function ok(bool $cond, string $msg): void
 {

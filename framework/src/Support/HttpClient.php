@@ -1,13 +1,13 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 
 declare(strict_types=1);
 
-namespace Fnlla\\Support;
+namespace Fnlla\Support;
 
 final class HttpClient
 {
@@ -240,7 +240,7 @@ final class HttpClient
         $status = 0;
         $httpResponseHeader = function_exists('http_get_last_response_headers')
             ? http_get_last_response_headers()
-            : $http_response_header;
+            : [];
         if (is_array($httpResponseHeader)) {
             foreach ($httpResponseHeader as $line) {
                 if (preg_match('/HTTP\\/\\d+\\.\\d+\\s+(\\d+)/', $line, $matches)) {

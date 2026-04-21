@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-use Fnlla\\Core\Application;
-use Fnlla\\Queue\DatabaseQueue;
-use Fnlla\\Queue\QueueManager;
-use Fnlla\\Queue\QueueWorker;
-use Fnlla\\Queue\SyncQueue;
+use Fnlla\Core\Application;
+use Fnlla\Queue\DatabaseQueue;
+use Fnlla\Queue\QueueManager;
+use Fnlla\Queue\QueueWorker;
+use Fnlla\Queue\SyncQueue;
 
 $root = dirname(__DIR__, 2);
 $appRoot = $root . '/tools/harness';

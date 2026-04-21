@@ -1,20 +1,20 @@
 <?php
 /**
- * fnlla (finella)
+ * fnlla
  * (c) TechAyo.co.uk
  * Proprietary License
  */
 declare(strict_types=1);
 
-namespace Fnlla\\Console\Commands;
+namespace Fnlla\Console\Commands;
 
-use Fnlla\\Console\CommandInterface;
-use Fnlla\\Console\ConsoleIO;
-use Fnlla\\Core\Container;
-use Fnlla\\Database\ConnectionManager;
-use Fnlla\\Queue\QueueDriverInterface;
-use Fnlla\\Queue\QueueManager;
-use Fnlla\\Queue\QueueWorker;
+use Fnlla\Console\CommandInterface;
+use Fnlla\Console\ConsoleIO;
+use Fnlla\Core\Container;
+use Fnlla\Database\ConnectionManager;
+use Fnlla\Queue\QueueDriverInterface;
+use Fnlla\Queue\QueueManager;
+use Fnlla\Queue\QueueWorker;
 
 final class QueueWorkCommand implements CommandInterface
 {
