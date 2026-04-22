@@ -1363,13 +1363,15 @@ Security-only support includes security fixes only.
 **-** Standard: 12 months active support + 6 months security-only.
 
 **RELEASE CADENCE (PUBLIC)**
-fnlla (finella) aims to publish on a predictable cadence:
-**-** Patch releases: every 4-6 weeks (bug fixes and security fixes only).
-**-** Minor releases: quarterly (features + deprecations).
+fnlla (finella) uses a rolling-release model without LTS:
+**-** Releases are shipped when changes are ready and quality gates pass.
+**-** Patch/minor frequency is not tied to a fixed calendar.
+**-** Security fixes may ship immediately outside regular release flow.
 
 **CURRENT COMMITMENTS**
 **-** The supported line is always the latest minor release line.
 **-** Exact support dates are communicated in release notes and updated here when published.
+**-** Release notes must always include upgrade impact and rollback guidance.
 
 **SEMVER AND DEPRECATIONS**
 **-** Patch releases: bug fixes only.
@@ -1383,7 +1385,7 @@ Deprecation rules:
 **-** Register each deprecation in documentation/src/operations.md with a migration file.
 
 **SECURITY FIXES**
-**-** Security fixes may ship outside the normal cadence.
+**-** Security fixes may ship outside the rolling cadence.
 **-** If a fix is not backwards compatible, it will be communicated with a mitigation guide.
 
 **END OF LIFE**
