@@ -1402,7 +1402,7 @@ This is the recommended rollout order for repository governance and release safe
 **-** Dependabot updates via `.github/dependabot.yml`.
 
 **-** Contribution flow (implemented in this repo):
-**-** `CODEOWNERS` in `.github/CODEOWNERS`.
+**-** `CODEOWNERS` in repository root (`CODEOWNERS`).
 **-** PR template in `.github/PULL_REQUEST_TEMPLATE.md`.
 **-** Issue forms in `.github/ISSUE_TEMPLATE/*.yml`.
 

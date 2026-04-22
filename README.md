@@ -1,7 +1,7 @@
 **fnlla (finella)**
 
 [![Developed by TechAyo](https://img.shields.io/badge/Developed%20by-TechAyo-f59e0b?style=flat-square&labelColor=f97316&color=facc15)](https://techayo.co.uk)
-[![Latest Release](https://img.shields.io/badge/Latest%20Release-3.0.2-22c55e?style=flat-square&labelColor=0ea5e9)](https://github.com/fnlla/framework/releases)
+[![Latest Release](https://img.shields.io/badge/Latest%20Release-3.0.6-22c55e?style=flat-square&labelColor=0ea5e9)](https://github.com/fnlla/framework/releases)
 
 fnlla (finella) is an AI-assisted (optional), modular PHP framework by TechAyo (techayo.co.uk). The core framework runs fully without AI. AI is a first-class, opt-in layer: governance, routing, telemetry, and autonomous insights are built in, but remain optional and safe by default.
 
@@ -169,8 +169,9 @@ This section is the operational source for maintainers responsible for public pa
 
 **SOURCE OF TRUTH**
 **-** `fnlla/framework` stays private and is the only source of truth.
-**-** Public package repositories are split outputs only (do not edit them manually).
+**-** Public distribution is served through `fnlla/packages` (single public package hub).
 **-** Starter repository is `fnlla/fnlla` and is public for `composer create-project fnlla/fnlla`.
+**-** Installer repository is `fnlla/installer` and provides `fnlla new`.
 
 **PACKAGE SPLIT (PUBLIC VS PRIVATE)**
 **-** Manifest file: `scripts/release/distribution-packages.json`
@@ -211,26 +212,12 @@ Private/pro (`private_pro`) currently includes optional modules not required by 
 Rule: packages required by starter (runtime and dev) must stay in `public_core`.
 Private registry is for optional pro add-ons only.
 
-**PUBLIC SPLIT REPOSITORIES**
-Public package repositories in GitHub org `fnlla (finella)`:
-**-** `fnlla/framework-package` (`fnlla/framework`)
-**-** `fnlla/ai` (`fnlla/ai`)
-**-** `fnlla/audit` (`fnlla/audit`)
-**-** `fnlla/deploy` (`fnlla/deploy`)
-**-** `fnlla/monitoring` (`fnlla/monitoring`)
-**-** `fnlla/oauth` (`fnlla/oauth`)
-**-** `fnlla/standard` (`fnlla/standard`)
-**-** `fnlla/queue` (`fnlla/queue`)
-**-** `fnlla/scheduler` (`fnlla/scheduler`)
-**-** `fnlla/mail` (`fnlla/mail`)
-**-** `fnlla/ops` (`fnlla/ops`)
-**-** `fnlla/pdf` (`fnlla/pdf`)
-**-** `fnlla/rbac` (`fnlla/rbac`)
-**-** `fnlla/search` (`fnlla/search`)
-**-** `fnlla/settings` (`fnlla/settings`)
-**-** `fnlla/docs` (`fnlla/docs`)
-**-** `fnlla/testing` (`fnlla/testing`)
-**-** `fnlla/debugbar` (`fnlla/debugbar`)
+**PUBLIC PACKAGE HUB**
+Public package distribution lives in:
+**-** `fnlla/packages`
+**-** Composer metadata: `repository/packages.json`
+**-** Package archives: `repository/dist/*`
+**-** Composer URL used by starter: `https://raw.githubusercontent.com/fnlla/packages/main/repository`
 
 **COMPOSER METADATA RULES (PUBLIC PACKAGE REPOS)**
 **-** Keep valid package `name` in each package `composer.json` (for example `fnlla/ops`).
@@ -240,11 +227,10 @@ Public package repositories in GitHub org `fnlla (finella)`:
 
 **ONE-TIME PACKAGIST PUBLISH (PUBLIC PACKAGES)**
 1. Open Packagist account with org access.
-2. Click `Submit`.
-3. Submit each repo URL (`https://github.com/fnlla/<package-repo>`).
-4. Confirm Packagist detects package name correctly.
-5. In each package on Packagist, enable auto-update via GitHub hook/service.
-6. Verify tags are visible in Packagist versions.
+2. Submit `https://github.com/fnlla/packages` if publishing hub metadata workflow, or submit per-package repository URLs used by your package strategy.
+3. Confirm package names and versions resolve correctly.
+4. Enable auto-update webhook/service in Packagist.
+5. Verify all starter-required packages are installable from public sources.
 
 **ONE-TIME PACKAGIST PUBLISH (STARTER)**
 1. Ensure starter repo `fnlla/fnlla` is public.
@@ -261,31 +247,21 @@ Public package repositories in GitHub org `fnlla (finella)`:
 **RELEASE FLOW (REQUIRED EVERY RELEASE)**
 1. Tag in private source-of-truth monorepo:
    `git tag vX.Y.Z && git push origin vX.Y.Z`
-2. Split/publish package repos from monorepo main + release tag:
-   `php scripts/release/publish-public-splits.php --org=fnlla --tags=vX.Y.Z`
-3. Refresh Packagist package metadata (auto-hook or manual update).
-4. Release starter (`fnlla/fnlla`) with aligned dependency constraints.
-5. Validate public bootstrap:
+2. Sync public package sources/artifacts into `fnlla/packages`.
+3. Rebuild `repository/` metadata in `fnlla/packages` and publish to `main`.
+4. Refresh Packagist package metadata (auto-hook or manual update).
+5. Release starter (`fnlla/fnlla`) with aligned dependency constraints.
+6. Validate public bootstrap:
    `composer create-project fnlla/fnlla my-app`
-6. Validate install/boot in created app:
+7. Validate install/boot in created app:
    `composer install && php bin/fnlla db:bootstrap`
-
-**AUTOMATION COMMAND FOR SPLITS**
-Script: `scripts/release/publish-public-splits.php`
-
-Examples:
-```bash
-php scripts/release/publish-public-splits.php --org=fnlla
-php scripts/release/publish-public-splits.php --org=fnlla --tags=v3.0.1
-php scripts/release/publish-public-splits.php --org=fnlla --tags=v3.0.0,v3.0.1 --dry-run
-```
 
 **MAINTAINER CHECKLIST (SHORT)**
 1. Update code/docs in private `fnlla/framework`.
 2. Run release gate + distribution checks.
 3. Tag monorepo.
-4. Run public split publish script.
-5. Confirm tags in each public package repo.
+4. Sync/update `fnlla/packages` public sources.
+5. Rebuild and publish `fnlla/packages/repository`.
 6. Refresh/verify Packagist versions.
 7. Release `fnlla/fnlla`.
 8. Validate `composer create-project`.
