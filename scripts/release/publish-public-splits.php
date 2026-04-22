@@ -103,6 +103,18 @@ function fail(string $message): void
     exit(1);
 }
 
+function parseSplitSha(string $output): ?string
+{
+    if (preg_match_all('/[0-9a-f]{40}/i', $output, $matches) < 1) {
+        return null;
+    }
+    $list = $matches[0] ?? [];
+    if ($list === []) {
+        return null;
+    }
+    return strtolower((string) end($list));
+}
+
 /**
  * @return array<int,array{package:string,slug:string,prefix:string,repo:string}>
  */
@@ -155,11 +167,14 @@ if ($syncMain) {
     foreach ($targets as $target) {
         echo "- {$target['package']} -> {$org}/{$target['repo']} (prefix {$target['prefix']})\n";
 
-        $split = run(['git', 'subtree', 'split', '--prefix=' . $target['prefix'], $ref], $dryRun);
+        $split = run(['git', 'subtree', 'split', '--prefix=' . $target['prefix'], '--quiet', $ref], $dryRun);
         if ($split['code'] !== 0) {
             fail("Subtree split failed for {$target['package']} from {$ref}.\n{$split['stdout']}");
         }
-        $sha = trim($split['stdout']);
+        $sha = parseSplitSha($split['stdout']);
+        if (!is_string($sha) || $sha === '') {
+            fail("Unable to parse split SHA for {$target['package']} from {$ref}.\n{$split['stdout']}");
+        }
 
         $checkComposer = run(['git', 'cat-file', '-e', $sha . ':composer.json'], $dryRun);
         if ($checkComposer['code'] !== 0) {
@@ -182,11 +197,14 @@ if ($tags !== []) {
     foreach ($tags as $tag) {
         echo "- Tag {$tag}\n";
         foreach ($targets as $target) {
-            $split = run(['git', 'subtree', 'split', '--prefix=' . $target['prefix'], $tag], $dryRun);
+            $split = run(['git', 'subtree', 'split', '--prefix=' . $target['prefix'], '--quiet', $tag], $dryRun);
             if ($split['code'] !== 0) {
                 fail("Subtree split failed for {$target['package']} tag {$tag}.\n{$split['stdout']}");
             }
-            $sha = trim($split['stdout']);
+            $sha = parseSplitSha($split['stdout']);
+            if (!is_string($sha) || $sha === '') {
+                fail("Unable to parse split SHA for {$target['package']} tag {$tag}.\n{$split['stdout']}");
+            }
 
             $checkComposer = run(['git', 'cat-file', '-e', $sha . ':composer.json'], $dryRun);
             if ($checkComposer['code'] !== 0) {
