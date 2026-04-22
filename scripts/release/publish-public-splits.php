@@ -121,7 +121,8 @@ function resolvePublicTargets(array $publicCore): array
         }
 
         $prefix = $slug === 'framework' ? 'framework' : 'packages/' . $slug;
-        $repo = 'pkg-' . $slug;
+        // Keep framework split in dedicated mirror to avoid force-pushing into monorepo.
+        $repo = $slug === 'framework' ? 'framework-package' : $slug;
 
         $targets[] = [
             'package' => $package,

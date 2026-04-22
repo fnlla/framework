@@ -213,24 +213,24 @@ Private registry is for optional pro add-ons only.
 
 **PUBLIC SPLIT REPOSITORIES**
 Public package repositories in GitHub org `fnlla (finella)`:
-**-** `fnlla/pkg-framework` (`fnlla/framework`)
-**-** `fnlla/pkg-ai` (`fnlla/ai`)
-**-** `fnlla/pkg-audit` (`fnlla/audit`)
-**-** `fnlla/pkg-deploy` (`fnlla/deploy`)
-**-** `fnlla/pkg-monitoring` (`fnlla/monitoring`)
-**-** `fnlla/pkg-oauth` (`fnlla/oauth`)
-**-** `fnlla/pkg-standard` (`fnlla/standard`)
-**-** `fnlla/pkg-queue` (`fnlla/queue`)
-**-** `fnlla/pkg-scheduler` (`fnlla/scheduler`)
-**-** `fnlla/pkg-mail` (`fnlla/mail`)
-**-** `fnlla/pkg-ops` (`fnlla/ops`)
-**-** `fnlla/pkg-pdf` (`fnlla/pdf`)
-**-** `fnlla/pkg-rbac` (`fnlla/rbac`)
-**-** `fnlla/pkg-search` (`fnlla/search`)
-**-** `fnlla/pkg-settings` (`fnlla/settings`)
-**-** `fnlla/pkg-docs` (`fnlla/docs`)
-**-** `fnlla/pkg-testing` (`fnlla/testing`)
-**-** `fnlla/pkg-debugbar` (`fnlla/debugbar`)
+**-** `fnlla/framework-package` (`fnlla/framework`)
+**-** `fnlla/ai` (`fnlla/ai`)
+**-** `fnlla/audit` (`fnlla/audit`)
+**-** `fnlla/deploy` (`fnlla/deploy`)
+**-** `fnlla/monitoring` (`fnlla/monitoring`)
+**-** `fnlla/oauth` (`fnlla/oauth`)
+**-** `fnlla/standard` (`fnlla/standard`)
+**-** `fnlla/queue` (`fnlla/queue`)
+**-** `fnlla/scheduler` (`fnlla/scheduler`)
+**-** `fnlla/mail` (`fnlla/mail`)
+**-** `fnlla/ops` (`fnlla/ops`)
+**-** `fnlla/pdf` (`fnlla/pdf`)
+**-** `fnlla/rbac` (`fnlla/rbac`)
+**-** `fnlla/search` (`fnlla/search`)
+**-** `fnlla/settings` (`fnlla/settings`)
+**-** `fnlla/docs` (`fnlla/docs`)
+**-** `fnlla/testing` (`fnlla/testing`)
+**-** `fnlla/debugbar` (`fnlla/debugbar`)
 
 **COMPOSER METADATA RULES (PUBLIC PACKAGE REPOS)**
 **-** Keep valid package `name` in each package `composer.json` (for example `fnlla/ops`).
@@ -241,7 +241,7 @@ Public package repositories in GitHub org `fnlla (finella)`:
 **ONE-TIME PACKAGIST PUBLISH (PUBLIC PACKAGES)**
 1. Open Packagist account with org access.
 2. Click `Submit`.
-3. Submit each repo URL (`https://github.com/fnlla/pkg-...`).
+3. Submit each repo URL (`https://github.com/fnlla/<package-repo>`).
 4. Confirm Packagist detects package name correctly.
 5. In each package on Packagist, enable auto-update via GitHub hook/service.
 6. Verify tags are visible in Packagist versions.
@@ -285,7 +285,7 @@ php scripts/release/publish-public-splits.php --org=fnlla --tags=v3.0.0,v3.0.1 -
 2. Run release gate + distribution checks.
 3. Tag monorepo.
 4. Run public split publish script.
-5. Confirm tags in each `pkg-*` repo.
+5. Confirm tags in each public package repo.
 6. Refresh/verify Packagist versions.
 7. Release `fnlla/fnlla`.
 8. Validate `composer create-project`.
