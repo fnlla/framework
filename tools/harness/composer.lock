@@ -311,7 +311,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ai",
-                "reference": "339275dd7e8132ad38bb33c6cf705b25e759aa5c"
+                "reference": "c3a4dbf362b4c1e3d619798ab4b4533a1343bf14"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -366,7 +366,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/audit",
-                "reference": "877ac8e20b5305059a340d5f0bcf0e268ad35bfe"
+                "reference": "e7ab4054e2dd95440f9ee11b44c051bffa873727"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -421,7 +421,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/debugbar",
-                "reference": "54781c50abd8d54e2bf8cd31e821214e5f4cebc6"
+                "reference": "79ef6b32d8823a83b7d4cf08eadb2cb631744d53"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -458,7 +458,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/deploy",
-                "reference": "a129a1bab526174fd5e249e339501113df346486"
+                "reference": "e6addf7175d1e1c7ffec1ac76d17ff5a303af0cd"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -508,7 +508,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/docs",
-                "reference": "d01d1794f8173ce2e066ba3cbb252ac14497fb52"
+                "reference": "4a80c1932bc4aeaf80c34c3d9985aa5cfb17a88e"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -563,7 +563,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../framework",
-                "reference": "6fe2b19cf6cc0c80892a2fba50560b669aba422a"
+                "reference": "0bdc793751dc38ef006230d3d11535e1480953c8"
             },
             "require": {
                 "php": ">=8.5"
@@ -628,7 +628,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/mail",
-                "reference": "9ff3694cd8be70395f93c461e95eef574699c7ce"
+                "reference": "503281bd1dd7569b3085f610b93bcbbe1a5e5c1b"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -685,7 +685,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ops",
-                "reference": "96563b4448e0125ebd00411b652a179ab9f8ffb6"
+                "reference": "8d8bd01fb4a1474ba026c4d81e3a2d5b4549af5f"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -752,7 +752,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/pdf",
-                "reference": "6435c13f6f75baa904ad12ed02d49b7596d0f261"
+                "reference": "771fdd2c2027164cd3cfe0427615f987c6d9cd6c"
             },
             "require": {
                 "dompdf/dompdf": "^3.1",
@@ -808,7 +808,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/queue",
-                "reference": "6f950287ff70ec16daff2cd788dedeaaf2c480af"
+                "reference": "061c8fdb700c58a08764f7ec4f51e02f207fe439"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -863,7 +863,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/rbac",
-                "reference": "bd8a3b5b5b9556ccc98c2480c17368ca232e36d7"
+                "reference": "dff545f5a2cc027e7ee952b3bbc8894a9ecf5e2b"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -918,7 +918,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/settings",
-                "reference": "2da3c73d0a7737861459c52392045c833271da48"
+                "reference": "7f45eda9fac47723e66cfd454bcacb1021c5f0c4"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -961,55 +961,6 @@
                 }
             ],
             "description": "Key/value settings store for Fnlla",
-            "homepage": "https://techayo.co.uk",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "fnlla/standard",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../../packages/standard",
-                "reference": "f88c6cca58fe8db1de0693aee6e2d0f7538387c4"
-            },
-            "require": {
-                "fnlla/audit": "^3.0",
-                "fnlla/deploy": "^3.0",
-                "fnlla/framework": "^3.0",
-                "fnlla/ops": "^3.0",
-                "fnlla/rbac": "^3.0",
-                "fnlla/settings": "^3.0",
-                "php": ">=8.5"
-            },
-            "require-dev": {
-                "fnlla/debugbar": "^3.0",
-                "fnlla/testing": "^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "3.0.x-dev"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "TechAyo",
-                    "homepage": "https://techayo.co.uk",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Marcin Kordyaczny",
-                    "homepage": "https://techayo.co.uk",
-                    "role": "Project Manager"
-                }
-            ],
-            "description": "Fnlla standard web stack (meta-package)",
             "homepage": "https://techayo.co.uk",
             "transport-options": {
                 "symlink": true,
@@ -2363,7 +2314,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/testing",
-                "reference": "42d002381d7687929c5b4997fb1978dfd4306c44"
+                "reference": "3d94cdd14a8508d0aad2221d85a9345f5d3e3aa1"
             },
             "require": {
                 "fnlla/framework": "^3.0",
@@ -2688,7 +2639,7 @@
                     "homepage": "https://github.com/Nyholm"
                 },
                 {
-                    "name": "MÃ¡rk SÃ¡gi-KazÃ¡r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://github.com/sagikazarmark"
                 },
@@ -2698,7 +2649,7 @@
                     "homepage": "https://github.com/Tobion"
                 },
                 {
-                    "name": "MÃ¡rk SÃ¡gi-KazÃ¡r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://sagikazarmark.hu"
                 }
@@ -3131,16 +3082,16 @@
         },
         {
             "name": "sentry/sentry",
-            "version": "4.24.0",
+            "version": "4.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "5055cc792f630a427fdf9dcccd88faa94b50fd30"
+                "reference": "bfee3381e1f6dea8a5f3a18adba6419fe81c5f54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/5055cc792f630a427fdf9dcccd88faa94b50fd30",
-                "reference": "5055cc792f630a427fdf9dcccd88faa94b50fd30",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/bfee3381e1f6dea8a5f3a18adba6419fe81c5f54",
+                "reference": "bfee3381e1f6dea8a5f3a18adba6419fe81c5f54",
                 "shasum": ""
             },
             "require": {
@@ -3172,6 +3123,7 @@
                 "spiral/roadrunner-worker": "^3.6"
             },
             "suggest": {
+                "ext-excimer": "Enable Sentry profiling with the Excimer PHP extension.",
                 "monolog/monolog": "Allow sending log messages to Sentry by using the included Monolog handler."
             },
             "type": "library",
@@ -3208,7 +3160,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-php/issues",
-                "source": "https://github.com/getsentry/sentry-php/tree/4.24.0"
+                "source": "https://github.com/getsentry/sentry-php/tree/4.25.0"
             },
             "funding": [
                 {
@@ -3220,7 +3172,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-04-01T14:34:34+00:00"
+            "time": "2026-04-23T12:50:03+00:00"
         },
         {
             "name": "stripe/stripe-php",
