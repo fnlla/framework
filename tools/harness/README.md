@@ -1,4 +1,4 @@
-**fnlla (finella) APP HARNESS**
+**FNLLA (FINELLA) APP HARNESS**
 
 This `tools/harness/` directory is a **development and test harness** used inside the monorepo.
 It is **not** the public starter skeleton. The starter app lives in `fnlla/fnlla`.

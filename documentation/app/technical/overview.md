@@ -14,7 +14,7 @@ Generated at: 2026-04-05 22:22:39 UTC
 **-** PHP: 8.4.19
 **-** fnlla: 3.0.0
 
-**fnlla (finella) PACKAGES**
+**FNLLA (FINELLA) PACKAGES**
 **-** fnlla/ai (dev-main)
 **-** fnlla/audit (dev-main)
 **-** fnlla/standard (dev-main)
