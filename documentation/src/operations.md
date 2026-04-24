@@ -512,7 +512,7 @@ it can be shared or printed.
 **-** Log storage (ELK/Loki/Datadog/none):
 **-** SLA/RTO/RPO defined? (Yes/No)
 
-**4) fnlla (finella) PACKAGE MAP**
+**4) FNLLA (FINELLA) PACKAGE MAP**
 Tick required packages:
 **-** fnlla/standard + optional modules
 **-** core database + ORM
@@ -1395,7 +1395,7 @@ Once a line reaches end of security support, no further fixes are provided.
 **-** The current support matrix lives in this file.
 **-** The public roadmap lives in documentation/src/operations.md.
 
-**GITHUB STARTER PACK (fnlla (finella))**
+**GITHUB STARTER PACK (FNLLA (FINELLA))**
 This is the recommended rollout order for repository governance and release safety.
 
 **-** Baseline security and CI (already enabled in this repo):
@@ -1596,22 +1596,22 @@ Each entry must match a PHPDoc tag in code: `@deprecated [DEP-YYYY-NN] ...`.
 
 **ACTIVE DEPRECATIONS**
 
-**[DEP-2026-01] Fnlla\\SUPPORT\CACHESTOREINTERFACE**
+**[DEP-2026-01] FNLLA\\SUPPORT\CACHESTOREINTERFACE**
 Replacement: `Fnlla\\Contracts\Cache\CacheStoreInterface`
 Removal: 3.0
 Migration: see **Migration DEP-2026-01** below.
 
-**[DEP-2026-02] Fnlla\\SUPPORT\ARRAYCACHESTORE**
+**[DEP-2026-02] FNLLA\\SUPPORT\ARRAYCACHESTORE**
 Replacement: `Fnlla\\Cache\ArrayStore`
 Removal: 3.0
 Migration: see **Migration DEP-2026-02** below.
 
-**[DEP-2026-03] Fnlla\\SUPPORT\FILECACHESTORE**
+**[DEP-2026-03] FNLLA\\SUPPORT\FILECACHESTORE**
 Replacement: `Fnlla\\Cache\FileStore`
 Removal: 3.0
 Migration: see **Migration DEP-2026-03** below.
 
-**[DEP-2026-04] Fnlla\\SUPPORT\QUEUE**
+**[DEP-2026-04] FNLLA\\SUPPORT\QUEUE**
 Replacement: `Fnlla\\Queue\SyncQueue`
 Removal: 3.0
 Migration: see **Migration DEP-2026-04** below.

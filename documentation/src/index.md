@@ -1,4 +1,4 @@
-**fnlla (finella) DOCUMENTATION**
+**FNLLA (FINELLA) DOCUMENTATION**
 
 This documentation is written in UK English. It covers the framework, the starter app, and the official packages.
 fnlla (finella) is an AI-assisted (optional), modular framework focused on the framework runtime, starter app, and optional packages.
