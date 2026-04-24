@@ -25,5 +25,4 @@
 - fnlla/queue (dev-main)
 - fnlla/rbac (dev-main)
 - fnlla/settings (dev-main)
-- fnlla/standard (dev-main)
 - fnlla/testing (dev-main)
