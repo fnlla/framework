@@ -1,4 +1,4 @@
-**fnlla (finella) TENANCY**
+**FNLLA (FINELLA) TENANCY**
 
 Basic multi-tenant helpers for fnlla (finella) apps. This package provides:
 **-** `TenantContext` for storing the current tenant id.

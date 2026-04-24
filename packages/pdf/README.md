@@ -1,4 +1,4 @@
-**fnlla (finella) PDF**
+**FNLLA (FINELLA) PDF**
 
 HTML-to-PDF rendering using Dompdf, plus ready invoice and pitch-deck templates with a minimal API route helper.
 

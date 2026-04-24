@@ -1,4 +1,4 @@
-**fnlla (finella) FRAMEWORK**
+**FNLLA (FINELLA) FRAMEWORK**
 
 fnlla (finella) is a lightweight, AI-assisted (optional) PHP web framework focused on clarity, small surface area, and production-ready defaults. The core is intentionally minimal: kernel, router, container, configuration, and error handling.
 AI capabilities are opt-in and sit on top of the core runtime via optional packages and governance controls.

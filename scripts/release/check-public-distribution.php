@@ -29,9 +29,22 @@ if ($publicCore === [] || $starterRequired === []) {
 $errors = [];
 $warnings = [];
 
-$duplicates = findDuplicates(array_merge($publicCore, $privatePro, $starterRequired, $starterRequiredDev));
-if ($duplicates !== []) {
-    $errors[] = 'Duplicate package entries in manifest: ' . implode(', ', $duplicates);
+$duplicateBuckets = [];
+foreach (
+    [
+        'public_core' => $publicCore,
+        'private_pro' => $privatePro,
+        'starter_required' => $starterRequired,
+        'starter_required_dev' => $starterRequiredDev,
+    ] as $section => $items
+) {
+    $duplicates = findDuplicates($items);
+    if ($duplicates !== []) {
+        $duplicateBuckets[] = $section . ': ' . implode(', ', $duplicates);
+    }
+}
+if ($duplicateBuckets !== []) {
+    $errors[] = 'Duplicate package entries in manifest sections: ' . implode('; ', $duplicateBuckets);
 }
 
 $overlap = array_values(array_intersect($publicCore, $privatePro));
