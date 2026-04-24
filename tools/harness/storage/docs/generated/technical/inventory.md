@@ -66,7 +66,7 @@ Total: 50
 - psr/log (3.0.2)
 - ralouphie/getallheaders (3.0.3)
 - sabberworm/php-css-parser (v9.3.0)
-- sentry/sentry (4.24.0)
+- sentry/sentry (4.25.0)
 - stripe/stripe-php (v13.18.0)
 - symfony/deprecation-contracts (v3.6.0)
 - symfony/event-dispatcher (v8.0.8)
