@@ -43,9 +43,9 @@
 - routes/web.php (25 route statements)
 
 ## Third-Party Packages
-Total: 51
+Total: 50
 - aws/aws-crt-php (v1.2.7)
-- aws/aws-sdk-php (3.379.2)
+- aws/aws-sdk-php (3.379.5)
 - doctrine/lexer (3.0.1)
 - dompdf/dompdf (v3.1.5)
 - dompdf/php-font-lib (1.0.2)
