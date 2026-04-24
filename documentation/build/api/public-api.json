@@ -1,7 +1,7 @@
 {
-    "generated_at": "2026-04-19T21:05:49+00:00",
+    "generated_at": "2026-04-24T08:31:48+00:00",
     "classes": {
-        "Fnlla\\\Auth\\AuthManager": {
+        "Fnlla\\Auth\\AuthManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -16,25 +16,25 @@
                 "user"
             ]
         },
-        "Fnlla\\\Auth\\AuthResult": {
+        "Fnlla\\Auth\\AuthResult": {
             "type": "class",
             "methods": [
                 "__construct"
             ]
         },
-        "Fnlla\\\Auth\\AuthRoutes": {
+        "Fnlla\\Auth\\AuthRoutes": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Auth\\AuthServiceProvider": {
+        "Fnlla\\Auth\\AuthServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Auth\\CallableUserProvider": {
+        "Fnlla\\Auth\\CallableUserProvider": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -46,14 +46,14 @@
                 "validateCredentials"
             ]
         },
-        "Fnlla\\\Auth\\CredentialsUserProviderInterface": {
+        "Fnlla\\Auth\\CredentialsUserProviderInterface": {
             "type": "interface",
             "methods": [
                 "retrieveByCredentials",
                 "validateCredentials"
             ]
         },
-        "Fnlla\\\Auth\\Http\\AuthController": {
+        "Fnlla\\Auth\\Http\\AuthController": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -64,7 +64,7 @@
                 "showRegister"
             ]
         },
-        "Fnlla\\\Auth\\Http\\PasswordResetController": {
+        "Fnlla\\Auth\\Http\\PasswordResetController": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -74,7 +74,7 @@
                 "showReset"
             ]
         },
-        "Fnlla\\\Auth\\Middleware\\AuthMiddleware": {
+        "Fnlla\\Auth\\Middleware\\AuthMiddleware": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -82,7 +82,7 @@
                 "process"
             ]
         },
-        "Fnlla\\\Auth\\Middleware\\GuestMiddleware": {
+        "Fnlla\\Auth\\Middleware\\GuestMiddleware": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -90,7 +90,7 @@
                 "process"
             ]
         },
-        "Fnlla\\\Auth\\PasswordHasher": {
+        "Fnlla\\Auth\\PasswordHasher": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -99,7 +99,7 @@
                 "verify"
             ]
         },
-        "Fnlla\\\Auth\\PasswordResetManager": {
+        "Fnlla\\Auth\\PasswordResetManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -109,7 +109,7 @@
                 "validateToken"
             ]
         },
-        "Fnlla\\\Auth\\PasswordResetStore": {
+        "Fnlla\\Auth\\PasswordResetStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -119,19 +119,19 @@
                 "validate"
             ]
         },
-        "Fnlla\\\Auth\\PasswordResetUserProviderInterface": {
+        "Fnlla\\Auth\\PasswordResetUserProviderInterface": {
             "type": "interface",
             "methods": [
                 "updatePassword"
             ]
         },
-        "Fnlla\\\Auth\\RegistrationUserProviderInterface": {
+        "Fnlla\\Auth\\RegistrationUserProviderInterface": {
             "type": "interface",
             "methods": [
                 "createUser"
             ]
         },
-        "Fnlla\\\Auth\\RememberCookie": {
+        "Fnlla\\Auth\\RememberCookie": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -140,7 +140,7 @@
                 "name"
             ]
         },
-        "Fnlla\\\Auth\\RememberTokenStore": {
+        "Fnlla\\Auth\\RememberTokenStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -149,7 +149,7 @@
                 "validate"
             ]
         },
-        "Fnlla\\\Auth\\SessionGuard": {
+        "Fnlla\\Auth\\SessionGuard": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -160,7 +160,7 @@
                 "user"
             ]
         },
-        "Fnlla\\\Auth\\TokenGuard": {
+        "Fnlla\\Auth\\TokenGuard": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -168,21 +168,21 @@
                 "user"
             ]
         },
-        "Fnlla\\\Auth\\UserProviderInterface": {
+        "Fnlla\\Auth\\UserProviderInterface": {
             "type": "interface",
             "methods": [
                 "retrieveById",
                 "retrieveByToken"
             ]
         },
-        "Fnlla\\\Authorization\\AuthorizationException": {
+        "Fnlla\\Authorization\\AuthorizationException": {
             "type": "class",
             "methods": [
                 "__construct",
                 "status"
             ]
         },
-        "Fnlla\\\Authorization\\Gate": {
+        "Fnlla\\Authorization\\Gate": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -192,7 +192,7 @@
                 "policy"
             ]
         },
-        "Fnlla\\\Authorization\\PolicyRegistry": {
+        "Fnlla\\Authorization\\PolicyRegistry": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -202,7 +202,7 @@
                 "resolvePolicyFor"
             ]
         },
-        "Fnlla\\\Cache\\ArrayCacheStore": {
+        "Fnlla\\Cache\\ArrayCacheStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -214,7 +214,7 @@
                 "set"
             ]
         },
-        "Fnlla\\\Cache\\CacheLock": {
+        "Fnlla\\Cache\\CacheLock": {
             "type": "class",
             "methods": [
                 "acquireFile",
@@ -223,7 +223,7 @@
                 "release"
             ]
         },
-        "Fnlla\\\Cache\\CacheManager": {
+        "Fnlla\\Cache\\CacheManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -239,13 +239,13 @@
                 "tags"
             ]
         },
-        "Fnlla\\\Cache\\CacheServiceProvider": {
+        "Fnlla\\Cache\\CacheServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Cache\\FileCacheStore": {
+        "Fnlla\\Cache\\FileCacheStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -258,7 +258,7 @@
                 "set"
             ]
         },
-        "Fnlla\\\Cache\\RedisCacheStore": {
+        "Fnlla\\Cache\\RedisCacheStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -272,7 +272,7 @@
                 "set"
             ]
         },
-        "Fnlla\\\Cache\\TaggedCache": {
+        "Fnlla\\Cache\\TaggedCache": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -284,7 +284,7 @@
                 "tags"
             ]
         },
-        "Fnlla\\\Console\\CommandInterface": {
+        "Fnlla\\Console\\CommandInterface": {
             "type": "interface",
             "methods": [
                 "getDescription",
@@ -292,11 +292,11 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AbstractMakeCommand": {
+        "Fnlla\\Console\\Commands\\AbstractMakeCommand": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Console\\Commands\\AiConfigAdvisorCommand": {
+        "Fnlla\\Console\\Commands\\AiConfigAdvisorCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -304,7 +304,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiDocsSyncCommand": {
+        "Fnlla\\Console\\Commands\\AiDocsSyncCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -312,7 +312,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiDoctorCommand": {
+        "Fnlla\\Console\\Commands\\AiDoctorCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -320,7 +320,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiObservabilityCommand": {
+        "Fnlla\\Console\\Commands\\AiObservabilityCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -328,7 +328,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiReleaseNotesCommand": {
+        "Fnlla\\Console\\Commands\\AiReleaseNotesCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -336,7 +336,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiRoadmapBalanceCommand": {
+        "Fnlla\\Console\\Commands\\AiRoadmapBalanceCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -344,7 +344,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiScaffoldCommand": {
+        "Fnlla\\Console\\Commands\\AiScaffoldCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -352,7 +352,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiSecurityLintCommand": {
+        "Fnlla\\Console\\Commands\\AiSecurityLintCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -360,7 +360,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\AiTestPlanCommand": {
+        "Fnlla\\Console\\Commands\\AiTestPlanCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -368,7 +368,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\DatabaseBootstrapCommand": {
+        "Fnlla\\Console\\Commands\\DatabaseBootstrapCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -376,11 +376,11 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\DatabaseCommandTrait": {
+        "Fnlla\\Console\\Commands\\DatabaseCommandTrait": {
             "type": "trait",
             "methods": []
         },
-        "Fnlla\\\Console\\Commands\\MakeBlueprintCommand": {
+        "Fnlla\\Console\\Commands\\MakeBlueprintCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -388,7 +388,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeCommandCommand": {
+        "Fnlla\\Console\\Commands\\MakeCommandCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -396,11 +396,11 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeCommandHelpers": {
+        "Fnlla\\Console\\Commands\\MakeCommandHelpers": {
             "type": "trait",
             "methods": []
         },
-        "Fnlla\\\Console\\Commands\\MakeControllerCommand": {
+        "Fnlla\\Console\\Commands\\MakeControllerCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -408,7 +408,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeCrudCommand": {
+        "Fnlla\\Console\\Commands\\MakeCrudCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -416,7 +416,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeJobCommand": {
+        "Fnlla\\Console\\Commands\\MakeJobCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -424,7 +424,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeListenerCommand": {
+        "Fnlla\\Console\\Commands\\MakeListenerCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -432,7 +432,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeMailCommand": {
+        "Fnlla\\Console\\Commands\\MakeMailCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -440,7 +440,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeMiddlewareCommand": {
+        "Fnlla\\Console\\Commands\\MakeMiddlewareCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -448,7 +448,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeMigrationCommand": {
+        "Fnlla\\Console\\Commands\\MakeMigrationCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -456,7 +456,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeModelCommand": {
+        "Fnlla\\Console\\Commands\\MakeModelCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -464,7 +464,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeModuleCommand": {
+        "Fnlla\\Console\\Commands\\MakeModuleCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -472,7 +472,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakePolicyCommand": {
+        "Fnlla\\Console\\Commands\\MakePolicyCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -480,7 +480,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeRepositoryCommand": {
+        "Fnlla\\Console\\Commands\\MakeRepositoryCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -488,7 +488,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeRequestCommand": {
+        "Fnlla\\Console\\Commands\\MakeRequestCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -496,7 +496,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeSeederCommand": {
+        "Fnlla\\Console\\Commands\\MakeSeederCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -504,7 +504,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeServiceCommand": {
+        "Fnlla\\Console\\Commands\\MakeServiceCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -512,7 +512,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MakeTestCommand": {
+        "Fnlla\\Console\\Commands\\MakeTestCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -520,7 +520,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MigrateCommand": {
+        "Fnlla\\Console\\Commands\\MigrateCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -528,7 +528,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MigrateRollbackCommand": {
+        "Fnlla\\Console\\Commands\\MigrateRollbackCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -536,7 +536,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\MigrateStatusCommand": {
+        "Fnlla\\Console\\Commands\\MigrateStatusCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -544,7 +544,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\QueueWorkCommand": {
+        "Fnlla\\Console\\Commands\\QueueWorkCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -552,7 +552,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\RoutesCacheCommand": {
+        "Fnlla\\Console\\Commands\\RoutesCacheCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -560,7 +560,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\RoutesClearCommand": {
+        "Fnlla\\Console\\Commands\\RoutesClearCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -568,7 +568,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\ScheduleRunCommand": {
+        "Fnlla\\Console\\Commands\\ScheduleRunCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -576,7 +576,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\Commands\\SeedCommand": {
+        "Fnlla\\Console\\Commands\\SeedCommand": {
             "type": "class",
             "methods": [
                 "getDescription",
@@ -584,14 +584,14 @@
                 "run"
             ]
         },
-        "Fnlla\\\Console\\ConsoleApplication": {
+        "Fnlla\\Console\\ConsoleApplication": {
             "type": "class",
             "methods": [
                 "__construct",
                 "run"
             ]
         },
-        "Fnlla\\\Console\\ConsoleIO": {
+        "Fnlla\\Console\\ConsoleIO": {
             "type": "class",
             "methods": [
                 "info",
@@ -599,13 +599,13 @@
                 "warn"
             ]
         },
-        "Fnlla\\\Console\\SeederInterface": {
+        "Fnlla\\Console\\SeederInterface": {
             "type": "interface",
             "methods": [
                 "run"
             ]
         },
-        "Fnlla\\\Contracts\\Cache\\CacheStoreInterface": {
+        "Fnlla\\Contracts\\Cache\\CacheStoreInterface": {
             "type": "interface",
             "methods": [
                 "clear",
@@ -614,7 +614,7 @@
                 "put"
             ]
         },
-        "Fnlla\\\Contracts\\Events\\EventDispatcherInterface": {
+        "Fnlla\\Contracts\\Events\\EventDispatcherInterface": {
             "type": "interface",
             "methods": [
                 "dispatch",
@@ -622,42 +622,42 @@
                 "listen"
             ]
         },
-        "Fnlla\\\Contracts\\Http\\KernelInterface": {
+        "Fnlla\\Contracts\\Http\\KernelInterface": {
             "type": "interface",
             "methods": [
                 "boot",
                 "handle"
             ]
         },
-        "Fnlla\\\Contracts\\Log\\ErrorReporterInterface": {
+        "Fnlla\\Contracts\\Log\\ErrorReporterInterface": {
             "type": "interface",
             "methods": [
                 "report"
             ]
         },
-        "Fnlla\\\Contracts\\Log\\LoggerInterface": {
+        "Fnlla\\Contracts\\Log\\LoggerInterface": {
             "type": "interface",
             "methods": []
         },
-        "Fnlla\\\Contracts\\Queue\\JobInterface": {
+        "Fnlla\\Contracts\\Queue\\JobInterface": {
             "type": "interface",
             "methods": [
                 "handle"
             ]
         },
-        "Fnlla\\\Contracts\\Queue\\QueueInterface": {
+        "Fnlla\\Contracts\\Queue\\QueueInterface": {
             "type": "interface",
             "methods": [
                 "push"
             ]
         },
-        "Fnlla\\\Contracts\\Runtime\\RuntimeInterface": {
+        "Fnlla\\Contracts\\Runtime\\RuntimeInterface": {
             "type": "interface",
             "methods": [
                 "run"
             ]
         },
-        "Fnlla\\\Contracts\\Support\\ServiceProviderInterface": {
+        "Fnlla\\Contracts\\Support\\ServiceProviderInterface": {
             "type": "interface",
             "methods": [
                 "boot",
@@ -665,14 +665,14 @@
                 "register"
             ]
         },
-        "Fnlla\\\Cookie\\Cookie": {
+        "Fnlla\\Cookie\\Cookie": {
             "type": "class",
             "methods": [
                 "__construct",
                 "toHeader"
             ]
         },
-        "Fnlla\\\Cookie\\CookieJar": {
+        "Fnlla\\Cookie\\CookieJar": {
             "type": "class",
             "methods": [
                 "attachToResponse",
@@ -681,7 +681,7 @@
                 "setRequest"
             ]
         },
-        "Fnlla\\\Cookie\\CookieMiddleware": {
+        "Fnlla\\Cookie\\CookieMiddleware": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -689,13 +689,13 @@
                 "process"
             ]
         },
-        "Fnlla\\\Cookie\\CookieServiceProvider": {
+        "Fnlla\\Cookie\\CookieServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Core\\Application": {
+        "Fnlla\\Core\\Application": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -708,7 +708,7 @@
                 "version"
             ]
         },
-        "Fnlla\\\Core\\ConfigRepository": {
+        "Fnlla\\Core\\ConfigRepository": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -721,7 +721,7 @@
                 "set"
             ]
         },
-        "Fnlla\\\Core\\Container": {
+        "Fnlla\\Core\\Container": {
             "type": "class",
             "methods": [
                 "bind",
@@ -740,17 +740,17 @@
                 "singleton"
             ]
         },
-        "Fnlla\\\Core\\ContainerException": {
+        "Fnlla\\Core\\ContainerException": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Core\\Controller": {
+        "Fnlla\\Core\\Controller": {
             "type": "class",
             "methods": [
                 "__construct"
             ]
         },
-        "Fnlla\\\Core\\ExceptionHandler": {
+        "Fnlla\\Core\\ExceptionHandler": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -762,11 +762,11 @@
                 "report"
             ]
         },
-        "Fnlla\\\Core\\NotFoundException": {
+        "Fnlla\\Core\\NotFoundException": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Core\\ServiceProvider": {
+        "Fnlla\\Core\\ServiceProvider": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -774,7 +774,7 @@
                 "register"
             ]
         },
-        "Fnlla\\\Csrf\\CsrfMiddleware": {
+        "Fnlla\\Csrf\\CsrfMiddleware": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -782,13 +782,13 @@
                 "process"
             ]
         },
-        "Fnlla\\\Csrf\\CsrfServiceProvider": {
+        "Fnlla\\Csrf\\CsrfServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Csrf\\CsrfTokenManager": {
+        "Fnlla\\Csrf\\CsrfTokenManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -796,7 +796,7 @@
                 "validate"
             ]
         },
-        "Fnlla\\\Database\\ColumnDefinition": {
+        "Fnlla\\Database\\ColumnDefinition": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -816,20 +816,20 @@
                 "unique"
             ]
         },
-        "Fnlla\\\Database\\ConnectionManager": {
+        "Fnlla\\Database\\ConnectionManager": {
             "type": "class",
             "methods": [
                 "__construct",
                 "connection"
             ]
         },
-        "Fnlla\\\Database\\DatabaseServiceProvider": {
+        "Fnlla\\Database\\DatabaseServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Database\\ForeignKeyDefinition": {
+        "Fnlla\\Database\\ForeignKeyDefinition": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -838,7 +838,7 @@
                 "references"
             ]
         },
-        "Fnlla\\\Database\\Grammar": {
+        "Fnlla\\Database\\Grammar": {
             "type": "class",
             "methods": [
                 "compileDelete",
@@ -847,14 +847,14 @@
                 "compileUpdate"
             ]
         },
-        "Fnlla\\\Database\\MigrationInterface": {
+        "Fnlla\\Database\\MigrationInterface": {
             "type": "interface",
             "methods": [
                 "down",
                 "up"
             ]
         },
-        "Fnlla\\\Database\\MigrationRunner": {
+        "Fnlla\\Database\\MigrationRunner": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -863,7 +863,7 @@
                 "status"
             ]
         },
-        "Fnlla\\\Database\\Query": {
+        "Fnlla\\Database\\Query": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -882,7 +882,7 @@
                 "whereNull"
             ]
         },
-        "Fnlla\\\Database\\Schema": {
+        "Fnlla\\Database\\Schema": {
             "type": "class",
             "methods": [
                 "create",
@@ -892,7 +892,7 @@
                 "setConnection"
             ]
         },
-        "Fnlla\\\Database\\Table": {
+        "Fnlla\\Database\\Table": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -916,7 +916,7 @@
                 "updateForeignKey"
             ]
         },
-        "Fnlla\\\Database\\TransactionManager": {
+        "Fnlla\\Database\\TransactionManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -928,7 +928,7 @@
                 "transaction"
             ]
         },
-        "Fnlla\\\Http\\HttpFactory": {
+        "Fnlla\\Http\\HttpFactory": {
             "type": "class",
             "methods": [
                 "createRequest",
@@ -941,7 +941,7 @@
                 "createUri"
             ]
         },
-        "Fnlla\\\Http\\HttpKernel": {
+        "Fnlla\\Http\\HttpKernel": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -950,20 +950,20 @@
                 "isBooted"
             ]
         },
-        "Fnlla\\\Http\\Middleware\\TrustedProxyMiddleware": {
+        "Fnlla\\Http\\Middleware\\TrustedProxyMiddleware": {
             "type": "class",
             "methods": [
                 "__invoke",
                 "process"
             ]
         },
-        "Fnlla\\\Http\\RedirectTarget": {
+        "Fnlla\\Http\\RedirectTarget": {
             "type": "class",
             "methods": [
                 "fromReferer"
             ]
         },
-        "Fnlla\\\Http\\Request": {
+        "Fnlla\\Http\\Request": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1011,14 +1011,14 @@
                 "withoutHeader"
             ]
         },
-        "Fnlla\\\Http\\RequestHandler": {
+        "Fnlla\\Http\\RequestHandler": {
             "type": "class",
             "methods": [
                 "__construct",
                 "handle"
             ]
         },
-        "Fnlla\\\Http\\Response": {
+        "Fnlla\\Http\\Response": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1051,13 +1051,13 @@
                 "xml"
             ]
         },
-        "Fnlla\\\Http\\RouteCacheCompiler": {
+        "Fnlla\\Http\\RouteCacheCompiler": {
             "type": "class",
             "methods": [
                 "compile"
             ]
         },
-        "Fnlla\\\Http\\Router": {
+        "Fnlla\\Http\\Router": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1077,7 +1077,7 @@
                 "url"
             ]
         },
-        "Fnlla\\\Http\\Stream": {
+        "Fnlla\\Http\\Stream": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1102,7 +1102,7 @@
                 "write"
             ]
         },
-        "Fnlla\\\Http\\UploadedFile": {
+        "Fnlla\\Http\\UploadedFile": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1117,7 +1117,7 @@
                 "store"
             ]
         },
-        "Fnlla\\\Http\\Uri": {
+        "Fnlla\\Http\\Uri": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1139,13 +1139,13 @@
                 "withUserInfo"
             ]
         },
-        "Fnlla\\\Log\\LogServiceProvider": {
+        "Fnlla\\Log\\LogServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Log\\Logger": {
+        "Fnlla\\Log\\Logger": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1160,28 +1160,28 @@
                 "warning"
             ]
         },
-        "Fnlla\\\Log\\LoggerFactory": {
+        "Fnlla\\Log\\LoggerFactory": {
             "type": "class",
             "methods": [
                 "__construct",
                 "make"
             ]
         },
-        "Fnlla\\\Log\\Processor\\RequestIdProcessor": {
+        "Fnlla\\Log\\Processor\\RequestIdProcessor": {
             "type": "class",
             "methods": [
                 "__construct",
                 "__invoke"
             ]
         },
-        "Fnlla\\\Log\\Processor\\StaticContextProcessor": {
+        "Fnlla\\Log\\Processor\\StaticContextProcessor": {
             "type": "class",
             "methods": [
                 "__construct",
                 "__invoke"
             ]
         },
-        "Fnlla\\\Orm\\Factory": {
+        "Fnlla\\Orm\\Factory": {
             "type": "class",
             "methods": [
                 "create",
@@ -1190,7 +1190,7 @@
                 "state"
             ]
         },
-        "Fnlla\\\Orm\\Model": {
+        "Fnlla\\Orm\\Model": {
             "type": "class",
             "methods": [
                 "__callStatic",
@@ -1237,18 +1237,18 @@
                 "withoutGlobalScopes"
             ]
         },
-        "Fnlla\\\Orm\\ModelNotFoundException": {
+        "Fnlla\\Orm\\ModelNotFoundException": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Orm\\OrmServiceProvider": {
+        "Fnlla\\Orm\\OrmServiceProvider": {
             "type": "class",
             "methods": [
                 "boot",
                 "register"
             ]
         },
-        "Fnlla\\\Orm\\Paginator": {
+        "Fnlla\\Orm\\Paginator": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1260,7 +1260,7 @@
                 "total"
             ]
         },
-        "Fnlla\\\Orm\\QueryBuilder": {
+        "Fnlla\\Orm\\QueryBuilder": {
             "type": "class",
             "methods": [
                 "__call",
@@ -1343,7 +1343,7 @@
                 "withoutTrashed"
             ]
         },
-        "Fnlla\\\Orm\\Relations\\BelongsTo": {
+        "Fnlla\\Orm\\Relations\\BelongsTo": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1356,7 +1356,7 @@
                 "getResults"
             ]
         },
-        "Fnlla\\\Orm\\Relations\\BelongsToMany": {
+        "Fnlla\\Orm\\Relations\\BelongsToMany": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1377,7 +1377,7 @@
                 "withTimestamps"
             ]
         },
-        "Fnlla\\\Orm\\Relations\\HasMany": {
+        "Fnlla\\Orm\\Relations\\HasMany": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1392,7 +1392,7 @@
                 "saveMany"
             ]
         },
-        "Fnlla\\\Orm\\Relations\\HasOne": {
+        "Fnlla\\Orm\\Relations\\HasOne": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1406,7 +1406,7 @@
                 "save"
             ]
         },
-        "Fnlla\\\Orm\\Relations\\Relation": {
+        "Fnlla\\Orm\\Relations\\Relation": {
             "type": "class",
             "methods": [
                 "__call",
@@ -1419,7 +1419,7 @@
                 "getResults"
             ]
         },
-        "Fnlla\\\Orm\\SoftDeletes": {
+        "Fnlla\\Orm\\SoftDeletes": {
             "type": "trait",
             "methods": [
                 "forceDelete",
@@ -1428,13 +1428,13 @@
                 "trashed"
             ]
         },
-        "Fnlla\\\Plugin\\PluginInterface": {
+        "Fnlla\\Plugin\\PluginInterface": {
             "type": "interface",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Plugin\\PluginManager": {
+        "Fnlla\\Plugin\\PluginManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1445,7 +1445,7 @@
                 "load"
             ]
         },
-        "Fnlla\\\RequestLogging\\RequestLoggerMiddleware": {
+        "Fnlla\\RequestLogging\\RequestLoggerMiddleware": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1453,19 +1453,19 @@
                 "process"
             ]
         },
-        "Fnlla\\\RequestLogging\\RequestLoggingServiceProvider": {
+        "Fnlla\\RequestLogging\\RequestLoggingServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Runtime\\FpmRuntime": {
+        "Fnlla\\Runtime\\FpmRuntime": {
             "type": "class",
             "methods": [
                 "run"
             ]
         },
-        "Fnlla\\\Runtime\\Profiler": {
+        "Fnlla\\Runtime\\Profiler": {
             "type": "class",
             "methods": [
                 "current",
@@ -1477,7 +1477,7 @@
                 "stop"
             ]
         },
-        "Fnlla\\\Runtime\\RequestContext": {
+        "Fnlla\\Runtime\\RequestContext": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1498,27 +1498,27 @@
                 "traceId"
             ]
         },
-        "Fnlla\\\Runtime\\ResetManager": {
+        "Fnlla\\Runtime\\ResetManager": {
             "type": "class",
             "methods": [
                 "register",
                 "reset"
             ]
         },
-        "Fnlla\\\Runtime\\Resetter": {
+        "Fnlla\\Runtime\\Resetter": {
             "type": "interface",
             "methods": [
                 "reset"
             ]
         },
-        "Fnlla\\\Runtime\\RoadRunnerRuntime": {
+        "Fnlla\\Runtime\\RoadRunnerRuntime": {
             "type": "class",
             "methods": [
                 "__construct",
                 "run"
             ]
         },
-        "Fnlla\\\Session\\FileSessionStore": {
+        "Fnlla\\Session\\FileSessionStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1537,7 +1537,7 @@
                 "start"
             ]
         },
-        "Fnlla\\\Session\\SessionInterface": {
+        "Fnlla\\Session\\SessionInterface": {
             "type": "interface",
             "methods": [
                 "all",
@@ -1549,7 +1549,7 @@
                 "regenerateId"
             ]
         },
-        "Fnlla\\\Session\\SessionManager": {
+        "Fnlla\\Session\\SessionManager": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1564,7 +1564,7 @@
                 "start"
             ]
         },
-        "Fnlla\\\Session\\SessionMiddleware": {
+        "Fnlla\\Session\\SessionMiddleware": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1572,17 +1572,17 @@
                 "process"
             ]
         },
-        "Fnlla\\\Session\\SessionServiceProvider": {
+        "Fnlla\\Session\\SessionServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Support\\ArrayCacheStore": {
+        "Fnlla\\Support\\ArrayCacheStore": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Support\\ArrayStore": {
+        "Fnlla\\Support\\ArrayStore": {
             "type": "class",
             "methods": [
                 "clear",
@@ -1591,7 +1591,7 @@
                 "put"
             ]
         },
-        "Fnlla\\\Support\\Cache": {
+        "Fnlla\\Support\\Cache": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1603,7 +1603,7 @@
                 "store"
             ]
         },
-        "Fnlla\\\Support\\CacheItem": {
+        "Fnlla\\Support\\CacheItem": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1617,7 +1617,7 @@
                 "set"
             ]
         },
-        "Fnlla\\\Support\\CacheItemPool": {
+        "Fnlla\\Support\\CacheItemPool": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1632,23 +1632,23 @@
                 "saveDeferred"
             ]
         },
-        "Fnlla\\\Support\\CacheServiceProvider": {
+        "Fnlla\\Support\\CacheServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Support\\CacheStoreInterface": {
+        "Fnlla\\Support\\CacheStoreInterface": {
             "type": "interface",
             "methods": []
         },
-        "Fnlla\\\Support\\ComposerProviderDiscovery": {
+        "Fnlla\\Support\\ComposerProviderDiscovery": {
             "type": "class",
             "methods": [
                 "discover"
             ]
         },
-        "Fnlla\\\Support\\Dotenv": {
+        "Fnlla\\Support\\Dotenv": {
             "type": "class",
             "methods": [
                 "bootEnv",
@@ -1657,13 +1657,13 @@
                 "usePutenv"
             ]
         },
-        "Fnlla\\\Support\\Env": {
+        "Fnlla\\Support\\Env": {
             "type": "class",
             "methods": [
                 "get"
             ]
         },
-        "Fnlla\\\Support\\ErrorBag": {
+        "Fnlla\\Support\\ErrorBag": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1677,7 +1677,7 @@
                 "toArray"
             ]
         },
-        "Fnlla\\\Support\\EventDispatcher": {
+        "Fnlla\\Support\\EventDispatcher": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1687,14 +1687,14 @@
                 "setAfterCommitHandler"
             ]
         },
-        "Fnlla\\\Support\\EventsServiceProvider": {
+        "Fnlla\\Support\\EventsServiceProvider": {
             "type": "class",
             "methods": [
                 "boot",
                 "register"
             ]
         },
-        "Fnlla\\\Support\\FallbackLogger": {
+        "Fnlla\\Support\\FallbackLogger": {
             "type": "class",
             "methods": [
                 "critical",
@@ -1703,11 +1703,11 @@
                 "write"
             ]
         },
-        "Fnlla\\\Support\\FileCacheStore": {
+        "Fnlla\\Support\\FileCacheStore": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Support\\FileStore": {
+        "Fnlla\\Support\\FileStore": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1717,7 +1717,7 @@
                 "put"
             ]
         },
-        "Fnlla\\\Support\\HealthChecker": {
+        "Fnlla\\Support\\HealthChecker": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1725,7 +1725,7 @@
                 "run"
             ]
         },
-        "Fnlla\\\Support\\HttpClient": {
+        "Fnlla\\Support\\HttpClient": {
             "type": "class",
             "methods": [
                 "getJson",
@@ -1735,23 +1735,23 @@
                 "postJsonJson"
             ]
         },
-        "Fnlla\\\Support\\ProviderCache": {
+        "Fnlla\\Support\\ProviderCache": {
             "type": "class",
             "methods": [
                 "write"
             ]
         },
-        "Fnlla\\\Support\\ProviderCapability": {
+        "Fnlla\\Support\\ProviderCapability": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Support\\ProviderManifest": {
+        "Fnlla\\Support\\ProviderManifest": {
             "type": "class",
             "methods": [
                 "__construct"
             ]
         },
-        "Fnlla\\\Support\\ProviderReport": {
+        "Fnlla\\Support\\ProviderReport": {
             "type": "class",
             "methods": [
                 "addEntry",
@@ -1759,7 +1759,7 @@
                 "toText"
             ]
         },
-        "Fnlla\\\Support\\ProviderRepository": {
+        "Fnlla\\Support\\ProviderRepository": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -1768,13 +1768,13 @@
                 "registerAll"
             ]
         },
-        "Fnlla\\\Support\\ProviderValidator": {
+        "Fnlla\\Support\\ProviderValidator": {
             "type": "class",
             "methods": [
                 "validate"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Cache\\CacheItemInterface": {
+        "Fnlla\\Support\\Psr\\Cache\\CacheItemInterface": {
             "type": "interface",
             "methods": [
                 "expiresAfter",
@@ -1785,7 +1785,7 @@
                 "set"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Cache\\CacheItemPoolInterface": {
+        "Fnlla\\Support\\Psr\\Cache\\CacheItemPoolInterface": {
             "type": "interface",
             "methods": [
                 "clear",
@@ -1799,44 +1799,44 @@
                 "saveDeferred"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Cache\\InvalidArgumentException": {
+        "Fnlla\\Support\\Psr\\Cache\\InvalidArgumentException": {
             "type": "interface",
             "methods": []
         },
-        "Fnlla\\\Support\\Psr\\Container\\ContainerExceptionInterface": {
+        "Fnlla\\Support\\Psr\\Container\\ContainerExceptionInterface": {
             "type": "interface",
             "methods": []
         },
-        "Fnlla\\\Support\\Psr\\Container\\ContainerInterface": {
+        "Fnlla\\Support\\Psr\\Container\\ContainerInterface": {
             "type": "interface",
             "methods": [
                 "get",
                 "has"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Container\\NotFoundExceptionInterface": {
+        "Fnlla\\Support\\Psr\\Container\\NotFoundExceptionInterface": {
             "type": "interface",
             "methods": []
         },
-        "Fnlla\\\Support\\Psr\\Http\\Factory\\RequestFactoryInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Factory\\RequestFactoryInterface": {
             "type": "interface",
             "methods": [
                 "createRequest"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Factory\\ResponseFactoryInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Factory\\ResponseFactoryInterface": {
             "type": "interface",
             "methods": [
                 "createResponse"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Factory\\ServerRequestFactoryInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Factory\\ServerRequestFactoryInterface": {
             "type": "interface",
             "methods": [
                 "createServerRequest"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Factory\\StreamFactoryInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Factory\\StreamFactoryInterface": {
             "type": "interface",
             "methods": [
                 "createStream",
@@ -1844,19 +1844,19 @@
                 "createStreamFromResource"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Factory\\UploadedFileFactoryInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Factory\\UploadedFileFactoryInterface": {
             "type": "interface",
             "methods": [
                 "createUploadedFile"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Factory\\UriFactoryInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Factory\\UriFactoryInterface": {
             "type": "interface",
             "methods": [
                 "createUri"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\MessageInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\MessageInterface": {
             "type": "interface",
             "methods": [
                 "getBody",
@@ -1872,7 +1872,7 @@
                 "withoutHeader"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\RequestInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\RequestInterface": {
             "type": "interface",
             "methods": [
                 "getMethod",
@@ -1883,7 +1883,7 @@
                 "withUri"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\ResponseInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\ResponseInterface": {
             "type": "interface",
             "methods": [
                 "getReasonPhrase",
@@ -1891,7 +1891,7 @@
                 "withStatus"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\ServerRequestInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\ServerRequestInterface": {
             "type": "interface",
             "methods": [
                 "getAttribute",
@@ -1909,7 +1909,7 @@
                 "withoutAttribute"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\StreamInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\StreamInterface": {
             "type": "interface",
             "methods": [
                 "__toString",
@@ -1929,7 +1929,7 @@
                 "write"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\UploadedFileInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\UploadedFileInterface": {
             "type": "interface",
             "methods": [
                 "getClientFilename",
@@ -1940,7 +1940,7 @@
                 "moveTo"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Message\\UriInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Message\\UriInterface": {
             "type": "interface",
             "methods": [
                 "__toString",
@@ -1961,23 +1961,23 @@
                 "withUserInfo"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Server\\MiddlewareInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Server\\MiddlewareInterface": {
             "type": "interface",
             "methods": [
                 "process"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Http\\Server\\RequestHandlerInterface": {
+        "Fnlla\\Support\\Psr\\Http\\Server\\RequestHandlerInterface": {
             "type": "interface",
             "methods": [
                 "handle"
             ]
         },
-        "Fnlla\\\Support\\Psr\\Log\\LogLevel": {
+        "Fnlla\\Support\\Psr\\Log\\LogLevel": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Support\\Psr\\Log\\LoggerInterface": {
+        "Fnlla\\Support\\Psr\\Log\\LoggerInterface": {
             "type": "interface",
             "methods": [
                 "alert",
@@ -1991,7 +1991,7 @@
                 "warning"
             ]
         },
-        "Fnlla\\\Support\\Psr\\SimpleCache\\CacheInterface": {
+        "Fnlla\\Support\\Psr\\SimpleCache\\CacheInterface": {
             "type": "interface",
             "methods": [
                 "clear",
@@ -2004,27 +2004,27 @@
                 "setMultiple"
             ]
         },
-        "Fnlla\\\Support\\Psr\\SimpleCache\\InvalidArgumentException": {
+        "Fnlla\\Support\\Psr\\SimpleCache\\InvalidArgumentException": {
             "type": "interface",
             "methods": []
         },
-        "Fnlla\\\Support\\Queue": {
+        "Fnlla\\Support\\Queue": {
             "type": "class",
             "methods": []
         },
-        "Fnlla\\\Support\\QueueServiceProvider": {
+        "Fnlla\\Support\\QueueServiceProvider": {
             "type": "class",
             "methods": [
                 "register"
             ]
         },
-        "Fnlla\\\Support\\RedisConnector": {
+        "Fnlla\\Support\\RedisConnector": {
             "type": "class",
             "methods": [
                 "connect"
             ]
         },
-        "Fnlla\\\Support\\ReportPaginator": {
+        "Fnlla\\Support\\ReportPaginator": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -2044,7 +2044,7 @@
                 "url"
             ]
         },
-        "Fnlla\\\Support\\ServiceProvider": {
+        "Fnlla\\Support\\ServiceProvider": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -2053,7 +2053,7 @@
                 "register"
             ]
         },
-        "Fnlla\\\Support\\SimpleCacheAdapter": {
+        "Fnlla\\Support\\SimpleCacheAdapter": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -2067,21 +2067,21 @@
                 "setMultiple"
             ]
         },
-        "Fnlla\\\Support\\SyncQueue": {
+        "Fnlla\\Support\\SyncQueue": {
             "type": "class",
             "methods": [
                 "__construct",
                 "push"
             ]
         },
-        "Fnlla\\\Support\\UploadPolicy": {
+        "Fnlla\\Support\\UploadPolicy": {
             "type": "class",
             "methods": [
                 "sanitizeFilename",
                 "validate"
             ]
         },
-        "Fnlla\\\Support\\ValidationException": {
+        "Fnlla\\Support\\ValidationException": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -2091,7 +2091,7 @@
                 "status"
             ]
         },
-        "Fnlla\\\Support\\ValidationHelper": {
+        "Fnlla\\Support\\ValidationHelper": {
             "type": "class",
             "methods": [
                 "errors",
@@ -2099,7 +2099,7 @@
                 "formatAsHtmlList"
             ]
         },
-        "Fnlla\\\Support\\Validator": {
+        "Fnlla\\Support\\Validator": {
             "type": "class",
             "methods": [
                 "__construct",
@@ -2110,7 +2110,7 @@
                 "validated"
             ]
         },
-        "Fnlla\\\View\\View": {
+        "Fnlla\\View\\View": {
             "type": "class",
             "methods": [
                 "hasShared",

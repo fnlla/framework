@@ -1,4 +1,4 @@
-**fnlla (finella) PACKAGES**
+**FNLLA (FINELLA) PACKAGES**
 
 The `packages/` directory contains optional modules for the fnlla (finella) ecosystem. Each package is versioned independently and follows SemVer.
 

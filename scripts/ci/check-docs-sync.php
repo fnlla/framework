@@ -27,9 +27,20 @@ if (!is_dir($appRoot)) {
     exit(1);
 }
 
-$bin = $appRoot . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'Fnlla';
-if (!is_file($bin)) {
-    fwrite(STDERR, "Fnlla CLI not found at {$bin}. Run composer install in the app first.\n");
+$binDir = $appRoot . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'bin';
+$binCandidates = [
+    $binDir . DIRECTORY_SEPARATOR . 'fnlla',
+    $binDir . DIRECTORY_SEPARATOR . 'Fnlla',
+];
+$bin = null;
+foreach ($binCandidates as $candidate) {
+    if (is_file($candidate)) {
+        $bin = $candidate;
+        break;
+    }
+}
+if ($bin === null) {
+    fwrite(STDERR, "Fnlla CLI not found in {$binDir}. Run composer install in the app first.\n");
     exit(1);
 }
 

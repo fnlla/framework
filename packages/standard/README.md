@@ -1,4 +1,4 @@
-**fnlla (finella) STANDARD**
+**FNLLA (FINELLA) STANDARD**
 
 fnlla (finella) Standard is a meta-package that installs the full default web stack.
 It contains no runtime code and only aggregates official packages.
