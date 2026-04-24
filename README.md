@@ -1,4 +1,4 @@
-**fnlla (finella)**
+**FNLLA (FINELLA)**
 
 [![Developed by TechAyo](https://img.shields.io/badge/Developed%20by-TechAyo-f59e0b?style=flat-square&labelColor=f97316&color=facc15)](https://techayo.co.uk)
 [![Latest Release](https://img.shields.io/badge/Latest%20Release-3.0.6-22c55e?style=flat-square&labelColor=0ea5e9)](https://github.com/fnlla/framework/releases)
@@ -18,7 +18,7 @@ fnlla (finella) Framework is a production-focused PHP platform for teams that wa
 Starter application lives in the `fnlla/fnlla` repository.
 Release notes for framework changes are summarised in `CHANGELOG.md`.
 
-**WHAT IS fnlla (finella)?**
+**WHAT IS FNLLA (FINELLA)?**
 **-** **fnlla (finella) Framework**: minimal, modern PHP core focused on HTTP, routing, container, config, and error handling.
 **-** Modular ecosystem of optional packages (auth, database, ORM, cache, queue, mail, docs, etc.).
 **-** Starter app distributed in a separate repository (`fnlla/fnlla`).
@@ -38,7 +38,7 @@ Release notes for framework changes are summarised in `CHANGELOG.md`.
 **-** Require network calls or provider keys to operate the core framework.
 **-** Replace engineering ownership or the SDLC decision process.
 
-**WHY PHP FOR fnlla (finella)?**
+**WHY PHP FOR FNLLA (FINELLA)?**
 Because it is the fastest path to reliable, enterprise web delivery with a low barrier to entry and predictable total cost of ownership.
 
 **PERFORMANCE AND OBSERVABILITY**
@@ -226,17 +226,17 @@ Public package distribution lives in:
 **-** Keep dependency constraints aligned to the release line (for example `fnlla/framework:^3.0`).
 
 **ONE-TIME PACKAGIST PUBLISH (PUBLIC PACKAGES)**
-1. Open Packagist account with org access.
-2. Submit `https://github.com/fnlla/packages` if publishing hub metadata workflow, or submit per-package repository URLs used by your package strategy.
-3. Confirm package names and versions resolve correctly.
-4. Enable auto-update webhook/service in Packagist.
-5. Verify all starter-required packages are installable from public sources.
+**-** Open Packagist account with org access.
+**-** Submit `https://github.com/fnlla/packages` if publishing hub metadata workflow, or submit per-package repository URLs used by your package strategy.
+**-** Confirm package names and versions resolve correctly.
+**-** Enable auto-update webhook/service in Packagist.
+**-** Verify all starter-required packages are installable from public sources.
 
 **ONE-TIME PACKAGIST PUBLISH (STARTER)**
-1. Ensure starter repo `fnlla/fnlla` is public.
-2. Confirm starter `composer.json` contains only remote dependencies (no `path` repositories).
-3. Submit `https://github.com/fnlla/fnlla` to Packagist as `fnlla/fnlla`.
-4. Verify `composer create-project fnlla/fnlla my-app` resolves from Packagist.
+**-** Ensure starter repo `fnlla/fnlla` is public.
+**-** Confirm starter `composer.json` contains only remote dependencies (no `path` repositories).
+**-** Submit `https://github.com/fnlla/fnlla` to Packagist as `fnlla/fnlla`.
+**-** Verify `composer create-project fnlla/fnlla my-app` resolves from Packagist.
 
 **STARTER RULES (REQUIRED)**
 **-** In `fnlla/fnlla`, keep only remote dependencies in `composer.json`.
@@ -245,23 +245,23 @@ Public package distribution lives in:
 **-** Use `composer run lock:check` in starter CI to reject local/path lock sources.
 
 **RELEASE FLOW (REQUIRED EVERY RELEASE)**
-1. Tag in private source-of-truth monorepo:
+**-** Tag in private source-of-truth monorepo:
    `git tag vX.Y.Z && git push origin vX.Y.Z`
-2. Sync public package sources/artifacts into `fnlla/packages`.
-3. Rebuild `repository/` metadata in `fnlla/packages` and publish to `main`.
-4. Refresh Packagist package metadata (auto-hook or manual update).
-5. Release starter (`fnlla/fnlla`) with aligned dependency constraints.
-6. Validate public bootstrap:
+**-** Sync public package sources/artifacts into `fnlla/packages`.
+**-** Rebuild `repository/` metadata in `fnlla/packages` and publish to `main`.
+**-** Refresh Packagist package metadata (auto-hook or manual update).
+**-** Release starter (`fnlla/fnlla`) with aligned dependency constraints.
+**-** Validate public bootstrap:
    `composer create-project fnlla/fnlla my-app`
-7. Validate install/boot in created app:
+**-** Validate install/boot in created app:
    `composer install && php bin/fnlla db:bootstrap`
 
 **MAINTAINER CHECKLIST (SHORT)**
-1. Update code/docs in private `fnlla/framework`.
-2. Run release gate + distribution checks.
-3. Tag monorepo.
-4. Sync/update `fnlla/packages` public sources.
-5. Rebuild and publish `fnlla/packages/repository`.
-6. Refresh/verify Packagist versions.
-7. Release `fnlla/fnlla`.
-8. Validate `composer create-project`.
+**-** Update code/docs in private `fnlla/framework`.
+**-** Run release gate + distribution checks.
+**-** Tag monorepo.
+**-** Sync/update `fnlla/packages` public sources.
+**-** Rebuild and publish `fnlla/packages/repository`.
+**-** Refresh/verify Packagist versions.
+**-** Release `fnlla/fnlla`.
+**-** Validate `composer create-project`.
