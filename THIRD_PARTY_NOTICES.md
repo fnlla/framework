@@ -10,7 +10,7 @@ First-party `fnlla/*` packages are excluded.
 | Package | Version | License |
 | --- | --- | --- |
 | aws/aws-crt-php | v1.2.7 | Apache-2.0 |
-| aws/aws-sdk-php | 3.379.2 | Apache-2.0 |
+| aws/aws-sdk-php | 3.379.5 | Apache-2.0 |
 | doctrine/lexer | 3.0.1 | MIT |
 | dompdf/dompdf | v3.1.5 | LGPL-2.1 |
 | dompdf/php-font-lib | 1.0.2 | LGPL-2.1-or-later |
