@@ -231,6 +231,7 @@ Public package distribution lives in:
 **-** Confirm package names and versions resolve correctly.
 **-** Enable auto-update webhook/service in Packagist.
 **-** Verify all starter-required packages are installable from public sources.
+**-** Packagist reads `composer.json` from the repository root of the default branch. For `fnlla/framework`, keep the root `composer.json` present and aligned with `framework/composer.json`.
 
 **ONE-TIME PACKAGIST PUBLISH (STARTER)**
 **-** Ensure starter repo `fnlla/fnlla` is public.

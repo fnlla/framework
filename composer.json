@@ -1,0 +1,53 @@
+{
+    "name": "fnlla/framework",
+    "description": "Fnlla - AI-assisted PHP framework",
+    "homepage": "https://techayo.co.uk",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "TechAyo",
+            "homepage": "https://techayo.co.uk",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Marcin Kordyaczny",
+            "homepage": "https://techayo.co.uk",
+            "role": "Project Manager"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fnlla\\": "framework/src/"
+        },
+        "files": [
+            "framework/src/Support/global_helpers.php",
+            "framework/src/Support/compat.php",
+            "framework/src/Support/helpers.php"
+        ]
+    },
+    "bin": [
+        "framework/bin/fnlla"
+    ],
+    "extra": {
+        "fnlla": {
+            "providers": [
+                "Fnlla\\Database\\DatabaseServiceProvider",
+                "Fnlla\\Cache\\CacheServiceProvider",
+                "Fnlla\\Log\\LogServiceProvider",
+                "Fnlla\\RequestLogging\\RequestLoggingServiceProvider",
+                "Fnlla\\Session\\SessionServiceProvider",
+                "Fnlla\\Cookie\\CookieServiceProvider",
+                "Fnlla\\Csrf\\CsrfServiceProvider",
+                "Fnlla\\Auth\\AuthServiceProvider",
+                "Fnlla\\Orm\\OrmServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-main": "3.0.x-dev"
+        }
+    }
+}
