@@ -1,8 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Security report
-    url: https://github.com/fnlla/framework/security/policy
-    about: Report vulnerabilities through the security policy channel.
-  - name: Documentation
-    url: https://github.com/fnlla/framework/tree/main/documentation/src
-    about: Check docs and operations guides before opening a support issue.
+  - name: Security vulnerability report
+    url: mailto:security@fnlla.co.uk
+    about: Please report vulnerabilities privately.

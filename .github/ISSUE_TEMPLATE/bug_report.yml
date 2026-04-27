@@ -1,57 +1,47 @@
 name: Bug report
-description: Report a reproducible problem in Fnlla.
+description: Report a reproducible problem
 title: "[Bug]: "
-labels:
-  - bug
+labels: ["bug"]
 body:
-  - type: textarea
-    id: summary
+  - type: input
+    id: repository
     attributes:
-      label: Summary
-      description: What is failing?
-      placeholder: Clear and short problem statement.
+      label: Repository
+      description: Which fnlla repository is affected?
+      placeholder: fnlla/fnlla
     validations:
       required: true
-
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Affected version, tag, or commit
+      placeholder: v3.0.6
+    validations:
+      required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
-      description: Exact steps, inputs, and commands.
-      placeholder: |
-        1. ...
-        2. ...
-        3. ...
+      label: Reproduction steps
+      description: Provide exact steps to reproduce
     validations:
       required: true
-
   - type: textarea
     id: expected
     attributes:
       label: Expected behavior
     validations:
       required: true
-
   - type: textarea
     id: actual
     attributes:
       label: Actual behavior
     validations:
       required: true
-
-  - type: input
-    id: version
-    attributes:
-      label: fnlla version
-      placeholder: "e.g. 2.5.6"
-    validations:
-      required: true
-
   - type: textarea
     id: environment
     attributes:
       label: Environment
-      description: OS, PHP version, database, and any relevant runtime details.
-      placeholder: "Windows 11, PHP 8.4.19, MySQL 8.0, ..."
+      description: PHP, Composer, OS, server/runtime
     validations:
       required: true
