@@ -53,7 +53,7 @@
                         "fnlla/testing":  "^3.0",
                         "league/oauth2-client":  "^2.7",
                         "sentry/sentry":  "^4.0",
-                        "stripe/stripe-php":  "^13.0"
+                        "stripe/stripe-php":  "^20.1"
                     },
     "autoload":  {
                      "psr-4":  {
